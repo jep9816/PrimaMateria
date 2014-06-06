@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		970EB2011485486E002E792F /* XTRNuclidesIsotopesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 970EB2001485486E002E792F /* XTRNuclidesIsotopesViewController.m */; };
+		971B18731485531000333B91 /* XTRSpectrumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B18721485531000333B91 /* XTRSpectrumViewController.m */; };
+		971B187814855AD300333B91 /* XTRGeneralInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187514855AD300333B91 /* XTRGeneralInfoViewController.m */; };
+		971B187914855AD300333B91 /* XTRWikipediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187714855AD300333B91 /* XTRWikipediaViewController.m */; };
+		971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187B14855B5800333B91 /* MBProgressHUD.m */; };
+		972B4CBB1486C7AB00C627D7 /* XTRSwapableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B4CBA1486C7AA00C627D7 /* XTRSwapableViewController.m */; };
+		9738258E147AE40F00AEA344 /* XTRCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738257F147AE40F00AEA344 /* XTRCategories.m */; };
+		9738258F147AE40F00AEA344 /* XTRColorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 97382581147AE40F00AEA344 /* XTRColorFactory.m */; };
+		97382590147AE40F00AEA344 /* XTRDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 97382583147AE40F00AEA344 /* XTRDataSource.m */; };
+		97382591147AE40F00AEA344 /* XTRElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 97382585147AE40F00AEA344 /* XTRElement.m */; };
+		97382592147AE40F00AEA344 /* XTRVersionChecker.m in Sources */ = {isa = PBXBuildFile; fileRef = 97382587147AE40F00AEA344 /* XTRVersionChecker.m */; };
+		97382593147AE40F00AEA344 /* MolecularCalculator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 97382589147AE40F00AEA344 /* MolecularCalculator.mm */; };
+		9738259A147AE7E100AEA344 /* UIColor-Expanded.m in Sources */ = {isa = PBXBuildFile; fileRef = 97382597147AE7DF00AEA344 /* UIColor-Expanded.m */; };
+		9738259B147AE7E100AEA344 /* UIColor-HSVAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 97382599147AE7E100AEA344 /* UIColor-HSVAdditions.m */; };
+		9738259E147AE85500AEA344 /* XTRSplashViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9738259D147AE85500AEA344 /* XTRSplashViewController.m */; };
+		973825A4147AEE8800AEA344 /* XTRCornerImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 973825A1147AEE8800AEA344 /* XTRCornerImageView.m */; };
+		973825A5147AEE8800AEA344 /* XTRShadowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 973825A3147AEE8800AEA344 /* XTRShadowView.m */; };
+		973825B3147BDEC100AEA344 /* XTRPropertiesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 973825B2147BDEC100AEA344 /* XTRPropertiesStore.m */; };
+		9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */; };
+		9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9746B1E81492503600A0DC96 /* PrimaMateriaHelp */; };
+		974BAADC148EBC0A0020F55D /* ElementInspectorSeque.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */; };
+		974C565B147BEA6500DDFC77 /* ElementButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C565A147BEA6500DDFC77 /* ElementButton.m */; };
+		974C566B147BEAA900DDFC77 /* DividerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C565D147BEAA900DDFC77 /* DividerLabel.m */; };
+		974C566C147BEAA900DDFC77 /* DynoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C565F147BEAA900DDFC77 /* DynoTableCell.m */; };
+		974C566D147BEAA900DDFC77 /* DynoTableHeaderButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C5661147BEAA900DDFC77 /* DynoTableHeaderButton.m */; };
+		974C566E147BEAA900DDFC77 /* DynoTableLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C5663147BEAA900DDFC77 /* DynoTableLabel.m */; };
+		974C566F147BEAA900DDFC77 /* GeneralButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C5666147BEAA900DDFC77 /* GeneralButton.m */; };
+		974C5670147BEAA900DDFC77 /* HelpButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C5668147BEAA900DDFC77 /* HelpButton.m */; };
+		974C5677147BF0C300DDFC77 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 974C5674147BF0C300DDFC77 /* Credits.rtf */; };
+		974C5679147BF0C300DDFC77 /* LoadFailure.html in Resources */ = {isa = PBXBuildFile; fileRef = 974C5676147BF0C300DDFC77 /* LoadFailure.html */; };
+		974C567D147BF0E000DDFC77 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 974C567A147BF0E000DDFC77 /* ElementTipHelp */; };
+		974C567F147BF0E000DDFC77 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 974C567C147BF0E000DDFC77 /* SupportingFiles */; };
+		974C5682147BFC0B00DDFC77 /* XTRHelpBalloonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C5681147BFC0A00DDFC77 /* XTRHelpBalloonViewController.m */; };
+		9770C5DE147C2AC300A5D29B /* XTRGraphChoiceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9770C5DD147C2AC300A5D29B /* XTRGraphChoiceViewController.m */; };
+		9777CA9D147D886B00C33ABB /* XTRAtomicStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9777CA9C147D886B00C33ABB /* XTRAtomicStructureViewController.m */; };
+		979E8D2C147C04C30063CD5E /* PTColorAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E8D2B147C04C30063CD5E /* PTColorAlertView.m */; };
+		979E8D2F147C09850063CD5E /* XTRElementBalloonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E8D2E147C09850063CD5E /* XTRElementBalloonViewController.m */; };
+		979E8D32147C19870063CD5E /* XTRMolecularCalculatorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 979E8D31147C19860063CD5E /* XTRMolecularCalculatorViewController.mm */; };
+		97E33567147A938A008147AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33566147A938A008147AD /* UIKit.framework */; };
+		97E33569147A938A008147AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33568147A938A008147AD /* Foundation.framework */; };
+		97E3356B147A938A008147AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E3356A147A938A008147AD /* CoreGraphics.framework */; };
+		97E33596147A9468008147AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E3358F147A9468008147AD /* main.m */; };
+		97E33597147A9468008147AD /* XTRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33591147A9468008147AD /* XTRAppDelegate.m */; };
+		97E33598147A9468008147AD /* XTRPeriodicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33593147A9468008147AD /* XTRPeriodicTableViewController.m */; };
+		97E33599147A9468008147AD /* XTRElementListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33595147A9468008147AD /* XTRElementListViewController.m */; };
+		97E335A7147A964E008147AD /* XTRGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E335A4147A964E008147AD /* XTRGraphViewController.m */; };
+		97E335A8147A964E008147AD /* XTRPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E335A6147A964E008147AD /* XTRPreferencesViewController.m */; };
+		97E335C3147A9B29008147AD /* Tab03-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335B6147A9B29008147AD /* Tab03-Icon.png */; };
+		97E335C4147A9B29008147AD /* Tab04-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335B7147A9B29008147AD /* Tab04-Icon.png */; };
+		97E335C6147A9B29008147AD /* Tab01-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335B9147A9B29008147AD /* Tab01-Icon.png */; };
+		97E335C7147A9B29008147AD /* Tab02-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335BA147A9B29008147AD /* Tab02-Icon.png */; };
+		97E335C8147A9B29008147AD /* AscendingArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335BB147A9B29008147AD /* AscendingArrow.png */; };
+		97E335C9147A9B29008147AD /* continuum.gif in Resources */ = {isa = PBXBuildFile; fileRef = 97E335BC147A9B29008147AD /* continuum.gif */; };
+		97E335CE147A9B29008147AD /* DescendingArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335C1147A9B29008147AD /* DescendingArrow.png */; };
+		97E335CF147A9B29008147AD /* SplashImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335C2147A9B29008147AD /* SplashImage.png */; };
+		97E335D2147A9CCA008147AD /* XTRHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E335D1147A9CCA008147AD /* XTRHelpViewController.m */; };
+		97E335D4147A9DD5008147AD /* Tab05-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335D3147A9DD5008147AD /* Tab05-Icon.png */; };
+		97E335D6147AA0F5008147AD /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335D5147AA0F5008147AD /* icon.png */; };
+		97E335DA147AA15C008147AD /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335D9147AA15C008147AD /* Default-Portrait~ipad.png */; };
+		97E335DC147AA16D008147AD /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 97E335DB147AA16D008147AD /* Default-Landscape~ipad.png */; };
+		97E335DE147AA1CE008147AD /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = 97E335DD147AA1CE008147AD /* iTunesArtwork */; };
+		97E33605147AA7C7008147AD /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E33604147AA7C7008147AD /* PrimaMateria.plist */; };
+		97E3365B147AADB8008147AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E3365A147AADB8008147AD /* QuartzCore.framework */; };
+		97E33662147AB045008147AD /* Defines.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E3365E147AB045008147AD /* Defines.m */; };
+		97E33663147AB045008147AD /* XTRApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33660147AB045008147AD /* XTRApplication.m */; };
+		97E33665147AB293008147AD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33664147AB292008147AD /* CoreText.framework */; };
+		97E33668147AB701008147AD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97E33667147AB701008147AD /* Settings.bundle */; };
+		97E3366E147ABC79008147AD /* XTRElementInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E3366D147ABC79008147AD /* XTRElementInspectorViewController.m */; };
+		97E33671147AC4DC008147AD /* XTRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33670147AC4DB008147AD /* XTRMainViewController.m */; };
+		9BBC4AF1147D9CD600FBC7DA /* XTRElementPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBC4AF0147D9CD600FBC7DA /* XTRElementPropertiesViewController.m */; };
+		B826ED21191D59EF0038C532 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
+		B826ED2B191FF5090038C532 /* XTRColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B826ED2A191FF5090038C532 /* XTRColorPickerViewController.m */; };
+		B8B1C4C716F8F85500C3CA78 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B1C4C616F8F81500C3CA78 /* libCorePlot-CocoaTouch.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B8B1C4C516F8F81500C3CA78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8B1C4BF16F8F81500C3CA78 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = BC9B83470FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+		B8B1C4CA16F8F9CB00C3CA78 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B8B1C4BF16F8F81500C3CA78 /* CorePlot-CocoaTouch.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = BC9B83460FB8A0A40035D8DA;
+			remoteInfo = "CorePlot-CocoaTouch";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		970EB1FF1485486E002E792F /* XTRNuclidesIsotopesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRNuclidesIsotopesViewController.h; sourceTree = "<group>"; };
+		970EB2001485486E002E792F /* XTRNuclidesIsotopesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRNuclidesIsotopesViewController.m; sourceTree = "<group>"; };
+		971B18711485531000333B91 /* XTRSpectrumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRSpectrumViewController.h; sourceTree = "<group>"; };
+		971B18721485531000333B91 /* XTRSpectrumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRSpectrumViewController.m; sourceTree = "<group>"; };
+		971B187414855AD300333B91 /* XTRGeneralInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRGeneralInfoViewController.h; sourceTree = "<group>"; };
+		971B187514855AD300333B91 /* XTRGeneralInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRGeneralInfoViewController.m; sourceTree = "<group>"; };
+		971B187614855AD300333B91 /* XTRWikipediaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRWikipediaViewController.h; sourceTree = "<group>"; };
+		971B187714855AD300333B91 /* XTRWikipediaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRWikipediaViewController.m; sourceTree = "<group>"; };
+		971B187A14855B5800333B91 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		971B187B14855B5800333B91 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		972B4CB91486C7AA00C627D7 /* XTRSwapableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRSwapableViewController.h; sourceTree = "<group>"; };
+		972B4CBA1486C7AA00C627D7 /* XTRSwapableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRSwapableViewController.m; sourceTree = "<group>"; };
+		9738257E147AE40F00AEA344 /* XTRCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRCategories.h; sourceTree = "<group>"; };
+		9738257F147AE40F00AEA344 /* XTRCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRCategories.m; sourceTree = "<group>"; };
+		97382580147AE40F00AEA344 /* XTRColorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRColorFactory.h; sourceTree = "<group>"; };
+		97382581147AE40F00AEA344 /* XTRColorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRColorFactory.m; sourceTree = "<group>"; };
+		97382582147AE40F00AEA344 /* XTRDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRDataSource.h; sourceTree = "<group>"; };
+		97382583147AE40F00AEA344 /* XTRDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRDataSource.m; sourceTree = "<group>"; };
+		97382584147AE40F00AEA344 /* XTRElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElement.h; sourceTree = "<group>"; };
+		97382585147AE40F00AEA344 /* XTRElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElement.m; sourceTree = "<group>"; };
+		97382586147AE40F00AEA344 /* XTRVersionChecker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRVersionChecker.h; sourceTree = "<group>"; };
+		97382587147AE40F00AEA344 /* XTRVersionChecker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRVersionChecker.m; sourceTree = "<group>"; };
+		97382588147AE40F00AEA344 /* MolecularCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MolecularCalculator.h; sourceTree = "<group>"; };
+		97382589147AE40F00AEA344 /* MolecularCalculator.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MolecularCalculator.mm; sourceTree = "<group>"; };
+		97382596147AE7DF00AEA344 /* UIColor-Expanded.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-Expanded.h"; sourceTree = "<group>"; };
+		97382597147AE7DF00AEA344 /* UIColor-Expanded.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-Expanded.m"; sourceTree = "<group>"; };
+		97382598147AE7E000AEA344 /* UIColor-HSVAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor-HSVAdditions.h"; sourceTree = "<group>"; };
+		97382599147AE7E100AEA344 /* UIColor-HSVAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor-HSVAdditions.m"; sourceTree = "<group>"; };
+		9738259C147AE85500AEA344 /* XTRSplashViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRSplashViewController.h; sourceTree = "<group>"; };
+		9738259D147AE85500AEA344 /* XTRSplashViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRSplashViewController.m; sourceTree = "<group>"; };
+		973825A0147AEE8800AEA344 /* XTRCornerImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRCornerImageView.h; sourceTree = "<group>"; };
+		973825A1147AEE8800AEA344 /* XTRCornerImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRCornerImageView.m; sourceTree = "<group>"; };
+		973825A2147AEE8800AEA344 /* XTRShadowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRShadowView.h; sourceTree = "<group>"; };
+		973825A3147AEE8800AEA344 /* XTRShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRShadowView.m; sourceTree = "<group>"; };
+		973825B1147BDEC100AEA344 /* XTRPropertiesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRPropertiesStore.h; sourceTree = "<group>"; };
+		973825B2147BDEC100AEA344 /* XTRPropertiesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRPropertiesStore.m; sourceTree = "<group>"; };
+		9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9746B1E81492503600A0DC96 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
+		974BAADA148EBC0A0020F55D /* ElementInspectorSeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementInspectorSeque.h; sourceTree = "<group>"; };
+		974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementInspectorSeque.m; sourceTree = "<group>"; };
+		974C565A147BEA6500DDFC77 /* ElementButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementButton.m; sourceTree = "<group>"; };
+		974C565C147BEAA900DDFC77 /* DividerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DividerLabel.h; sourceTree = "<group>"; };
+		974C565D147BEAA900DDFC77 /* DividerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DividerLabel.m; sourceTree = "<group>"; };
+		974C565E147BEAA900DDFC77 /* DynoTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynoTableCell.h; sourceTree = "<group>"; };
+		974C565F147BEAA900DDFC77 /* DynoTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynoTableCell.m; sourceTree = "<group>"; };
+		974C5660147BEAA900DDFC77 /* DynoTableHeaderButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynoTableHeaderButton.h; sourceTree = "<group>"; };
+		974C5661147BEAA900DDFC77 /* DynoTableHeaderButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynoTableHeaderButton.m; sourceTree = "<group>"; };
+		974C5662147BEAA900DDFC77 /* DynoTableLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DynoTableLabel.h; sourceTree = "<group>"; };
+		974C5663147BEAA900DDFC77 /* DynoTableLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DynoTableLabel.m; sourceTree = "<group>"; };
+		974C5664147BEAA900DDFC77 /* ElementButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementButton.h; sourceTree = "<group>"; };
+		974C5665147BEAA900DDFC77 /* GeneralButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GeneralButton.h; sourceTree = "<group>"; };
+		974C5666147BEAA900DDFC77 /* GeneralButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneralButton.m; sourceTree = "<group>"; };
+		974C5667147BEAA900DDFC77 /* HelpButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpButton.h; sourceTree = "<group>"; };
+		974C5668147BEAA900DDFC77 /* HelpButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpButton.m; sourceTree = "<group>"; };
+		974C5674147BF0C300DDFC77 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		974C5676147BF0C300DDFC77 /* LoadFailure.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LoadFailure.html; sourceTree = "<group>"; };
+		974C567A147BF0E000DDFC77 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
+		974C567C147BF0E000DDFC77 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
+		974C5680147BFC0900DDFC77 /* XTRHelpBalloonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRHelpBalloonViewController.h; sourceTree = "<group>"; };
+		974C5681147BFC0A00DDFC77 /* XTRHelpBalloonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRHelpBalloonViewController.m; sourceTree = "<group>"; };
+		9770C5DC147C2AC300A5D29B /* XTRGraphChoiceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRGraphChoiceViewController.h; sourceTree = "<group>"; };
+		9770C5DD147C2AC300A5D29B /* XTRGraphChoiceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRGraphChoiceViewController.m; sourceTree = "<group>"; };
+		9777CA9B147D886B00C33ABB /* XTRAtomicStructureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRAtomicStructureViewController.h; sourceTree = "<group>"; };
+		9777CA9C147D886B00C33ABB /* XTRAtomicStructureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRAtomicStructureViewController.m; sourceTree = "<group>"; };
+		979E8D2A147C04C30063CD5E /* PTColorAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTColorAlertView.h; sourceTree = "<group>"; };
+		979E8D2B147C04C30063CD5E /* PTColorAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTColorAlertView.m; sourceTree = "<group>"; };
+		979E8D2D147C09850063CD5E /* XTRElementBalloonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElementBalloonViewController.h; sourceTree = "<group>"; };
+		979E8D2E147C09850063CD5E /* XTRElementBalloonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElementBalloonViewController.m; sourceTree = "<group>"; };
+		979E8D30147C19850063CD5E /* XTRMolecularCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRMolecularCalculatorViewController.h; sourceTree = "<group>"; };
+		979E8D31147C19860063CD5E /* XTRMolecularCalculatorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XTRMolecularCalculatorViewController.mm; sourceTree = "<group>"; };
+		97E33562147A938A008147AD /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97E33566147A938A008147AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		97E33568147A938A008147AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		97E3356A147A938A008147AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		97E3356E147A938A008147AD /* PrimaMateria-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PrimaMateria-Info.plist"; path = "../PrimaMateria-Info.plist"; sourceTree = "<group>"; };
+		97E33574147A938A008147AD /* PrimaMateria-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrimaMateria-Prefix.pch"; sourceTree = "<group>"; };
+		97E3358F147A9468008147AD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
+		97E33590147A9468008147AD /* XTRAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRAppDelegate.h; sourceTree = "<group>"; };
+		97E33591147A9468008147AD /* XTRAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRAppDelegate.m; sourceTree = "<group>"; };
+		97E33592147A9468008147AD /* XTRPeriodicTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRPeriodicTableViewController.h; sourceTree = "<group>"; };
+		97E33593147A9468008147AD /* XTRPeriodicTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRPeriodicTableViewController.m; sourceTree = "<group>"; };
+		97E33594147A9468008147AD /* XTRElementListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElementListViewController.h; sourceTree = "<group>"; };
+		97E33595147A9468008147AD /* XTRElementListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElementListViewController.m; sourceTree = "<group>"; };
+		97E335A3147A964E008147AD /* XTRGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRGraphViewController.h; sourceTree = "<group>"; };
+		97E335A4147A964E008147AD /* XTRGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRGraphViewController.m; sourceTree = "<group>"; };
+		97E335A5147A964E008147AD /* XTRPreferencesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRPreferencesViewController.h; sourceTree = "<group>"; };
+		97E335A6147A964E008147AD /* XTRPreferencesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRPreferencesViewController.m; sourceTree = "<group>"; };
+		97E335B6147A9B29008147AD /* Tab03-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab03-Icon.png"; sourceTree = "<group>"; };
+		97E335B7147A9B29008147AD /* Tab04-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab04-Icon.png"; sourceTree = "<group>"; };
+		97E335B9147A9B29008147AD /* Tab01-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab01-Icon.png"; sourceTree = "<group>"; };
+		97E335BA147A9B29008147AD /* Tab02-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab02-Icon.png"; sourceTree = "<group>"; };
+		97E335BB147A9B29008147AD /* AscendingArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AscendingArrow.png; sourceTree = "<group>"; };
+		97E335BC147A9B29008147AD /* continuum.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = continuum.gif; sourceTree = "<group>"; };
+		97E335C1147A9B29008147AD /* DescendingArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DescendingArrow.png; sourceTree = "<group>"; };
+		97E335C2147A9B29008147AD /* SplashImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashImage.png; sourceTree = "<group>"; };
+		97E335D0147A9CCA008147AD /* XTRHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRHelpViewController.h; sourceTree = "<group>"; };
+		97E335D1147A9CCA008147AD /* XTRHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRHelpViewController.m; sourceTree = "<group>"; };
+		97E335D3147A9DD5008147AD /* Tab05-Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab05-Icon.png"; sourceTree = "<group>"; };
+		97E335D5147AA0F5008147AD /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = ../../../icon.png; sourceTree = "<group>"; };
+		97E335D9147AA15C008147AD /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "../../../Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		97E335DB147AA16D008147AD /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "../../../Default-Landscape~ipad.png"; sourceTree = "<group>"; };
+		97E335DD147AA1CE008147AD /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; path = iTunesArtwork; sourceTree = SOURCE_ROOT; };
+		97E33604147AA7C7008147AD /* PrimaMateria.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PrimaMateria.plist; sourceTree = "<group>"; };
+		97E3365A147AADB8008147AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		97E3365C147AAE5D008147AD /* PrimaMateria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrimaMateria.entitlements; path = ../PrimaMateria.entitlements; sourceTree = "<group>"; };
+		97E3365D147AB045008147AD /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		97E3365E147AB045008147AD /* Defines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defines.m; sourceTree = "<group>"; };
+		97E3365F147AB045008147AD /* XTRApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRApplication.h; sourceTree = "<group>"; };
+		97E33660147AB045008147AD /* XTRApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRApplication.m; sourceTree = "<group>"; };
+		97E33661147AB045008147AD /* PrimaMateria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrimaMateria.h; path = Classes/PrimaMateria.h; sourceTree = "<group>"; };
+		97E33664147AB292008147AD /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		97E33667147AB701008147AD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		97E3366C147ABC79008147AD /* XTRElementInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElementInspectorViewController.h; sourceTree = "<group>"; };
+		97E3366D147ABC79008147AD /* XTRElementInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElementInspectorViewController.m; sourceTree = "<group>"; };
+		97E3366F147AC4DA008147AD /* XTRMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRMainViewController.h; sourceTree = "<group>"; };
+		97E33670147AC4DB008147AD /* XTRMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRMainViewController.m; sourceTree = "<group>"; };
+		9BBC4AEF147D9CD600FBC7DA /* XTRElementPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElementPropertiesViewController.h; sourceTree = "<group>"; };
+		9BBC4AF0147D9CD600FBC7DA /* XTRElementPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElementPropertiesViewController.m; sourceTree = "<group>"; };
+		B826ED20191D59EF0038C532 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		B826ED29191FF5090038C532 /* XTRColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRColorPickerViewController.h; sourceTree = "<group>"; };
+		B826ED2A191FF5090038C532 /* XTRColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRColorPickerViewController.m; sourceTree = "<group>"; };
+		B8B1C4BF16F8F81500C3CA78 /* CorePlot-CocoaTouch.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "CorePlot-CocoaTouch.xcodeproj"; path = "../CorePlot/framework/CorePlot-CocoaTouch.xcodeproj"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		97E3355F147A938A008147AD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B826ED21191D59EF0038C532 /* Accelerate.framework in Frameworks */,
+				B8B1C4C716F8F85500C3CA78 /* libCorePlot-CocoaTouch.a in Frameworks */,
+				97E33569147A938A008147AD /* Foundation.framework in Frameworks */,
+				97E33567147A938A008147AD /* UIKit.framework in Frameworks */,
+				97E3356B147A938A008147AD /* CoreGraphics.framework in Frameworks */,
+				97E33665147AB293008147AD /* CoreText.framework in Frameworks */,
+				97E3365B147AADB8008147AD /* QuartzCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9738257D147AE3B600AEA344 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				97E3365D147AB045008147AD /* Defines.h */,
+				97E3365E147AB045008147AD /* Defines.m */,
+				97382588147AE40F00AEA344 /* MolecularCalculator.h */,
+				97382589147AE40F00AEA344 /* MolecularCalculator.mm */,
+				97E33590147A9468008147AD /* XTRAppDelegate.h */,
+				97E33591147A9468008147AD /* XTRAppDelegate.m */,
+				97E3365F147AB045008147AD /* XTRApplication.h */,
+				97E33660147AB045008147AD /* XTRApplication.m */,
+				9738257E147AE40F00AEA344 /* XTRCategories.h */,
+				9738257F147AE40F00AEA344 /* XTRCategories.m */,
+				97382580147AE40F00AEA344 /* XTRColorFactory.h */,
+				97382581147AE40F00AEA344 /* XTRColorFactory.m */,
+				97382582147AE40F00AEA344 /* XTRDataSource.h */,
+				97382583147AE40F00AEA344 /* XTRDataSource.m */,
+				97382584147AE40F00AEA344 /* XTRElement.h */,
+				97382585147AE40F00AEA344 /* XTRElement.m */,
+				973825B1147BDEC100AEA344 /* XTRPropertiesStore.h */,
+				973825B2147BDEC100AEA344 /* XTRPropertiesStore.m */,
+				97382586147AE40F00AEA344 /* XTRVersionChecker.h */,
+				97382587147AE40F00AEA344 /* XTRVersionChecker.m */,
+				974BAADA148EBC0A0020F55D /* ElementInspectorSeque.h */,
+				974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		9738259F147AEE6A00AEA344 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				973825A0147AEE8800AEA344 /* XTRCornerImageView.h */,
+				973825A1147AEE8800AEA344 /* XTRCornerImageView.m */,
+				973825A2147AEE8800AEA344 /* XTRShadowView.h */,
+				973825A3147AEE8800AEA344 /* XTRShadowView.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		974C5659147BEA5100DDFC77 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				974C565C147BEAA900DDFC77 /* DividerLabel.h */,
+				974C565D147BEAA900DDFC77 /* DividerLabel.m */,
+				974C565E147BEAA900DDFC77 /* DynoTableCell.h */,
+				974C565F147BEAA900DDFC77 /* DynoTableCell.m */,
+				974C5660147BEAA900DDFC77 /* DynoTableHeaderButton.h */,
+				974C5661147BEAA900DDFC77 /* DynoTableHeaderButton.m */,
+				974C5662147BEAA900DDFC77 /* DynoTableLabel.h */,
+				974C5663147BEAA900DDFC77 /* DynoTableLabel.m */,
+				974C5664147BEAA900DDFC77 /* ElementButton.h */,
+				974C565A147BEA6500DDFC77 /* ElementButton.m */,
+				974C5666147BEAA900DDFC77 /* GeneralButton.m */,
+				974C5667147BEAA900DDFC77 /* HelpButton.h */,
+				974C5668147BEAA900DDFC77 /* HelpButton.m */,
+			);
+			name = Controls;
+			sourceTree = "<group>";
+		};
+		974C5672147BEFA400DDFC77 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				971B187A14855B5800333B91 /* MBProgressHUD.h */,
+				971B187B14855B5800333B91 /* MBProgressHUD.m */,
+				979E8D2A147C04C30063CD5E /* PTColorAlertView.h */,
+				979E8D2B147C04C30063CD5E /* PTColorAlertView.m */,
+				974C5665147BEAA900DDFC77 /* GeneralButton.h */,
+				97382596147AE7DF00AEA344 /* UIColor-Expanded.h */,
+				97382597147AE7DF00AEA344 /* UIColor-Expanded.m */,
+				97382598147AE7E000AEA344 /* UIColor-HSVAdditions.h */,
+				97382599147AE7E100AEA344 /* UIColor-HSVAdditions.m */,
+			);
+			name = "3rd Party";
+			sourceTree = "<group>";
+		};
+		974C5673147BF07600DDFC77 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				974C5674147BF0C300DDFC77 /* Credits.rtf */,
+				974C5676147BF0C300DDFC77 /* LoadFailure.html */,
+				97E3356E147A938A008147AD /* PrimaMateria-Info.plist */,
+				97E3365C147AAE5D008147AD /* PrimaMateria.entitlements */,
+				97E33604147AA7C7008147AD /* PrimaMateria.plist */,
+				97E33667147AB701008147AD /* Settings.bundle */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		97E33557147A9389008147AD = {
+			isa = PBXGroup;
+			children = (
+				B8B1C4BF16F8F81500C3CA78 /* CorePlot-CocoaTouch.xcodeproj */,
+				97E3356C147A938A008147AD /* PrimaMateria */,
+				97E33565147A938A008147AD /* Frameworks */,
+				97E33563147A938A008147AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		97E33563147A938A008147AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				97E33562147A938A008147AD /* PrimaMateria.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		97E33565147A938A008147AD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B826ED20191D59EF0038C532 /* Accelerate.framework */,
+				97E3356A147A938A008147AD /* CoreGraphics.framework */,
+				97E33664147AB292008147AD /* CoreText.framework */,
+				97E33568147A938A008147AD /* Foundation.framework */,
+				97E3365A147AADB8008147AD /* QuartzCore.framework */,
+				97E33566147A938A008147AD /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		97E3356C147A938A008147AD /* PrimaMateria */ = {
+			isa = PBXGroup;
+			children = (
+				97E33661147AB045008147AD /* PrimaMateria.h */,
+				97E3358E147A9467008147AD /* Classes */,
+				97E33666147AB338008147AD /* Other Sources */,
+				97E3359A147A9486008147AD /* Resources */,
+			);
+			path = PrimaMateria;
+			sourceTree = "<group>";
+		};
+		97E3358E147A9467008147AD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				974C5672147BEFA400DDFC77 /* 3rd Party */,
+				974C5659147BEA5100DDFC77 /* Controls */,
+				9738257D147AE3B600AEA344 /* Misc */,
+				97E335AA147A996A008147AD /* View Controllers */,
+				9738259F147AEE6A00AEA344 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		97E3359A147A9486008147AD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */,
+				974C567A147BF0E000DDFC77 /* ElementTipHelp */,
+				9746B1E81492503600A0DC96 /* PrimaMateriaHelp */,
+				974C567C147BF0E000DDFC77 /* SupportingFiles */,
+				97E335AB147A9A63008147AD /* Images */,
+				974C5673147BF07600DDFC77 /* Misc */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		97E335AA147A996A008147AD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9777CA9B147D886B00C33ABB /* XTRAtomicStructureViewController.h */,
+				9777CA9C147D886B00C33ABB /* XTRAtomicStructureViewController.m */,
+				979E8D2D147C09850063CD5E /* XTRElementBalloonViewController.h */,
+				979E8D2E147C09850063CD5E /* XTRElementBalloonViewController.m */,
+				97E3366C147ABC79008147AD /* XTRElementInspectorViewController.h */,
+				97E3366D147ABC79008147AD /* XTRElementInspectorViewController.m */,
+				97E33594147A9468008147AD /* XTRElementListViewController.h */,
+				97E33595147A9468008147AD /* XTRElementListViewController.m */,
+				9BBC4AEF147D9CD600FBC7DA /* XTRElementPropertiesViewController.h */,
+				9BBC4AF0147D9CD600FBC7DA /* XTRElementPropertiesViewController.m */,
+				971B187414855AD300333B91 /* XTRGeneralInfoViewController.h */,
+				971B187514855AD300333B91 /* XTRGeneralInfoViewController.m */,
+				9770C5DC147C2AC300A5D29B /* XTRGraphChoiceViewController.h */,
+				9770C5DD147C2AC300A5D29B /* XTRGraphChoiceViewController.m */,
+				97E335A3147A964E008147AD /* XTRGraphViewController.h */,
+				97E335A4147A964E008147AD /* XTRGraphViewController.m */,
+				974C5680147BFC0900DDFC77 /* XTRHelpBalloonViewController.h */,
+				974C5681147BFC0A00DDFC77 /* XTRHelpBalloonViewController.m */,
+				97E335D0147A9CCA008147AD /* XTRHelpViewController.h */,
+				97E335D1147A9CCA008147AD /* XTRHelpViewController.m */,
+				97E3366F147AC4DA008147AD /* XTRMainViewController.h */,
+				97E33670147AC4DB008147AD /* XTRMainViewController.m */,
+				979E8D30147C19850063CD5E /* XTRMolecularCalculatorViewController.h */,
+				979E8D31147C19860063CD5E /* XTRMolecularCalculatorViewController.mm */,
+				970EB1FF1485486E002E792F /* XTRNuclidesIsotopesViewController.h */,
+				970EB2001485486E002E792F /* XTRNuclidesIsotopesViewController.m */,
+				97E33592147A9468008147AD /* XTRPeriodicTableViewController.h */,
+				97E33593147A9468008147AD /* XTRPeriodicTableViewController.m */,
+				97E335A5147A964E008147AD /* XTRPreferencesViewController.h */,
+				97E335A6147A964E008147AD /* XTRPreferencesViewController.m */,
+				971B18711485531000333B91 /* XTRSpectrumViewController.h */,
+				971B18721485531000333B91 /* XTRSpectrumViewController.m */,
+				9738259C147AE85500AEA344 /* XTRSplashViewController.h */,
+				9738259D147AE85500AEA344 /* XTRSplashViewController.m */,
+				972B4CB91486C7AA00C627D7 /* XTRSwapableViewController.h */,
+				972B4CBA1486C7AA00C627D7 /* XTRSwapableViewController.m */,
+				971B187614855AD300333B91 /* XTRWikipediaViewController.h */,
+				971B187714855AD300333B91 /* XTRWikipediaViewController.m */,
+				B826ED29191FF5090038C532 /* XTRColorPickerViewController.h */,
+				B826ED2A191FF5090038C532 /* XTRColorPickerViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		97E335AB147A9A63008147AD /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				97E335BB147A9B29008147AD /* AscendingArrow.png */,
+				97E335BC147A9B29008147AD /* continuum.gif */,
+				97E335DB147AA16D008147AD /* Default-Landscape~ipad.png */,
+				97E335D9147AA15C008147AD /* Default-Portrait~ipad.png */,
+				97E335C1147A9B29008147AD /* DescendingArrow.png */,
+				97E335D5147AA0F5008147AD /* icon.png */,
+				97E335DD147AA1CE008147AD /* iTunesArtwork */,
+				97E335C2147A9B29008147AD /* SplashImage.png */,
+				97E335B9147A9B29008147AD /* Tab01-Icon.png */,
+				97E335BA147A9B29008147AD /* Tab02-Icon.png */,
+				97E335B6147A9B29008147AD /* Tab03-Icon.png */,
+				97E335B7147A9B29008147AD /* Tab04-Icon.png */,
+				97E335D3147A9DD5008147AD /* Tab05-Icon.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		97E33666147AB338008147AD /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				97E3358F147A9468008147AD /* main.m */,
+				97E33574147A938A008147AD /* PrimaMateria-Prefix.pch */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B8B1C4C016F8F81500C3CA78 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B8B1C4C616F8F81500C3CA78 /* libCorePlot-CocoaTouch.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		97E33561147A938A008147AD /* PrimaMateria */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 97E3358B147A938A008147AD /* Build configuration list for PBXNativeTarget "PrimaMateria" */;
+			buildPhases = (
+				97E3355E147A938A008147AD /* Sources */,
+				97E3355F147A938A008147AD /* Frameworks */,
+				97E33560147A938A008147AD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B8B1C4CB16F8F9CB00C3CA78 /* PBXTargetDependency */,
+			);
+			name = PrimaMateria;
+			productName = PrimaMateria;
+			productReference = 97E33562147A938A008147AD /* PrimaMateria.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		97E33559147A9389008147AD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = xTrensa;
+			};
+			buildConfigurationList = 97E3355C147A9389008147AD /* Build configuration list for PBXProject "PrimaMateria" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 97E33557147A9389008147AD;
+			productRefGroup = 97E33563147A938A008147AD /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B8B1C4C016F8F81500C3CA78 /* Products */;
+					ProjectRef = B8B1C4BF16F8F81500C3CA78 /* CorePlot-CocoaTouch.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				97E33561147A938A008147AD /* PrimaMateria */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B8B1C4C616F8F81500C3CA78 /* libCorePlot-CocoaTouch.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libCorePlot-CocoaTouch.a";
+			remoteRef = B8B1C4C516F8F81500C3CA78 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		97E33560147A938A008147AD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97E335C3147A9B29008147AD /* Tab03-Icon.png in Resources */,
+				97E335C4147A9B29008147AD /* Tab04-Icon.png in Resources */,
+				97E335C6147A9B29008147AD /* Tab01-Icon.png in Resources */,
+				97E335C7147A9B29008147AD /* Tab02-Icon.png in Resources */,
+				97E335C8147A9B29008147AD /* AscendingArrow.png in Resources */,
+				97E335C9147A9B29008147AD /* continuum.gif in Resources */,
+				97E335CE147A9B29008147AD /* DescendingArrow.png in Resources */,
+				97E335CF147A9B29008147AD /* SplashImage.png in Resources */,
+				97E335D4147A9DD5008147AD /* Tab05-Icon.png in Resources */,
+				97E335D6147AA0F5008147AD /* icon.png in Resources */,
+				97E335DA147AA15C008147AD /* Default-Portrait~ipad.png in Resources */,
+				97E335DC147AA16D008147AD /* Default-Landscape~ipad.png in Resources */,
+				97E335DE147AA1CE008147AD /* iTunesArtwork in Resources */,
+				97E33605147AA7C7008147AD /* PrimaMateria.plist in Resources */,
+				97E33668147AB701008147AD /* Settings.bundle in Resources */,
+				974C5677147BF0C300DDFC77 /* Credits.rtf in Resources */,
+				974C5679147BF0C300DDFC77 /* LoadFailure.html in Resources */,
+				974C567D147BF0E000DDFC77 /* ElementTipHelp in Resources */,
+				974C567F147BF0E000DDFC77 /* SupportingFiles in Resources */,
+				9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */,
+				9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		97E3355E147A938A008147AD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				97E33596147A9468008147AD /* main.m in Sources */,
+				97E33597147A9468008147AD /* XTRAppDelegate.m in Sources */,
+				97E33598147A9468008147AD /* XTRPeriodicTableViewController.m in Sources */,
+				97E33599147A9468008147AD /* XTRElementListViewController.m in Sources */,
+				97E335A7147A964E008147AD /* XTRGraphViewController.m in Sources */,
+				97E335A8147A964E008147AD /* XTRPreferencesViewController.m in Sources */,
+				97E335D2147A9CCA008147AD /* XTRHelpViewController.m in Sources */,
+				97E33662147AB045008147AD /* Defines.m in Sources */,
+				B826ED2B191FF5090038C532 /* XTRColorPickerViewController.m in Sources */,
+				97E33663147AB045008147AD /* XTRApplication.m in Sources */,
+				97E3366E147ABC79008147AD /* XTRElementInspectorViewController.m in Sources */,
+				97E33671147AC4DC008147AD /* XTRMainViewController.m in Sources */,
+				9738258E147AE40F00AEA344 /* XTRCategories.m in Sources */,
+				9738258F147AE40F00AEA344 /* XTRColorFactory.m in Sources */,
+				97382590147AE40F00AEA344 /* XTRDataSource.m in Sources */,
+				97382591147AE40F00AEA344 /* XTRElement.m in Sources */,
+				97382592147AE40F00AEA344 /* XTRVersionChecker.m in Sources */,
+				97382593147AE40F00AEA344 /* MolecularCalculator.mm in Sources */,
+				9738259A147AE7E100AEA344 /* UIColor-Expanded.m in Sources */,
+				9738259B147AE7E100AEA344 /* UIColor-HSVAdditions.m in Sources */,
+				9738259E147AE85500AEA344 /* XTRSplashViewController.m in Sources */,
+				973825A4147AEE8800AEA344 /* XTRCornerImageView.m in Sources */,
+				973825A5147AEE8800AEA344 /* XTRShadowView.m in Sources */,
+				973825B3147BDEC100AEA344 /* XTRPropertiesStore.m in Sources */,
+				974C565B147BEA6500DDFC77 /* ElementButton.m in Sources */,
+				974C566B147BEAA900DDFC77 /* DividerLabel.m in Sources */,
+				974C566C147BEAA900DDFC77 /* DynoTableCell.m in Sources */,
+				974C566D147BEAA900DDFC77 /* DynoTableHeaderButton.m in Sources */,
+				974C566E147BEAA900DDFC77 /* DynoTableLabel.m in Sources */,
+				974C566F147BEAA900DDFC77 /* GeneralButton.m in Sources */,
+				974C5670147BEAA900DDFC77 /* HelpButton.m in Sources */,
+				974C5682147BFC0B00DDFC77 /* XTRHelpBalloonViewController.m in Sources */,
+				979E8D2C147C04C30063CD5E /* PTColorAlertView.m in Sources */,
+				979E8D2F147C09850063CD5E /* XTRElementBalloonViewController.m in Sources */,
+				979E8D32147C19870063CD5E /* XTRMolecularCalculatorViewController.mm in Sources */,
+				9770C5DE147C2AC300A5D29B /* XTRGraphChoiceViewController.m in Sources */,
+				9777CA9D147D886B00C33ABB /* XTRAtomicStructureViewController.m in Sources */,
+				9BBC4AF1147D9CD600FBC7DA /* XTRElementPropertiesViewController.m in Sources */,
+				970EB2011485486E002E792F /* XTRNuclidesIsotopesViewController.m in Sources */,
+				971B18731485531000333B91 /* XTRSpectrumViewController.m in Sources */,
+				971B187814855AD300333B91 /* XTRGeneralInfoViewController.m in Sources */,
+				971B187914855AD300333B91 /* XTRWikipediaViewController.m in Sources */,
+				971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */,
+				972B4CBB1486C7AB00C627D7 /* XTRSwapableViewController.m in Sources */,
+				974BAADC148EBC0A0020F55D /* ElementInspectorSeque.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B8B1C4CB16F8F9CB00C3CA78 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "CorePlot-CocoaTouch";
+			targetProxy = B8B1C4CA16F8F9CB00C3CA78 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		97E33589147A938A008147AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (4K5F63324P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jerry Porter (4K5F63324P)";
+				COPY_PHASE_STRIP = YES;
+				CORE_PLOT = CorePlot_0.9;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OBJROOT = "$(HOME)/Developer/Objects";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "E4224257-871E-4520-A971-02E0606C1E1B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E4224257-871E-4520-A971-02E0606C1E1B";
+				SDKROOT = iphoneos;
+				SYMROOT = "$(HOME)/Developer/Build";
+				TARGETED_DEVICE_FAMILY = 2;
+				USER_HEADER_SEARCH_PATHS = "$HOME/Developer/Source/iOS/Other/PrimaMateria/CorePlot/framework/**";
+				VALID_ARCHS = "armv6 armv7 i386";
+			};
+			name = Debug;
+		};
+		97E3358A147A938A008147AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (4K5F63324P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jerry Porter (4K5F63324P)";
+				COPY_PHASE_STRIP = YES;
+				CORE_PLOT = CorePlot_0.9;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				GCC_WARN_ABOUT_MISSING_NEWLINE = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				OBJROOT = "$(HOME)/Developer/Objects";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				OTHER_LDFLAGS = "-ObjC";
+				PROVISIONING_PROFILE = "E4224257-871E-4520-A971-02E0606C1E1B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E4224257-871E-4520-A971-02E0606C1E1B";
+				SDKROOT = iphoneos;
+				SYMROOT = "$(HOME)/Developer/Build";
+				TARGETED_DEVICE_FAMILY = 2;
+				USER_HEADER_SEARCH_PATHS = "$HOME/Developer/Source/iOS/Other/PrimaMateria/CorePlot/framework/**";
+				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv6 armv7 i386";
+			};
+			name = Release;
+		};
+		97E3358C147A938A008147AD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "PrimaMateria/PrimaMateria-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "$(HOME)/Developer/Build";
+				USER_HEADER_SEARCH_PATHS = "$HOME/Developer/Source/iOS/Other/PrimaMateria/CorePlot/framework/**";
+				VALID_ARCHS = "armv6 armv7 i386";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		97E3358D147A938A008147AD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
+				HEADER_SEARCH_PATHS = "";
+				INFOPLIST_FILE = "PrimaMateria/PrimaMateria-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				LIBRARY_SEARCH_PATHS = "";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SYMROOT = "$(HOME)/Developer/Build";
+				USER_HEADER_SEARCH_PATHS = "$HOME/Developer/Source/iOS/Other/PrimaMateria/CorePlot/framework/**";
+				VALID_ARCHS = "armv6 armv7 i386";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97E3355C147A9389008147AD /* Build configuration list for PBXProject "PrimaMateria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97E33589147A938A008147AD /* Debug */,
+				97E3358A147A938A008147AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		97E3358B147A938A008147AD /* Build configuration list for PBXNativeTarget "PrimaMateria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97E3358C147A938A008147AD /* Debug */,
+				97E3358D147A938A008147AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 97E33559147A9389008147AD /* Project object */;
+}

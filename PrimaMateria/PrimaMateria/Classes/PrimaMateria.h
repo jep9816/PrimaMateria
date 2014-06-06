@@ -1,0 +1,53 @@
+//
+//  PrimaMateria.h
+//  PrimaMateria
+//
+//  Created by Jerry Porter on 02/04/2010.
+//  Copyright 2014 xTrensa. All rights reserved.
+//
+
+#import "CorePlot-CocoaTouch.h"
+#import "Defines.h"
+//
+#import "GeneralButton.h"
+#import "XTRSwapableViewController.h"
+#import "XTRAtomicStructureViewController.h"
+#import "DividerLabel.h"
+#import "XTRApplication.h"
+#import "XTRColorFactory.h"
+#import "XTRCornerImageView.h"
+#import "XTRElement.h"
+#import "XTRDataSource.h"
+#import "XTRCategories.h"
+#import "XTRPropertiesStore.h"
+#import "XTRShadowView.h"
+#import "DynoTableCell.h"
+#import "DynoTableHeaderButton.h"
+#import "DynoTableLabel.h"
+#import "XTRColorPickerViewController.h"
+#import "XTRVersionChecker.h"
+#import "XTRElementBalloonViewController.h"
+#import "ElementButton.h"
+#import "XTRElementInspectorViewController.h"
+#import "XTRElementListViewController.h"
+#import "XTRElementPropertiesViewController.h"
+#import "XTRGraphViewController.h"
+#import "XTRGraphChoiceViewController.h"
+#import "XTRGeneralInfoViewController.h"
+#import "XTRHelpBalloonViewController.h"
+#import "HelpButton.h"
+#import "XTRHelpViewController.h"
+#import "MBProgressHUD.h"
+#import "XTRMainViewController.h"
+#import "XTRMolecularCalculatorViewController.h"
+#import "XTRNuclidesIsotopesViewController.h"
+#import "PTColorAlertView.h"
+#import "XTRPeriodicTableViewController.h"
+#import "XTRPreferencesViewController.h"
+#import "XTRAppDelegate.h"
+#import "XTRSpectrumViewController.h"
+#import "XTRSplashViewController.h"
+#import "UIColor-Expanded.h"
+#import "UIColor-HSVAdditions.h"
+#import "XTRWikipediaViewController.h"
+#import "ElementInspectorSeque.h"
