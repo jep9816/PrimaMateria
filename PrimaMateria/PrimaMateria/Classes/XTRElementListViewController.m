@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -36,7 +36,7 @@
 
 - (DynoTableLabel *) tableCellLabelWithXPos: (float) xPos YPos: (float) yPos width: (float) aWidth height: (float) aHeight andElement: (XTRElement *) anElement {
     DynoTableLabel *label = [[DynoTableLabel alloc] initWithFrame: CGRectMake(xPos, yPos, aWidth, aHeight) andColor:anElement.seriesColor];
-    label.font = [UIFont fontWithName: @"Helvetica Neue" size:16.0];
+    label.font = [UIFont systemFontOfSize:16.0];
     label.textColor = anElement.standardConditionColor;
     label.backgroundColor = anElement.seriesColor;
     label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
@@ -53,7 +53,7 @@
 
 - (void) addPropertiesToSymbolCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [[DynoTableLabel alloc] initWithFrame: CGRectMake(86.0, 0.0, 95.0, 42.0f) andColor:element.seriesColor];
-    label.font = [UIFont fontWithName: @"Helvetica Neue" size:26.0];
+    label.font = [UIFont systemFontOfSize:26.0];
     label.textColor = element.standardConditionColor;
     label.backgroundColor = element.seriesColor;
     label.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleHeight;
@@ -134,7 +134,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.tableView.backgroundColor = [UIColor blackColor];
+    self.tableView.backgroundColor = UIColor.blackColor;
     self.tableView.rowHeight = 34.0f;
     [self.view addSubview: self.tableView];
 }
@@ -155,7 +155,7 @@
 #pragma mark - UITableView DataSource Methods
 
 - (UITableViewCell *) tableView: (UITableView *) aTableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
-    NSInteger row = [indexPath row];
+    NSInteger row = indexPath.row;
     NSString *MyIdentifier = [NSString stringWithFormat: @"Column %i", row];
     XTRElement *element = [[XTRDataSource sharedInstance] sortedElementAtIndex: row];
     DynoTableCell *cell = (DynoTableCell *)[aTableView dequeueReusableCellWithIdentifier: MyIdentifier];

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 3/5/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -23,13 +23,13 @@
 - (UILabel *) tableCellLabelWithXPos: (float) xPos YPos: (float) yPos width: (float) aWidth height: (float) aHeight property: (NSObject *) aProperty columnPosition: (int) aColumnPosition modulus: (int) aModulus forCell: (DynoTableCell *) cell {
     UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(xPos, yPos, aWidth, aHeight)];
     if (aModulus == 0)
-        label.backgroundColor = [UIColor whiteColor];
+        label.backgroundColor = UIColor.whiteColor;
     else
         label.backgroundColor = [UIColor colorWithHue: 219 / HSB_CONSTANT saturation: 0.1f brightness: 1.0f alpha: 1.0f];
     [cell addColumn: aColumnPosition];
-    label.font = [UIFont fontWithName: @"Helvetica Neue" size:20.0];
+    label.font = [UIFont systemFontOfSize:20.0];
     label.textAlignment =  NSTextAlignmentCenter;
-    label.textColor = [UIColor blackColor];
+    label.textColor = UIColor.blackColor;
     label.text = [NSString stringWithFormat: @" %@", aProperty];
     [cell.contentView addSubview: label];
     return label;
@@ -43,13 +43,13 @@
             [tableView removeFromSuperview];
             tableView = nil;
         }
-        tableView = [[UITableView alloc] initWithFrame:[[self swapView] frame] style: UITableViewStylePlain];
+        tableView = [[UITableView alloc] initWithFrame:self.swapView.frame style: UITableViewStylePlain];
         tableView.alwaysBounceVertical = NO;
         tableView.alwaysBounceHorizontal = NO;
         tableView.dataSource = self;
         tableView.delegate = self;
         tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        tableView.backgroundColor = [UIColor blackColor];
+        tableView.backgroundColor = UIColor.blackColor;
         self.tableView.rowHeight = 34.0f;
         [self.view addSubview: tableView];
         nuclidesAndIsotopesArray = self.element.nuclidesAndIsotopes;
@@ -60,7 +60,7 @@
 #pragma mark - UITableView DataSource Methods
 
 - (UITableViewCell *) tableView: (UITableView *) aTableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
-    NSInteger row = [indexPath row];
+    NSInteger row = indexPath.row;
     NSString *MyIdentifier = [NSString stringWithFormat: @"Column %i", row];
     DynoTableCell *cell = (DynoTableCell *)[aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
     if (cell == nil) {
@@ -94,6 +94,10 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     [swapView removeFromSuperview];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - Memory Management Methods

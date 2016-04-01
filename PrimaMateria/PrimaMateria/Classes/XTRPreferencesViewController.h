@@ -3,14 +3,13 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 @class XTRColorPickerViewController;
 
-@interface XTRPreferencesViewController : UIViewController </*UIAlertViewDelegate, */UIPopoverControllerDelegate>
+@interface XTRPreferencesViewController : UIViewController <UIPopoverPresentationControllerDelegate>
 
-@property (strong, nonatomic) UIPopoverController *popoverController;
 @property (nonatomic, strong) IBOutlet UILabel *appNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *cpyRightLabel;
 @property (nonatomic, strong) IBOutlet UILabel *seriesActinideLabel;

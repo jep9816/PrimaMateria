@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -16,7 +16,6 @@
 @end
 
 @implementation XTRPeriodicTableViewController
-@synthesize popoverController;
 @synthesize swapView;
 @synthesize molecularCalculatorViewController;
 @synthesize molecularCalculatorState;
@@ -24,15 +23,14 @@
 
 #pragma mark Private Methods
 
-- (void)dismissPopover: (NSNotification *)aNotification {
-    if(self.popoverController)
-        [self.popoverController dismissPopoverAnimated: YES];
-}
-
 - (void) showPopupForButton: (id) sender {
     [XTRPropertiesStore storeViewTitle: self.title];
-    [XTRPropertiesStore storeAtomicNumber:@([sender tag])];    
-    [self.popoverController presentPopoverFromRect:[sender frame] inView: self.view permittedArrowDirections: UIPopoverArrowDirectionAny animated: YES];
+    [XTRPropertiesStore storeAtomicNumber: @([sender tag])];
+
+    CGRect aRect = CGRectMake(10, 10, 15, 15);
+    elementBalloonViewController.popoverPresentationController.sourceRect = aRect;
+    elementBalloonViewController.popoverPresentationController.sourceView = sender;
+    [self presentViewController:elementBalloonViewController animated:YES completion:nil];
 }
 
 - (void) showElementPanelForElementAtIndex: (int) anIndex {
@@ -42,27 +40,21 @@
 }
 
 - (void) setupPopUp {
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName: MAIN_STORY_BOARD bundle:nil];
+    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
 	elementBalloonViewController = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRElementBalloonViewController class])];
     CGSize contentSize = CGSizeMake(320.0f, 206.0f);
     elementBalloonViewController.preferredContentSize = contentSize;
-    UIPopoverController *aPopover = [[UIPopoverController alloc] initWithContentViewController: elementBalloonViewController];
-    aPopover.contentViewController.view.backgroundColor = UIColor.whiteColor;
-
-    aPopover.popoverContentSize = contentSize;
-    [aPopover setDelegate: self];
-    self.popoverController = aPopover;
-    elementBalloonViewController.localPopoverController = aPopover;
+    elementBalloonViewController.modalPresentationStyle = UIModalPresentationPopover;
 }
 
 - (void) toggleMolecularCalculatorState: (BOOL) aFlag {
     if (!aFlag) {
         molecularCalculatorState = NO;
-        [[molecularCalculatorViewController view] removeFromSuperview];
+        [molecularCalculatorViewController.view removeFromSuperview];
         [molecularCalculatorViewController viewWillDisappear: YES];
     } else {
         molecularCalculatorState = YES;
-        [self.view addSubview:[molecularCalculatorViewController view]];
+        [self.view addSubview:molecularCalculatorViewController.view];
     }
 }
 
@@ -77,44 +69,44 @@
         XTRElement *element = [[XTRDataSource sharedInstance] elementAtIndex:[sender tag]];
         [self.molecularCalculatorViewController setElement: element];
     } else {
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        BOOL defaultState = [userDefaults boolForKey: ELEMENT_BUBBLE_DEFAULT];
-        if (defaultState)
+        BOOL defaultState = [XTRPropertiesStore retreiveElementBubblesState];
+        
+        if (defaultState) {
             [self showPopupForButton: sender];
-        else
+        } else {
             [self showElementPanelForElementAtIndex:[sender tag]];
+        }
     }
 }
 
-#pragma mark - UIPopoverController Delegate Methods
+#pragma mark - Notification Methods
 
-- (BOOL) popoverControllerShouldDismissPopover: (UIPopoverController *) popoverController {
-    return YES;
-}
-
-- (void) popoverControllerDidDismissPopover: (UIPopoverController *) popoverController {
+-(void)closeBubble: (NSNotification *)aNotification {
+    [self dismissViewControllerAnimated: YES completion: nil];
 }
 
 #pragma mark - View Management Methods
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName: MAIN_STORY_BOARD bundle:nil];
+    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
 	molecularCalculatorViewController = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRMolecularCalculatorViewController class])];
-    [molecularCalculatorViewController view];
     molecularCalculatorViewController.view.frame = self.swapView.frame;
     [swapView removeFromSuperview];
     [self setupPopUp];
     [self toggleMolecularCalculatorState: NO];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(closeBubble:) name: NOTIFICATION_INSPECTOR_DISMISSED object: nil];
+
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation {
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - Memory Management Methods
 
 - (void) dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver: self];
     swapView = nil;
 }
 

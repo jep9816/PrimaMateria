@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -21,6 +21,21 @@ enum chars {
     k9Superscript = 57
 };
 
+@implementation UIImage (Extentions)
++ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size {
+    CGRect rect = CGRectMake(0, 0, size.width, size.height);
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, [color CGColor]);
+    CGContextFillRect(context, rect);
+    
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return img;
+}
+@end
+
 @implementation XTRElement (Presentation)
 
 - (UIImage *) _unknownImage {
@@ -30,7 +45,7 @@ enum chars {
 }
 
 - (NSString *) pathForGeneralInfoDoc {
-    return [[NSBundle bundleForClass:[self class]] pathForResource:[self symbol] ofType: @"rtf" inDirectory: SUPPORTING_FILES];
+    return [[NSBundle bundleForClass:[self class]] pathForResource:self.symbol ofType: @"rtf" inDirectory: SUPPORTING_FILES];
 }
 
 - (NSString *) _attributedStringForArray: (NSArray *) anArray {
@@ -39,9 +54,9 @@ enum chars {
     else {
         NSMutableString *attributedString = [[NSMutableString alloc] initWithString: STRING_EMPTY];
         for (NSDictionary *aDictionary in anArray) {
-            NSArray *allKeys = [aDictionary allKeys];
-            NSArray *allValues = [aDictionary allValues];
-            NSInteger count = [allKeys count];
+            NSArray *allKeys = aDictionary.allKeys;
+            NSArray *allValues = aDictionary.allValues;
+            NSInteger count = allKeys.count;
             for (NSInteger i = 0; i < count; i++) {
                 NSString *aKey = allKeys[i];
                 NSString *aValue = allValues[i];
@@ -255,24 +270,24 @@ enum chars {
 }
 
 - (UIImage *) shellModelImage {
-    NSString *aPath = [[NSBundle bundleForClass:[self class]] pathForResource:[self symbol] ofType: @"png" inDirectory: SUPPORTING_FILES];
+    NSString *aPath = [[NSBundle bundleForClass:[self class]] pathForResource:self.symbol ofType: @"png" inDirectory: SUPPORTING_FILES];
     UIImage *image = [[UIImage alloc] initWithContentsOfFile: aPath];
     return (aPath != nil) ? image : [self _unknownImage];
 }
 
 - (NSNumber *) hardnessScaleBrinellScaled {
     NSNumber *aValue = self.hardnessScaleBrinell;
-    return @([aValue floatValue] / 100);
+    return @(aValue.floatValue / 100);
 }
 
 - (NSNumber *) hardnessScaleVickersScaled {
     NSNumber *aValue = self.hardnessScaleVickers;
-    return @([aValue floatValue] / 100);
+    return @(aValue.floatValue / 100);
 }
 
 - (NSNumber *) coefficientOfLinealThermalExpansionScaled {
     NSNumber *aValue = self.coefficientOfLinealThermalExpansion;
-    return @([aValue floatValue] * 100000);
+    return @(aValue.floatValue * 100000);
 }
 
 - (NSString *) fillingOrbital {
@@ -296,11 +311,11 @@ enum chars {
 }
 
 - (NSString *)periodString {
-    return [NSString stringWithFormat: @"%d ", [self.period intValue]];
+    return [NSString stringWithFormat: @"%d ", (self.period).intValue];
 }
 
 - (NSString *)groupString {
-    return [NSString stringWithFormat: @"%d ", [self.group intValue]];
+    return [NSString stringWithFormat: @"%d ", (self.group).intValue];
 }
 
 - (NSString *)seriesString {
@@ -334,27 +349,27 @@ enum chars {
 }
 
 - (NSComparisonResult) atomicNumberComparison: (XTRElement *) anElement {
-    return [self _compareInt:[self.atomicNumber intValue] withInt:[anElement.atomicNumber intValue]];
+    return [self _compareInt:(self.atomicNumber).intValue withInt:(anElement.atomicNumber).intValue];
 }
 
 - (NSComparisonResult) atomicMassComparison: (XTRElement *) anElement {
-    return [self _compareFloat:[self.atomicMass floatValue] withFloat:[anElement.atomicMass floatValue]];
+    return [self _compareFloat:(self.atomicMass).floatValue withFloat:(anElement.atomicMass).floatValue];
 }
 
 - (NSComparisonResult) boilingPointComparison: (XTRElement *) anElement {
-    return [self _compareFloat:[self.boilingPoint floatValue] withFloat:[anElement.boilingPoint floatValue]];
+    return [self _compareFloat:(self.boilingPoint).floatValue withFloat:(anElement.boilingPoint).floatValue];
 }
 
 - (NSComparisonResult) densityComparison: (XTRElement *) anElement {
-    return [self _compareFloat:[self.density floatValue] withFloat:[anElement.density floatValue]];
+    return [self _compareFloat:(self.density).floatValue withFloat:(anElement.density).floatValue];
 }
 
 - (NSComparisonResult) groupComparison: (XTRElement *) anElement {
-    return [self _compareInt:[self.group intValue] withInt:[anElement.group intValue]];
+    return [self _compareInt:(self.group).intValue withInt:(anElement.group).intValue];
 }
 
 - (NSComparisonResult) meltingPointComparison: (XTRElement *) anElement {
-    return [self _compareFloat:[self.meltingPoint floatValue] withFloat:[anElement.meltingPoint floatValue]];
+    return [self _compareFloat:(self.meltingPoint).floatValue withFloat:(anElement.meltingPoint).floatValue];
 }
 
 - (NSComparisonResult) nameComparison: (XTRElement *) anElement {
@@ -362,7 +377,7 @@ enum chars {
 }
 
 - (NSComparisonResult) periodComparison: (XTRElement *) anElement {
-    return [self _compareInt:[self.period intValue] withInt:[anElement.period intValue]];
+    return [self _compareInt:(self.period).intValue withInt:(anElement.period).intValue];
 }
 
 - (NSComparisonResult) seriesComparison: (XTRElement *) anElement {

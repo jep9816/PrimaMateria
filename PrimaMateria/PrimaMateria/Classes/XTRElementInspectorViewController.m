@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -47,20 +47,20 @@ SwapViews;
 - (void) assignNavigationHints {
     NSInteger atomicNumber = self.element.atomicNumber.integerValue;
     UILabel *currentLabel = (UILabel *)(self.pageItemView.subviews)[atomicNumber + 1];
-    currentLabel.font = [UIFont fontWithName: @"Helvetica Neue" size:12.0];
-    currentLabel.textColor = [UIColor whiteColor];
+    currentLabel.font = [UIFont systemFontOfSize: 12.0];
+    currentLabel.textColor = UIColor.whiteColor;
     
-    NSInteger nextAtomicNumber = [self.element.atomicNumber intValue] + 1;
+    NSInteger nextAtomicNumber = (self.element.atomicNumber).intValue + 1;
     if (nextAtomicNumber >[XTRDataSource sharedInstance].elementCount)
         nextAtomicNumber = 1;
     if(nextAtomicNumber - 1 < [XTRDataSource sharedInstance].elementCount) {
         UILabel *localNextLabel = (UILabel *)(self.pageItemView.subviews)[nextAtomicNumber + 1];
-        localNextLabel.font = [UIFont fontWithName: @"Helvetica Neue" size:10.0];
-        localNextLabel.textColor = [UIColor darkGrayColor];
+        localNextLabel.font = [UIFont systemFontOfSize:10.0];
+        localNextLabel.textColor = UIColor.darkGrayColor;
     }
     
     XTRElement *nextElement = [[XTRDataSource sharedInstance] elementAtIndex:nextAtomicNumber -1];
-    NSString *nextTitle = [NSString stringWithFormat: @"%@ ->", nextElement.name];
+    NSString *nextTitle = [NSString stringWithFormat: @"%@ ▶︎ ", nextElement.name];
     [self.nextButton setTitle:nextTitle forState: UIControlStateNormal];
     [self.nextButton setTitle:nextTitle forState: UIControlStateHighlighted];
     [self.nextButton setTitle:nextTitle forState: UIControlStateSelected];
@@ -72,12 +72,12 @@ SwapViews;
         previousAtomicNumber = [XTRDataSource sharedInstance].elementCount;
     if(previousAtomicNumber > 0) {
         UILabel *localPreviousLabel = (UILabel *)(self.pageItemView.subviews)[previousAtomicNumber + 1];
-        localPreviousLabel.font = [UIFont fontWithName: @"Helvetica Neue" size:10.0];
-        localPreviousLabel.textColor = [UIColor darkGrayColor];
+        localPreviousLabel.font = [UIFont systemFontOfSize:10.0];
+        localPreviousLabel.textColor = UIColor.darkGrayColor;
     }
     
     XTRElement *previousElement = [[XTRDataSource sharedInstance] elementAtIndex:previousAtomicNumber -1];
-    NSString *previousTitle = [NSString stringWithFormat: @"<- %@", previousElement.name];
+    NSString *previousTitle = [NSString stringWithFormat: @" ◀︎ %@", previousElement.name];
     [self.previousButton setTitle:previousTitle forState: UIControlStateNormal];
     [self.previousButton setTitle:previousTitle forState: UIControlStateHighlighted];
     [self.previousButton setTitle:previousTitle forState: UIControlStateSelected];
@@ -85,23 +85,22 @@ SwapViews;
 }
 
 - (void) setupPageItemView {
-    CGRect rect = CGRectMake(4, 17, 8, 8);
+    CGRect rect = CGRectMake(4, 30, 8, 8);
     for (int i = 0; i < [XTRDataSource sharedInstance].elementCount; i++) {
         UILabel *label = [[UILabel alloc] initWithFrame: rect];
         label.text = @"●";
         label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont fontWithName: @"Helvetica Neue" size:10.0];
-        label.textColor = [UIColor darkGrayColor];
-        label.backgroundColor = [UIColor clearColor];
+        label.font = [UIFont systemFontOfSize:10.0];
+        label.textColor = UIColor.darkGrayColor;
+        label.backgroundColor = UIColor.clearColor;
         [self.pageItemView addSubview: label];
-        rect = CGRectMake(label.frame.origin.x + 8.6, 17, 8, 8);
+        rect = CGRectMake(label.frame.origin.x + 8.6, 30, 8, 8);
     }
     [self.view bringSubviewToFront: self.pageItemView];
 }
 
 - (void)addChildViewController: (UIViewController *)aViewController {
     [super addChildViewController: aViewController];
-    [aViewController view];
     aViewController.view.frame = self.swapView.frame;
     aViewController.view.bounds = self.swapView.bounds;
     aViewController.view.hidden = YES;
@@ -110,22 +109,22 @@ SwapViews;
 
 - (void)animateForDirection: (NSString *)direction {
     [self setupUI];
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    BOOL defaultState = [userDefaults boolForKey: SHOW_TRANSITIONS_DEFAULT];
+    BOOL defaultState = [XTRPropertiesStore retreiveShowTransitionsState];
+    
     if (defaultState) {
         UIView *currentView = self.view;
-        UIView *theWindow = [currentView superview];
+        UIView *theWindow = currentView.superview;
         
         [currentView removeFromSuperview];
         
         CATransition *animation = [CATransition animation];
-        [animation setDuration:1.0];
-        [animation setType:kCATransitionReveal];
-        [direction isEqualToString: @"Next"] ? [animation setSubtype:kCATransitionFromTop] : [animation setSubtype:kCATransitionFromBottom];
-        [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-        [[theWindow layer] addAnimation:animation forKey:@"SwitchInspectorView"];
+        animation.duration = 1.0;
+        animation.type = kCATransitionReveal;
+        animation.subtype = [direction isEqualToString: @"Next"] ? kCATransitionFromLeft : kCATransitionFromRight;
+        animation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+        [theWindow.layer addAnimation:animation forKey: @"SwitchInspectorView"];
         [theWindow addSubview:currentView];
-        [[theWindow layer] removeAnimationForKey:@"SwitchInspectorView"];
+        [theWindow.layer removeAnimationForKey: @"SwitchInspectorView"];
     }
 }
 
@@ -148,6 +147,7 @@ SwapViews;
 
 - (IBAction) dismiss: (id) sender {
     [self dismissViewControllerAnimated: YES completion: nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName: NOTIFICATION_INSPECTOR_DISMISSED object: nil];
 }
 
 - (IBAction) swapViews: (UISegmentedControl *) sender {
@@ -158,7 +158,7 @@ SwapViews;
 }
 
 - (IBAction) nextElement: (id) sender {
-    NSInteger atomicNumber = [self.element.atomicNumber intValue] + 1;
+    NSInteger atomicNumber = (self.element.atomicNumber).intValue + 1;
     if (atomicNumber >[XTRDataSource sharedInstance].elementCount)
         atomicNumber = 1;
     self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber -1];
@@ -166,7 +166,7 @@ SwapViews;
 }
 
 - (IBAction) previousElement: (id) sender {
-    NSInteger atomicNumber = [self.element.atomicNumber intValue] - 1;
+    NSInteger atomicNumber = (self.element.atomicNumber).intValue - 1;
     if (atomicNumber < 1)
         atomicNumber = [XTRDataSource sharedInstance].elementCount;
     self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber -1];
@@ -176,24 +176,26 @@ SwapViews;
 #pragma mark - View Management Methods
 
 - (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear: animated];
     NSNumber *atomicNumber = [XTRPropertiesStore retreiveAtomicNumber];
     self.barButtonItem.title = [NSString stringWithFormat: @"Back to %@", [XTRPropertiesStore retreiveViewTitle]];
-    self.element = [[XTRDataSource sharedInstance] elementAtIndex:[atomicNumber intValue]];
+    self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber.intValue];
     [self setupUI];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
+    [self dismissViewControllerAnimated: YES completion: nil];
     [super viewWillDisappear: animated];
-    [self.elementBalloonPopoverController dismissPopoverAnimated: YES];
 }
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+
     self.nextButton.titleLabel.textAlignment = NSTextAlignmentRight;
     self.previousButton.titleLabel.textAlignment = NSTextAlignmentLeft;
     [self.swapView removeFromSuperview];
     
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName: MAIN_STORY_BOARD bundle:nil];
+    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
     [self addChildViewController: [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRAtomicStructureViewController class])]];
     [self addChildViewController: [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRElementPropertiesViewController class])]];
     [self addChildViewController: [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRNuclidesIsotopesViewController class])]];
@@ -209,6 +211,10 @@ SwapViews;
     swipePreviousElement.direction = UISwipeGestureRecognizerDirectionLeft;
     [self.view addGestureRecognizer:swipePreviousElement];
     [self setupPageItemView];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - Memory Management Methods

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -22,7 +22,7 @@
     NSDictionary *settings = [NSDictionary dictionaryWithContentsOfFile:[settingsBundle stringByAppendingPathComponent: @"Root.plist"]];
     NSArray *preferences = settings[@"PreferenceSpecifiers"];
 
-    NSMutableDictionary *defaultsToRegister = [[NSMutableDictionary alloc] initWithCapacity:[preferences count]];
+    NSMutableDictionary *defaultsToRegister = [[NSMutableDictionary alloc] initWithCapacity:preferences.count];
     for (NSDictionary *prefSpecification in preferences) {
         NSString *key = prefSpecification[@"Key"];
         if (key) {
@@ -33,13 +33,16 @@
     }
     [[NSUserDefaults standardUserDefaults] registerDefaults: defaultsToRegister];
 }
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
 
-- (id) init {
+- (instancetype) init {
     if (self = [super init]) {
-        [self setStatusBarHidden: YES withAnimation: NO];
-        NSString *directory_url = [[NSUserDefaults standardUserDefaults] stringForKey: SPLASH_SCREEN_DEFAULT];
-        if (!directory_url)
+        NSString *aDefault = [[NSUserDefaults standardUserDefaults] stringForKey: SPLASH_SCREEN_DEFAULT];
+        if (!aDefault) {
             [self registerDefaultsFromSettingsBundle];
+        }
         [XTRDataSource sharedInstance];
     }
     return self;

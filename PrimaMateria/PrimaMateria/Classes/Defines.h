@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
@@ -118,6 +118,7 @@ extern NSString *NOTIFICATION_ELEMENT_HELP_SELECTED;
 extern NSString *NOTIFICATION_GRAPH_SELECTED;
 extern NSString *NOTIFICATION_TABLE_HEADER_SELECTED;
 extern NSString *NOTIFICATION_COLOR_SELECTED;
+extern NSString *NOTIFICATION_INSPECTOR_DISMISSED;
 
 #pragma mark - Series Text
 
@@ -148,6 +149,7 @@ extern NSString *STRING_EMPTY;
 extern NSString *STRING_UNKNOWN;
 extern NSString *SUPPORTING_FILES;
 extern NSString *PERIODIC_VIEW_TITLE;
+extern NSString *VIEW_TITLE_KEY;
 
 #pragma mark - Color Constants
 

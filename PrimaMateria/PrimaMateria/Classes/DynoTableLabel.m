@@ -1,9 +1,9 @@
 //
-// DynoTableCell.m
-// PrimaMateria
+//  DynoTableLabel.m
+//  PrimaMateria
 //
 //  Created by Jerry Porter on 1/5/2011.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -16,7 +16,7 @@
 
 @implementation DynoTableLabel
 
-- (id) initWithFrame: (CGRect) frame andColor: (UIColor *) aColor {
+- (instancetype) initWithFrame: (CGRect) frame andColor: (UIColor *) aColor {
     if (self = [super initWithFrame:frame]) {
         self.backgroundColor = aColor;
         edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5);

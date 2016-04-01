@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -11,7 +11,6 @@
 static XTRDataSource *sharedInstance = nil;
 
 @interface XTRDataSource ()
-@property (strong) NSString *errorString;
 
 - (NSData *) dataForResource: (NSString *) aResourceName type: (NSString *) aType directory: (NSString *) aDirectory;
 - (void) loadElementForSymbol: (NSString *) aSymbol;
@@ -27,16 +26,18 @@ static XTRDataSource *sharedInstance = nil;
 }
 
 - (void) loadElementForSymbol: (NSString *) aSymbol {
-    NSMutableDictionary *tempDict = [NSPropertyListSerialization propertyListFromData:[self dataForResource: aSymbol type: @"plist" directory: SUPPORTING_FILES] mutabilityOption: NSPropertyListMutableContainers format: NULL errorDescription: &_errorString];
-    //NSString *tempString = [NSString stringWithFormat: @"Could not read element property list for symbol: %@", aSymbol];
-    //NSAssert(nil != tempDict, tempString);
+    NSError *error;
+    
+    NSMutableDictionary *tempDict = [NSPropertyListSerialization propertyListWithData:[self dataForResource: aSymbol type: @"plist" directory: SUPPORTING_FILES] options: NSPropertyListMutableContainers format: NULL error: &error];
     XTRElement *element = [[XTRElement allocWithZone:nil] init];
-    [element setElementDictionary: tempDict];
+    element.elementDictionary = tempDict;
     [self.elementList addObject: element];
 }
 
 - (void) loadElementList {
-    NSArray *tempList = [NSPropertyListSerialization propertyListFromData:[self dataForResource: @"ElementList" type: @"plist" directory: SUPPORTING_FILES] mutabilityOption: NSPropertyListMutableContainers format: NULL errorDescription: &_errorString];
+    NSError *error;
+
+    NSArray *tempList = [NSPropertyListSerialization propertyListWithData:[self dataForResource: @"ElementList" type: @"plist" directory: SUPPORTING_FILES] options: NSPropertyListMutableContainers format: NULL error: &error];
     NSAssert(nil != tempList, @"Could not read property list of elements.");
     for (NSString *symbol in tempList)
         [self loadElementForSymbol: symbol];
@@ -61,12 +62,14 @@ static XTRDataSource *sharedInstance = nil;
 
 #pragma mark - Initialization Methods
 
-- (id) init {
+- (instancetype) init {
     if (self = [super init]) {
+        NSError *error = nil;
+        
         self.elementList = [NSMutableArray array];
         self.sortedElementList = [NSMutableArray array];
         self.sortColumns = @[ @"atomicNumber.intValue", @"symbol", @"name", @"atomicMass.floatValue", @"boilingPoint.floatValue", @"meltingPoint.floatValue", @"density.floatValue", @"series", @"period", @"group"];
-        self.graphPropertyList = [NSPropertyListSerialization propertyListFromData:[self dataForResource: @"GraphDefinitions" type: @"plist" directory: SUPPORTING_FILES] mutabilityOption: NSPropertyListMutableContainers format: NULL errorDescription: &_errorString];
+        self.graphPropertyList = [NSPropertyListSerialization propertyListWithData:[self dataForResource: @"GraphDefinitions" type: @"plist" directory: SUPPORTING_FILES] options: NSPropertyListMutableContainers format: NULL error: &error];
         [self loadElementList];
     }
     return self;
@@ -104,7 +107,7 @@ static XTRDataSource *sharedInstance = nil;
 - (XTRElement *) elementForSymbol: (NSString *) symbol {
     XTRElement *element;
     for (element in self.elementList) {
-        if ([[element symbol] isEqualToString: symbol])
+        if ([element.symbol isEqualToString: symbol])
             return element;
     }
     return nil;
@@ -119,7 +122,7 @@ static XTRDataSource *sharedInstance = nil;
 }
 
 - (int) elementCount {
-    return [self.sortedElementList count];
+    return (self.sortedElementList).count;
 }
 
 #pragma mark - Memory Management Methods

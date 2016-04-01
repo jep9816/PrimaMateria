@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -26,7 +26,6 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
 @end
 
 @implementation XTRGraphViewController
-@synthesize popoverController;
 @synthesize hostingView;
 @synthesize barChart;
 @synthesize errorString;
@@ -54,11 +53,11 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     x.minorTicksPerInterval = 10;
     x.majorTickLineStyle = majorTickStyle;
     x.minorTickLineStyle = minorTickStyle;
-    x.majorIntervalLength = CPTDecimalFromString(@"1");
+    x.majorIntervalLength = @1;
     x.majorGridLineStyle = minorTickStyle;
-    x.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0");
+    x.orthogonalPosition = @0;
     x.title = @"Atomic Number";
-    x.titleLocation = CPTDecimalFromFloat([[XTRDataSource sharedInstance] elementCount] / 2);
+    x.titleLocation = @([XTRDataSource sharedInstance].elementCount / 2);
     x.titleOffset = 35.0f;
     
     // Define some custom labels for the data elements
@@ -78,10 +77,10 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
                                     [NSDecimalNumber numberWithInt: 110]];
     NSArray *xAxisLabels = @[ @"1", @"10", @"20", @"30", @"40", @"50", @"60", @"70", @"80", @"90", @"100", @"110"];
     NSUInteger labelLocation = 0;
-    NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:[xAxisLabels count]];
+    NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:xAxisLabels.count];
     for (NSNumber *tickLocation in customTickLocations) {
         CPTAxisLabel *newLabel = [[CPTAxisLabel alloc] initWithText:xAxisLabels[labelLocation++] textStyle: x.labelTextStyle];
-        newLabel.tickLocation = [tickLocation decimalValue];
+        newLabel.tickLocation = tickLocation;
         newLabel.offset = x.labelOffset + x.majorTickLength;
         newLabel.rotation = M_PI / 4;
         [customLabels addObject: newLabel];
@@ -95,13 +94,13 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     y.minorTicksPerInterval = minorTicks;
     y.majorTickLineStyle = majorTickStyle;
     y.minorTickLineStyle = minorTickStyle;
-    y.majorIntervalLength = CPTDecimalFromFloat(majorTicks);
+    y.majorIntervalLength = @(majorTicks);
     y.majorGridLineStyle = minorTickStyle;
-    y.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0");
+    y.orthogonalPosition = @0;
     y.title = dict[TITLE];
     y.titleOffset = 75.0f;
-    y.titleLocation = CPTDecimalFromFloat(maxValue / 2);
-    y.labelingOrigin = CPTDecimalFromFloat(minValue);
+    y.titleLocation = @(maxValue / 2);
+    y.labelingOrigin = @(minValue);
 }
 
 - (NSNumber *) element: (XTRElement *) anElement valueForIdentifier: (NSString *) anIdentifier {
@@ -123,8 +122,8 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     float minorTicks = [dict[MINOR_TICK_MARKS] floatValue];
     [self creatBarChart];
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)barChart.defaultPlotSpace;
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation: CPTDecimalFromFloat(minValue) length: CPTDecimalFromFloat(maxValue)];
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation: CPTDecimalFromFloat(0.0) length: CPTDecimalFromFloat([[XTRDataSource sharedInstance] elementCount] + 1)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation: @(minValue) length: @(maxValue)];
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation: @(0.0) length: @([XTRDataSource sharedInstance].elementCount + 1)];
     CPTMutableLineStyle *majorTickStyle = [CPTMutableLineStyle lineStyle];
     majorTickStyle.lineWidth = 2.0f;
     majorTickStyle.lineColor = [CPTColor greenColor];
@@ -139,18 +138,18 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     
     CPTBarPlot *barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor whiteColor] horizontalBars: NO];
     barPlot.delegate = self;
-    barPlot.barWidth = CPTDecimalFromString(@"1.0f");
-    barPlot.baseValue = CPTDecimalFromString(@"0");
+    barPlot.barWidth = @1.0f;
+    barPlot.baseValue = @0;
     barPlot.dataSource = self;
-    barPlot.barOffset = CPTDecimalFromString(@"0.0f");
+    barPlot.barOffset = @0.0f;
     barPlot.identifier = dict[ATTRIBUTE_NAME];
     [barChart addPlot: barPlot toPlotSpace: plotSpace];
 }
 
 - (void) graphSelected: (NSNotification *) notification {
-    NSNumber *object = [notification object];
-    [self.popoverController dismissPopoverAnimated: YES];
-    [self showGraphForChoiceAtIndex:[object intValue]];
+    NSNumber *object = notification.object;
+    [self dismissViewControllerAnimated: YES completion: nil];
+    [self showGraphForChoiceAtIndex:object.intValue];
 }
 
 - (NSData *) dataForResource: (NSString *) aResourceName type: (NSString *) aType directory: (NSString *) aDirectory {
@@ -160,16 +159,13 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
 #pragma mark - Action Methods
 
 - (IBAction) toolbarItemTapped: (id) sender {
-    [self.popoverController presentPopoverFromBarButtonItem: sender permittedArrowDirections: UIPopoverArrowDirectionAny animated: YES];
-}
-
-#pragma mark - UIPopoverController Delegate Methods
-
-- (BOOL) popoverControllerShouldDismissPopover: (UIPopoverController *) popoverController {
-    return YES;
-}
-
-- (void) popoverControllerDidDismissPopover: (UIPopoverController *) popoverController {
+    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
+    XTRGraphChoiceViewController *content = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRGraphChoiceViewController class])];
+    CGSize contentSize = CGSizeMake(294, 664);
+    content.modalPresentationStyle = UIModalPresentationPopover;
+    content.popoverPresentationController.barButtonItem = sender;
+    content.preferredContentSize = contentSize;
+   [self presentViewController:content animated:YES completion:nil];
 }
 
 #pragma mark - Plot Data Source Methods
@@ -183,7 +179,7 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     if ([plot isKindOfClass:[CPTBarPlot class]]) {
         XTRElement *element = [[XTRDataSource sharedInstance] elementAtIndex: index];
 
-        NSString *identifier = (NSString *)[plot identifier];
+        NSString *identifier = (NSString *)plot.identifier;
         switch (fieldEnum) {
             case 0:
                 num = @((int)index + 1);
@@ -191,65 +187,65 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
                 
             case 1:
                 if ([identifier isEqualToString: ELEMENT_ATOMIC_MASS])
-                    num = [element atomicMass];
+                    num = element.atomicMass;
                 else if ([identifier isEqualToString: ELEMENT_ATOMIC_RADIUS])
-                    num = [element atomicRadius];
+                    num = element.atomicRadius;
                 else if ([identifier isEqualToString: ELEMENT_BOILING_POINT])
-                    num = [element boilingPoint];
+                    num = element.boilingPoint;
                 else if ([identifier isEqualToString: ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION])
-                    num = [element coefficientOfLinealThermalExpansionScaled];
+                    num = element.coefficientOfLinealThermalExpansionScaled;
                 else if ([identifier isEqualToString: ELEMENT_COVALENT_RADIUS])
-                    num = [element covalentRadius];
+                    num = element.covalentRadius;
                 else if ([identifier isEqualToString: ELEMENT_CROSS_SECTION])
-                    num = [element crossSection];
+                    num = element.crossSection;
                 else if ([identifier isEqualToString: ELEMENT_DENSITY])
                     num = [element valueForKey: ELEMENT_DENSITY];
                 else if ([identifier isEqualToString: ELEMENT_ELASTIC_MODULUS_BULK])
-                    num = [element elasticModulusBulk];
+                    num = element.elasticModulusBulk;
                 else if ([identifier isEqualToString: ELEMENT_ELASTIC_MODULUS_RIGIDITY])
-                    num = [element elasticModulusRigidity];
+                    num = element.elasticModulusRigidity;
                 else if ([identifier isEqualToString: ELEMENT_ELASTIC_MODULUS_YOUNGS])
-                    num = [element elasticModulusYoungs];
+                    num = element.elasticModulusYoungs;
                 else if ([identifier isEqualToString: ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT])
-                    num = [element electroChemicalEquivalent];
+                    num = element.electroChemicalEquivalent;
                 else if ([identifier isEqualToString: ELEMENT_ELECTRO_NEGATIVITY])
-                    num = [element electroNegativity];
+                    num = element.electroNegativity;
                 else if ([identifier isEqualToString: ELEMENT_ELECTRON_WORK_FUNCTION])
-                    num = [element electronWorkFunction];
+                    num = element.electronWorkFunction;
                 else if ([identifier isEqualToString: ELEMENT_MELTING_POINT])
-                    num = [element meltingPoint];
+                    num = element.meltingPoint;
                 else if ([identifier isEqualToString: ELEMENT_ENTHALPY_OF_ATOMIZATION])
-                    num = [element enthalpyOfAutomization];
+                    num = element.enthalpyOfAutomization;
                 else if ([identifier isEqualToString: ELEMENT_ENTHALPY_OF_FUSION])
-                    num = [element enthalpyOfFusion];
+                    num = element.enthalpyOfFusion;
                 else if ([identifier isEqualToString: ELEMENT_ENTHALPY_OF_VAPORIZATION])
-                    num = [element enthalpyOfVaporization];
+                    num = element.enthalpyOfVaporization;
                 else if ([identifier isEqualToString: ELEMENT_IONIC_RADIUS])
-                    num = [element ionicRadius];
+                    num = element.ionicRadius;
                 else if ([identifier isEqualToString: ELEMENT_HARDNESS_SCALE_BRINELL])
-                    num = [element hardnessScaleBrinell];
+                    num = element.hardnessScaleBrinell;
                 else if ([identifier isEqualToString: ELEMENT_HARDNESS_SCALE_MOHS])
-                    num = [element hardnessScaleMohs];
+                    num = element.hardnessScaleMohs;
                 else if ([identifier isEqualToString: ELEMENT_HARDNESS_SCALE_VICKERS])
-                    num = [element hardnessScaleVickers];
+                    num = element.hardnessScaleVickers;
                 else if ([identifier isEqualToString: ELEMENT_HEAT_OF_FUSION])
-                    num = [element heatOfFusion];
+                    num = element.heatOfFusion;
                 else if ([identifier isEqualToString: ELEMENT_HEAT_OF_VAPORIZATION])
-                    num = [element heatOfVaporization];
+                    num = element.heatOfVaporization;
                 else if ([identifier isEqualToString: ELEMENT_IONIZATION_POTENTIAL_FIRST])
-                    num = [element ionizationPotentialFirst];
+                    num = element.ionizationPotentialFirst;
                 else if ([identifier isEqualToString: ELEMENT_IONIZATION_POTENTIAL_SECOND])
-                    num = [element ionizationPotentialSecond];
+                    num = element.ionizationPotentialSecond;
                 else if ([identifier isEqualToString: ELEMENT_IONIZATION_POTENTIAL_THIRD])
-                    num = [element ionizationPotentialThird];
+                    num = element.ionizationPotentialThird;
                 else if ([identifier isEqualToString: ELEMENT_MOLAR_HEAT_CAPACITY])
-                    num = [element molarHeatCapacity];
+                    num = element.molarHeatCapacity;
                 else if ([identifier isEqualToString: ELEMENT_MOLAR_VOLUME])
-                    num = [element molarVolume];
+                    num = element.molarVolume;
                 else if ([identifier isEqualToString: ELEMENT_SPECIFIC_HEAT_CAPACITY])
-                    num = [element specificHeatCapacity];
+                    num = element.specificHeatCapacity;
                 else if ([identifier isEqualToString: ELEMENT_VALENCE_ELECTRON_POTENTIAL])
-                    num = [element valenceElectronPotential];
+                    num = element.valenceElectronPotential;
                 else
                     num = @0;
                 break;
@@ -273,14 +269,6 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(graphSelected:) name: NOTIFICATION_GRAPH_SELECTED object: nil];
     self.title = @"Graphs";
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName: MAIN_STORY_BOARD bundle:nil];
-    XTRGraphChoiceViewController *content = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRGraphChoiceViewController class])];
-    CGSize contentSize = CGSizeMake(271.0f, 660.0f);
-    content.preferredContentSize = contentSize;
-    UIPopoverController *aPopover = [[UIPopoverController alloc] initWithContentViewController: content];
-    aPopover.popoverContentSize = contentSize;
-    aPopover.delegate = self;
-    self.popoverController = aPopover;
     [self showGraphForChoiceAtIndex: 0];
 }
 

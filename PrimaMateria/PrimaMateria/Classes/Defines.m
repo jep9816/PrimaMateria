@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "Defines.h"
@@ -105,6 +105,7 @@ NSString *NOTIFICATION_ELEMENT_HELP_SELECTED = @"elementHelpSelectedNotification
 NSString *NOTIFICATION_GRAPH_SELECTED = @"graphSelectedNotification";
 NSString *NOTIFICATION_TABLE_HEADER_SELECTED = @"tableHeaderCellSelectedNotification";
 NSString *NOTIFICATION_COLOR_SELECTED = @"colorNotification";
+NSString *NOTIFICATION_INSPECTOR_DISMISSED = @"notificationInspectorDismissed";
 
 #pragma mark - Series Text
 
@@ -135,6 +136,7 @@ NSString *STRING_EMPTY = @"";
 NSString *STRING_UNKNOWN = @"Unknown";
 NSString *SUPPORTING_FILES = @"SupportingFiles";
 NSString *PERIODIC_VIEW_TITLE = @"Periodic Table of the Elements";
+NSString *VIEW_TITLE_KEY = @"viewTitle";
 
 #pragma mark - Color Constants
 

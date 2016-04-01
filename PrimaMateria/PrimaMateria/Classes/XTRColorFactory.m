@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -12,11 +12,14 @@
 
 #pragma mark General Methods
 
-+ (UIColor *)colorFromDefaultsForKey : (NSString *)aColorKey {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSData *colorData = [userDefaults objectForKey: aColorKey];
-    UIColor *aColor = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
-    return (aColor != nil) ? aColor : nil;
++ (UIColor *)colorFromDefaultsForKey: (NSString *)aColorKey {
+    NSData *colorData = [XTRPropertiesStore retreiveColorDataForColorKey: aColorKey];
+    UIColor *aColor = nil;
+    
+    if(colorData) {
+        aColor = [NSKeyedUnarchiver unarchiveObjectWithData:colorData];
+    }
+    return aColor;
 }
 
 + (UIColor *) colorForString: (NSString *) aString {
@@ -49,7 +52,7 @@
     else if ([aString isEqualToString: STANDARD_CONDITION_SYNTHETIC])
         return [[XTRColorFactory class] syntheticConditionColor];
     else
-        return [UIColor whiteColor];
+        return UIColor.whiteColor;
 }
 
 #pragma mark - Series Colors
@@ -267,19 +270,63 @@
 }
 
 + (UIColor *) defaultGasConditionColor {
-    return [UIColor redColor];
+    return UIColor.redColor;
 }
 
 + (UIColor *) defaultSolidConditionColor {
-    return [UIColor blackColor];
+    return UIColor.blackColor;
 }
 
 + (UIColor *) defaultLiquidConditionColor {
-    return [UIColor blueColor];
+    return UIColor.blueColor;
 }
 
 + (UIColor *) defaultSyntheticConditionColor {
-    return [UIColor yellowColor];
+    return UIColor.yellowColor;
+}
+
++ (UIColor *) navigationBarColor {
+    return [UIColor colorWithRed:36 / RGB_CONSTANT green:36 / RGB_CONSTANT blue:36 / RGB_CONSTANT alpha:1.0];
+}
+
++ (UIColor *) toolBarColor {
+    return [UIColor colorWithRed:36 / RGB_CONSTANT green:36 / RGB_CONSTANT blue:36 / RGB_CONSTANT alpha:1.0];
+}
+
++ (UIColor *) alternateRowColor {
+    return [UIColor colorWithRed: 245.0 / RGB_CONSTANT green: 245.0 / RGB_CONSTANT blue: 255.0 / RGB_CONSTANT alpha: 1.0];
+}
+
++ (UIColor *) rowColor {
+    return [UIColor colorWithRed: 245.0 / RGB_CONSTANT green: 255.0 / RGB_CONSTANT blue: 255.0 / RGB_CONSTANT alpha: 1.0];
+}
+
++ (UIColor *) alternateRowTableCellTextLabelColor {
+    return UIColor.blackColor;
+}
+
++ (UIColor *) rowTableCellTextLabelColor {
+    return [UIColor whiteColor];
+}
+
++ (UIColor *) labelColor {
+    return [UIColor colorWithRed: 44.0 / RGB_CONSTANT green: 119.0 / RGB_CONSTANT blue: 164.0 / RGB_CONSTANT alpha: 1.0];
+}
+
++ (UIColor *) tableBackgroundColor {
+    return UIColor.clearColor;
+}
+
++ (UIColor *) viewBackgroundColor {
+    return [UIColor whiteColor];
+}
+
++ (UIColor *) tableViewCellDetailLabelColor {
+    return [UIColor colorWithRed: 50.0 / RGB_CONSTANT green: 79.0 / RGB_CONSTANT blue: 133.0 / RGB_CONSTANT alpha: 1.0f];
+}
+
++ (UIColor *) tableViewCellBorderColor {
+    return [UIColor colorWithRed: 191.0 / RGB_CONSTANT green: 191.0 / RGB_CONSTANT blue: 191.0 / RGB_CONSTANT alpha: 1.0f];
 }
 
 @end

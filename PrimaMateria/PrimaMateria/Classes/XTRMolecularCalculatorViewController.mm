@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -33,7 +33,7 @@
 }
 
 - (void) setTextFieldForNumber: (int) aNumber {
-    NSMutableString *origString = [[NSMutableString alloc] initWithString:[formulaTextField text]];
+    NSMutableString *origString = [[NSMutableString alloc] initWithString:formulaTextField.text];
     [origString appendString:[NSString stringWithFormat: @"%d", aNumber]];
     formulaTextField.text = origString;
 }
@@ -99,14 +99,14 @@
 }
 
 - (void) setElement: (XTRElement *)anElement {
-    [self setTextFieldForSymbol:[anElement symbol]];
-    [self setLabelForSymbol:[anElement symbol]];
+    [self setTextFieldForSymbol:anElement.symbol];
+    [self setLabelForSymbol:anElement.symbol];
 }
 
 #pragma mark - Action Methods
 
 - (IBAction) calculate: (id) sender {
-    double result = mcalc([[formulaTextField text] cStringUsingEncoding: NSASCIIStringEncoding]);
+    double result = mcalc([formulaTextField.text cStringUsingEncoding: NSASCIIStringEncoding]);
     if (result == 0)
         errorLabel.text =  @"Unknown symbol or syntax error.";
     else {
@@ -120,11 +120,11 @@
 }
 
 - (IBAction) numberClicked: (id) sender {
-    NSInteger length = [[formulaTextField text] length];
+    NSInteger length = formulaTextField.text.length;
     NSInteger tag = [sender tag];
     if (length > 0) {
-        BOOL is_alpha = isalpha([[formulaTextField text] characterAtIndex: (length - 1)]);
-        BOOL is_char = isnumber([[formulaTextField text] characterAtIndex: (length - 1)]);
+        BOOL is_alpha = isalpha([formulaTextField.text characterAtIndex: (length - 1)]);
+        BOOL is_char = isnumber([formulaTextField.text characterAtIndex: (length - 1)]);
         if (is_alpha || is_char) {
             [self setTextFieldForNumber: tag];
             [self setLabelForNumber: tag];
@@ -136,7 +136,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
-    self.backgroundView.layer.borderColor = [UIColor blackColor].CGColor;
+    self.backgroundView.layer.borderColor = UIColor.blackColor.CGColor;
     self.backgroundView.layer.borderWidth = 2;
     self.backgroundView.layer.cornerRadius = 8;
 

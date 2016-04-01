@@ -51,9 +51,9 @@
 - (CGFloat) hue {
     struct hsv_color hsv;
     struct rgb_color rgb;
-    rgb.r = [self red];
-    rgb.g = [self green];
-    rgb.b = [self blue];
+    rgb.r = self.red;
+    rgb.g = self.green;
+    rgb.b = self.blue;
     hsv = [UIColor HSVfromRGB: rgb];
     return (hsv.hue / 360.0);
 }
@@ -61,9 +61,9 @@
 - (CGFloat) saturation {
     struct hsv_color hsv;
     struct rgb_color rgb;
-    rgb.r = [self red];
-    rgb.g = [self green];
-    rgb.b = [self blue];
+    rgb.r = self.red;
+    rgb.g = self.green;
+    rgb.b = self.blue;
     hsv = [UIColor HSVfromRGB: rgb];
     return hsv.sat;
 }
@@ -71,15 +71,15 @@
 - (CGFloat) brightness {
     struct hsv_color hsv;
     struct rgb_color rgb;
-    rgb.r = [self red];
-    rgb.g = [self green];
-    rgb.b = [self blue];
+    rgb.r = self.red;
+    rgb.g = self.green;
+    rgb.b = self.blue;
     hsv = [UIColor HSVfromRGB: rgb];
     return hsv.val;
 }
 
 - (CGFloat) value {
-    return [self brightness];
+    return self.brightness;
 }
 
 @end

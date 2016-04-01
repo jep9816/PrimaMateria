@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -14,21 +14,21 @@
 
 - (id) valueForKey: (NSString *) aKey {
     if ([aKey isEqualToString: ELEMENT_KSHELL_ELECTRONS])
-        return [self kShellElectrons];
+        return self.kShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_LSHELL_ELECTRONS])
-        return [self lShellElectrons];
+        return self.lShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_MSHELL_ELECTRONS])
-        return [self mShellElectrons];
+        return self.mShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_NSHELL_ELECTRONS])
-        return [self nShellElectrons];
+        return self.nShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_OSHELL_ELECTRONS])
-        return [self oShellElectrons];
+        return self.oShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_PSHELL_ELECTRONS])
-        return [self pShellElectrons];
+        return self.pShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_QSHELL_ELECTRONS])
-        return [self qShellElectrons];
+        return self.qShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_ATOMIC_MASS_AGGREGATE])
-        return [self atomicMassAggregate];
+        return self.atomicMassAggregate;
     else return [self.elementDictionary valueForKey: aKey];
 }
 

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 1/5/2011.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -21,9 +21,9 @@
 }
 
 - (void)setupColors {
-	self.textColor = [UIColor whiteColor];
-	[self setHigh_Color: [UIColor lightGrayColor]];
-	[self setLow_Color: [UIColor grayColor]];
+	self.textColor = UIColor.whiteColor;
+	[self setHigh_Color: UIColor.lightGrayColor];
+	[self setLow_Color: UIColor.grayColor];
 }
 
 - (void)awakeFromNib {

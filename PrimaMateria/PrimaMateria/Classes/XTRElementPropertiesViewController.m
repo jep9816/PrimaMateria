@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -70,7 +70,7 @@ SwapViews;
 
 - (void) setupUI {
     if (self.element != nil) {
-        atomicMassLabel.text = [self.element atomicMassAggregate];
+        atomicMassLabel.text = (self.element).atomicMassAggregate;
         atomicMassFootnoteLabel.text = [self.element valueForKey: ELEMENT_ATOMIC_MASS_FOOTNOTE];
         boilingPointLabel.text = [self.element valueForKey: ELEMENT_BOILING_POINT];
         coefficientOfLinealThermalExpansionLabel.text = [self.element valueForKey: ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION];
@@ -89,28 +89,28 @@ SwapViews;
         
         vaporPressure1PaLabel.text =
         [NSString stringWithFormat: @"%@ %@",
-         [[self.element vaporPressure] valueForKey: @"pa1"],
-         [[self.element vaporPressure] valueForKey: @"pa1Footnote"]];
+         [(self.element).vaporPressure valueForKey: @"pa1"],
+         [(self.element).vaporPressure valueForKey: @"pa1Footnote"]];
         vaporPressure10PaLabel.text =
         [NSString stringWithFormat: @"%@ %@",
-         [[self.element vaporPressure] valueForKey: @"pa10"],
-         [[self.element vaporPressure] valueForKey: @"pa10Footnote"]];
+         [(self.element).vaporPressure valueForKey: @"pa10"],
+         [(self.element).vaporPressure valueForKey: @"pa10Footnote"]];
         vaporPressure100PaLabel.text =
         [NSString stringWithFormat: @"%@ %@",
-         [[self.element vaporPressure] valueForKey: @"pa100"],
-         [[self.element vaporPressure] valueForKey: @"pa100Footnote"]];
+         [(self.element).vaporPressure valueForKey: @"pa100"],
+         [(self.element).vaporPressure valueForKey: @"pa100Footnote"]];
         vaporPressure1kPaLabel.text =
         [NSString stringWithFormat: @"%@ %@",
-         [[self.element vaporPressure] valueForKey: @"pa1k"],
-         [[self.element vaporPressure] valueForKey: @"pa1kFootnote"]];
+         [(self.element).vaporPressure valueForKey: @"pa1k"],
+         [(self.element).vaporPressure valueForKey: @"pa1kFootnote"]];
         vaporPressure10kPaLabel.text =
         [NSString stringWithFormat: @"%@ %@",
-         [[self.element vaporPressure] valueForKey: @"pa10k"],
-         [[self.element vaporPressure] valueForKey: @"pa10kFootnote"]];
+         [(self.element).vaporPressure valueForKey: @"pa10k"],
+         [(self.element).vaporPressure valueForKey: @"pa10kFootnote"]];
         vaporPressure100kPaLabel.text =
         [NSString stringWithFormat: @"%@ %@",
-         [[self.element vaporPressure] valueForKey: @"pa100k"],
-         [[self.element vaporPressure] valueForKey: @"pa100kFootnote"]];
+         [(self.element).vaporPressure valueForKey: @"pa100k"],
+         [(self.element).vaporPressure valueForKey: @"pa100kFootnote"]];
         
         conductivityThermalLabel.text = [self.element valueForKey: ELEMENT_CONDUCTIVITY_THERMAL];
         conductivityElectricalLabel.text = [self.element valueForKey: ELEMENT_CONDUCTIVITY_ELECTRICAL];
@@ -175,6 +175,10 @@ SwapViews;
     [self.view addSubview: physicalPropertiesView];
 
     [self.swapView removeFromSuperview];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - Memory Management Methods

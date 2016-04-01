@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 1/5/2011.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -14,14 +14,14 @@
     [super drawRect: rect];
     UIView *superView = self.superview;
     CALayer *sublayer = [CALayer layer];
-    sublayer.backgroundColor = [UIColor clearColor].CGColor;
+    sublayer.backgroundColor = UIColor.clearColor.CGColor;
     sublayer.shadowOffset = CGSizeMake(5.0f, 5.0f);
     sublayer.shadowRadius = 10.0f;
-    sublayer.shadowColor = [UIColor blackColor].CGColor;
+    sublayer.shadowColor = UIColor.blackColor.CGColor;
     sublayer.shadowOpacity = 1.0;
     sublayer.frame = CGRectMake(self.frame.origin.x + 1, self.frame.origin.y + 1, self.frame.size.width - 2, self.frame.size.height - 2);
-    sublayer.borderColor = [UIColor blackColor].CGColor;
-    sublayer.backgroundColor = [UIColor blackColor].CGColor;
+    sublayer.borderColor = UIColor.blackColor.CGColor;
+    sublayer.backgroundColor = UIColor.blackColor.CGColor;
     sublayer.borderWidth = 1.0;
     sublayer.cornerRadius = 10.0;
     [superView.layer addSublayer: sublayer];

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 3/16/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 #import "PrimaMateria.h"
 
@@ -341,7 +341,7 @@ static NSMutableDictionary *colorNameCache = nil;
             return nil;
         }
     }
-    if (![scanner isAtEnd]) return nil;
+    if (!scanner.atEnd) return nil;
     UIColor *color;
     switch (i) {
         case 2: // monochrome
@@ -501,7 +501,7 @@ static const char *colorNameDB = ","
 
     // Compile the string we'll use to search against the database
     // We search for ",<colorname>#" to avoid false matches
-    const char *searchString = [[NSString stringWithFormat: @",%@#", cssColorName] UTF8String];
+    const char *searchString = [NSString stringWithFormat: @",%@#", cssColorName].UTF8String;
 
     // Search for the color name
     const char *found = strstr(colorNameDB, searchString);

@@ -1,9 +1,9 @@
 //
-// DynoTableCell.m
-// PrimaMateria
+//  DynoTableCell.m
+//  PrimaMateria
 //
 //  Created by Jerry Porter on 1/5/2011.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -14,9 +14,17 @@ typedef enum LabelTypes {
 }
 LabelTypes;
 
+@interface DynoTableCell() {
+    NSMutableArray *columns;
+}
+
+-(void)addColumn : (CGFloat)position;
+
+@end
+
 @implementation DynoTableCell
 
-- (id) initWithStyle: (UITableViewCellStyle) style reuseIdentifier: (NSString *) reuseIdentifier {
+- (instancetype) initWithStyle: (UITableViewCellStyle) style reuseIdentifier: (NSString *) reuseIdentifier {
     if (self = [super initWithStyle: (UITableViewCellStyle) style reuseIdentifier: (NSString *)reuseIdentifier]) {
         columns = [NSMutableArray arrayWithCapacity: 5];
     }
@@ -30,15 +38,17 @@ LabelTypes;
 - (void) drawRect: (CGRect) rect {
     [super drawRect: rect];
     self.backgroundColor = UIColor.blackColor;
+    self.contentView.backgroundColor = UIColor.darkGrayColor;
+    
     CGContextRef ctx = UIGraphicsGetCurrentContext();
 
     // just match the color and size of the horizontal line
     CGContextSetRGBStrokeColor(ctx, 0.5, 0.5, 0.5, 1.0);
     CGContextSetLineWidth(ctx, 0.25);
 
-    for (NSInteger i = 0; i <[columns count]; i++) {
+    for (NSInteger i = 0; i <columns.count; i++) {
         // get the position for the vertical line
-        CGFloat f = [( (NSNumber *)columns[i] )floatValue];
+        CGFloat f = ( (NSNumber *)columns[i] ).floatValue;
         CGContextMoveToPoint(ctx, f, 0);
         CGContextAddLineToPoint(ctx, f, self.bounds.size.height);
     }

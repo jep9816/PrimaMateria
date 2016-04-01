@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -22,8 +22,8 @@
 
 #pragma mark Private Methods
 
-- (void) assignGeneralInfo {
-    NSString *path = [self.element pathForGeneralInfoDoc];
+- (void)assignGeneralInfo {
+    NSString *path = (self.element).pathForGeneralInfoDoc;
     NSURL *url = [NSURL fileURLWithPath: path];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
     [webView loadRequest: request];
@@ -31,7 +31,7 @@
 
 #pragma mark - Misc Methods
 
-- (void) setupUI {
+- (void)setupUI {
     if (self.element != nil) {
         discovererLabel.text = [self.element valueForKey: ELEMENT_DISCOVERER];
         discoveryLocationLabel.text = [self.element valueForKey: ELEMENT_DISCOVERY_LOCATION];
@@ -44,7 +44,7 @@
 
 #pragma mark - Action Methods
 
-- (IBAction) showWikipediaEntry: (id) sender {
+- (IBAction)showWikipediaEntry: (id) sender {
     [self performSegueWithIdentifier: SHOW_WIKIPEDIA_VIEW_CONTROLLER_FROM_GENERAL_VIEW_CONTROLLER sender: self];
 }
 
@@ -54,9 +54,13 @@
 
 #pragma mark - View Management Methods
 
+- (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+}
+
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     abundanceCrustLabel = nil;
     abundanceSeaLabel = nil;
     discovererLabel = nil;

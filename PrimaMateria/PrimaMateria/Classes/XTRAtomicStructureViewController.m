@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -121,6 +121,10 @@ SwapViews;
     shellModelInfoLabel.layer.borderWidth = 1.0f;
     shellModelInfoLabel.hidden = YES;
     overlayView.hidden = YES;
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - Memory Management Methods

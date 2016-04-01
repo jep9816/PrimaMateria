@@ -1,9 +1,9 @@
 //
-// DynoTableCell.m
-// PrimaMateria
+//  DynoTableHeaderButton.m
+//  PrimaMateria
 //
 //  Created by Jerry Porter on 1/5/2011.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -27,16 +27,20 @@
     descentingImageView = [UIImage imageNamed: @"DescendingArrow.png"];
     imageLayer = [CALayer layer];
     [self.layer addSublayer: imageLayer];
+    self.backgroundColor = UIColor.lightGrayColor;
 }
 
 - (void) toggleButtonState: (BOOL) aFlag {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_TABLE_HEADER_SELECTED object: nil];
+    [CATransaction begin];
+    [CATransaction setAnimationDuration:0.0];
     imageLayer.frame = (aFlag) ? CGRectMake((self.frame.size.width/2) - 6, 2, 12, 12) : CGRectMake((self.frame.size.width/2) - 6, 30, 12, 12);
-    imageLayer.contents = (aFlag) ? (id)[ascendingImageView CGImage] : (id)[descentingImageView CGImage];
+    imageLayer.contents = (aFlag) ? (id)ascendingImageView.CGImage : (id)descentingImageView.CGImage;
+    [CATransaction commit];
     toggle = aFlag;
 }
 
-- (BOOL) toggleState {
+- (BOOL)toggleState {
     [self toggleButtonState: 1 - toggle];
     return toggle;
 }
@@ -44,7 +48,7 @@
 - (void) createLayer {
     self.layer.masksToBounds = YES;
     self.layer.borderWidth = 1.0f;
-    [self setupColors];
+    //[self setupColors];
 }
 
 - (void) dealloc {

@@ -1,13 +1,13 @@
 //
-// DynoTableCell.h
-// PrimaMateria
+//  DynoTableLabel.h
+//  PrimaMateria
 //
 //  Created by Jerry Porter on 1/5/2011.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 @interface DynoTableLabel : UILabel
 
--(id)initWithFrame : (CGRect) frame andColor : (UIColor *)aColor;
+-(instancetype)initWithFrame : (CGRect) frame andColor : (UIColor *)aColor;
 
 @end

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -18,7 +18,6 @@
 @end
 
 @implementation XTRPreferencesViewController
-@synthesize popoverController;
 @synthesize appNameLabel;
 @synthesize cpyRightLabel;
 @synthesize elementBubbleSwitch;
@@ -40,38 +39,52 @@
 
 #pragma mark Private Methods
 
+//- (void)iterateOverSubviewsOfType:(Class)viewType inView: (UIView*)view {
+//    for (UIView* subview in view.subviews) {
+//        if ([subview isKindOfClass:viewType]) {
+//            //block(subview);
+//        }
+//    }
+//}
+
 - (void) colorSelected: (NSNotification *) notification {
-    NSDictionary *object = (NSDictionary *)[notification object];
+    NSDictionary *object = (NSDictionary *)notification.object;
     if(object != nil) {
-        UIColor *aColor = [object valueForKey:@"selectedColor"];
-        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:aColor];
-        NSString *aTitle = [object valueForKey:@"selectedTitle"];
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        [userDefaults setObject: colorData forKey:aTitle];
-        [userDefaults synchronize];
+        NSNumber *redComponent = (NSNumber*)object[@"redComponent"];
+        NSNumber *greenComponent = (NSNumber*)object[@"greenComponent"];
+        NSNumber *blueComponent = (NSNumber*)object[@"blueComponent"];
         
-        if ([aTitle isEqualToString: SERIES_ACTINIDE])
+        UIColor *aColor = [UIColor colorWithRed:redComponent.floatValue green:greenComponent.floatValue blue:blueComponent.floatValue alpha:1.0];
+        NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:aColor];
+        NSString *colorKey = [object valueForKey:@"selectedTitle"];
+        
+        [XTRPropertiesStore storeColorData:colorData forColorKey: colorKey];
+        
+        if ([colorKey isEqualToString: SERIES_ACTINIDE]) {
             seriesActinideLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_ALKALI_EARTH_METAL])
+        } else if ([colorKey isEqualToString: SERIES_ALKALI_EARTH_METAL]) {
             seriesAlkaliEarthMetalLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_ALKALI_METAL])
+        } else if ([colorKey isEqualToString: SERIES_ALKALI_METAL]) {
             seriesAlkaliMetalLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_HALOGEN])
+        } else if ([colorKey isEqualToString: SERIES_HALOGEN]) {
             seriesHalogenLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_LANTHANIDE])
+        } else if ([colorKey isEqualToString: SERIES_LANTHANIDE]) {
             seriesLanthanideLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_METAL])
+        } else if ([colorKey isEqualToString: SERIES_METAL]) {
             seriesMetalLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_NOBLE_GAS])
+        } else if ([colorKey isEqualToString: SERIES_NOBLE_GAS]) {
             seriesNobleGasLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_NON_METAL])
+        } else if ([colorKey isEqualToString: SERIES_NON_METAL]) {
             seriesNonMetalLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_TRANSACTINIDES])
+        } else if ([colorKey isEqualToString: SERIES_TRANSACTINIDES]) {
             seriesTransactinidesLabel.backgroundColor =  aColor;
-        else if ([aTitle isEqualToString: SERIES_TRANSITION_METAL])
+        } else if ([colorKey isEqualToString: SERIES_TRANSITION_METAL]) {
             seriesTransitionMetalLabel.backgroundColor =  aColor;
+        }
     }
-    [self.popoverController dismissPopoverAnimated: YES];
+    
+    //[[NSNotificationCenter defaultCenter] postNotificationName: @"notificationColorChanged" object: nil];
+    [self dismissViewControllerAnimated:YES completion: nil];
 }
 
 
@@ -79,14 +92,13 @@
     NSString *path = [[NSBundle mainBundle] pathForResource: documentName ofType: nil];
     NSURL *url = [NSURL fileURLWithPath: path];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
-    [[self webView] loadRequest: request];
+    [self.webView loadRequest: request];
 }
 
 - (void) loadUserDefaults {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    elementBubbleSwitch.on = [userDefaults boolForKey: ELEMENT_BUBBLE_DEFAULT];
-    showTransitionsBubbleSwitch.on = [userDefaults boolForKey: SHOW_TRANSITIONS_DEFAULT];
-    splashScreenSwitch.on = [userDefaults boolForKey: SPLASH_SCREEN_DEFAULT];
+    elementBubbleSwitch.on = [XTRPropertiesStore retreiveElementBubblesState];
+    showTransitionsBubbleSwitch.on = [XTRPropertiesStore retreiveShowTransitionsState];
+    splashScreenSwitch.on = [XTRPropertiesStore retreiveSplashScreenState];
 }
 
 - (void) populateSeriesColors {
@@ -113,21 +125,15 @@
 }
 
 - (void) populateElementBubbleState: (BOOL) aFlag {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setBool: aFlag forKey: ELEMENT_BUBBLE_DEFAULT];
-    [userDefaults synchronize];
+    [XTRPropertiesStore storeElementBubblesState: aFlag];
 }
 
 - (void) populateShowTransitionsState: (BOOL) aFlag {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setBool: aFlag forKey: SHOW_TRANSITIONS_DEFAULT];
-    [userDefaults synchronize];
+    [XTRPropertiesStore storeShowTranitionsState: aFlag];
 }
 
 - (void) populateSplashScreenState: (BOOL) aFlag {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setBool: aFlag forKey: SPLASH_SCREEN_DEFAULT];
-    [userDefaults synchronize];
+    [XTRPropertiesStore storeSplashScreenState: aFlag];
 }
 
 #pragma mark - Action Methods
@@ -190,44 +196,30 @@
         default:
             break;
     }
-    /*PTColorAlertView *alert = [[PTColorAlertView alloc] initWithTitle: title message: @"\n\n\n\n\n\n\n\n\n" delegate: self cancelButtonTitle: @"Cancel" otherButtonTitles: @"Set", nil];
-     alert.delegate = self;
-     [alert show];*/
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName: MAIN_STORY_BOARD bundle:nil];
+
+    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
 	XTRColorPickerViewController *colorPicker = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRColorPickerViewController class])];
     
     CGSize contentSize = CGSizeMake(270, 175);
     UIColor *aColor = [XTRColorFactory colorForString: title];
+    CGRect aRect = CGRectMake(3, 10, 15, 15);
     
+    colorPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionLeft;
+    colorPicker.modalPresentationStyle = UIModalPresentationPopover;
+    colorPicker.popoverPresentationController.sourceView = sender;
+    colorPicker.popoverPresentationController.sourceRect = aRect;
     colorPicker.preferredContentSize = contentSize;
-    
-    UIPopoverController *aPopover = [[UIPopoverController alloc] initWithContentViewController: colorPicker];
-    aPopover.contentViewController.view.backgroundColor = UIColor.whiteColor;
-    aPopover.popoverContentSize = contentSize;
-    [aPopover setDelegate: self];
-    
-    self.popoverController = aPopover;
-    [self.popoverController presentPopoverFromRect:[sender frame] inView: self.colorPickersView permittedArrowDirections: UIPopoverArrowDirectionAny animated: YES];
+
+    [self presentViewController:colorPicker animated:YES completion:nil];
     
     colorPicker.colorTitle.text = title;
-    colorPicker.modalInPopover = YES;
     colorPicker.previewView.backgroundColor = aColor;
+    
     [colorPicker presetSlidersWithColor: aColor];
 }
 
-- (IBAction) resetPreferences: (id) sender {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults removeObjectForKey: ELEMENT_BUBBLE_DEFAULT];
-    [userDefaults removeObjectForKey: SERIES_ACTINIDE];
-    [userDefaults removeObjectForKey: SERIES_ALKALI_EARTH_METAL];
-    [userDefaults removeObjectForKey: SERIES_ALKALI_METAL];
-    [userDefaults removeObjectForKey: SERIES_HALOGEN];
-    [userDefaults removeObjectForKey: SERIES_LANTHANIDE];
-    [userDefaults removeObjectForKey: SERIES_METAL];
-    [userDefaults removeObjectForKey: SERIES_NOBLE_GAS];
-    [userDefaults removeObjectForKey: SERIES_NON_METAL];
-    [userDefaults removeObjectForKey: SERIES_TRANSACTINIDES];
-    [userDefaults removeObjectForKey: SERIES_TRANSITION_METAL];
+- (IBAction)resetPreferences: (id) sender {
+    [XTRPropertiesStore resetPreferences];
     [self populateSeriesColors];
     [self populateElementBubbleState: YES];
     [self populateShowTransitionsState: YES];
@@ -235,68 +227,6 @@
     elementBubbleSwitch.on = YES;
     splashScreenSwitch.on = YES;
 }
-
-#pragma mark - UIPopoverController Delegate Methods
-
-- (BOOL) popoverControllerShouldDismissPopover: (UIPopoverController *) popoverController {
-    return YES;
-}
-
-- (void) popoverControllerDidDismissPopover: (UIPopoverController *) aPopoverController {
-}
-
-/*- (void) didPresentAlertView: (UIAlertView *) alertView {
- NSString *title = [alertView title];
- UIColor *color = [XTRColorFactory colorForString: title];
- [(PTColorAlertView *) alertView setColor: color];
- }*/
-
-/*- (void) alertView: (UIAlertView *) alertView clickedButtonAtIndex: (NSInteger) buttonIndex {
- switch (buttonIndex) {
- case 0: // Cancel
- break;
- 
- case 1: {
- // Set
- UIColor *aColor = [(PTColorAlertView *) alertView getColor];
- CGFloat hue = [aColor hue];
- CGFloat saturation = [aColor saturation];
- CGFloat brightness = [aColor brightness];
- NSArray *values = @[@((float)hue * HSB_CONSTANT), @((float)saturation), @((float)brightness)];
- NSArray *keys = @[ HUE_COLOR_COMPONENT, SATURATION_COLOR_COMPONENT, BRIGHTNESS_COLOR_COMPONENT];
- 
- NSDictionary *dict = @{keys : values};
- NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
- [userDefaults setObject: dict forKey:[alertView title]];
- [userDefaults synchronize];
- NSString *title = [alertView title];
- if ([title isEqualToString: SERIES_ACTINIDE])
- seriesActinideLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_ALKALI_EARTH_METAL])
- seriesAlkaliEarthMetalLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_ALKALI_METAL])
- seriesAlkaliMetalLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_HALOGEN])
- seriesHalogenLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_LANTHANIDE])
- seriesLanthanideLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_METAL])
- seriesMetalLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_NOBLE_GAS])
- seriesNobleGasLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_NON_METAL])
- seriesNonMetalLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_TRANSACTINIDES])
- seriesTransactinidesLabel.backgroundColor =  aColor;
- else if ([title isEqualToString: SERIES_TRANSITION_METAL])
- seriesTransitionMetalLabel.backgroundColor =  aColor;
- break;
- }
- 
- default:
- break;
- }
- }*/
 
 #pragma mark - View Management Methods
 
@@ -308,16 +238,15 @@
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(colorSelected:) name: NOTIFICATION_COLOR_SELECTED object: nil];
     
-    [self loadDocument: @"Credits.rtf" inView:[self webView]];
+    [self loadDocument: @"Credits.rtf" inView:self.webView];
     [self loadUserDefaults];
     [self populateSeriesColors];
     
     appNameLabel.text = XTRVersionChecker.appNameString;
     versionLabel.text = XTRVersionChecker.appVersionString;
     cpyRightLabel.text = XTRVersionChecker.copywriteString;
+    //[self iterateOverSubviewsOfType: [UIButton class] inView: self.view];
 }
-
-#pragma mark - Memory Management Methods
 
 #pragma mark - Memory Management Methods
 

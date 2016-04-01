@@ -8,11 +8,32 @@
 
 #import "PrimaMateria.h"
 
+@interface XTRMainViewController ()
+- (void)customizeTabBarItems;
+- (void)showSplash;
+@end
+
 @implementation XTRMainViewController
 
+- (void)customizeTabBarItems {
+    CGRect rect = self.tabBar.frame;
+    CGSize newSize = CGSizeMake(90, rect.size.height);
+    UIImage *selectionImage = [UIImage imageWithColor: UIColor.lightGrayColor size: newSize];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage: selectionImage];
+    
+    UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, NO, [UIScreen mainScreen].scale);
+    
+    [[UIBezierPath bezierPathWithRoundedRect:imageView.bounds cornerRadius: 8.0] addClip];
+    [selectionImage drawInRect:imageView.bounds];
+    
+    self.tabBar.selectionIndicatorImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+}
+
 -(void) showSplash {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    BOOL defaultState = [userDefaults boolForKey: SPLASH_SCREEN_DEFAULT];
+    BOOL defaultState = [XTRPropertiesStore retreiveSplashScreenState];
+    
     if (defaultState) {
         UIStoryboard *storyboard =[UIStoryboard storyboardWithName:MAIN_STORY_BOARD bundle:nil];
         XTRSplashViewController *splashViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([XTRSplashViewController class])];
@@ -23,12 +44,15 @@
 #pragma mark - UITabBarControllerDelegate Methods
 
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(UIViewController *)viewController {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    BOOL defaultState = [userDefaults boolForKey: SHOW_TRANSITIONS_DEFAULT];
+
+    BOOL defaultState = [XTRPropertiesStore retreiveShowTransitionsState];
+    
     if (defaultState) {
-        UIViewController *currentVC = [tabBarController selectedViewController];
-        if (currentVC == viewController) 
+        UIViewController *currentVC = tabBarController.selectedViewController;
+        
+        if (currentVC == viewController) {
             return NO;
+        }
         
         [UIView beginAnimations:@"View Flip" context:nil];
         [UIView setAnimationDuration:1.5];
@@ -48,7 +72,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self showSplash];
-    self.delegate = self;
+    [self customizeTabBarItems];
+
+    //self.delegate = self;
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {

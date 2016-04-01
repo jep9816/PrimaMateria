@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #include <iostream>
@@ -37,7 +37,7 @@ inline int string2integer(const std::string& s) {
 
 double masse(string elmnt) {
     XTRElement *element = [[XTRDataSource sharedInstance] elementForSymbol:@(elmnt.c_str())];
-    id atomicMass = [element atomicMass];
+    id atomicMass = element.atomicMass;
     if (element == nil)
         return 0;
     else

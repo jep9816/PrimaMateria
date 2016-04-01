@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 @class XTRElement;
@@ -21,7 +21,7 @@
 - (XTRElement *)elementAtIndex : (int)index;
 - (XTRElement *)elementForSymbol : (NSString *)symbol;
 - (XTRElement *)sortedElementAtIndex : (int)index;
-- (int)elementCount;
+@property (NS_NONATOMIC_IOSONLY, readonly) int elementCount;
 - (void)resetElementList;
 - (void) sortByColumnPosition: (int) aColumnPosition andOrdering: (BOOL) anOrderingFlag;
 

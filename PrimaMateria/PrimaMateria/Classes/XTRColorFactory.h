@@ -3,7 +3,7 @@
 // PrimaMateria
 //
 //  Created by Jerry Porter on 3/22/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 @interface XTRColorFactory : NSObject
@@ -48,5 +48,19 @@
 + (UIColor *)defaultSolidConditionColor;
 + (UIColor *)defaultLiquidConditionColor;
 + (UIColor *)defaultSyntheticConditionColor;
+
+#pragma mark - UI Colors
+
++ (UIColor *)navigationBarColor;
++ (UIColor *)toolBarColor;
++ (UIColor *)alternateRowColor;
++ (UIColor *)rowColor;
++ (UIColor *)alternateRowTableCellTextLabelColor;
++ (UIColor *)rowTableCellTextLabelColor;
++ (UIColor *)labelColor;
++ (UIColor *)tableBackgroundColor;
++ (UIColor *)viewBackgroundColor;
++ (UIColor *)tableViewCellDetailLabelColor;
++ (UIColor *)tableViewCellBorderColor;
 
 @end

@@ -3,8 +3,7 @@
 //  Visualizer
 //
 //  Created by Jerry Porter on 05/18/2011.
-//  Modified by $Id: PropertiesStore.h 1464 2011-05-24 21:15:30Z delaware\portej1 $
-//  Copyright Lincoln National Corporation 2011. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 @interface XTRPropertiesStore : NSObject
@@ -14,5 +13,19 @@
 
 + (NSString *)retreiveViewTitle;
 + (void)storeViewTitle : (NSString *)aValue;
+
++ (BOOL)retreiveSplashScreenState;
++ (void)storeSplashScreenState: (BOOL) aValue;
+
++ (BOOL)retreiveShowTransitionsState;
++ (void)storeShowTranitionsState: (BOOL) aValue;
+
++ (BOOL)retreiveElementBubblesState;
++ (void)storeElementBubblesState: (BOOL) aValue;
+
++ (NSData *)retreiveColorDataForColorKey: (NSString *)aColorKey;
++ (void)storeColorData: (NSData *)colorData forColorKey: (NSString *)aColorKey;
+
++ (void)resetPreferences;
 
 @end

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -35,10 +35,10 @@ static NSString *kVSpectrum = @"V";
 
 - (CPTBarPlot *) addSpectrumPlotWithIdentifier: (NSString *) anIdentifier andColor: (CPTColor *) aColor {
     CPTBarPlot *barPlot = [CPTBarPlot tubularBarPlotWithColor: aColor horizontalBars: NO];
-    barPlot.barWidth = CPTDecimalFromString(@"20.0f");
-    barPlot.baseValue = CPTDecimalFromString(@"1");
+    barPlot.barWidth = @20.0f;
+    barPlot.baseValue = @1;
     barPlot.dataSource = self;
-    barPlot.barOffset = CPTDecimalFromString(@"0.0f");
+    barPlot.barOffset = @0.0f;
     barPlot.identifier = anIdentifier;
     return barPlot;
 }
@@ -61,8 +61,8 @@ static NSString *kVSpectrum = @"V";
 
     // Add plot space for horizontal bar charts
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.barChart.defaultPlotSpace;
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation: CPTDecimalFromFloat(0.0f) length: CPTDecimalFromFloat(1000.0f)];
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation: CPTDecimalFromFloat(4000.0f) length: CPTDecimalFromFloat(3500.0f)];
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation: @(0.0f) length: @(1000.0f)];
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation: @(4000.0f) length: @(3500.0f)];
     CPTMutableLineStyle *majorTickStyle = [CPTMutableLineStyle lineStyle];
     majorTickStyle.lineWidth = 2.0f;
     majorTickStyle.lineColor = [CPTColor greenColor];
@@ -76,11 +76,11 @@ static NSString *kVSpectrum = @"V";
     x.minorTicksPerInterval = 2;
     x.majorTickLineStyle = majorTickStyle;
     x.minorTickLineStyle = minorTickStyle;
-    x.majorIntervalLength = CPTDecimalFromString(@"500");
+    x.majorIntervalLength = @500;
     x.majorGridLineStyle = minorTickStyle;
-    x.orthogonalCoordinateDecimal = CPTDecimalFromString(@"0");
+    x.orthogonalPosition = @0;
     x.title = @"Wave Length Å";
-    x.titleLocation = CPTDecimalFromFloat(5750.0f);
+    x.titleLocation = @(5750.0f);
     x.titleOffset = 40.0f;
 
     // Define some custom labels for the data elements
@@ -96,10 +96,10 @@ static NSString *kVSpectrum = @"V";
                                     [NSDecimalNumber numberWithInt: 7500]];
     NSArray *xAxisLabels = @[ @"4000", @"4500", @"5000", @"5500", @"6000", @"6500", @"7000",  @"7500"];
     NSUInteger labelLocation = 0;
-    NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:[xAxisLabels count]];
+    NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:xAxisLabels.count];
     for (NSNumber *tickLocation in customTickLocations) {
         CPTAxisLabel *newLabel = [[CPTAxisLabel alloc] initWithText:xAxisLabels[labelLocation++] textStyle: x.labelTextStyle];
-        newLabel.tickLocation = [tickLocation decimalValue];
+        newLabel.tickLocation = tickLocation;
         newLabel.offset = x.labelOffset + x.majorTickLength;
         newLabel.rotation = M_PI / 4;
         [customLabels addObject: newLabel];
@@ -112,12 +112,12 @@ static NSString *kVSpectrum = @"V";
     y.minorTicksPerInterval = 3;
     y.majorTickLineStyle = majorTickStyle;
     y.minorTickLineStyle = minorTickStyle;
-    y.majorIntervalLength = CPTDecimalFromString(@"100");
+    y.majorIntervalLength = @100;
     y.majorGridLineStyle = minorTickStyle;
-    y.orthogonalCoordinateDecimal = CPTDecimalFromString(@"4000");
+    y.orthogonalPosition = @4000;
     y.title = @"Intensity";
     y.titleOffset = 50.0f;
-    y.titleLocation = CPTDecimalFromFloat(500.0f);
+    y.titleLocation = @(500.0f);
 
     CPTBarPlot *barPlot = [self addSpectrumPlotWithIdentifier: kISpectrum andColor:[CPTColor redColor]];
     [self.barChart addPlot: barPlot toPlotSpace: plotSpace];
@@ -138,13 +138,13 @@ static NSString *kVSpectrum = @"V";
 - (UILabel *) tableCellLabelWithXPos: (float) xPos YPos: (float) yPos width: (float) aWidth height: (float) aHeight property: (NSObject *) aProperty columnPosition: (int) aColumnPosition modulus: (int) aModulus forCell: (DynoTableCell *) cell {
     UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(xPos, yPos, aWidth, aHeight)];
     if (aModulus == 0)
-        label.backgroundColor = [UIColor whiteColor];
+        label.backgroundColor = UIColor.whiteColor;
     else
         label.backgroundColor = [UIColor colorWithHue: 219 / HSB_CONSTANT saturation: 0.1f brightness: 1.0f alpha: 1.0f];
     [cell addColumn: aColumnPosition];
-    label.font = [UIFont fontWithName: @"Helvetica Neue" size:20.0];
+    label.font = [UIFont systemFontOfSize:20.0];
     label.textAlignment =  NSTextAlignmentCenter;
-    label.textColor = [UIColor blackColor];
+    label.textColor = UIColor.blackColor;
     label.text = [NSString stringWithFormat: @" %@", aProperty];
     [cell.contentView addSubview: label];
     return label;
@@ -158,16 +158,16 @@ static NSString *kVSpectrum = @"V";
             [self.tableView removeFromSuperview];
             self.tableView = nil;
         }
-        self.tableView = [[UITableView alloc] initWithFrame:[[self swapView] frame] style: UITableViewStylePlain];
+        self.tableView = [[UITableView alloc] initWithFrame:self.swapView.frame style: UITableViewStylePlain];
         self.tableView.alwaysBounceVertical = NO;
         self.tableView.alwaysBounceHorizontal = NO;
         self.tableView.dataSource = self;
         self.tableView.delegate = self;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        self.tableView.backgroundColor = [UIColor blackColor];
+        self.tableView.backgroundColor = UIColor.blackColor;
         self.tableView.rowHeight = 34.0f;
         [self.view addSubview: self.tableView];
-        self.lineSpectraArray = [self.element lineSpectra];
+        self.lineSpectraArray = (self.element).lineSpectra;
         [self.tableView reloadData];
     }
     [self setupBarChart];
@@ -176,7 +176,7 @@ static NSString *kVSpectrum = @"V";
 #pragma mark - UITableView DataSource Methods
 
 - (UITableViewCell *) tableView: (UITableView *) aTableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
-    NSInteger row = [indexPath row];
+    NSInteger row = indexPath.row;
     NSString *MyIdentifier = [NSString stringWithFormat: @"Column %i", row];
     DynoTableCell *cell = (DynoTableCell *)[aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
     if (cell == nil) {
@@ -211,7 +211,7 @@ static NSString *kVSpectrum = @"V";
         NSNumber *airWavelength = [anItem valueForKey: kAirWavelength];
         NSNumber *intensity = [anItem valueForKey: kIntensity];
         NSString *spectrum = [anItem valueForKey: kSpectrum];
-        NSString *identifier = (NSString *)[plot identifier];
+        NSString *identifier = (NSString *)plot.identifier;
 
         switch (fieldEnum) {
             case 0:
@@ -235,6 +235,10 @@ static NSString *kVSpectrum = @"V";
 - (void) viewDidLoad {
     [super viewDidLoad];
     [self.swapView removeFromSuperview];
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - Memory Management Methods

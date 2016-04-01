@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 5/11/14.
-//  Copyright (c) 2014 xTrensa. All rights reserved.
+//  Copyright (c) 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -14,64 +14,62 @@
 
 @implementation XTRColorPickerViewController
 
-@synthesize hueSlider;
-@synthesize saturationSlider;
-@synthesize brightnessSlider;
-@synthesize hueLabel;
-@synthesize saturationLabel;
-@synthesize brightnessLabel;
+@synthesize redSlider;
+@synthesize greenSlider;
+@synthesize blueSlider;
+@synthesize redLabel;
+@synthesize greenLabel;
+@synthesize blueLabel;
 @synthesize previewView;
 @synthesize colorTitle;
-@synthesize chooseColorButton;
 
 - (IBAction)selectColor: (id)sender {
-    NSArray *values = [NSArray arrayWithObjects: previewView.backgroundColor, colorTitle.text, nil];
-    NSArray *keys = [NSArray arrayWithObjects: @"selectedColor", @"selectedTitle", nil];
+    NSArray *values = @[@(redSlider.value), @(greenSlider.value), @(blueSlider.value), colorTitle.text];
+    NSArray *keys = @[@"redComponent", @"greenComponent", @"blueComponent", @"selectedTitle"];
     NSDictionary *dict = [NSDictionary dictionaryWithObjects: values forKeys: keys];
 	[[NSNotificationCenter defaultCenter] postNotificationName: NOTIFICATION_COLOR_SELECTED object: dict];
 }
 
-- (IBAction)cancel: (id)sender {
-	[[NSNotificationCenter defaultCenter] postNotificationName: NOTIFICATION_COLOR_SELECTED object: nil];
-}
-
 - (void) presetSlidersWithColor: (UIColor *) aColor {
     const CGFloat *clr = CGColorGetComponents(aColor.CGColor);
-    [hueSlider setValue: clr[0] animated: YES];
-    [saturationSlider setValue: clr[1] animated: YES];
-    [brightnessSlider setValue: clr[2] animated: YES];
-    previewView.backgroundColor = [UIColor colorWithRed: hueSlider.value green: saturationSlider.value blue: brightnessSlider.value alpha: 1.0];
-    [self performSelector: @selector(hueSliderValueChanged:) withObject: hueSlider afterDelay: 0.0];
+    [redSlider setValue: clr[0] animated: YES];
+    [greenSlider setValue: clr[1] animated: YES];
+    [blueSlider setValue: clr[2] animated: YES];
+    previewView.backgroundColor = [UIColor colorWithRed: redSlider.value green: greenSlider.value blue: blueSlider.value alpha: 1.0];
+    [self performSelector: @selector(redSliderValueChanged:) withObject: redSlider afterDelay: 0.0];
 }
 
-- (void) hueSliderValueChanged: (UISlider *) slider {
+- (void) redSliderValueChanged: (UISlider *) slider {
     [UIView beginAnimations: nil context: NULL];
-    previewView.backgroundColor = [UIColor colorWithRed: slider.value green: saturationSlider.value blue: brightnessSlider.value alpha: 1.0];
+    previewView.backgroundColor = [UIColor colorWithRed: slider.value green: greenSlider.value blue: blueSlider.value alpha: 1.0];
     [UIView commitAnimations];
 }
 
-- (void) saturationSliderValueChanged: (UISlider *) slider {
+- (void) greenSliderValueChanged: (UISlider *) slider {
     [UIView beginAnimations: nil context: NULL];
-    previewView.backgroundColor = [UIColor colorWithRed: hueSlider.value green: slider.value blue: brightnessSlider.value alpha: 1.0];
+    previewView.backgroundColor = [UIColor colorWithRed: redSlider.value green: slider.value blue: blueSlider.value alpha: 1.0];
     [UIView commitAnimations];
 }
 
-- (void) brightnessSliderValueChanged: (UISlider *) slider {
+- (void) blueSliderValueChanged: (UISlider *) slider {
     [UIView beginAnimations: nil context: NULL];
-    previewView.backgroundColor = [UIColor colorWithRed: hueSlider.value green: saturationSlider.value blue: slider.value alpha: 1.0];
+    previewView.backgroundColor = [UIColor colorWithRed: redSlider.value green: greenSlider.value blue: slider.value alpha: 1.0];
     [UIView commitAnimations];
 }
 
 - (void) dealloc {
-    hueSlider = nil;
-    saturationSlider = nil;
-    brightnessSlider = nil;
-    hueLabel = nil;
-    saturationLabel = nil;
-    brightnessLabel = nil;
+    redSlider = nil;
+    greenSlider = nil;
+    blueSlider = nil;
+    redLabel = nil;
+    greenLabel = nil;
+    blueLabel = nil;
     previewView = nil;
     colorTitle = nil;
-    chooseColorButton = nil;
+}
+
+- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+    return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 @end

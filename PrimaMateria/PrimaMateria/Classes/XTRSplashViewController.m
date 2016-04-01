@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "PrimaMateria.h"
@@ -22,6 +22,7 @@
     self.appNameLabel.text = XTRVersionChecker.appNameString;
     self.versionLabel.text = XTRVersionChecker.appVersionString;
     self.cpyRightLabel.text = XTRVersionChecker.copywriteString;
+    self.wrapperView.layer.cornerRadius = 5;
     [NSThread detachNewThreadSelector : @selector(wait:) toTarget : self withObject : nil];
 }
 
@@ -35,6 +36,7 @@
     self.appNameLabel = nil;
     self.versionLabel = nil;
     self.cpyRightLabel = nil;
+    self.wrapperView = nil;
 }
 
 @end
