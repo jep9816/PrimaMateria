@@ -1,18 +1,19 @@
 #import "CPTDefinitions.h"
+#import "CPTLimitBand.h"
 #import "CPTPlot.h"
+#import "CPTPlotSymbol.h"
 
 /// @file
 
 @class CPTLineStyle;
-@class CPTPlotSymbol;
 @class CPTScatterPlot;
 @class CPTFill;
 
 /// @ingroup plotBindingsScatterPlot
 /// @{
-extern NSString *const CPTScatterPlotBindingXValues;
-extern NSString *const CPTScatterPlotBindingYValues;
-extern NSString *const CPTScatterPlotBindingPlotSymbols;
+extern NSString *__nonnull const CPTScatterPlotBindingXValues;
+extern NSString *__nonnull const CPTScatterPlotBindingYValues;
+extern NSString *__nonnull const CPTScatterPlotBindingPlotSymbols;
 /// @}
 
 /**
@@ -33,6 +34,16 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
     CPTScatterPlotInterpolationCurved     ///< Bezier curve interpolation.
 };
 
+/**
+ *  @brief Enumeration of scatter plot histogram style options
+ **/
+typedef NS_ENUM (NSInteger, CPTScatterPlotHistogramOption) {
+    CPTScatterPlotHistogramNormal,     ///< Standard histogram.
+    CPTScatterPlotHistogramSkipFirst,  ///< Skip the first step of the histogram.
+    CPTScatterPlotHistogramSkipSecond, ///< Skip the second step of the histogram.
+    CPTScatterPlotHistogramOptionCount ///< The number of histogram options available.
+};
+
 #pragma mark -
 
 /**
@@ -50,7 +61,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @param indexRange The range of the data indexes of interest.
  *  @return An array of plot symbols.
  **/
--(NSArray *)symbolsForScatterPlot:(CPTScatterPlot *)plot recordIndexRange:(NSRange)indexRange;
+-(nullable CPTPlotSymbolArray)symbolsForScatterPlot:(nonnull CPTScatterPlot *)plot recordIndexRange:(NSRange)indexRange;
 
 /** @brief @optional Gets a single plot symbol for the given scatter plot.
  *  This method will not be called if
@@ -60,7 +71,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @param idx The data index of interest.
  *  @return The plot symbol to show for the point with the given index.
  **/
--(CPTPlotSymbol *)symbolForScatterPlot:(CPTScatterPlot *)plot recordIndex:(NSUInteger)idx;
+-(nullable CPTPlotSymbol *)symbolForScatterPlot:(nonnull CPTScatterPlot *)plot recordIndex:(NSUInteger)idx;
 
 /// @}
 
@@ -86,7 +97,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @if MacOnly clicked data point. @endif
  *  @if iOSOnly touched data point. @endif
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolWasSelectedAtRecordIndex:(NSUInteger)idx;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot plotSymbolWasSelectedAtRecordIndex:(NSUInteger)idx;
 
 /** @brief @optional Informs the delegate that a data point
  *  @if MacOnly was both pressed and released. @endif
@@ -97,7 +108,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @if iOSOnly touched data point. @endif
  *  @param event The event that triggered the selection.
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolWasSelectedAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot plotSymbolWasSelectedAtRecordIndex:(NSUInteger)idx withEvent:(nonnull CPTNativeEvent *)event;
 
 /** @brief @optional Informs the delegate that a data point
  *  @if MacOnly was pressed. @endif
@@ -107,7 +118,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @if MacOnly clicked data point. @endif
  *  @if iOSOnly touched data point. @endif
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolTouchDownAtRecordIndex:(NSUInteger)idx;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot plotSymbolTouchDownAtRecordIndex:(NSUInteger)idx;
 
 /** @brief @optional Informs the delegate that a data point
  *  @if MacOnly was pressed. @endif
@@ -118,7 +129,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @if iOSOnly touched data point. @endif
  *  @param event The event that triggered the selection.
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolTouchDownAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot plotSymbolTouchDownAtRecordIndex:(NSUInteger)idx withEvent:(nonnull CPTNativeEvent *)event;
 
 /** @brief @optional Informs the delegate that a data point
  *  @if MacOnly was released. @endif
@@ -128,7 +139,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @if MacOnly clicked data point. @endif
  *  @if iOSOnly touched data point. @endif
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolTouchUpAtRecordIndex:(NSUInteger)idx;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot plotSymbolTouchUpAtRecordIndex:(NSUInteger)idx;
 
 /** @brief @optional Informs the delegate that a data point
  *  @if MacOnly was released. @endif
@@ -139,7 +150,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @if iOSOnly touched data point. @endif
  *  @param event The event that triggered the selection.
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot plotSymbolTouchUpAtRecordIndex:(NSUInteger)idx withEvent:(CPTNativeEvent *)event;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot plotSymbolTouchUpAtRecordIndex:(NSUInteger)idx withEvent:(nonnull CPTNativeEvent *)event;
 
 /// @}
 
@@ -151,7 +162,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @if iOSOnly the plot line received both the touch down and up events. @endif
  *  @param plot The scatter plot.
  **/
--(void)scatterPlotDataLineWasSelected:(CPTScatterPlot *)plot;
+-(void)scatterPlotDataLineWasSelected:(nonnull CPTScatterPlot *)plot;
 
 /** @brief @optional Informs the delegate that
  *  @if MacOnly the mouse was both pressed and released on the plot line.@endif
@@ -159,7 +170,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @param plot The scatter plot.
  *  @param event The event that triggered the selection.
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot dataLineWasSelectedWithEvent:(CPTNativeEvent *)event;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot dataLineWasSelectedWithEvent:(nonnull CPTNativeEvent *)event;
 
 /** @brief @optional Informs the delegate that
  *  @if MacOnly the mouse was pressed @endif
@@ -167,7 +178,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  while over the plot line.
  *  @param plot The scatter plot.
  **/
--(void)scatterPlotDataLineTouchDown:(CPTScatterPlot *)plot;
+-(void)scatterPlotDataLineTouchDown:(nonnull CPTScatterPlot *)plot;
 
 /** @brief @optional Informs the delegate that
  *  @if MacOnly the mouse was pressed @endif
@@ -176,7 +187,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @param plot The scatter plot.
  *  @param event The event that triggered the selection.
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot dataLineTouchDownWithEvent:(CPTNativeEvent *)event;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot dataLineTouchDownWithEvent:(nonnull CPTNativeEvent *)event;
 
 /** @brief @optional Informs the delegate that
  *  @if MacOnly the mouse was released @endif
@@ -184,7 +195,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  while over the plot line.
  *  @param plot The scatter plot.
  **/
--(void)scatterPlotDataLineTouchUp:(CPTScatterPlot *)plot;
+-(void)scatterPlotDataLineTouchUp:(nonnull CPTScatterPlot *)plot;
 
 /** @brief @optional Informs the delegate that
  *  @if MacOnly the mouse was released @endif
@@ -193,7 +204,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @param plot The scatter plot.
  *  @param event The event that triggered the selection.
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot dataLineTouchUpWithEvent:(CPTNativeEvent *)event;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot dataLineTouchUpWithEvent:(nonnull CPTNativeEvent *)event;
 
 /// @}
 
@@ -207,7 +218,7 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
  *  @param dataLinePath The CGPath describing the plot line that is about to be drawn.
  *  @param context The graphics context in which the plot line will be drawn.
  **/
--(void)scatterPlot:(CPTScatterPlot *)plot prepareForDrawingPlotLine:(CGPathRef)dataLinePath inContext:(CGContextRef)context;
+-(void)scatterPlot:(nonnull CPTScatterPlot *)plot prepareForDrawingPlotLine:(nonnull CGPathRef)dataLinePath inContext:(nonnull CGContextRef)context;
 
 /// @}
 
@@ -219,17 +230,28 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
 
 /// @name Appearance
 /// @{
-@property (nonatomic, readwrite) NSDecimal areaBaseValue;
-@property (nonatomic, readwrite) NSDecimal areaBaseValue2;
+@property (nonatomic, readwrite, strong, nullable) NSNumber *areaBaseValue;
+@property (nonatomic, readwrite, strong, nullable) NSNumber *areaBaseValue2;
 @property (nonatomic, readwrite, assign) CPTScatterPlotInterpolation interpolation;
+@property (nonatomic, readwrite, assign) CPTScatterPlotHistogramOption histogramOption;
+/// @}
+
+/// @name Area Fill Bands
+/// @{
+@property (nonatomic, readonly, nullable) CPTLimitBandArray areaFillBands;
 /// @}
 
 /// @name Drawing
 /// @{
-@property (nonatomic, readwrite, copy) CPTLineStyle *dataLineStyle;
-@property (nonatomic, readwrite, copy) CPTPlotSymbol *plotSymbol;
-@property (nonatomic, readwrite, copy) CPTFill *areaFill;
-@property (nonatomic, readwrite, copy) CPTFill *areaFill2;
+@property (nonatomic, readwrite, copy, nullable) CPTLineStyle *dataLineStyle;
+@property (nonatomic, readwrite, copy, nullable) CPTPlotSymbol *plotSymbol;
+@property (nonatomic, readwrite, copy, nullable) CPTFill *areaFill;
+@property (nonatomic, readwrite, copy, nullable) CPTFill *areaFill2;
+/// @}
+
+/// @name Data Line
+/// @{
+@property (nonatomic, readonly, nonnull) CGPathRef newDataLinePath;
 /// @}
 
 /// @name User Interaction
@@ -247,9 +269,15 @@ typedef NS_ENUM (NSInteger, CPTScatterPlotInterpolation) {
 
 /// @name Plot Symbols
 /// @{
--(CPTPlotSymbol *)plotSymbolForRecordIndex:(NSUInteger)idx;
+-(nullable CPTPlotSymbol *)plotSymbolForRecordIndex:(NSUInteger)idx;
 -(void)reloadPlotSymbols;
 -(void)reloadPlotSymbolsInIndexRange:(NSRange)indexRange;
+/// @}
+
+/// @name Area Fill Bands
+/// @{
+-(void)addAreaFillBand:(nullable CPTLimitBand *)limitBand;
+-(void)removeAreaFillBand:(nullable CPTLimitBand *)limitBand;
 /// @}
 
 @end

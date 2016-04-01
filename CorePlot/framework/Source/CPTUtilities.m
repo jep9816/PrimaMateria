@@ -468,7 +468,7 @@ NSDecimal CPTDecimalFromFloat(float aFloat)
         return CPTDecimalNaN();
     }
     else {
-        NSString *stringValue = [[NSString alloc] initWithFormat:@"%f", aFloat];
+        NSString *stringValue = [[NSString alloc] initWithFormat:@"%f", (double)aFloat];
         NSDecimal result      = CPTDecimalFromString(stringValue);
 
         return result;
@@ -504,7 +504,7 @@ NSDecimal CPTDecimalFromCGFloat(CGFloat aCGFloat)
         return CPTDecimalNaN();
     }
     else {
-        NSString *stringValue = [[NSString alloc] initWithFormat:@"%f", aCGFloat];
+        NSString *stringValue = [[NSString alloc] initWithFormat:@"%f", (double)aCGFloat];
         NSDecimal result      = CPTDecimalFromString(stringValue);
 
         return result;
@@ -806,11 +806,7 @@ CGPoint CPTAlignPointToUserSpace(CGContextRef context, CGPoint point)
     // Ensure that coordinates are at exactly the corner
     // of a device pixel.
     point.x = round( point.x - CPTFloat(0.5) ) + CPTFloat(0.5);
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-    point.y = round( point.y - CPTFloat(0.5) ) + CPTFloat(0.5);
-#else
     point.y = ceil(point.y) - CPTFloat(0.5);
-#endif
 
     // Convert the device aligned coordinate back to user space.
     return CGContextConvertPointToUserSpace(context, point);
@@ -860,14 +856,8 @@ CGRect CPTAlignRectToUserSpace(CGContextRef context, CGRect rect)
     rect.size.width = round( oldOrigin.x + rect.size.width - CPTFloat(0.5) ) - rect.origin.x;
     rect.origin.x  += CPTFloat(0.5);
 
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-    rect.origin.y    = round( rect.origin.y - CPTFloat(0.5) );
-    rect.size.height = round( oldOrigin.y + rect.size.height - CPTFloat(0.5) ) - rect.origin.y;
-    rect.origin.y   += CPTFloat(0.5);
-#else
     rect.origin.y    = ceil( CGRectGetMaxY(rect) ) - CPTFloat(0.5);
     rect.size.height = ceil(oldOrigin.y - CPTFloat(0.5) - rect.origin.y);
-#endif
 
     return CGContextConvertRectToUserSpace(context, rect);
 }
@@ -889,11 +879,7 @@ CGPoint CPTAlignIntegralPointToUserSpace(CGContextRef context, CGPoint point)
     point = CGContextConvertPointToDeviceSpace(context, point);
 
     point.x = round(point.x);
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-    point.y = round(point.y);
-#else
     point.y = ceil( point.y - CPTFloat(0.5) );
-#endif
 
     return CGContextConvertPointToUserSpace(context, point);
 }
@@ -917,13 +903,8 @@ CGRect CPTAlignIntegralRectToUserSpace(CGContextRef context, CGRect rect)
     rect.origin.x   = round(rect.origin.x);
     rect.size.width = round(oldOrigin.x + rect.size.width) - rect.origin.x;
 
-#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-    rect.origin.y    = round(rect.origin.y);
-    rect.size.height = round(oldOrigin.y + rect.size.height) - rect.origin.y;
-#else
     rect.origin.y    = ceil( CGRectGetMaxY(rect) - CPTFloat(0.5) );
     rect.size.height = ceil(oldOrigin.y - CPTFloat(0.5) - rect.origin.y);
-#endif
 
     return CGContextConvertRectToUserSpace(context, rect);
 }
@@ -963,7 +944,7 @@ CGRect CPTAlignBorderedRectToUserSpace(CGContextRef context, CGRect rect, CPTLin
  **/
 NSString *CPTStringFromPoint(CGPoint point)
 {
-    return [NSString stringWithFormat:@"{%g, %g}", point.x, point.y];
+    return [NSString stringWithFormat:@"{%g, %g}", (double)point.x, (double)point.y];
 }
 
 /** @brief Creates a string representation of the given size.
@@ -972,7 +953,7 @@ NSString *CPTStringFromPoint(CGPoint point)
  **/
 NSString *CPTStringFromSize(CGSize size)
 {
-    return [NSString stringWithFormat:@"{%g, %g}", size.width, size.height];
+    return [NSString stringWithFormat:@"{%g, %g}", (double)size.width, (double)size.height];
 }
 
 /** @brief Creates a string representation of the given rectangle.
@@ -981,7 +962,7 @@ NSString *CPTStringFromSize(CGSize size)
  **/
 NSString *CPTStringFromRect(CGRect rect)
 {
-    return [NSString stringWithFormat:@"{{%g, %g}, {%g, %g}}", rect.origin.x, rect.origin.y, rect.size.width, rect.size.height];
+    return [NSString stringWithFormat:@"{{%g, %g}, {%g, %g}}", (double)rect.origin.x, (double)rect.origin.y, (double)rect.size.width, (double)rect.size.height];
 }
 
 #pragma mark -
@@ -999,4 +980,75 @@ CGFloat squareOfDistanceBetweenPoints(CGPoint point1, CGPoint point2)
     CGFloat distanceSquared = deltaX * deltaX + deltaY * deltaY;
 
     return distanceSquared;
+}
+
+#pragma mark -
+#pragma mark Edge Inset Utilities
+
+/** @brief Returns a CPTEdgeInsets struct with the given insets.
+ *  @param top The top inset.
+ *  @param left The left inset.
+ *  @param bottom The bottom inset.
+ *  @param right The right inset.
+ *  @return A CPTEdgeInsets struct with the given insets.
+ **/
+CPTEdgeInsets CPTEdgeInsetsMake(CGFloat top, CGFloat left, CGFloat bottom, CGFloat right)
+{
+    CPTEdgeInsets insets;
+
+    insets.top    = top;
+    insets.left   = left;
+    insets.bottom = bottom;
+    insets.right  = right;
+
+    return insets;
+}
+
+/** @brief Compares two CPTEdgeInsets structstructs.
+ *  @param insets1 The first inset.
+ *  @param insets2 The second inset.
+ *  @return @YES if the two CPTEdgeInsets structs are equal.
+ **/
+BOOL CPTEdgeInsetsEqualToEdgeInsets(CPTEdgeInsets insets1, CPTEdgeInsets insets2)
+{
+    return (insets1.top == insets2.top) &&
+           (insets1.left == insets2.left) &&
+           (insets1.bottom == insets2.bottom) &&
+           (insets1.right == insets2.right);
+}
+
+#pragma mark -
+#pragma mark Log Modulus
+
+/** @brief Computes the log modulus of the given value.
+ *  @param value The value.
+ *  @return The log modulus of the given value.
+ *  @see <a href="http://blogs.sas.com/content/iml/2014/07/14/log-transformation-of-pos-neg.html">A log transformation of positive and negative values</a> for more information about the log-modulus transformation.
+ **/
+double CPTLogModulus(double value)
+{
+    if ( value != 0.0 ) {
+        double sign = (signbit(value) ? -1.0 : +1.0);
+
+        return sign * log10(fabs(value) + 1.0);
+    }
+    else {
+        return 0.0;
+    }
+}
+
+/** @brief Computes the inverse log modulus of the given value.
+ *  @param value The value.
+ *  @return The inverse log modulus of the given value.
+ **/
+double CPTInverseLogModulus(double value)
+{
+    if ( value != 0.0 ) {
+        double sign = (signbit(value) ? -1.0 : +1.0);
+
+        return sign * (pow( 10.0, fabs(value) ) - 1.0);
+    }
+    else {
+        return 0.0;
+    }
 }

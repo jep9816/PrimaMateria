@@ -69,16 +69,20 @@
     [coder encodeObject:self.referenceDate forKey:@"CPTTimeFormatter.referenceDate"];
 }
 
+/// @endcond
+
+/** @brief Returns an object initialized from data in a given unarchiver.
+ *  @param coder An unarchiver object.
+ *  @return An object initialized from data in a given unarchiver.
+ */
 -(instancetype)initWithCoder:(NSCoder *)coder
 {
-    if ( (self = [super initWithCoder:coder]) ) {
+    if ( (self = [super init]) ) {
         dateFormatter = [coder decodeObjectForKey:@"CPTTimeFormatter.dateFormatter"];
         referenceDate = [[coder decodeObjectForKey:@"CPTTimeFormatter.referenceDate"] copy];
     }
     return self;
 }
-
-/// @endcond
 
 #pragma mark -
 #pragma mark NSCopying Methods
@@ -118,9 +122,10 @@
 
     if ( [coordinateValue respondsToSelector:@selector(doubleValue)] ) {
         NSDate *date;
+        NSDate *refDate = self.referenceDate;
 
-        if ( self.referenceDate ) {
-            date = [[NSDate alloc] initWithTimeInterval:[coordinateValue doubleValue] sinceDate:self.referenceDate];
+        if ( refDate ) {
+            date = [[NSDate alloc] initWithTimeInterval:[coordinateValue doubleValue] sinceDate:refDate];
         }
         else {
             date = [[NSDate alloc] initWithTimeIntervalSinceReferenceDate:[coordinateValue doubleValue]];

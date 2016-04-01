@@ -46,9 +46,9 @@ null_values = { "int8_t" : "0",
               "uint32_t" : "0",
               "uint64_t" : "0",
                  "float" : "NAN",
-                "double" : "NAN",
-         "float complex" : "NAN",
-        "double complex" : "NAN",
+                "double" : "(double)NAN",
+         "float complex" : "CMPLXF(NAN, NAN)",
+        "double complex" : "CMPLX(NAN, NAN)",
              "NSDecimal" : "CPTDecimalNaN()"
 }
 
@@ -64,13 +64,13 @@ for dt in dataTypes:
         for t in types[dt]:
             print "\t\t\tcase sizeof(%s):" % t
             if ( t == "float complex" ):
-                print "\t\t\t\tresult = @(*( crealf(%s *)[self samplePointer:sample]) );" % (t)
+                print "\t\t\t\tresult = @(*( crealf(const %s *)[self samplePointer:sample]) );" % (t)
             elif ( t == "double complex" ):
-                print "\t\t\t\tresult = @(*( creal(%s *)[self samplePointer:sample]) );" % (t)
+                print "\t\t\t\tresult = @(*( creal(const %s *)[self samplePointer:sample]) );" % (t)
             elif ( t == "NSDecimal" ):
-                print "\t\t\t\tresult = [NSDecimalNumber decimalNumberWithDecimal:*(%s *)[self samplePointer:sample]];" % (t)
+                print "\t\t\t\tresult = [NSDecimalNumber decimalNumberWithDecimal:*(const %s *)[self samplePointer:sample]];" % (t)
             else:
-                print "\t\t\t\tresult = @(*(%s *)[self samplePointer:sample]);" % (t)
+                print "\t\t\t\tresult = @(*(const %s *)[self samplePointer:sample]);" % (t)
             print "\t\t\t\tbreak;"
         print "\t\t}"
     print "\t\tbreak;"
@@ -129,7 +129,7 @@ for dt in dataTypes:
                         if ( t == nt ):
                             print "\t\t\t\t\t\t\t\t\tmemcpy(destData.mutableBytes, sourceData.bytes, sampleCount * sizeof(%s));" % t
                         else:
-                            print "\t\t\t\t\t\t\t\t\tconst %s *fromBytes = (%s *)sourceData.bytes;" % (t, t)
+                            print "\t\t\t\t\t\t\t\t\tconst %s *fromBytes = (const %s *)sourceData.bytes;" % (t, t)
                             print "\t\t\t\t\t\t\t\t\tconst %s *lastSample = fromBytes + sampleCount;" % t
                             print "\t\t\t\t\t\t\t\t\t%s *toBytes = (%s *)destData.mutableBytes;" % (nt, nt)
                             if ( t == "NSDecimal" ):

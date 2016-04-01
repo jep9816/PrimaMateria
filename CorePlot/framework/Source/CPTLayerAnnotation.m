@@ -2,12 +2,13 @@
 
 #import "CPTAnnotationHostLayer.h"
 #import "CPTConstraints.h"
+#import "CPTExceptions.h"
 
 /// @cond
 @interface CPTLayerAnnotation()
 
-@property (nonatomic, readwrite, strong) CPTConstraints *xConstraints;
-@property (nonatomic, readwrite, strong) CPTConstraints *yConstraints;
+@property (nonatomic, readwrite, strong, nullable) CPTConstraints *xConstraints;
+@property (nonatomic, readwrite, strong, nullable) CPTConstraints *yConstraints;
 
 -(void)setConstraints;
 
@@ -25,7 +26,7 @@
  **/
 @implementation CPTLayerAnnotation
 
-/** @property __cpt_weak CPTLayer *anchorLayer
+/** @property cpt_weak CPTLayer *anchorLayer
  *  @brief The reference layer.
  **/
 @synthesize anchorLayer;
@@ -75,10 +76,11 @@
 
 /// @cond
 
-// anchorLayer is required; this will fail the assertion in -initWithAnchorLayer:
+// anchorLayer is required
 -(instancetype)init
 {
-    return [self initWithAnchorLayer:nil];
+    [NSException raise:CPTException format:@"%@ must be initialized with an anchor layer.", NSStringFromClass([self class])];
+    return [self initWithAnchorLayer:[CPTLayer layer]];
 }
 
 -(void)dealloc
@@ -104,18 +106,22 @@
     [coder encodeInteger:self.rectAnchor forKey:@"CPTLayerAnnotation.rectAnchor"];
 }
 
+/// @endcond
+
+/** @brief Returns an object initialized from data in a given unarchiver.
+ *  @param coder An unarchiver object.
+ *  @return An object initialized from data in a given unarchiver.
+ */
 -(instancetype)initWithCoder:(NSCoder *)coder
 {
-    if ( (self = [super initWithCoder:coder]) ) {
+    if ( (self = [super init]) ) {
         anchorLayer  = [coder decodeObjectForKey:@"CPTLayerAnnotation.anchorLayer"];
         xConstraints = [coder decodeObjectForKey:@"CPTLayerAnnotation.xConstraints"];
         yConstraints = [coder decodeObjectForKey:@"CPTLayerAnnotation.yConstraints"];
-        rectAnchor   = (CPTRectAnchor)[coder decodeIntegerForKey : @"CPTLayerAnnotation.rectAnchor"];
+        rectAnchor   = (CPTRectAnchor)[coder decodeIntegerForKey:@"CPTLayerAnnotation.rectAnchor"];
     }
     return self;
 }
-
-/// @endcond
 
 #pragma mark -
 #pragma mark Layout

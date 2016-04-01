@@ -1,5 +1,6 @@
 #import "CPTFunctionDataSource.h"
 
+#import "CPTExceptions.h"
 #import "CPTMutablePlotRange.h"
 #import "CPTNumericData.h"
 #import "CPTScatterPlot.h"
@@ -9,16 +10,17 @@
 
 /// @cond
 
-static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSourceKVOContext;
+static void *CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSourceKVOContext;
 
 @interface CPTFunctionDataSource()
 
-@property (nonatomic, readwrite, cpt_weak_property) __cpt_weak CPTPlot *dataPlot;
+@property (nonatomic, readwrite) CPTPlot *dataPlot;
 @property (nonatomic, readwrite) double cachedStep;
 @property (nonatomic, readwrite) NSUInteger dataCount;
 @property (nonatomic, readwrite) NSUInteger cachedCount;
 @property (nonatomic, readwrite, strong) CPTMutablePlotRange *cachedPlotRange;
 
+-(instancetype)initForPlot:(CPTPlot *)plot NS_DESIGNATED_INITIALIZER;
 -(void)plotBoundsChanged;
 -(void)plotSpaceChanged;
 
@@ -29,7 +31,7 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
 #pragma mark -
 
 /**
- *  @brief A datasource class that automatically creates scatter plot data from a function.
+ *  @brief A datasource class that automatically creates scatter plot data from a function or Objective-C block.
  **/
 @implementation CPTFunctionDataSource
 
@@ -38,7 +40,12 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
  **/
 @synthesize dataSourceFunction;
 
-/** @property __cpt_weak CPTPlot *dataPlot
+/** @property CPTDataSourceBlock dataSourceBlock
+ *  @brief The Objective-C block used to generate plot data.
+ **/
+@synthesize dataSourceBlock;
+
+/** @property CPTPlot *dataPlot
  *  @brief The plot that will display the function values. Must be an instance of CPTScatterPlot.
  **/
 @synthesize dataPlot;
@@ -71,6 +78,16 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
     return [[self alloc] initForPlot:plot withFunction:function];
 }
 
+/** @brief Creates and returns a new CPTFunctionDataSource instance initialized with the provided block and plot.
+ *  @param plot The plot that will display the function values.
+ *  @param block The Objective-C block used to generate plot data.
+ *  @return A new CPTFunctionDataSource instance initialized with the provided block and plot.
+ **/
++(instancetype)dataSourceForPlot:(CPTPlot *)plot withBlock:(CPTDataSourceBlock)block
+{
+    return [[self alloc] initForPlot:plot withBlock:block];
+}
+
 /** @brief Initializes a newly allocated CPTFunctionDataSource object with the provided function and plot.
  *  @param plot The plot that will display the function values.
  *  @param function The function used to generate plot data.
@@ -78,12 +95,43 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
  **/
 -(instancetype)initForPlot:(CPTPlot *)plot withFunction:(CPTDataSourceFunction)function
 {
-    NSParameterAssert([plot isKindOfClass:[CPTScatterPlot class]]);
     NSParameterAssert(function);
+
+    if ( (self = [self initForPlot:plot]) ) {
+        dataSourceFunction = function;
+
+        plot.dataSource = self;
+    }
+    return self;
+}
+
+/** @brief Initializes a newly allocated CPTFunctionDataSource object with the provided block and plot.
+ *  @param plot The plot that will display the function values.
+ *  @param block The Objective-C block used to generate plot data.
+ *  @return The initialized CPTFunctionDataSource object.
+ **/
+-(instancetype)initForPlot:(CPTPlot *)plot withBlock:(CPTDataSourceBlock)block
+{
+    NSParameterAssert(block);
+
+    if ( (self = [self initForPlot:plot]) ) {
+        dataSourceBlock = block;
+
+        plot.dataSource = self;
+    }
+    return self;
+}
+
+/// @cond
+
+-(instancetype)initForPlot:(CPTPlot *)plot
+{
+    NSParameterAssert([plot isKindOfClass:[CPTScatterPlot class]]);
 
     if ( (self = [super init]) ) {
         dataPlot           = plot;
-        dataSourceFunction = function;
+        dataSourceFunction = NULL;
+        dataSourceBlock    = nil;
         resolution         = CPTFloat(1.0);
         cachedStep         = 0.0;
         dataCount          = 0;
@@ -92,7 +140,6 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
         dataRange          = nil;
 
         plot.cachePrecision = CPTPlotCachePrecisionDouble;
-        plot.dataSource     = self;
 
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(plotBoundsChanged)
@@ -106,20 +153,18 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
     return self;
 }
 
-/// @cond
-
 // function and plot are required; this will fail the assertions in -initForPlot:withFunction:
 -(instancetype)init
 {
-    return [self initForPlot:nil withFunction:NULL];
+    [NSException raise:CPTException format:@"%@ must be initialized with a function or a block.", NSStringFromClass([self class])];
+    return [self initForPlot:[CPTScatterPlot layer] withFunction:sin];
 }
 
 -(void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 
-    CPTPlot *plot = dataPlot;
-    [plot removeObserver:self forKeyPath:@"plotSpace" context:CPTFunctionDataSourceKVOContext];
+    [dataPlot removeObserver:self forKeyPath:@"plotSpace" context:CPTFunctionDataSourceKVOContext];
 }
 
 /// @endcond
@@ -172,24 +217,27 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
     CPTPlot *plot = self.dataPlot;
 
     if ( plot ) {
-        CGFloat width = plot.bounds.size.width;
-        if ( width > CPTFloat(0.0) ) {
-            NSUInteger count = (NSUInteger)lrint( ceil(width / self.resolution) ) + 1;
+        CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)plot.plotSpace;
 
-            if ( count > self.cachedCount ) {
-                self.dataCount   = count;
-                self.cachedCount = count;
+        if ( plotSpace ) {
+            CGFloat width = plot.bounds.size.width;
+            if ( width > CPTFloat(0.0) ) {
+                NSUInteger count = (NSUInteger)lrint( ceil(width / self.resolution) ) + 1;
 
-                CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)plot.plotSpace;
-                self.cachedStep = plotSpace.xRange.lengthDouble / count;
+                if ( count > self.cachedCount ) {
+                    self.dataCount   = count;
+                    self.cachedCount = count;
 
-                [plot reloadData];
+                    self.cachedStep = plotSpace.xRange.lengthDouble / count;
+
+                    [plot reloadData];
+                }
             }
-        }
-        else {
-            self.dataCount   = 0;
-            self.cachedCount = 0;
-            self.cachedStep  = 0.0;
+            else {
+                self.dataCount   = 0;
+                self.cachedCount = 0;
+                self.cachedStep  = 0.0;
+            }
         }
     }
 }
@@ -226,8 +274,8 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
                 NSUInteger numPoints = (NSUInteger)lrint( ( ceil( (cachedRange.minLimitDouble - minLimit) / step ) ) );
 
                 NSDecimal offset = CPTDecimalFromDouble(step * numPoints);
-                cachedRange.location = CPTDecimalSubtract(cachedRange.location, offset);
-                cachedRange.length   = CPTDecimalAdd(cachedRange.length, offset);
+                cachedRange.locationDecimal = CPTDecimalSubtract(cachedRange.locationDecimal, offset);
+                cachedRange.lengthDecimal   = CPTDecimalAdd(cachedRange.lengthDecimal, offset);
 
                 self.dataCount += numPoints;
 
@@ -239,7 +287,7 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
                 NSUInteger numPoints = (NSUInteger)lrint( ceil( (maxLimit - cachedRange.maxLimitDouble) / step ) );
 
                 NSDecimal offset = CPTDecimalFromDouble(step * numPoints);
-                cachedRange.length = CPTDecimalAdd(cachedRange.length, offset);
+                cachedRange.lengthDecimal = CPTDecimalAdd(cachedRange.lengthDecimal, offset);
 
                 self.dataCount += numPoints;
 
@@ -252,8 +300,8 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
                 NSUInteger numPoints = (NSUInteger)lrint( ceil( (cachedRange.maxLimitDouble - maxLimit) / step ) );
 
                 NSDecimal offset = CPTDecimalFromDouble(step * numPoints);
-                cachedRange.location = CPTDecimalSubtract(cachedRange.location, offset);
-                cachedRange.length   = CPTDecimalAdd(cachedRange.length, offset);
+                cachedRange.locationDecimal = CPTDecimalSubtract(cachedRange.locationDecimal, offset);
+                cachedRange.lengthDecimal   = CPTDecimalAdd(cachedRange.lengthDecimal, offset);
 
                 self.dataCount += numPoints;
 
@@ -265,7 +313,7 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
                 NSUInteger numPoints = (NSUInteger)lrint( ceil( (minLimit - cachedRange.minLimitDouble) / step ) );
 
                 NSDecimal offset = CPTDecimalFromDouble(step * numPoints);
-                cachedRange.length = CPTDecimalAdd(cachedRange.length, offset);
+                cachedRange.lengthDecimal = CPTDecimalAdd(cachedRange.lengthDecimal, offset);
 
                 self.dataCount += numPoints;
 
@@ -282,7 +330,7 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
 
 /// @cond
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *, CPTPlotSpace *> *)change context:(void *)context
 {
     if ( (context == CPTFunctionDataSourceKVOContext) && [keyPath isEqualToString:@"plotSpace"] && [object isEqual:self.dataPlot] ) {
         CPTPlotSpace *oldSpace = change[NSKeyValueChangeOldKey];
@@ -346,19 +394,33 @@ static void *const CPTFunctionDataSourceKVOContext = (void *)&CPTFunctionDataSou
         double *xBytes = data.mutableBytes;
         double *yBytes = data.mutableBytes + ( indexRange.length * sizeof(double) );
 
-        CPTDataSourceFunction function = self.dataSourceFunction;
-
         double location = xRange.locationDouble;
         double length   = xRange.lengthDouble;
         double denom    = (double)( count - ( (count > 1) ? 1 : 0 ) );
 
         NSUInteger lastIndex = NSMaxRange(indexRange);
 
-        for ( NSUInteger i = indexRange.location; i < lastIndex; i++ ) {
-            double x = location + ( (double)i / denom ) * length;
+        CPTDataSourceFunction function = self.dataSourceFunction;
 
-            *xBytes++ = x;
-            *yBytes++ = function(x);
+        if ( function ) {
+            for ( NSUInteger i = indexRange.location; i < lastIndex; i++ ) {
+                double x = location + ( (double)i / denom ) * length;
+
+                *xBytes++ = x;
+                *yBytes++ = function(x);
+            }
+        }
+        else {
+            CPTDataSourceBlock functionBlock = self.dataSourceBlock;
+
+            if ( functionBlock ) {
+                for ( NSUInteger i = indexRange.location; i < lastIndex; i++ ) {
+                    double x = location + ( (double)i / denom ) * length;
+
+                    *xBytes++ = x;
+                    *yBytes++ = functionBlock(x);
+                }
+            }
         }
 
         numericData = [CPTNumericData numericDataWithData:data

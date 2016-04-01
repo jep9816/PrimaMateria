@@ -23,7 +23,7 @@
  **/
 @implementation CPTLegendEntry
 
-/** @property __cpt_weak CPTPlot *plot
+/** @property cpt_weak CPTPlot *plot
  *  @brief The plot associated with this legend entry.
  **/
 @synthesize plot;
@@ -111,9 +111,9 @@
 {
     if ( (self = [super init]) ) {
         plot      = [coder decodeObjectForKey:@"CPTLegendEntry.plot"];
-        index     = (NSUInteger)[coder decodeIntegerForKey : @"CPTLegendEntry.index"];
-        row       = (NSUInteger)[coder decodeIntegerForKey : @"CPTLegendEntry.row"];
-        column    = (NSUInteger)[coder decodeIntegerForKey : @"CPTLegendEntry.column"];
+        index     = (NSUInteger)[coder decodeIntegerForKey:@"CPTLegendEntry.index"];
+        row       = (NSUInteger)[coder decodeIntegerForKey:@"CPTLegendEntry.row"];
+        column    = (NSUInteger)[coder decodeIntegerForKey:@"CPTLegendEntry.column"];
         textStyle = [coder decodeObjectForKey:@"CPTLegendEntry.textStyle"];
     }
     return self;
@@ -142,7 +142,7 @@
     CGSize theTitleSize = self.titleSize;
     if ( theTitleSize.height < textRect.size.height ) {
         CGFloat offset = (textRect.size.height - theTitleSize.height) / CPTFloat(2.0);
-        if ( scale == 1.0 ) {
+        if ( scale == CPTFloat(1.0) ) {
             offset = round(offset);
         }
         else {

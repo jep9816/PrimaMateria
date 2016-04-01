@@ -1,5 +1,6 @@
 #import "CPTConstraints.h"
 
+#import "CPTDefinitions.h"
 #import "NSCoderExtensions.h"
 #import "_CPTConstraintsFixed.h"
 #import "_CPTConstraintsRelative.h"
@@ -124,7 +125,7 @@
         return [self initWithRelativeOffset:offset];
     }
 
-    return self;
+    return nil;
 }
 
 /// @endcond
@@ -159,7 +160,7 @@
 -(CGFloat)positionForLowerBound:(CGFloat)lowerBound upperBound:(CGFloat)upperBound
 {
     // subclasses override to do position calculation here
-    return NAN;
+    return CPTNAN;
 }
 
 @end
