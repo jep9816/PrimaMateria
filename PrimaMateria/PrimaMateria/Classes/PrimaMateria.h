@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 02/04/2010.
-//  Copyright 2014 xTrensa. All rights reserved.
+//  Copyright 2016 xTrensa. All rights reserved.
 //
 
 #import "CorePlot-CocoaTouch.h"
@@ -41,7 +41,6 @@
 #import "XTRMainViewController.h"
 #import "XTRMolecularCalculatorViewController.h"
 #import "XTRNuclidesIsotopesViewController.h"
-#import "PTColorAlertView.h"
 #import "XTRPeriodicTableViewController.h"
 #import "XTRPreferencesViewController.h"
 #import "XTRAppDelegate.h"
