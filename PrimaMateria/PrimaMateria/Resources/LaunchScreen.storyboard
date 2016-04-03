@@ -26,7 +26,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.25174825174825177" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="600" id="Efw-MZ-8UF"/>
+                                    <constraint firstAttribute="width" constant="600" id="PLD-lh-v3d"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="100"/>
                                 <color key="highlightedColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -36,13 +36,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="6hI-Bu-Yaw"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="awM-IC-cCX" secondAttribute="bottom" constant="327" id="6uu-3f-gwS"/>
-                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HKZ-JT-38n"/>
-                            <constraint firstItem="awM-IC-cCX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="327" id="RqX-wx-dpo"/>
-                            <constraint firstItem="awM-IC-cCX" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="212" id="aqN-5f-ttd"/>
-                            <constraint firstAttribute="trailing" secondItem="7h4-Rt-Kah" secondAttribute="trailing" id="lpf-hR-dI5"/>
-                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="oJ5-u2-tQN"/>
+                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="centerX" secondItem="awM-IC-cCX" secondAttribute="centerX" id="J8A-a0-sVg"/>
+                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="K2k-8V-UGv"/>
+                            <constraint firstItem="awM-IC-cCX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="327" id="QDG-oe-vXL"/>
+                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Qc5-Jv-MGX"/>
+                            <constraint firstAttribute="trailing" secondItem="7h4-Rt-Kah" secondAttribute="trailing" id="c0m-en-e8b"/>
+                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="kPE-vN-8oi"/>
+                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="centerY" secondItem="awM-IC-cCX" secondAttribute="centerY" id="vYU-dc-MBi"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
