@@ -222,7 +222,7 @@
 		973825A3147AEE8800AEA344 /* XTRShadowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRShadowView.m; sourceTree = "<group>"; };
 		973825B1147BDEC100AEA344 /* XTRPropertiesStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRPropertiesStore.h; sourceTree = "<group>"; };
 		973825B2147BDEC100AEA344 /* XTRPropertiesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRPropertiesStore.m; sourceTree = "<group>"; };
-		9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9746B1E81492503600A0DC96 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		974BAADA148EBC0A0020F55D /* ElementInspectorSeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementInspectorSeque.h; sourceTree = "<group>"; };
 		974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementInspectorSeque.m; sourceTree = "<group>"; };
