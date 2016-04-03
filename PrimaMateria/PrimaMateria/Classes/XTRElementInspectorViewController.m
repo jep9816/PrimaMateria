@@ -8,20 +8,19 @@
 
 #import "PrimaMateria.h"
 
-typedef enum ViewTypes {
+typedef NS_ENUM(NSInteger, InspectorViewTypes) {
     kAtomicStructureView  = 0,
     kElementPropertiesView = 1,
     kNuclidesIsotopesView = 2,
     kSpectrumView = 3,
     kGeneralInfoView = 4
-}
-SwapViews;
+};
 
 @interface XTRElementInspectorViewController ()
-- (void) assignAtomicSymbolTextFieldProperties;
-- (void) assignOtherLabels;
-- (void) assignNavigationHints;
-- (void) setupPageItemView;
+- (void)assignAtomicSymbolTextFieldProperties;
+- (void)assignOtherLabels;
+- (void)assignNavigationHints;
+- (void)setupPageItemView;
 - (void)animateForDirection: (NSString *)direction;
 @end
 
@@ -29,13 +28,13 @@ SwapViews;
 
 #pragma mark Private Methods
 
-- (void) assignAtomicSymbolTextFieldProperties {
+- (void)assignAtomicSymbolTextFieldProperties {
     self.atomicSymbolLabel.text = self.element.symbol;
     self.atomicSymbolLabel.textColor = self.element.standardConditionColor;
     self.atomicSymbolLabel.backgroundColor = self.element.seriesColor;
 }
 
-- (void) assignOtherLabels {    
+- (void)assignOtherLabels {    
     self.atomicNumberLabel.text = self.element.atomicNumber.stringValue;
     self.titleItem.title = self.element.nameString;
     self.periodLabel.text = self.element.periodString;
@@ -44,7 +43,7 @@ SwapViews;
     self.casRegNoLabel.text = self.element.casRegNoString;
 }
 
-- (void) assignNavigationHints {
+- (void)assignNavigationHints {
     NSInteger atomicNumber = self.element.atomicNumber.integerValue;
     UILabel *currentLabel = (UILabel *)(self.pageItemView.subviews)[atomicNumber + 1];
     currentLabel.font = [UIFont systemFontOfSize: 12.0];
@@ -84,7 +83,7 @@ SwapViews;
     self.previousLabel.text = [NSString stringWithFormat: @" Swipe Left for %@", previousElement.name];
 }
 
-- (void) setupPageItemView {
+- (void)setupPageItemView {
     CGRect rect = CGRectMake(4, 30, 8, 8);
     for (int i = 0; i < [XTRDataSource sharedInstance].elementCount; i++) {
         UILabel *label = [[UILabel alloc] initWithFrame: rect];
@@ -130,7 +129,7 @@ SwapViews;
 
 #pragma mark - Misc Methods
 
-- (void) setupUI {
+- (void)setupUI {
     if (self.element != nil) {
         [self assignAtomicSymbolTextFieldProperties];
         [self assignOtherLabels];
@@ -178,7 +177,7 @@ SwapViews;
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear: animated];
     NSNumber *atomicNumber = [XTRPropertiesStore retreiveAtomicNumber];
-    self.barButtonItem.title = [NSString stringWithFormat: @"Back to %@", [XTRPropertiesStore retreiveViewTitle]];
+    self.barButtonItem.title = [NSString stringWithFormat: @"◀︎ %@", [XTRPropertiesStore retreiveViewTitle]];
     self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber.intValue];
     [self setupUI];
 }
@@ -188,7 +187,7 @@ SwapViews;
     [super viewWillDisappear: animated];
 }
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
 
     self.nextButton.titleLabel.textAlignment = NSTextAlignmentRight;
@@ -219,7 +218,7 @@ SwapViews;
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     self.atomicNumberLabel = nil;
     self.atomicSymbolLabel = nil;
     self.barButtonItem = nil;

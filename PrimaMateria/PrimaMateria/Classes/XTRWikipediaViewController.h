@@ -10,9 +10,9 @@
 
 @interface XTRWikipediaViewController : UIViewController <UIWebViewDelegate, MBProgressHUDDelegate>
 
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *back;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *backButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *titleButtonItem;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *forward;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *forwardButton;
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) MBProgressHUD *progressHUD;
 @property (nonatomic, strong) NSMutableData *responseData;

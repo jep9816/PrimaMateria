@@ -8,13 +8,13 @@
 
 #import "PrimaMateria.h"
 
-static XTRDataSource *sharedInstance = nil;
+//static XTRDataSource *_sharedInstance = nil;
 
 @interface XTRDataSource ()
 
 - (NSData *) dataForResource: (NSString *) aResourceName type: (NSString *) aType directory: (NSString *) aDirectory;
-- (void) loadElementForSymbol: (NSString *) aSymbol;
-- (void) loadElementList;
+- (void)loadElementForSymbol: (NSString *) aSymbol;
+- (void)loadElementList;
 @end
 
 @implementation XTRDataSource
@@ -25,7 +25,7 @@ static XTRDataSource *sharedInstance = nil;
     return [NSData dataWithContentsOfFile:[[NSBundle bundleForClass:[self class]] pathForResource: aResourceName ofType: aType inDirectory: aDirectory]];
 }
 
-- (void) loadElementForSymbol: (NSString *) aSymbol {
+- (void)loadElementForSymbol: (NSString *) aSymbol {
     NSError *error;
     
     NSMutableDictionary *tempDict = [NSPropertyListSerialization propertyListWithData:[self dataForResource: aSymbol type: @"plist" directory: SUPPORTING_FILES] options: NSPropertyListMutableContainers format: NULL error: &error];
@@ -34,7 +34,7 @@ static XTRDataSource *sharedInstance = nil;
     [self.elementList addObject: element];
 }
 
-- (void) loadElementList {
+- (void)loadElementList {
     NSError *error;
 
     NSArray *tempList = [NSPropertyListSerialization propertyListWithData:[self dataForResource: @"ElementList" type: @"plist" directory: SUPPORTING_FILES] options: NSPropertyListMutableContainers format: NULL error: &error];
@@ -46,11 +46,22 @@ static XTRDataSource *sharedInstance = nil;
 
 #pragma mark - Shared Instance Methods
 
-+ (XTRDataSource *) sharedInstance {
-    if (sharedInstance == nil)
-        sharedInstance = [[super allocWithZone: NULL] init];
-    return sharedInstance;
++ (XTRDataSource *)sharedInstance {
+    static XTRDataSource *_sharedInstance;
+    static dispatch_once_t onceToken;
+    
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[super allocWithZone: NULL] init];
+    });
+    
+    return _sharedInstance;
 }
+
+//+ (XTRDataSource *) sharedInstance {
+//    if (sharedInstance == nil)
+//        sharedInstance = [[super allocWithZone: NULL] init];
+//    return sharedInstance;
+//}
 
 + (id) allocWithZone: (NSZone *) zone {
     return [self sharedInstance];
@@ -77,7 +88,7 @@ static XTRDataSource *sharedInstance = nil;
 
 #pragma mark - General Methods
 
-- (void) sortByColumnPosition: (int) aColumnPosition andOrdering: (BOOL) anOrderingFlag {
+- (void)sortByColumnPosition: (int) aColumnPosition andOrdering: (BOOL) anOrderingFlag {
     NSString *sortObject = self.sortColumns[aColumnPosition];
     NSSortDescriptor *discripter1;
     if (anOrderingFlag)
@@ -96,7 +107,7 @@ static XTRDataSource *sharedInstance = nil;
         [self.sortedElementList sortUsingDescriptors:@[ discripter1]];
 }
 
-- (void) resetElementList {
+- (void)resetElementList {
     NSString *sortObject = self.sortColumns[0];
     NSSortDescriptor *sortDesc = [[NSSortDescriptor alloc] initWithKey: sortObject ascending: YES];
     [self.sortedElementList sortUsingDescriptors:@[ sortDesc]];

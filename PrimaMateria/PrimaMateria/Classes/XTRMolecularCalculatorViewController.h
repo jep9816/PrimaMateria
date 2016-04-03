@@ -17,6 +17,6 @@
 - (IBAction) calculate : (id) sender;
 - (IBAction) clear : (id) sender;
 - (IBAction) numberClicked : (id) sender;
-- (void) setElement: (XTRElement *)anElement;
+- (void)setElement: (XTRElement *)anElement;
 
 @end

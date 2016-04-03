@@ -12,7 +12,7 @@
 
 #pragma mark Initialization Methods
 
-- (void) registerDefaultsFromSettingsBundle {
+- (void)registerDefaultsFromSettingsBundle {
     NSString *settingsBundle = [[NSBundle mainBundle] pathForResource: @"Settings" ofType: @"bundle"];
     if (!settingsBundle) {
         NSLog(@"Could not find Settings.bundle");
@@ -40,6 +40,7 @@
 - (instancetype) init {
     if (self = [super init]) {
         NSString *aDefault = [[NSUserDefaults standardUserDefaults] stringForKey: SPLASH_SCREEN_DEFAULT];
+        
         if (!aDefault) {
             [self registerDefaultsFromSettingsBundle];
         }

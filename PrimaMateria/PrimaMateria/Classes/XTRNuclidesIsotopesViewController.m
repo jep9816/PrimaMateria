@@ -13,10 +13,6 @@
 @end
 
 @implementation XTRNuclidesIsotopesViewController
-@synthesize headerView;
-@synthesize nuclidesAndIsotopesArray;
-@synthesize swapView;
-@synthesize tableView;
 
 #pragma mark Private Methods
 
@@ -37,23 +33,23 @@
 
 #pragma mark - Misc Methods
 
-- (void) setupUI {
+- (void)setupUI {
     if (self.element != nil) {
-        if (tableView != nil) {
-            [tableView removeFromSuperview];
-            tableView = nil;
+        if (self.tableView != nil) {
+            [self.tableView removeFromSuperview];
+            self.tableView = nil;
         }
-        tableView = [[UITableView alloc] initWithFrame:self.swapView.frame style: UITableViewStylePlain];
-        tableView.alwaysBounceVertical = NO;
-        tableView.alwaysBounceHorizontal = NO;
-        tableView.dataSource = self;
-        tableView.delegate = self;
-        tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-        tableView.backgroundColor = UIColor.blackColor;
+        self.tableView = [[UITableView alloc] initWithFrame:self.swapView.frame style: UITableViewStylePlain];
+        self.tableView.alwaysBounceVertical = NO;
+        self.tableView.alwaysBounceHorizontal = NO;
+        self.tableView.dataSource = self;
+        self.tableView.delegate = self;
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        self.tableView.backgroundColor = UIColor.blackColor;
         self.tableView.rowHeight = 34.0f;
-        [self.view addSubview: tableView];
-        nuclidesAndIsotopesArray = self.element.nuclidesAndIsotopes;
-        [tableView reloadData];
+        [self.view addSubview: self.tableView];
+        self.nuclidesAndIsotopesArray = self.element.nuclidesAndIsotopes;
+        [self.tableView reloadData];
     }
 }
 
@@ -65,7 +61,7 @@
     DynoTableCell *cell = (DynoTableCell *)[aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
     if (cell == nil) {
         NSInteger modulus = row % 2;
-        NSDictionary *dict = nuclidesAndIsotopesArray[row];
+        NSDictionary *dict = self.nuclidesAndIsotopesArray[row];
         cell = [[DynoTableCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: MyIdentifier];
         [self tableCellLabelWithXPos: 0.0f   YPos: 0.0f width: 103.0f  height: 32.0f property:[dict valueForKey: @"nuclide"] columnPosition: 1 modulus: modulus forCell: cell];
         [self tableCellLabelWithXPos: 104.0f  YPos: 0.0f width: 103.0f height: 32.0f property:[dict valueForKey: ELEMENT_ATOMIC_MASS] columnPosition: 2 modulus: modulus forCell: cell];
@@ -91,9 +87,9 @@
 
 #pragma mark - View Management Methods
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [swapView removeFromSuperview];
+    [self.swapView removeFromSuperview];
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
@@ -102,11 +98,11 @@
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
-    tableView.delegate = nil;
-    tableView = nil;
-    headerView = nil;
-    swapView = nil;
+- (void)dealloc {
+    self.tableView.delegate = nil;
+    self.tableView = nil;
+    self.headerView = nil;
+    self.swapView = nil;
 }
 
 @end

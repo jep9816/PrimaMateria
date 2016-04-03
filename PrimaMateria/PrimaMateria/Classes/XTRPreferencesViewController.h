@@ -27,7 +27,6 @@
 @property (nonatomic, strong) IBOutlet UISwitch *showTransitionsBubbleSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *splashScreenSwitch;
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
-@property (nonatomic, strong) IBOutlet UIView *colorPickersView;
 
 - (IBAction)resetPreferences : (id)sender;
 - (IBAction)setElementBubbleState : (id)sender;

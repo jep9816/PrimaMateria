@@ -22,7 +22,7 @@
 
 @property (atomic) BOOL didSelectColor;
 
-- (void) presetSlidersWithColor: (UIColor *) color;
+- (void)presetSlidersWithColor: (UIColor *) color;
 
 - (IBAction)selectColor: (id)sender;
 - (IBAction) redSliderValueChanged: (UISlider *) slider;

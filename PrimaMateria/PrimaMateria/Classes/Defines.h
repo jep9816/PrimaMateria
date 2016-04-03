@@ -8,7 +8,7 @@
 
 #define degreesToRadians(x) (M_PI * x / 180.0)
 
-typedef enum SeriesColors {
+typedef NS_ENUM(NSInteger, SeriesColors) {
     kSERIES_ACTINIDE = 0,
     kSERIES_ALKALI_EARTH_METAL = 1,
     kSERIES_ALKALI_METAL = 2,
@@ -19,7 +19,7 @@ typedef enum SeriesColors {
     kSERIES_NON_METAL = 7,
     kSERIES_TRANSACTINIDES = 8,
     kSERIES_TRANSITION_METAL = 9
-} SeriesColors;
+};
 
 extern float RGB_CONSTANT;
 extern float HSB_CONSTANT;
@@ -150,6 +150,7 @@ extern NSString *STRING_UNKNOWN;
 extern NSString *SUPPORTING_FILES;
 extern NSString *PERIODIC_VIEW_TITLE;
 extern NSString *VIEW_TITLE_KEY;
+extern NSString *COLOR_KEY;
 
 #pragma mark - Color Constants
 

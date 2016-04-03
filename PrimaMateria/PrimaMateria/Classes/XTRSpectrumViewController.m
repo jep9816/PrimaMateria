@@ -22,7 +22,7 @@ static NSString *kVSpectrum = @"V";
 - (NSNumber *) airWavelengthValue: (NSNumber *) anAirWavelength withIdentifier: (NSString *) anIdentifier andSpectrum: (NSString *) aSpectrum;
 - (NSNumber *) intensityValue: (NSNumber *) anIntensity withIdentifier: (NSString *) anIdentifier andSpectrum: (NSString *) aSpectrum;
 - (UILabel *) tableCellLabelWithXPos: (float) xPos YPos: (float) yPos width: (float) aWidth height: (float) aHeight property: (NSObject *) aProperty columnPosition: (int) aColumnPosition modulus: (int) aModulus forCell: (DynoTableCell *) cell;
-- (void) setupBarChart;
+- (void)setupBarChart;
 @end
 
 @implementation XTRSpectrumViewController
@@ -47,7 +47,7 @@ static NSString *kVSpectrum = @"V";
     return [aSpectrum hasSuffix:[NSString stringWithFormat: @" %@", anIdentifier]] ? anIntensity : @0;
 }
 
-- (void) setupBarChart {
+- (void)setupBarChart {
     // Create barChart from theme
     self.barChart = [[CPTXYGraph alloc] initWithFrame: CGRectZero];
     [self.barChart applyTheme: [CPTTheme themeNamed: kCPTSlateTheme]];
@@ -152,7 +152,7 @@ static NSString *kVSpectrum = @"V";
 
 #pragma mark - Misc Methods
 
-- (void) setupUI {
+- (void)setupUI {
     if (self.element != nil) {
         if (self.tableView != nil) {
             [self.tableView removeFromSuperview];
@@ -232,7 +232,7 @@ static NSString *kVSpectrum = @"V";
 
 #pragma mark - View Management Methods
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self.swapView removeFromSuperview];
 }
@@ -243,7 +243,7 @@ static NSString *kVSpectrum = @"V";
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     self.tableView.delegate = nil;
     self.tableView = nil;
     self.swapView = nil;

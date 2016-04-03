@@ -7,7 +7,11 @@
 //
 
 @interface UIImage (Extentions)
-+ (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;
++ (UIImage *)imageWithColor: (UIColor *)color size: (CGSize)size;
+@end
+
+@interface UIColor (Extentions)
++ (UIColor *)reverseColorOf: (UIColor *)oldColor;
 @end
 
 @interface XTRElement (Presentation)

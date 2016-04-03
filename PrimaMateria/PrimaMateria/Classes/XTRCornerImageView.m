@@ -11,7 +11,7 @@
 @implementation XTRCornerImageView
 @synthesize gradientLayer;
 
-- (void) createLayer {
+- (void)createLayer {
     gradientLayer = [[CAGradientLayer alloc] init];
     gradientLayer.bounds = self.bounds;
     gradientLayer.position = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
@@ -20,7 +20,7 @@
     self.layer.masksToBounds = YES;
 }
 
-- (void) awakeFromNib {
+- (void)awakeFromNib {
     [super awakeFromNib];
     [self createLayer];
 }

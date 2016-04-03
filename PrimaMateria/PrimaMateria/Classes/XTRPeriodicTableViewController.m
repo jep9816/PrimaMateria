@@ -9,52 +9,47 @@
 #import "PrimaMateria.h"
 
 @interface XTRPeriodicTableViewController ()
-- (void) showPopupForButton: (id) sender;
-- (void) showElementPanelForElementAtIndex: (int) anIndex;
-- (void) setupPopUp;
-- (void) toggleMolecularCalculatorState: (BOOL) aFlag;
+- (void)showPopupForButton: (id) sender;
+- (void)showElementPanelForElementAtIndex: (int) anIndex;
+- (void)setupPopUp;
+- (void)toggleMolecularCalculatorState: (BOOL) aFlag;
 @end
 
 @implementation XTRPeriodicTableViewController
-@synthesize swapView;
-@synthesize molecularCalculatorViewController;
-@synthesize molecularCalculatorState;
-@synthesize elementBalloonViewController;
 
 #pragma mark Private Methods
 
-- (void) showPopupForButton: (id) sender {
+- (void)showPopupForButton: (id) sender {
     [XTRPropertiesStore storeViewTitle: self.title];
     [XTRPropertiesStore storeAtomicNumber: @([sender tag])];
 
     CGRect aRect = CGRectMake(10, 10, 15, 15);
-    elementBalloonViewController.popoverPresentationController.sourceRect = aRect;
-    elementBalloonViewController.popoverPresentationController.sourceView = sender;
-    [self presentViewController:elementBalloonViewController animated:YES completion:nil];
+    self.elementBalloonViewController.popoverPresentationController.sourceRect = aRect;
+    self.elementBalloonViewController.popoverPresentationController.sourceView = sender;
+    [self presentViewController: self.elementBalloonViewController animated:YES completion:nil];
 }
 
-- (void) showElementPanelForElementAtIndex: (int) anIndex {
+- (void)showElementPanelForElementAtIndex: (int) anIndex {
     [XTRPropertiesStore storeViewTitle: self.title];
     [XTRPropertiesStore storeAtomicNumber:@(anIndex)];
     [self performSegueWithIdentifier: SHOW_INSPECTOR_FROM_PERIODIC_TABLE sender: self];
 }
 
-- (void) setupPopUp {
-    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
-	elementBalloonViewController = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRElementBalloonViewController class])];
-    CGSize contentSize = CGSizeMake(320.0f, 206.0f);
-    elementBalloonViewController.preferredContentSize = contentSize;
-    elementBalloonViewController.modalPresentationStyle = UIModalPresentationPopover;
+- (void)setupPopUp {
+	self.elementBalloonViewController = [[XTRAppDelegate storyboard] instantiateViewControllerWithIdentifier: NSStringFromClass([XTRElementBalloonViewController class])];
+    CGSize contentSize = CGSizeMake(324.0f, 210.0f);
+    self.elementBalloonViewController.preferredContentSize = contentSize;
+    self.elementBalloonViewController.modalPresentationStyle = UIModalPresentationPopover;
 }
 
-- (void) toggleMolecularCalculatorState: (BOOL) aFlag {
+- (void)toggleMolecularCalculatorState: (BOOL) aFlag {
     if (!aFlag) {
-        molecularCalculatorState = NO;
-        [molecularCalculatorViewController.view removeFromSuperview];
-        [molecularCalculatorViewController viewWillDisappear: YES];
+        self.molecularCalculatorState = NO;
+        [self.molecularCalculatorViewController.view removeFromSuperview];
+        [self.molecularCalculatorViewController viewWillDisappear: YES];
     } else {
-        molecularCalculatorState = YES;
-        [self.view addSubview:molecularCalculatorViewController.view];
+        self.molecularCalculatorState = YES;
+        [self.view addSubview: self.molecularCalculatorViewController.view];
     }
 }
 
@@ -65,7 +60,7 @@
 }
 
 - (IBAction) showElementInspector: (id) sender {
-    if (molecularCalculatorState) {
+    if (self.molecularCalculatorState) {
         XTRElement *element = [[XTRDataSource sharedInstance] elementAtIndex:[sender tag]];
         [self.molecularCalculatorViewController setElement: element];
     } else {
@@ -87,12 +82,11 @@
 
 #pragma mark - View Management Methods
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
-    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
-	molecularCalculatorViewController = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRMolecularCalculatorViewController class])];
-    molecularCalculatorViewController.view.frame = self.swapView.frame;
-    [swapView removeFromSuperview];
+	self.molecularCalculatorViewController = [[XTRAppDelegate storyboard] instantiateViewControllerWithIdentifier: NSStringFromClass([XTRMolecularCalculatorViewController class])];
+    self.molecularCalculatorViewController.view.frame = self.swapView.frame;
+    [self.swapView removeFromSuperview];
     [self setupPopUp];
     [self toggleMolecularCalculatorState: NO];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(closeBubble:) name: NOTIFICATION_INSPECTOR_DISMISSED object: nil];
@@ -105,9 +99,9 @@
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver: self];
-    swapView = nil;
+    self.swapView = nil;
 }
 
 @end

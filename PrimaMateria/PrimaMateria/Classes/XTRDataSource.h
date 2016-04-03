@@ -23,6 +23,6 @@
 - (XTRElement *)sortedElementAtIndex : (int)index;
 @property (NS_NONATOMIC_IOSONLY, readonly) int elementCount;
 - (void)resetElementList;
-- (void) sortByColumnPosition: (int) aColumnPosition andOrdering: (BOOL) anOrderingFlag;
+- (void)sortByColumnPosition: (int) aColumnPosition andOrdering: (BOOL) anOrderingFlag;
 
 @end

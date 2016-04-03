@@ -137,6 +137,7 @@ NSString *STRING_UNKNOWN = @"Unknown";
 NSString *SUPPORTING_FILES = @"SupportingFiles";
 NSString *PERIODIC_VIEW_TITLE = @"Periodic Table of the Elements";
 NSString *VIEW_TITLE_KEY = @"viewTitle";
+NSString *COLOR_KEY = @"colorKey";
 
 #pragma mark - Color Constants
 

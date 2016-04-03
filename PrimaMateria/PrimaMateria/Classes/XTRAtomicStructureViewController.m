@@ -8,30 +8,57 @@
 
 #import "PrimaMateria.h"
 
-typedef enum ViewTypes {
+typedef NS_ENUM(NSInteger, StructureViewTypes) {
     kCrystalStructureView = 0,
     kShellModelView = 1
-}
-SwapViews;
+};
 
 @implementation XTRAtomicStructureViewController
-@synthesize crystalStructureView, shellModelView, atomicRadiusLabel, atomicVolumeLabel;
-@synthesize covalentRadiusLabel, crossSectionLabel, ionicRadiusLabel, oxidationStatesLabel;
-@synthesize numberOfNeutronsLabel, numberOfProtonsLabel, numberOfElectronsLabel;
-@synthesize valenceLabel, fillingOrbitalLabel, kShellElectronsLabel;
-@synthesize lShellElectronsLabel, mShellElectronsLabel, nShellElectronsLabel;
-@synthesize oShellElectronsLabel, pShellElectronsLabel, qShellElectronsLabel;
-@synthesize shell1sLabel, shell2sLabel, shell2pLabel, shell3sLabel;
-@synthesize shell3pLabel, shell3dLabel, shell4sLabel, shell4pLabel;
-@synthesize shell4dLabel, shell4fLabel, shell5sLabel, shell5pLabel;
-@synthesize shell5dLabel, shell5fLabel, shell6sLabel, shell6pLabel;
-@synthesize shell6dLabel, shell7sLabel, shell7pLabel;
+@synthesize crystalStructureView;
+@synthesize shellModelView;
+@synthesize atomicRadiusLabel;
+@synthesize atomicVolumeLabel;
+@synthesize covalentRadiusLabel;
+@synthesize crossSectionLabel;
+@synthesize ionicRadiusLabel;
+@synthesize oxidationStatesLabel;
+@synthesize numberOfNeutronsLabel;
+@synthesize numberOfProtonsLabel;
+@synthesize numberOfElectronsLabel;
+@synthesize valenceLabel;
+@synthesize fillingOrbitalLabel;
+@synthesize kShellElectronsLabel;
+@synthesize lShellElectronsLabel;
+@synthesize mShellElectronsLabel;
+@synthesize nShellElectronsLabel;
+@synthesize oShellElectronsLabel;
+@synthesize pShellElectronsLabel;
+@synthesize qShellElectronsLabel;
+@synthesize shell1sLabel;
+@synthesize shell2sLabel;
+@synthesize shell2pLabel;
+@synthesize shell3sLabel;
+@synthesize shell3pLabel;
+@synthesize shell3dLabel;
+@synthesize shell4sLabel;
+@synthesize shell4pLabel;
+@synthesize shell4dLabel;
+@synthesize shell4fLabel;
+@synthesize shell5sLabel;
+@synthesize shell5pLabel;
+@synthesize shell5dLabel;
+@synthesize shell5fLabel;
+@synthesize shell6sLabel;
+@synthesize shell6pLabel;
+@synthesize shell6dLabel;
+@synthesize shell7sLabel;
+@synthesize shell7pLabel;
 @synthesize shellModelInfoLabel;
 @synthesize overlayView;
 
 #pragma mark Misc Methods
 
-- (void) setupUI {
+- (void)setupUI {
     if (self.element != nil) {
         crystalStructureView.image = self.element.crystalStructureImage;
         shellModelView.image = self.element.shellModelImage;
@@ -129,7 +156,7 @@ SwapViews;
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     crystalStructureView = nil;
     shellModelView = nil;
     atomicRadiusLabel = nil;

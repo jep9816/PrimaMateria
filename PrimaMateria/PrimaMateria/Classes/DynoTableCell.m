@@ -8,11 +8,10 @@
 
 #import "PrimaMateria.h"
 
-typedef enum LabelTypes {
-    kAtomicNumber  = 1,
+typedef NS_ENUM(NSInteger, LabelTypes) {
+    kAtomicNumber = 1,
     kSymbol = 2
-}
-LabelTypes;
+};
 
 @interface DynoTableCell() {
     NSMutableArray *columns;
@@ -31,11 +30,11 @@ LabelTypes;
     return self;
 }
 
-- (void) addColumn: (CGFloat) position {
+- (void)addColumn: (CGFloat) position {
     [columns addObject:@(position)];
 }
 
-- (void) drawRect: (CGRect) rect {
+- (void)drawRect: (CGRect) rect {
     [super drawRect: rect];
     self.backgroundColor = UIColor.blackColor;
     self.contentView.backgroundColor = UIColor.darkGrayColor;

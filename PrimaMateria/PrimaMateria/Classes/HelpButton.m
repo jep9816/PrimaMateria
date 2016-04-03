@@ -43,8 +43,7 @@
 
     if(label != nil) {
         UIViewController *controller = self.viewController;
-        UIStoryboard *storyboard = [XTRAppDelegate storyboard];
-        XTRHelpBalloonViewController *content = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRHelpBalloonViewController class])];
+        XTRHelpBalloonViewController *content = [[XTRAppDelegate storyboard] instantiateViewControllerWithIdentifier: NSStringFromClass([XTRHelpBalloonViewController class])];
         CGRect aFrame = self.bounds;
         CGRect aRect;
         

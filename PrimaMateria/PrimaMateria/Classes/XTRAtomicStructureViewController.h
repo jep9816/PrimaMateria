@@ -63,6 +63,6 @@
 @property (nonatomic, strong) IBOutlet UIView *overlayView;
 
 - (IBAction)swapViews : (id)sender;
-- (void) setupUI;
+- (void)setupUI;
 
 @end

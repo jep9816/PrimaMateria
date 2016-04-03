@@ -13,6 +13,6 @@
 @property (nonatomic, strong) IBOutlet UIView *headerView;
 @property (nonatomic, strong) IBOutlet UIView *swapView;
 
-- (void) setupUI;
+- (void)setupUI;
 
 @end

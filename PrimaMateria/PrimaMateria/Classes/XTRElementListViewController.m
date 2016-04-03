@@ -10,25 +10,25 @@
 
 @interface XTRElementListViewController ()
 - (DynoTableLabel *) tableCellLabelWithXPos: (float) xPos YPos: (float) yPos width: (float) aWidth height: (float) aHeight andElement: (XTRElement *) anElement;
-- (void) addPropertiesToAtomicNumberCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToAtomicWeightCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement:(XTRElement *) element;
-- (void) addPropertiesToBoilingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToDensityCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToGroupCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToMeltingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToNameCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToPeriodCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToSeriesCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) addPropertiesToSymbolCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
-- (void) setupTableView;
-- (void) showElementPanelForElementAtIndex: (int) anIndex;
+- (void)addPropertiesToAtomicNumberCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToAtomicWeightCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement:(XTRElement *) element;
+- (void)addPropertiesToBoilingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToDensityCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToGroupCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToMeltingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToNameCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToPeriodCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToSeriesCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)addPropertiesToSymbolCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element;
+- (void)setupTableView;
+- (void)showElementPanelForElementAtIndex: (int) anIndex;
 @end
 
 @implementation XTRElementListViewController
 
 #pragma mark Private Methods
 
-- (void) showElementPanelForElementAtIndex: (int) anIndex {
+- (void)showElementPanelForElementAtIndex: (int) anIndex {
     [XTRPropertiesStore storeViewTitle: self.title];
     [XTRPropertiesStore storeAtomicNumber:@(anIndex)];
     [self performSegueWithIdentifier: SHOW_INSPECTOR_FROM_ELEMENT_LIST sender: self];
@@ -43,7 +43,7 @@
     return label;
 }
 
-- (void) addPropertiesToAtomicNumberCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToAtomicNumberCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 0.0 YPos: 0.0 width: 85.0 height: 42.0f andElement: element];
     [cell addColumn: 1];
     label.textAlignment = NSTextAlignmentRight;
@@ -51,7 +51,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToSymbolCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToSymbolCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [[DynoTableLabel alloc] initWithFrame: CGRectMake(86.0, 0.0, 95.0, 42.0f) andColor:element.seriesColor];
     label.font = [UIFont systemFontOfSize:26.0];
     label.textColor = element.standardConditionColor;
@@ -63,7 +63,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToNameCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToNameCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 182.0 YPos: 0.0 width: 125.0 height: 42.0f andElement: element];
     [cell addColumn: 3];
     label.textAlignment = NSTextAlignmentLeft;
@@ -71,7 +71,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToAtomicWeightCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToAtomicWeightCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 308.0 YPos: 0.0 width: 95.0 height: 42.0f andElement: element];
     [cell addColumn: 4];
     label.textAlignment = NSTextAlignmentRight;
@@ -79,7 +79,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToBoilingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToBoilingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 404.0 YPos: 0.0 width: 105.0 height: 42.0f andElement: element];
     [cell addColumn: 5];
     label.textAlignment = NSTextAlignmentRight;
@@ -87,7 +87,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToMeltingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToMeltingPointCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 510.0 YPos: 0.0 width: 105.0 height: 42.0f andElement: element];
     [cell addColumn: 6];
     label.textAlignment = NSTextAlignmentRight;
@@ -95,7 +95,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToDensityCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToDensityCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 616.0 YPos: 0.0 width: 105.0 height: 42.0f andElement: element];
     [cell addColumn: 7];
     label.textAlignment = NSTextAlignmentRight;
@@ -103,7 +103,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToSeriesCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToSeriesCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 722.0 YPos: 0.0 width: 160.0 height: 42.0f andElement: element];
     [cell addColumn: 8];
     label.textAlignment = NSTextAlignmentLeft;
@@ -111,7 +111,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToPeriodCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToPeriodCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 883.0 YPos: 0.0 width: 72.0 height: 42.0f andElement: element];
     [cell addColumn: 10];
     label.textAlignment = NSTextAlignmentRight;
@@ -119,7 +119,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) addPropertiesToGroupCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
+- (void)addPropertiesToGroupCell: (DynoTableCell *) cell forTableView: (UITableView *) aTableView andElement: (XTRElement *) element {
     DynoTableLabel *label = [self tableCellLabelWithXPos: 956.0 YPos: 0.0 width: 68.0 height: 42.0f andElement: element];
     [cell addColumn: 9];
     label.textAlignment = NSTextAlignmentRight;
@@ -127,7 +127,7 @@
     [cell.contentView addSubview: label];
 }
 
-- (void) setupTableView {
+- (void)setupTableView {
     self.tableView = [[UITableView alloc] initWithFrame:self.swapView.frame style: UITableViewStylePlain];
     self.tableView.alwaysBounceVertical = NO;
     self.tableView.alwaysBounceHorizontal = NO;
@@ -135,7 +135,7 @@
     self.tableView.delegate = self;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = UIColor.blackColor;
-    self.tableView.rowHeight = 34.0f;
+    //self.tableView.rowHeight = 34.0f;
     [self.view addSubview: self.tableView];
 }
 
@@ -159,8 +159,13 @@
     NSString *MyIdentifier = [NSString stringWithFormat: @"Column %i", row];
     XTRElement *element = [[XTRDataSource sharedInstance] sortedElementAtIndex: row];
     DynoTableCell *cell = (DynoTableCell *)[aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
+    UIColor *seriesColor = element.seriesColor;
+    UIColor *selectedColor = [UIColor reverseColorOf: seriesColor];
+
     if (cell == nil) {
         cell = [[DynoTableCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier: MyIdentifier];
+        cell.selectedBackgroundView = [[UIImageView alloc] initWithImage: [UIImage imageWithColor: selectedColor size:cell.frame.size]];
+        
         [self addPropertiesToAtomicNumberCell: cell forTableView: aTableView andElement: element];
         [self addPropertiesToSymbolCell: cell forTableView: aTableView andElement: element];
         [self addPropertiesToNameCell: cell forTableView: aTableView andElement: element];
@@ -185,9 +190,14 @@
 
 #pragma mark - UITableView Delegate Methods
 
-- (void) tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
+- (void)tableView: (UITableView *) tableView didSelectRowAtIndexPath: (NSIndexPath *) indexPath {
     XTRElement *element = [[XTRDataSource sharedInstance] sortedElementAtIndex: indexPath.row];
+    [tableView deselectRowAtIndexPath:indexPath animated: YES];
     [self showElementPanelForElementAtIndex:(element.atomicNumber.intValue - 1)];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 34.0;
 }
 
 #pragma mark - View Management Methods
@@ -196,17 +206,19 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
-    [self.atomicNumberButton toggleState];
+
     self.title = @"Element List";
+
+    [self.atomicNumberButton toggleState];
     [self.swapView removeFromSuperview];
     [self setupTableView];
 }
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     self.tableView.delegate = nil;
     self.tableView = nil;
     self.atomicNumberButton = nil;

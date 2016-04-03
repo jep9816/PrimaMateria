@@ -13,6 +13,7 @@
 @property (nonatomic, strong) IBOutlet UILabel *atomicMassLabel;
 @property (nonatomic, strong) IBOutlet UILabel *boilingPointLabel;
 @property (nonatomic, strong) IBOutlet UILabel *meltingPointLabel;
+@property (nonatomic, strong) IBOutlet UIView *wrapperView;
 
 - (IBAction) showDetails: (id) sender;
 

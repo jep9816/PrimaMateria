@@ -9,77 +9,52 @@
 #import "PrimaMateria.h"
 
 @interface XTRPreferencesViewController ()
-- (void) loadDocument: (NSString *) documentName inView: (UIWebView *) webView;
-- (void) loadUserDefaults;
-- (void) populateSeriesColors;
-- (void) populateShowTransitionsState: (BOOL) aFlag;
-- (void) populateElementBubbleState: (BOOL) aFlag;
-- (void) populateSplashScreenState: (BOOL) aFlag;
+- (void)loadDocument: (NSString *) documentName inView: (UIWebView *) webView;
+- (void)loadUserDefaults;
+- (void)populateSeriesColors;
+- (void)populateShowTransitionsState: (BOOL) aFlag;
+- (void)populateElementBubbleState: (BOOL) aFlag;
+- (void)populateSplashScreenState: (BOOL) aFlag;
 @end
 
 @implementation XTRPreferencesViewController
-@synthesize appNameLabel;
-@synthesize cpyRightLabel;
-@synthesize elementBubbleSwitch;
-@synthesize seriesActinideLabel;
-@synthesize seriesAlkaliEarthMetalLabel;
-@synthesize seriesAlkaliMetalLabel;
-@synthesize seriesHalogenLabel;
-@synthesize seriesLanthanideLabel;
-@synthesize seriesMetalLabel;
-@synthesize seriesNobleGasLabel;
-@synthesize seriesNonMetalLabel;
-@synthesize seriesTransactinidesLabel;
-@synthesize seriesTransitionMetalLabel;
-@synthesize showTransitionsBubbleSwitch;
-@synthesize splashScreenSwitch;
-@synthesize versionLabel;
-@synthesize webView;
-@synthesize colorPickersView;
 
 #pragma mark Private Methods
 
-//- (void)iterateOverSubviewsOfType:(Class)viewType inView: (UIView*)view {
-//    for (UIView* subview in view.subviews) {
-//        if ([subview isKindOfClass:viewType]) {
-//            //block(subview);
-//        }
-//    }
-//}
-
-- (void) colorSelected: (NSNotification *) notification {
+- (void)colorSelected: (NSNotification *)notification {
     NSDictionary *object = (NSDictionary *)notification.object;
+    
     if(object != nil) {
-        NSNumber *redComponent = (NSNumber*)object[@"redComponent"];
-        NSNumber *greenComponent = (NSNumber*)object[@"greenComponent"];
-        NSNumber *blueComponent = (NSNumber*)object[@"blueComponent"];
+        NSNumber *redComponent = (NSNumber*)object[RED_COLOR_COMPONENT];
+        NSNumber *greenComponent = (NSNumber*)object[GREEN_COLOR_COMPONENT];
+        NSNumber *blueComponent = (NSNumber*)object[BLUE_COLOR_COMPONENT];
         
         UIColor *aColor = [UIColor colorWithRed:redComponent.floatValue green:greenComponent.floatValue blue:blueComponent.floatValue alpha:1.0];
         NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:aColor];
-        NSString *colorKey = [object valueForKey:@"selectedTitle"];
+        NSString *colorKey = [object valueForKey:COLOR_KEY];
         
-        [XTRPropertiesStore storeColorData:colorData forColorKey: colorKey];
+        [XTRPropertiesStore storeColorData: colorData forColorKey: colorKey];
         
         if ([colorKey isEqualToString: SERIES_ACTINIDE]) {
-            seriesActinideLabel.backgroundColor =  aColor;
+            self.seriesActinideLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_ALKALI_EARTH_METAL]) {
-            seriesAlkaliEarthMetalLabel.backgroundColor =  aColor;
+            self.seriesAlkaliEarthMetalLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_ALKALI_METAL]) {
-            seriesAlkaliMetalLabel.backgroundColor =  aColor;
+            self.seriesAlkaliMetalLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_HALOGEN]) {
-            seriesHalogenLabel.backgroundColor =  aColor;
+            self.seriesHalogenLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_LANTHANIDE]) {
-            seriesLanthanideLabel.backgroundColor =  aColor;
+            self.seriesLanthanideLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_METAL]) {
-            seriesMetalLabel.backgroundColor =  aColor;
+            self.seriesMetalLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_NOBLE_GAS]) {
-            seriesNobleGasLabel.backgroundColor =  aColor;
+            self.seriesNobleGasLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_NON_METAL]) {
-            seriesNonMetalLabel.backgroundColor =  aColor;
+            self.seriesNonMetalLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_TRANSACTINIDES]) {
-            seriesTransactinidesLabel.backgroundColor =  aColor;
+            self.seriesTransactinidesLabel.backgroundColor =  aColor;
         } else if ([colorKey isEqualToString: SERIES_TRANSITION_METAL]) {
-            seriesTransitionMetalLabel.backgroundColor =  aColor;
+            self.seriesTransitionMetalLabel.backgroundColor =  aColor;
         }
     }
     
@@ -87,71 +62,74 @@
     [self dismissViewControllerAnimated:YES completion: nil];
 }
 
-
-- (void) loadDocument: (NSString *) documentName inView: (UIWebView *) webView {
+- (void)loadDocument: (NSString *) documentName inView: (UIWebView *) webView {
     NSString *path = [[NSBundle mainBundle] pathForResource: documentName ofType: nil];
     NSURL *url = [NSURL fileURLWithPath: path];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
     [self.webView loadRequest: request];
 }
 
-- (void) loadUserDefaults {
-    elementBubbleSwitch.on = [XTRPropertiesStore retreiveElementBubblesState];
-    showTransitionsBubbleSwitch.on = [XTRPropertiesStore retreiveShowTransitionsState];
-    splashScreenSwitch.on = [XTRPropertiesStore retreiveSplashScreenState];
+- (void)loadUserDefaults {
+    self.self.elementBubbleSwitch.on = [XTRPropertiesStore retreiveElementBubblesState];
+    self.showTransitionsBubbleSwitch.on = [XTRPropertiesStore retreiveShowTransitionsState];
+    self.splashScreenSwitch.on = [XTRPropertiesStore retreiveSplashScreenState];
 }
 
-- (void) populateSeriesColors {
-    seriesActinideLabel.backgroundColor = [XTRColorFactory actinideColor];
-    seriesAlkaliEarthMetalLabel.backgroundColor = [XTRColorFactory alkaliEarthMetalColor];
-    seriesAlkaliMetalLabel.backgroundColor = [XTRColorFactory alkaliMetalColor];
-    seriesHalogenLabel.backgroundColor = [XTRColorFactory halogenColor];
-    seriesLanthanideLabel.backgroundColor = [XTRColorFactory lanthanideColor];
-    seriesMetalLabel.backgroundColor = [XTRColorFactory metalColor];
-    seriesNobleGasLabel.backgroundColor = [XTRColorFactory nobleGasColor];
-    seriesNonMetalLabel.backgroundColor = [XTRColorFactory nonMetalColor];
-    seriesTransactinidesLabel.backgroundColor = [XTRColorFactory transactinideColor];
-    seriesTransitionMetalLabel.backgroundColor = [XTRColorFactory transitionMetalColor];
-    [seriesActinideLabel setNeedsDisplay];
-    [seriesAlkaliEarthMetalLabel setNeedsDisplay];
-    [seriesAlkaliMetalLabel setNeedsDisplay];
-    [seriesHalogenLabel setNeedsDisplay];
-    [seriesLanthanideLabel setNeedsDisplay];
-    [seriesMetalLabel setNeedsDisplay];
-    [seriesNobleGasLabel setNeedsDisplay];
-    [seriesNonMetalLabel setNeedsDisplay];
-    [seriesTransactinidesLabel setNeedsDisplay];
-    [seriesTransitionMetalLabel setNeedsDisplay];
+- (void)populateSeriesColors {
+    self.seriesActinideLabel.backgroundColor = [XTRColorFactory actinideColor];
+    self.seriesAlkaliEarthMetalLabel.backgroundColor = [XTRColorFactory alkaliEarthMetalColor];
+    self.seriesAlkaliMetalLabel.backgroundColor = [XTRColorFactory alkaliMetalColor];
+    self.seriesHalogenLabel.backgroundColor = [XTRColorFactory halogenColor];
+    self.seriesLanthanideLabel.backgroundColor = [XTRColorFactory lanthanideColor];
+    self.seriesMetalLabel.backgroundColor = [XTRColorFactory metalColor];
+    self.seriesNobleGasLabel.backgroundColor = [XTRColorFactory nobleGasColor];
+    self.seriesNonMetalLabel.backgroundColor = [XTRColorFactory nonMetalColor];
+    self.seriesTransactinidesLabel.backgroundColor = [XTRColorFactory transactinideColor];
+    self.seriesTransitionMetalLabel.backgroundColor = [XTRColorFactory transitionMetalColor];
+    
+    [self.seriesActinideLabel setNeedsDisplay];
+    [self.seriesAlkaliEarthMetalLabel setNeedsDisplay];
+    [self.seriesAlkaliMetalLabel setNeedsDisplay];
+    [self.seriesHalogenLabel setNeedsDisplay];
+    [self.seriesLanthanideLabel setNeedsDisplay];
+    [self.seriesMetalLabel setNeedsDisplay];
+    [self.seriesNobleGasLabel setNeedsDisplay];
+    [self.seriesNonMetalLabel setNeedsDisplay];
+    [self.seriesTransactinidesLabel setNeedsDisplay];
+    [self.seriesTransitionMetalLabel setNeedsDisplay];
 }
 
-- (void) populateElementBubbleState: (BOOL) aFlag {
+- (void)populateElementBubbleState: (BOOL) aFlag {
     [XTRPropertiesStore storeElementBubblesState: aFlag];
 }
 
-- (void) populateShowTransitionsState: (BOOL) aFlag {
+- (void)populateShowTransitionsState: (BOOL) aFlag {
     [XTRPropertiesStore storeShowTranitionsState: aFlag];
 }
 
-- (void) populateSplashScreenState: (BOOL) aFlag {
+- (void)populateSplashScreenState: (BOOL) aFlag {
     [XTRPropertiesStore storeSplashScreenState: aFlag];
 }
 
 #pragma mark - Action Methods
 
 - (IBAction) setElementBubbleState: (id) sender {
-    [self populateElementBubbleState: elementBubbleSwitch.on];
+    [self populateElementBubbleState: self.elementBubbleSwitch.on];
 }
 
 - (IBAction)setShowTransitionsState : (id)sender {
-    [self populateShowTransitionsState: showTransitionsBubbleSwitch.on];
+    [self populateShowTransitionsState: self.showTransitionsBubbleSwitch.on];
 }
 
 - (IBAction) setSplashScreenState: (id) sender {
-    [self populateSplashScreenState: splashScreenSwitch.on];
+    [self populateSplashScreenState: self.splashScreenSwitch.on];
 }
 
 - (IBAction) showColorPicker: (id) sender {
     NSString *title = nil;
+    XTRColorPickerViewController *colorPicker = [[XTRAppDelegate storyboard] instantiateViewControllerWithIdentifier: NSStringFromClass([XTRColorPickerViewController class])];
+    UIColor *aColor = nil;
+
     switch ([sender tag]) {
         case kSERIES_ACTINIDE:
             title = SERIES_ACTINIDE;
@@ -196,19 +174,14 @@
         default:
             break;
     }
-
-    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
-	XTRColorPickerViewController *colorPicker = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRColorPickerViewController class])];
     
-    CGSize contentSize = CGSizeMake(270, 175);
-    UIColor *aColor = [XTRColorFactory colorForString: title];
-    CGRect aRect = CGRectMake(3, 10, 15, 15);
+    aColor = [XTRColorFactory colorForString: title];
     
     colorPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionLeft;
     colorPicker.modalPresentationStyle = UIModalPresentationPopover;
     colorPicker.popoverPresentationController.sourceView = sender;
-    colorPicker.popoverPresentationController.sourceRect = aRect;
-    colorPicker.preferredContentSize = contentSize;
+    colorPicker.popoverPresentationController.sourceRect = CGRectMake(3, 10, 15, 15);
+    colorPicker.preferredContentSize = CGSizeMake(270, 175);
 
     [self presentViewController:colorPicker animated:YES completion:nil];
     
@@ -220,12 +193,15 @@
 
 - (IBAction)resetPreferences: (id) sender {
     [XTRPropertiesStore resetPreferences];
+    
     [self populateSeriesColors];
     [self populateElementBubbleState: YES];
     [self populateShowTransitionsState: YES];
     [self populateSplashScreenState: YES];
-    elementBubbleSwitch.on = YES;
-    splashScreenSwitch.on = YES;
+    
+    self.elementBubbleSwitch.on = YES;
+    self.showTransitionsBubbleSwitch.on = YES;
+    self.splashScreenSwitch.on = YES;
 }
 
 #pragma mark - View Management Methods
@@ -234,7 +210,7 @@
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(colorSelected:) name: NOTIFICATION_COLOR_SELECTED object: nil];
     
@@ -242,33 +218,33 @@
     [self loadUserDefaults];
     [self populateSeriesColors];
     
-    appNameLabel.text = XTRVersionChecker.appNameString;
-    versionLabel.text = XTRVersionChecker.appVersionString;
-    cpyRightLabel.text = XTRVersionChecker.copywriteString;
-    //[self iterateOverSubviewsOfType: [UIButton class] inView: self.view];
+    self.appNameLabel.text = XTRVersionChecker.appNameString;
+    self.versionLabel.text = XTRVersionChecker.appVersionString;
+    self.cpyRightLabel.text = XTRVersionChecker.copywriteString;
 }
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver: self];
-    appNameLabel = nil;
-    cpyRightLabel = nil;
-    elementBubbleSwitch = nil;
-    seriesActinideLabel = nil;
-    seriesAlkaliEarthMetalLabel = nil;
-    seriesAlkaliMetalLabel = nil;
-    seriesHalogenLabel = nil;
-    seriesLanthanideLabel = nil;
-    seriesMetalLabel = nil;
-    seriesNobleGasLabel = nil;
-    seriesNonMetalLabel = nil;
-    seriesTransactinidesLabel = nil;
-    seriesTransitionMetalLabel = nil;
-    showTransitionsBubbleSwitch = nil;
-    splashScreenSwitch = nil;
-    versionLabel = nil;
-    webView = nil;
+    self.appNameLabel = nil;
+    self.cpyRightLabel = nil;
+    self.elementBubbleSwitch = nil;
+    self.seriesActinideLabel = nil;
+    self.seriesAlkaliEarthMetalLabel = nil;
+    self.seriesAlkaliMetalLabel = nil;
+    self.seriesHalogenLabel = nil;
+    self.seriesLanthanideLabel = nil;
+    self.seriesMetalLabel = nil;
+    self.seriesNobleGasLabel = nil;
+    self.seriesNonMetalLabel = nil;
+    self.seriesTransactinidesLabel = nil;
+    self.seriesTransitionMetalLabel = nil;
+    self.showTransitionsBubbleSwitch = nil;
+    self.splashScreenSwitch = nil;
+    self.versionLabel = nil;
+    self.webView.delegate = nil;
+    self.webView = nil;
 }
 
 @end

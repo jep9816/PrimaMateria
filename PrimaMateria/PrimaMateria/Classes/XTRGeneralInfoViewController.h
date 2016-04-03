@@ -20,6 +20,6 @@
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 
 - (IBAction)showWikipediaEntry : (id)sender;
-- (void) setupUI;
+- (void)setupUI;
 
 @end

@@ -16,6 +16,6 @@
 @property (nonatomic, strong) NSArray *lineSpectraArray;
 @property (nonatomic, strong) UITableView *tableView;
 
-- (void) setupUI;
+- (void)setupUI;
 
 @end

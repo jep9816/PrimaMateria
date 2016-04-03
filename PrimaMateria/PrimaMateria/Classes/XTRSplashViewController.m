@@ -12,12 +12,12 @@
 
 #pragma mark View Management Methods
 
--(void) wait : (id) sender {
+-(void)wait : (id) sender {
     [NSThread sleepForTimeInterval : 5.0];
     [self.view removeFromSuperview];
 }
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     self.appNameLabel.text = XTRVersionChecker.appNameString;
     self.versionLabel.text = XTRVersionChecker.appVersionString;
@@ -32,7 +32,7 @@
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     self.appNameLabel = nil;
     self.versionLabel = nil;
     self.cpyRightLabel = nil;

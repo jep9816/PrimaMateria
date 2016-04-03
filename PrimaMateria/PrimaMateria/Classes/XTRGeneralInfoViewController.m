@@ -9,16 +9,10 @@
 #import "PrimaMateria.h"
 
 @interface XTRGeneralInfoViewController ()
-- (void) assignGeneralInfo;
+- (void)assignGeneralInfo;
 @end
 
 @implementation XTRGeneralInfoViewController
-@synthesize abundanceCrustLabel;
-@synthesize abundanceSeaLabel;
-@synthesize discovererLabel;
-@synthesize discoveryLocationLabel;
-@synthesize discoveryYearLabel;
-@synthesize webView;
 
 #pragma mark Private Methods
 
@@ -26,18 +20,18 @@
     NSString *path = (self.element).pathForGeneralInfoDoc;
     NSURL *url = [NSURL fileURLWithPath: path];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
-    [webView loadRequest: request];
+    [self.webView loadRequest: request];
 }
 
 #pragma mark - Misc Methods
 
 - (void)setupUI {
     if (self.element != nil) {
-        discovererLabel.text = [self.element valueForKey: ELEMENT_DISCOVERER];
-        discoveryLocationLabel.text = [self.element valueForKey: ELEMENT_DISCOVERY_LOCATION];
-        discoveryYearLabel.text = [self.element valueForKey: ELEMENT_DISCOVERY_YEAR];
-        abundanceCrustLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_ABUNDANCE_CRUST]];
-        abundanceSeaLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_ABUNDANCE_SEA]];
+        self.discovererLabel.text = [self.element valueForKey: ELEMENT_DISCOVERER];
+        self.discoveryLocationLabel.text = [self.element valueForKey: ELEMENT_DISCOVERY_LOCATION];
+        self.discoveryYearLabel.text = [self.element valueForKey: ELEMENT_DISCOVERY_YEAR];
+        self.abundanceCrustLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_ABUNDANCE_CRUST]];
+        self.abundanceSeaLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_ABUNDANCE_SEA]];
         [self assignGeneralInfo];
     }
 }
@@ -61,12 +55,13 @@
 #pragma mark - Memory Management Methods
 
 - (void)dealloc {
-    abundanceCrustLabel = nil;
-    abundanceSeaLabel = nil;
-    discovererLabel = nil;
-    discoveryLocationLabel = nil;
-    discoveryYearLabel = nil;
-    webView = nil;
+    self.abundanceCrustLabel = nil;
+    self.abundanceSeaLabel = nil;
+    self.discovererLabel = nil;
+    self.discoveryLocationLabel = nil;
+    self.discoveryYearLabel = nil;
+    self.webView.delegate = nil;
+    self.webView = nil;
 }
 
 @end

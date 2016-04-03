@@ -9,24 +9,23 @@
 #import "PrimaMateria.h"
 
 @interface XTRHelpViewController ()
-- (void) loadDocument: (NSString *) documentName;
+- (void)loadDocument: (NSString *) documentName;
 @end
 
 @implementation XTRHelpViewController
-@synthesize webView;
 
 #pragma mark Private Methods
 
-- (void) loadDocument: (NSString *) documentName {
+- (void)loadDocument: (NSString *) documentName {
     NSString *path = [[NSBundle mainBundle] pathForResource: documentName ofType: @"html" inDirectory: @"PrimaMateriaHelp"];
     NSURL *url = [NSURL fileURLWithPath: path];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
-    [webView loadRequest: request];
+    [self.webView loadRequest: request];
 }
 
 #pragma mark - View Management Methods
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     [self loadDocument: @"index"];
 }
@@ -37,8 +36,9 @@
 
 #pragma mark - Memory Management Methods
 
-- (void) dealoc {
-    webView = nil;
+- (void)dealoc {
+    self.webView.delegate = nil;
+    self.webView = nil;
 }
 
 @end

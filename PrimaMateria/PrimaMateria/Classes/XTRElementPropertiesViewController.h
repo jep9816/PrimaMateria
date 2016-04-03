@@ -62,6 +62,6 @@
 @property (nonatomic, strong) IBOutlet UIView *swapView;
 
 - (IBAction)swapViews : (UISegmentedControl *)sender;
-- (void) setupUI;
+- (void)setupUI;
 
 @end

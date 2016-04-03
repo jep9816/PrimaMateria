@@ -8,6 +8,6 @@
 
 @interface DynoTableLabel : UILabel
 
--(instancetype)initWithFrame : (CGRect) frame andColor : (UIColor *)aColor;
+-(instancetype)initWithFrame : (CGRect) frame andColor : (UIColor *)aColor NS_DESIGNATED_INITIALIZER;
 
 @end

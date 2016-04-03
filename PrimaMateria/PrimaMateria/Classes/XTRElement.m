@@ -32,7 +32,7 @@
     else return [self.elementDictionary valueForKey: aKey];
 }
 
-- (void) setValue: (id) anObject forKey: (NSString *) aKey {
+- (void)setValue: (id) anObject forKey: (NSString *) aKey {
     self.elementDictionary[aKey] = anObject;
 }
 

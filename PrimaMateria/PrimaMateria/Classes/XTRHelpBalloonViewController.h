@@ -10,10 +10,12 @@
 
 
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
-@property (nonatomic, strong) IBOutlet UIButton *backbutton;
-@property (nonatomic, strong) IBOutlet UIButton *fwdbutton;
+@property (nonatomic, strong) IBOutlet UIButton *backButton;
+@property (nonatomic, strong) IBOutlet UIButton *forwardButton;
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
 
-- (IBAction)close: (id) sender;
+-(IBAction)dismiss: (id) sender;
+-(IBAction)backButtonPressed:(id)sender;
+-(IBAction)forwardButtonPressed:(id)sender;
 
 @end

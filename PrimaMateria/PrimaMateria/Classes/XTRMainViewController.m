@@ -31,12 +31,11 @@
     UIGraphicsEndImageContext();
 }
 
--(void) showSplash {
+-(void)showSplash {
     BOOL defaultState = [XTRPropertiesStore retreiveSplashScreenState];
     
     if (defaultState) {
-        UIStoryboard *storyboard =[UIStoryboard storyboardWithName:MAIN_STORY_BOARD bundle:nil];
-        XTRSplashViewController *splashViewController = [storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([XTRSplashViewController class])];
+        XTRSplashViewController *splashViewController = [[XTRAppDelegate storyboard] instantiateViewControllerWithIdentifier:NSStringFromClass([XTRSplashViewController class])];
         [self.view addSubview : splashViewController.view];
     }
 }

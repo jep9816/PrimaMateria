@@ -18,36 +18,32 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
 @interface XTRGraphViewController ()
 - (NSData *) dataForResource: (NSString *) aResourceName type: (NSString *) aType directory: (NSString *) aDirectory;
 - (NSNumber *) element: (XTRElement *) anElement valueForIdentifier: (NSString *) anIdentifier;
-- (void) creatBarChart;
-- (void) createXAxis: (CPTXYAxisSet *) axisSet majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle;
-- (void) createYAxis: (CPTXYAxisSet *) axisSet minorTicks: (float) minorTicks majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle majorTicks: (float) majorTicks dict: (NSDictionary *) dict maxValue: (float) maxValue minValue: (float) minValue;
-- (void) graphSelected: (NSNotification *) notification;
-- (void) showGraphForChoiceAtIndex: (int) anIndex;
+- (void)creatBarChart;
+- (void)createXAxis: (CPTXYAxisSet *) axisSet majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle;
+- (void)createYAxis: (CPTXYAxisSet *) axisSet minorTicks: (float) minorTicks majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle majorTicks: (float) majorTicks dict: (NSDictionary *) dict maxValue: (float) maxValue minValue: (float) minValue;
+- (void)graphSelected: (NSNotification *) notification;
+- (void)showGraphForChoiceAtIndex: (int) anIndex;
 @end
 
 @implementation XTRGraphViewController
-@synthesize hostingView;
-@synthesize barChart;
-@synthesize errorString;
-@synthesize button;
 
 #pragma mark Private Methods
 
-- (void) creatBarChart {
-    barChart = [[CPTXYGraph alloc] initWithFrame: CGRectZero];
-    [barChart applyTheme: [CPTTheme themeNamed: kCPTSlateTheme]];
+- (void)creatBarChart {
+    self.barChart = [[CPTXYGraph alloc] initWithFrame: CGRectZero];
+    [self.barChart applyTheme: [CPTTheme themeNamed: kCPTSlateTheme]];
     
-    hostingView.hostedGraph = barChart;
+    self.hostingView.hostedGraph = self.barChart;
     
-    barChart.plotAreaFrame.masksToBorder = NO;
-    barChart.paddingLeft = 100.0;
-    barChart.paddingTop = 10.0;
-    barChart.paddingRight = 0.0;
-    barChart.paddingBottom = 80.0;
-    barChart.delegate = self;
+    self.barChart.plotAreaFrame.masksToBorder = NO;
+    self.barChart.paddingLeft = 100.0;
+    self.barChart.paddingTop = 10.0;
+    self.barChart.paddingRight = 0.0;
+    self.barChart.paddingBottom = 80.0;
+    self.barChart.delegate = self;
 }
 
-- (void) createXAxis: (CPTXYAxisSet *) axisSet majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle {
+- (void)createXAxis: (CPTXYAxisSet *) axisSet majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle {
     CPTXYAxis *x = axisSet.xAxis;
     x.axisLineStyle = nil;
     x.minorTicksPerInterval = 10;
@@ -88,7 +84,7 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     x.axisLabels =  [NSSet setWithArray: customLabels];
 }
 
-- (void) createYAxis: (CPTXYAxisSet *) axisSet minorTicks: (float) minorTicks majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle majorTicks: (float) majorTicks dict: (NSDictionary *) dict maxValue: (float) maxValue minValue: (float) minValue {
+- (void)createYAxis: (CPTXYAxisSet *) axisSet minorTicks: (float) minorTicks majorTickStyle: (CPTLineStyle *) majorTickStyle minorTickStyle: (CPTLineStyle *) minorTickStyle majorTicks: (float) majorTicks dict: (NSDictionary *) dict maxValue: (float) maxValue minValue: (float) minValue {
     CPTXYAxis *y = axisSet.yAxis;
     y.axisLineStyle = nil;
     y.minorTicksPerInterval = minorTicks;
@@ -103,51 +99,59 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     y.labelingOrigin = @(minValue);
 }
 
-- (NSNumber *) element: (XTRElement *) anElement valueForIdentifier: (NSString *) anIdentifier {
+- (NSNumber *)element: (XTRElement *) anElement valueForIdentifier: (NSString *) anIdentifier {
     NSNumber *aValue = [anElement valueForKey: anIdentifier];
     return (aValue != nil) ? aValue : @0;
 }
 
-- (void) showElementPanelForElementAtIndex: (int) anIndex {
+- (void)showElementPanelForElementAtIndex: (int) anIndex {
     [XTRPropertiesStore storeViewTitle: self.title];
     [XTRPropertiesStore storeAtomicNumber:@(anIndex)];
     [self performSegueWithIdentifier: SHOW_INSPECTOR_FROM_GRAPH_VIEW sender: self];
 }
 
-- (void) showGraphForChoiceAtIndex: (int) anIndex {
+- (void)showGraphForChoiceAtIndex: (int) anIndex {
     NSDictionary *dict = [XTRDataSource sharedInstance].graphPropertyList[anIndex];
     float minValue = [dict[MINIMUM_VALUE] floatValue];
     float maxValue = [dict[MAXIMUM_VALUE] floatValue];
     float majorTicks = [dict[MAJOR_TICK_MARKS] floatValue];
     float minorTicks = [dict[MINOR_TICK_MARKS] floatValue];
     [self creatBarChart];
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)barChart.defaultPlotSpace;
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)self.barChart.defaultPlotSpace;
     plotSpace.yRange = [CPTPlotRange plotRangeWithLocation: @(minValue) length: @(maxValue)];
     plotSpace.xRange = [CPTPlotRange plotRangeWithLocation: @(0.0) length: @([XTRDataSource sharedInstance].elementCount + 1)];
     CPTMutableLineStyle *majorTickStyle = [CPTMutableLineStyle lineStyle];
     majorTickStyle.lineWidth = 2.0f;
-    majorTickStyle.lineColor = [CPTColor greenColor];
+    majorTickStyle.lineColor = [CPTColor darkGrayColor];
     
     CPTMutableLineStyle *minorTickStyle = [CPTMutableLineStyle lineStyle];
     minorTickStyle.lineWidth = 1.0f;
-    minorTickStyle.lineColor = [CPTColor greenColor];
+    minorTickStyle.lineColor = [CPTColor darkGrayColor];
     
-    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)barChart.axisSet;
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)self.barChart.axisSet;
     [self createXAxis: axisSet majorTickStyle: majorTickStyle minorTickStyle: minorTickStyle];
     [self createYAxis: axisSet minorTicks: minorTicks majorTickStyle: majorTickStyle minorTickStyle: minorTickStyle majorTicks: majorTicks dict: dict maxValue: maxValue minValue: minValue];
     
-    CPTBarPlot *barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor whiteColor] horizontalBars: NO];
+//    CPTMutableLineStyle *barLineStyle = [[CPTMutableLineStyle alloc] init];
+//    barLineStyle.lineWidth = 0.5;
+//    barLineStyle.lineColor = [CPTColor blackColor];
+
+    CPTBarPlot *barPlot = [CPTBarPlot tubularBarPlotWithColor: [CPTColor whiteColor] horizontalBars: NO];
+//    barPlot.lineStyle = barLineStyle;
     barPlot.delegate = self;
     barPlot.barWidth = @1.0f;
     barPlot.baseValue = @0;
     barPlot.dataSource = self;
     barPlot.barOffset = @0.0f;
     barPlot.identifier = dict[ATTRIBUTE_NAME];
-    [barChart addPlot: barPlot toPlotSpace: plotSpace];
+    barPlot.barCornerRadius = 0.0;
+    
+    [self.barChart addPlot: barPlot toPlotSpace: plotSpace];
 }
 
-- (void) graphSelected: (NSNotification *) notification {
+- (void)graphSelected: (NSNotification *) notification {
     NSNumber *object = notification.object;
+    
     [self dismissViewControllerAnimated: YES completion: nil];
     [self showGraphForChoiceAtIndex:object.intValue];
 }
@@ -158,23 +162,24 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
 
 #pragma mark - Action Methods
 
-- (IBAction) toolbarItemTapped: (id) sender {
-    UIStoryboard *storyboard = [XTRAppDelegate storyboard];
-    XTRGraphChoiceViewController *content = [storyboard instantiateViewControllerWithIdentifier: NSStringFromClass([XTRGraphChoiceViewController class])];
+- (IBAction)toolbarItemTapped: (id) sender {
+    XTRGraphChoiceViewController *content = [[XTRAppDelegate storyboard] instantiateViewControllerWithIdentifier: NSStringFromClass([XTRGraphChoiceViewController class])];
     CGSize contentSize = CGSizeMake(294, 664);
+    
     content.modalPresentationStyle = UIModalPresentationPopover;
     content.popoverPresentationController.barButtonItem = sender;
     content.preferredContentSize = contentSize;
+    
    [self presentViewController:content animated:YES completion:nil];
 }
 
 #pragma mark - Plot Data Source Methods
 
-- (NSUInteger) numberOfRecordsForPlot: (CPTPlot *) plot {
+- (NSUInteger)numberOfRecordsForPlot: (CPTPlot *) plot {
     return [XTRDataSource sharedInstance].elementCount;
 }
 
-- (NSNumber *) numberForPlot: (CPTPlot *) plot field: (NSUInteger) fieldEnum recordIndex: (NSUInteger) index  {
+- (NSNumber *)numberForPlot: (CPTPlot *) plot field: (NSUInteger) fieldEnum recordIndex: (NSUInteger) index  {
     NSNumber *num = nil;
     if ([plot isKindOfClass:[CPTBarPlot class]]) {
         XTRElement *element = [[XTRDataSource sharedInstance] elementAtIndex: index];
@@ -258,14 +263,14 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
     [self showElementPanelForElementAtIndex:index];
 }
 
-- (CPTFill *) barFillForBarPlot: (CPTBarPlot *) barPlot recordIndex: (NSUInteger) index {
+- (CPTFill *)barFillForBarPlot: (CPTBarPlot *)barPlot recordIndex: (NSUInteger)index {
     XTRElement *element = [[XTRDataSource sharedInstance] elementAtIndex: index];
     return [CPTFill fillWithColor:[CPTColor colorWithCGColor:element.seriesColor.CGColor]];
 }
 
 #pragma mark - View Management Methods
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(graphSelected:) name: NOTIFICATION_GRAPH_SELECTED object: nil];
     self.title = @"Graphs";
@@ -278,10 +283,10 @@ static NSString *MINIMUM_VALUE    = @"minimumValue";
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver: self];
-    button = nil;
-    hostingView = nil;
+    self.button = nil;
+    self.hostingView = nil;
 }
 
 @end

@@ -14,9 +14,7 @@
 @synthesize gradientLayer;
 
 - (void)createLayer {    
-	//self.layer.cornerRadius = 8.0f;
 	self.layer.masksToBounds = YES;
-	//self.layer.borderWidth = 2.0f;
 	[self setupColors];
 }
 
@@ -40,12 +38,6 @@
 	lowColor = color;
 	[self.layer setNeedsDisplay];
 }
-
-/*- (void)drawRect:(CGRect)rect {
-	[super drawRect:rect];
-	if (highColor && lowColor)
-		gradientLayer.colors = @[ (id)[highColor CGColor], (id)[lowColor CGColor]];
-}*/
 
 #pragma mark - Memory Management Methods
 

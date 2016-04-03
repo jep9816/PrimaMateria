@@ -19,7 +19,7 @@
     imageLayer.contents = nil;
 }
 
-- (void) awakeFromNib {
+- (void)awakeFromNib {
     [super awakeFromNib];
 	[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(tableHeaderCellSelected:) name: NOTIFICATION_TABLE_HEADER_SELECTED object: nil];
     toggle = 0;
@@ -30,7 +30,7 @@
     self.backgroundColor = UIColor.lightGrayColor;
 }
 
-- (void) toggleButtonState: (BOOL) aFlag {
+- (void)toggleButtonState: (BOOL) aFlag {
     [[NSNotificationCenter defaultCenter] postNotificationName:NOTIFICATION_TABLE_HEADER_SELECTED object: nil];
     [CATransaction begin];
     [CATransaction setAnimationDuration:0.0];
@@ -45,13 +45,12 @@
     return toggle;
 }
 
-- (void) createLayer {
+- (void)createLayer {
     self.layer.masksToBounds = YES;
     self.layer.borderWidth = 1.0f;
-    //[self setupColors];
 }
 
-- (void) dealloc {
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver: self];
 }
 

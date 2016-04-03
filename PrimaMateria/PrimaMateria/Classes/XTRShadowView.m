@@ -10,7 +10,7 @@
 
 @implementation XTRShadowView
 
-- (void) drawRect: (CGRect) rect {
+- (void)drawRect: (CGRect) rect {
     [super drawRect: rect];
     UIView *superView = self.superview;
     CALayer *sublayer = [CALayer layer];

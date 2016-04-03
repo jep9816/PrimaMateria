@@ -8,11 +8,10 @@
 
 #import "PrimaMateria.h"
 
-typedef enum ViewTypes: NSInteger {
+typedef NS_ENUM(NSInteger, PropertiesViewTypes) {
     kPhysicalPropertiesView = 0,
     kChemicalPropertiesView = 1
-}
-SwapViews;
+};
 
 @implementation XTRElementPropertiesViewController
 @synthesize atomicMassFootnoteLabel;
@@ -68,7 +67,7 @@ SwapViews;
 
 #pragma mark Misc Methods
 
-- (void) setupUI {
+- (void)setupUI {
     if (self.element != nil) {
         atomicMassLabel.text = (self.element).atomicMassAggregate;
         atomicMassFootnoteLabel.text = [self.element valueForKey: ELEMENT_ATOMIC_MASS_FOOTNOTE];
@@ -160,7 +159,7 @@ SwapViews;
 
 #pragma mark - View Management Methods
 
-- (void) viewDidLoad {
+- (void)viewDidLoad {
     [super viewDidLoad];
     chemicalPropertiesView.frame = self.swapView.frame;
     chemicalPropertiesView.bounds = self.swapView.bounds;
@@ -183,7 +182,7 @@ SwapViews;
 
 #pragma mark - Memory Management Methods
 
-- (void) dealloc {
+- (void)dealloc {
     atomicMassFootnoteLabel = nil;
     atomicMassLabel = nil;
     boilingPointLabel = nil;
