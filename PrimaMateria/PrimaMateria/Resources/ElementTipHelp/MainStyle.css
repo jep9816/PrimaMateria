@@ -105,10 +105,14 @@ table tr td a {
     font-weight: bold;
 }
 
-td.oddrow {
+tr.oddrow {
     background-color: #edf3ff;
 }
 
 td.oddrow a {
+    background-color: #edf3ff;
+}
+
+td.oddrow {
     background-color: #edf3ff;
 }
