@@ -7,7 +7,9 @@
 //
 
 @interface XTRWikipediaViewController ()
+
 - (void)prepareRequest;
+
 @end
 
 @implementation XTRWikipediaViewController

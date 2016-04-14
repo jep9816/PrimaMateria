@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 3/13/10.
-//  Copyright 2016 xTrensa. All rights reserved.
+//  Copyright (c) 2016 xTrensa. All rights reserved.
 //
 
 @implementation XTRGraphChoiceViewController

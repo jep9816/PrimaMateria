@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 11/21/11.
-//  Copyright 2016 xTrensa. All rights reserved.
+//  Copyright (c) 2016 xTrensa. All rights reserved.
 //
 
 @interface XTRElementPropertiesViewController : XTRSwapableViewController
