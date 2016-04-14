@@ -3182,7 +3182,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1897" y="-140"/>
+            <point key="canvasLocation" x="1849" y="-452"/>
         </scene>
         <!--Graph-->
         <scene sceneID="NaM-MS-mBu">
