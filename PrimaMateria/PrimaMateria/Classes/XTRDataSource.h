@@ -6,22 +6,20 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-@class XTRElement;
-
 @interface XTRDataSource : NSObject
-
 @property (strong) NSArray *sortColumns;
-@property (strong) NSMutableArray *elementList;
-@property (strong) NSMutableArray *sortedElementList;
-@property (strong) NSMutableArray *graphPropertyList;
-@property BOOL sortDescending;
+@property (strong) NSMutableArray<XTRElement *> *elementList;
+@property (strong) NSMutableArray<XTRElement *> *sortedElementList;
+@property (strong) NSMutableArray<NSDictionary *> *graphPropertyList;
 @property SEL columnSortSelector;
+@property (NS_NONATOMIC_IOSONLY, readonly) NSUInteger elementCount;
 
 + (XTRDataSource *)sharedInstance;
-- (XTRElement *)elementAtIndex : (int)index;
+
+- (XTRElement *)elementAtIndex : (NSUInteger)index;
 - (XTRElement *)elementForSymbol : (NSString *)symbol;
-- (XTRElement *)sortedElementAtIndex : (int)index;
-@property (NS_NONATOMIC_IOSONLY, readonly) int elementCount;
+- (XTRElement *)sortedElementAtIndex : (NSUInteger)index;
+
 - (void)resetElementList;
 - (void)sortByColumnPosition: (int) aColumnPosition andOrdering: (BOOL) anOrderingFlag;
 

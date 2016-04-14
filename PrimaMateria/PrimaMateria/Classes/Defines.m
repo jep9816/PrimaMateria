@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "Defines.h"
-
 float RGB_CONSTANT = 255.0;
 float HSB_CONSTANT = 359.0f;
 
@@ -106,6 +104,7 @@ NSString *NOTIFICATION_GRAPH_SELECTED = @"graphSelectedNotification";
 NSString *NOTIFICATION_TABLE_HEADER_SELECTED = @"tableHeaderCellSelectedNotification";
 NSString *NOTIFICATION_COLOR_SELECTED = @"colorNotification";
 NSString *NOTIFICATION_INSPECTOR_DISMISSED = @"notificationInspectorDismissed";
+NSString *NOTIFICATION_SERIES_COLOR_CHANGED = @"notificationSeriesColorChanged";
 
 #pragma mark - Series Text
 
@@ -137,7 +136,7 @@ NSString *STRING_UNKNOWN = @"Unknown";
 NSString *SUPPORTING_FILES = @"SupportingFiles";
 NSString *PERIODIC_VIEW_TITLE = @"Periodic Table of the Elements";
 NSString *VIEW_TITLE_KEY = @"viewTitle";
-NSString *COLOR_KEY = @"colorKey";
+NSString *SERIES_COLOR_KEY = @"seriesColorKey";
 
 #pragma mark - Color Constants
 

@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "XTRVersionChecker.h"
-
 @implementation XTRVersionChecker
 
 #pragma mark - Accessor Methods

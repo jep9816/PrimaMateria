@@ -8,8 +8,6 @@
 
 #include <iostream>
 #include <stdexcept>
-#import "XTRElement.h"
-#import "XTRDataSource.h"
 #import "MolecularCalculator.h"
 
 using namespace std;
@@ -36,12 +34,8 @@ inline int string2integer(const std::string& s) {
 /*-------------- parsing function ---------------------------------------*/
 
 double masse(string elmnt) {
-    XTRElement *element = [[XTRDataSource sharedInstance] elementForSymbol:@(elmnt.c_str())];
-    id atomicMass = element.atomicMass;
-    if (element == nil)
-        return 0;
-    else
-        return [atomicMass doubleValue];
+    XTRElement *element = [[XTRDataSource sharedInstance] elementForSymbol: @(elmnt.c_str())];
+    return (element == nil) ? 0 : [element.atomicMass doubleValue];
 }
 
 double mcalc(string aFormula) {
@@ -49,8 +43,9 @@ double mcalc(string aFormula) {
     const string UPP("ABCDEFGHIKLMNOPRSTUVWXYZ");
     const string LOW("abcdefghiklmnoprstuy");
     const string COEFF("0123456789");
-    /* define some variable */
-    int parentest = -1, coeff, coeff2, coeffp, SIZE;
+    /* define some variables */
+    int parentest = -1, coeff, coeff2, coeffp;
+    unsigned long SIZE;
     double masse_totale, masse_tmp = 0, masse_par = 0;
     string bloc,  coeff_txt, coeff2_txt, coeffp_txt;
     char parop = '[', parcl = ']';
@@ -137,4 +132,3 @@ double mcalc(string aFormula) {
     /* send back value to main.cpp */
     return(masse_totale);
 }
-

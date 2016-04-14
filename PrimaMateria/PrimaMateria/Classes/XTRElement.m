@@ -6,13 +6,11 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @implementation XTRElement
 
 #pragma mark Accessor Methods
 
-- (id) valueForKey: (NSString *) aKey {
+- (id)valueForKey: (NSString *) aKey {
     if ([aKey isEqualToString: ELEMENT_KSHELL_ELECTRONS])
         return self.kShellElectrons;
     else if ([aKey isEqualToString: ELEMENT_LSHELL_ELECTRONS])
@@ -36,11 +34,11 @@
     self.elementDictionary[aKey] = anObject;
 }
 
-- (NSNumber *) atomicNumber {
+- (NSNumber *)atomicNumber {
     return ([self valueForKey: ELEMENT_ATOMIC_NUMBER] != nil) ? [self valueForKey: ELEMENT_ATOMIC_NUMBER] : @0;
 }
 
-- (NSNumber *) atomicRadius {
+- (NSNumber *)atomicRadius {
     NSNumber *aValue = [self valueForKey: ELEMENT_ATOMIC_RADIUS];
     return (aValue != nil) ? aValue : @0;
 }

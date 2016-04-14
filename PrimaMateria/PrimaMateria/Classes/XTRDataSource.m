@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 //static XTRDataSource *_sharedInstance = nil;
 
 @interface XTRDataSource ()
@@ -51,23 +49,17 @@
     static dispatch_once_t onceToken;
     
     dispatch_once(&onceToken, ^{
-        _sharedInstance = [[super allocWithZone: NULL] init];
+        _sharedInstance = (XTRDataSource *) [[super allocWithZone: NULL] init];
     });
     
     return _sharedInstance;
 }
 
-//+ (XTRDataSource *) sharedInstance {
-//    if (sharedInstance == nil)
-//        sharedInstance = [[super allocWithZone: NULL] init];
-//    return sharedInstance;
-//}
-
-+ (id) allocWithZone: (NSZone *) zone {
++ (id)allocWithZone: (NSZone *)zone {
     return [self sharedInstance];
 }
 
-- (id) copyWithZone: (NSZone *) zone {
+- (id)copyWithZone: (NSZone *)zone {
     return self;
 }
 
@@ -89,22 +81,16 @@
 #pragma mark - General Methods
 
 - (void)sortByColumnPosition: (int) aColumnPosition andOrdering: (BOOL) anOrderingFlag {
-    NSString *sortObject = self.sortColumns[aColumnPosition];
+    NSString *sortObject = self.sortColumns[(NSUInteger) aColumnPosition];
     NSSortDescriptor *discripter1;
-    if (anOrderingFlag)
-        discripter1 = [[NSSortDescriptor alloc] initWithKey: sortObject ascending: YES];
-    else
-        discripter1 = [[NSSortDescriptor alloc] initWithKey: sortObject ascending: NO];
+    discripter1 = [[NSSortDescriptor alloc] initWithKey:sortObject ascending:anOrderingFlag];
 
     if ([sortObject isEqualToString: self.sortColumns[0]]) {
         NSSortDescriptor *discripter2;
-        if (anOrderingFlag)
-            discripter2 = [[NSSortDescriptor alloc] initWithKey: self.sortColumns[0] ascending: YES];
-        else
-            discripter2 = [[NSSortDescriptor alloc] initWithKey: self.sortColumns[0] ascending: NO];
-        [self.sortedElementList sortUsingDescriptors:@[ discripter2, discripter1]];
+        discripter2 = [[NSSortDescriptor alloc] initWithKey:self.sortColumns[0] ascending:anOrderingFlag];
+        [self.sortedElementList sortUsingDescriptors:@[discripter2, discripter1]];
     } else
-        [self.sortedElementList sortUsingDescriptors:@[ discripter1]];
+        [self.sortedElementList sortUsingDescriptors:@[discripter1]];
 }
 
 - (void)resetElementList {
@@ -124,15 +110,15 @@
     return nil;
 }
 
-- (XTRElement *) sortedElementAtIndex: (int) anIndex {
+- (XTRElement *) sortedElementAtIndex: (NSUInteger) anIndex {
     return self.sortedElementList[anIndex];
 }
 
-- (XTRElement *) elementAtIndex: (int) anIndex {
+- (XTRElement *) elementAtIndex: (NSUInteger) anIndex {
     return self.elementList[anIndex];
 }
 
-- (int) elementCount {
+- (NSUInteger) elementCount {
     return (self.sortedElementList).count;
 }
 

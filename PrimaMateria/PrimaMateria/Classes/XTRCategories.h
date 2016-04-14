@@ -16,8 +16,9 @@
 
 @interface XTRElement (Presentation)
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *atomicMassAggregate;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *atomicMassFootnote;
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) UIColor *seriesColor;
-- (UIColor *)standardConditionColor;
+@property (NS_NONATOMIC_IOSONLY, readonly, copy) UIColor *standardConditionColor;
 @property (NS_NONATOMIC_IOSONLY, readonly, strong) UIImage *crystalStructureImage;
 @property (NS_NONATOMIC_IOSONLY, readonly, strong) UIImage *shellModelImage;
 @property (NS_NONATOMIC_IOSONLY, readonly, copy) NSString *pathForGeneralInfoDoc;

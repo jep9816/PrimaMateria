@@ -6,20 +6,18 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#define degreesToRadians(x) (M_PI * x / 180.0)
-
-typedef NS_ENUM(NSInteger, SeriesColors) {
-    kSERIES_ACTINIDE = 0,
-    kSERIES_ALKALI_EARTH_METAL = 1,
-    kSERIES_ALKALI_METAL = 2,
-    kSERIES_HALOGEN = 3,
-    kSERIES_LANTHANIDE = 4,
-    kSERIES_METAL = 5,
-    kSERIES_NOBLE_GAS = 6,
-    kSERIES_NON_METAL = 7,
-    kSERIES_TRANSACTINIDES = 8,
-    kSERIES_TRANSITION_METAL = 9
-};
+//typedef NS_ENUM(NSInteger, SeriesColors) {
+//    kSERIES_ACTINIDE = 0,
+//    kSERIES_ALKALI_EARTH_METAL = 1,
+//    kSERIES_ALKALI_METAL = 2,
+//    kSERIES_HALOGEN = 3,
+//    kSERIES_LANTHANIDE = 4,
+//    kSERIES_METAL = 5,
+//    kSERIES_NOBLE_GAS = 6,
+//    kSERIES_NON_METAL = 7,
+//    kSERIES_TRANSACTINIDES = 8,
+//    kSERIES_TRANSITION_METAL = 9
+//};
 
 extern float RGB_CONSTANT;
 extern float HSB_CONSTANT;
@@ -70,7 +68,7 @@ extern NSString *ELEMENT_HARDNESS_SCALE_BRINELL;
 extern NSString *ELEMENT_HARDNESS_SCALE_BRINELL_SCALED;
 extern NSString *ELEMENT_HARDNESS_SCALE_MOHS;
 extern NSString *ELEMENT_HARDNESS_SCALE_VICKERS;
-extern NSString *ELEMENT_HARDNESS_SCALE_VICKERS_SCALED;
+//extern NSString *ELEMENT_HARDNESS_SCALE_VICKERS_SCALED;
 extern NSString *ELEMENT_HEAT_OF_FUSION;
 extern NSString *ELEMENT_HEAT_OF_VAPORIZATION;
 extern NSString *ELEMENT_INCOMPATIBILITIES;
@@ -119,6 +117,7 @@ extern NSString *NOTIFICATION_GRAPH_SELECTED;
 extern NSString *NOTIFICATION_TABLE_HEADER_SELECTED;
 extern NSString *NOTIFICATION_COLOR_SELECTED;
 extern NSString *NOTIFICATION_INSPECTOR_DISMISSED;
+extern NSString *NOTIFICATION_SERIES_COLOR_CHANGED;
 
 #pragma mark - Series Text
 
@@ -150,7 +149,7 @@ extern NSString *STRING_UNKNOWN;
 extern NSString *SUPPORTING_FILES;
 extern NSString *PERIODIC_VIEW_TITLE;
 extern NSString *VIEW_TITLE_KEY;
-extern NSString *COLOR_KEY;
+extern NSString *SERIES_COLOR_KEY;
 
 #pragma mark - Color Constants
 

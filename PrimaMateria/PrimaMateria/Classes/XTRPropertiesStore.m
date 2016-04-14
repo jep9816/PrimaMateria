@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @implementation XTRPropertiesStore
 
 #pragma mark PrimaMateria Methods
@@ -21,7 +19,7 @@
     return defaultValue;
 }
 
-+ (void)storeAtomicNumber: (NSString *) aValue {
++ (void)storeAtomicNumber: (NSNumber *) aValue {
     if (aValue != nil) {
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setValue: aValue forKey: ELEMENT_ATOMIC_NUMBER];

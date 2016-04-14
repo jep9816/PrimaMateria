@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 enum chars {
     k0Superscript = 48,
     k1Superscript = 49,
@@ -43,7 +41,7 @@ enum chars {
 + (UIColor *)reverseColorOf: (UIColor *)oldColor {
     CGColorRef oldCGColor = oldColor.CGColor;
     
-    int numberOfComponents = CGColorGetNumberOfComponents(oldCGColor);
+    size_t numberOfComponents = CGColorGetNumberOfComponents(oldCGColor);
     // can not invert - the only component is the alpha
     if (numberOfComponents == 1) {
         return [UIColor colorWithCGColor:oldCGColor];
@@ -54,6 +52,7 @@ enum chars {
     
     int i = numberOfComponents - 1;
     newComponentColors[i] = oldComponentColors[i]; // alpha
+    
     while (--i >= 0) {
         newComponentColors[i] = 1 - oldComponentColors[i];
     }
@@ -66,13 +65,12 @@ enum chars {
     CGFloat white = 0;
     [oldColor getWhite:&white alpha:nil];
     
-    if(white>0.3 && white < 0.67)
-    {
-        if(white >= 0.5)
+    if(white>0.3 && white < 0.67) {
+        if(white >= 0.5) {
             newColor = [UIColor darkGrayColor];
-        else if (white < 0.5)
+        } else if (white < 0.5) {
             newColor = [UIColor blackColor];
-        
+        }
     }
     return newColor;
 }
@@ -100,7 +98,7 @@ enum chars {
             NSArray *allKeys = aDictionary.allKeys;
             NSArray *allValues = aDictionary.allValues;
             NSInteger count = allKeys.count;
-            for (NSInteger i = 0; i < count; i++) {
+            for (NSUInteger i = 0; i < count; i++) {
                 NSString *aKey = allKeys[i];
                 NSString *aValue = allValues[i];
                 if (![aKey isEqualToString: @"New item"]) {
@@ -157,7 +155,7 @@ enum chars {
     }
 }
 
-- (NSString *) atomicMassAggregate {
+- (NSString *)atomicMassAggregate {
     Boolean atomicMassKnownAccurately = [[self valueForKey: ELEMENT_ATOMIC_MASS_KNOWN_ACCURATELY] boolValue];
     if (!atomicMassKnownAccurately)
         return [NSString stringWithFormat: @"[%@]", self.atomicMass];
@@ -167,6 +165,11 @@ enum chars {
             return [NSString stringWithFormat: @"%@(%@)", self.atomicMass, atomicMassUncertainty];
     }
     return nil;
+}
+
+- (NSString *)atomicMassFootnote {
+    NSString *footnote =  [self valueForKey: ELEMENT_ATOMIC_MASS_FOOTNOTE];
+    return (footnote == nil) ? STRING_EMPTY : footnote;
 }
 
 - (NSString *) kShellElectrons {
