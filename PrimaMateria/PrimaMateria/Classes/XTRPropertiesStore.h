@@ -3,7 +3,7 @@
 //  Visualizer
 //
 //  Created by Jerry Porter on 05/18/2011.
-//  Copyright 2016 xTrensa. All rights reserved.
+//  Copyright (c) 2016 xTrensa. All rights reserved.
 //
 
 @interface XTRPropertiesStore : NSObject
