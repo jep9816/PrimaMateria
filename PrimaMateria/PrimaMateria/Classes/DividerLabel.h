@@ -8,13 +8,13 @@
 
 @interface DividerLabel : UILabel
 
-@property (nonatomic, strong) CAGradientLayer *gradientLayer;
+//@property (nonatomic, strong) CAGradientLayer *gradientLayer;
 @property (nonatomic, strong) UIColor *highColor;
 @property (nonatomic, strong) UIColor *lowColor;
 
--(void)setHigh_Color : (UIColor*)color;
--(void)setLow_Color : (UIColor*)color;
--(void)createLayer;
--(void)setupColors;
+- (void)setHigh_Color: (UIColor*)color;
+- (void)setLow_Color: (UIColor*)color;
+- (void)createLayer;
+- (void)setupColors;
 
 @end

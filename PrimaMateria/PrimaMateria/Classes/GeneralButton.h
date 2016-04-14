@@ -8,7 +8,7 @@
 
 @interface GeneralButton : UIButton
 
--(void)setupColors;
--(void)createLayer;
+- (void)setupColors;
+- (void)createLayer;
 
 @end

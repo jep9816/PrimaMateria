@@ -6,12 +6,7 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @implementation DividerLabel
-@synthesize highColor;
-@synthesize lowColor;
-@synthesize gradientLayer;
 
 - (void)createLayer {    
 	self.layer.masksToBounds = YES;
@@ -29,13 +24,13 @@
 	[self createLayer];
 }
 
-- (void)setHigh_Color:(UIColor*)color {
-	highColor = color;
+- (void)setHigh_Color: (UIColor*)color {
+	self.highColor = color;
 	[self.layer setNeedsDisplay];
 }
 
-- (void)setLow_Color:(UIColor*)color {
-	lowColor = color;
+- (void)setLow_Color: (UIColor*)color {
+	self.lowColor = color;
 	[self.layer setNeedsDisplay];
 }
 

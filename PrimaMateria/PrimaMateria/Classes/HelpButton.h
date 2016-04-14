@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-@class GeneralButton;
-
 @interface HelpButton : GeneralButton <UIPopoverPresentationControllerDelegate>
 
 @end

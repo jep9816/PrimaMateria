@@ -6,20 +6,18 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface ElementButton()
 
-//-(void)colorChanged: (NSNotification *)aNotification;
+-(void)colorChanged: (NSNotification *)aNotification;
 
 @end
 
 @implementation ElementButton
 
-//-(void)colorChanged: (NSNotification *)aNotification {
-//    [self setupColors];
-//    [self setNeedsDisplay];
-//}
+-(void)colorChanged: (NSNotification *)aNotification {
+    [self setupColors];
+    [self setNeedsDisplay];
+}
 
 - (void)setupColors {
     UIColor *backgroundColor = [[XTRDataSource sharedInstance] elementAtIndex: self.tag].seriesColor;
@@ -37,12 +35,12 @@
     
     self.backgroundColor = UIColor.clearColor;
     
-    //[[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(colorChanged:) name: @"notificationColorChanged" object: nil];
-	[self setTitleColor:[[[XTRDataSource sharedInstance] elementAtIndex: self.tag] standardConditionColor] forState:UIControlStateNormal];
+    [[NSNotificationCenter defaultCenter] addObserver: self selector: @selector(colorChanged:) name: NOTIFICATION_SERIES_COLOR_CHANGED object: nil];
+	[self setTitleColor: [[[XTRDataSource sharedInstance] elementAtIndex: self.tag] standardConditionColor] forState: UIControlStateNormal];
 }
 
 - (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver: self name:@"notificationColorChanged" object: nil];
+    [[NSNotificationCenter defaultCenter] removeObserver: self name: NOTIFICATION_SERIES_COLOR_CHANGED object: nil];
 }
 
 @end

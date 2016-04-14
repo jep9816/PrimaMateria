@@ -11,7 +11,7 @@
 @property (nonatomic, strong) CALayer *imageLayer;
 @property (nonatomic, strong) UIImage *descentingImageView;
 @property (nonatomic, strong) UIImage *ascendingImageView;
-@property (nonatomic) NSInteger toggle;
+@property (nonatomic) BOOL toggle;
 
 @property (NS_NONATOMIC_IOSONLY, readonly) BOOL toggleState;
 

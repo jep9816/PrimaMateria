@@ -6,8 +6,10 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
+@class DynoTableLabel;
+
 @interface DynoTableCell : UITableViewCell
 
--(void)addColumn : (CGFloat)position;
+- (void)addColumn: (CGFloat)position;
 
 @end

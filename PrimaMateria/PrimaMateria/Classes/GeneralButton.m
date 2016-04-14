@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @implementation GeneralButton
 
 - (void)createLayer {
@@ -23,6 +21,7 @@
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
+    
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.backgroundColor = [UIColor colorWithHexString:@"cccccc"];
     [self setTitleColor: UIColor.whiteColor forState: UIControlStateNormal];

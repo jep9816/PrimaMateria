@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface HelpButton()
 @property (NS_NONATOMIC_IOSONLY, readonly, strong) UIViewController *viewController;
 @end
@@ -38,7 +36,7 @@
     self.titleEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0);
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan: (NSSet *)touches withEvent: (UIEvent *)event {
     NSString *label  = [self titleForState: UIControlStateDisabled];
 
     if(label != nil) {
