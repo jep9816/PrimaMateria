@@ -6,14 +6,12 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 typedef NS_ENUM(NSInteger, InspectorViewTypes) {
-    kAtomicStructureView  = 0,
-    kElementPropertiesView = 1,
-    kNuclidesIsotopesView = 2,
-    kSpectrumView = 3,
-    kGeneralInfoView = 4
+    kAtomicStructureView  = 0//,
+//    kElementPropertiesView = 1,
+//    kNuclidesIsotopesView = 2,
+//    kSpectrumView = 3,
+//    kGeneralInfoView = 4
 };
 
 @interface XTRElementInspectorViewController ()
@@ -45,7 +43,7 @@ typedef NS_ENUM(NSInteger, InspectorViewTypes) {
 
 - (void)assignNavigationHints {
     NSInteger atomicNumber = self.element.atomicNumber.integerValue;
-    UILabel *currentLabel = (UILabel *)(self.pageItemView.subviews)[atomicNumber + 1];
+    UILabel *currentLabel = (UILabel *)(self.pageItemView.subviews)[(NSUInteger) (atomicNumber + 1)];
     currentLabel.font = [UIFont systemFontOfSize: 12.0];
     currentLabel.textColor = UIColor.whiteColor;
     
@@ -53,7 +51,7 @@ typedef NS_ENUM(NSInteger, InspectorViewTypes) {
     if (nextAtomicNumber >[XTRDataSource sharedInstance].elementCount)
         nextAtomicNumber = 1;
     if(nextAtomicNumber - 1 < [XTRDataSource sharedInstance].elementCount) {
-        UILabel *localNextLabel = (UILabel *)(self.pageItemView.subviews)[nextAtomicNumber + 1];
+        UILabel *localNextLabel = (UILabel *)(self.pageItemView.subviews)[(NSUInteger) (nextAtomicNumber + 1)];
         localNextLabel.font = [UIFont systemFontOfSize:10.0];
         localNextLabel.textColor = UIColor.darkGrayColor;
     }
@@ -70,7 +68,7 @@ typedef NS_ENUM(NSInteger, InspectorViewTypes) {
     if (previousAtomicNumber < 1)
         previousAtomicNumber = [XTRDataSource sharedInstance].elementCount;
     if(previousAtomicNumber > 0) {
-        UILabel *localPreviousLabel = (UILabel *)(self.pageItemView.subviews)[previousAtomicNumber + 1];
+        UILabel *localPreviousLabel = (UILabel *)(self.pageItemView.subviews)[(NSUInteger) (previousAtomicNumber + 1)];
         localPreviousLabel.font = [UIFont systemFontOfSize:10.0];
         localPreviousLabel.textColor = UIColor.darkGrayColor;
     }
@@ -93,7 +91,7 @@ typedef NS_ENUM(NSInteger, InspectorViewTypes) {
         label.textColor = UIColor.darkGrayColor;
         label.backgroundColor = UIColor.clearColor;
         [self.pageItemView addSubview: label];
-        rect = CGRectMake(label.frame.origin.x + 8.6, 30, 8, 8);
+        rect = CGRectMake((CGFloat) (label.frame.origin.x + 8.6), 30, 8, 8);
     }
     [self.view bringSubviewToFront: self.pageItemView];
 }
@@ -150,7 +148,7 @@ typedef NS_ENUM(NSInteger, InspectorViewTypes) {
 }
 
 - (IBAction) swapViews: (UISegmentedControl *) sender {
-    UIViewController *viewController = (self.childViewControllers)[sender.selectedSegmentIndex];
+    UIViewController *viewController = (self.childViewControllers)[(NSUInteger) sender.selectedSegmentIndex];
     for (XTRSwapableViewController *controller in self.childViewControllers)
         controller.view.hidden = YES;
     viewController.view.hidden = NO;
@@ -160,7 +158,7 @@ typedef NS_ENUM(NSInteger, InspectorViewTypes) {
     NSInteger atomicNumber = (self.element.atomicNumber).intValue + 1;
     if (atomicNumber >[XTRDataSource sharedInstance].elementCount)
         atomicNumber = 1;
-    self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber -1];
+    self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber - 1];
     [self animateForDirection: @"Next"];    
 }
 
@@ -168,7 +166,7 @@ typedef NS_ENUM(NSInteger, InspectorViewTypes) {
     NSInteger atomicNumber = (self.element.atomicNumber).intValue - 1;
     if (atomicNumber < 1)
         atomicNumber = [XTRDataSource sharedInstance].elementCount;
-    self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber -1];
+    self.element = [[XTRDataSource sharedInstance] elementAtIndex:atomicNumber - 1];
     [self animateForDirection: @"Previous"];    
 }
 

@@ -6,11 +6,7 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-@class XTRElement;
-@class XTRSwapableViewController;
-
 @interface XTRAtomicStructureViewController : XTRSwapableViewController
-
 @property (nonatomic, strong) IBOutlet UIImageView *crystalStructureView;
 @property (nonatomic, strong) IBOutlet UIImageView *shellModelView;
 

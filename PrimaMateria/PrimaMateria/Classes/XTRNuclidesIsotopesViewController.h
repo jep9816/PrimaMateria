@@ -8,10 +8,11 @@
 
 @interface XTRNuclidesIsotopesViewController : XTRSwapableViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) NSArray *nuclidesAndIsotopesArray;
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIView *headerView;
 @property (nonatomic, strong) IBOutlet UIView *swapView;
+
+@property (nonatomic, strong) NSArray *nuclidesAndIsotopesArray;
+@property (nonatomic, strong) UITableView *tableView;
 
 - (void)setupUI;
 

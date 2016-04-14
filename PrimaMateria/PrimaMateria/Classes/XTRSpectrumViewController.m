@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 static NSString *kAirWavelength = @"airWavelength";
 static NSString *kIntensity = @"intensity";
 static NSString *kSpectrum = @"spectrum";
@@ -84,16 +82,9 @@ static NSString *kVSpectrum = @"V";
     x.titleOffset = 40.0f;
 
     // Define some custom labels for the data elements
-    x.labelRotation = M_PI / 4;
+    x.labelRotation = (CGFloat) (M_PI / 4);
     x.labelingPolicy = CPTAxisLabelingPolicyNone;
-    NSArray *customTickLocations = @[[NSDecimalNumber numberWithInt: 4000],
-                                    [NSDecimalNumber numberWithInt: 4500],
-                                    [NSDecimalNumber numberWithInt: 5000],
-                                    [NSDecimalNumber numberWithInt: 5500],
-                                    [NSDecimalNumber numberWithInt: 6000],
-                                    [NSDecimalNumber numberWithInt: 6500],
-                                    [NSDecimalNumber numberWithInt: 7000],
-                                    [NSDecimalNumber numberWithInt: 7500]];
+    NSArray *customTickLocations = @[@4000,  @4500, @5000, @5500, @6000, @6500, @7000, @7500];
     NSArray *xAxisLabels = @[ @"4000", @"4500", @"5000", @"5500", @"6000", @"6500", @"7000",  @"7500"];
     NSUInteger labelLocation = 0;
     NSMutableArray *customLabels = [NSMutableArray arrayWithCapacity:xAxisLabels.count];
@@ -101,7 +92,7 @@ static NSString *kVSpectrum = @"V";
         CPTAxisLabel *newLabel = [[CPTAxisLabel alloc] initWithText:xAxisLabels[labelLocation++] textStyle: x.labelTextStyle];
         newLabel.tickLocation = tickLocation;
         newLabel.offset = x.labelOffset + x.majorTickLength;
-        newLabel.rotation = M_PI / 4;
+        newLabel.rotation = (CGFloat) (M_PI / 4);
         [customLabels addObject: newLabel];
     }
 
@@ -176,9 +167,9 @@ static NSString *kVSpectrum = @"V";
 #pragma mark - UITableView DataSource Methods
 
 - (UITableViewCell *) tableView: (UITableView *) aTableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
-    NSInteger row = indexPath.row;
+    NSUInteger row = indexPath.row;
     NSString *MyIdentifier = [NSString stringWithFormat: @"Column %i", row];
-    DynoTableCell *cell = (DynoTableCell *)[aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
+    DynoTableCell *cell = [aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
     if (cell == nil) {
         NSInteger modulus = row % 2;
         NSDictionary *dict = self.lineSpectraArray[row];
@@ -220,6 +211,9 @@ static NSString *kVSpectrum = @"V";
 
             case 1:
                 num = [self intensityValue: intensity withIdentifier: identifier andSpectrum: spectrum];
+                break;
+            default:
+                num = @0;
                 break;
         }
     }

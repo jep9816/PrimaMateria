@@ -6,7 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
 #import "MolecularCalculator.h"
 
 @interface XTRMolecularCalculatorViewController ()
@@ -119,8 +118,8 @@
     NSInteger length = self.formulaTextField.text.length;
     NSInteger tag = [sender tag];
     if (length > 0) {
-        BOOL is_alpha = isalpha([self.formulaTextField.text characterAtIndex: (length - 1)]);
-        BOOL is_char = isnumber([self.formulaTextField.text characterAtIndex: (length - 1)]);
+        BOOL is_alpha = isalpha([self.formulaTextField.text characterAtIndex:(NSUInteger) (length - 1)]);
+        BOOL is_char = isnumber([self.formulaTextField.text characterAtIndex:(NSUInteger) (length - 1)]);
         if (is_alpha || is_char) {
             [self setTextFieldForNumber: tag];
             [self setLabelForNumber: tag];

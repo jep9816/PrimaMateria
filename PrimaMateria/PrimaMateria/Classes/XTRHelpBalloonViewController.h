@@ -8,14 +8,13 @@
 
 @interface XTRHelpBalloonViewController : UIViewController <UIWebViewDelegate>
 
-
-@property (nonatomic, strong) IBOutlet UIWebView *webView;
 @property (nonatomic, strong) IBOutlet UIButton *backButton;
 @property (nonatomic, strong) IBOutlet UIButton *forwardButton;
 @property (nonatomic, strong) IBOutlet UILabel *titleLabel;
+@property (nonatomic, strong) IBOutlet UIWebView *webView;
 
--(IBAction)dismiss: (id) sender;
 -(IBAction)backButtonPressed:(id)sender;
+-(IBAction)dismiss: (id) sender;
 -(IBAction)forwardButtonPressed:(id)sender;
 
 @end

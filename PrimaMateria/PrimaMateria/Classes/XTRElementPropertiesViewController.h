@@ -6,10 +6,7 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-@class XTRSwapableViewController;
-
 @interface XTRElementPropertiesViewController : XTRSwapableViewController
-
 @property (nonatomic, strong) IBOutlet UILabel *atomicMassFootnoteLabel;
 @property (nonatomic, strong) IBOutlet UILabel *atomicMassLabel;
 @property (nonatomic, strong) IBOutlet UILabel *boilingPointLabel;

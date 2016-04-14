@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @implementation XTRGraphChoiceViewController
 
 #pragma mark - Action Methods

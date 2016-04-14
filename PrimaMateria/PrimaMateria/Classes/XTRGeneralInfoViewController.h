@@ -6,12 +6,7 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-@class XTRWikipediaViewController;
-@class XTRSwapableViewController;
-
-@interface XTRGeneralInfoViewController : XTRSwapableViewController {
-}
-
+@interface XTRGeneralInfoViewController : XTRSwapableViewController
 @property (nonatomic, strong) IBOutlet UILabel *discovererLabel;
 @property (nonatomic, strong) IBOutlet UILabel *discoveryLocationLabel;
 @property (nonatomic, strong) IBOutlet UILabel *discoveryYearLabel;

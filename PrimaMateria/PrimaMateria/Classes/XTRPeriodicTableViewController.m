@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface XTRPeriodicTableViewController ()
 - (void)showPopupForButton: (id) sender;
 - (void)showElementPanelForElementAtIndex: (int) anIndex;

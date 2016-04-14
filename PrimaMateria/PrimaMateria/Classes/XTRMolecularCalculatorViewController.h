@@ -14,9 +14,10 @@
 @property (strong, nonatomic) IBOutlet UITextField *formulaTextField;
 @property (strong, nonatomic) IBOutlet UIView *backgroundView;
 
-- (IBAction) calculate : (id) sender;
-- (IBAction) clear : (id) sender;
-- (IBAction) numberClicked : (id) sender;
+- (IBAction)calculate: (id) sender;
+- (IBAction)clear: (id) sender;
+- (IBAction)numberClicked: (id) sender;
+
 - (void)setElement: (XTRElement *)anElement;
 
 @end

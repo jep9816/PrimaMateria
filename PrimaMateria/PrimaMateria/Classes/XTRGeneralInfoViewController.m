@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface XTRGeneralInfoViewController ()
 - (void)assignGeneralInfo;
 @end
@@ -43,8 +41,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    ((XTRWikipediaViewController *)segue.destinationViewController).elementName = self.element.name;
+    XTRWikipediaViewController * destController = segue.destinationViewController;
+    destController.elementName = self.element.name;
 }
+
 
 #pragma mark - View Management Methods
 

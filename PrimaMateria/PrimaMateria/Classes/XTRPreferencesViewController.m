@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface XTRPreferencesViewController ()
 - (void)loadDocument: (NSString *) documentName inView: (UIWebView *) webView;
 - (void)loadUserDefaults;
@@ -28,37 +26,47 @@
         NSNumber *redComponent = (NSNumber*)object[RED_COLOR_COMPONENT];
         NSNumber *greenComponent = (NSNumber*)object[GREEN_COLOR_COMPONENT];
         NSNumber *blueComponent = (NSNumber*)object[BLUE_COLOR_COMPONENT];
+        NSString *seriesColorKey = object[SERIES_COLOR_KEY];
         
         UIColor *aColor = [UIColor colorWithRed:redComponent.floatValue green:greenComponent.floatValue blue:blueComponent.floatValue alpha:1.0];
         NSData *colorData = [NSKeyedArchiver archivedDataWithRootObject:aColor];
-        NSString *colorKey = [object valueForKey:COLOR_KEY];
         
-        [XTRPropertiesStore storeColorData: colorData forColorKey: colorKey];
+        [XTRPropertiesStore storeColorData: colorData forColorKey: seriesColorKey];
         
-        if ([colorKey isEqualToString: SERIES_ACTINIDE]) {
-            self.seriesActinideLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_ALKALI_EARTH_METAL]) {
-            self.seriesAlkaliEarthMetalLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_ALKALI_METAL]) {
-            self.seriesAlkaliMetalLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_HALOGEN]) {
-            self.seriesHalogenLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_LANTHANIDE]) {
-            self.seriesLanthanideLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_METAL]) {
-            self.seriesMetalLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_NOBLE_GAS]) {
-            self.seriesNobleGasLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_NON_METAL]) {
-            self.seriesNonMetalLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_TRANSACTINIDES]) {
-            self.seriesTransactinidesLabel.backgroundColor =  aColor;
-        } else if ([colorKey isEqualToString: SERIES_TRANSITION_METAL]) {
-            self.seriesTransitionMetalLabel.backgroundColor =  aColor;
+        if ([seriesColorKey isEqualToString: SERIES_ACTINIDE]) {
+            self.seriesActinideButton.backgroundColor = aColor;
+            [self.seriesActinideButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_ALKALI_EARTH_METAL]) {
+            self.seriesAlkaliEarthMetalButton.backgroundColor = aColor;
+            [self.seriesAlkaliEarthMetalButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_ALKALI_METAL]) {
+            self.seriesAlkaliMetalButton.backgroundColor = aColor;
+            [self.seriesAlkaliMetalButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_HALOGEN]) {
+            self.seriesHalogenButton.backgroundColor = aColor;
+            [self.seriesHalogenButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_LANTHANIDE]) {
+            self.seriesLanthanideButton.backgroundColor = aColor;
+            [self.seriesLanthanideButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_METAL]) {
+            self.seriesMetalButton.backgroundColor = aColor;
+            [self.seriesMetalButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_NOBLE_GAS]) {
+            self.seriesNobleGasButton.backgroundColor = aColor;
+            [self.seriesNobleGasButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_NON_METAL]) {
+            self.seriesNonMetalButton.backgroundColor = aColor;
+            [self.seriesNonMetalButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_TRANSACTINIDES]) {
+            self.seriesTransactinidesButton.backgroundColor = aColor;
+            [self.seriesTransactinidesButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
+        } else if ([seriesColorKey isEqualToString: SERIES_TRANSITION_METAL]) {
+            self.seriesTransitionMetalButton.backgroundColor = aColor;
+            [self.seriesTransitionMetalButton setTitleColor: [UIColor reverseColorOf: aColor] forState: UIControlStateNormal];
         }
+        [[NSNotificationCenter defaultCenter] postNotificationName: NOTIFICATION_SERIES_COLOR_CHANGED object: nil];
     }
     
-    //[[NSNotificationCenter defaultCenter] postNotificationName: @"notificationColorChanged" object: nil];
     [self dismissViewControllerAnimated:YES completion: nil];
 }
 
@@ -66,7 +74,7 @@
     NSString *path = [[NSBundle mainBundle] pathForResource: documentName ofType: nil];
     NSURL *url = [NSURL fileURLWithPath: path];
     NSURLRequest *request = [NSURLRequest requestWithURL: url];
-    [self.webView loadRequest: request];
+    [webView loadRequest: request];
 }
 
 - (void)loadUserDefaults {
@@ -76,27 +84,27 @@
 }
 
 - (void)populateSeriesColors {
-    self.seriesActinideLabel.backgroundColor = [XTRColorFactory actinideColor];
-    self.seriesAlkaliEarthMetalLabel.backgroundColor = [XTRColorFactory alkaliEarthMetalColor];
-    self.seriesAlkaliMetalLabel.backgroundColor = [XTRColorFactory alkaliMetalColor];
-    self.seriesHalogenLabel.backgroundColor = [XTRColorFactory halogenColor];
-    self.seriesLanthanideLabel.backgroundColor = [XTRColorFactory lanthanideColor];
-    self.seriesMetalLabel.backgroundColor = [XTRColorFactory metalColor];
-    self.seriesNobleGasLabel.backgroundColor = [XTRColorFactory nobleGasColor];
-    self.seriesNonMetalLabel.backgroundColor = [XTRColorFactory nonMetalColor];
-    self.seriesTransactinidesLabel.backgroundColor = [XTRColorFactory transactinideColor];
-    self.seriesTransitionMetalLabel.backgroundColor = [XTRColorFactory transitionMetalColor];
+    self.seriesActinideButton.backgroundColor = [XTRColorFactory actinideColor];
+    self.seriesAlkaliEarthMetalButton.backgroundColor = [XTRColorFactory alkaliEarthMetalColor];
+    self.seriesAlkaliMetalButton.backgroundColor = [XTRColorFactory alkaliMetalColor];
+    self.seriesHalogenButton.backgroundColor = [XTRColorFactory halogenColor];
+    self.seriesLanthanideButton.backgroundColor = [XTRColorFactory lanthanideColor];
+    self.seriesMetalButton.backgroundColor = [XTRColorFactory metalColor];
+    self.seriesNobleGasButton.backgroundColor = [XTRColorFactory nobleGasColor];
+    self.seriesNonMetalButton.backgroundColor = [XTRColorFactory nonMetalColor];
+    self.seriesTransactinidesButton.backgroundColor = [XTRColorFactory transactinideColor];
+    self.seriesTransitionMetalButton.backgroundColor = [XTRColorFactory transitionMetalColor];
     
-    [self.seriesActinideLabel setNeedsDisplay];
-    [self.seriesAlkaliEarthMetalLabel setNeedsDisplay];
-    [self.seriesAlkaliMetalLabel setNeedsDisplay];
-    [self.seriesHalogenLabel setNeedsDisplay];
-    [self.seriesLanthanideLabel setNeedsDisplay];
-    [self.seriesMetalLabel setNeedsDisplay];
-    [self.seriesNobleGasLabel setNeedsDisplay];
-    [self.seriesNonMetalLabel setNeedsDisplay];
-    [self.seriesTransactinidesLabel setNeedsDisplay];
-    [self.seriesTransitionMetalLabel setNeedsDisplay];
+    [self.seriesActinideButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory actinideColor]] forState: UIControlStateNormal];
+    [self.seriesAlkaliEarthMetalButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory alkaliEarthMetalColor]] forState: UIControlStateNormal];
+    [self.seriesAlkaliMetalButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory alkaliMetalColor]] forState: UIControlStateNormal];
+    [self.seriesHalogenButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory halogenColor]] forState: UIControlStateNormal];
+    [self.seriesLanthanideButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory lanthanideColor]] forState: UIControlStateNormal];
+    [self.seriesMetalButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory metalColor]] forState: UIControlStateNormal];
+    [self.seriesNobleGasButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory nobleGasColor]] forState: UIControlStateNormal];
+    [self.seriesNonMetalButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory nonMetalColor]] forState: UIControlStateNormal];
+    [self.seriesTransactinidesButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory transactinideColor]] forState: UIControlStateNormal];
+    [self.seriesTransitionMetalButton setTitleColor: [UIColor reverseColorOf: [XTRColorFactory transitionMetalColor]] forState: UIControlStateNormal];
 }
 
 - (void)populateElementBubbleState: (BOOL) aFlag {
@@ -117,70 +125,24 @@
     [self populateElementBubbleState: self.elementBubbleSwitch.on];
 }
 
-- (IBAction)setShowTransitionsState : (id)sender {
+- (IBAction)setShowTransitionsState: (id)sender {
     [self populateShowTransitionsState: self.showTransitionsBubbleSwitch.on];
 }
 
-- (IBAction) setSplashScreenState: (id) sender {
+- (IBAction)setSplashScreenState: (id)sender {
     [self populateSplashScreenState: self.splashScreenSwitch.on];
 }
 
-- (IBAction) showColorPicker: (id) sender {
-    NSString *title = nil;
+- (IBAction)showColorPicker: (id)sender {
+    UIButton *aButton = sender;
+    NSString *title = aButton.titleLabel.text;
     XTRColorPickerViewController *colorPicker = [[XTRAppDelegate storyboard] instantiateViewControllerWithIdentifier: NSStringFromClass([XTRColorPickerViewController class])];
-    UIColor *aColor = nil;
-
-    switch ([sender tag]) {
-        case kSERIES_ACTINIDE:
-            title = SERIES_ACTINIDE;
-            break;
-            
-        case kSERIES_ALKALI_EARTH_METAL:
-            title = SERIES_ALKALI_EARTH_METAL;
-            break;
-            
-        case kSERIES_ALKALI_METAL:
-            title = SERIES_ALKALI_METAL;
-            break;
-            
-        case kSERIES_HALOGEN:
-            title = SERIES_HALOGEN;
-            break;
-            
-        case kSERIES_LANTHANIDE:
-            title = SERIES_LANTHANIDE;
-            break;
-            
-        case kSERIES_METAL:
-            title = SERIES_METAL;
-            break;
-            
-        case kSERIES_NOBLE_GAS:
-            title = SERIES_NOBLE_GAS;
-            break;
-            
-        case kSERIES_NON_METAL:
-            title = SERIES_NON_METAL;
-            break;
-            
-        case kSERIES_TRANSACTINIDES:
-            title = SERIES_TRANSACTINIDES;
-            break;
-            
-        case kSERIES_TRANSITION_METAL:
-            title = SERIES_TRANSITION_METAL;
-            break;
-            
-        default:
-            break;
-    }
+    UIColor *aColor = [XTRColorFactory colorForString: title];
     
-    aColor = [XTRColorFactory colorForString: title];
-    
-    colorPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionLeft;
+    colorPicker.popoverPresentationController.permittedArrowDirections = UIPopoverArrowDirectionDown;
     colorPicker.modalPresentationStyle = UIModalPresentationPopover;
     colorPicker.popoverPresentationController.sourceView = sender;
-    colorPicker.popoverPresentationController.sourceRect = CGRectMake(3, 10, 15, 15);
+    colorPicker.popoverPresentationController.sourceRect = CGRectMake(100, 17, 5, 5);
     colorPicker.preferredContentSize = CGSizeMake(270, 175);
 
     [self presentViewController:colorPicker animated:YES completion:nil];
@@ -191,7 +153,7 @@
     [colorPicker presetSlidersWithColor: aColor];
 }
 
-- (IBAction)resetPreferences: (id) sender {
+- (IBAction)resetPreferences: (id)sender {
     [XTRPropertiesStore resetPreferences];
     
     [self populateSeriesColors];
@@ -199,6 +161,7 @@
     [self populateShowTransitionsState: YES];
     [self populateSplashScreenState: YES];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName: NOTIFICATION_SERIES_COLOR_CHANGED object: nil];
     self.elementBubbleSwitch.on = YES;
     self.showTransitionsBubbleSwitch.on = YES;
     self.splashScreenSwitch.on = YES;
@@ -206,7 +169,7 @@
 
 #pragma mark - View Management Methods
 
-- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation)interfaceOrientation {
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
@@ -230,16 +193,16 @@
     self.appNameLabel = nil;
     self.cpyRightLabel = nil;
     self.elementBubbleSwitch = nil;
-    self.seriesActinideLabel = nil;
-    self.seriesAlkaliEarthMetalLabel = nil;
-    self.seriesAlkaliMetalLabel = nil;
-    self.seriesHalogenLabel = nil;
-    self.seriesLanthanideLabel = nil;
-    self.seriesMetalLabel = nil;
-    self.seriesNobleGasLabel = nil;
-    self.seriesNonMetalLabel = nil;
-    self.seriesTransactinidesLabel = nil;
-    self.seriesTransitionMetalLabel = nil;
+    self.seriesActinideButton = nil;
+    self.seriesAlkaliEarthMetalButton = nil;
+    self.seriesAlkaliMetalButton = nil;
+    self.seriesHalogenButton = nil;
+    self.seriesLanthanideButton = nil;
+    self.seriesMetalButton = nil;
+    self.seriesNobleGasButton = nil;
+    self.seriesNonMetalButton = nil;
+    self.seriesTransactinidesButton = nil;
+    self.seriesTransitionMetalButton = nil;
     self.showTransitionsBubbleSwitch = nil;
     self.splashScreenSwitch = nil;
     self.versionLabel = nil;

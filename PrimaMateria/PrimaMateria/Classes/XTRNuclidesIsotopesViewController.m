@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface XTRNuclidesIsotopesViewController ()
 - (UILabel *) tableCellLabelWithXPos: (float) xPos YPos: (float) yPos width: (float) aWidth height: (float) aHeight property: (NSObject *) aProperty columnPosition: (int) aColumnPosition modulus: (int) aModulus forCell: (DynoTableCell *) cell;
 @end
@@ -56,9 +54,9 @@
 #pragma mark - UITableView DataSource Methods
 
 - (UITableViewCell *) tableView: (UITableView *) aTableView cellForRowAtIndexPath: (NSIndexPath *) indexPath {
-    NSInteger row = indexPath.row;
+    NSUInteger row = indexPath.row;
     NSString *MyIdentifier = [NSString stringWithFormat: @"Column %i", row];
-    DynoTableCell *cell = (DynoTableCell *)[aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
+    DynoTableCell *cell = [aTableView dequeueReusableCellWithIdentifier: MyIdentifier];
     if (cell == nil) {
         NSInteger modulus = row % 2;
         NSDictionary *dict = self.nuclidesAndIsotopesArray[row];

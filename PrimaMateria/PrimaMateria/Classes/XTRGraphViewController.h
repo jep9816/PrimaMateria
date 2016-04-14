@@ -10,6 +10,7 @@
 
 @property (nonatomic, strong) IBOutlet CPTGraphHostingView *hostingView;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *button;
+
 @property (nonatomic, strong) CPTXYGraph *barChart;
 @property (strong) NSString *errorString;
 

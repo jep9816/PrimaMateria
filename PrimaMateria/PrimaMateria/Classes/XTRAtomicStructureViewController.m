@@ -6,112 +6,69 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 typedef NS_ENUM(NSInteger, StructureViewTypes) {
     kCrystalStructureView = 0,
     kShellModelView = 1
 };
 
 @implementation XTRAtomicStructureViewController
-@synthesize crystalStructureView;
-@synthesize shellModelView;
-@synthesize atomicRadiusLabel;
-@synthesize atomicVolumeLabel;
-@synthesize covalentRadiusLabel;
-@synthesize crossSectionLabel;
-@synthesize ionicRadiusLabel;
-@synthesize oxidationStatesLabel;
-@synthesize numberOfNeutronsLabel;
-@synthesize numberOfProtonsLabel;
-@synthesize numberOfElectronsLabel;
-@synthesize valenceLabel;
-@synthesize fillingOrbitalLabel;
-@synthesize kShellElectronsLabel;
-@synthesize lShellElectronsLabel;
-@synthesize mShellElectronsLabel;
-@synthesize nShellElectronsLabel;
-@synthesize oShellElectronsLabel;
-@synthesize pShellElectronsLabel;
-@synthesize qShellElectronsLabel;
-@synthesize shell1sLabel;
-@synthesize shell2sLabel;
-@synthesize shell2pLabel;
-@synthesize shell3sLabel;
-@synthesize shell3pLabel;
-@synthesize shell3dLabel;
-@synthesize shell4sLabel;
-@synthesize shell4pLabel;
-@synthesize shell4dLabel;
-@synthesize shell4fLabel;
-@synthesize shell5sLabel;
-@synthesize shell5pLabel;
-@synthesize shell5dLabel;
-@synthesize shell5fLabel;
-@synthesize shell6sLabel;
-@synthesize shell6pLabel;
-@synthesize shell6dLabel;
-@synthesize shell7sLabel;
-@synthesize shell7pLabel;
-@synthesize shellModelInfoLabel;
-@synthesize overlayView;
 
 #pragma mark Misc Methods
 
 - (void)setupUI {
     if (self.element != nil) {
-        crystalStructureView.image = self.element.crystalStructureImage;
-        shellModelView.image = self.element.shellModelImage;
+        self.crystalStructureView.image = self.element.crystalStructureImage;
+        self.shellModelView.image = self.element.shellModelImage;
 
-        atomicRadiusLabel.text = [NSString stringWithFormat: @"%@", self.element.atomicRadius];
-        atomicVolumeLabel.text = [NSString stringWithFormat: @"%@", self.element.atomicVolume];
-        covalentRadiusLabel.text = [NSString stringWithFormat: @"%@", self.element.covalentRadius];
-        crossSectionLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_COVALENT_RADIUS]];
-        ionicRadiusLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_IONIC_RADIUS]];
-        oxidationStatesLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_OXIDATION_STATES]];
-        numberOfElectronsLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_NUMBER_OF_ELECTRONS]];
-        numberOfNeutronsLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_NUMBER_OF_NEUTRONS]];
-        numberOfProtonsLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_NUMBER_OF_PROTONS]];
+        self.atomicRadiusLabel.text = [NSString stringWithFormat: @"%@", self.element.atomicRadius];
+        self.atomicVolumeLabel.text = [NSString stringWithFormat: @"%@", self.element.atomicVolume];
+        self.covalentRadiusLabel.text = [NSString stringWithFormat: @"%@", self.element.covalentRadius];
+        self.crossSectionLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_COVALENT_RADIUS]];
+        self.ionicRadiusLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_IONIC_RADIUS]];
+        self.oxidationStatesLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_OXIDATION_STATES]];
+        self.numberOfElectronsLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_NUMBER_OF_ELECTRONS]];
+        self.numberOfNeutronsLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_NUMBER_OF_NEUTRONS]];
+        self.numberOfProtonsLabel.text = [NSString stringWithFormat: @"%@", [self.element valueForKey: ELEMENT_NUMBER_OF_PROTONS]];
         
-        shellModelInfoLabel.backgroundColor = self.element.seriesColor;
-        shellModelInfoLabel.text = [NSString stringWithFormat: @"%@P\n%@N", numberOfProtonsLabel.text, numberOfNeutronsLabel.text];
+        self.shellModelInfoLabel.backgroundColor = self.element.seriesColor;
+        self.shellModelInfoLabel.text = [NSString stringWithFormat: @"%@P\n%@N", self.numberOfProtonsLabel.text, self.numberOfNeutronsLabel.text];
 
-        valenceLabel.text = self.element.valence;
-        fillingOrbitalLabel.text = self.element.fillingOrbital;
+        self.valenceLabel.text = self.element.valence;
+        self.fillingOrbitalLabel.text = self.element.fillingOrbital;
 
-        kShellElectronsLabel.text = self.element.kShellElectrons;
-        lShellElectronsLabel.text = self.element.lShellElectrons;
-        mShellElectronsLabel.text = self.element.mShellElectrons;
-        nShellElectronsLabel.text = self.element.nShellElectrons;
-        oShellElectronsLabel.text = self.element.oShellElectrons;
-        pShellElectronsLabel.text = self.element.pShellElectrons;
-        qShellElectronsLabel.text = self.element.qShellElectrons;
+        self.kShellElectronsLabel.text = self.element.kShellElectrons;
+        self.lShellElectronsLabel.text = self.element.lShellElectrons;
+        self.mShellElectronsLabel.text = self.element.mShellElectrons;
+        self.nShellElectronsLabel.text = self.element.nShellElectrons;
+        self.oShellElectronsLabel.text = self.element.oShellElectrons;
+        self.pShellElectronsLabel.text = self.element.pShellElectrons;
+        self.qShellElectronsLabel.text = self.element.qShellElectrons;
 
-        shell1sLabel.text = self.element.shell1s;
+        self.shell1sLabel.text = self.element.shell1s;
 
-        shell2sLabel.text = self.element.shell2s;
-        shell2pLabel.text = self.element.shell2p;
+        self.shell2sLabel.text = self.element.shell2s;
+        self.shell2pLabel.text = self.element.shell2p;
 
-        shell3sLabel.text = self.element.shell3s;
-        shell3pLabel.text = self.element.shell3p;
-        shell3dLabel.text = self.element.shell3d;
+        self.shell3sLabel.text = self.element.shell3s;
+        self.shell3pLabel.text = self.element.shell3p;
+        self.shell3dLabel.text = self.element.shell3d;
 
-        shell4sLabel.text = self.element.shell4s;
-        shell4pLabel.text = self.element.shell4p;
-        shell4dLabel.text = self.element.shell4d;
-        shell4fLabel.text = self.element.shell4f;
+        self.shell4sLabel.text = self.element.shell4s;
+        self.shell4pLabel.text = self.element.shell4p;
+        self.shell4dLabel.text = self.element.shell4d;
+        self.shell4fLabel.text = self.element.shell4f;
 
-        shell5sLabel.text = self.element.shell5s;
-        shell5pLabel.text = self.element.shell5p;
-        shell5dLabel.text = self.element.shell5d;
-        shell5fLabel.text = self.element.shell5f;
+        self.shell5sLabel.text = self.element.shell5s;
+        self.shell5pLabel.text = self.element.shell5p;
+        self.shell5dLabel.text = self.element.shell5d;
+        self.shell5fLabel.text = self.element.shell5f;
 
-        shell6sLabel.text = self.element.shell6s;
-        shell6pLabel.text = self.element.shell6p;
-        shell6dLabel.text = self.element.shell6d;
+        self.shell6sLabel.text = self.element.shell6s;
+        self.shell6pLabel.text = self.element.shell6p;
+        self.shell6dLabel.text = self.element.shell6d;
 
-        shell7sLabel.text = self.element.shell7s;
-        shell7pLabel.text = self.element.shell7p;
+        self.shell7sLabel.text = self.element.shell7s;
+        self.shell7pLabel.text = self.element.shell7p;
     }
 }
 
@@ -120,17 +77,17 @@ typedef NS_ENUM(NSInteger, StructureViewTypes) {
 - (IBAction) swapViews: (id) sender {
     switch ([sender selectedSegmentIndex]) {
         case kCrystalStructureView:
-            crystalStructureView.hidden = NO;
-            shellModelView.hidden = YES;
-            shellModelInfoLabel.hidden = YES;
-            overlayView.hidden = YES;
+            self.crystalStructureView.hidden = NO;
+            self.shellModelView.hidden = YES;
+            self.shellModelInfoLabel.hidden = YES;
+            self.overlayView.hidden = YES;
             break;
 
         case kShellModelView:
-            crystalStructureView.hidden = YES;
-            shellModelView.hidden = NO;
-            shellModelInfoLabel.hidden = NO;
-            overlayView.hidden = NO;
+            self.crystalStructureView.hidden = YES;
+            self.shellModelView.hidden = NO;
+            self.shellModelInfoLabel.hidden = NO;
+            self.overlayView.hidden = NO;
             break;
 
         default:
@@ -142,12 +99,13 @@ typedef NS_ENUM(NSInteger, StructureViewTypes) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    crystalStructureView.hidden = NO;
-    shellModelView.hidden = YES;
-    shellModelInfoLabel.layer.cornerRadius = 30.0f;
-    shellModelInfoLabel.layer.borderWidth = 1.0f;
-    shellModelInfoLabel.hidden = YES;
-    overlayView.hidden = YES;
+    
+    self.crystalStructureView.hidden = NO;
+    self.shellModelView.hidden = YES;
+    self.shellModelInfoLabel.layer.cornerRadius = 30.0f;
+    self.shellModelInfoLabel.layer.borderWidth = 1.0f;
+    self.shellModelInfoLabel.hidden = YES;
+    self.overlayView.hidden = YES;
 }
 
 - (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
@@ -157,45 +115,45 @@ typedef NS_ENUM(NSInteger, StructureViewTypes) {
 #pragma mark - Memory Management Methods
 
 - (void)dealloc {
-    crystalStructureView = nil;
-    shellModelView = nil;
-    atomicRadiusLabel = nil;
-    atomicVolumeLabel = nil;
-    covalentRadiusLabel = nil;
-    crossSectionLabel = nil;
-    ionicRadiusLabel = nil;
-    oxidationStatesLabel = nil;
-    numberOfNeutronsLabel = nil;
-    numberOfProtonsLabel = nil;
-    numberOfElectronsLabel = nil;
-    valenceLabel = nil;
-    fillingOrbitalLabel = nil;
-    kShellElectronsLabel = nil;
-    lShellElectronsLabel = nil;
-    mShellElectronsLabel = nil;
-    nShellElectronsLabel = nil;
-    oShellElectronsLabel = nil;
-    pShellElectronsLabel = nil;
-    qShellElectronsLabel = nil;
-    shell1sLabel = nil;
-    shell2sLabel = nil;
-    shell2pLabel = nil;
-    shell3sLabel = nil;
-    shell3pLabel = nil;
-    shell3dLabel = nil;
-    shell4sLabel = nil;
-    shell4pLabel = nil;
-    shell4dLabel = nil;
-    shell4fLabel = nil;
-    shell5sLabel = nil;
-    shell5pLabel = nil;
-    shell5dLabel = nil;
-    shell5fLabel = nil;
-    shell6sLabel = nil;
-    shell6pLabel = nil;
-    shell6dLabel = nil;
-    shell7sLabel = nil;
-    shell7pLabel = nil;
+    self.crystalStructureView = nil;
+    self.shellModelView = nil;
+    self.atomicRadiusLabel = nil;
+    self.atomicVolumeLabel = nil;
+    self.covalentRadiusLabel = nil;
+    self.crossSectionLabel = nil;
+    self.ionicRadiusLabel = nil;
+    self.oxidationStatesLabel = nil;
+    self.numberOfNeutronsLabel = nil;
+    self.numberOfProtonsLabel = nil;
+    self.numberOfElectronsLabel = nil;
+    self.valenceLabel = nil;
+    self.fillingOrbitalLabel = nil;
+    self.kShellElectronsLabel = nil;
+    self.lShellElectronsLabel = nil;
+    self.mShellElectronsLabel = nil;
+    self.nShellElectronsLabel = nil;
+    self.oShellElectronsLabel = nil;
+    self.pShellElectronsLabel = nil;
+    self.qShellElectronsLabel = nil;
+    self.shell1sLabel = nil;
+    self.shell2sLabel = nil;
+    self.shell2pLabel = nil;
+    self.shell3sLabel = nil;
+    self.shell3pLabel = nil;
+    self.shell3dLabel = nil;
+    self.shell4sLabel = nil;
+    self.shell4pLabel = nil;
+    self.shell4dLabel = nil;
+    self.shell4fLabel = nil;
+    self.shell5sLabel = nil;
+    self.shell5pLabel = nil;
+    self.shell5dLabel = nil;
+    self.shell5fLabel = nil;
+    self.shell6sLabel = nil;
+    self.shell6pLabel = nil;
+    self.shell6dLabel = nil;
+    self.shell7sLabel = nil;
+    self.shell7pLabel = nil;
 }
 
 @end

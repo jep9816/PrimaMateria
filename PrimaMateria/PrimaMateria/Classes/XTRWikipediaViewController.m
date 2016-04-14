@@ -6,8 +6,6 @@
 //  Copyright 2014 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface XTRWikipediaViewController ()
 - (void)prepareRequest;
 @end
@@ -53,11 +51,11 @@
 - (void)webViewDidFinishLoad: (UIWebView *)aWebView {
     [MBProgressHUD hideHUDForView: self.view animated: YES];
     
-    if(aWebView.canGoBack == YES) {
+    if(aWebView.canGoBack) {
         self.backButton.enabled = YES;
         self.backButton.tintColor = UIColor.whiteColor;
         self.forwardButton.tintColor = UIColor.blackColor;
-    } else if(aWebView.canGoForward == YES) {
+    } else if(aWebView.canGoForward) {
         self.forwardButton.enabled = YES;
         self.backButton.tintColor = UIColor.blackColor;
         self.forwardButton.tintColor = UIColor.whiteColor;
@@ -77,13 +75,17 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-    NSDictionary *textAttributes = @{
-                                     NSForegroundColorAttributeName: UIColor.whiteColor,
-                                     NSFontAttributeName: [UIFont boldSystemFontOfSize: 20]
-                                     };
+    NSDictionary *textAttributes = @{NSForegroundColorAttributeName: UIColor.whiteColor, NSFontAttributeName: [UIFont boldSystemFontOfSize: 20]};
     [self.titleButtonItem setTitleTextAttributes: textAttributes forState: UIControlStateNormal];
     
     self.preferredContentSize = CGSizeMake(768, 620);
+
+    self.progressHUD = [[MBProgressHUD alloc] initWithView: self.view];
+    self.progressHUD.label.font = [UIFont fontWithName: @"Verdana-Bold" size: 26.0];
+    self.progressHUD.detailsLabel.font = [UIFont fontWithName: @"Verdana-Bold" size: 15.0];
+    self.progressHUD.delegate = self;
+    self.progressHUD.label.text = @"Please Wait";
+    self.progressHUD.detailsLabel.text = [NSString stringWithFormat: @"Loading Wikipedia Page for element: %@.", self.elementName];
 }
 
 - (void)viewWillAppear: (BOOL) animated {
@@ -95,37 +97,30 @@
     self.backButton.tintColor = UIColor.blackColor;
     self.forwardButton.enabled = NO;
     self.forwardButton.tintColor = UIColor.blackColor;
-    
-    self.progressHUD = [[MBProgressHUD alloc] initWithView: self.view];
-    self.progressHUD.label.font = [UIFont fontWithName: @"Verdana-Bold" size: 26.0];
-    self.progressHUD.detailsLabel.font = [UIFont fontWithName: @"Verdana-Bold" size: 15.0];
-    self.progressHUD.delegate = self;
-    self.progressHUD.label.text = @"Please Wait";
-    self.progressHUD.detailsLabel.text = [NSString stringWithFormat: @"Loading Wikipedia Page for element: %@.", self.elementName];
-    
+        
     [self.view addSubview: self.progressHUD];
     [self.progressHUD showAnimated: YES];
     [self prepareRequest];
 }
 
-- (BOOL) shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
+- (BOOL)shouldAutorotateToInterfaceOrientation: (UIInterfaceOrientation) interfaceOrientation {
     return UIInterfaceOrientationIsLandscape(interfaceOrientation);
 }
 
 #pragma mark - MBProgressHUDDelegate methods
 
-- (void)hudWasHidden: (MBProgressHUD *) aProgressHUD {
+- (void)hudWasHidden: (MBProgressHUD *)aProgressHUD {
     [aProgressHUD removeFromSuperview];
 }
 
 #pragma mark - Memory Management Methods
 
 - (void)dealloc {
+    self.backButton = nil;
+    self.forwardButton = nil;
     self.titleButtonItem = nil;
     self.webView.delegate = nil;
     self.webView = nil;
-    self.backButton = nil;
-    self.forwardButton = nil;
 }
 
 @end

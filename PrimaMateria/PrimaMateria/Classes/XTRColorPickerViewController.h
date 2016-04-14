@@ -12,10 +12,6 @@
 @property (nonatomic, strong) IBOutlet UISlider *greenSlider;
 @property (nonatomic, strong) IBOutlet UISlider *blueSlider;
 
-@property (nonatomic, strong) IBOutlet UILabel *redLabel;
-@property (nonatomic, strong) IBOutlet UILabel *greenLabel;
-@property (nonatomic, strong) IBOutlet UILabel *blueLabel;
-
 @property (nonatomic, strong) IBOutlet UILabel *colorTitle;
 
 @property (nonatomic, strong) IBOutlet UIView *previewView;

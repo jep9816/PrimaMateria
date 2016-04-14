@@ -6,8 +6,6 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface XTRHelpBalloonViewController ()
 - (void)loadDocument: (NSString *) documentName;
 - (void)showElementHelp: (NSNotification *) aNotification;
@@ -55,11 +53,11 @@
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)aWebView {
-    if(aWebView.canGoBack == YES) {
+    if(aWebView.canGoBack) {
         self.backButton.enabled = YES;
         self.backButton.tintColor = UIColor.whiteColor;
         self.forwardButton.tintColor = UIColor.blackColor;
-    } else if(aWebView.canGoForward == YES) {
+    } else if(aWebView.canGoForward) {
         self.forwardButton.enabled = YES;
         self.backButton.tintColor = UIColor.blackColor;
         self.forwardButton.tintColor = UIColor.whiteColor;

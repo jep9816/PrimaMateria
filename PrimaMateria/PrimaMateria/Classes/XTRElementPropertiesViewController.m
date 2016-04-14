@@ -6,135 +6,65 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 typedef NS_ENUM(NSInteger, PropertiesViewTypes) {
     kPhysicalPropertiesView = 0,
     kChemicalPropertiesView = 1
 };
 
 @implementation XTRElementPropertiesViewController
-@synthesize atomicMassFootnoteLabel;
-@synthesize atomicMassLabel;
-@synthesize boilingPointLabel;
-@synthesize chemicalPropertiesScrollView;
-@synthesize chemicalPropertiesView;
-@synthesize coefficientOfLinealThermalExpansionLabel;
-@synthesize conductivityElectricalLabel;
-@synthesize conductivityThermalLabel;
-@synthesize criticalTemperatureLabel;
-@synthesize densityLabel;
-@synthesize descriptionLabel;
-@synthesize elasticModulusBulkLabel;
-@synthesize elasticModulusRigidityLabel;
-@synthesize elasticModulusYoungsLabel;
-@synthesize electroChemicalEquivalentLabel;
-@synthesize electroNegativityLabel;
-@synthesize electronWorkFunctionLabel;
-@synthesize enthalpyAtomizationLabel;
-@synthesize enthalpyFusionLabel;
-@synthesize enthalpyVaporizationLabel;
-@synthesize flammabilityClass;
-@synthesize hardnessScaleBrinellLabel;
-@synthesize hardnessScaleMohsLabel;
-@synthesize hardnessScaleVickersLabel;
-@synthesize heatCapacityMolarLabel;
-@synthesize heatCapacitySpecificLabel;
-@synthesize heatOfFusionLabel;
-@synthesize heatOfVaporizationLabel;
-@synthesize incompatabilitiesLabel;
-@synthesize ionizationPotentialFirstLabel;
-@synthesize ionizationPotentialSecondLabel;
-@synthesize ionizationPotentialThirdLabel;
-@synthesize magneticSusceptibilityLabel;
-@synthesize meltingPointFootnoteLabel;
-@synthesize meltingPointLabel;
-@synthesize molarVolumeLabel;
-@synthesize opticalReflectivityLabel;
-@synthesize opticalRefractiveIndexLabel;
-@synthesize physicalPropertiesScrollView;
-@synthesize physicalPropertiesView;
-@synthesize qualitativeSolubilityLabel;
-@synthesize relativeGasDensityLabel;
-@synthesize swapView;
-@synthesize valenceElectronPotentialLabel;
-@synthesize vaporPressure100PaLabel;
-@synthesize vaporPressure100kPaLabel;
-@synthesize vaporPressure10PaLabel;
-@synthesize vaporPressure10kPaLabel;
-@synthesize vaporPressure1PaLabel;
-@synthesize vaporPressure1kPaLabel;
 
 #pragma mark Misc Methods
 
 - (void)setupUI {
     if (self.element != nil) {
-        atomicMassLabel.text = (self.element).atomicMassAggregate;
-        atomicMassFootnoteLabel.text = [self.element valueForKey: ELEMENT_ATOMIC_MASS_FOOTNOTE];
-        boilingPointLabel.text = [self.element valueForKey: ELEMENT_BOILING_POINT];
-        coefficientOfLinealThermalExpansionLabel.text = [self.element valueForKey: ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION];
-        criticalTemperatureLabel.text = [self.element valueForKey: ELEMENT_CRITICAL_TEMPERATURE];
-        descriptionLabel.text = [self.element valueForKey: ELEMENT_DESCR];
-        densityLabel.text = [self.element valueForKey: ELEMENT_DENSITY];
-        flammabilityClass.text = [self.element valueForKey: ELEMENT_FLAMMABILITY_CLASS];
-        heatOfVaporizationLabel.text = [self.element valueForKey: ELEMENT_HEAT_OF_VAPORIZATION];
-        magneticSusceptibilityLabel.text = [self.element valueForKey: ELEMENT_MAGNETIC_SUSCEPTIBILITY];
-        meltingPointLabel.text = [self.element valueForKey: ELEMENT_MELTING_POINT];
-        meltingPointFootnoteLabel.text = [self.element valueForKey: ELEMENT_MELTING_POINT_FOOTNOTE];
-        molarVolumeLabel.text = [self.element valueForKey: ELEMENT_MOLAR_VOLUME];
-        opticalReflectivityLabel.text = [self.element valueForKey: ELEMENT_OPTICAL_REFLECTIVITY];
-        opticalRefractiveIndexLabel.text = [self.element valueForKey: ELEMENT_OPTICAL_REFRACTIVE_INDEX];
-        relativeGasDensityLabel.text = [self.element valueForKey: ELEMENT_RELATIVE_GAS_DENSITY];
+        self.atomicMassLabel.text = (self.element).atomicMassAggregate;
+        self.atomicMassFootnoteLabel.text = self.element.atomicMassFootnote;
+        self.boilingPointLabel.text = [self.element valueForKey: ELEMENT_BOILING_POINT];
+        self.coefficientOfLinealThermalExpansionLabel.text = [self.element valueForKey: ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION];
+        self.criticalTemperatureLabel.text = [self.element valueForKey: ELEMENT_CRITICAL_TEMPERATURE];
+        self.descriptionLabel.text = [self.element valueForKey: ELEMENT_DESCR];
+        self.densityLabel.text = [self.element valueForKey: ELEMENT_DENSITY];
+        self.flammabilityClass.text = [self.element valueForKey: ELEMENT_FLAMMABILITY_CLASS];
+        self.heatOfVaporizationLabel.text = [self.element valueForKey: ELEMENT_HEAT_OF_VAPORIZATION];
+        self.magneticSusceptibilityLabel.text = [self.element valueForKey: ELEMENT_MAGNETIC_SUSCEPTIBILITY];
+        self.meltingPointLabel.text = [self.element valueForKey: ELEMENT_MELTING_POINT];
+        self.meltingPointFootnoteLabel.text = [self.element valueForKey: ELEMENT_MELTING_POINT_FOOTNOTE];
+        self.molarVolumeLabel.text = [self.element valueForKey: ELEMENT_MOLAR_VOLUME];
+        self.opticalReflectivityLabel.text = [self.element valueForKey: ELEMENT_OPTICAL_REFLECTIVITY];
+        self.opticalRefractiveIndexLabel.text = [self.element valueForKey: ELEMENT_OPTICAL_REFRACTIVE_INDEX];
+        self.relativeGasDensityLabel.text = [self.element valueForKey: ELEMENT_RELATIVE_GAS_DENSITY];
         
-        vaporPressure1PaLabel.text =
-        [NSString stringWithFormat: @"%@ %@",
-         [(self.element).vaporPressure valueForKey: @"pa1"],
-         [(self.element).vaporPressure valueForKey: @"pa1Footnote"]];
-        vaporPressure10PaLabel.text =
-        [NSString stringWithFormat: @"%@ %@",
-         [(self.element).vaporPressure valueForKey: @"pa10"],
-         [(self.element).vaporPressure valueForKey: @"pa10Footnote"]];
-        vaporPressure100PaLabel.text =
-        [NSString stringWithFormat: @"%@ %@",
-         [(self.element).vaporPressure valueForKey: @"pa100"],
-         [(self.element).vaporPressure valueForKey: @"pa100Footnote"]];
-        vaporPressure1kPaLabel.text =
-        [NSString stringWithFormat: @"%@ %@",
-         [(self.element).vaporPressure valueForKey: @"pa1k"],
-         [(self.element).vaporPressure valueForKey: @"pa1kFootnote"]];
-        vaporPressure10kPaLabel.text =
-        [NSString stringWithFormat: @"%@ %@",
-         [(self.element).vaporPressure valueForKey: @"pa10k"],
-         [(self.element).vaporPressure valueForKey: @"pa10kFootnote"]];
-        vaporPressure100kPaLabel.text =
-        [NSString stringWithFormat: @"%@ %@",
-         [(self.element).vaporPressure valueForKey: @"pa100k"],
-         [(self.element).vaporPressure valueForKey: @"pa100kFootnote"]];
+        self.vaporPressure1PaLabel.text = [NSString stringWithFormat: @"%@ %@", (self.element).vaporPressure[@"pa1"], (self.element).vaporPressure[@"pa1Footnote"]];
+        self.vaporPressure10PaLabel.text = [NSString stringWithFormat: @"%@ %@", (self.element).vaporPressure[@"pa10"], (self.element).vaporPressure[@"pa10Footnote"]];
+        self.vaporPressure100PaLabel.text = [NSString stringWithFormat: @"%@ %@", (self.element).vaporPressure[@"pa100"], (self.element).vaporPressure[@"pa100Footnote"]];
+        self.vaporPressure1kPaLabel.text = [NSString stringWithFormat: @"%@ %@", (self.element).vaporPressure[@"pa1k"], (self.element).vaporPressure[@"pa1kFootnote"]];
+        self.vaporPressure10kPaLabel.text = [NSString stringWithFormat: @"%@ %@", (self.element).vaporPressure[@"pa10k"], (self.element).vaporPressure[@"pa10kFootnote"]];
+        self.vaporPressure100kPaLabel.text = [NSString stringWithFormat: @"%@ %@", (self.element).vaporPressure[@"pa100k"], (self.element).vaporPressure[@"pa100kFootnote"]];
         
-        conductivityThermalLabel.text = [self.element valueForKey: ELEMENT_CONDUCTIVITY_THERMAL];
-        conductivityElectricalLabel.text = [self.element valueForKey: ELEMENT_CONDUCTIVITY_ELECTRICAL];
-        elasticModulusBulkLabel.text = [self.element valueForKey: ELEMENT_ELASTIC_MODULUS_BULK];
-        elasticModulusRigidityLabel.text = [self.element valueForKey: ELEMENT_ELASTIC_MODULUS_RIGIDITY];
-        elasticModulusYoungsLabel.text = [self.element valueForKey: ELEMENT_ELASTIC_MODULUS_YOUNGS];
-        enthalpyAtomizationLabel.text = [self.element valueForKey: ELEMENT_ENTHALPY_OF_ATOMIZATION];
-        enthalpyFusionLabel.text = [self.element valueForKey: ELEMENT_ENTHALPY_OF_FUSION];
-        enthalpyVaporizationLabel.text = [self.element valueForKey: ELEMENT_ENTHALPY_OF_VAPORIZATION];
-        hardnessScaleBrinellLabel.text = [self.element valueForKey: ELEMENT_HARDNESS_SCALE_BRINELL];
-        hardnessScaleMohsLabel.text = [self.element valueForKey: ELEMENT_HARDNESS_SCALE_MOHS];
-        hardnessScaleVickersLabel.text = [self.element valueForKey: ELEMENT_HARDNESS_SCALE_VICKERS];
-        heatCapacitySpecificLabel.text = [self.element valueForKey: ELEMENT_SPECIFIC_HEAT_CAPACITY];
-        heatCapacityMolarLabel.text = [self.element valueForKey: ELEMENT_MOLAR_HEAT_CAPACITY];
+        self.conductivityThermalLabel.text = [self.element valueForKey: ELEMENT_CONDUCTIVITY_THERMAL];
+        self.conductivityElectricalLabel.text = [self.element valueForKey: ELEMENT_CONDUCTIVITY_ELECTRICAL];
+        self.elasticModulusBulkLabel.text = [self.element valueForKey: ELEMENT_ELASTIC_MODULUS_BULK];
+        self.elasticModulusRigidityLabel.text = [self.element valueForKey: ELEMENT_ELASTIC_MODULUS_RIGIDITY];
+        self.elasticModulusYoungsLabel.text = [self.element valueForKey: ELEMENT_ELASTIC_MODULUS_YOUNGS];
+        self.enthalpyAtomizationLabel.text = [self.element valueForKey: ELEMENT_ENTHALPY_OF_ATOMIZATION];
+        self.enthalpyFusionLabel.text = [self.element valueForKey: ELEMENT_ENTHALPY_OF_FUSION];
+        self.enthalpyVaporizationLabel.text = [self.element valueForKey: ELEMENT_ENTHALPY_OF_VAPORIZATION];
+        self.hardnessScaleBrinellLabel.text = [self.element valueForKey: ELEMENT_HARDNESS_SCALE_BRINELL];
+        self.hardnessScaleMohsLabel.text = [self.element valueForKey: ELEMENT_HARDNESS_SCALE_MOHS];
+        self.hardnessScaleVickersLabel.text = [self.element valueForKey: ELEMENT_HARDNESS_SCALE_VICKERS];
+        self.heatCapacitySpecificLabel.text = [self.element valueForKey: ELEMENT_SPECIFIC_HEAT_CAPACITY];
+        self.heatCapacityMolarLabel.text = [self.element valueForKey: ELEMENT_MOLAR_HEAT_CAPACITY];
         
-        electroChemicalEquivalentLabel.text = [self.element valueForKey: ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT];
-        electronWorkFunctionLabel.text = [self.element valueForKey: ELEMENT_ELECTRON_WORK_FUNCTION];
-        electroNegativityLabel.text = [self.element valueForKey: ELEMENT_ELECTRO_NEGATIVITY];
-        heatOfFusionLabel.text = [self.element valueForKey: ELEMENT_HEAT_OF_FUSION];
-        incompatabilitiesLabel.text = [self.element valueForKey: ELEMENT_INCOMPATIBILITIES];
-        ionizationPotentialFirstLabel.text = [self.element valueForKey: ELEMENT_IONIZATION_POTENTIAL_FIRST];
-        ionizationPotentialSecondLabel.text = [self.element valueForKey: ELEMENT_IONIZATION_POTENTIAL_SECOND];
-        ionizationPotentialThirdLabel.text = [self.element valueForKey: ELEMENT_IONIZATION_POTENTIAL_THIRD];
-        qualitativeSolubilityLabel.text = [self.element valueForKey: ELEMENT_QUALITATIVE_SOLUBILITY];
-        valenceElectronPotentialLabel.text = [self.element valueForKey: ELEMENT_VALENCE_ELECTRON_POTENTIAL];
+        self.electroChemicalEquivalentLabel.text = [self.element valueForKey: ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT];
+        self.electronWorkFunctionLabel.text = [self.element valueForKey: ELEMENT_ELECTRON_WORK_FUNCTION];
+        self.electroNegativityLabel.text = [self.element valueForKey: ELEMENT_ELECTRO_NEGATIVITY];
+        self.heatOfFusionLabel.text = [self.element valueForKey: ELEMENT_HEAT_OF_FUSION];
+        self.incompatabilitiesLabel.text = [self.element valueForKey: ELEMENT_INCOMPATIBILITIES];
+        self.ionizationPotentialFirstLabel.text = [self.element valueForKey: ELEMENT_IONIZATION_POTENTIAL_FIRST];
+        self.ionizationPotentialSecondLabel.text = [self.element valueForKey: ELEMENT_IONIZATION_POTENTIAL_SECOND];
+        self.ionizationPotentialThirdLabel.text = [self.element valueForKey: ELEMENT_IONIZATION_POTENTIAL_THIRD];
+        self.qualitativeSolubilityLabel.text = [self.element valueForKey: ELEMENT_QUALITATIVE_SOLUBILITY];
+        self.valenceElectronPotentialLabel.text = [self.element valueForKey: ELEMENT_VALENCE_ELECTRON_POTENTIAL];
     }
 }
 
@@ -143,13 +73,13 @@ typedef NS_ENUM(NSInteger, PropertiesViewTypes) {
 - (IBAction) swapViews: (UISegmentedControl *) sender {
     switch (sender.selectedSegmentIndex) {
         case kChemicalPropertiesView:
-            chemicalPropertiesView.hidden = NO;
-            physicalPropertiesView.hidden = YES;
+            self.chemicalPropertiesView.hidden = NO;
+            self.physicalPropertiesView.hidden = YES;
             break;
             
         case kPhysicalPropertiesView:
-            chemicalPropertiesView.hidden = YES;
-            physicalPropertiesView.hidden = NO;
+            self.chemicalPropertiesView.hidden = YES;
+            self.physicalPropertiesView.hidden = NO;
             break;
             
         default:
@@ -161,18 +91,18 @@ typedef NS_ENUM(NSInteger, PropertiesViewTypes) {
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    chemicalPropertiesView.frame = self.swapView.frame;
-    chemicalPropertiesView.bounds = self.swapView.bounds;
-    chemicalPropertiesScrollView.contentSize = CGSizeMake(1024, 500);
-    chemicalPropertiesView.hidden = YES;
-    [self.view addSubview: chemicalPropertiesView];
-
-    physicalPropertiesView.frame = self.swapView.frame;
-    physicalPropertiesView.bounds = self.swapView.bounds;
-    physicalPropertiesScrollView.contentSize = CGSizeMake(1024, 1670);
-    physicalPropertiesView.hidden = NO;
-    [self.view addSubview: physicalPropertiesView];
-
+    self.chemicalPropertiesView.frame = self.swapView.frame;
+    self.chemicalPropertiesView.bounds = self.swapView.bounds;
+    self.chemicalPropertiesScrollView.contentSize = CGSizeMake(1024, 500);
+    self.chemicalPropertiesView.hidden = YES;
+    [self.view addSubview: self.chemicalPropertiesView];
+    
+    self.physicalPropertiesView.frame = self.swapView.frame;
+    self.physicalPropertiesView.bounds = self.swapView.bounds;
+    self.physicalPropertiesScrollView.contentSize = CGSizeMake(1024, 1670);
+    self.physicalPropertiesView.hidden = NO;
+    [self.view addSubview: self.physicalPropertiesView];
+    
     [self.swapView removeFromSuperview];
 }
 
@@ -183,56 +113,56 @@ typedef NS_ENUM(NSInteger, PropertiesViewTypes) {
 #pragma mark - Memory Management Methods
 
 - (void)dealloc {
-    atomicMassFootnoteLabel = nil;
-    atomicMassLabel = nil;
-    boilingPointLabel = nil;
-    chemicalPropertiesScrollView = nil;
-    chemicalPropertiesView = nil;
-    coefficientOfLinealThermalExpansionLabel = nil;
-    conductivityElectricalLabel = nil;
-    conductivityThermalLabel = nil;
-    criticalTemperatureLabel = nil;
-    densityLabel = nil;
-    descriptionLabel = nil;
-    elasticModulusBulkLabel = nil;
-    elasticModulusRigidityLabel = nil;
-    elasticModulusYoungsLabel = nil;
-    electroChemicalEquivalentLabel = nil;
-    electroNegativityLabel = nil;
-    electronWorkFunctionLabel = nil;
-    enthalpyAtomizationLabel = nil;
-    enthalpyFusionLabel = nil;
-    enthalpyVaporizationLabel = nil;
-    flammabilityClass = nil;
-    hardnessScaleBrinellLabel = nil;
-    hardnessScaleMohsLabel = nil;
-    hardnessScaleVickersLabel = nil;
-    heatCapacityMolarLabel = nil;
-    heatCapacitySpecificLabel = nil;
-    heatOfFusionLabel = nil;
-    heatOfVaporizationLabel = nil;
-    incompatabilitiesLabel = nil;
-    ionizationPotentialFirstLabel = nil;
-    ionizationPotentialSecondLabel = nil;
-    ionizationPotentialThirdLabel = nil;
-    magneticSusceptibilityLabel = nil;
-    meltingPointFootnoteLabel = nil;
-    meltingPointLabel = nil;
-    molarVolumeLabel = nil;
-    opticalReflectivityLabel = nil;
-    opticalRefractiveIndexLabel = nil;
-    physicalPropertiesScrollView = nil;
-    physicalPropertiesView = nil;
-    qualitativeSolubilityLabel = nil;
-    relativeGasDensityLabel = nil;
-    swapView = nil;
-    valenceElectronPotentialLabel = nil;
-    vaporPressure100PaLabel = nil;
-    vaporPressure100kPaLabel = nil;
-    vaporPressure10PaLabel = nil;
-    vaporPressure10kPaLabel = nil;
-    vaporPressure1PaLabel = nil;
-    vaporPressure1kPaLabel = nil;
+    self.atomicMassFootnoteLabel = nil;
+    self.atomicMassLabel = nil;
+    self.boilingPointLabel = nil;
+    self.chemicalPropertiesScrollView = nil;
+    self.chemicalPropertiesView = nil;
+    self.coefficientOfLinealThermalExpansionLabel = nil;
+    self.conductivityElectricalLabel = nil;
+    self.conductivityThermalLabel = nil;
+    self.criticalTemperatureLabel = nil;
+    self.densityLabel = nil;
+    self.descriptionLabel = nil;
+    self.elasticModulusBulkLabel = nil;
+    self.elasticModulusRigidityLabel = nil;
+    self.elasticModulusYoungsLabel = nil;
+    self.electroChemicalEquivalentLabel = nil;
+    self.electroNegativityLabel = nil;
+    self.electronWorkFunctionLabel = nil;
+    self.enthalpyAtomizationLabel = nil;
+    self.enthalpyFusionLabel = nil;
+    self.enthalpyVaporizationLabel = nil;
+    self.flammabilityClass = nil;
+    self.hardnessScaleBrinellLabel = nil;
+    self.hardnessScaleMohsLabel = nil;
+    self.hardnessScaleVickersLabel = nil;
+    self.heatCapacityMolarLabel = nil;
+    self.heatCapacitySpecificLabel = nil;
+    self.heatOfFusionLabel = nil;
+    self.heatOfVaporizationLabel = nil;
+    self.incompatabilitiesLabel = nil;
+    self.ionizationPotentialFirstLabel = nil;
+    self.ionizationPotentialSecondLabel = nil;
+    self.ionizationPotentialThirdLabel = nil;
+    self.magneticSusceptibilityLabel = nil;
+    self.meltingPointFootnoteLabel = nil;
+    self.meltingPointLabel = nil;
+    self.molarVolumeLabel = nil;
+    self.opticalReflectivityLabel = nil;
+    self.opticalRefractiveIndexLabel = nil;
+    self.physicalPropertiesScrollView = nil;
+    self.physicalPropertiesView = nil;
+    self.qualitativeSolubilityLabel = nil;
+    self.relativeGasDensityLabel = nil;
+    self.swapView = nil;
+    self.valenceElectronPotentialLabel = nil;
+    self.vaporPressure100PaLabel = nil;
+    self.vaporPressure100kPaLabel = nil;
+    self.vaporPressure10PaLabel = nil;
+    self.vaporPressure10kPaLabel = nil;
+    self.vaporPressure1PaLabel = nil;
+    self.vaporPressure1kPaLabel = nil;
 }
 
 @end

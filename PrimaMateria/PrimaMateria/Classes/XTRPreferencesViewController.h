@@ -6,32 +6,31 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-@class XTRColorPickerViewController;
-
 @interface XTRPreferencesViewController : UIViewController <UIPopoverPresentationControllerDelegate>
-
 @property (nonatomic, strong) IBOutlet UILabel *appNameLabel;
 @property (nonatomic, strong) IBOutlet UILabel *cpyRightLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesActinideLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesAlkaliEarthMetalLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesAlkaliMetalLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesHalogenLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesLanthanideLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesMetalLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesNobleGasLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesNonMetalLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesTransactinidesLabel;
-@property (nonatomic, strong) IBOutlet UILabel *seriesTransitionMetalLabel;
+
+@property (nonatomic, strong) IBOutlet UIButton *seriesActinideButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesAlkaliEarthMetalButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesAlkaliMetalButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesHalogenButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesLanthanideButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesMetalButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesNobleGasButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesNonMetalButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesTransactinidesButton;
+@property (nonatomic, strong) IBOutlet UIButton *seriesTransitionMetalButton;
+
 @property (nonatomic, strong) IBOutlet UILabel *versionLabel;
 @property (nonatomic, strong) IBOutlet UISwitch *elementBubbleSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *showTransitionsBubbleSwitch;
 @property (nonatomic, strong) IBOutlet UISwitch *splashScreenSwitch;
 @property (nonatomic, strong) IBOutlet UIWebView *webView;
 
-- (IBAction)resetPreferences : (id)sender;
-- (IBAction)setElementBubbleState : (id)sender;
-- (IBAction)setShowTransitionsState : (id)sender;
-- (IBAction)setSplashScreenState : (id)sender;
-- (IBAction)showColorPicker : (id)sender;
+- (IBAction)resetPreferences: (id)sender;
+- (IBAction)setElementBubbleState: (id)sender;
+- (IBAction)setShowTransitionsState: (id)sender;
+- (IBAction)setSplashScreenState: (id)sender;
+- (IBAction)showColorPicker: (id)sender;
 
 @end

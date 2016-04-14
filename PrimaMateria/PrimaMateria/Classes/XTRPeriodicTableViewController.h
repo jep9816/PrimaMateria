@@ -8,10 +8,11 @@
 
 @interface XTRPeriodicTableViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIView *swapView;
+
+@property (assign, nonatomic) BOOL molecularCalculatorState;
 @property (strong, nonatomic) XTRElementBalloonViewController *elementBalloonViewController;
 @property (strong, nonatomic) XTRMolecularCalculatorViewController *molecularCalculatorViewController;
-@property (strong, nonatomic) IBOutlet UIView *swapView;
-@property BOOL molecularCalculatorState;
 
 - (IBAction)showElementInspector : sender;
 - (IBAction)showMolecularCalculator : (UISwitch *)sender;

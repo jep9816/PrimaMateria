@@ -6,8 +6,6 @@
 //  Copyright (c) 2011 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @interface XTRMainViewController ()
 - (void)customizeTabBarItems;
 - (void)showSplash;

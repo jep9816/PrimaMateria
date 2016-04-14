@@ -10,10 +10,7 @@
 
 @interface XTRElementListViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) IBOutlet DynoTableHeaderButton *atomicNumberButton;
 @property (nonatomic, strong) IBOutlet UIView *swapView;
-
-- (IBAction)sortTableView : (id)sender;
 
 @end

@@ -9,7 +9,6 @@
 @class XTRElement;
 
 @interface XTRSwapableViewController : UIViewController
-
 @property (nonatomic, strong) XTRElement *element;
 
 - (void)setupUI;
