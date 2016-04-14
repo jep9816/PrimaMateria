@@ -27,7 +27,6 @@
 		973825B3147BDEC100AEA344 /* XTRPropertiesStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 973825B2147BDEC100AEA344 /* XTRPropertiesStore.m */; };
 		9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */; };
 		9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9746B1E81492503600A0DC96 /* PrimaMateriaHelp */; };
-		974BAADC148EBC0A0020F55D /* ElementInspectorSeque.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */; };
 		974C565B147BEA6500DDFC77 /* ElementButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C565A147BEA6500DDFC77 /* ElementButton.m */; };
 		974C566B147BEAA900DDFC77 /* DividerLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C565D147BEAA900DDFC77 /* DividerLabel.m */; };
 		974C566C147BEAA900DDFC77 /* DynoTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 974C565F147BEAA900DDFC77 /* DynoTableCell.m */; };
@@ -44,9 +43,6 @@
 		9777CA9D147D886B00C33ABB /* XTRAtomicStructureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9777CA9C147D886B00C33ABB /* XTRAtomicStructureViewController.m */; };
 		979E8D2F147C09850063CD5E /* XTRElementBalloonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 979E8D2E147C09850063CD5E /* XTRElementBalloonViewController.m */; };
 		979E8D32147C19870063CD5E /* XTRMolecularCalculatorViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 979E8D31147C19860063CD5E /* XTRMolecularCalculatorViewController.mm */; };
-		97E33567147A938A008147AD /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33566147A938A008147AD /* UIKit.framework */; };
-		97E33569147A938A008147AD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33568147A938A008147AD /* Foundation.framework */; };
-		97E3356B147A938A008147AD /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E3356A147A938A008147AD /* CoreGraphics.framework */; };
 		97E33596147A9468008147AD /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E3358F147A9468008147AD /* main.m */; };
 		97E33597147A9468008147AD /* XTRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33591147A9468008147AD /* XTRAppDelegate.m */; };
 		97E33598147A9468008147AD /* XTRPeriodicTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33593147A9468008147AD /* XTRPeriodicTableViewController.m */; };
@@ -55,15 +51,22 @@
 		97E335A8147A964E008147AD /* XTRPreferencesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E335A6147A964E008147AD /* XTRPreferencesViewController.m */; };
 		97E335D2147A9CCA008147AD /* XTRHelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E335D1147A9CCA008147AD /* XTRHelpViewController.m */; };
 		97E33605147AA7C7008147AD /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E33604147AA7C7008147AD /* PrimaMateria.plist */; };
-		97E3365B147AADB8008147AD /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E3365A147AADB8008147AD /* QuartzCore.framework */; };
 		97E33662147AB045008147AD /* Defines.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E3365E147AB045008147AD /* Defines.m */; };
 		97E33663147AB045008147AD /* XTRApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33660147AB045008147AD /* XTRApplication.m */; };
-		97E33665147AB293008147AD /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33664147AB292008147AD /* CoreText.framework */; };
 		97E33668147AB701008147AD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97E33667147AB701008147AD /* Settings.bundle */; };
 		97E3366E147ABC79008147AD /* XTRElementInspectorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E3366D147ABC79008147AD /* XTRElementInspectorViewController.m */; };
 		97E33671147AC4DC008147AD /* XTRMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 97E33670147AC4DB008147AD /* XTRMainViewController.m */; };
 		9BBC4AF1147D9CD600FBC7DA /* XTRElementPropertiesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9BBC4AF0147D9CD600FBC7DA /* XTRElementPropertiesViewController.m */; };
-		B826ED21191D59EF0038C532 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
+		B807213F1CB85DF2003233D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B807213E1CB85DF2003233D1 /* Foundation.framework */; };
+		B80721401CB85F8B003233D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B807213E1CB85DF2003233D1 /* Foundation.framework */; };
+		B80721421CB85FA7003233D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80721411CB85FA7003233D1 /* UIKit.framework */; };
+		B80721431CB85FB1003233D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80721411CB85FA7003233D1 /* UIKit.framework */; };
+		B80721441CB85FF1003233D1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
+		B80721451CB85FF8003233D1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
+		B80721481CB88873003233D1 /* XTRElementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B80721471CB88873003233D1 /* XTRElementTableViewCell.m */; };
+		B80721491CB8887E003233D1 /* XTRElementTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B80721471CB88873003233D1 /* XTRElementTableViewCell.m */; };
+		B81FD21B1CBFE96200CCC416 /* XTRBarPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = B81FD21A1CBFE96200CCC416 /* XTRBarPlot.m */; };
+		B81FD21C1CBFE96200CCC416 /* XTRBarPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = B81FD21A1CBFE96200CCC416 /* XTRBarPlot.m */; };
 		B826ED2B191FF5090038C532 /* XTRColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B826ED2A191FF5090038C532 /* XTRColorPickerViewController.m */; };
 		B84C50871CA06B210013D507 /* AscendingArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B84C507C1CA06B210013D507 /* AscendingArrow.png */; };
 		B84C50881CA06B210013D507 /* continuum.gif in Resources */ = {isa = PBXBuildFile; fileRef = B84C507D1CA06B210013D507 /* continuum.gif */; };
@@ -120,14 +123,7 @@
 		B89926481CAAEBAD00E09063 /* XTRWikipediaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187714855AD300333B91 /* XTRWikipediaViewController.m */; };
 		B89926491CAAEBAD00E09063 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187B14855B5800333B91 /* MBProgressHUD.m */; };
 		B899264A1CAAEBAD00E09063 /* XTRSwapableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 972B4CBA1486C7AA00C627D7 /* XTRSwapableViewController.m */; };
-		B899264B1CAAEBAD00E09063 /* ElementInspectorSeque.m in Sources */ = {isa = PBXBuildFile; fileRef = 974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */; };
-		B899264D1CAAEBAD00E09063 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
 		B899264E1CAAEBAD00E09063 /* libCorePlot-CocoaTouch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B8B1C4C616F8F81500C3CA78 /* libCorePlot-CocoaTouch.a */; };
-		B899264F1CAAEBAD00E09063 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33568147A938A008147AD /* Foundation.framework */; };
-		B89926501CAAEBAD00E09063 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33566147A938A008147AD /* UIKit.framework */; };
-		B89926511CAAEBAD00E09063 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E3356A147A938A008147AD /* CoreGraphics.framework */; };
-		B89926521CAAEBAD00E09063 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E33664147AB292008147AD /* CoreText.framework */; };
-		B89926531CAAEBAD00E09063 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97E3365A147AADB8008147AD /* QuartzCore.framework */; };
 		B89926551CAAEBAD00E09063 /* continuum.gif in Resources */ = {isa = PBXBuildFile; fileRef = B84C507D1CA06B210013D507 /* continuum.gif */; };
 		B89926561CAAEBAD00E09063 /* Tab05-Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B84C50861CA06B210013D507 /* Tab05-Icon.png */; };
 		B89926571CAAEBAD00E09063 /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E33604147AA7C7008147AD /* PrimaMateria.plist */; };
@@ -224,8 +220,6 @@
 		973825B2147BDEC100AEA344 /* XTRPropertiesStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRPropertiesStore.m; sourceTree = "<group>"; };
 		9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9746B1E81492503600A0DC96 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
-		974BAADA148EBC0A0020F55D /* ElementInspectorSeque.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElementInspectorSeque.h; sourceTree = "<group>"; };
-		974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementInspectorSeque.m; sourceTree = "<group>"; };
 		974C565A147BEA6500DDFC77 /* ElementButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElementButton.m; sourceTree = "<group>"; };
 		974C565C147BEAA900DDFC77 /* DividerLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DividerLabel.h; sourceTree = "<group>"; };
 		974C565D147BEAA900DDFC77 /* DividerLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DividerLabel.m; sourceTree = "<group>"; };
@@ -255,9 +249,6 @@
 		979E8D30147C19850063CD5E /* XTRMolecularCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRMolecularCalculatorViewController.h; sourceTree = "<group>"; };
 		979E8D31147C19860063CD5E /* XTRMolecularCalculatorViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = XTRMolecularCalculatorViewController.mm; sourceTree = "<group>"; };
 		97E33562147A938A008147AD /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		97E33566147A938A008147AD /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		97E33568147A938A008147AD /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		97E3356A147A938A008147AD /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		97E3356E147A938A008147AD /* PrimaMateria-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "PrimaMateria-Info.plist"; path = "../PrimaMateria-Info.plist"; sourceTree = "<group>"; };
 		97E33574147A938A008147AD /* PrimaMateria-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrimaMateria-Prefix.pch"; sourceTree = "<group>"; };
 		97E3358F147A9468008147AD /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
@@ -274,14 +265,12 @@
 		97E335D0147A9CCA008147AD /* XTRHelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRHelpViewController.h; sourceTree = "<group>"; };
 		97E335D1147A9CCA008147AD /* XTRHelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRHelpViewController.m; sourceTree = "<group>"; };
 		97E33604147AA7C7008147AD /* PrimaMateria.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PrimaMateria.plist; sourceTree = "<group>"; };
-		97E3365A147AADB8008147AD /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		97E3365C147AAE5D008147AD /* PrimaMateria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrimaMateria.entitlements; path = ../PrimaMateria.entitlements; sourceTree = "<group>"; };
 		97E3365D147AB045008147AD /* Defines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 		97E3365E147AB045008147AD /* Defines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Defines.m; sourceTree = "<group>"; };
 		97E3365F147AB045008147AD /* XTRApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRApplication.h; sourceTree = "<group>"; };
 		97E33660147AB045008147AD /* XTRApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRApplication.m; sourceTree = "<group>"; };
 		97E33661147AB045008147AD /* PrimaMateria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrimaMateria.h; path = Classes/PrimaMateria.h; sourceTree = "<group>"; };
-		97E33664147AB292008147AD /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		97E33667147AB701008147AD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		97E3366C147ABC79008147AD /* XTRElementInspectorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElementInspectorViewController.h; sourceTree = "<group>"; };
 		97E3366D147ABC79008147AD /* XTRElementInspectorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElementInspectorViewController.m; sourceTree = "<group>"; };
@@ -289,6 +278,12 @@
 		97E33670147AC4DB008147AD /* XTRMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRMainViewController.m; sourceTree = "<group>"; };
 		9BBC4AEF147D9CD600FBC7DA /* XTRElementPropertiesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElementPropertiesViewController.h; sourceTree = "<group>"; };
 		9BBC4AF0147D9CD600FBC7DA /* XTRElementPropertiesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElementPropertiesViewController.m; sourceTree = "<group>"; };
+		B807213E1CB85DF2003233D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B80721411CB85FA7003233D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		B80721461CB88873003233D1 /* XTRElementTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRElementTableViewCell.h; sourceTree = "<group>"; };
+		B80721471CB88873003233D1 /* XTRElementTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRElementTableViewCell.m; sourceTree = "<group>"; };
+		B81FD2191CBFE96200CCC416 /* XTRBarPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRBarPlot.h; sourceTree = "<group>"; };
+		B81FD21A1CBFE96200CCC416 /* XTRBarPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRBarPlot.m; sourceTree = "<group>"; };
 		B826ED20191D59EF0038C532 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		B826ED29191FF5090038C532 /* XTRColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XTRColorPickerViewController.h; sourceTree = "<group>"; };
 		B826ED2A191FF5090038C532 /* XTRColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XTRColorPickerViewController.m; sourceTree = "<group>"; };
@@ -318,13 +313,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B826ED21191D59EF0038C532 /* Accelerate.framework in Frameworks */,
+				B80721451CB85FF8003233D1 /* Accelerate.framework in Frameworks */,
+				B80721431CB85FB1003233D1 /* UIKit.framework in Frameworks */,
+				B80721401CB85F8B003233D1 /* Foundation.framework in Frameworks */,
 				B8B1C4C716F8F85500C3CA78 /* libCorePlot-CocoaTouch.a in Frameworks */,
-				97E33569147A938A008147AD /* Foundation.framework in Frameworks */,
-				97E33567147A938A008147AD /* UIKit.framework in Frameworks */,
-				97E3356B147A938A008147AD /* CoreGraphics.framework in Frameworks */,
-				97E33665147AB293008147AD /* CoreText.framework in Frameworks */,
-				97E3365B147AADB8008147AD /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -332,13 +324,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B899264D1CAAEBAD00E09063 /* Accelerate.framework in Frameworks */,
+				B80721441CB85FF1003233D1 /* Accelerate.framework in Frameworks */,
+				B80721421CB85FA7003233D1 /* UIKit.framework in Frameworks */,
+				B807213F1CB85DF2003233D1 /* Foundation.framework in Frameworks */,
 				B899264E1CAAEBAD00E09063 /* libCorePlot-CocoaTouch.a in Frameworks */,
-				B899264F1CAAEBAD00E09063 /* Foundation.framework in Frameworks */,
-				B89926501CAAEBAD00E09063 /* UIKit.framework in Frameworks */,
-				B89926511CAAEBAD00E09063 /* CoreGraphics.framework in Frameworks */,
-				B89926521CAAEBAD00E09063 /* CoreText.framework in Frameworks */,
-				B89926531CAAEBAD00E09063 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,8 +339,6 @@
 			children = (
 				97E3365D147AB045008147AD /* Defines.h */,
 				97E3365E147AB045008147AD /* Defines.m */,
-				974BAADA148EBC0A0020F55D /* ElementInspectorSeque.h */,
-				974BAADB148EBC0A0020F55D /* ElementInspectorSeque.m */,
 				97382588147AE40F00AEA344 /* MolecularCalculator.h */,
 				97382589147AE40F00AEA344 /* MolecularCalculator.mm */,
 				97E33590147A9468008147AD /* XTRAppDelegate.h */,
@@ -402,6 +389,10 @@
 				974C5666147BEAA900DDFC77 /* GeneralButton.m */,
 				974C5667147BEAA900DDFC77 /* HelpButton.h */,
 				974C5668147BEAA900DDFC77 /* HelpButton.m */,
+				B80721461CB88873003233D1 /* XTRElementTableViewCell.h */,
+				B80721471CB88873003233D1 /* XTRElementTableViewCell.m */,
+				B81FD2191CBFE96200CCC416 /* XTRBarPlot.h */,
+				B81FD21A1CBFE96200CCC416 /* XTRBarPlot.m */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -455,11 +446,8 @@
 			isa = PBXGroup;
 			children = (
 				B826ED20191D59EF0038C532 /* Accelerate.framework */,
-				97E3356A147A938A008147AD /* CoreGraphics.framework */,
-				97E33664147AB292008147AD /* CoreText.framework */,
-				97E33568147A938A008147AD /* Foundation.framework */,
-				97E3365A147AADB8008147AD /* QuartzCore.framework */,
-				97E33566147A938A008147AD /* UIKit.framework */,
+				B807213E1CB85DF2003233D1 /* Foundation.framework */,
+				B80721411CB85FA7003233D1 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -790,7 +778,8 @@
 				971B187914855AD300333B91 /* XTRWikipediaViewController.m in Sources */,
 				971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */,
 				972B4CBB1486C7AB00C627D7 /* XTRSwapableViewController.m in Sources */,
-				974BAADC148EBC0A0020F55D /* ElementInspectorSeque.m in Sources */,
+				B80721481CB88873003233D1 /* XTRElementTableViewCell.m in Sources */,
+				B81FD21B1CBFE96200CCC416 /* XTRBarPlot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -841,7 +830,8 @@
 				B89926481CAAEBAD00E09063 /* XTRWikipediaViewController.m in Sources */,
 				B89926491CAAEBAD00E09063 /* MBProgressHUD.m in Sources */,
 				B899264A1CAAEBAD00E09063 /* XTRSwapableViewController.m in Sources */,
-				B899264B1CAAEBAD00E09063 /* ElementInspectorSeque.m in Sources */,
+				B80721491CB8887E003233D1 /* XTRElementTableViewCell.m in Sources */,
+				B81FD21C1CBFE96200CCC416 /* XTRBarPlot.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -865,6 +855,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = NO;
 				CLANG_WARN_CONSTANT_CONVERSION = NO;
@@ -920,6 +912,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BOOL_CONVERSION = NO;
 				CLANG_WARN_CONSTANT_CONVERSION = NO;
@@ -971,6 +965,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (4K5F63324P)";
@@ -1003,6 +998,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Gulfstream Aerospace Corporation (Ent)";
@@ -1035,6 +1031,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (4K5F63324P)";
@@ -1067,6 +1064,7 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Gulfstream Aerospace Corporation (Ent)";
