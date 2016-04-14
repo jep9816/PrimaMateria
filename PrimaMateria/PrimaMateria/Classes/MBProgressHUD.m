@@ -4,7 +4,6 @@
 // Created by Matej Bukovinski on 2.4.09.
 //
 
-#import "MBProgressHUD.h"
 #import <tgmath.h>
 
 
@@ -172,7 +171,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 }
 
 - (void)hideAnimated:(BOOL)animated afterDelay:(NSTimeInterval)delay {
-    [self performSelector:@selector(hideDelayed:) withObject:[NSNumber numberWithBool:animated] afterDelay:delay];
+    [self performSelector:@selector(hideDelayed:) withObject:@(animated) afterDelay:delay];
 }
 
 - (void)hideDelayed:(NSNumber *)animated {
@@ -479,7 +478,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     NSMutableArray *bezelConstraints = [NSMutableArray array];
     NSDictionary *metrics = @{@"margin": @(margin)};
     
-    NSMutableArray *subviews = [NSMutableArray arrayWithObjects:self.topSpacer, self.label, self.detailsLabel, self.button, self.bottomSpacer, nil];
+    NSMutableArray *subviews = @[self.topSpacer, self.label, self.detailsLabel, self.button, self.bottomSpacer].mutableCopy;
     if (self.indicator) [subviews insertObject:self.indicator atIndex:1];
     
     // Remove existing constraintes
@@ -613,7 +612,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 }
 
 - (void)setMargin:(CGFloat)margin {
-    if (margin != margin) {
+    if (margin != _margin) {
         _margin = margin;
         [self setNeedsUpdateConstraints];
     }
@@ -954,7 +953,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         CGContextAddLineToPoint(context, rect.size.width - radius - 4, 4);
         CGFloat angle = -acos(x/radius);
         if (isnan(angle)) angle = 0;
-        CGContextAddArc(context, rect.size.width - radius - 4, rect.size.height/2, radius, M_PI, angle, 0);
+        CGContextAddArc(context, rect.size.width - radius - 4, rect.size.height/2, radius, (CGFloat) M_PI, angle, 0);
         CGContextAddLineToPoint(context, amount, rect.size.height/2);
         
         CGContextMoveToPoint(context, 4, rect.size.height/2);
@@ -962,7 +961,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         CGContextAddLineToPoint(context, rect.size.width - radius - 4, rect.size.height - 4);
         angle = acos(x/radius);
         if (isnan(angle)) angle = 0;
-        CGContextAddArc(context, rect.size.width - radius - 4, rect.size.height/2, radius, -M_PI, angle, 1);
+        CGContextAddArc(context, rect.size.width - radius - 4, rect.size.height/2, radius, (CGFloat) -M_PI, angle, 1);
         CGContextAddLineToPoint(context, amount, rect.size.height/2);
         
         CGContextFillPath(context);

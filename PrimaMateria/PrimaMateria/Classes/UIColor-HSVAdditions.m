@@ -6,8 +6,6 @@
 // Released into the public domain
 //Original code: http://en.literateprograms.org/RGB_to_HSV_color_space_conversion_%28C%29
 
-#import "PrimaMateria.h"
-
 @implementation UIColor (UIColor_HSVAdditions)
 + (struct hsv_color)HSVfromRGB : (struct rgb_color)rgb {
     struct hsv_color hsv;
