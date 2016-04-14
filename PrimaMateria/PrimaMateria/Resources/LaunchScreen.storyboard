@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -20,6 +21,9 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage.png" highlightedImage="LaunchImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="7h4-Rt-Kah">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7h4-Rt-Kah" secondAttribute="height" multiplier="4:3" id="uds-rc-rOG"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="PrimaMateria" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awM-IC-cCX">
                                 <rect key="frame" x="212" y="327" width="600" height="114"/>
@@ -35,13 +39,17 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                        </accessibility>
                         <constraints>
+                            <constraint firstItem="awM-IC-cCX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="327" id="1Bk-j4-MTV"/>
+                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="8uB-Eu-VrG"/>
                             <constraint firstItem="7h4-Rt-Kah" firstAttribute="centerX" secondItem="awM-IC-cCX" secondAttribute="centerX" id="J8A-a0-sVg"/>
                             <constraint firstItem="7h4-Rt-Kah" firstAttribute="bottom" secondItem="xb3-aO-Qok" secondAttribute="top" id="K2k-8V-UGv"/>
-                            <constraint firstItem="awM-IC-cCX" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="327" id="QDG-oe-vXL"/>
-                            <constraint firstItem="7h4-Rt-Kah" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Qc5-Jv-MGX"/>
-                            <constraint firstAttribute="trailing" secondItem="7h4-Rt-Kah" secondAttribute="trailing" id="c0m-en-e8b"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="awM-IC-cCX" secondAttribute="bottom" constant="327" id="MUQ-o0-9hl"/>
                             <constraint firstItem="7h4-Rt-Kah" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="kPE-vN-8oi"/>
+                            <constraint firstAttribute="trailing" secondItem="7h4-Rt-Kah" secondAttribute="trailing" id="lWb-4A-B0b"/>
                             <constraint firstItem="7h4-Rt-Kah" firstAttribute="centerY" secondItem="awM-IC-cCX" secondAttribute="centerY" id="vYU-dc-MBi"/>
                         </constraints>
                     </view>

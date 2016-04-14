@@ -6,16 +6,13 @@
 //  Copyright 2016 xTrensa. All rights reserved.
 //
 
-#import "PrimaMateria.h"
-
 @implementation XTRCornerImageView
-@synthesize gradientLayer;
 
 - (void)createLayer {
-    gradientLayer = [[CAGradientLayer alloc] init];
-    gradientLayer.bounds = self.bounds;
-    gradientLayer.position = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
-    [self.layer insertSublayer: gradientLayer atIndex: 0];
+    self.gradientLayer = [[CAGradientLayer alloc] init];
+    self.gradientLayer.bounds = self.bounds;
+    self.gradientLayer.position = CGPointMake(self.bounds.size.width / 2, self.bounds.size.height / 2);
+    [self.layer insertSublayer: self.gradientLayer atIndex: 0];
     self.layer.cornerRadius = 10.0f;
     self.layer.masksToBounds = YES;
 }
