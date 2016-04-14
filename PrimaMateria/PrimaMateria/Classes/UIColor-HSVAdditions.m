@@ -3,6 +3,7 @@
 //
 //  Created by Matt Reagan (bravobug.com) on 12/31/09.
 //
+
 // Released into the public domain
 //Original code: http://en.literateprograms.org/RGB_to_HSV_color_space_conversion_%28C%29
 

@@ -3,9 +3,8 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 3/16/2010.
-//  Copyright 2016 xTrensa. All rights reserved.
+//  Copyright (c) 2016 xTrensa. All rights reserved.
 //
-
 /*
    Thanks to Poltras, Millenomi, Eridius, Nownot, WhatAHam, jberry,
    and everyone else who helped out but whose name is inadvertantly omitted

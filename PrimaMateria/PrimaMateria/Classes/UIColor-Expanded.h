@@ -3,9 +3,8 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 3/16/2010.
-//  Copyright 2016 xTrensa. All rights reserved.
+//  Copyright (c) 2016 xTrensa. All rights reserved.
 //
-
 #define SUPPORTS_UNDOCUMENTED_API 0
 
 @interface UIColor (UIColor_Expanded)
