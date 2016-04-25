@@ -123,7 +123,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     return self;
 }
 
-- (id)initWithView:(UIView *)view {
+- (instancetype)initWithView:(UIView *)view {
     NSAssert(view, @"View must not be nil.");
     return [self initWithFrame:view.bounds];
 }
@@ -174,7 +174,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 }
 
 - (void)hideDelayed:(NSNumber *)animated {
-    [self hideAnimated:[animated boolValue]];
+    [self hideAnimated:animated.boolValue];
 }
 
 #pragma mark - Timer callbacks
@@ -433,7 +433,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     } else {
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 70000
         if ([indicator respondsToSelector:@selector(setTintColor:)]) {
-            [indicator setTintColor:color];
+            indicator.tintColor = color;
         }
 #endif
     }
@@ -459,7 +459,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         
         [bezelView addMotionEffect:group];
     } else {
-        NSArray *effects = [bezelView motionEffects];
+        NSArray *effects = bezelView.motionEffects;
         for (UIMotionEffect *effect in effects) {
             [bezelView removeMotionEffect:effect];
         }
@@ -724,11 +724,11 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 #pragma mark - Lifecycle
 
-- (id)init {
+- (instancetype)init {
     return [self initWithFrame:CGRectMake(0.f, 0.f, 37.f, 37.f)];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         self.backgroundColor = [UIColor clearColor];
@@ -845,11 +845,11 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 
 #pragma mark - Lifecycle
 
-- (id)init {
+- (instancetype)init {
     return [self initWithFrame:CGRectMake(.0f, .0f, 120.0f, 20.0f)];
 }
 
-- (id)initWithFrame:(CGRect)frame {
+- (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
         _progress = 0.f;
@@ -900,8 +900,8 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     CGContextRef context = UIGraphicsGetCurrentContext();
     
     CGContextSetLineWidth(context, 2);
-    CGContextSetStrokeColorWithColor(context,[_lineColor CGColor]);
-    CGContextSetFillColorWithColor(context, [_progressRemainingColor CGColor]);
+    CGContextSetStrokeColorWithColor(context,_lineColor.CGColor);
+    CGContextSetFillColorWithColor(context, _progressRemainingColor.CGColor);
     
     // Draw background
     CGFloat radius = (rect.size.height / 2) - 2;
@@ -924,7 +924,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     CGContextAddArcToPoint(context, 2, rect.size.height - 2, 2, rect.size.height/2, radius);
     CGContextStrokePath(context);
     
-    CGContextSetFillColorWithColor(context, [_progressColor CGColor]);
+    CGContextSetFillColorWithColor(context, _progressColor.CGColor);
     radius = radius - 2;
     CGFloat amount = self.progress * rect.size.width;
     
@@ -1106,7 +1106,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         hud.removeFromSuperViewOnHide = YES;
         [hud hideAnimated:animated];
     }
-    return [huds count];
+    return huds.count;
 }
 
 + (NSArray *)allHUDsForView:(UIView *)view {
@@ -1309,7 +1309,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
         _activityIndicatorColor = activityIndicatorColor;
         UIActivityIndicatorView *indicator = (UIActivityIndicatorView *)self.indicator;
         if ([indicator isKindOfClass:[UIActivityIndicatorView class]]) {
-            [indicator setColor:activityIndicatorColor];
+            indicator.color = activityIndicatorColor;
         }
     }
 }
@@ -1352,12 +1352,12 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
 - (void)setTitleColor:(UIColor *)color forState:(UIControlState)state {
     [super setTitleColor:color forState:state];
     // Update related colors.
-    [self setHighlighted:self.highlighted];
+    self.highlighted = self.highlighted;
     self.layer.borderColor = color.CGColor;
 }
 
 - (void)setHighlighted:(BOOL)highlighted {
-    [super setHighlighted:highlighted];
+    super.highlighted = highlighted;
     UIColor *baseColor = [self titleColorForState:UIControlStateSelected];
     self.backgroundColor = highlighted ? [baseColor colorWithAlphaComponent:0.1f] : [UIColor clearColor];
 }

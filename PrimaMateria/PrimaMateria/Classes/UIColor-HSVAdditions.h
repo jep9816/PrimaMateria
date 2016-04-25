@@ -8,15 +8,9 @@
 //  get it here:
 //  http://github.com/ars/uicolor-utilities
 
-#define MIN3(x, y, z)  ( (y) <= (z) ? \
-                        ( (x) <= (y) ? (x) : (y) ) \
-                        : \
-                        ( (x) <= (z) ? (x) : (z) ) )
+#define MIN3(x, y, z)  ( (y) <= (z) ? ( (x) <= (y) ? (x) : (y) ) : ( (x) <= (z) ? (x) : (z) ) )
 
-#define MAX3(x, y, z)  ( (y) >= (z) ? \
-                        ( (x) >= (y) ? (x) : (y) ) \
-                        : \
-                        ( (x) >= (z) ? (x) : (z) ) )
+#define MAX3(x, y, z)  ( (y) >= (z) ? ( (x) >= (y) ? (x) : (y) ) : ( (x) >= (z) ? (x) : (z) ) )
 
 
 struct rgb_color {
