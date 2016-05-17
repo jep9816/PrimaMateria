@@ -9,9 +9,9 @@
 @objc class XTRPeriodicTableViewController : UIViewController  {
     @IBOutlet var swapView : UIView!
     
-    var molecularCalculatorState : Bool?
-    var elementBalloonViewController : XTRElementBalloonViewController?
-    var molecularCalculatorViewController : XTRMolecularCalculatorViewController?
+    var molecularCalculatorState : Bool = false
+    var elementBalloonViewController : XTRElementBalloonViewController!
+    var molecularCalculatorViewController : XTRMolecularCalculatorViewController!
     
     // MARK: - Initialization Methods
     
@@ -28,20 +28,20 @@
     }
     
     func setupPopUp() {
-        self.elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewControllerWithIdentifier("XTRElementBalloonViewController") as? XTRElementBalloonViewController
+        self.elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewControllerWithIdentifier("XTRElementBalloonViewController") as! XTRElementBalloonViewController
         let contentSize : CGSize = CGSizeMake(324.0, 210.0)
-        self.elementBalloonViewController!.preferredContentSize = contentSize
-        self.elementBalloonViewController!.modalPresentationStyle = UIModalPresentationStyle.Popover
+        self.elementBalloonViewController.preferredContentSize = contentSize
+        self.elementBalloonViewController.modalPresentationStyle = UIModalPresentationStyle.Popover
     }
     
     func toggleMolecularCalculatorState(aFlag: Bool) {
         if (!aFlag) {
             self.molecularCalculatorState = false
-            self.molecularCalculatorViewController!.view.removeFromSuperview()
-            self.molecularCalculatorViewController!.viewWillDisappear(true)
+            self.molecularCalculatorViewController.view.removeFromSuperview()
+            self.molecularCalculatorViewController.viewWillDisappear(true)
         } else {
             self.molecularCalculatorState = true
-            self.view.addSubview(self.molecularCalculatorViewController!.view)
+            self.view.addSubview(self.molecularCalculatorViewController.view)
         }
     }
     
@@ -52,9 +52,11 @@
         XTRPropertiesStore.storeAtomicNumber(sender.tag)
         
         let aRect: CGRect = CGRectMake(10, 10, 15, 15)
-        self.elementBalloonViewController!.popoverPresentationController!.sourceRect = aRect
-        self.elementBalloonViewController!.popoverPresentationController!.sourceView = sender
-        self.presentViewController(self.elementBalloonViewController!, animated:true, completion:nil)
+        guard let popoverController = self.elementBalloonViewController.popoverPresentationController else { return }
+        popoverController.sourceRect = aRect
+        popoverController.sourceView = sender
+        popoverController.backgroundColor = XTRColorFactory.popupArrowColor()
+        self.presentViewController(self.elementBalloonViewController, animated:true, completion:nil)
     }
     
     @IBAction func showMolecularCalculator(sender: UISwitch) {
@@ -62,13 +64,13 @@
     }
     
     @IBAction func showElementInspector(sender: UIButton) {
-        if (self.molecularCalculatorState!.boolValue) {
+        if (self.molecularCalculatorState.boolValue) {
             let element : XTRElement = XTRDataSource.sharedInstance().elementAtIndex(UInt(sender.tag))
-            self.molecularCalculatorViewController!.setElement(element)
+            self.molecularCalculatorViewController.setElement(element)
         } else {
-            let defaultState : Bool? = XTRPropertiesStore.retreiveElementBubblesState()
+            let defaultState : Bool = XTRPropertiesStore.retreiveElementBubblesState()
             
-            if (defaultState!.boolValue) {
+            if (defaultState.boolValue) {
                 self.showPopupForButton(sender)
             } else {
                 self.showElementPanelForElementAtIndex(UInt(sender.tag))
@@ -87,11 +89,12 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewControllerWithIdentifier("XTRMolecularCalculatorViewController") as? XTRMolecularCalculatorViewController
-        self.molecularCalculatorViewController!.view.frame = self.swapView.frame
+        self.molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewControllerWithIdentifier("XTRMolecularCalculatorViewController") as! XTRMolecularCalculatorViewController
+        self.molecularCalculatorViewController.view.frame = self.swapView.frame
         self.swapView.removeFromSuperview()
         self.setupPopUp()
         self.toggleMolecularCalculatorState(false)
+        
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(XTRPeriodicTableViewController.closeBubble(_:)), name: NOTIFICATION_INSPECTOR_DISMISSED, object: nil)
     }
     

@@ -7,23 +7,24 @@
 //
 
 @objc class DynoTableLabel : UILabel {
-    private var edgeInsets : UIEdgeInsets?
+    private var edgeInsets : UIEdgeInsets
     
     // MARK: - Initialization Methods
     
     init(frame: CGRect, andColor: UIColor) {
+        self.edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5)
         super.init(frame:frame)
-        edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5)
         self.backgroundColor = andColor
     }
     
     required init?(coder aDecoder: NSCoder) {
+        self.edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5)
         super.init(coder:aDecoder)!
     }
     
     // MARK: - View Management Methods
 
     override func drawRect(rect: CGRect) {
-        super.drawTextInRect(UIEdgeInsetsInsetRect(rect, self.edgeInsets!))
+        super.drawTextInRect(UIEdgeInsetsInsetRect(rect, self.edgeInsets))
     }
 }

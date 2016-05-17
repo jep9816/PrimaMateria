@@ -7,8 +7,7 @@
 //
 
 @objc class XTRElement : NSObject {
-    
-    var elementDictionary : NSMutableDictionary? = nil
+    var elementDictionary : NSMutableDictionary = [:]
     
     private func floatForKey(aKey: String) -> NSNumber {
         let aValue : String = self.valueForKey(aKey) as! String
@@ -37,13 +36,13 @@
         } else if (aKey == ELEMENT_ATOMIC_MASS_AGGREGATE) {
             return self.atomicMassAggregate()!
         } else {
-            let aValue = self.elementDictionary!.valueForKey(aKey)
+            let aValue = self.elementDictionary.valueForKey(aKey)
             return (aValue != nil) ? aValue! : ""
         }
     }
     
     override func setValue(value: AnyObject?, forKeyPath keyPath: String) {
-        self.elementDictionary![keyPath] = value
+        self.elementDictionary[keyPath] = value
     }
         
     func atomicNumber() -> NSNumber {

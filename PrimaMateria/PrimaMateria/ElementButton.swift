@@ -7,9 +7,6 @@
 //
 
 @objc class ElementButton : GeneralButton {
-    private var highColor : UIColor?
-    private var lowColor : UIColor?
-    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {

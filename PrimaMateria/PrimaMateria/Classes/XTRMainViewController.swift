@@ -46,27 +46,31 @@
     
     // MARK: - UITabBarControllerDelegate Methods
     
+    func animate(fromViewController: UIViewController, toViewController: UIViewController, forView view: UIView) {
+        UIView.beginAnimations("View Flip", context: nil)
+        UIView.setAnimationDuration(1.5)
+        UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
+        UIView.setAnimationTransition(UIViewAnimationTransition.CurlUp, forView: view, cache:true)
+        
+        fromViewController.viewWillAppear(true)
+        toViewController.viewWillDisappear(true)
+        toViewController.viewDidDisappear(true)
+        fromViewController.viewDidAppear(true)
+        
+        UIView.commitAnimations()
+    }
+    
     func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
         let defaultState : Bool = XTRPropertiesStore.retreiveShowTransitionsState()
         
         if (defaultState) {
-            let currentVC : UIViewController = tabBarController.selectedViewController!
+            let fromViewController : UIViewController = tabBarController.selectedViewController!
             
-            if (currentVC == viewController) {
+            if (fromViewController == viewController) {
                 return false
             }
             
-            UIView.beginAnimations("View Flip", context: nil)
-            UIView.setAnimationDuration(1.5)
-            UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
-            UIView.setAnimationTransition(UIViewAnimationTransition.CurlUp, forView:tabBarController.view, cache:true)
-            
-            currentVC.viewWillAppear(true)
-            viewController.viewWillDisappear(true)
-            viewController.viewDidDisappear(true)
-            currentVC.viewDidAppear(true)
-            
-            UIView.commitAnimations()
+            self.animate(fromViewController, toViewController: viewController, forView: tabBarController.view)
         }
         return true
     }
@@ -77,6 +81,7 @@
         super.viewDidLoad()
         self.showSplash()
         self.customizeTabBarItems()
+        self.delegate = self
     }
     
     override func shouldAutorotate() -> Bool {

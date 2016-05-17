@@ -6,16 +6,16 @@
 //  Copyright © 2016 xTrensa. All rights reserved.
 //
 
+private let kAirWavelength : String = "airWavelength"
+private let kIntensity : String = "intensity"
+private let kSpectrum : String = "spectrum"
+private let kISpectrum : String = "I"
+private let kIISpectrum : String = "II"
+private let kIIISpectrum : String = "III"
+private let kIVSpectrum : String = "IV"
+private let kVSpectrum : String = "V"
+
 @objc class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
-    
-    static var kAirWavelength : String = "airWavelength"
-    static var kIntensity : String = "intensity"
-    static var kSpectrum : String = "spectrum"
-    static var kISpectrum : String = "I"
-    static var kIISpectrum : String = "II"
-    static var kIIISpectrum : String = "III"
-    static var kIVSpectrum : String = "IV"
-    static var kVSpectrum : String = "V"
     
     @IBOutlet weak var hostingView : CPTGraphHostingView!
     @IBOutlet var swapView : UIView!
@@ -97,7 +97,7 @@
         x.labelRotation = (CGFloat) (M_PI / 4)
         x.labelingPolicy = CPTAxisLabelingPolicy.None
         
-        for index in 0...customTickLocations.count - 1 {
+        for index in 0..<customTickLocations.count {
             labelLocation += labelLocation
             let newLabel : CPTAxisLabel = CPTAxisLabel.init(text: xAxisLabels[labelLocation] as? String, textStyle: x.labelTextStyle)
             let tickLocation : NSNumber = customTickLocations.objectAtIndex(index) as! NSNumber
@@ -120,20 +120,20 @@
         y.titleOffset = 50.0
         y.titleLocation = 500.0
         
-        var barPlot : CPTBarPlot = self.addSpectrumPlotWithIdentifier(XTRSpectrumViewController.kISpectrum, aColor: CPTColor.redColor())
+        var barPlot : CPTBarPlot = self.addSpectrumPlotWithIdentifier(kISpectrum, aColor: CPTColor.redColor())
         
         self.barChart!.addPlot(barPlot, toPlotSpace: plotSpace)
         
-        barPlot = self.addSpectrumPlotWithIdentifier(XTRSpectrumViewController.kIISpectrum, aColor: CPTColor.blueColor())
+        barPlot = self.addSpectrumPlotWithIdentifier(kIISpectrum, aColor: CPTColor.blueColor())
         self.barChart!.addPlot(barPlot, toPlotSpace: plotSpace)
         
-        barPlot = self.addSpectrumPlotWithIdentifier(XTRSpectrumViewController.kIIISpectrum, aColor: CPTColor.greenColor())
+        barPlot = self.addSpectrumPlotWithIdentifier(kIIISpectrum, aColor: CPTColor.greenColor())
         self.barChart!.addPlot(barPlot, toPlotSpace: plotSpace)
         
-        barPlot = self.addSpectrumPlotWithIdentifier(XTRSpectrumViewController.kIVSpectrum, aColor: CPTColor.cyanColor())
+        barPlot = self.addSpectrumPlotWithIdentifier(kIVSpectrum, aColor: CPTColor.cyanColor())
         self.barChart!.addPlot(barPlot, toPlotSpace: plotSpace)
         
-        barPlot = self.addSpectrumPlotWithIdentifier(XTRSpectrumViewController.kVSpectrum, aColor: CPTColor.magentaColor())
+        barPlot = self.addSpectrumPlotWithIdentifier(kVSpectrum, aColor: CPTColor.magentaColor())
         self.barChart!.addPlot(barPlot, toPlotSpace: plotSpace)
     }
     
@@ -195,9 +195,9 @@
         if (cell == nil) {
             let modulus : Int = row % 2
             let dict : NSDictionary = self.lineSpectraArray![row] as! NSDictionary
-            let airWavelength : String = dict.valueForKey(XTRSpectrumViewController.kAirWavelength) as! String
-            let intensity : String = dict.valueForKey(XTRSpectrumViewController.kIntensity) as! String
-            let spectrum : String = dict.valueForKey(XTRSpectrumViewController.kSpectrum) as! String
+            let airWavelength : String = dict.valueForKey(kAirWavelength) as! String
+            let intensity : String = dict.valueForKey(kIntensity) as! String
+            let spectrum : String = dict.valueForKey(kSpectrum) as! String
             
             cell = DynoTableCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: MyIdentifier)
             
@@ -227,22 +227,19 @@
         
         if (plot.isKindOfClass(CPTBarPlot.classForCoder())) {
             let anItem : NSDictionary = self.lineSpectraArray!.objectAtIndex(Int(idx)) as! NSDictionary
-            var temp : String = anItem.valueForKey(XTRSpectrumViewController.kAirWavelength) as! String
+            var temp : String = anItem.valueForKey(kAirWavelength) as! String
             let airWavelength : NSNumber = Float(temp)!
 
-            temp = anItem.valueForKey(XTRSpectrumViewController.kIntensity) as! String
+            temp = anItem.valueForKey(kIntensity) as! String
             let intensity : NSNumber = Float(temp)!
-            let spectrum : String = anItem.valueForKey(XTRSpectrumViewController.kSpectrum) as! String
+            let spectrum : String = anItem.valueForKey(kSpectrum) as! String
             let identifier : String = plot.identifier as! String
             
             switch (fieldEnum) {
             case 0:
                 num = self.airWavelengthValue(airWavelength, anIdentifier: identifier, aSpectrum: spectrum)
-                break
-                
             case 1:
                 num = self.intensityValue(intensity, anIdentifier: identifier, aSpectrum: spectrum)
-                break
             default:
                 num = 0
                 break

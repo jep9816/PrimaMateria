@@ -28,7 +28,7 @@
         while !(responder!.isKindOfClass(UIViewController.classForCoder())) {
             responder = responder!.nextResponder()!
             if responder == nil {
-                break;
+                break
             }
         }
         return responder as! UIViewController

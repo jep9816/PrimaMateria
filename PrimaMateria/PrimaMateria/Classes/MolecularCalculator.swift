@@ -15,15 +15,15 @@
             var regex : NSRegularExpression? = nil
             do {
                 try regex = NSRegularExpression.init(pattern: "[A-Z][a-z]*\\d*|\\([^)]+\\)\\d*", options: NSRegularExpressionOptions.CaseInsensitive)
-            } catch _ {
-                assert(nil != regex, "Could not create regex.")
+            } catch {
+                assert(nil != regex, "Could not create regex. \(error)")
             }
             
             // print("Testing: %@", formula)
             
             let components : NSArray = regex!.matchesInString(formula! as String, options: NSMatchingOptions.Anchored, range: NSMakeRange(0, formula!.length))
             
-            for index in 0...components.count - 1 {
+            for index in 0..<components.count {
                 let match : NSTextCheckingResult = components.objectAtIndex(index) as! NSTextCheckingResult
                 let element : XTRElement?
                 let matchRange : NSRange = match.rangeAtIndex(0)

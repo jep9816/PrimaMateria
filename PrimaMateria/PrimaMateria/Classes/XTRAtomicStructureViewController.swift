@@ -138,17 +138,13 @@
             self.shellModelView.hidden = true;
             self.shellModelInfoLabel.hidden = true;
             self.overlayView.hidden = true;
-            break;
-            
         case StructureViewTypes.kShellModelView.rawValue:
             self.crystalStructureView.hidden = true;
             self.shellModelView.hidden = false;
             self.shellModelInfoLabel.hidden = false;
             self.overlayView.hidden = false;
-            break;
-            
         default:
-            break;
+            break
         }
     }
     

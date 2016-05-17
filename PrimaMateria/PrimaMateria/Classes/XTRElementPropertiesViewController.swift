@@ -141,13 +141,9 @@
         case PropertiesViewTypes.kChemicalPropertiesView.rawValue:
             self.chemicalPropertiesView.hidden = false
             self.physicalPropertiesView.hidden = true
-            break
-            
         case PropertiesViewTypes.kPhysicalPropertiesView.rawValue:
             self.chemicalPropertiesView.hidden = true
-            self.physicalPropertiesView.hidden = false
-            break
-            
+            self.physicalPropertiesView.hidden = false            
         default:
             break
         }

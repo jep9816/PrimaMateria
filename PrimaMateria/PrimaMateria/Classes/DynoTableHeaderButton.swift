@@ -7,14 +7,17 @@
 //
 
 @objc class DynoTableHeaderButton : GeneralButton {
-    var imageLayer : CALayer?
-    var descentingImageView : UIImage?
-    var ascendingImageView : UIImage?
+    var imageLayer : CALayer
+    var descentingImageView : UIImage
+    var ascendingImageView : UIImage
     var toggle : Bool = false
-        
+    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
+        self.ascendingImageView = UIImage.init(named: "AscendingArrow.png")!
+        self.descentingImageView = UIImage.init(named: "DescendingArrow.png")!
+        self.imageLayer = CALayer.init()
         super.init(coder:aDecoder)
     }
     
@@ -22,28 +25,24 @@
         super.awakeFromNib()
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DynoTableHeaderButton.tableHeaderCellSelected(_:)), name: NOTIFICATION_TABLE_HEADER_SELECTED, object: nil)
-        self.toggle = false
-        self.ascendingImageView = UIImage.init(named: "AscendingArrow.png")
-        self.descentingImageView = UIImage.init(named: "DescendingArrow.png")
-        self.imageLayer = CALayer.init()
-        self.layer.addSublayer(self.imageLayer!)
+        self.layer.addSublayer(self.imageLayer)
         self.backgroundColor = UIColor.lightGrayColor()
     }
     
     // MARK: - Notification Methods
     
     func tableHeaderCellSelected(aNotification: NSNotification) {
-        self.imageLayer!.contents = nil
+        self.imageLayer.contents = nil
     }
-
+    
     // MARK: - Internal Methods
-
+    
     func toggleButtonState(aFlag: Bool) {
         NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_TABLE_HEADER_SELECTED, object: nil)
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.0)
-        self.imageLayer!.frame = (aFlag) ? CGRectMake((self.frame.size.width/2) - 6, 2, 12, 12) : CGRectMake((self.frame.size.width/2) - 6, 30, 12, 12)
-        self.imageLayer!.contents = (aFlag) ? self.ascendingImageView!.CGImage : self.descentingImageView!.CGImage
+        self.imageLayer.frame = (aFlag) ? CGRectMake((self.frame.size.width/2) - 6, 2, 12, 12) : CGRectMake((self.frame.size.width/2) - 6, 30, 12, 12)
+        self.imageLayer.contents = (aFlag) ? self.ascendingImageView.CGImage : self.descentingImageView.CGImage
         CATransaction.commit()
         self.toggle = aFlag
     }

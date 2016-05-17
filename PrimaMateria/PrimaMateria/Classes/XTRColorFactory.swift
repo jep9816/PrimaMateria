@@ -283,6 +283,6 @@
     }
     
     class func popupArrowColor() -> UIColor {
-        return UIColor.init(red: 0.24, green: 0.24, blue: 0.24, alpha: 1.0)
+        return UIColor.init(red: 0.64, green: 0.64, blue: 0.64, alpha: 1.0)
     }
 }

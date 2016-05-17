@@ -7,13 +7,17 @@
 //
 
 @objc class XTRDataSource : NSObject {
-    private static let _sharedInstance = XTRDataSource()
+    static var _sharedInstance : XTRDataSource!
     
     var sortColumns : NSArray?
     var elementList : NSMutableArray?
     var sortedElementList : NSMutableArray?
     var graphPropertyList : NSMutableArray?
     var columnSortSelector : Selector?
+    
+    struct Static {
+        static var dispatchOnceToken: dispatch_once_t = 0
+    }
     
     func dataForResource(aResourceName: String, type: String, directory: String) -> NSData {
         let bundle : NSBundle = NSBundle.init(forClass: self.classForCoder)
@@ -23,6 +27,9 @@
     }
     
     class func sharedInstance() -> XTRDataSource {
+        dispatch_once(&Static.dispatchOnceToken) {
+            _sharedInstance = XTRDataSource()
+        }
         return _sharedInstance
     }
     
@@ -35,7 +42,7 @@
             
             try tempDict = NSPropertyListSerialization.propertyListWithData(theData, options: NSPropertyListMutabilityOptions.MutableContainers, format: nil) as? NSMutableDictionary
             
-            element.elementDictionary = tempDict
+            element.elementDictionary = tempDict!
             self.elementList!.addObject(element)
         } catch _ {
             assert(nil != tempDict, "Could not read property list of elements.")
@@ -49,7 +56,7 @@
         do {
             try tempList = NSPropertyListSerialization.propertyListWithData(theData, options: NSPropertyListMutabilityOptions.MutableContainers, format: nil) as? NSArray
             
-            for index in 0...tempList!.count - 1 {
+            for index in 0..<tempList!.count {
                 let symbol : String? = tempList?.objectAtIndex(index) as? String
                 self.loadElementForSymbol(symbol!)
                 self.sortedElementList!.addObject(self.elementList!.objectAtIndex(index))

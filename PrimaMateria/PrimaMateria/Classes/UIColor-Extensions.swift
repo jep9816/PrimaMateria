@@ -14,40 +14,4 @@ extension UIColor {
         }
         return self
     }
-
-    /*class func reverseColorOf(oldColor: UIColor) -> UIColor {
-        let oldCGColor: CGColorRef = oldColor.CGColor
-        let numberOfComponents: Int = CGColorGetNumberOfComponents(oldCGColor)
-        // can not invert - the only component is the alpha
-        if numberOfComponents == 1 {
-            return UIColor(CGColor: oldCGColor)
-        }
-        let oldComponentColors: UnsafePointer<CGFloat> = CGColorGetComponents(oldCGColor)
-        var newComponentColors = [CGFloat]()
-        let i: Int = numberOfComponents - 1
-        newComponentColors[i] = oldComponentColors[i]
-        // alpha
-        
-        for index in (0...i).reverse() {
-            newComponentColors[index] = 1 - oldComponentColors[index]
-        }
-        
-        //        while --i >= 0 {
-        //            newComponentColors[i] = 1 - oldComponentColors[i]
-        //        }
-        let newCGColor: CGColorRef = CGColorCreate(CGColorGetColorSpace(oldCGColor), newComponentColors)!
-        var newColor: UIColor = UIColor(CGColor: newCGColor)
-        
-        //=====For the GRAY colors 'Middle level colors'
-        var white: CGFloat = 0
-        oldColor.getWhite(&white, alpha: nil)
-        if(white>0.3 && white < 0.67) {
-            if(white >= 0.5) {
-                newColor = UIColor.darkGrayColor()
-            } else if (white < 0.5) {
-                newColor = UIColor.blackColor()
-            }
-        }
-        return newColor;
-    }*/
 }

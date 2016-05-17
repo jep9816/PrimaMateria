@@ -143,7 +143,7 @@
             self.assignOtherLabels()
             self.assignNavigationHints()
             
-            for index in 0...self.childViewControllers.count - 1 {
+            for index in 0..<self.childViewControllers.count {
                 let controller : XTRSwapableViewController = self.childViewControllers[Int(index)] as! XTRSwapableViewController
                 controller.element = self.element
                 controller.setupUI()
@@ -161,7 +161,7 @@
     
     @IBAction func swapViews(sender: UISegmentedControl) {
         let viewController : UIViewController = self.childViewControllers[sender.selectedSegmentIndex]
-        for index in 0...self.childViewControllers.count - 1 {
+        for index in 0..<self.childViewControllers.count {
             let controller : XTRSwapableViewController = self.childViewControllers[Int(index)] as! XTRSwapableViewController
             controller.view.hidden = true
             viewController.view.hidden = false

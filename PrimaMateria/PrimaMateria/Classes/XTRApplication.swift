@@ -20,24 +20,26 @@
         
         XTRDataSource.sharedInstance()
     }
-
+    
     // MARK: Internal Methods
     
     func registerDefaultsFromSettingsBundle() {
-        let settingsBundle : String? = NSBundle.mainBundle().pathForResource("Settings", ofType: "bundle")
-        if (settingsBundle == nil) {
+        guard let settingsBundle = NSBundle.mainBundle().pathForResource("Settings", ofType: "bundle") else {
             NSLog("Could not find Settings.bundle")
             return
         }
         
-        let url : NSURL = NSURL.init(fileURLWithPath: settingsBundle!)
+        let url : NSURL = NSURL.init(fileURLWithPath: settingsBundle)
         let url2 = url.URLByAppendingPathComponent("Root.plist")
         let settings : NSDictionary = NSDictionary.init(contentsOfURL: url2)!
-        let preferences : NSArray? = settings.objectForKey("PreferenceSpecifiers") as? NSArray
+        
+        guard let preferences = settings.objectForKey("PreferenceSpecifiers") as? NSArray else {
+            return
+        }
         var defaultsToRegister = [String : AnyObject]()
         
-        for index in 0...preferences!.count - 1 {
-            let prefSpecification : NSDictionary = preferences!.objectAtIndex(index) as! NSDictionary
+        for index in 0..<preferences.count {
+            let prefSpecification : NSDictionary = preferences.objectAtIndex(index) as! NSDictionary
             let key : String? = prefSpecification.objectForKey("Key") as? String
             
             if (key != nil) {

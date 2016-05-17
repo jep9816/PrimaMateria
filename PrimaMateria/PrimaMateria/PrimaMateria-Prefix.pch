@@ -9,9 +9,6 @@
 #endif
 
 #ifdef __OBJC__
-    #import <Foundation/Foundation.h>
-    #import <UIKit/UIKit.h>
-    #import <Accelerate/Accelerate.h>
     #import "CorePlot-CocoaTouch.h"
     #import "PrimaMateria.h"
 #endif

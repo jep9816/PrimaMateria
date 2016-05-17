@@ -11,10 +11,10 @@
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
         XTRAppDelegate.applyStyle()
-        let fontFamiles : NSArray = UIFont.familyNames()
-        print("%@", fontFamiles);
-        let fontNames : NSArray = UIFont.fontNamesForFamilyName("Verdana")
-        print("%@", fontNames);
+//        let fontFamiles : NSArray = UIFont.familyNames()
+//        print("%@", fontFamiles);
+//        let fontNames : NSArray = UIFont.fontNamesForFamilyName("Verdana")
+//        print("%@", fontNames);
         return true
     }
     

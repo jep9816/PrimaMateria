@@ -70,7 +70,7 @@
         x.labelRotation = (CGFloat)(M_PI / 4)
         x.labelingPolicy = CPTAxisLabelingPolicy.None
         
-        for index in 0...customTickLocations.count - 1 {
+        for index in 0..<customTickLocations.count {
             let tickLocation : NSNumber = customTickLocations.objectAtIndex(index) as! NSNumber
             let labelValue : String = xAxisLabels.objectAtIndex(Int(index)) as! String
             let newLabel : CPTAxisLabel = CPTAxisLabel.init(text: labelValue, textStyle: x.labelTextStyle)
@@ -200,8 +200,6 @@
             switch (fieldEnum){
             case 0:
                 num = UInt(idx + 1)
-                break
-                
             case 1:
                 if (identifier == ELEMENT_ATOMIC_MASS) {
                     num = element.atomicMass()
@@ -266,7 +264,6 @@
                 } else {
                     num = 0
                 }
-                break
             default:
                 num = 0
                 break

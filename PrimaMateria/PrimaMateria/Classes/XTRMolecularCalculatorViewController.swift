@@ -40,44 +40,24 @@
         switch (aNumber) {
         case 0:
             self.formulaLabel.text = origString + "\u{2080}"
-            break
-            
         case 1:
             self.formulaLabel.text = origString + "\u{2081}"
-            break
-            
         case 2:
             self.formulaLabel.text = origString + "\u{2082}"
-            break
-            
         case 3:
             self.formulaLabel.text = origString + "\u{2083}"
-            break
-            
         case 4:
             self.formulaLabel.text = origString + "\u{2084}"
-            break
-            
         case 5:
             self.formulaLabel.text = origString + "\u{2085}"
-            break
-            
         case 6:
             self.formulaLabel.text = origString + "\u{2086}"
-            break
-            
         case 7:
             self.formulaLabel.text = origString + "\u{2087}"
-            break
-            
         case 8:
             self.formulaLabel.text = origString + "\u{2088}"
-            break
-            
         case 9:
             self.formulaLabel.text = origString + "\u{2089}"
-            break
-            
         default:
             break
         }

@@ -18,11 +18,6 @@
 		974C567F147BF0E000DDFC77 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 974C567C147BF0E000DDFC77 /* SupportingFiles */; };
 		97E33605147AA7C7008147AD /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E33604147AA7C7008147AD /* PrimaMateria.plist */; };
 		97E33668147AB701008147AD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97E33667147AB701008147AD /* Settings.bundle */; };
-		B807213F1CB85DF2003233D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B807213E1CB85DF2003233D1 /* Foundation.framework */; };
-		B80721401CB85F8B003233D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B807213E1CB85DF2003233D1 /* Foundation.framework */; };
-		B80721421CB85FA7003233D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80721411CB85FA7003233D1 /* UIKit.framework */; };
-		B80721431CB85FB1003233D1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B80721411CB85FA7003233D1 /* UIKit.framework */; };
-		B80721441CB85FF1003233D1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
 		B80721451CB85FF8003233D1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
 		B827B66C1CCC5C8C009629AF /* MolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66B1CCC5C8C009629AF /* MolecularCalculator.swift */; };
 		B827B66D1CCC5C8C009629AF /* MolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66B1CCC5C8C009629AF /* MolecularCalculator.swift */; };
@@ -30,6 +25,7 @@
 		B827B6701CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66E1CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift */; };
 		B827B6721CCD4CDD009629AF /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B6711CCD4CDD009629AF /* Defines.swift */; };
 		B827B6731CCD4CDD009629AF /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B6711CCD4CDD009629AF /* Defines.swift */; };
+		B827B6781CCDB198009629AF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
 		B827CD441CC7FD3A00E74129 /* XTRAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */; };
 		B827CD451CC7FD3A00E74129 /* XTRAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */; };
 		B827CD491CC8019E00E74129 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CD481CC8019E00E74129 /* main.swift */; };
@@ -283,8 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B80721451CB85FF8003233D1 /* Accelerate.framework in Frameworks */,
-				B80721431CB85FB1003233D1 /* UIKit.framework in Frameworks */,
-				B80721401CB85F8B003233D1 /* Foundation.framework in Frameworks */,
 				B8B1C4C716F8F85500C3CA78 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,9 +287,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B80721441CB85FF1003233D1 /* Accelerate.framework in Frameworks */,
-				B80721421CB85FA7003233D1 /* UIKit.framework in Frameworks */,
-				B807213F1CB85DF2003233D1 /* Foundation.framework in Frameworks */,
+				B827B6781CCDB198009629AF /* Accelerate.framework in Frameworks */,
 				B899264E1CAAEBAD00E09063 /* libCorePlot-CocoaTouch.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,12 +7,14 @@
 //
 
 @objc class GeneralButton : UIButton {
-    private var highColor : UIColor?
-    private var lowColor : UIColor?
+    var highColor : UIColor
+    var lowColor : UIColor
     
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
+        highColor = UIColor.whiteColor()
+        lowColor = UIColor.whiteColor()
         super.init(coder:aDecoder)!
     }
     
