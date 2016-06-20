@@ -93,6 +93,12 @@
 		B87214DD1CC088B30021C8F5 /* HelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214DB1CC088B30021C8F5 /* HelpButton.swift */; };
 		B87214DF1CC10BC60021C8F5 /* XTRElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214DE1CC10BC60021C8F5 /* XTRElementTableViewCell.swift */; };
 		B87214E01CC10BC60021C8F5 /* XTRElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214DE1CC10BC60021C8F5 /* XTRElementTableViewCell.swift */; };
+		B8788CDF1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */; };
+		B8788CE21CED2D4D00D6BD5B /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */; };
+		B8788CE41CED2EE900D6BD5B /* XTRPopoutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CE31CED2EE900D6BD5B /* XTRPopoutAnimationController.swift */; };
+		B8788CE51CED2EEF00D6BD5B /* XTRPopoutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CE31CED2EE900D6BD5B /* XTRPopoutAnimationController.swift */; };
+		B8788CEA1CED379200D6BD5B /* XTRSlideDownAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */; };
+		B8788CEB1CED379200D6BD5B /* XTRSlideDownAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */; };
 		B881520D1CA9EFDD000FC7FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881520C1CA9EFDD000FC7FA /* LaunchScreen.storyboard */; };
 		B881520F1CA9F162000FC7FA /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B881520E1CA9F162000FC7FA /* LaunchImage.png */; };
 		B88152131CAAA646000FC7FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B88152111CAAA646000FC7FA /* icon.png */; };
@@ -247,6 +253,9 @@
 		B87214D81CC087590021C8F5 /* GeneralButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralButton.swift; sourceTree = "<group>"; };
 		B87214DB1CC088B30021C8F5 /* HelpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpButton.swift; sourceTree = "<group>"; };
 		B87214DE1CC10BC60021C8F5 /* XTRElementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementTableViewCell.swift; sourceTree = "<group>"; };
+		B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSimpleTransitionController.swift; sourceTree = "<group>"; };
+		B8788CE31CED2EE900D6BD5B /* XTRPopoutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPopoutAnimationController.swift; sourceTree = "<group>"; };
+		B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSlideDownAnimationController.swift; sourceTree = "<group>"; };
 		B881520C1CA9EFDD000FC7FA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B881520E1CA9F162000FC7FA /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
 		B88152111CAAA646000FC7FA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
@@ -311,6 +320,9 @@
 				B82DA0571CC1471C00BD2E41 /* XTRElement.swift */,
 				B82DA04F1CC12D8800BD2E41 /* XTRPropertiesStore.swift */,
 				B87214B01CC01F240021C8F5 /* XTRVersionChecker.swift */,
+				B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */,
+				B8788CE31CED2EE900D6BD5B /* XTRPopoutAnimationController.swift */,
+				B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -546,11 +558,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftMigration = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = xTrensa;
 				TargetAttributes = {
 					97E33561147A938A008147AD = {
-						DevelopmentTeam = V99J3K45A6;
+						DevelopmentTeam = T5533WY4HV;
+						DevelopmentTeamName = "Gulfstream Aerospace Corporation (Ent)";
+						ProvisioningStyle = Automatic;
+					};
+					B899261C1CAAEBAD00E09063 = {
+						DevelopmentTeam = T5533WY4HV;
+						DevelopmentTeamName = "Gulfstream Aerospace Corporation (Ent)";
+						LastSwiftMigration = 0800;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -680,14 +700,17 @@
 				B87214B71CC02BE40021C8F5 /* XTRInfoViewController.swift in Sources */,
 				B8B5BF081CCA9CC700DF9668 /* XTRGraphViewController.swift in Sources */,
 				B8FA72B71CCB1BC6000AB48B /* UIImage-Extensions.swift in Sources */,
+				B8788CE41CED2EE900D6BD5B /* XTRPopoutAnimationController.swift in Sources */,
 				9738259A147AE7E100AEA344 /* UIColor-Expanded.m in Sources */,
 				B8FA72B41CCAE62D000AB48B /* XTRElement-Presentation.swift in Sources */,
 				B827CD441CC7FD3A00E74129 /* XTRAppDelegate.swift in Sources */,
+				B8788CEA1CED379200D6BD5B /* XTRSlideDownAnimationController.swift in Sources */,
 				B827B66C1CCC5C8C009629AF /* MolecularCalculator.swift in Sources */,
 				B891B0021CC4362F00345DBE /* XTRSpectrumViewController.swift in Sources */,
 				B87214D01CC070B30021C8F5 /* DynoTableCell.swift in Sources */,
 				9738259B147AE7E100AEA344 /* UIColor-HSVAdditions.m in Sources */,
 				B8FA72BA1CCB2699000AB48B /* UIColor-Extensions.swift in Sources */,
+				B8788CDF1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift in Sources */,
 				B87214D61CC0819C0021C8F5 /* ElementButton.swift in Sources */,
 				B827CD4F1CC81A5200E74129 /* XTRSwapableViewController.swift in Sources */,
 				B87214B41CC023BC0021C8F5 /* XTRSplashViewController.swift in Sources */,
@@ -735,8 +758,11 @@
 				B89751491CC18DEE005C76C3 /* XTRGraphChoiceViewController.swift in Sources */,
 				B8B5BF091CCA9CC700DF9668 /* XTRGraphViewController.swift in Sources */,
 				B87214B81CC02BE40021C8F5 /* XTRInfoViewController.swift in Sources */,
+				B8788CE51CED2EEF00D6BD5B /* XTRPopoutAnimationController.swift in Sources */,
+				B8788CE21CED2D4D00D6BD5B /* XTRSimpleTransitionController.swift in Sources */,
 				B8FA72B81CCB1BC6000AB48B /* UIImage-Extensions.swift in Sources */,
 				B89751481CC18DE1005C76C3 /* XTRPeriodicTableViewController.swift in Sources */,
+				B8788CEB1CED379200D6BD5B /* XTRSlideDownAnimationController.swift in Sources */,
 				B8FA72B51CCAE62D000AB48B /* XTRElement-Presentation.swift in Sources */,
 				B827CD451CC7FD3A00E74129 /* XTRAppDelegate.swift in Sources */,
 				B827B66D1CCC5C8C009629AF /* MolecularCalculator.swift in Sources */,
@@ -826,7 +852,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OBJROOT = "$(HOME)/Developer/Objects";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -838,7 +864,7 @@
 				SYMROOT = "$(HOME)/Developer/Build";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$HOME/Developer/Source/iOS/Other/PrimaMateria/CorePlot/framework/**";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 armv7s arm64 i386";
 			};
 			name = Debug;
 		};
@@ -879,7 +905,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				OBJROOT = "$(HOME)/Developer/Objects";
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "-ObjC";
@@ -892,13 +918,14 @@
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$HOME/Developer/Source/iOS/Other/PrimaMateria/CorePlot/framework/**";
 				VALIDATE_PRODUCT = YES;
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 armv7s arm64 i386";
 			};
 			name = Release;
 		};
 		97E3358C147A938A008147AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -906,9 +933,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (4K5F63324P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jerry Porter (4K5F63324P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
@@ -922,13 +948,13 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gulfaero.mydocuments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "3ab7f81d-9c65-4d8f-906b-cb89d73a4ed9";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SYMROOT = "$(HOME)/Developer/Build";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../CorePlot/framework/**";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 armv7s arm64 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -936,6 +962,7 @@
 		97E3358D147A938A008147AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -943,9 +970,8 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Gulfstream Aerospace Corporation (Ent)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gulfstream Aerospace Corporation (Ent)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
@@ -959,12 +985,13 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gulfaero.mydocuments;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "785fa71b-9427-45b7-b352-5c482ef92025";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SYMROOT = "$(HOME)/Developer/Build";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../CorePlot/framework/**";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 armv7s arm64 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -972,6 +999,7 @@
 		B899266A1CAAEBAD00E09063 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -979,10 +1007,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (4K5F63324P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jerry Porter (4K5F63324P)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
@@ -992,17 +1019,18 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "";
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gulfaero.mydocuments;
 				PRODUCT_NAME = PrimaMateria;
-				PROVISIONING_PROFILE = "3ab7f81d-9c65-4d8f-906b-cb89d73a4ed9";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 				SYMROOT = "$(HOME)/Developer/Build";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../CorePlot/framework/**";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 armv7s arm64 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1010,6 +1038,7 @@
 		B899266B1CAAEBAD00E09063 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
@@ -1017,10 +1046,9 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: Gulfstream Aerospace Corporation (Ent)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Gulfstream Aerospace Corporation (Ent)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
@@ -1034,12 +1062,14 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gulfaero.mydocuments;
 				PRODUCT_NAME = PrimaMateria;
-				PROVISIONING_PROFILE = "785fa71b-9427-45b7-b352-5c482ef92025";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
 				SYMROOT = "$(HOME)/Developer/Build";
 				TARGETED_DEVICE_FAMILY = 2;
 				USER_HEADER_SEARCH_PATHS = "$(SOURCE_ROOT)/../CorePlot/framework/**";
-				VALID_ARCHS = "armv6 armv7 i386";
+				VALID_ARCHS = "armv7 armv7s arm64 i386";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
