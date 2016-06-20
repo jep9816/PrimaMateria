@@ -14,7 +14,7 @@ extension UIImage {
         CGContextSetFillColorWithColor(context, color.CGColor);
         CGContextFillRect(context, rect);
         
-        let img : UIImage = UIGraphicsGetImageFromCurrentImageContext();
+        let img : UIImage = UIGraphicsGetImageFromCurrentImageContext()!;
         UIGraphicsEndImageContext();
         
         return img;

@@ -110,7 +110,7 @@
     // MARK: - Accessor Methods
     
     func elementForSymbol(symbol: String) -> XTRElement? {
-        for index in 0...self.elementList!.count {
+        for index in 0..<self.elementList!.count {
             let element : XTRElement? = self.elementList?.objectAtIndex(index) as? XTRElement
             if (element!.symbol() == symbol) {
                 return element

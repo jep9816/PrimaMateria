@@ -31,7 +31,7 @@
         
         let url : NSURL = NSURL.init(fileURLWithPath: settingsBundle)
         let url2 = url.URLByAppendingPathComponent("Root.plist")
-        let settings : NSDictionary = NSDictionary.init(contentsOfURL: url2)!
+        let settings : NSDictionary = NSDictionary.init(contentsOfURL: url2!)!
         
         guard let preferences = settings.objectForKey("PreferenceSpecifiers") as? NSArray else {
             return
