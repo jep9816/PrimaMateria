@@ -17,13 +17,13 @@
 	<key>atomicNumber</key>
 	<integer>114</integer>
 	<key>atomicRadius</key>
-	<string></string>
+	<string> 180 </string>
 	<key>atomicVolume</key>
 	<string></string>
 	<key>boilingPoint</key>
-	<string></string>
+	<string>147</string>
 	<key>boilingPointFootnote</key>
-	<string></string>
+	<string>(predicted)</string>
 	<key>casRegistryNumber</key>
 	<string>54085-16-4</string>
 	<key>coefficientOfLinealThermalExpansion</key>
@@ -33,7 +33,7 @@
 	<key>conductivityThermal</key>
 	<string></string>
 	<key>covalentRadius</key>
-	<string></string>
+	<string>171–177</string>
 	<key>criticalTemperature</key>
 	<string></string>
 	<key>crossSection</key>
@@ -41,7 +41,7 @@
 	<key>crystalStructure</key>
 	<string>Unknown</string>
 	<key>density</key>
-	<string></string>
+	<string>14</string>
 	<key>descr</key>
 	<string>Man made element of which only a few atoms have ever been created.</string>
 	<key>discoverer</key>
@@ -129,7 +129,7 @@
 	<key>heatOfFusion</key>
 	<string></string>
 	<key>heatOfVaporization</key>
-	<string></string>
+	<string>38</string>
 	<key>incompatibilities</key>
 	<string></string>
 	<key>ionicRadius</key>
@@ -141,9 +141,9 @@
 	<key>ionizationPotentialThird</key>
 	<string></string>
 	<key>meltingPoint</key>
-	<string></string>
+	<string> 67 </string>
 	<key>meltingPointFootnote</key>
-	<string></string>
+	<string>(predicted)</string>
 	<key>molarHeatCapacity</key>
 	<string></string>
 	<key>molarVolume</key>
@@ -197,7 +197,7 @@
 	<key>opticalRefractiveIndex</key>
 	<string></string>
 	<key>oxidationStates</key>
-	<string></string>
+	<string>0, 1, 2, 4, 6 </string>
 	<key>period</key>
 	<string>7</string>
 	<key>qualitativeSolubility</key>

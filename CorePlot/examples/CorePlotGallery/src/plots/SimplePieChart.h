@@ -1,9 +1,6 @@
 //
-//  SimplePieChart.h
-//  CorePlotGallery
-//
-//  Created by Jeff Buck on 8/2/10.
-//  Copyright 2010 Jeff Buck. All rights reserved.
+// SimplePieChart.h
+// CorePlotGallery
 //
 
 #import "PlotItem.h"
@@ -12,9 +9,5 @@
                                      CPTPieChartDelegate,
                                      CPTLegendDelegate,
                                      CPTPlotDataSource>
-{
-    @private
-    NSArray *plotData;
-}
 
 @end

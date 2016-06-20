@@ -1,16 +1,45 @@
 //
-//  CPTTestApp_iPadViewController.m
-//  CPTTestApp-iPad
+// CPTTestApp_iPadViewController.m
+// CPTTestApp-iPad
 //
-//  Created by Brad Larson on 4/1/2010.
+// Created by Brad Larson on 4/1/2010.
 //
 
 #import "CPTTestApp_iPadViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
+@interface CPTTestApp_iPadViewController()
+
+@property (nonatomic, readwrite, strong) IBOutlet CPTGraphHostingView *scatterPlotView;
+@property (nonatomic, readwrite, strong) IBOutlet CPTGraphHostingView *barChartView;
+@property (nonatomic, readwrite, strong) IBOutlet CPTGraphHostingView *pieChartView;
+
+@property (nonatomic, readwrite, strong) CPTXYGraph *graph;
+@property (nonatomic, readwrite, strong) CPTXYGraph *barChart;
+@property (nonatomic, readwrite, strong) CPTXYGraph *pieGraph;
+
+@property (nonatomic, readwrite, strong) CPTPieChart *piePlot;
+@property (nonatomic, readwrite, assign) BOOL piePlotIsRotating;
+
+@end
+
+#pragma mark -
+
 @implementation CPTTestApp_iPadViewController
 
-@synthesize dataForChart, dataForPlot;
+@synthesize dataForChart;
+@synthesize dataForPlot;
+
+@synthesize scatterPlotView;
+@synthesize barChartView;
+@synthesize pieChartView;
+
+@synthesize graph;
+@synthesize barChart;
+@synthesize pieGraph;
+
+@synthesize piePlot;
+@synthesize piePlotIsRotating;
 
 #pragma mark -
 #pragma mark Initialization and teardown
@@ -36,51 +65,15 @@
     rotation.duration            = 1.0;
     rotation.timingFunction      = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut];
     rotation.delegate            = self;
-    [piePlot addAnimation:rotation forKey:@"rotation"];
+    [self.piePlot addAnimation:rotation forKey:@"rotation"];
 
-    piePlotIsRotating = YES;
+    self.piePlotIsRotating = YES;
 }
 
 -(void)animationDidStop:(CAAnimation *)theAnimation finished:(BOOL)flag
 {
-    piePlotIsRotating = NO;
-    [piePlot performSelector:@selector(reloadData) withObject:nil afterDelay:0.4];
-}
-
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
-}
-
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
-{
-    if ( UIInterfaceOrientationIsLandscape(fromInterfaceOrientation) ) {
-        // Move the plots into place for portrait
-        scatterPlotView.frame = CGRectMake(20.0, 55.0, 728.0, 556.0);
-        barChartView.frame    = CGRectMake(20.0, 644.0, 340.0, 340.0);
-        pieChartView.frame    = CGRectMake(408.0, 644.0, 340.0, 340.0);
-    }
-    else {
-        // Move the plots into place for landscape
-        scatterPlotView.frame = CGRectMake(20.0, 51.0, 628.0, 677.0);
-        barChartView.frame    = CGRectMake(684.0, 51.0, 320.0, 320.0);
-        pieChartView.frame    = CGRectMake(684.0, 408.0, 320.0, 320.0);
-    }
-}
-
--(void)didReceiveMemoryWarning
-{
-    // Releases the view if it doesn't have a superview.
-    [super didReceiveMemoryWarning];
-
-    // Release any cached data, images, etc that aren't in use.
-}
-
--(void)viewDidUnload
-{
-    // Release any retained subviews of the main view.
-    // e.g. self.myOutlet = nil;
-    [super viewDidUnload];
+    self.piePlotIsRotating = NO;
+    [self.piePlot performSelector:@selector(reloadData) withObject:nil afterDelay:0.4];
 }
 
 #pragma mark -
@@ -89,40 +82,42 @@
 -(void)constructScatterPlot
 {
     // Create graph from theme
-    graph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
-    CPTTheme *theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
-    [graph applyTheme:theme];
-    scatterPlotView.hostedGraph = graph;
+    CPTXYGraph *newGraph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    CPTTheme *theme      = [CPTTheme themeNamed:kCPTDarkGradientTheme];
 
-    graph.paddingLeft   = 10.0;
-    graph.paddingTop    = 10.0;
-    graph.paddingRight  = 10.0;
-    graph.paddingBottom = 10.0;
+    [newGraph applyTheme:theme];
+    self.scatterPlotView.hostedGraph = newGraph;
+    self.graph                       = newGraph;
+
+    newGraph.paddingLeft   = 10.0;
+    newGraph.paddingTop    = 10.0;
+    newGraph.paddingRight  = 10.0;
+    newGraph.paddingBottom = 10.0;
 
     // Setup plot space
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)newGraph.defaultPlotSpace;
     plotSpace.allowsUserInteraction = YES;
-    plotSpace.xRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(1.0) length:CPTDecimalFromDouble(2.0)];
-    plotSpace.yRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(1.0) length:CPTDecimalFromDouble(3.0)];
+    plotSpace.xRange                = [CPTPlotRange plotRangeWithLocation:@1.0 length:@2.0];
+    plotSpace.yRange                = [CPTPlotRange plotRangeWithLocation:@1.0 length:@3.0];
 
     // Axes
-    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)newGraph.axisSet;
     CPTXYAxis *x          = axisSet.xAxis;
-    x.majorIntervalLength         = CPTDecimalFromDouble(0.5);
-    x.orthogonalCoordinateDecimal = CPTDecimalFromDouble(2.0);
-    x.minorTicksPerInterval       = 2;
-    NSArray *exclusionRanges = @[[CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(1.99) length:CPTDecimalFromDouble(0.02)],
-                                 [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(0.99) length:CPTDecimalFromDouble(0.02)],
-                                 [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(2.99) length:CPTDecimalFromDouble(0.02)]];
+    x.majorIntervalLength   = @0.5;
+    x.orthogonalPosition    = @2.0;
+    x.minorTicksPerInterval = 2;
+    CPTPlotRangeArray exclusionRanges = @[[CPTPlotRange plotRangeWithLocation:@1.99 length:@0.02],
+                                          [CPTPlotRange plotRangeWithLocation:@0.99 length:@0.02],
+                                          [CPTPlotRange plotRangeWithLocation:@2.99 length:@0.02]];
     x.labelExclusionRanges = exclusionRanges;
 
     CPTXYAxis *y = axisSet.yAxis;
-    y.majorIntervalLength         = CPTDecimalFromDouble(0.5);
-    y.minorTicksPerInterval       = 5;
-    y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(2.0);
-    exclusionRanges               = @[[CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(1.99) length:CPTDecimalFromDouble(0.02)],
-                                      [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(0.99) length:CPTDecimalFromDouble(0.02)],
-                                      [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(3.99) length:CPTDecimalFromDouble(0.02)]];
+    y.majorIntervalLength   = @0.5;
+    y.minorTicksPerInterval = 5;
+    y.orthogonalPosition    = @2.0;
+    exclusionRanges         = @[[CPTPlotRange plotRangeWithLocation:@1.99 length:@0.02],
+                                [CPTPlotRange plotRangeWithLocation:@0.99 length:@0.02],
+                                [CPTPlotRange plotRangeWithLocation:@3.99 length:@0.02]];
     y.labelExclusionRanges = exclusionRanges;
 
     // Create a green plot area
@@ -138,17 +133,17 @@
     dataSourceLinePlot.dataSource = self;
 
     // Put an area gradient under the plot above
-    CPTColor *areaColor       = [CPTColor colorWithComponentRed:0.3 green:1.0 blue:0.3 alpha:0.8];
+    CPTColor *areaColor       = [CPTColor colorWithComponentRed:CPTFloat(0.3) green:CPTFloat(1.0) blue:CPTFloat(0.3) alpha:CPTFloat(0.8)];
     CPTGradient *areaGradient = [CPTGradient gradientWithBeginningColor:areaColor endingColor:[CPTColor clearColor]];
     areaGradient.angle = -90.0;
     CPTFill *areaGradientFill = [CPTFill fillWithGradient:areaGradient];
     dataSourceLinePlot.areaFill      = areaGradientFill;
-    dataSourceLinePlot.areaBaseValue = CPTDecimalFromDouble(1.75);
+    dataSourceLinePlot.areaBaseValue = @1.75;
 
     // Animate in the new plot, as an example
     dataSourceLinePlot.opacity        = 0.0;
     dataSourceLinePlot.cachePrecision = CPTPlotCachePrecisionDecimal;
-    [graph addPlot:dataSourceLinePlot];
+    [newGraph addPlot:dataSourceLinePlot];
 
     CABasicAnimation *fadeInAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
     fadeInAnimation.duration            = 1.0;
@@ -169,15 +164,15 @@
     boundLinePlot.dataSource     = self;
     boundLinePlot.cachePrecision = CPTPlotCachePrecisionDouble;
     boundLinePlot.interpolation  = CPTScatterPlotInterpolationHistogram;
-    [graph addPlot:boundLinePlot];
+    [newGraph addPlot:boundLinePlot];
 
     // Do a blue gradient
-    CPTColor *areaColor1       = [CPTColor colorWithComponentRed:0.3 green:0.3 blue:1.0 alpha:0.8];
+    CPTColor *areaColor1       = [CPTColor colorWithComponentRed:CPTFloat(0.3) green:CPTFloat(0.3) blue:CPTFloat(1.0) alpha:CPTFloat(0.8)];
     CPTGradient *areaGradient1 = [CPTGradient gradientWithBeginningColor:areaColor1 endingColor:[CPTColor clearColor]];
     areaGradient1.angle         = -90.0;
     areaGradientFill            = [CPTFill fillWithGradient:areaGradient1];
     boundLinePlot.areaFill      = areaGradientFill;
-    boundLinePlot.areaBaseValue = [[NSDecimalNumber zero] decimalValue];
+    boundLinePlot.areaBaseValue = @0.0;
 
     // Add plot symbols
     CPTMutableLineStyle *symbolLineStyle = [CPTMutableLineStyle lineStyle];
@@ -189,11 +184,11 @@
     boundLinePlot.plotSymbol = plotSymbol;
 
     // Add some initial data
-    NSMutableArray *contentArray = [NSMutableArray arrayWithCapacity:100];
+    NSMutableArray<NSDictionary *> *contentArray = [NSMutableArray arrayWithCapacity:100];
     for ( NSUInteger i = 0; i < 60; i++ ) {
-        NSNumber *x = @(1 + i * 0.05);
-        NSNumber *y = @(1.2 * rand() / (double)RAND_MAX + 1.2);
-        [contentArray addObject:@{ @"x": x, @"y": y }];
+        NSNumber *xVal = @(1 + i * 0.05);
+        NSNumber *yVal = @(1.2 * arc4random() / (double)UINT32_MAX + 1.2);
+        [contentArray addObject:@{ @"x": xVal, @"y": yVal }];
     }
     self.dataForPlot = contentArray;
 }
@@ -201,117 +196,125 @@
 -(void)constructBarChart
 {
     // Create barChart from theme
-    barChart = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
-    CPTTheme *theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
-    [barChart applyTheme:theme];
-    barChartView.hostedGraph             = barChart;
-    barChart.plotAreaFrame.masksToBorder = NO;
+    CPTXYGraph *newGraph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    CPTTheme *theme      = [CPTTheme themeNamed:kCPTDarkGradientTheme];
 
-    barChart.paddingLeft   = 70.0;
-    barChart.paddingTop    = 20.0;
-    barChart.paddingRight  = 20.0;
-    barChart.paddingBottom = 80.0;
+    [newGraph applyTheme:theme];
+
+    self.barChartView.hostedGraph = newGraph;
+    self.barChart                 = newGraph;
+
+    newGraph.plotAreaFrame.masksToBorder = NO;
+
+    newGraph.paddingLeft   = 70.0;
+    newGraph.paddingTop    = 20.0;
+    newGraph.paddingRight  = 20.0;
+    newGraph.paddingBottom = 80.0;
 
     // Add plot space for horizontal bar charts
-    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)barChart.defaultPlotSpace;
-    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(300.0f)];
-    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromFloat(0.0f) length:CPTDecimalFromFloat(16.0f)];
+    CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)newGraph.defaultPlotSpace;
+    plotSpace.yRange = [CPTPlotRange plotRangeWithLocation:@0.0 length:@300.0];
+    plotSpace.xRange = [CPTPlotRange plotRangeWithLocation:@0.0 length:@16.0];
 
-    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)barChart.axisSet;
+    CPTXYAxisSet *axisSet = (CPTXYAxisSet *)newGraph.axisSet;
     CPTXYAxis *x          = axisSet.xAxis;
-    x.axisLineStyle               = nil;
-    x.majorTickLineStyle          = nil;
-    x.minorTickLineStyle          = nil;
-    x.majorIntervalLength         = CPTDecimalFromDouble(5.0);
-    x.orthogonalCoordinateDecimal = CPTDecimalFromDouble(0.0);
-    x.title                       = @"X Axis";
-    x.titleLocation               = CPTDecimalFromFloat(7.5f);
-    x.titleOffset                 = 55.0;
+    x.axisLineStyle       = nil;
+    x.majorTickLineStyle  = nil;
+    x.minorTickLineStyle  = nil;
+    x.majorIntervalLength = @5.0;
+    x.orthogonalPosition  = @0.0;
+    x.title               = @"X Axis";
+    x.titleLocation       = @7.5;
+    x.titleOffset         = 55.0;
 
     // Define some custom labels for the data elements
-    x.labelRotation  = M_PI_4;
+    x.labelRotation  = CPTFloat(M_PI_4);
     x.labelingPolicy = CPTAxisLabelingPolicyNone;
-    NSArray *customTickLocations = @[@1, @5, @10, @15];
-    NSArray *xAxisLabels         = @[@"Label A", @"Label B", @"Label C", @"Label D"];
-    NSUInteger labelLocation     = 0;
-    NSMutableSet *customLabels   = [NSMutableSet setWithCapacity:[xAxisLabels count]];
+    CPTNumberArray customTickLocations  = @[@1, @5, @10, @15];
+    CPTStringArray xAxisLabels          = @[@"Label A", @"Label B", @"Label C", @"Label D"];
+    NSUInteger labelLocation            = 0;
+    CPTMutableAxisLabelSet customLabels = [NSMutableSet setWithCapacity:[xAxisLabels count]];
     for ( NSNumber *tickLocation in customTickLocations ) {
         CPTAxisLabel *newLabel = [[CPTAxisLabel alloc] initWithText:xAxisLabels[labelLocation++] textStyle:x.labelTextStyle];
-        newLabel.tickLocation = [tickLocation decimalValue];
+        newLabel.tickLocation = tickLocation;
         newLabel.offset       = x.labelOffset + x.majorTickLength;
-        newLabel.rotation     = M_PI_4;
+        newLabel.rotation     = CPTFloat(M_PI_4);
         [customLabels addObject:newLabel];
     }
 
     x.axisLabels = customLabels;
 
     CPTXYAxis *y = axisSet.yAxis;
-    y.axisLineStyle               = nil;
-    y.majorTickLineStyle          = nil;
-    y.minorTickLineStyle          = nil;
-    y.majorIntervalLength         = CPTDecimalFromDouble(50.0);
-    y.orthogonalCoordinateDecimal = CPTDecimalFromDouble(0.0);
-    y.title                       = @"Y Axis";
-    y.titleOffset                 = 45.0;
-    y.titleLocation               = CPTDecimalFromFloat(150.0f);
+    y.axisLineStyle       = nil;
+    y.majorTickLineStyle  = nil;
+    y.minorTickLineStyle  = nil;
+    y.majorIntervalLength = @50.0;
+    y.orthogonalPosition  = @0.0;
+    y.title               = @"Y Axis";
+    y.titleOffset         = 45.0;
+    y.titleLocation       = @150.0;
 
     // First bar plot
     CPTBarPlot *barPlot = [CPTBarPlot tubularBarPlotWithColor:[CPTColor darkGrayColor] horizontalBars:NO];
-    barPlot.baseValue  = CPTDecimalFromDouble(0.0);
+    barPlot.baseValue  = @0.0;
     barPlot.dataSource = self;
-    barPlot.barOffset  = CPTDecimalFromFloat(-0.25f);
+    barPlot.barOffset  = @(-0.25);
     barPlot.identifier = @"Bar Plot 1";
-    [barChart addPlot:barPlot toPlotSpace:plotSpace];
+    [newGraph addPlot:barPlot toPlotSpace:plotSpace];
 
     // Second bar plot
     barPlot                 = [CPTBarPlot tubularBarPlotWithColor:[CPTColor blueColor] horizontalBars:NO];
     barPlot.dataSource      = self;
-    barPlot.baseValue       = CPTDecimalFromDouble(0.0);
-    barPlot.barOffset       = CPTDecimalFromFloat(0.25f);
+    barPlot.baseValue       = @0.0;
+    barPlot.barOffset       = @0.25;
     barPlot.barCornerRadius = 2.0;
     barPlot.identifier      = @"Bar Plot 2";
     barPlot.delegate        = self;
-    [barChart addPlot:barPlot toPlotSpace:plotSpace];
+    [newGraph addPlot:barPlot toPlotSpace:plotSpace];
 }
 
 -(void)constructPieChart
 {
     // Create pieChart from theme
-    pieGraph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
-    CPTTheme *theme = [CPTTheme themeNamed:kCPTDarkGradientTheme];
-    [pieGraph applyTheme:theme];
-    pieChartView.hostedGraph             = pieGraph;
-    pieGraph.plotAreaFrame.masksToBorder = NO;
+    CPTXYGraph *newGraph = [[CPTXYGraph alloc] initWithFrame:CGRectZero];
+    CPTTheme *theme      = [CPTTheme themeNamed:kCPTDarkGradientTheme];
 
-    pieGraph.paddingLeft   = 20.0;
-    pieGraph.paddingTop    = 20.0;
-    pieGraph.paddingRight  = 20.0;
-    pieGraph.paddingBottom = 20.0;
+    [newGraph applyTheme:theme];
 
-    pieGraph.axisSet = nil;
+    self.pieChartView.hostedGraph = newGraph;
+    self.pieGraph                 = newGraph;
+
+    newGraph.plotAreaFrame.masksToBorder = NO;
+
+    newGraph.paddingLeft   = 20.0;
+    newGraph.paddingTop    = 20.0;
+    newGraph.paddingRight  = 20.0;
+    newGraph.paddingBottom = 20.0;
+
+    newGraph.axisSet = nil;
 
     // Prepare a radial overlay gradient for shading/gloss
     CPTGradient *overlayGradient = [[CPTGradient alloc] init];
     overlayGradient.gradientType = CPTGradientTypeRadial;
-    overlayGradient              = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.0] atPosition:0.0];
-    overlayGradient              = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.3] atPosition:0.9];
-    overlayGradient              = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:0.7] atPosition:1.0];
+    overlayGradient              = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:CPTFloat(0.0)] atPosition:CPTFloat(0.0)];
+    overlayGradient              = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:CPTFloat(0.3)] atPosition:CPTFloat(0.9)];
+    overlayGradient              = [overlayGradient addColorStop:[[CPTColor blackColor] colorWithAlphaComponent:CPTFloat(0.7)] atPosition:CPTFloat(1.0)];
 
     // Add pie chart
-    piePlot                 = [[CPTPieChart alloc] init];
-    piePlot.dataSource      = self;
-    piePlot.pieRadius       = 130.0;
-    piePlot.identifier      = @"Pie Chart 1";
-    piePlot.startAngle      = M_PI_4;
-    piePlot.sliceDirection  = CPTPieDirectionCounterClockwise;
-    piePlot.borderLineStyle = [CPTLineStyle lineStyle];
-    piePlot.labelOffset     = 5.0;
-    piePlot.overlayFill     = [CPTFill fillWithGradient:overlayGradient];
-    [pieGraph addPlot:piePlot];
+    CPTPieChart *newPlot = [[CPTPieChart alloc] init];
+    newPlot.dataSource      = self;
+    newPlot.pieRadius       = 130.0;
+    newPlot.identifier      = @"Pie Chart 1";
+    newPlot.startAngle      = CPTFloat(M_PI_4);
+    newPlot.sliceDirection  = CPTPieDirectionCounterClockwise;
+    newPlot.borderLineStyle = [CPTLineStyle lineStyle];
+    newPlot.labelOffset     = 5.0;
+    newPlot.overlayFill     = [CPTFill fillWithGradient:overlayGradient];
+    [newGraph addPlot:newPlot];
+    self.piePlot = newPlot;
 
     // Add some initial data
-    NSMutableArray *contentArray = [NSMutableArray arrayWithObjects:@20.0, @30.0, @(NAN), @60.0, nil];
-    self.dataForChart = contentArray;
+    self.dataForChart = @[@20.0, @30.0, @(NAN), @60.0];
 }
 
 #pragma mark -
@@ -319,7 +322,7 @@
 
 -(void)barPlot:(CPTBarPlot *)plot barWasSelectedAtRecordIndex:(NSUInteger)index
 {
-    NSLog(@"barWasSelectedAtRecordIndex %d", index);
+    NSLog(@"barWasSelectedAtRecordIndex %lu", (unsigned long)index);
 }
 
 #pragma mark -
@@ -328,17 +331,17 @@
 -(NSUInteger)numberOfRecordsForPlot:(CPTPlot *)plot
 {
     if ( [plot isKindOfClass:[CPTPieChart class]] ) {
-        return [self.dataForChart count];
+        return self.dataForChart.count;
     }
     else if ( [plot isKindOfClass:[CPTBarPlot class]] ) {
         return 16;
     }
     else {
-        return [dataForPlot count];
+        return self.dataForPlot.count;
     }
 }
 
--(NSNumber *)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
+-(id)numberForPlot:(CPTPlot *)plot field:(NSUInteger)fieldEnum recordIndex:(NSUInteger)index
 {
     NSNumber *num = nil;
 
@@ -381,9 +384,9 @@
     else {
         if ( index % 8 ) {
             NSString *key = (fieldEnum == CPTScatterPlotFieldX ? @"x" : @"y");
-            num = dataForPlot[index][key];
+            num = self.dataForPlot[index][key];
             // Green plot gets shifted above the blue
-            if ( [(NSString *)plot.identifier isEqualToString : @"Green Plot"] ) {
+            if ( [(NSString *) plot.identifier isEqualToString:@"Green Plot"] ) {
                 if ( fieldEnum == CPTScatterPlotFieldY ) {
                     num = @([num doubleValue] + 1.0);
                 }
@@ -399,16 +402,17 @@
 
 -(CPTLayer *)dataLabelForPlot:(CPTPlot *)plot recordIndex:(NSUInteger)index
 {
-    if ( piePlotIsRotating ) {
+    if ( self.piePlotIsRotating ) {
         return nil;
     }
 
     static CPTMutableTextStyle *whiteText = nil;
+    static dispatch_once_t onceToken      = 0;
 
-    if ( !whiteText ) {
-        whiteText       = [[CPTMutableTextStyle alloc] init];
+    dispatch_once(&onceToken, ^{
+        whiteText = [[CPTMutableTextStyle alloc] init];
         whiteText.color = [CPTColor whiteColor];
-    }
+    });
 
     CPTTextLayer *newLayer = nil;
 

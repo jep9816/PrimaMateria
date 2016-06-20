@@ -1,4 +1,5 @@
 #import "CPTDarkGradientThemeTests.h"
+
 #import "CPTDerivedXYGraph.h"
 #import "_CPTDarkGradientTheme.h"
 
@@ -13,7 +14,7 @@
     CPTGraph *graph = [theme newGraph];
 
     // Assert
-    STAssertEquals([graph class], [CPTXYGraph class], @"graph should be of type CPTXYGraph");
+    XCTAssertEqual([graph class], [CPTXYGraph class], @"graph should be of type CPTXYGraph");
 }
 
 -(void)testNewThemeSetGraphClassReturnedClassShouldBeOfCorrectType
@@ -27,7 +28,7 @@
     CPTGraph *graph = [theme newGraph];
 
     // Assert
-    STAssertEquals([graph class], [CPTDerivedXYGraph class], @"graph should be of type CPTDerivedXYGraph");
+    XCTAssertEqual([graph class], [CPTDerivedXYGraph class], @"graph should be of type CPTDerivedXYGraph");
 }
 
 @end

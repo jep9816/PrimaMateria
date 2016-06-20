@@ -46,7 +46,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Coefficient of Lineal Thermal Expansion * 100,000</string>
+		<string>Coefficient of Lineal Thermal Expansion * 100K</string>
 		<key>attributeName</key>
 		<string>coefficientOfLinealThermalExpansion</string>
 		<key>majorTickMarks</key>

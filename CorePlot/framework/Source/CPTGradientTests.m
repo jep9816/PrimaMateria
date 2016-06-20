@@ -1,5 +1,6 @@
-#import "CPTGradient.h"
 #import "CPTGradientTests.h"
+
+#import "CPTGradient.h"
 
 @implementation CPTGradientTests
 
@@ -12,7 +13,7 @@
 
     CPTGradient *newGradient = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject:gradient]];
 
-    STAssertEqualObjects(gradient, newGradient, @"Gradients not equal");
+    XCTAssertEqualObjects(gradient, newGradient, @"Gradients not equal");
 }
 
 @end

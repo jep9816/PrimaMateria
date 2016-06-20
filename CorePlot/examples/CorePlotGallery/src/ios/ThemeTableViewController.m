@@ -1,30 +1,42 @@
 //
-//  ThemeTableViewController.m
-//  CorePlotGallery
-//
-//  Created by Jeff Buck on 8/31/10.
-//  Copyright 2010 Jeff Buck. All rights reserved.
+// ThemeTableViewController.m
+// CorePlotGallery
 //
 
-#import "CorePlot-CocoaTouch.h"
 #import "ThemeTableViewController.h"
+
+#import <CorePlot/CorePlot.h>
+
+NSString *const kThemeTableViewControllerNoTheme      = @"None";
+NSString *const kThemeTableViewControllerDefaultTheme = @"Default";
+
+NSString *const PlotGalleryThemeDidChangeNotification = @"PlotGalleryThemeDidChangeNotification";
+NSString *const PlotGalleryThemeNameKey               = @"PlotGalleryThemeNameKey";
+
+@interface ThemeTableViewController()
+
+@property (nonatomic, readwrite, strong) CPTMutableStringArray themes;
+
+@end
+
+#pragma mark -
 
 @implementation ThemeTableViewController
 
-@synthesize themePopoverController;
-@synthesize delegate;
+@synthesize themes;
 
 -(void)setupThemes
 {
-    [themes release];
-    themes = [[NSMutableArray alloc] init];
+    CPTMutableStringArray themeList = [[NSMutableArray alloc] init];
 
-    [themes addObject:kThemeTableViewControllerDefaultTheme];
-    [themes addObject:kThemeTableViewControllerNoTheme];
+    [themeList addObject:kThemeTableViewControllerDefaultTheme];
+    [themeList addObject:kThemeTableViewControllerNoTheme];
 
-    for ( Class c in [CPTTheme themeClasses] ) {
-        [themes addObject:[c name]];
+    for ( Class themeClass in [CPTTheme themeClasses] ) {
+        [themeList addObject:[themeClass name]];
     }
+
+    self.themes = themeList;
 }
 
 -(void)awakeFromNib
@@ -32,18 +44,13 @@
     [self setupThemes];
 }
 
--(id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    if ( self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil] ) {
+    if ( (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) ) {
         [self setupThemes];
     }
 
     return self;
-}
-
--(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return YES;
 }
 
 #pragma mark -
@@ -56,10 +63,9 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [themes count];
+    return (NSInteger)self.themes.count;
 }
 
-// Customize the appearance of table view cells.
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"ThemeCell";
@@ -67,10 +73,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
     if ( cell == nil ) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
 
-    cell.textLabel.text = themes[indexPath.row];
+    cell.textLabel.text = self.themes[(NSUInteger)indexPath.row];
 
     return cell;
 }
@@ -80,28 +86,15 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [delegate themeSelectedAtIndex:themes[indexPath.row]];
-}
+    NSDictionary<NSString *, NSString *> *themeInfo = @{
+        PlotGalleryThemeNameKey: self.themes[(NSUInteger)indexPath.row]
+    };
 
-#pragma mark -
-#pragma mark Memory management
+    [[NSNotificationCenter defaultCenter] postNotificationName:PlotGalleryThemeDidChangeNotification
+                                                        object:self
+                                                      userInfo:themeInfo];
 
--(void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-}
-
--(void)viewDidUnload
-{
-}
-
--(void)dealloc
-{
-    [self.tableView setDataSource:nil];
-    [self.tableView setDelegate:nil];
-    [delegate release];
-    [themes release];
-    [super dealloc];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

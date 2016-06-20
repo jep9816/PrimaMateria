@@ -1,9 +1,9 @@
 //
-//  AAPLotAppDelegate.m
-//  AAPLot
+// AAPLotAppDelegate.m
+// AAPLot
 //
-//  Created by Jonathan Saggau on 6/9/09.
-//  Copyright Sounds Broken inc. 2009. All rights reserved.
+// Created by Jonathan Saggau on 6/9/09.
+// Copyright Sounds Broken inc. 2009. All rights reserved.
 //
 
 #import "AAPLotAppDelegate.h"
@@ -16,20 +16,8 @@
 
 -(void)applicationDidFinishLaunching:(UIApplication *)application
 {
-    if ( [self.window respondsToSelector:@selector(setRootViewController:)] ) {
-        self.window.rootViewController = self.rootViewController;
-    }
-    else {
-        [self.window addSubview:self.rootViewController.view];
-    }
+    self.window.rootViewController = self.rootViewController;
     [self.window makeKeyAndVisible];
-}
-
--(void)dealloc
-{
-    [rootViewController release];
-    [window release];
-    [super dealloc];
 }
 
 @end

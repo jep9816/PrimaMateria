@@ -1,13 +1,12 @@
 #import "CPTTestCase.h"
 
+#import "CPTDefinitions.h"
+
 @class CPTLayer;
 
-@interface CPTLayerTests : CPTTestCase {
-    CPTLayer *layer;
-    NSArray *positions;
-}
+@interface CPTLayerTests : CPTTestCase
 
-@property (readwrite, strong) CPTLayer *layer;
-@property (readwrite, strong) NSArray *positions;
+@property (nonatomic, readwrite, strong) CPTLayer *layer;
+@property (nonatomic, readwrite, strong) CPTNumberArray positions;
 
 @end

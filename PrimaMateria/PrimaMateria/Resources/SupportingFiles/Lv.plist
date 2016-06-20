@@ -1,4 +1,4 @@
-Cn.plistCn.pngCn.rtf<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
@@ -15,7 +15,7 @@ Cn.plistCn.pngCn.rtf<?xml version="1.0" encoding="UTF-8"?>
 	<key>atomicMassKnownAccurately</key>
 	<false/>
 	<key>atomicNumber</key>
-	<integer>112</integer>
+	<integer>116</integer>
 	<key>atomicRadius</key>
 	<string></string>
 	<key>atomicVolume</key>
@@ -25,7 +25,7 @@ Cn.plistCn.pngCn.rtf<?xml version="1.0" encoding="UTF-8"?>
 	<key>boilingPointFootnote</key>
 	<string></string>
 	<key>casRegistryNumber</key>
-	<string>TBD</string>
+	<string>54100-71-9</string>
 	<key>coefficientOfLinealThermalExpansion</key>
 	<string></string>
 	<key>conductivityElectrical</key>

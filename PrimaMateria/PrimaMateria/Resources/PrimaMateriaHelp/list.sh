@@ -1,11 +1,5 @@
-tidy -utf8 -indent AboutPanel.html -m AboutPanel.html
-tidy -utf8 -indent ElementInspector.html -m ElementInspector.html
-tidy -utf8 -indent GeneralInfo.html -m GeneralInfo.html
-tidy -utf8 -indent HelpPanel.html -m HelpPanel.html
-tidy -utf8 -indent MolecularCalculator.html -m MolecularCalculator.html
-tidy -utf8 -indent PeriodicChart.html -m PeriodicChart.html
-tidy -utf8 -indent PreferencesPanel.html -m PreferencesPanel.html
-tidy -utf8 -indent References.html -m References.html
-tidy -utf8 -indent index.html -m index.html
-tidy -utf8 -indent license.html -m license.html
-tidy -utf8 -indent release_notes.html -m release_notes.html
+tidy GeneralInfo.html -m GeneralInfo.html
+tidy References.html -m References.html
+tidy ReleaseNotes.html -m ReleaseNotes.html
+tidy index.html -m index.html
+tidy License.html -m License.html

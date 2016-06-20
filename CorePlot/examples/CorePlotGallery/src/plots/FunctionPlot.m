@@ -4,7 +4,7 @@
 
 @interface FunctionPlot()
 
-@property (nonatomic, readwrite, retain) NSMutableSet *dataSources;
+@property (nonatomic, readwrite, strong) NSMutableSet<CPTFunctionDataSource *> *dataSources;
 
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
 -(UIFont *)italicFontForFont:(UIFont *)oldFont;
@@ -29,7 +29,7 @@
 
 #pragma mark -
 
--(id)init
+-(instancetype)init
 {
     if ( (self = [super init]) ) {
         dataSources = [[NSMutableSet alloc] init];
@@ -41,12 +41,6 @@
     return self;
 }
 
--(void)dealloc
-{
-    [dataSources release];
-    [super dealloc];
-}
-
 -(void)killGraph
 {
     [self.dataSources removeAllObjects];
@@ -54,37 +48,34 @@
     [super killGraph];
 }
 
--(void)renderInLayer:(CPTGraphHostingView *)layerHostingView withTheme:(CPTTheme *)theme animated:(BOOL)animated
+-(void)renderInGraphHostingView:(CPTGraphHostingView *)hostingView withTheme:(CPTTheme *)theme animated:(BOOL)animated
 {
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-    CGRect bounds = layerHostingView.bounds;
+    CGRect bounds = hostingView.bounds;
 #else
-    CGRect bounds = NSRectToCGRect(layerHostingView.bounds);
+    CGRect bounds = NSRectToCGRect(hostingView.bounds);
 #endif
 
-    CPTGraph *graph = [[[CPTXYGraph alloc] initWithFrame:bounds] autorelease];
-    [self addGraph:graph toHostingView:layerHostingView];
+    CPTGraph *graph = [[CPTXYGraph alloc] initWithFrame:bounds];
+    [self addGraph:graph toHostingView:hostingView];
     [self applyTheme:theme toGraph:graph withDefault:[CPTTheme themeNamed:kCPTDarkGradientTheme]];
 
-    [self setTitleDefaultsForGraph:graph withBounds:bounds];
-    [self setPaddingDefaultsForGraph:graph withBounds:bounds];
-
-    graph.plotAreaFrame.paddingLeft += 55.0;
+    graph.plotAreaFrame.paddingLeft += self.titleSize * CPTFloat(2.25);
 
     // Setup scatter plot space
     CPTXYPlotSpace *plotSpace = (CPTXYPlotSpace *)graph.defaultPlotSpace;
     plotSpace.allowsUserInteraction = YES;
-    plotSpace.xRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(0.0) length:CPTDecimalFromDouble(2.0 * M_PI)];
-    plotSpace.yRange                = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(-1.1) length:CPTDecimalFromDouble(2.2)];
+    plotSpace.xRange                = [CPTPlotRange plotRangeWithLocation:@0.0 length:@(2.0 * M_PI)];
+    plotSpace.yRange                = [CPTPlotRange plotRangeWithLocation:@(-1.1) length:@2.2];
 
     // Grid line styles
     CPTMutableLineStyle *majorGridLineStyle = [CPTMutableLineStyle lineStyle];
     majorGridLineStyle.lineWidth = 0.75;
-    majorGridLineStyle.lineColor = [[CPTColor colorWithGenericGray:0.2] colorWithAlphaComponent:0.75];
+    majorGridLineStyle.lineColor = [[CPTColor colorWithGenericGray:CPTFloat(0.2)] colorWithAlphaComponent:CPTFloat(0.75)];
 
     CPTMutableLineStyle *minorGridLineStyle = [CPTMutableLineStyle lineStyle];
     minorGridLineStyle.lineWidth = 0.25;
-    minorGridLineStyle.lineColor = [[CPTColor whiteColor] colorWithAlphaComponent:0.1];
+    minorGridLineStyle.lineColor = [[CPTColor whiteColor] colorWithAlphaComponent:CPTFloat(0.1)];
 
     // Axes
     PiNumberFormatter *formatter = [[PiNumberFormatter alloc] init];
@@ -93,7 +84,7 @@
     // Label x axis with a fixed interval policy
     CPTXYAxisSet *axisSet = (CPTXYAxisSet *)graph.axisSet;
     CPTXYAxis *x          = axisSet.xAxis;
-    x.majorIntervalLength   = CPTDecimalFromDouble(M_PI_4);
+    x.majorIntervalLength   = @(M_PI_4);
     x.minorTicksPerInterval = 3;
     x.labelFormatter        = formatter;
     x.majorGridLineStyle    = majorGridLineStyle;
@@ -101,9 +92,7 @@
     x.axisConstraints       = [CPTConstraints constraintWithRelativeOffset:0.5];
 
     x.title       = @"X Axis";
-    x.titleOffset = 30.0;
-
-    [formatter release];
+    x.titleOffset = self.titleSize * CPTFloat(1.25);
 
     // Label y with an automatic label policy.
     CPTXYAxis *y = axisSet.yAxis;
@@ -116,12 +105,13 @@
     y.axisConstraints             = [CPTConstraints constraintWithLowerOffset:0.0];
 
     y.title       = @"Y Axis";
-    y.titleOffset = 32.0;
+    y.titleOffset = self.titleSize * CPTFloat(1.25);
 
     // Create some function plots
     for ( NSUInteger plotNum = 0; plotNum < 2; plotNum++ ) {
         NSString *titleString          = nil;
         CPTDataSourceFunction function = NULL;
+        CPTDataSourceBlock block       = nil;
         CPTColor *lineColor            = nil;
 
         switch ( plotNum ) {
@@ -133,8 +123,10 @@
 
             case 1:
                 titleString = @"y = cos(x)";
-                function    = &cos;
-                lineColor   = [CPTColor greenColor];
+                block       = ^(double xVal) {
+                    return cos(xVal);
+                };
+                lineColor = [CPTColor greenColor];
                 break;
 
             case 2:
@@ -144,39 +136,53 @@
                 break;
         }
 
-        CPTScatterPlot *linePlot = [[[CPTScatterPlot alloc] init] autorelease];
+        CPTScatterPlot *linePlot = [[CPTScatterPlot alloc] init];
         linePlot.identifier = [NSString stringWithFormat:@"Function Plot %lu", (unsigned long)(plotNum + 1)];
 
-        NSDictionary *textAttributes = x.titleTextStyle.attributes;
+        CPTDictionary textAttributes = x.titleTextStyle.attributes;
 
         NSMutableAttributedString *title = [[NSMutableAttributedString alloc] initWithString:titleString
                                                                                   attributes:textAttributes];
 
-        if ( &NSFontAttributeName != NULL ) {
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
-            UIFont *italicFont = [self italicFontForFont:textAttributes[NSFontAttributeName]];
+        UIFont *italicFont = [self italicFontForFont:textAttributes[NSFontAttributeName]];
 #else
-            NSFont *italicFont = [self italicFontForFont:textAttributes[NSFontAttributeName]];
+        NSFont *italicFont = [self italicFontForFont:textAttributes[NSFontAttributeName]];
 #endif
 
-            [title addAttribute:NSFontAttributeName
-                          value:italicFont
-                          range:NSMakeRange(0, 1)];
-            [title addAttribute:NSFontAttributeName
-                          value:italicFont
-                          range:NSMakeRange(8, 1)];
-        }
-        linePlot.attributedTitle = title;
-        [title release];
+        [title addAttribute:NSFontAttributeName
+                      value:italicFont
+                      range:NSMakeRange(0, 1)];
+        [title addAttribute:NSFontAttributeName
+                      value:italicFont
+                      range:NSMakeRange(8, 1)];
 
-        CPTMutableLineStyle *lineStyle = [[linePlot.dataLineStyle mutableCopy] autorelease];
+#if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
+        UIFont *labelFont = [UIFont fontWithName:@"Helvetica" size:self.titleSize * CPTFloat(0.5)];
+#else
+        NSFont *labelFont = [NSFont fontWithName:@"Helvetica" size:self.titleSize * CPTFloat(0.5)];
+#endif
+        [title addAttribute:NSFontAttributeName
+                      value:labelFont
+                      range:NSMakeRange(0, title.length)];
+
+        linePlot.attributedTitle = title;
+
+        CPTMutableLineStyle *lineStyle = [linePlot.dataLineStyle mutableCopy];
         lineStyle.lineWidth    = 3.0;
         lineStyle.lineColor    = lineColor;
         linePlot.dataLineStyle = lineStyle;
 
         linePlot.alignsPointsToPixels = NO;
 
-        CPTFunctionDataSource *plotDataSource = [CPTFunctionDataSource dataSourceForPlot:linePlot withFunction:function];
+        CPTFunctionDataSource *plotDataSource = nil;
+
+        if ( function ) {
+            plotDataSource = [CPTFunctionDataSource dataSourceForPlot:linePlot withFunction:function];
+        }
+        else {
+            plotDataSource = [CPTFunctionDataSource dataSourceForPlot:linePlot withBlock:block];
+        }
 
         plotDataSource.resolution = 2.0;
 
@@ -186,8 +192,8 @@
     }
 
     // Restrict y range to a global range
-    CPTPlotRange *globalYRange = [CPTPlotRange plotRangeWithLocation:CPTDecimalFromDouble(-2.5)
-                                                              length:CPTDecimalFromDouble(5.0)];
+    CPTPlotRange *globalYRange = [CPTPlotRange plotRangeWithLocation:@(-2.5)
+                                                              length:@5.0];
     plotSpace.globalYRange = globalYRange;
 
     // Add legend
@@ -195,11 +201,10 @@
     graph.legend.fill            = [CPTFill fillWithColor:[CPTColor darkGrayColor]];
     graph.legend.borderLineStyle = x.axisLineStyle;
     graph.legend.cornerRadius    = 5.0;
-    graph.legend.swatchSize      = CGSizeMake(25.0, 25.0);
     graph.legend.numberOfRows    = 1;
     graph.legend.delegate        = self;
     graph.legendAnchor           = CPTRectAnchorBottom;
-    graph.legendDisplacement     = CGPointMake(0.0, 12.0);
+    graph.legendDisplacement     = CGPointMake( 0.0, self.titleSize * CPTFloat(1.25) );
 }
 
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE
@@ -207,7 +212,7 @@
 {
     NSString *italicName = nil;
 
-    NSArray *fontNames = [UIFont fontNamesForFamilyName:oldFont.familyName];
+    CPTStringArray fontNames = [UIFont fontNamesForFamilyName:oldFont.familyName];
 
     for ( NSString *fontName in fontNames ) {
         NSString *upperCaseFontName = [fontName uppercaseString];
