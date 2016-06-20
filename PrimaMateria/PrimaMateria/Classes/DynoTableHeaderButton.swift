@@ -41,7 +41,7 @@
         NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_TABLE_HEADER_SELECTED, object: nil)
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.0)
-        self.imageLayer.frame = (aFlag) ? CGRectMake((self.frame.size.width/2) - 6, 2, 12, 12) : CGRectMake((self.frame.size.width/2) - 6, 30, 12, 12)
+        self.imageLayer.frame = (aFlag) ? CGRectMake((self.frame.size.width / 2) - 6, 2, 12, 12) : CGRectMake((self.frame.size.width / 2) - 6, 30, 12, 12)
         self.imageLayer.contents = (aFlag) ? self.ascendingImageView.CGImage : self.descentingImageView.CGImage
         CATransaction.commit()
         self.toggle = aFlag

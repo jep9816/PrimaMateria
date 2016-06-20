@@ -18,6 +18,8 @@
         super.awakeFromNib()
         self.layer.cornerRadius = 8.0
         self.layer.masksToBounds = true
+        //self.setTitle("❓", forState: UIControlState.Normal)
+        //self.setTitle("❔", forState: UIControlState.Highlighted)
     }
     
     // MARK: - Internal Methods
