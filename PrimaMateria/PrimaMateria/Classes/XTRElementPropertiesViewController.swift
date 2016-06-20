@@ -13,55 +13,55 @@
         case kChemicalPropertiesView
     }
     
-    @IBOutlet weak var atomicMassFootnoteLabel : UILabel!
-    @IBOutlet weak var atomicMassLabel : UILabel!
-    @IBOutlet weak var boilingPointLabel : UILabel!
-    @IBOutlet weak var coefficientOfLinealThermalExpansionLabel : UILabel!
-    @IBOutlet weak var conductivityElectricalLabel : UILabel!
-    @IBOutlet weak var conductivityThermalLabel : UILabel!
-    @IBOutlet weak var criticalTemperatureLabel : UILabel!
-    @IBOutlet weak var densityLabel : UILabel!
-    @IBOutlet weak var descriptionLabel : UILabel!
-    @IBOutlet weak var elasticModulusBulkLabel : UILabel!
-    @IBOutlet weak var elasticModulusRigidityLabel : UILabel!
-    @IBOutlet weak var elasticModulusYoungsLabel : UILabel!
-    @IBOutlet weak var electroChemicalEquivalentLabel : UILabel!
-    @IBOutlet weak var electroNegativityLabel : UILabel!
-    @IBOutlet weak var electronWorkFunctionLabel : UILabel!
-    @IBOutlet weak var enthalpyAtomizationLabel : UILabel!
-    @IBOutlet weak var enthalpyFusionLabel : UILabel!
-    @IBOutlet weak var enthalpyVaporizationLabel : UILabel!
-    @IBOutlet weak var flammabilityClass : UILabel!
-    @IBOutlet weak var hardnessScaleBrinellLabel : UILabel!
-    @IBOutlet weak var hardnessScaleMohsLabel : UILabel!
-    @IBOutlet weak var hardnessScaleVickersLabel : UILabel!
-    @IBOutlet weak var heatCapacityMolarLabel : UILabel!
-    @IBOutlet weak var heatCapacitySpecificLabel : UILabel!
-    @IBOutlet weak var heatOfFusionLabel : UILabel!
-    @IBOutlet weak var heatOfVaporizationLabel : UILabel!
-    @IBOutlet weak var incompatabilitiesLabel : UILabel!
-    @IBOutlet weak var ionizationPotentialFirstLabel : UILabel!
-    @IBOutlet weak var ionizationPotentialSecondLabel : UILabel!
-    @IBOutlet weak var ionizationPotentialThirdLabel : UILabel!
-    @IBOutlet weak var magneticSusceptibilityLabel : UILabel!
-    @IBOutlet weak var meltingPointFootnoteLabel : UILabel!
-    @IBOutlet weak var meltingPointLabel : UILabel!
-    @IBOutlet weak var molarVolumeLabel : UILabel!
-    @IBOutlet weak var opticalReflectivityLabel : UILabel!
-    @IBOutlet weak var opticalRefractiveIndexLabel : UILabel!
-    @IBOutlet weak var qualitativeSolubilityLabel : UILabel!
-    @IBOutlet weak var relativeGasDensityLabel : UILabel!
-    @IBOutlet weak var valenceElectronPotentialLabel : UILabel!
-    @IBOutlet weak var vaporPressure100PaLabel : UILabel!
-    @IBOutlet weak var vaporPressure100kPaLabel : UILabel!
-    @IBOutlet weak var vaporPressure10PaLabel : UILabel!
-    @IBOutlet weak var vaporPressure10kPaLabel : UILabel!
-    @IBOutlet weak var vaporPressure1PaLabel : UILabel!
-    @IBOutlet weak var vaporPressure1kPaLabel : UILabel!
-    @IBOutlet weak var chemicalPropertiesScrollView : UIScrollView!
-    @IBOutlet weak var physicalPropertiesScrollView : UIScrollView!
-    @IBOutlet weak var chemicalPropertiesView : UIView!
-    @IBOutlet weak var physicalPropertiesView : UIView!
+    @IBOutlet var atomicMassFootnoteLabel : UILabel!
+    @IBOutlet var atomicMassLabel : UILabel!
+    @IBOutlet var boilingPointLabel : UILabel!
+    @IBOutlet var coefficientOfLinealThermalExpansionLabel : UILabel!
+    @IBOutlet var conductivityElectricalLabel : UILabel!
+    @IBOutlet var conductivityThermalLabel : UILabel!
+    @IBOutlet var criticalTemperatureLabel : UILabel!
+    @IBOutlet var densityLabel : UILabel!
+    @IBOutlet var descriptionLabel : UILabel!
+    @IBOutlet var elasticModulusBulkLabel : UILabel!
+    @IBOutlet var elasticModulusRigidityLabel : UILabel!
+    @IBOutlet var elasticModulusYoungsLabel : UILabel!
+    @IBOutlet var electroChemicalEquivalentLabel : UILabel!
+    @IBOutlet var electroNegativityLabel : UILabel!
+    @IBOutlet var electronWorkFunctionLabel : UILabel!
+    @IBOutlet var enthalpyAtomizationLabel : UILabel!
+    @IBOutlet var enthalpyFusionLabel : UILabel!
+    @IBOutlet var enthalpyVaporizationLabel : UILabel!
+    @IBOutlet var flammabilityClass : UILabel!
+    @IBOutlet var hardnessScaleBrinellLabel : UILabel!
+    @IBOutlet var hardnessScaleMohsLabel : UILabel!
+    @IBOutlet var hardnessScaleVickersLabel : UILabel!
+    @IBOutlet var heatCapacityMolarLabel : UILabel!
+    @IBOutlet var heatCapacitySpecificLabel : UILabel!
+    @IBOutlet var heatOfFusionLabel : UILabel!
+    @IBOutlet var heatOfVaporizationLabel : UILabel!
+    @IBOutlet var incompatabilitiesLabel : UILabel!
+    @IBOutlet var ionizationPotentialFirstLabel : UILabel!
+    @IBOutlet var ionizationPotentialSecondLabel : UILabel!
+    @IBOutlet var ionizationPotentialThirdLabel : UILabel!
+    @IBOutlet var magneticSusceptibilityLabel : UILabel!
+    @IBOutlet var meltingPointFootnoteLabel : UILabel!
+    @IBOutlet var meltingPointLabel : UILabel!
+    @IBOutlet var molarVolumeLabel : UILabel!
+    @IBOutlet var opticalReflectivityLabel : UILabel!
+    @IBOutlet var opticalRefractiveIndexLabel : UILabel!
+    @IBOutlet var qualitativeSolubilityLabel : UILabel!
+    @IBOutlet var relativeGasDensityLabel : UILabel!
+    @IBOutlet var valenceElectronPotentialLabel : UILabel!
+    @IBOutlet var vaporPressure100PaLabel : UILabel!
+    @IBOutlet var vaporPressure100kPaLabel : UILabel!
+    @IBOutlet var vaporPressure10PaLabel : UILabel!
+    @IBOutlet var vaporPressure10kPaLabel : UILabel!
+    @IBOutlet var vaporPressure1PaLabel : UILabel!
+    @IBOutlet var vaporPressure1kPaLabel : UILabel!
+    @IBOutlet var chemicalPropertiesScrollView : UIScrollView!
+    @IBOutlet var physicalPropertiesScrollView : UIScrollView!
+    @IBOutlet var chemicalPropertiesView : UIView!
+    @IBOutlet var physicalPropertiesView : UIView!
     @IBOutlet var swapView : UIView!
     
     // MARK: - Initialization Methods

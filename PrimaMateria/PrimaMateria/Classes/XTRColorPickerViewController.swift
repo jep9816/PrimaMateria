@@ -7,11 +7,11 @@
 //
 
 @objc class XTRColorPickerViewController : UIViewController {
-    @IBOutlet weak var redSlider : UISlider!
-    @IBOutlet weak var greenSlider : UISlider!
-    @IBOutlet weak var blueSlider : UISlider!
-    @IBOutlet weak var colorTitle : UILabel!
-    @IBOutlet weak var previewView: UIView!
+    @IBOutlet var redSlider : UISlider!
+    @IBOutlet var greenSlider : UISlider!
+    @IBOutlet var blueSlider : UISlider!
+    @IBOutlet var colorTitle : UILabel!
+    @IBOutlet var previewView: UIView!
     
     // MARK: - Initialization Methods
     

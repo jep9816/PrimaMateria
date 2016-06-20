@@ -7,19 +7,19 @@
 //
 
 @objc class XTRElementInspectorViewController : XTRSwapableViewController {
-    @IBOutlet weak var barButtonItem : UIBarButtonItem!
-    @IBOutlet weak var nextButton : UIButton!
-    @IBOutlet weak var previousButton : UIButton!
-    @IBOutlet weak var atomicNumberLabel : UILabel!
-    @IBOutlet weak var atomicSymbolLabel : UILabel!
-    @IBOutlet weak var casRegNoLabel : UILabel!
-    @IBOutlet weak var groupLabel : UILabel!
-    @IBOutlet weak var nextLabel : UILabel!
-    @IBOutlet weak var periodLabel : UILabel!
-    @IBOutlet weak var previousLabel : UILabel!
-    @IBOutlet weak var seriesLabel : UILabel!
-    @IBOutlet weak var titleItem : UINavigationItem!
-    @IBOutlet weak var pageItemView : UIView!
+    @IBOutlet var barButtonItem : UIBarButtonItem!
+    @IBOutlet var nextButton : UIButton!
+    @IBOutlet var previousButton : UIButton!
+    @IBOutlet var atomicNumberLabel : UILabel!
+    @IBOutlet var atomicSymbolLabel : UILabel!
+    @IBOutlet var casRegNoLabel : UILabel!
+    @IBOutlet var groupLabel : UILabel!
+    @IBOutlet var nextLabel : UILabel!
+    @IBOutlet var periodLabel : UILabel!
+    @IBOutlet var previousLabel : UILabel!
+    @IBOutlet var seriesLabel : UILabel!
+    @IBOutlet var titleItem : UINavigationItem!
+    @IBOutlet var pageItemView : UIView!
     @IBOutlet var swapView : UIView!
     
     // MARK: - Initialization Methods

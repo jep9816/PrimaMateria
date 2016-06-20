@@ -7,12 +7,12 @@
 //
 
 @objc class XTRGeneralInfoViewController : XTRSwapableViewController, UIWebViewDelegate {
-    @IBOutlet weak var discovererLabel : UILabel!
-    @IBOutlet weak var discoveryLocationLabel : UILabel!
-    @IBOutlet weak var discoveryYearLabel : UILabel!
-    @IBOutlet weak var abundanceCrustLabel : UILabel!
-    @IBOutlet weak var abundanceSeaLabel : UILabel!
-    @IBOutlet weak var webView : UIWebView!
+    @IBOutlet var discovererLabel : UILabel!
+    @IBOutlet var discoveryLocationLabel : UILabel!
+    @IBOutlet var discoveryYearLabel : UILabel!
+    @IBOutlet var abundanceCrustLabel : UILabel!
+    @IBOutlet var abundanceSeaLabel : UILabel!
+    @IBOutlet var webView : UIWebView!
     
     private var progressHUD : MBProgressHUD?
     private var responseData : NSMutableData?

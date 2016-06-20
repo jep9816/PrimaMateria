@@ -7,12 +7,12 @@
 //
 
 @objc class XTRElementBalloonViewController : UIViewController {
-    @IBOutlet weak var elementNameLabel : UILabel!
-    @IBOutlet weak var atomicNumberLabel : UILabel!
-    @IBOutlet weak var atomicMassLabel : UILabel!
-    @IBOutlet weak var boilingPointLabel : UILabel!
-    @IBOutlet weak var meltingPointLabel : UILabel!
-    @IBOutlet weak var wrapperView : UIView!
+    @IBOutlet var elementNameLabel : UILabel!
+    @IBOutlet var atomicNumberLabel : UILabel!
+    @IBOutlet var atomicMassLabel : UILabel!
+    @IBOutlet var boilingPointLabel : UILabel!
+    @IBOutlet var meltingPointLabel : UILabel!
+    @IBOutlet var wrapperView : UIView!
     
     // MARK: - Initialization Methods
     

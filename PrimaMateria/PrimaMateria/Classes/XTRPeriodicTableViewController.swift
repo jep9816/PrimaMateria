@@ -6,7 +6,7 @@
 //  Copyright © 2016 xTrensa. All rights reserved.
 //
 
-@objc class XTRPeriodicTableViewController : UIViewController  {
+@objc class XTRPeriodicTableViewController : UIViewController {
     @IBOutlet var swapView : UIView!
     
     var molecularCalculatorState : Bool = false

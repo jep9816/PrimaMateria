@@ -46,33 +46,15 @@
     
     // MARK: - UITabBarControllerDelegate Methods
     
-    func animate(fromViewController: UIViewController, toViewController: UIViewController, forView view: UIView) {
-        UIView.beginAnimations("View Flip", context: nil)
-        UIView.setAnimationDuration(1.5)
-        UIView.setAnimationCurve(UIViewAnimationCurve.EaseInOut)
-        UIView.setAnimationTransition(UIViewAnimationTransition.CurlUp, forView: view, cache:true)
-        
-        fromViewController.viewWillAppear(true)
-        toViewController.viewWillDisappear(true)
-        toViewController.viewDidDisappear(true)
-        fromViewController.viewDidAppear(true)
-        
-        UIView.commitAnimations()
-    }
-    
-    func tabBarController(tabBarController: UITabBarController, shouldSelectViewController viewController: UIViewController) -> Bool {
+    func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let defaultState : Bool = XTRPropertiesStore.retreiveShowTransitionsState()
         
         if (defaultState) {
-            let fromViewController : UIViewController = tabBarController.selectedViewController!
-            
-            if (fromViewController == viewController) {
-                return false
-            }
-            
-            self.animate(fromViewController, toViewController: viewController, forView: tabBarController.view)
+            return XTRPopoutAnimationController()
+            // XTRSlideDownAnimationController()
+            // XTRSimpleTransitionController()
         }
-        return true
+        return nil
     }
     
     // MARK: - View Management Methods

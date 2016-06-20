@@ -7,7 +7,7 @@
 //
 
 @objc class XTRElementListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var atomicNumberButton : DynoTableHeaderButton!
+    @IBOutlet var atomicNumberButton : DynoTableHeaderButton!
     @IBOutlet var swapView: UIView!
     
     private var tableView : UITableView?

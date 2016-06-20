@@ -7,25 +7,25 @@
 //
 
 @objc class XTRPreferencesViewController : UIViewController, UIPopoverPresentationControllerDelegate {
-    @IBOutlet weak var appNameLabel : UILabel!
-    @IBOutlet weak var cpyRightLabel : UILabel!
+    @IBOutlet var appNameLabel : UILabel!
+    @IBOutlet var cpyRightLabel : UILabel!
     
-    @IBOutlet weak var seriesActinideButton : UIButton!
-    @IBOutlet weak var seriesAlkaliEarthMetalButton : UIButton!
-    @IBOutlet weak var seriesAlkaliMetalButton : UIButton!
-    @IBOutlet weak var seriesHalogenButton : UIButton!
-    @IBOutlet weak var seriesLanthanideButton : UIButton!
-    @IBOutlet weak var seriesMetalButton : UIButton!
-    @IBOutlet weak var seriesNobleGasButton : UIButton!
-    @IBOutlet weak var seriesNonMetalButton : UIButton!
-    @IBOutlet weak var seriesTransactinidesButton : UIButton!
-    @IBOutlet weak var seriesTransitionMetalButton : UIButton!
+    @IBOutlet var seriesActinideButton : UIButton!
+    @IBOutlet var seriesAlkaliEarthMetalButton : UIButton!
+    @IBOutlet var seriesAlkaliMetalButton : UIButton!
+    @IBOutlet var seriesHalogenButton : UIButton!
+    @IBOutlet var seriesLanthanideButton : UIButton!
+    @IBOutlet var seriesMetalButton : UIButton!
+    @IBOutlet var seriesNobleGasButton : UIButton!
+    @IBOutlet var seriesNonMetalButton : UIButton!
+    @IBOutlet var seriesTransactinidesButton : UIButton!
+    @IBOutlet var seriesTransitionMetalButton : UIButton!
     
-    @IBOutlet weak var versionLabel : UILabel!
-    @IBOutlet weak var elementBubbleSwitch : UISwitch!
-    @IBOutlet weak var showTransitionsBubbleSwitch : UISwitch!
-    @IBOutlet weak var splashScreenSwitch : UISwitch!
-    @IBOutlet weak var webView : UIWebView!
+    @IBOutlet var versionLabel : UILabel!
+    @IBOutlet var elementBubbleSwitch : UISwitch!
+    @IBOutlet var showTransitionsBubbleSwitch : UISwitch!
+    @IBOutlet var splashScreenSwitch : UISwitch!
+    @IBOutlet var webView : UIWebView!
     
     // MARK: - Initialization Methods
     

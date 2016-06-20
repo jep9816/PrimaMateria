@@ -7,10 +7,10 @@
 //
 
 @objc class XTRHelpBalloonViewController : UIViewController, UIWebViewDelegate {
-    @IBOutlet weak var backButton : UIBarButtonItem!
-    @IBOutlet weak var forwardButton : UIBarButtonItem!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var webView : UIWebView!
+    @IBOutlet var backButton : UIBarButtonItem!
+    @IBOutlet var forwardButton : UIBarButtonItem!
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var webView : UIWebView!
     
     // MARK: - Initialization Methods
     

@@ -13,56 +13,56 @@
         case kShellModelView
     }
     
-    @IBOutlet weak var crystalStructureView : UIImageView!
-    @IBOutlet weak var shellModelView : UIImageView!
+    @IBOutlet var crystalStructureView : UIImageView!
+    @IBOutlet var shellModelView : UIImageView!
     
-    @IBOutlet weak var atomicRadiusLabel : UILabel!
-    @IBOutlet weak var atomicVolumeLabel : UILabel!
-    @IBOutlet weak var covalentRadiusLabel : UILabel!
-    @IBOutlet weak var crossSectionLabel : UILabel!
-    @IBOutlet weak var ionicRadiusLabel : UILabel!
-    @IBOutlet weak var oxidationStatesLabel : UILabel!
-    @IBOutlet weak var numberOfNeutronsLabel : UILabel!
-    @IBOutlet weak var numberOfProtonsLabel : UILabel!
-    @IBOutlet weak var numberOfElectronsLabel : UILabel!
-    @IBOutlet weak var valenceLabel : UILabel!
-    @IBOutlet weak var fillingOrbitalLabel : UILabel!
+    @IBOutlet var atomicRadiusLabel : UILabel!
+    @IBOutlet var atomicVolumeLabel : UILabel!
+    @IBOutlet var covalentRadiusLabel : UILabel!
+    @IBOutlet var crossSectionLabel : UILabel!
+    @IBOutlet var ionicRadiusLabel : UILabel!
+    @IBOutlet var oxidationStatesLabel : UILabel!
+    @IBOutlet var numberOfNeutronsLabel : UILabel!
+    @IBOutlet var numberOfProtonsLabel : UILabel!
+    @IBOutlet var numberOfElectronsLabel : UILabel!
+    @IBOutlet var valenceLabel : UILabel!
+    @IBOutlet var fillingOrbitalLabel : UILabel!
     
-    @IBOutlet weak var kShellElectronsLabel : UILabel!
-    @IBOutlet weak var lShellElectronsLabel : UILabel!
-    @IBOutlet weak var mShellElectronsLabel : UILabel!
-    @IBOutlet weak var nShellElectronsLabel : UILabel!
-    @IBOutlet weak var oShellElectronsLabel : UILabel!
-    @IBOutlet weak var pShellElectronsLabel : UILabel!
-    @IBOutlet weak var qShellElectronsLabel : UILabel!
+    @IBOutlet var kShellElectronsLabel : UILabel!
+    @IBOutlet var lShellElectronsLabel : UILabel!
+    @IBOutlet var mShellElectronsLabel : UILabel!
+    @IBOutlet var nShellElectronsLabel : UILabel!
+    @IBOutlet var oShellElectronsLabel : UILabel!
+    @IBOutlet var pShellElectronsLabel : UILabel!
+    @IBOutlet var qShellElectronsLabel : UILabel!
     
-    @IBOutlet weak var shell1sLabel : UILabel!
+    @IBOutlet var shell1sLabel : UILabel!
     
-    @IBOutlet weak var shell2sLabel : UILabel!
-    @IBOutlet weak var shell2pLabel : UILabel!
+    @IBOutlet var shell2sLabel : UILabel!
+    @IBOutlet var shell2pLabel : UILabel!
     
-    @IBOutlet weak var shell3sLabel : UILabel!
-    @IBOutlet weak var shell3pLabel : UILabel!
-    @IBOutlet weak var shell3dLabel : UILabel!
+    @IBOutlet var shell3sLabel : UILabel!
+    @IBOutlet var shell3pLabel : UILabel!
+    @IBOutlet var shell3dLabel : UILabel!
     
-    @IBOutlet weak var shell4sLabel : UILabel!
-    @IBOutlet weak var shell4pLabel : UILabel!
-    @IBOutlet weak var shell4dLabel : UILabel!
-    @IBOutlet weak var shell4fLabel : UILabel!
+    @IBOutlet var shell4sLabel : UILabel!
+    @IBOutlet var shell4pLabel : UILabel!
+    @IBOutlet var shell4dLabel : UILabel!
+    @IBOutlet var shell4fLabel : UILabel!
     
-    @IBOutlet weak var shell5sLabel : UILabel!
-    @IBOutlet weak var shell5pLabel : UILabel!
-    @IBOutlet weak var shell5dLabel : UILabel!
-    @IBOutlet weak var shell5fLabel : UILabel!
+    @IBOutlet var shell5sLabel : UILabel!
+    @IBOutlet var shell5pLabel : UILabel!
+    @IBOutlet var shell5dLabel : UILabel!
+    @IBOutlet var shell5fLabel : UILabel!
     
-    @IBOutlet weak var shell6sLabel : UILabel!
-    @IBOutlet weak var shell6pLabel : UILabel!
-    @IBOutlet weak var shell6dLabel : UILabel!
+    @IBOutlet var shell6sLabel : UILabel!
+    @IBOutlet var shell6pLabel : UILabel!
+    @IBOutlet var shell6dLabel : UILabel!
     
-    @IBOutlet weak var shell7sLabel : UILabel!
-    @IBOutlet weak var shell7pLabel : UILabel!
-    @IBOutlet weak var shellModelInfoLabel : UILabel!
-    @IBOutlet weak var overlayView : UIView!
+    @IBOutlet var shell7sLabel : UILabel!
+    @IBOutlet var shell7pLabel : UILabel!
+    @IBOutlet var shellModelInfoLabel : UILabel!
+    @IBOutlet var overlayView : UIView!
     
     // MARK: - Initialization Methods
     

@@ -7,7 +7,7 @@
 //
 
 @objc class XTRNuclidesIsotopesViewController : XTRSwapableViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var headerView : UIView!
+    @IBOutlet var headerView : UIView!
     @IBOutlet var swapView: UIView!
     
     private var nuclidesAndIsotopesArray : NSArray?

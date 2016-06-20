@@ -7,8 +7,8 @@
 //
 
 @objc class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDelegate {
-    @IBOutlet weak var hostingView : CPTGraphHostingView!
-    @IBOutlet weak var button : UIBarButtonItem!
+    @IBOutlet var hostingView : CPTGraphHostingView!
+    @IBOutlet var button : UIBarButtonItem!
     
     var barChart : CPTXYGraph?
     var errorString : String?

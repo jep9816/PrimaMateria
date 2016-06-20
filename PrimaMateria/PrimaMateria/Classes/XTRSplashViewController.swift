@@ -8,10 +8,10 @@
 
 @objc class XTRSplashViewController : UIViewController {
     
-    @IBOutlet weak var appNameLabel: UILabel!
-    @IBOutlet weak var versionLabel : UILabel!
-    @IBOutlet weak var cpyRightLabel : UILabel!
-    @IBOutlet weak var wrapperView : UIView!
+    @IBOutlet var appNameLabel: UILabel!
+    @IBOutlet var versionLabel : UILabel!
+    @IBOutlet var cpyRightLabel : UILabel!
+    @IBOutlet var wrapperView : UIView!
     
     // MARK: - Initialization Methods
     

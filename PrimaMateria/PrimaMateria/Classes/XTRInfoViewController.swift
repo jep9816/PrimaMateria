@@ -7,7 +7,7 @@
 //
 
 @objc class XTRInfoViewController : UIViewController, UIWebViewDelegate {
-    @IBOutlet weak var webView: UIWebView!
+    @IBOutlet var webView: UIWebView!
     
     // MARK: - Initialization Methods
     

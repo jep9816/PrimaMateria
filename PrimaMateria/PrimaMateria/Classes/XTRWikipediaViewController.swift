@@ -7,10 +7,10 @@
 //
 
 @objc class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgressHUDDelegate {
-    @IBOutlet weak var backButton : UIBarButtonItem!
-    @IBOutlet weak var titleButtonItem: UIBarButtonItem!
-    @IBOutlet weak var forwardButton : UIBarButtonItem!
-    @IBOutlet weak var webView : UIWebView!
+    @IBOutlet var backButton : UIBarButtonItem!
+    @IBOutlet var titleButtonItem: UIBarButtonItem!
+    @IBOutlet var forwardButton : UIBarButtonItem!
+    @IBOutlet var webView : UIWebView!
     
     private var progressHUD : MBProgressHUD?
     private var responseData : NSMutableData?

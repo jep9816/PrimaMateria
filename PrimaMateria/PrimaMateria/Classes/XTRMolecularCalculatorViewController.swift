@@ -7,11 +7,11 @@
 //
 
 @objc class XTRMolecularCalculatorViewController : UIViewController {
-    @IBOutlet weak var errorLabel : UILabel!
-    @IBOutlet weak var formulaLabel : UILabel!
-    @IBOutlet weak var resultsLabel : UILabel!
-    @IBOutlet weak var formulaTextField : UITextField!
-    @IBOutlet weak var backgroundView : UIView!
+    @IBOutlet var errorLabel : UILabel!
+    @IBOutlet var formulaLabel : UILabel!
+    @IBOutlet var resultsLabel : UILabel!
+    @IBOutlet var formulaTextField : UITextField!
+    @IBOutlet var backgroundView : UIView!
     
     // MARK: - Initialization Methods
     

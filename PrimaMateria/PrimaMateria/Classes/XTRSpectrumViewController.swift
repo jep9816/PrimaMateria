@@ -17,7 +17,7 @@ private let kVSpectrum : String = "V"
 
 @objc class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
     
-    @IBOutlet weak var hostingView : CPTGraphHostingView!
+    @IBOutlet var hostingView : CPTGraphHostingView!
     @IBOutlet var swapView : UIView!
     
     var barChart : CPTXYGraph?
