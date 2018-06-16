@@ -3,216 +3,223 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRElement : NSObject {
-    var elementDictionary : NSMutableDictionary = [:]
+import UIKit
+
+class XTRElement : NSObject {
     
-    private func floatForKey(aKey: String) -> NSNumber {
-        let aValue : String = self.valueForKey(aKey) as! String
-        var result : CGFloat? = 0
-        if let doubleValue = Double(aValue) {
-            result = CGFloat(doubleValue)
+    var elementDictionary : [String: Any] = [:]
+    
+    private func floatForKey(_ aKey: String?) -> Float {
+        var floatValue : Float = 0.0
+        
+        if let floatString = value(forKeyPath: aKey!) as! String?  {
+            if let floatNumber = NumberFormatter().number(from: floatString) {
+                floatValue = floatNumber.floatValue
+            }
         }
-        return result!
+        
+        return floatValue
     }
-    
-    override func valueForKey(aKey: String) -> AnyObject {
-        if (aKey == ELEMENT_KSHELL_ELECTRONS) {
-            return self.kShellElectrons()
-        } else if (aKey == ELEMENT_LSHELL_ELECTRONS) {
-            return self.lShellElectrons()
-        } else if (aKey == ELEMENT_MSHELL_ELECTRONS) {
-            return self.mShellElectrons()
-        } else if (aKey == ELEMENT_NSHELL_ELECTRONS) {
-            return self.nShellElectrons()
-        } else if (aKey == ELEMENT_OSHELL_ELECTRONS) {
-            return self.oShellElectrons()
-        } else if (aKey == ELEMENT_PSHELL_ELECTRONS) {
-            return self.pShellElectrons()
-        } else if (aKey == ELEMENT_QSHELL_ELECTRONS) {
-            return self.qShellElectrons()
-        } else if (aKey == ELEMENT_ATOMIC_MASS_AGGREGATE) {
-            return self.atomicMassAggregate()!
+
+    override func value(forKeyPath keyPath: String) -> Any? {
+        if keyPath == ELEMENT_KSHELL_ELECTRONS {
+            return kShellElectrons as AnyObject
+        } else if keyPath == ELEMENT_LSHELL_ELECTRONS {
+            return lShellElectrons as AnyObject
+        } else if keyPath == ELEMENT_MSHELL_ELECTRONS {
+            return mShellElectrons as AnyObject
+        } else if keyPath == ELEMENT_NSHELL_ELECTRONS {
+            return nShellElectrons as AnyObject
+        } else if keyPath == ELEMENT_OSHELL_ELECTRONS {
+            return oShellElectrons as AnyObject
+        } else if keyPath == ELEMENT_PSHELL_ELECTRONS {
+            return pShellElectrons as AnyObject
+        } else if keyPath == ELEMENT_QSHELL_ELECTRONS {
+            return qShellElectrons as AnyObject
+        } else if keyPath == ELEMENT_ATOMIC_MASS_AGGREGATE {
+            return atomicMassAggregate as AnyObject
         } else {
-            let aValue = self.elementDictionary.valueForKey(aKey)
-            return (aValue != nil) ? aValue! : ""
+            let aValue = elementDictionary[keyPath]
+            return (aValue != nil) ? aValue! as AnyObject : "" as AnyObject
         }
     }
     
-    override func setValue(value: AnyObject?, forKeyPath keyPath: String) {
-        self.elementDictionary[keyPath] = value
+    override func setValue(_ value: Any?, forKeyPath keyPath: String) {
+        elementDictionary[keyPath] = value
     }
         
-    func atomicNumber() -> NSNumber {
-        let aValue : NSNumber? = self.valueForKey(ELEMENT_ATOMIC_NUMBER) as? NSNumber
-        return aValue!
+    var atomicNumber: Int {
+        return value(forKeyPath: ELEMENT_ATOMIC_NUMBER) as! Int
     }
     
-    func atomicRadius() -> NSNumber {
-        return self.floatForKey(ELEMENT_ATOMIC_RADIUS)
+    var atomicRadius: Float {
+        return floatForKey(ELEMENT_ATOMIC_RADIUS)
     }
     
-    func atomicMass() -> NSNumber {
-        return self.floatForKey(ELEMENT_ATOMIC_MASS)
+    var atomicMass: Float {
+        return floatForKey(ELEMENT_ATOMIC_MASS)
     }
     
-    func atomicVolume() -> NSNumber {
-        return self.floatForKey(ELEMENT_ATOMIC_VOLUME)
+    var atomicVolume: Float {
+        return floatForKey(ELEMENT_ATOMIC_VOLUME)
     }
     
-    func boilingPoint() -> NSNumber {
-        return self.floatForKey(ELEMENT_BOILING_POINT)
+    var boilingPoint: Float {
+        return floatForKey(ELEMENT_BOILING_POINT)
     }
     
-    func covalentRadius() -> NSNumber {
-        return self.floatForKey(ELEMENT_COVALENT_RADIUS)
+    var covalentRadius: Float {
+        return floatForKey(ELEMENT_COVALENT_RADIUS)
     }
     
-    func coefficientOfLinealThermalExpansion() -> NSNumber {
-        return self.floatForKey(ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION)
+    var coefficientOfLinealThermalExpansion: Float {
+        return floatForKey(ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION)
     }
     
-    func density() -> NSNumber {
-        return self.floatForKey(ELEMENT_DENSITY)
+    var density: Float {
+        return floatForKey(ELEMENT_DENSITY)
     }
     
-    func descr() -> String? {
-        return self.valueForKey(ELEMENT_DESCR) as? String
+    var descr: String? {
+        return value(forKeyPath: ELEMENT_DESCR) as? String
     }
     
-    func electronConfiguration() -> NSDictionary? {
-        return self.valueForKey(ELEMENT_ELECTRON_CONFIGURATION) as? NSDictionary
+    var electronConfiguration: [String : AnyObject]? {
+        return value(forKeyPath: ELEMENT_ELECTRON_CONFIGURATION) as? [String : AnyObject]
     }
     
-    func group() -> NSNumber? {
-        let aValue : String? = self.valueForKey(ELEMENT_GROUP) as? String
-        return (aValue == STRING_EMPTY) ? 0 : Int(aValue!)
+    var group: Int? {
+        get {
+            let aValue : String? = value(forKeyPath: ELEMENT_GROUP) as? String
+            return (aValue! == STRING_EMPTY) ? 0 : Int(aValue!)
+        }
     }
     
-    func meltingPoint() -> NSNumber {
-        return self.floatForKey(ELEMENT_MELTING_POINT)
+    var meltingPoint: Float {
+        return floatForKey(ELEMENT_MELTING_POINT)
     }
     
-    func name() -> String? {
-        return self.valueForKey(ELEMENT_NAME) as? String
+    var name: String? {
+        return value(forKeyPath: ELEMENT_NAME) as? String
     }
     
-    func nuclidesAndIsotopes() -> NSArray? {
-        return self.valueForKey(ELEMENT_NUCLIDESANDISOTOPES) as? NSArray
+    var nuclidesAndIsotopes: [AnyObject]? {
+        return value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [AnyObject]
     }
     
-    func period() -> NSNumber? {
-        let aValue : String = self.valueForKey(ELEMENT_PERIOD) as! String
-        return Int(aValue)
+    var period: String? {
+        return value(forKeyPath: ELEMENT_PERIOD) as? String
     }
     
-    func series() -> String? {
-        return self.valueForKey(ELEMENT_SERIES) as? String
+    var series: String? {
+        return value(forKeyPath: ELEMENT_SERIES) as? String
     }
     
-    func symbol() -> String? {
-        return self.valueForKey(ELEMENT_SYMBOL) as? String
+    var symbol: String? {
+        return value(forKeyPath: ELEMENT_SYMBOL) as? String
     }
     
-    func lineSpectra() -> NSArray? {
-        return self.valueForKey(ELEMENT_LINE_SPECTRA) as? NSArray
+    var lineSpectra: [[String : AnyObject]]? {
+        return value(forKeyPath: ELEMENT_LINE_SPECTRA) as! [[String : AnyObject]]?
     }
     
-    func vaporPressure() -> NSDictionary? {
-        return self.valueForKey(ELEMENT_VAPOR_PRESSURE) as? NSDictionary
+    var vaporPressure: [String : AnyObject]? {
+        return value(forKeyPath: ELEMENT_VAPOR_PRESSURE) as? [String : AnyObject]
     }
     
-    func elasticModulusBulk() -> NSNumber {
-        return self.floatForKey(ELEMENT_ELASTIC_MODULUS_BULK)
+    var elasticModulusBulk: Float {
+        return floatForKey(ELEMENT_ELASTIC_MODULUS_BULK)
     }
     
-    func elasticModulusRigidity() -> NSNumber {
-        return self.floatForKey(ELEMENT_ELASTIC_MODULUS_RIGIDITY)
+    var elasticModulusRigidity: Float {
+        return floatForKey(ELEMENT_ELASTIC_MODULUS_RIGIDITY)
     }
     
-    func elasticModulusYoungs() -> NSNumber {
-        return self.floatForKey(ELEMENT_ELASTIC_MODULUS_YOUNGS)
+    var elasticModulusYoungs: Float {
+        return floatForKey(ELEMENT_ELASTIC_MODULUS_YOUNGS)
     }
     
-    func electroChemicalEquivalent() -> NSNumber {
-        return self.floatForKey(ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT)
+    var electroChemicalEquivalent: Float {
+        return floatForKey(ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT)
     }
     
-    func crossSection() -> NSNumber {
-        return self.floatForKey(ELEMENT_CROSS_SECTION)
+    var crossSection: Float {
+        return floatForKey(ELEMENT_CROSS_SECTION)
     }
     
-    func electroNegativity() -> NSNumber {
-        return self.floatForKey(ELEMENT_ELECTRO_NEGATIVITY)
+    var electroNegativity: Float {
+        return floatForKey(ELEMENT_ELECTRO_NEGATIVITY)
     }
     
-    func electronWorkFunction() -> NSNumber {
-        return self.floatForKey(ELEMENT_ELECTRON_WORK_FUNCTION)
+    var electronWorkFunction: Float {
+        return floatForKey(ELEMENT_ELECTRON_WORK_FUNCTION)
     }
     
-    func enthalpyOfAutomization() -> NSNumber {
-        return self.floatForKey(ELEMENT_ENTHALPY_OF_ATOMIZATION)
+    var enthalpyOfAutomization: Float {
+        return floatForKey(ELEMENT_ENTHALPY_OF_ATOMIZATION)
     }
     
-    func enthalpyOfFusion() -> NSNumber {
-        return self.floatForKey(ELEMENT_ENTHALPY_OF_FUSION)
+    var enthalpyOfFusion: Float {
+        return floatForKey(ELEMENT_ENTHALPY_OF_FUSION)
     }
     
-    func enthalpyOfVaporization() -> NSNumber {
-        return self.floatForKey(ELEMENT_ENTHALPY_OF_VAPORIZATION)
+    var enthalpyOfVaporization: Float {
+        return floatForKey(ELEMENT_ENTHALPY_OF_VAPORIZATION)
     }
     
-    func ionicRadius() -> NSNumber {
-        return self.floatForKey(ELEMENT_IONIC_RADIUS)
+    var ionicRadius: Float {
+        return floatForKey(ELEMENT_IONIC_RADIUS)
     }
     
-    func hardnessScaleBrinell() -> NSNumber {
-        return self.floatForKey(ELEMENT_HARDNESS_SCALE_BRINELL)
+    var hardnessScaleBrinell: Float {
+        return floatForKey(ELEMENT_HARDNESS_SCALE_BRINELL)
     }
     
-    func hardnessScaleMohs() -> NSNumber {
-        return self.floatForKey(ELEMENT_HARDNESS_SCALE_MOHS)
+    var hardnessScaleMohs: Float {
+        return floatForKey(ELEMENT_HARDNESS_SCALE_MOHS)
     }
     
-    func hardnessScaleVickers() -> NSNumber {
-        return self.floatForKey(ELEMENT_HARDNESS_SCALE_VICKERS)
+    var hardnessScaleVickers: Float {
+        return floatForKey(ELEMENT_HARDNESS_SCALE_VICKERS)
     }
     
-    func heatOfFusion() -> NSNumber {
-        return self.floatForKey(ELEMENT_HEAT_OF_FUSION)
+    var heatOfFusion: Float {
+        return floatForKey(ELEMENT_HEAT_OF_FUSION)
     }
     
-    func heatOfVaporization() -> NSNumber? {
-        return self.floatForKey(ELEMENT_HEAT_OF_VAPORIZATION)
+    var heatOfVaporization: Float {
+        return floatForKey(ELEMENT_HEAT_OF_VAPORIZATION)
     }
     
-    func ionizationPotentialFirst() -> NSNumber {
-        return self.floatForKey(ELEMENT_IONIZATION_POTENTIAL_FIRST)
+    var ionizationPotentialFirst: Float {
+        return floatForKey(ELEMENT_IONIZATION_POTENTIAL_FIRST)
     }
     
-    func ionizationPotentialSecond() -> NSNumber {
-        return self.floatForKey(ELEMENT_IONIZATION_POTENTIAL_SECOND)
+    var ionizationPotentialSecond: Float {
+        return floatForKey(ELEMENT_IONIZATION_POTENTIAL_SECOND)
     }
     
-    func ionizationPotentialThird() -> NSNumber {
-        return self.floatForKey(ELEMENT_IONIZATION_POTENTIAL_THIRD)
+    var ionizationPotentialThird: Float {
+        return floatForKey(ELEMENT_IONIZATION_POTENTIAL_THIRD)
     }
     
-    func molarHeatCapacity() -> NSNumber {
-        return self.floatForKey(ELEMENT_MOLAR_HEAT_CAPACITY)
+    var molarHeatCapacity: Float {
+        return floatForKey(ELEMENT_MOLAR_HEAT_CAPACITY)
     }
     
-    func molarVolume() -> NSNumber {
-        return self.floatForKey(ELEMENT_MOLAR_VOLUME)
+    var molarVolume: Float {
+        return floatForKey(ELEMENT_MOLAR_VOLUME)
     }
     
-    func specificHeatCapacity() -> NSNumber {
-        return self.floatForKey(ELEMENT_SPECIFIC_HEAT_CAPACITY)
+    var specificHeatCapacity: Float {
+        return floatForKey(ELEMENT_SPECIFIC_HEAT_CAPACITY)
     }
     
-    func valenceElectronPotential() -> NSNumber {
-        return self.floatForKey(ELEMENT_VALENCE_ELECTRON_POTENTIAL)
+    var valenceElectronPotential: Float {
+        return floatForKey(ELEMENT_VALENCE_ELECTRON_POTENTIAL)
     }
+    
 }

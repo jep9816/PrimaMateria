@@ -3,76 +3,445 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/22/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-enum SuperScriptType: Int {
-    case k0Superscript = 48
-    case k1Superscript = 49
-    case k2Superscript = 50
-    case k3Superscript = 51
-    case k4Superscript = 52
-    case k5Superscript = 53
-    case k6Superscript = 54
-    case k7Superscript = 55
-    case k8Superscript = 56
-    case k9Superscript = 57
+import UIKit
+
+enum SuperScriptType {
+    static let k0Superscript = 48
+    static let k1Superscript = 49
+    static let k2Superscript = 50
+    static let k3Superscript = 51
+    static let k4Superscript = 52
+    static let k5Superscript = 53
+    static let k6Superscript = 54
+    static let k7Superscript = 55
+    static let k8Superscript = 56
+    static let k9Superscript = 57
 }
 
 extension XTRElement {
-    func _unknownImage() -> UIImage {
-        let aPath : String? = NSBundle(forClass: XTRElement.classForCoder()).pathForResource(STRING_UNKNOWN, ofType: FILE_TYPE_PNG, inDirectory: SUPPORTING_FILES)
-        return UIImage.init(contentsOfFile: aPath!)!
-    }
     
     func pathForGeneralInfoDoc() -> String {
-        let aPath : String? = NSBundle(forClass: XTRElement.classForCoder()).pathForResource(self.symbol(), ofType: FILE_TYPE_RTF, inDirectory: SUPPORTING_FILES)
-        return aPath!
+        if let aPath = Bundle(for: XTRElement.classForCoder()).path(forResource: symbol, ofType: FileType.rtf, inDirectory: SUPPORTING_FILES) {
+            return aPath
+        }
+        
+        return STRING_EMPTY
     }
     
-    func _attributedStringForArray(anArray: NSArray?) -> String? {
-        if (anArray == nil) {
-            return String.init(format: "%@", STRING_UNKNOWN)
+    var atomicMassAggregate: String {
+        get {
+            let atomicMassKnownAccurately = value(forKeyPath: ELEMENT_ATOMIC_MASS_KNOWN_ACCURATELY) as! Bool
+            
+            if !atomicMassKnownAccurately {
+                return String(format: "[%d]", atomicMass)
+            } else {
+                let uncertainity = value(forKeyPath: ELEMENT_ATOMIC_MASS_UNCERTAINTY) as! Int64
+                let atomicMass = value(forKeyPath: ELEMENT_ATOMIC_MASS) as! String
+                
+                if uncertainity != 0 {
+                    return String(format: "%@(%d)", arguments: [atomicMass, uncertainity])
+                }
+            }
+            
+            return STRING_EMPTY
+        }
+    }
+    
+    var atomicMassFootnote : String {
+        get {
+            let footnote : String? =  value(forKeyPath: ELEMENT_ATOMIC_MASS_FOOTNOTE) as? String
+            
+            return (footnote == nil) ? STRING_EMPTY : footnote!
+        }
+    }
+    
+    var kShellElectrons : String {
+        get {
+            let s1String : String? = shell1s
+            let tot = (s1String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(s1String!)!)
+            
+            return (tot == 0) ? STRING_EMPTY : String(format: "%@", tot)
+        }
+    }
+    
+    var lShellElectrons : String {
+        get {
+            let s2String : String? = shell2s
+            let p2String : String? = shell2p
+            let s2 = (s2String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(s2String!)!)
+            let p2 = (p2String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(p2String!)!)
+            let tot = NSNumber(value: Int(s2.intValue + p2.intValue))
+            
+            return (tot == 0) ? STRING_EMPTY : String(format: "%@", tot)
+        }
+    }
+    
+    var mShellElectrons : String {
+        get {
+            let s3String : String? = shell3s
+            let p3String : String? = shell3p
+            let d3String : String? = shell3d
+            let s3 = (s3String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(s3String!)!)
+            let p3 = (p3String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(p3String!)!)
+            let d3 = (d3String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(d3String!)!)
+            let tot = NSNumber(value: Int(s3.intValue + p3.intValue + d3.intValue))
+            
+            return (tot == 0) ? STRING_EMPTY : String(format: "%@", tot)
+        }
+    }
+    
+    var nShellElectrons : String {
+        get {
+            let s4String : String? = shell4s
+            let p4String : String? = shell4p
+            let d4String : String? = shell4d
+            let f4String : String? = shell4f
+            let s4 = (s4String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(s4String!)!)
+            let p4 = (p4String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(p4String!)!)
+            let d4 = (d4String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(d4String!)!)
+            let f4 = (f4String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(f4String!)!)
+            let tot = NSNumber(value: Int(s4.intValue + p4.intValue + d4.intValue + f4.intValue))
+            
+            return (tot == 0) ? STRING_EMPTY : String(format: "%@", tot)
+        }
+    }
+    
+    var oShellElectrons : String {
+        get {
+            let s5String : String? = shell5s
+            let p5String : String? = shell5p
+            let d5String : String? = shell5d
+            let f5String : String? = shell5f
+            let s5 = (s5String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(s5String!)!)
+            let p5 = (p5String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(p5String!)!)
+            let d5 = (d5String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(d5String!)!)
+            let f5 = (f5String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(f5String!)!)
+            let tot = NSNumber(value: Int(s5.intValue + p5.intValue + d5.intValue + f5.intValue))
+            
+            return (tot == 0) ? STRING_EMPTY : String(format: "%@", tot)
+        }
+    }
+    
+    var pShellElectrons : String {
+        get {
+            let s6String : String? = shell6s
+            let p6String : String? = shell6p
+            let d6String : String? = shell6d
+            let s6 = (s6String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(s6String!)!)
+            let p6 = (p6String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(p6String!)!)
+            let d6 = (d6String == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(d6String!)!)
+            let tot = NSNumber(value: Int(s6.intValue + p6.intValue + d6.intValue))
+            
+            return (tot == 0) ? STRING_EMPTY : String(format: "%@", tot)
+        }
+    }
+    
+    var qShellElectrons : String {
+        get {
+            let s7String : String? = shell7s
+            let p7String : String? = shell7p
+            let s7 = (s7String! == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(s7String!)!)
+            let p7 = (p7String! == STRING_EMPTY) ? NSNumber(value: 0) : NSNumber(value: Int(p7String!)!)
+            let tot = NSNumber(value: Int(s7.intValue + p7.intValue))
+            
+            return (tot == 0) ? STRING_EMPTY : String(format: "%@", tot)
+        }
+    }
+    
+    var shell1s : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["1s"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell2s : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["2s"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell2p : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["2p"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell3s : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["3s"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell3p : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["3p"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell3d : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["3d"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell4s : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["4s"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell4p : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["4p"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell4d : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["4d"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell4f : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["4f"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell5s : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["5s"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell5p : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["5p"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell5d : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["5d"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell5f : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["5f"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell6s : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["6s"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell6p : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["6p"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell6d : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["6d"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell7s : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["7s"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var shell7p : String {
+        get {
+            let aDict = electronConfiguration!
+            let aValue : String? = aDict["7p"] as? String
+            
+            return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
+        }
+    }
+    
+    var seriesColor : UIColor {
+        return XTRColorFactory.colorForString(value(forKeyPath: ELEMENT_SERIES) as! String)
+    }
+    
+    var standardConditionColor : UIColor {
+        return XTRColorFactory.colorForString(value(forKeyPath: ELEMENT_STANDARD_CONDITION) as! String)
+    }
+    
+    var crystalStructureImage : UIImage {
+        get {
+            let aPath : String? = Bundle(for: XTRElement.classForCoder()).path(forResource: value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as? String, ofType: FileType.png, inDirectory: SUPPORTING_FILES)
+            return (aPath != nil) ? UIImage(contentsOfFile: aPath!)! : _unknownImage()
+        }
+    }
+    
+    var shellModelImage : UIImage {
+        get {
+            let aPath : String? = Bundle(for: XTRElement.classForCoder()).path(forResource: symbol!, ofType: FileType.png, inDirectory: SUPPORTING_FILES)
+            return (aPath != nil) ? UIImage(contentsOfFile: aPath!)! : _unknownImage()
+        }
+    }
+    
+    var hardnessScaleBrinellScaled : Float {
+        get {
+            let aValue = hardnessScaleBrinell
+            return aValue / 100.0
+        }
+    }
+    
+    var hardnessScaleVickersScaled : Float {
+        get {
+            let aValue = hardnessScaleVickers
+            return aValue / 100
+        }
+    }
+    
+    var coefficientOfLinealThermalExpansionScaled : Float {
+        get {
+            let aValue = coefficientOfLinealThermalExpansion
+            return aValue * 100000
+        }
+    }
+    
+    var fillingOrbital : String {
+        get {
+            let aValue = value(forKeyPath: ELEMENT_FILLING_ORBITAL) as! [Any]?
+            return _attributedStringForArray(aValue)!
+        }
+    }
+    
+    var valence : String {
+        get {
+            let aValue = value(forKeyPath: ELEMENT_VALENCE_ELECTRONS) as! [Any]?
+            return _attributedStringForArray(aValue)!
+        }
+    }
+    
+    func nameString() -> String {
+        return "Element Inspector for \( name!)"
+    }
+    
+    var groupString : String {
+        return "\(group!) "
+    }
+    
+    var casRegNoString : String {
+        return " \(value(forKeyPath: ELEMENT_CAS_REGISTRY_NUMBER) as! String)"
+    }
+    
+    private func _unknownImage() -> UIImage {
+        let aPath : String? = Bundle(for: XTRElement.classForCoder()).path(forResource: STRING_UNKNOWN, ofType: FileType.png, inDirectory: SUPPORTING_FILES)
+        return UIImage(contentsOfFile: aPath!)!
+    }
+    
+    private func _attributedStringForArray(_ anArray: [Any]?) -> String? {
+        if anArray == nil {
+            return STRING_UNKNOWN
         } else {
-            var attributedString : String = String()
+            var attributedString = ""
             let outerCount = anArray!.count
             
             for index in 0..<outerCount {
-                let aDictionary : NSDictionary = anArray!.objectAtIndex(index) as! NSDictionary
-                let allKeys : NSArray = aDictionary.allKeys
-                let allValues : NSArray = aDictionary.allValues
+                let aDictionary = anArray![index] as! [String : String]
+                let keysCollection = aDictionary.keys
+                let valuesCollection = aDictionary.values
+                let allKeys = Array(keysCollection) 
+                let allValues = Array(valuesCollection) 
+                
                 let count = allKeys.count
                 
-                if(count > 0) {
+                if count > 0 {
                     for i in 0..<count {
-                        let aKey : String = allKeys.objectAtIndex(i) as! String
-                        let aValue : String = allValues.objectAtIndex(i) as! String
+                        let aKey = allKeys[i] 
+                        let aValue = allValues[i]
                         
-                        if (aKey != "New item") {
+                        if aKey != "New item" {
                             let aString = Array(arrayLiteral: aValue)[0]
-                            let character : Int = Int(aString)!
+                            let character = Int(aString)!
                             attributedString = attributedString + aKey
                             
                             switch (character) {
-                            case SuperScriptType.k0Superscript.rawValue:
+                            case SuperScriptType.k0Superscript:
                                 attributedString = attributedString + "⁰"
-                            case SuperScriptType.k1Superscript.rawValue:
+                            case SuperScriptType.k1Superscript:
                                 attributedString = attributedString + "¹"
-                            case SuperScriptType.k2Superscript.rawValue:
+                            case SuperScriptType.k2Superscript:
                                 attributedString = attributedString + "²"
-                            case SuperScriptType.k3Superscript.rawValue:
+                            case SuperScriptType.k3Superscript:
                                 attributedString = attributedString + "³"
-                            case SuperScriptType.k4Superscript.rawValue:
+                            case SuperScriptType.k4Superscript:
                                 attributedString = attributedString + "⁴"
-                            case SuperScriptType.k5Superscript.rawValue:
+                            case SuperScriptType.k5Superscript:
                                 attributedString = attributedString + "⁵"
-                            case SuperScriptType.k6Superscript.rawValue:
+                            case SuperScriptType.k6Superscript:
                                 attributedString = attributedString + "⁶"
-                            case SuperScriptType.k7Superscript.rawValue:
+                            case SuperScriptType.k7Superscript:
                                 attributedString = attributedString + "⁷"
-                            case SuperScriptType.k8Superscript.rawValue:
+                            case SuperScriptType.k8Superscript:
                                 attributedString = attributedString + "⁸"
-                            case SuperScriptType.k9Superscript.rawValue:
+                            case SuperScriptType.k9Superscript:
                                 attributedString = attributedString + "⁹"
                             default:
                                 break
@@ -86,304 +455,4 @@ extension XTRElement {
         }
     }
     
-    func atomicMassAggregate() -> String? {
-        let atomicMassKnownAccurately : Bool = self.valueForKey(ELEMENT_ATOMIC_MASS_KNOWN_ACCURATELY) as! Bool
-        
-        if (!atomicMassKnownAccurately) {
-            return String.init(format: "[%@]", self.atomicMass())
-        } else {
-            let temp : NSNumber? = self.valueForKey(ELEMENT_ATOMIC_MASS_UNCERTAINTY) as? NSNumber
-            if (temp != 0) {
-                return String.init(format: "%@(%@)", arguments: [self.atomicMass(), temp!])
-            }
-        }
-        return STRING_EMPTY
-    }
-    
-    func atomicMassFootnote() -> String {
-        let footnote : String? =  self.valueForKey(ELEMENT_ATOMIC_MASS_FOOTNOTE) as? String
-        
-        return (footnote == nil) ? STRING_EMPTY : footnote!
-    }
-    
-    func kShellElectrons() -> String {
-        let s1String : String? = self.shell1s()
-        let tot : NSNumber = ((s1String == STRING_EMPTY) ? 0 : Int(s1String!))!
-        
-        return (tot == 0) ? STRING_EMPTY : String.init(format: "%@", tot)
-    }
-    
-    func lShellElectrons() -> String {
-        let s2String : String? = self.shell2s()
-        let p2String : String? = self.shell2p()
-        let s2 : NSNumber = ((s2String == STRING_EMPTY) ? 0 : Int(s2String!))!
-        let p2 : NSNumber = ((p2String == STRING_EMPTY) ? 0 : Int(p2String!))!
-        let tot : NSNumber = Int(s2.integerValue + p2.integerValue)
-        
-        return (tot == 0) ? STRING_EMPTY : String.init(format: "%@", tot)
-    }
-    
-    func mShellElectrons() -> String {
-        let s3String : String? = self.shell3s()
-        let p3String : String? = self.shell3p()
-        let d3String : String? = self.shell3d()
-        let s3 : NSNumber = ((s3String == STRING_EMPTY) ? 0 : Int(s3String!))!
-        let p3 : NSNumber = ((p3String == STRING_EMPTY) ? 0 : Int(p3String!))!
-        let d3 : NSNumber = ((d3String == STRING_EMPTY) ? 0 : Int(d3String!))!
-        let tot : NSNumber = Int(s3.integerValue + p3.integerValue + d3.integerValue)
-        
-        return (tot == 0) ? STRING_EMPTY : String.init(format: "%@", tot)
-    }
-    
-    func nShellElectrons() -> String {
-        let s4String : String? = self.shell4s()
-        let p4String : String? = self.shell4p()
-        let d4String : String? = self.shell4d()
-        let f4String : String? = self.shell4f()
-        let s4 : NSNumber = ((s4String == STRING_EMPTY) ? 0 : Int(s4String!))!
-        let p4 : NSNumber = ((p4String == STRING_EMPTY) ? 0 : Int(p4String!))!
-        let d4 : NSNumber = ((d4String == STRING_EMPTY) ? 0 : Int(d4String!))!
-        let f4 : NSNumber = ((f4String == STRING_EMPTY) ? 0 : Int(f4String!))!
-        let tot : NSNumber = Int(s4.integerValue + p4.integerValue + d4.integerValue + f4.integerValue)
-        
-        return (tot == 0) ? STRING_EMPTY : String.init(format: "%@", tot)
-    }
-    
-    func oShellElectrons() -> String {
-        let s5String : String? = self.shell5s()
-        let p5String : String? = self.shell5p()
-        let d5String : String? = self.shell5d()
-        let f5String : String? = self.shell5f()
-        let s5 : NSNumber = ((s5String == STRING_EMPTY) ? 0 : Int(s5String!))!
-        let p5 : NSNumber = ((p5String == STRING_EMPTY) ? 0 : Int(p5String!))!
-        let d5 : NSNumber = ((d5String == STRING_EMPTY) ? 0 : Int(d5String!))!
-        let f5 : NSNumber = ((f5String == STRING_EMPTY) ? 0 : Int(f5String!))!
-        let tot : NSNumber = Int(s5.integerValue + p5.integerValue + d5.integerValue + f5.integerValue)
-        
-        return (tot == 0) ? STRING_EMPTY : String.init(format: "%@", tot)
-    }
-    
-    func pShellElectrons() -> String {
-        let s6String : String? = self.shell6s()
-        let p6String : String? = self.shell6p()
-        let d6String : String? = self.shell6d()
-        let s6 : NSNumber = ((s6String == STRING_EMPTY) ? 0 : Int(s6String!))!
-        let p6 : NSNumber = ((p6String == STRING_EMPTY) ? 0 : Int(p6String!))!
-        let d6 : NSNumber = ((d6String == STRING_EMPTY) ? 0 : Int(d6String!))!
-        let tot : NSNumber = Int(s6.integerValue + p6.integerValue + d6.integerValue)
-        
-        return (tot == 0) ? STRING_EMPTY : String.init(format: "%@", tot)
-    }
-    
-    func qShellElectrons() -> String {
-        let s7String : String? = self.shell7s()
-        let p7String : String? = self.shell7p()
-        let s7 : NSNumber = ((s7String == STRING_EMPTY) ? 0 : Int(s7String!))!
-        let p7 : NSNumber = ((p7String == STRING_EMPTY) ? 0 : Int(p7String!))!
-        let tot : NSNumber = Int(s7.integerValue + p7.integerValue)
-        
-        return (tot == 0) ? STRING_EMPTY : String.init(format: "%@", tot)
-    }
-    
-    func shell1s() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("1s") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell2s() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("2s") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell2p() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("2p") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell3s() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("3s") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell3p() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("3p") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell3d() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("3d") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell4s() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("4s") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell4p() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("4p") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell4d() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("4d") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell4f() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("4f") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell5s() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("5s") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell5p() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("5p") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell5d() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("5d") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell5f() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("5f") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell6s() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("6s") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell6p() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("6p") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell6d() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("6d") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell7s() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("7s") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func shell7p() -> String {
-        let aDict : NSDictionary = self.electronConfiguration()!
-        let aValue : String? = aDict.objectForKey("7p") as? String
-        
-        return (aValue != nil && aValue != "?") ? aValue! : STRING_EMPTY
-    }
-    
-    func seriesColor() -> UIColor {
-        return XTRColorFactory.colorForString(self.valueForKey(ELEMENT_SERIES) as! String)
-    }
-    
-    func standardConditionColor() -> UIColor {
-        return XTRColorFactory.colorForString(self.valueForKey(ELEMENT_STANDARD_CONDITION) as! String)
-    }
-    
-    func crystalStructureImage() -> UIImage {
-        let aPath : String? = NSBundle(forClass: XTRElement.classForCoder()).pathForResource(self.valueForKey(ELEMENT_CRYSTAL_STRUCTURE) as? String, ofType: FILE_TYPE_PNG, inDirectory: SUPPORTING_FILES)
-        return (aPath != nil) ? UIImage.init(contentsOfFile: aPath!)! : self._unknownImage()
-    }
-    
-    func shellModelImage() -> UIImage {
-        let aPath : String? = NSBundle(forClass: XTRElement.classForCoder()).pathForResource(self.symbol()!, ofType: FILE_TYPE_PNG, inDirectory: SUPPORTING_FILES)
-        return (aPath != nil) ? UIImage.init(contentsOfFile: aPath!)! : self._unknownImage()
-    }
-    
-    func hardnessScaleBrinellScaled() -> NSNumber {
-        let aValue : NSNumber = self.hardnessScaleBrinell()
-        return (aValue.floatValue / 100)
-    }
-    
-    func hardnessScaleVickersScaled() -> NSNumber {
-        let aValue : NSNumber = self.hardnessScaleVickers()
-        return (aValue.floatValue / 100)
-    }
-    
-    func coefficientOfLinealThermalExpansionScaled() -> NSNumber {
-        let aValue : NSNumber = self.coefficientOfLinealThermalExpansion()
-        return (aValue.floatValue * 100000)
-    }
-    
-    func fillingOrbital() -> String {
-        return self._attributedStringForArray(self.valueForKey(ELEMENT_FILLING_ORBITAL) as? NSArray)!
-    }
-    
-    func valence() -> String {
-        return self._attributedStringForArray(self.valueForKey(ELEMENT_VALENCE_ELECTRONS) as? NSArray)!
-    }
-    
-    func boilingPointString() -> String {
-        return String.init(format: "%@", self.boilingPoint())
-    }
-    
-    func meltingPointString() -> String {
-        return String.init(format: "%@", self.meltingPoint())
-    }
-    
-    func nameString() -> String {
-        return String.init(format: "Element Inspector for %@", self.name()!)
-    }
-    
-    func periodString() -> String {
-        return String.init(format: "%@ ", self.period()!)
-    }
-    
-    func groupString() -> String {
-        return String.init(format: "%@ ", self.group()!)
-    }
-    
-    func seriesString() -> String {
-        return String.init(format: " %@", self.series()!)
-    }
-    
-    func casRegNoString() -> String {
-        return String.init(format: " %@", self.valueForKey(ELEMENT_CAS_REGISTRY_NUMBER) as! String)
-    }
 }

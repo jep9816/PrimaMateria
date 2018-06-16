@@ -3,15 +3,18 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRElementListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet var atomicNumberButton : DynoTableHeaderButton!
+class XTRElementListViewController : UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    static let tableViewCellIdentifier = "XTRElementTableViewCell"
+    
+    @IBOutlet var atomicNumberButton : XTRTableHeaderButton!
     @IBOutlet var swapView: UIView!
     
     private var tableView : UITableView?
-    private var _indexPath : NSIndexPath?
+    private var _indexPath : IndexPath?
     
     // MARK: - Initialization Methods
     
@@ -21,73 +24,42 @@
     
     // MARK: - Internal Methods
     
-    private func showElementPanelForElementAtIndex(anIndex: UInt)  {
-        XTRPropertiesStore.storeViewTitle(self.title)
-        XTRPropertiesStore.storeAtomicNumber(anIndex)
-        self.performSegueWithIdentifier(SHOW_INSPECTOR_FROM_ELEMENT_LIST, sender: self)
+    private func showElementPanelForElementAtIndex(_ anIndex: Int)  {
+        XTRPropertiesStore.viewTitle = title!
+        XTRPropertiesStore.atomicNumber = anIndex
+        performSegue(withIdentifier: SegueName.showInspectorFromElementList, sender: self)
     }
     
     private func setupTableView() {
-        self.tableView = UITableView.init(frame: swapView.frame, style: UITableViewStyle.Plain)
-        self.tableView!.alwaysBounceVertical = false
-        self.tableView!.alwaysBounceHorizontal = false
-        self.tableView!.delegate = self
-        self.tableView!.dataSource = self
-        self.tableView!.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.tableView!.backgroundColor = UIColor.blackColor()
-        self.tableView!.allowsSelection = true
-        self.tableView!.allowsMultipleSelection = false
-        self.tableView!.registerClass(XTRElementTableViewCell.classForCoder(), forCellReuseIdentifier: "XTRElementTableViewCell")
-        self.view.addSubview(tableView!)
+        tableView = UITableView(frame: swapView.frame, style: .plain)
+        guard let localTableView = tableView else { return }
+        localTableView.alwaysBounceVertical = false
+        localTableView.alwaysBounceHorizontal = false
+        localTableView.delegate = self
+        localTableView.dataSource = self
+        localTableView.separatorStyle = .none
+        localTableView.backgroundColor = UIColor.black
+        localTableView.allowsSelection = true
+        localTableView.allowsMultipleSelection = false
+        localTableView.register(XTRElementTableViewCell.classForCoder(), forCellReuseIdentifier: XTRElementListViewController.tableViewCellIdentifier)
+        view.addSubview(tableView!)
     }
     
     // MARK: - Action Methods
     
-    @IBAction func sortTableView(sender: DynoTableHeaderButton) {
-        let toggleState : Bool = sender.toggleState()
+    @IBAction func sortTableView(_ sender: XTRTableHeaderButton) {
+        let toggleState = sender.toggleState()
         
-        if (self.tableView != nil) {
-            self.tableView!.delegate = nil
-            self.tableView!.dataSource = nil
-            self.tableView!.removeFromSuperview()
-            self.tableView = nil
+        if tableView != nil {
+            tableView!.delegate = nil
+            tableView!.dataSource = nil
+            tableView!.removeFromSuperview()
+            tableView = nil
         }
         
-        XTRDataSource.sharedInstance().sortByColumnPosition(UInt(sender.tag), andOrdering: toggleState)
-        self.setupTableView()
-        self.tableView!.reloadData()
-    }
-    
-    // MARK: - UITableView DataSource Methods
-    
-    func tableView(aTableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {        
-        let cell : XTRElementTableViewCell? = aTableView.dequeueReusableCellWithIdentifier("XTRElementTableViewCell") as? XTRElementTableViewCell
-        cell!.setupWithElement(XTRDataSource.sharedInstance().sortedElementAtIndex(UInt(indexPath.row)))
-        
-        return cell!
-    }
-    
-    func numberOfSectionsInTableView(aTableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(aTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return XTRDataSource.sharedInstance().sortedElementList!.count
-    }
-    
-    // MARK: - UITableView Delegate Methods
-    
-    func tableView(aTableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let element : XTRElement = XTRDataSource.sharedInstance().sortedElementAtIndex(UInt(indexPath.row))
-        let atomicNumber : NSNumber = element.atomicNumber()
-
-        self._indexPath = indexPath
-        aTableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.showElementPanelForElementAtIndex(UInt(atomicNumber.integerValue - 1))
-    }
-    
-    func tableView(aTableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44
+        XTRDataSource.sharedInstance().sortByColumnPosition(sender.tag, andOrdering: toggleState)
+        setupTableView()
+        tableView!.reloadData()
     }
     
     // MARK: - View Management Methods
@@ -95,30 +67,71 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.atomicNumberButton.toggleState()
-        self.swapView.removeFromSuperview()
-        self.setupTableView()
+        _ = atomicNumberButton.toggleState()
+        swapView.removeFromSuperview()
+        setupTableView()
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
-    override func viewDidDisappear(animated: Bool) {
-        if(self._indexPath != nil)  {
-            self.tableView!.deselectRowAtIndexPath(self._indexPath!, animated: true)
+    override func viewDidDisappear(_ animated: Bool) {
+        if _indexPath != nil  {
+            tableView!.deselectRow(at: _indexPath!, animated: true)
         }
         super.viewDidDisappear(animated)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.atomicNumberButton = nil
-        self.swapView = nil
+        atomicNumberButton = nil
+        swapView = nil
     }
+    
+}
+
+extension XTRElementListViewController { // TableView DataSource - Delegate
+    // MARK: - UITableView DataSource Methods
+    
+    func tableView(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell : XTRElementTableViewCell? = aTableView.dequeueReusableCell(withIdentifier: XTRElementListViewController.tableViewCellIdentifier) as? XTRElementTableViewCell
+        cell!.setupWithElement(XTRDataSource.sharedInstance().sortedElementAtIndex(indexPath.row))
+        
+        return cell!
+    }
+    
+    func numberOfSections(in aTableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ aTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return XTRDataSource.sharedInstance().sortedElementList!.count
+    }
+    
+    // MARK: - UITableView Delegate Methods
+    
+    func tableView(_ aTableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let element = XTRDataSource.sharedInstance().sortedElementAtIndex(indexPath.row)
+        let atomicNumber = element.atomicNumber
+        
+        _indexPath = indexPath
+        aTableView.deselectRow(at: indexPath, animated: true)
+        showElementPanelForElementAtIndex(atomicNumber - 1)
+    }
+    
+    func tableView(_ aTableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+
 }

@@ -3,10 +3,10 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/14/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRShadowView : UIImageView {
+class XTRShadowView : UIImageView {
     
     // MARK: - Initialization Methods
     
@@ -16,30 +16,35 @@
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.createLayer()
+        createLayer()
     }
     
     // MARK: - Internal Methods
 
     func createLayer() {
-        let superView : UIView = self.superview!
-        let sublayer : CALayer = CALayer.init()
-        sublayer.backgroundColor = UIColor.clearColor().CGColor
-        sublayer.shadowOffset = CGSizeMake(5.0, 5.0)
+        let superView = superview!
+        let sublayer = CALayer()
+        
+        sublayer.backgroundColor = UIColor.clear.cgColor
+        sublayer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         sublayer.shadowRadius = 10.0
-        sublayer.shadowColor = UIColor.blackColor().CGColor
+        sublayer.shadowColor = UIColor.black.cgColor
         sublayer.shadowOpacity = 1.0
-        sublayer.frame = CGRectMake(self.frame.origin.x + 1, self.frame.origin.y + 1, self.frame.size.width - 2, self.frame.size.height - 2)
-        sublayer.borderColor = UIColor.blackColor().CGColor
-        sublayer.backgroundColor = UIColor.blackColor().CGColor
+        sublayer.frame = CGRect(x: frame.origin.x + 1, y: frame.origin.y + 1, width: frame.size.width - 2, height: frame.size.height - 2)
+        sublayer.borderColor = UIColor.black.cgColor
+        sublayer.backgroundColor = UIColor.black.cgColor
         sublayer.borderWidth = 1.0
         sublayer.cornerRadius = 10.0
+        
         superView.layer.addSublayer(sublayer)
-        self.layer.masksToBounds = true
-        self.layer.cornerRadius = 10.0
-        self.layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).CGColor
-        self.layer.borderWidth = 3.0
-        self.opaque = false
-        superView.bringSubviewToFront(self)
+        
+        layer.masksToBounds = true
+        layer.cornerRadius = 10.0
+        layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
+        layer.borderWidth = 3.0
+        isOpaque = false
+        
+        superView.bringSubview(toFront: self)
     }
+    
 }

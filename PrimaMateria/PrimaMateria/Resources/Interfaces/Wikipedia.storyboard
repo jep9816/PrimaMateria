@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ypQ-rt-Kto">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Wikipedia-->
+        <scene sceneID="ek8-Kd-yZu">
+            <objects>
+                <viewController storyboardIdentifier="XTRWikipediaViewController" title="Wikipedia" modalPresentationStyle="pageSheet" id="ypQ-rt-Kto" customClass="XTRWikipediaViewController" customModule="PrimaMateria" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gGI-La-jyc">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xst-jJ-3ii">
+                                <rect key="frame" x="0.0" y="42" width="768" height="527"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="-4" maxX="0.0" maxY="4"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ypQ-rt-Kto" id="1Uo-uu-zmc"/>
+                                </connections>
+                            </webView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-95-yfr">
+                                <rect key="frame" x="0.0" y="-2" width="768" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <barButtonItem title="◀︎" id="Fea-lh-YWt">
+                                        <connections>
+                                            <action selector="backButtonPressed:" destination="ypQ-rt-Kto" id="pQU-7d-Ct5"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pni-Hc-3wk"/>
+                                    <barButtonItem title="Wikipedia" style="plain" id="aaQ-NN-nSW"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cPF-10-LxC"/>
+                                    <barButtonItem title="▶︎" id="GqJ-vK-2Wp">
+                                        <connections>
+                                            <action selector="forwardButtonPressed:" destination="ypQ-rt-Kto" id="qT8-Tg-eyx"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xD8-hn-j2d" customClass="XTRGeneralButton" customModule="PrimaMateria">
+                                <rect key="frame" x="354" y="579" width="60" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <size key="titleShadowOffset" width="2" height="2"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss:" destination="ypQ-rt-Kto" eventType="touchUpInside" id="DbM-Nf-Xaf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="KzX-cX-ilA"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="768" height="620"/>
+                    <connections>
+                        <outlet property="backButton" destination="Fea-lh-YWt" id="IRA-NK-QHj"/>
+                        <outlet property="forwardButton" destination="GqJ-vK-2Wp" id="HA8-Gk-jav"/>
+                        <outlet property="titleButtonItem" destination="aaQ-NN-nSW" id="Q3q-wT-XBQ"/>
+                        <outlet property="webView" destination="xst-jJ-3ii" id="pDp-qv-fvD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g9M-nE-MsW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6423" y="2222"/>
+        </scene>
+    </scenes>
+</document>

@@ -3,10 +3,12 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRElementInspectorViewController : XTRSwapableViewController {
+class XTRElementInspectorViewController : XTRSwapableViewController {
+    
+    @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var barButtonItem : UIBarButtonItem!
     @IBOutlet var nextButton : UIButton!
     @IBOutlet var previousButton : UIButton!
@@ -31,159 +33,168 @@
     // MARK: - Internal Methods
     
     func assignAtomicSymbolTextFieldProperties() {
-        self.atomicSymbolLabel.text = self.element!.symbol()
-        self.atomicSymbolLabel.textColor = self.element!.standardConditionColor()
-        self.atomicSymbolLabel.backgroundColor = self.element!.seriesColor()
+        atomicSymbolLabel.text = element!.symbol
+        atomicSymbolLabel.textColor = element!.standardConditionColor
+        atomicSymbolLabel.backgroundColor = element!.seriesColor
     }
     
     func assignOtherLabels() {
-        self.atomicNumberLabel.text = self.element!.atomicNumber().stringValue
-        self.titleItem.title = self.element!.nameString()
-        self.periodLabel.text = self.element!.periodString()
-        self.groupLabel.text = self.element!.groupString()
-        self.seriesLabel.text = self.element!.seriesString()
-        self.casRegNoLabel.text = self.element!.casRegNoString()
+        atomicNumberLabel.text = String(element!.atomicNumber)
+        titleItem.title = element!.nameString()
+        periodLabel.text = element!.period
+        groupLabel.text = element!.groupString
+        seriesLabel.text = element!.series
+        casRegNoLabel.text = element!.casRegNoString
     }
     
     func assignNavigationHints() {
-        let atomicNumber : Int = self.element!.atomicNumber().integerValue
-        let currentLabel : UILabel = self.pageItemView.subviews[atomicNumber + 1] as! UILabel
-        var nextAtomicNumber : Int = self.element!.atomicNumber().integerValue + 1
+        let atomicNumber = element!.atomicNumber
+        let currentLabel = pageItemView.subviews[atomicNumber + 1] as! UILabel
+        var nextAtomicNumber = element!.atomicNumber + 1
         
-        currentLabel.font = UIFont.systemFontOfSize(12.0)
-        currentLabel.textColor = UIColor.whiteColor()
+        currentLabel.font = UIFont.systemFont(ofSize: 10.0)
+        currentLabel.textColor = UIColor.white
         
-        if (nextAtomicNumber > Int(XTRDataSource.sharedInstance().elementCount())) {
+        if nextAtomicNumber > XTRDataSource.sharedInstance().elementCount() {
             nextAtomicNumber = 1
         }
         
-        if(nextAtomicNumber - 1 < Int(XTRDataSource.sharedInstance().elementCount())) {
-            let localNextLabel : UILabel = self.pageItemView.subviews[nextAtomicNumber + 1] as! UILabel
-            localNextLabel.font = UIFont.systemFontOfSize(10.0)
-            localNextLabel.textColor = UIColor.darkGrayColor()
+        if nextAtomicNumber - 1 < XTRDataSource.sharedInstance().elementCount()  {
+            let localNextLabel = pageItemView.subviews[nextAtomicNumber + 1] as! UILabel
+            localNextLabel.font = UIFont.systemFont(ofSize: 10.0)
+            localNextLabel.textColor = UIColor.darkGray
         }
         
-        let nextElement : XTRElement = XTRDataSource.sharedInstance().elementAtIndex(UInt(nextAtomicNumber) - 1)
-        let nextTitle : String = String.init(format: "%@ ▶︎ ", nextElement.name()!)
-        self.nextButton.setTitle(nextTitle, forState: UIControlState.Normal)
-        self.nextButton.setTitle(nextTitle, forState: UIControlState.Highlighted)
-        self.nextButton.setTitle(nextTitle, forState: UIControlState.Selected)
+        let nextElement = XTRDataSource.sharedInstance().elementAtIndex(nextAtomicNumber - 1)
+        let nextTitle = " ▶︎ \(nextElement.name!)"
         
-        self.nextLabel.text = String.init(format: "Swipe Right for %@ ", nextElement.name()!)
+        nextButton.setTitle(nextTitle, for: UIControlState())
+        nextButton.setTitle(nextTitle, for: .highlighted)
+        nextButton.setTitle(nextTitle, for: .selected)
         
-        var previousAtomicNumber : Int = self.element!.atomicNumber().integerValue - 1
-        if (previousAtomicNumber < 1) {
-            previousAtomicNumber = Int(XTRDataSource.sharedInstance().elementCount())
-        }
-        if(previousAtomicNumber > 0) {
-            let localPreviousLabel : UILabel = self.pageItemView.subviews[previousAtomicNumber + 1] as! UILabel
-            localPreviousLabel.font = UIFont.systemFontOfSize(10.0)
-            localPreviousLabel.textColor = UIColor.darkGrayColor()
+        nextLabel.text = " Swipe Right for \(nextElement.name!)"
+        
+        var previousAtomicNumber = element!.atomicNumber - 1
+        
+        if previousAtomicNumber < 1 {
+            previousAtomicNumber = XTRDataSource.sharedInstance().elementCount()
         }
         
-        let previousElement : XTRElement = XTRDataSource.sharedInstance().elementAtIndex(UInt(previousAtomicNumber) - 1)
-        let previousTitle : String = String.init(format: " ◀︎ %@", previousElement.name()!)
-        self.previousButton.setTitle(previousTitle, forState: UIControlState.Normal)
-        self.previousButton.setTitle(previousTitle, forState: UIControlState.Highlighted)
-        self.previousButton.setTitle(previousTitle, forState: UIControlState.Selected)
-        self.previousLabel.text = String.init(format: " Swipe Left for %@", previousElement.name()!)
+        if previousAtomicNumber > 0 {
+            let localPreviousLabel = pageItemView.subviews[previousAtomicNumber + 1] as! UILabel
+            localPreviousLabel.font = UIFont.systemFont(ofSize: 10.0)
+            localPreviousLabel.textColor = UIColor.darkGray
+        }
+        
+        let previousElement = XTRDataSource.sharedInstance().elementAtIndex(previousAtomicNumber - 1)
+        let previousTitle = " ◀︎ \(previousElement.name!)"
+        
+        previousButton.setTitle(previousTitle, for: UIControlState())
+        previousButton.setTitle(previousTitle, for: .highlighted)
+        previousButton.setTitle(previousTitle, for: .selected)
+        previousLabel.text = " Swipe Left for \(previousElement.name!)"
     }
     
     func setupPageItemView() {
-        var rect : CGRect = CGRectMake(4, 30, 8, 8)
-        let count : Int = Int(XTRDataSource.sharedInstance().elementCount() - 1)
+        var rect = CGRect(x: 4, y: 30, width: 8, height: 8)
+        let count = XTRDataSource.sharedInstance().elementCount() - 1
         
         for _ in 0...count {
-            let label : UILabel = UILabel(frame: rect)
+            let label = UILabel(frame: rect)
             label.text = "●"
-            label.textAlignment = NSTextAlignment.Center
-            label.font = UIFont.systemFontOfSize(10.0)
-            label.textColor = UIColor.darkGrayColor()
-            label.backgroundColor = UIColor.clearColor()
-            self.pageItemView.addSubview(label)
-            rect = CGRectMake(label.frame.origin.x + 8.6, 30, 8, 8)
+            label.textAlignment = .center
+            label.font = UIFont.systemFont(ofSize: 10.0)
+            label.textColor = UIColor.darkGray
+            label.backgroundColor = UIColor.clear
+            pageItemView.addSubview(label)
+            rect = CGRect(x: label.frame.origin.x + 8.6, y: 30, width: 8, height: 8)
         }
-        self.view.bringSubviewToFront(self.pageItemView)
+        view.bringSubview(toFront: pageItemView)
     }
     
-    override func addChildViewController(aViewController: UIViewController) {
+    override func addChildViewController(_ aViewController: UIViewController) {
         super.addChildViewController(aViewController)
-        aViewController.view.frame = self.swapView.frame
-        aViewController.view.bounds = self.swapView.bounds
-        aViewController.view.hidden = true
-        self.view.addSubview(aViewController.view)
+        aViewController.view.frame = swapView.frame
+        aViewController.view.bounds = swapView.bounds
+        aViewController.view.isHidden = true
+        view.addSubview(aViewController.view)
     }
     
-    func animateForDirection(direction: String) {
-        self.setupUI()
-        let defaultState : Bool = XTRPropertiesStore.retreiveShowTransitionsState()
+    func animateForDirection(_ direction: String) {
+        setupUI()
+        let defaultState = XTRPropertiesStore.showTransitionsState
         
-        if (defaultState.boolValue) {
-            let currentView : UIView = self.view
-            let theWindow : UIView = currentView.superview!
-            
+        if defaultState {
+            let currentView : UIView = view
+            let theWindow = currentView.superview!
+            let animation = CATransition()
+
             currentView.removeFromSuperview()
             
-            let animation : CATransition = CATransition.init()
             animation.duration = 1.0
             animation.type = kCATransitionReveal
             animation.subtype = (direction == "Next") ? kCATransitionFromLeft : kCATransitionFromRight
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
-            theWindow.layer.addAnimation(animation, forKey: "SwitchInspectorView")
+            theWindow.layer.add(animation, forKey: "SwitchInspectorView")
             theWindow.addSubview(currentView)
-            theWindow.layer.removeAnimationForKey("SwitchInspectorView")
+            theWindow.layer.removeAnimation(forKey: "SwitchInspectorView")
         }
     }
     
     // MARK: - Misellaneous Methods
     
     override func setupUI() {
-        if (self.element != nil) {
-            self.assignAtomicSymbolTextFieldProperties()
-            self.assignOtherLabels()
-            self.assignNavigationHints()
+        if element != nil {
+            assignAtomicSymbolTextFieldProperties()
+            assignOtherLabels()
+            assignNavigationHints()
             
-            for index in 0..<self.childViewControllers.count {
-                let controller : XTRSwapableViewController = self.childViewControllers[Int(index)] as! XTRSwapableViewController
-                controller.element = self.element
+            for index in 0..<childViewControllers.count {
+                let controller = childViewControllers[Int(index)] as! XTRSwapableViewController
+                controller.element = element
                 controller.setupUI()
             }
         }
-        self.view.bringSubviewToFront(self.pageItemView)
+        view.bringSubview(toFront: pageItemView)
     }
     
     // MARK: - Action Methods
     
-    @IBAction func dismiss(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_INSPECTOR_DISMISSED, object: nil)
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+        NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
     }
     
-    @IBAction func swapViews(sender: UISegmentedControl) {
-        let viewController : UIViewController = self.childViewControllers[sender.selectedSegmentIndex]
-        for index in 0..<self.childViewControllers.count {
-            let controller : XTRSwapableViewController = self.childViewControllers[Int(index)] as! XTRSwapableViewController
-            controller.view.hidden = true
-            viewController.view.hidden = false
+    @IBAction func swapViews(_ sender: UISegmentedControl) {
+        let viewController = childViewControllers[sender.selectedSegmentIndex]
+        
+        for index in 0..<childViewControllers.count {
+            let controller = childViewControllers[Int(index)] as! XTRSwapableViewController
+            controller.view.isHidden = true
+            viewController.view.isHidden = false
         }
     }
     
-    @IBAction func nextElement(sender: UIButton) {
-        var atomicNumber : Int = self.element!.atomicNumber().integerValue + 1
-        if (atomicNumber > Int(XTRDataSource.sharedInstance().elementCount())) {
+    @IBAction func nextElement(_ sender: UIButton) {
+        var atomicNumber = element!.atomicNumber + 1
+        
+        if atomicNumber > XTRDataSource.sharedInstance().elementCount() {
             atomicNumber = 1
         }
-        self.element = XTRDataSource.sharedInstance().elementAtIndex(UInt(atomicNumber) - 1)
-        self.animateForDirection("Next")
+        
+        element = XTRDataSource.sharedInstance().elementAtIndex(atomicNumber - 1)
+        animateForDirection("Next")
     }
     
-    @IBAction func previousElement(sender: UIButton) {
-        var atomicNumber : Int = self.element!.atomicNumber().integerValue - 1
-        if (atomicNumber < 1) {
-            atomicNumber = Int(XTRDataSource.sharedInstance().elementCount())
+    @IBAction func previousElement(_ sender: UIButton) {
+        var atomicNumber = element!.atomicNumber - 1
+        
+        if atomicNumber < 1 {
+            atomicNumber = XTRDataSource.sharedInstance().elementCount()
         }
-        self.element = XTRDataSource.sharedInstance().elementAtIndex(UInt(atomicNumber) - 1)
-        self.animateForDirection("Previous")
+        
+        element = XTRDataSource.sharedInstance().elementAtIndex(atomicNumber - 1)
+        animateForDirection("Previous")
     }
     
     // MARK: - View Management Methods
@@ -191,65 +202,68 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.nextButton.titleLabel!.textAlignment = NSTextAlignment.Right
-        self.previousButton.titleLabel!.textAlignment = NSTextAlignment.Left
-        self.swapView.removeFromSuperview()
+        let storyboard = XTRAppDelegate.storyboard()
+
+        nextButton.titleLabel!.textAlignment = .right
+        previousButton.titleLabel!.textAlignment = .left
+        swapView.removeFromSuperview()
         
-        let storyboard : UIStoryboard = XTRAppDelegate.storyboard()
-        self.addChildViewController(storyboard.instantiateViewControllerWithIdentifier("XTRAtomicStructureViewController"))
-        self.addChildViewController(storyboard.instantiateViewControllerWithIdentifier("XTRElementPropertiesViewController"))
-        self.addChildViewController(storyboard.instantiateViewControllerWithIdentifier("XTRNuclidesIsotopesViewController"))
-        self.addChildViewController(storyboard.instantiateViewControllerWithIdentifier("XTRSpectrumViewController"))
-        self.addChildViewController(storyboard.instantiateViewControllerWithIdentifier("XTRGeneralInfoViewController"))
-        self.childViewControllers[0].view.hidden = false
+        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRAtomicStructureViewController.nameOfClass))
+        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRElementPropertiesViewController.nameOfClass))
+        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRNuclidesIsotopesViewController.nameOfClass))
+        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRSpectrumViewController.nameOfClass))
+        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRGeneralInfoViewController.nameOfClass))
+        childViewControllers[0].view.isHidden = false
         
-        let swipeNextElement : UISwipeGestureRecognizer = UISwipeGestureRecognizer.init(target: self, action: #selector(XTRElementInspectorViewController.nextElement(_:)))
-        swipeNextElement.direction = UISwipeGestureRecognizerDirection.Right
-        self.view.addGestureRecognizer(swipeNextElement)
+        let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(XTRElementInspectorViewController.nextElement(_:)))
+        swipeNextElement.direction = UISwipeGestureRecognizerDirection.right
+        view.addGestureRecognizer(swipeNextElement)
         
-        let swipePreviousElement : UISwipeGestureRecognizer = UISwipeGestureRecognizer.init(target:self, action: #selector(XTRElementInspectorViewController.previousElement(_:)))
-        swipePreviousElement.direction = UISwipeGestureRecognizerDirection.Left
-        self.view.addGestureRecognizer(swipePreviousElement)
-        self.setupPageItemView()
+        let swipePreviousElement = UISwipeGestureRecognizer(target:self, action: #selector(XTRElementInspectorViewController.previousElement(_:)))
+        swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
+        view.addGestureRecognizer(swipePreviousElement)
+        setupPageItemView()
+        
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let atomicNumber : NSNumber = XTRPropertiesStore.retreiveAtomicNumber()
-        self.barButtonItem.title = String.init(format: " ◀︎ %@", arguments: [XTRPropertiesStore.retreiveViewTitle()])
-        self.element = XTRDataSource.sharedInstance().elementAtIndex(UInt(atomicNumber))
-        self.setupUI()
+        let atomicNumber = XTRPropertiesStore.atomicNumber
+        barButtonItem.title = "◀︎ \(XTRPropertiesStore.viewTitle)"
+        element = XTRDataSource.sharedInstance().elementAtIndex(atomicNumber)
+        setupUI()
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        dismiss(animated: true, completion: nil)
         super.viewWillDisappear(animated)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.atomicNumberLabel = nil
-        self.atomicSymbolLabel = nil
-        self.barButtonItem = nil
-        self.periodLabel = nil
-        self.groupLabel = nil
-        self.seriesLabel = nil
-        self.casRegNoLabel = nil
-        self.swapView = nil
-        self.nextButton = nil
-        self.previousButton = nil
-        self.nextLabel = nil
-        self.previousLabel = nil
-        self.titleItem = nil
+        atomicNumberLabel = nil
+        atomicSymbolLabel = nil
+        barButtonItem = nil
+        periodLabel = nil
+        groupLabel = nil
+        seriesLabel = nil
+        casRegNoLabel = nil
+        swapView = nil
+        nextButton = nil
+        previousButton = nil
+        nextLabel = nil
+        previousLabel = nil
+        titleItem = nil
     }
+    
 }

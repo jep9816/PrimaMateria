@@ -470,795 +470,795 @@
 	<key>nuclidesAndIsotopes</key>
 	<array>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>44.007</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string></string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string></string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string></string>
 			<key>nn</key>
 			<string>19</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn44</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>44.995</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string></string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string></string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string></string>
 			<key>nn</key>
 			<string>20</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn45</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>45.987</string>
-			<key>br</key>
+			<key>zp</key>
 			<string>&gt;32</string>
 			<key>decayEnergy</key>
 			<string>12.210</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ + P</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>V45</string>
 			<key>halfLife</key>
 			<string>41ms</string>
 			<key>nn</key>
 			<string>21</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn46</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>4+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>17.100</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr46</string>
 			<key>halfLife</key>
 			<string>41ms</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>46.976</string>
-			<key>br</key>
+			<key>zp</key>
 			<string>&gt;3.4</string>
 			<key>decayEnergy</key>
 			<string>7.520</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ + P</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>V46</string>
 			<key>halfLife</key>
 			<string>100ms</string>
 			<key>nn</key>
 			<string>22</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn47</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>12.290</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr47</string>
 			<key>halfLife</key>
 			<string>100ms</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>47.9689</string>
-			<key>br</key>
+			<key>zp</key>
 			<string>0.28</string>
 			<key>decayEnergy</key>
 			<string>5.720</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ + P</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>V47</string>
 			<key>halfLife</key>
 			<string>158.1ms</string>
 			<key>nn</key>
 			<string>23</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn48</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>4+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>13.820</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr48</string>
 			<key>halfLife</key>
 			<string>158.1ms</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>6.130</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ + α</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Ti44</string>
 			<key>halfLife</key>
 			<string>158.1ms</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>48.9596</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>7.715</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr49</string>
 			<key>halfLife</key>
 			<string>382ms</string>
 			<key>nn</key>
 			<string>24</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn49</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>5/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>49.9542</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>7.633</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr50</string>
 			<key>halfLife</key>
 			<string>283.88ms</string>
 			<key>nn</key>
 			<string>25</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn50</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>0+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>0.229MeV</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>7.862</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr50</string>
 			<key>halfLife</key>
 			<string>1.75m</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>MS</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>5+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>50.9482</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>3.208</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr51</string>
 			<key>halfLife</key>
 			<string>46.2m</string>
 			<key>nn</key>
 			<string>26</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn51</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>5/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>51.9456</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>4.712</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr52</string>
 			<key>halfLife</key>
 			<string>5.591d</string>
 			<key>nn</key>
 			<string>27</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn52</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>6+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>0.378MeV</string>
-			<key>br</key>
+			<key>zp</key>
 			<string>98.25</string>
 			<key>decayEnergy</key>
 			<string>5.090</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr52</string>
 			<key>halfLife</key>
 			<string>21.1m</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>MS</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>2+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string>1.75</string>
 			<key>decayEnergy</key>
 			<string>0.378</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>IT</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string>21.1m</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>52.9413</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>0.597</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr53</string>
 			<key>halfLife</key>
 			<string>3740000y</string>
 			<key>nn</key>
 			<string>28</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn53</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>7/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>53.9404</string>
-			<key>br</key>
+			<key>zp</key>
 			<string>&lt;0.0002</string>
 			<key>decayEnergy</key>
 			<string>0.697</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe54</string>
 			<key>halfLife</key>
 			<string>312.3d</string>
 			<key>nn</key>
 			<string>29</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn54</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>3+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>1.377</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>ξ</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Cr54</string>
 			<key>halfLife</key>
 			<string>312.3d</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>100</string>
 			<key>atomicMass</key>
 			<string>54.9381</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string></string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string></string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string>Stable</string>
 			<key>nn</key>
 			<string>30</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn55</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>5/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>55.9389</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>3.695</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe56</string>
 			<key>halfLife</key>
 			<string>2.5785h</string>
 			<key>nn</key>
 			<string>31</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn56</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>3+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>56.9383</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>2.691</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe57</string>
 			<key>halfLife</key>
 			<string>85.4s</string>
 			<key>nn</key>
 			<string>32</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn57</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>5/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>57.931</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>6.250</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe58</string>
 			<key>halfLife</key>
 			<string>3s</string>
 			<key>nn</key>
 			<string>33</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn58</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>1+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>0.071MeV</string>
-			<key>br</key>
+			<key>zp</key>
 			<string>~80</string>
 			<key>decayEnergy</key>
 			<string>6.322</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe58</string>
 			<key>halfLife</key>
 			<string>65.2s</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>MS</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>4+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string>~20</string>
 			<key>decayEnergy</key>
 			<string>0.072</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>IT</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string>65.2s</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>58.9404</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>5.190</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe59</string>
 			<key>halfLife</key>
 			<string>4.6s</string>
 			<key>nn</key>
 			<string>34</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn59</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>2-, 5/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>59.943</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>8.630</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe60</string>
 			<key>halfLife</key>
 			<string>51s</string>
 			<key>nn</key>
 			<string>35</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn60</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>0+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>0.272MeV</string>
-			<key>br</key>
+			<key>zp</key>
 			<string>88.5</string>
 			<key>decayEnergy</key>
 			<string>8.902</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe60</string>
 			<key>halfLife</key>
 			<string>1.77s</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>MS</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>3+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string></string>
 			<key>atomicMass</key>
 			<string></string>
-			<key>br</key>
+			<key>zp</key>
 			<string>11.5</string>
 			<key>decayEnergy</key>
 			<string>0.272</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>IT</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Mn60</string>
 			<key>halfLife</key>
 			<string>1.77s</string>
 			<key>nn</key>
 			<string></string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string></string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>60.944</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>7.350</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe61</string>
 			<key>halfLife</key>
 			<string>0.71s</string>
 			<key>nn</key>
 			<string>36</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn61</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>5/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>61.948</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>10.400</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe62</string>
 			<key>halfLife</key>
 			<string>0.88s</string>
 			<key>nn</key>
 			<string>37</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn62</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>3+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>62.95</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>8.800</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe63</string>
 			<key>halfLife</key>
 			<string>0.25s</string>
 			<key>nn</key>
 			<string>38</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn63</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>63.954</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string></string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string></string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string>140ms</string>
 			<key>nn</key>
 			<string>39</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn64</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>3+</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>64.956</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string>10.400</string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string>β-</string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string>Fe65</string>
 			<key>halfLife</key>
 			<string>110ms</string>
 			<key>nn</key>
 			<string>40</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn65</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string>5/2-</string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>65.961</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string></string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string></string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string>90ms</string>
 			<key>nn</key>
 			<string>41</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn66</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 		<dict>
-			<key>abun</key>
+			<key>isotopicComposition</key>
 			<string>Syn</string>
 			<key>atomicMass</key>
 			<string>66.964</string>
-			<key>br</key>
+			<key>zp</key>
 			<string></string>
 			<key>decayEnergy</key>
 			<string></string>
-			<key>dm</key>
+			<key>decayModes</key>
 			<string></string>
-			<key>dt</key>
+			<key>daughterIsotopes</key>
 			<string></string>
 			<key>halfLife</key>
 			<string></string>
 			<key>nn</key>
 			<string>42</string>
-			<key>nuclide</key>
+			<key>nuclideSymbol</key>
 			<string>Mn67</string>
-			<key>spin</key>
+			<key>nuclearSpin</key>
 			<string></string>
 		</dict>
 	</array>

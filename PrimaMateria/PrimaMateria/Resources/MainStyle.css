@@ -1,0 +1,118 @@
+html body {
+    color: #000000;
+    font-family: Verdana, sans-serif, Arial, Geneva,serif;
+    font-size: 12px; 
+    margin: 0;
+    padding: 3px;
+    background-color: #dddd00;
+}
+
+#header {
+    color: #000000;
+    font-size: 18px; 
+    font-weight: bold;
+}
+
+p {
+    color: #000000;
+    background-color: #edf3ff;
+    border: solid 2px #000000;
+    padding: 0 3px;
+    margin: 0;
+}
+
+ol, ul {
+    color: #000000;
+    background-color: #edf3ff;
+    border: solid 2px #000000;
+    padding: 3px 0;
+}
+
+p a, ol a, ul a {
+    color: #0000ff;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+p:first-letter {
+    font-size: 14px; 
+    font-weight: bold;
+}
+
+h2 {
+    background-color: #7f7f7f;
+    color: #ffffff;
+    font-weight: bold;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    border: solid 2px #000000;
+}
+
+h3 {
+    color: #7f7f7f;
+    background-color: #cccccc;
+    margin: 0;
+    padding: 3px 0 0 3px;
+    height: 20px;
+}
+
+h3 a {
+    color: #0000ff;
+    background-color: transparent;
+}
+
+.seealso span {
+    background-color: #333333;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.seealso table tr th {
+    background-color: #333333;
+    color: #eeeeee;
+    font-size: 14px; 
+    font-weight: bold;
+    border-bottom: solid 2px #ffffff;
+}
+
+.seealso table tr td {
+    padding-top: 0;
+}
+
+.seealso a {
+    background-color: #cccccc;
+    color: #0000ff;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+table {
+    color: #ffffff;
+    background-color: #cccccc;
+}
+
+table tr td {
+    font-size: 12px; 
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+table tr td a {
+    background-color: transparent;
+    font-size: 12px; 
+    font-weight: bold;
+}
+
+tr.oddrow {
+    background-color: #edf3ff;
+}
+
+td.oddrow a {
+    background-color: #edf3ff;
+}
+
+td.oddrow {
+    background-color: #edf3ff;
+}

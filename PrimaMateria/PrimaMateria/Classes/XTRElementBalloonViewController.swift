@@ -3,10 +3,11 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRElementBalloonViewController : UIViewController {
+class XTRElementBalloonViewController : UIViewController {
+    
     @IBOutlet var elementNameLabel : UILabel!
     @IBOutlet var atomicNumberLabel : UILabel!
     @IBOutlet var atomicMassLabel : UILabel!
@@ -23,58 +24,56 @@
     // MARK: - Internal Methods
     
     func setupUI() {
-        let atomicNumber : NSNumber = XTRPropertiesStore.retreiveAtomicNumber()
-        let element : XTRElement? = XTRDataSource.sharedInstance().elementAtIndex(UInt(atomicNumber.intValue))
+        let element = XTRDataSource.sharedInstance().elementAtIndex(XTRPropertiesStore.atomicNumber)
         
-        if (element != nil) {
-            self.elementNameLabel.text = String.init(format: " %@", element!.name()!)
-            self.elementNameLabel.textColor = element!.standardConditionColor()
-            self.elementNameLabel.backgroundColor = element!.seriesColor()
-            self.atomicNumberLabel.text = String.init(format: " %@", element!.atomicNumber().stringValue)
-            self.atomicMassLabel.text = String.init(format: " %@", element!.atomicMassAggregate()!)
-            self.boilingPointLabel.text = String.init(format: " %@", element!.boilingPointString())
-            self.meltingPointLabel.text = String.init(format: " %@", element!.meltingPointString())
-        }
+        elementNameLabel.textColor = element.standardConditionColor
+        elementNameLabel.backgroundColor = element.seriesColor
+        
+        elementNameLabel.text = " \(element.name!)"
+        atomicNumberLabel.text = " \(String(element.atomicNumber))"
+        atomicMassLabel.text = " \(element.atomicMassAggregate)"
+        boilingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_BOILING_POINT)!)"
+        meltingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_MELTING_POINT)!)"
     }
     
     // MARK: - Action Methods
     
-    @IBAction func showDetails(sender: UIButton) {
-        XTRPropertiesStore.storeViewTitle(PERIODIC_VIEW_TITLE)
-        XTRPropertiesStore.storeAtomicNumber(XTRPropertiesStore.retreiveAtomicNumber())
-        self.performSegueWithIdentifier(SHOW_INSPECTOR_FROM_ELEMENT_BALLOON, sender: sender)
+    @IBAction func showDetails(_ sender: UIButton) {
+        XTRPropertiesStore.viewTitle = PERIODIC_VIEW_TITLE
+        XTRPropertiesStore.atomicNumber = XTRPropertiesStore.atomicNumber
+        performSegue(withIdentifier: SegueName.showInspectorFromElementBalloon, sender: sender)
     }
-    
     
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.wrapperView.layer.cornerRadius = 10.0
-        self.wrapperView.clipsToBounds = true
+        wrapperView.layer.cornerRadius = 10.0
+        wrapperView.clipsToBounds = true
     }
     
-    override func viewWillAppear(animated: Bool)  {
+    override func viewWillAppear(_ animated: Bool)  {
         super.viewWillAppear(animated)
-        self.setupUI()
+        setupUI()
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.elementNameLabel = nil
-        self.atomicNumberLabel = nil
-        self.atomicMassLabel = nil
-        self.boilingPointLabel = nil
-        self.meltingPointLabel = nil
-        self.wrapperView = nil
+        elementNameLabel = nil
+        atomicNumberLabel = nil
+        atomicMassLabel = nil
+        boilingPointLabel = nil
+        meltingPointLabel = nil
+        wrapperView = nil
     }
+    
 }

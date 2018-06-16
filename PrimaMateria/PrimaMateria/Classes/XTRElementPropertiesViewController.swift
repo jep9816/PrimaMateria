@@ -3,14 +3,14 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/17/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRElementPropertiesViewController : XTRSwapableViewController {
+class XTRElementPropertiesViewController : XTRSwapableViewController {
     
-    enum PropertiesViewTypes: Int {
-        case kPhysicalPropertiesView
-        case kChemicalPropertiesView
+    enum PropertiesViewTypes {
+        static let kPhysicalPropertiesView = 0
+        static let kChemicalPropertiesView = 1
     }
     
     @IBOutlet var atomicMassFootnoteLabel : UILabel!
@@ -75,75 +75,70 @@
     // MARK: - Miscellaneous Methods
     
     override func setupUI() {
-        if (self.element != nil) {
-            let vaporPressure : NSDictionary = self.element!.vaporPressure()!
+        if element != nil {
+            let vaporPressure = element!.vaporPressure!
             
-            self.atomicMassLabel.text = self.element!.atomicMassAggregate()
-            self.atomicMassFootnoteLabel.text = self.element!.atomicMassFootnote()
-            self.boilingPointLabel.text = self.element!.valueForKey(ELEMENT_BOILING_POINT) as? String
-            self.coefficientOfLinealThermalExpansionLabel.text = self.element!.valueForKey(ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION) as? String
-            self.criticalTemperatureLabel.text = self.element!.valueForKey(ELEMENT_CRITICAL_TEMPERATURE) as? String
-            self.descriptionLabel.text = self.element!.valueForKey(ELEMENT_DESCR) as? String
-            self.densityLabel.text = self.element!.valueForKey(ELEMENT_DENSITY) as? String
-            self.flammabilityClass.text = self.element!.valueForKey(ELEMENT_FLAMMABILITY_CLASS) as? String
-            self.heatOfVaporizationLabel.text = self.element!.valueForKey(ELEMENT_HEAT_OF_VAPORIZATION) as? String
-            self.magneticSusceptibilityLabel.text = self.element!.valueForKey(ELEMENT_MAGNETIC_SUSCEPTIBILITY) as? String
-            self.meltingPointLabel.text = self.element!.valueForKey(ELEMENT_MELTING_POINT) as? String
-            self.meltingPointFootnoteLabel.text = self.element!.valueForKey(ELEMENT_MELTING_POINT_FOOTNOTE) as? String
-            self.molarVolumeLabel.text = self.element!.valueForKey(ELEMENT_MOLAR_VOLUME) as? String
-            self.opticalReflectivityLabel.text = self.element!.valueForKey(ELEMENT_OPTICAL_REFLECTIVITY) as? String
-            self.opticalRefractiveIndexLabel.text = self.element!.valueForKey(ELEMENT_OPTICAL_REFRACTIVE_INDEX) as? String
-            self.relativeGasDensityLabel.text = self.element!.valueForKey(ELEMENT_RELATIVE_GAS_DENSITY) as? String
+            atomicMassLabel.text = element!.atomicMassAggregate
+            atomicMassFootnoteLabel.text = element!.atomicMassFootnote
+            boilingPointLabel.text = element!.value(forKeyPath: ELEMENT_BOILING_POINT) as? String
+            coefficientOfLinealThermalExpansionLabel.text = element!.value(forKeyPath: ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION) as? String
+            criticalTemperatureLabel.text = element!.value(forKeyPath: ELEMENT_CRITICAL_TEMPERATURE) as? String
+            descriptionLabel.text = element!.value(forKeyPath: ELEMENT_DESCR) as? String
+            densityLabel.text = element!.value(forKeyPath: ELEMENT_DENSITY) as? String
+            flammabilityClass.text = element!.value(forKeyPath: ELEMENT_FLAMMABILITY_CLASS) as? String
+            heatOfVaporizationLabel.text = element!.value(forKeyPath: ELEMENT_HEAT_OF_VAPORIZATION) as? String
+            magneticSusceptibilityLabel.text = element!.value(forKeyPath: ELEMENT_MAGNETIC_SUSCEPTIBILITY) as? String
+            meltingPointLabel.text = element!.value(forKeyPath: ELEMENT_MELTING_POINT) as? String
+            meltingPointFootnoteLabel.text = element!.value(forKeyPath: ELEMENT_MELTING_POINT_FOOTNOTE) as? String
+            molarVolumeLabel.text = element!.value(forKeyPath: ELEMENT_MOLAR_VOLUME) as? String
+            opticalReflectivityLabel.text = element!.value(forKeyPath: ELEMENT_OPTICAL_REFLECTIVITY) as? String
+            opticalRefractiveIndexLabel.text = element!.value(forKeyPath: ELEMENT_OPTICAL_REFRACTIVE_INDEX) as? String
+            relativeGasDensityLabel.text = element!.value(forKeyPath: ELEMENT_RELATIVE_GAS_DENSITY) as? String
             
-            self.vaporPressure1PaLabel.text = String.init(format: "%@ %@", arguments: [vaporPressure.valueForKey("pa1") as! String, vaporPressure.valueForKey("pa1Footnote") as! String])
+            vaporPressure1PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1"] as! String, vaporPressure["pa1Footnote"] as! String])
+            vaporPressure10PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10"] as! String, vaporPressure["pa10Footnote"] as! String])
+            vaporPressure100PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100"] as! String, vaporPressure["pa100Footnote"] as! String])
+            vaporPressure1kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1k"] as! String, vaporPressure["pa1kFootnote"] as! String])
+            vaporPressure10kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10k"] as! String, vaporPressure["pa10kFootnote"] as! String])
+            vaporPressure100kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100k"] as! String, vaporPressure["pa100kFootnote"] as! String])
             
-            self.vaporPressure10PaLabel.text = String.init(format: "%@ %@", arguments: [vaporPressure.valueForKey("pa10") as! String, vaporPressure.valueForKey("pa10Footnote") as! String])
+            conductivityThermalLabel.text = element!.value(forKeyPath: ELEMENT_CONDUCTIVITY_THERMAL) as? String
+            conductivityElectricalLabel.text = element!.value(forKeyPath: ELEMENT_CONDUCTIVITY_ELECTRICAL) as? String
+            elasticModulusBulkLabel.text = element!.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_BULK) as? String
+            elasticModulusRigidityLabel.text = element!.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_RIGIDITY) as? String
+            elasticModulusYoungsLabel.text = element!.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_YOUNGS) as? String
+            enthalpyAtomizationLabel.text = element!.value(forKeyPath: ELEMENT_ENTHALPY_OF_ATOMIZATION) as? String
+            enthalpyFusionLabel.text = element!.value(forKeyPath: ELEMENT_ENTHALPY_OF_FUSION) as? String
+            enthalpyVaporizationLabel.text = element!.value(forKeyPath: ELEMENT_ENTHALPY_OF_VAPORIZATION) as? String
+            hardnessScaleBrinellLabel.text = element!.value(forKeyPath: ELEMENT_HARDNESS_SCALE_BRINELL) as? String
+            hardnessScaleMohsLabel.text = element!.value(forKeyPath: ELEMENT_HARDNESS_SCALE_MOHS) as? String
+            hardnessScaleVickersLabel.text = element!.value(forKeyPath: ELEMENT_HARDNESS_SCALE_VICKERS) as? String
+            heatCapacitySpecificLabel.text = element!.value(forKeyPath: ELEMENT_SPECIFIC_HEAT_CAPACITY) as? String
+            heatCapacityMolarLabel.text = element!.value(forKeyPath: ELEMENT_MOLAR_HEAT_CAPACITY) as? String
             
-            self.vaporPressure100PaLabel.text = String.init(format: "%@ %@", arguments: [vaporPressure.valueForKey("pa100") as! String, vaporPressure.valueForKey("pa100Footnote") as! String])
-            
-            self.vaporPressure1kPaLabel.text = String.init(format: "%@ %@", arguments: [vaporPressure.valueForKey("pa1k") as! String, vaporPressure.valueForKey("pa1kFootnote") as! String])
-            
-            self.vaporPressure10kPaLabel.text = String.init(format: "%@ %@", arguments: [vaporPressure.valueForKey("pa10k") as! String, vaporPressure.valueForKey("pa10kFootnote") as! String])
-            
-            self.vaporPressure100kPaLabel.text = String.init(format: "%@ %@", arguments: [vaporPressure.valueForKey("pa100k") as! String, vaporPressure.valueForKey("pa100kFootnote") as! String])
-            
-            self.conductivityThermalLabel.text = self.element!.valueForKey(ELEMENT_CONDUCTIVITY_THERMAL) as? String
-            self.conductivityElectricalLabel.text = self.element!.valueForKey(ELEMENT_CONDUCTIVITY_ELECTRICAL) as? String
-            self.elasticModulusBulkLabel.text = self.element!.valueForKey(ELEMENT_ELASTIC_MODULUS_BULK) as? String
-            self.elasticModulusRigidityLabel.text = self.element!.valueForKey(ELEMENT_ELASTIC_MODULUS_RIGIDITY) as? String
-            self.elasticModulusYoungsLabel.text = self.element!.valueForKey(ELEMENT_ELASTIC_MODULUS_YOUNGS) as? String
-            self.enthalpyAtomizationLabel.text = self.element!.valueForKey(ELEMENT_ENTHALPY_OF_ATOMIZATION) as? String
-            self.enthalpyFusionLabel.text = self.element!.valueForKey(ELEMENT_ENTHALPY_OF_FUSION) as? String
-            self.enthalpyVaporizationLabel.text = self.element!.valueForKey(ELEMENT_ENTHALPY_OF_VAPORIZATION) as? String
-            self.hardnessScaleBrinellLabel.text = self.element!.valueForKey(ELEMENT_HARDNESS_SCALE_BRINELL) as? String
-            self.hardnessScaleMohsLabel.text = self.element!.valueForKey(ELEMENT_HARDNESS_SCALE_MOHS) as? String
-            self.hardnessScaleVickersLabel.text = self.element!.valueForKey(ELEMENT_HARDNESS_SCALE_VICKERS) as? String
-            self.heatCapacitySpecificLabel.text = self.element!.valueForKey(ELEMENT_SPECIFIC_HEAT_CAPACITY) as? String
-            self.heatCapacityMolarLabel.text = self.element!.valueForKey(ELEMENT_MOLAR_HEAT_CAPACITY) as? String
-            
-            self.electroChemicalEquivalentLabel.text = self.element!.valueForKey(ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT) as? String
-            self.electronWorkFunctionLabel.text = self.element!.valueForKey(ELEMENT_ELECTRON_WORK_FUNCTION) as? String
-            self.electroNegativityLabel.text = self.element!.valueForKey(ELEMENT_ELECTRO_NEGATIVITY) as? String
-            self.heatOfFusionLabel.text = self.element!.valueForKey(ELEMENT_HEAT_OF_FUSION) as? String
-            self.incompatabilitiesLabel.text = self.element!.valueForKey(ELEMENT_INCOMPATIBILITIES) as? String
-            self.ionizationPotentialFirstLabel.text = self.element!.valueForKey(ELEMENT_IONIZATION_POTENTIAL_FIRST) as? String
-            self.ionizationPotentialSecondLabel.text = self.element!.valueForKey(ELEMENT_IONIZATION_POTENTIAL_SECOND) as? String
-            self.ionizationPotentialThirdLabel.text = self.element!.valueForKey(ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
-            self.qualitativeSolubilityLabel.text = self.element!.valueForKey(ELEMENT_QUALITATIVE_SOLUBILITY) as? String
-            self.valenceElectronPotentialLabel.text = self.element!.valueForKey(ELEMENT_VALENCE_ELECTRON_POTENTIAL) as? String
+            electroChemicalEquivalentLabel.text = element!.value(forKeyPath: ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT) as? String
+            electronWorkFunctionLabel.text = element!.value(forKeyPath: ELEMENT_ELECTRON_WORK_FUNCTION) as? String
+            electroNegativityLabel.text = element!.value(forKeyPath: ELEMENT_ELECTRO_NEGATIVITY) as? String
+            heatOfFusionLabel.text = element!.value(forKeyPath: ELEMENT_HEAT_OF_FUSION) as? String
+            incompatabilitiesLabel.text = element!.value(forKeyPath: ELEMENT_INCOMPATIBILITIES) as? String
+            ionizationPotentialFirstLabel.text = element!.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_FIRST) as? String
+            ionizationPotentialSecondLabel.text = element!.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_SECOND) as? String
+            ionizationPotentialThirdLabel.text = element!.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
+            qualitativeSolubilityLabel.text = element!.value(forKeyPath: ELEMENT_QUALITATIVE_SOLUBILITY) as? String
+            valenceElectronPotentialLabel.text = element!.value(forKeyPath: ELEMENT_VALENCE_ELECTRON_POTENTIAL) as? String
         }
     }
     
     // MARK: - Action Methods
     
-    @IBAction func swapViews(sender: UISegmentedControl) {
+    @IBAction func swapViews(_ sender: UISegmentedControl) {
         switch (sender.selectedSegmentIndex) {
-        case PropertiesViewTypes.kChemicalPropertiesView.rawValue:
-            self.chemicalPropertiesView.hidden = false
-            self.physicalPropertiesView.hidden = true
-        case PropertiesViewTypes.kPhysicalPropertiesView.rawValue:
-            self.chemicalPropertiesView.hidden = true
-            self.physicalPropertiesView.hidden = false            
+        case PropertiesViewTypes.kChemicalPropertiesView:
+            chemicalPropertiesView.isHidden = false
+            physicalPropertiesView.isHidden = true
+        case PropertiesViewTypes.kPhysicalPropertiesView:
+            chemicalPropertiesView.isHidden = true
+            physicalPropertiesView.isHidden = false            
         default:
             break
         }
@@ -154,81 +149,81 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.chemicalPropertiesView.frame = self.swapView.frame
-        self.chemicalPropertiesView.bounds = self.swapView.bounds
-        self.chemicalPropertiesScrollView.contentSize = CGSizeMake(1024, 500)
-        self.chemicalPropertiesView.hidden = true
-        self.view.addSubview(self.chemicalPropertiesView)
+        chemicalPropertiesView.frame = swapView.frame
+        chemicalPropertiesView.bounds = swapView.bounds
+        chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 500)
+        chemicalPropertiesView.isHidden = true
+        view.addSubview(chemicalPropertiesView)
         
-        self.physicalPropertiesView.frame = self.swapView.frame
-        self.physicalPropertiesView.bounds = self.swapView.bounds
-        self.physicalPropertiesScrollView.contentSize = CGSizeMake(1024, 1670)
-        self.physicalPropertiesView.hidden = false
-        self.view.addSubview(self.physicalPropertiesView)
+        physicalPropertiesView.frame = swapView.frame
+        physicalPropertiesView.bounds = swapView.bounds
+        physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1670)
+        physicalPropertiesView.isHidden = false
+        view.addSubview(physicalPropertiesView)
         
-        self.swapView.removeFromSuperview()
+        swapView.removeFromSuperview()
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.atomicMassFootnoteLabel = nil
-        self.atomicMassLabel = nil
-        self.boilingPointLabel = nil
-        self.chemicalPropertiesScrollView = nil
-        self.chemicalPropertiesView = nil
-        self.coefficientOfLinealThermalExpansionLabel = nil
-        self.conductivityElectricalLabel = nil
-        self.conductivityThermalLabel = nil
-        self.criticalTemperatureLabel = nil
-        self.densityLabel = nil
-        self.descriptionLabel = nil
-        self.elasticModulusBulkLabel = nil
-        self.elasticModulusRigidityLabel = nil
-        self.elasticModulusYoungsLabel = nil
-        self.electroChemicalEquivalentLabel = nil
-        self.electroNegativityLabel = nil
-        self.electronWorkFunctionLabel = nil
-        self.enthalpyAtomizationLabel = nil
-        self.enthalpyFusionLabel = nil
-        self.enthalpyVaporizationLabel = nil
-        self.flammabilityClass = nil
-        self.hardnessScaleBrinellLabel = nil
-        self.hardnessScaleMohsLabel = nil
-        self.hardnessScaleVickersLabel = nil
-        self.heatCapacityMolarLabel = nil
-        self.heatCapacitySpecificLabel = nil
-        self.heatOfFusionLabel = nil
-        self.heatOfVaporizationLabel = nil
-        self.incompatabilitiesLabel = nil
-        self.ionizationPotentialFirstLabel = nil
-        self.ionizationPotentialSecondLabel = nil
-        self.ionizationPotentialThirdLabel = nil
-        self.magneticSusceptibilityLabel = nil
-        self.meltingPointFootnoteLabel = nil
-        self.meltingPointLabel = nil
-        self.molarVolumeLabel = nil
-        self.opticalReflectivityLabel = nil
-        self.opticalRefractiveIndexLabel = nil
-        self.physicalPropertiesScrollView = nil
-        self.physicalPropertiesView = nil
-        self.qualitativeSolubilityLabel = nil
-        self.relativeGasDensityLabel = nil
-        self.swapView = nil
-        self.valenceElectronPotentialLabel = nil
-        self.vaporPressure100PaLabel = nil
-        self.vaporPressure100kPaLabel = nil
-        self.vaporPressure10PaLabel = nil
-        self.vaporPressure10kPaLabel = nil
-        self.vaporPressure1PaLabel = nil
-        self.vaporPressure1kPaLabel = nil
+        atomicMassFootnoteLabel = nil
+        atomicMassLabel = nil
+        boilingPointLabel = nil
+        chemicalPropertiesScrollView = nil
+        chemicalPropertiesView = nil
+        coefficientOfLinealThermalExpansionLabel = nil
+        conductivityElectricalLabel = nil
+        conductivityThermalLabel = nil
+        criticalTemperatureLabel = nil
+        densityLabel = nil
+        descriptionLabel = nil
+        elasticModulusBulkLabel = nil
+        elasticModulusRigidityLabel = nil
+        elasticModulusYoungsLabel = nil
+        electroChemicalEquivalentLabel = nil
+        electroNegativityLabel = nil
+        electronWorkFunctionLabel = nil
+        enthalpyAtomizationLabel = nil
+        enthalpyFusionLabel = nil
+        enthalpyVaporizationLabel = nil
+        flammabilityClass = nil
+        hardnessScaleBrinellLabel = nil
+        hardnessScaleMohsLabel = nil
+        hardnessScaleVickersLabel = nil
+        heatCapacityMolarLabel = nil
+        heatCapacitySpecificLabel = nil
+        heatOfFusionLabel = nil
+        heatOfVaporizationLabel = nil
+        incompatabilitiesLabel = nil
+        ionizationPotentialFirstLabel = nil
+        ionizationPotentialSecondLabel = nil
+        ionizationPotentialThirdLabel = nil
+        magneticSusceptibilityLabel = nil
+        meltingPointFootnoteLabel = nil
+        meltingPointLabel = nil
+        molarVolumeLabel = nil
+        opticalReflectivityLabel = nil
+        opticalRefractiveIndexLabel = nil
+        physicalPropertiesScrollView = nil
+        physicalPropertiesView = nil
+        qualitativeSolubilityLabel = nil
+        relativeGasDensityLabel = nil
+        swapView = nil
+        valenceElectronPotentialLabel = nil
+        vaporPressure100PaLabel = nil
+        vaporPressure100kPaLabel = nil
+        vaporPressure10PaLabel = nil
+        vaporPressure10kPaLabel = nil
+        vaporPressure1PaLabel = nil
+        vaporPressure1kPaLabel = nil
     }
 }

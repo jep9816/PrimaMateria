@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4">
+    <device id="ipad9_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main-->
+        <scene sceneID="15">
+            <objects>
+                <tabBarController storyboardIdentifier="XTRMainViewController" title="Main" wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" hidesBottomBarWhenPushed="YES" id="4" customClass="XTRMainViewController" customModule="PrimaMateria" sceneMemberID="viewController">
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="5">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pJc-eN-mX0" kind="relationship" relationship="viewControllers" id="vrc-NT-nDm"/>
+                        <segue destination="5ck-y7-Y29" kind="relationship" relationship="viewControllers" id="bM3-Xd-2gK"/>
+                        <segue destination="6b5-Fy-Juu" kind="relationship" relationship="viewControllers" id="ua6-5K-9fS"/>
+                        <segue destination="tzH-yM-j2S" kind="relationship" relationship="viewControllers" id="bDs-BO-MaT"/>
+                        <segue destination="as4-yy-uy1" kind="relationship" relationship="viewControllers" id="6Pd-ru-phf"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="201" y="-533"/>
+        </scene>
+        <!--Splash-->
+        <scene sceneID="ZCP-5O-VsF">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRSplashViewController" storyboardName="Splash" referencedIdentifier="XTRSplashViewController" id="rAF-kF-ajm" userLabel="Splash" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2o-Us-ddV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-72" y="354"/>
+        </scene>
+        <!--Nuclides Isotopes-->
+        <scene sceneID="eJ7-XV-aRd">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRNuclidesIsotopesViewController" storyboardName="NuclidesIsotopes" referencedIdentifier="XTRNuclidesIsotopesViewController" id="ufB-3D-Ajm" userLabel="Nuclides Isotopes" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YPE-OF-Ovp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-38" y="208"/>
+        </scene>
+        <!--Spectrum-->
+        <scene sceneID="1tC-zQ-PH4">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRSpectrumViewController" storyboardName="Spectrum" referencedIdentifier="XTRSpectrumViewController" id="H7O-cR-OZF" userLabel="Spectrum" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gzi-He-8td" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="173" y="354"/>
+        </scene>
+        <!--Element Properties-->
+        <scene sceneID="LRR-lR-Qis">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRElementPropertiesViewController" storyboardName="ElementProperties" referencedIdentifier="XTRElementPropertiesViewController" id="aiG-zU-Z4X" userLabel="Element Properties" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hwB-Pw-f6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455" y="281"/>
+        </scene>
+        <!--Atomic Structure-->
+        <scene sceneID="H9O-Mf-dcQ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRAtomicStructureViewController" storyboardName="AtomicStructure" referencedIdentifier="XTRAtomicStructureViewController" id="Uow-s7-RZf" userLabel="Atomic Structure" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1C2-32-dfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="281"/>
+        </scene>
+        <!--Wikipedia View-->
+        <scene sceneID="07L-Fa-nje">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRWikipediaViewController" storyboardName="GeneralInfo" referencedIdentifier="XTRWikipediaViewController" id="HbA-Fb-xAu" userLabel="Wikipedia View" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXQ-kV-MqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6423" y="2222"/>
+        </scene>
+        <!--General Info-->
+        <scene sceneID="pka-pd-IiW">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRGeneralInfoViewController" storyboardName="GeneralInfo" referencedIdentifier="XTRGeneralInfoViewController" id="qsj-bt-nQY" userLabel="General Info" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgf-sW-jtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4833" y="2214"/>
+        </scene>
+        <!--Periodic Table-->
+        <scene sceneID="Ddh-Zs-rfg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PeriodicTable" id="pJc-eN-mX0" userLabel="Periodic Table" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Periodic Table" image="Tab01" id="A6g-dD-8vw"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tRV-oJ-2NR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-199" y="114"/>
+        </scene>
+        <!--Element Balloon-->
+        <scene sceneID="sMr-0A-lGi">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRElementBalloonViewController" storyboardName="ElementBalloon" referencedIdentifier="XTRElementBalloonViewController" id="Uja-r3-RgV" userLabel="Element Balloon" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPx-je-dlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-244" y="206"/>
+        </scene>
+        <!--Element List-->
+        <scene sceneID="ibF-KP-5QK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ElementList" id="5ck-y7-Y29" userLabel="Element List" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lists" image="Tab02" id="gpN-jg-zj3"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XrR-aY-ZV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="114"/>
+        </scene>
+        <!--Help Balloon-->
+        <scene sceneID="cCH-q5-3jv">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRHelpBalloonViewController" storyboardName="HelpBalloon" referencedIdentifier="XTRHelpBalloonViewController" id="oed-Be-Owo" userLabel="Help Balloon" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7I6-Wc-fHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="435" y="208"/>
+        </scene>
+        <!--Graph Choice-->
+        <scene sceneID="v8X-TB-LbM">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRGraphChoiceViewController" storyboardName="GraphChoice" referencedIdentifier="XTRGraphChoiceViewController" id="ZuJ-BJ-ZQS" userLabel="Graph Choice" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hJ-K1-n3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="195" y="208"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="mng-sw-thD">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRInfoViewController" storyboardName="Info" referencedIdentifier="XTRInfoViewController" id="as4-yy-uy1" userLabel="Info" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Info" image="Tab05" id="Kib-Z9-KOh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5mb-jT-RiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="628" y="106"/>
+        </scene>
+        <!--Preferences-->
+        <scene sceneID="i55-6C-cGJ">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRPreferencesViewController" storyboardName="Preferences" referencedIdentifier="XTRPreferencesViewController" id="tzH-yM-j2S" userLabel="Preferences" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Preferences" image="Tab04" id="HqB-DD-gmj"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9MA-Q5-tY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="106"/>
+        </scene>
+        <!--Molecular Calculator-->
+        <scene sceneID="2Ds-Sv-V8H">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRMolecularCalculatorViewController" storyboardName="MolecularCalculator" referencedIdentifier="XTRMolecularCalculatorViewController" id="bmZ-bi-i3X" userLabel="Molecular Calculator" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gan-XA-HaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-29" y="281"/>
+        </scene>
+        <!--Graphs-->
+        <scene sceneID="98Q-P6-JtU">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="XTRGraphViewController" storyboardName="Graph" referencedIdentifier="XTRGraphViewController" id="6b5-Fy-Juu" userLabel="Graphs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Graphs" image="Tab03" id="Ye4-pl-iQE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rvC-mq-5cc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="143" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Tab01" width="30" height="30"/>
+        <image name="Tab02" width="30" height="30"/>
+        <image name="Tab03" width="30" height="30"/>
+        <image name="Tab04" width="30" height="30"/>
+        <image name="Tab05" width="24" height="25"/>
+    </resources>
+</document>

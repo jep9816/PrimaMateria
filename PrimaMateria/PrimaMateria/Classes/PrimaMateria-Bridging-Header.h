@@ -3,6 +3,4 @@
 //
 
 #import "CorePlot-CocoaTouch.h"
-#import "UIColor-Expanded.h"
-#import "UIColor-HSVAdditions.h"
 #import "MBProgressHUD.h"

@@ -3,20 +3,21 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRElementTableViewCell : UITableViewCell {
-    var atomicNumberLabel : DynoTableLabel!
-    var symbolLabel : DynoTableLabel!
-    var nameLabel : DynoTableLabel!
-    var atomicMassLabel : DynoTableLabel!
-    var boilingPointLabel : DynoTableLabel!
-    var meltingPointLabel : DynoTableLabel!
-    var densityLabel : DynoTableLabel!
-    var seriesLabel : DynoTableLabel!
-    var periodLabel : DynoTableLabel!
-    var groupLabel : DynoTableLabel!
+class XTRElementTableViewCell : UITableViewCell {
+    
+    var atomicNumberLabel : XTRTableLabel!
+    var symbolLabel : XTRTableLabel!
+    var nameLabel : XTRTableLabel!
+    var atomicMassLabel : XTRTableLabel!
+    var boilingPointLabel : XTRTableLabel!
+    var meltingPointLabel : XTRTableLabel!
+    var densityLabel : XTRTableLabel!
+    var seriesLabel : XTRTableLabel!
+    var periodLabel : XTRTableLabel!
+    var groupLabel : XTRTableLabel!
     var element : XTRElement!
     
     // MARK: - Initialization Methods
@@ -25,43 +26,43 @@
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    func setupWithElement(element: XTRElement) {
-        self.element = element
-        self.backgroundColor = UIColor.blackColor()
-        self.contentView.backgroundColor = UIColor.darkGrayColor()
+    func setupWithElement(_ anElement: XTRElement) {
+        element = anElement
+        backgroundColor = UIColor.black
+        contentView.backgroundColor = UIColor.darkGray
         
-        self.atomicNumberLabel = DynoTableLabel.init(frame: CGRectMake(0, 1, 85, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.atomicNumberLabel)
+        atomicNumberLabel = XTRTableLabel(frame: CGRect(x: 0, y: 1, width: 85, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(atomicNumberLabel)
         
-        self.symbolLabel = DynoTableLabel.init(frame: CGRectMake(86, 1, 95, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.symbolLabel)
+        symbolLabel = XTRTableLabel(frame: CGRect(x: 86, y: 1, width: 95, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(symbolLabel)
         
-        self.nameLabel = DynoTableLabel.init(frame: CGRectMake(182, 1, 125, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.nameLabel)
+        nameLabel = XTRTableLabel(frame: CGRect(x: 182, y: 1, width: 125, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(nameLabel)
         
-        self.atomicMassLabel = DynoTableLabel.init(frame: CGRectMake(308, 1, 105, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.atomicMassLabel)
+        atomicMassLabel = XTRTableLabel(frame: CGRect(x: 308, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(atomicMassLabel)
         
-        self.boilingPointLabel = DynoTableLabel.init(frame: CGRectMake(414, 1, 105, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.boilingPointLabel)
+        boilingPointLabel = XTRTableLabel(frame: CGRect(x: 414, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(boilingPointLabel)
         
-        self.meltingPointLabel = DynoTableLabel.init(frame: CGRectMake(520, 1, 105, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.meltingPointLabel)
+        meltingPointLabel = XTRTableLabel(frame: CGRect(x: 520, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(meltingPointLabel)
         
-        self.densityLabel = DynoTableLabel.init(frame: CGRectMake(626, 1, 105, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.densityLabel)
+        densityLabel = XTRTableLabel(frame: CGRect(x: 626, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(densityLabel)
         
-        self.seriesLabel = DynoTableLabel.init(frame: CGRectMake(732, 1, 150, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.seriesLabel)
+        seriesLabel = XTRTableLabel(frame: CGRect(x: 732, y: 1, width: 150, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(seriesLabel)
         
-        self.periodLabel = DynoTableLabel.init(frame: CGRectMake(883, 1, 72, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.periodLabel)
+        periodLabel = XTRTableLabel(frame: CGRect(x: 883, y: 1, width: 72, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(periodLabel)
         
-        self.groupLabel = DynoTableLabel.init(frame: CGRectMake(956, 1, 68, 42), andColor: self.element.seriesColor())
-        self.contentView.addSubview(self.groupLabel)
+        groupLabel = XTRTableLabel(frame: CGRect(x: 956, y: 1, width: 68, height: 42), backgroundColor: element.seriesColor)
+        contentView.addSubview(groupLabel)
         
-        self.modifyCellProperties()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(XTRElementTableViewCell.colorChanged(_:)), name: NOTIFICATION_SERIES_COLOR_CHANGED, object: nil)
+        modifyCellProperties()
+        NotificationCenter.default.addObserver(self, selector: #selector(XTRElementTableViewCell.colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,86 +71,89 @@
     
     // MARK: - Notification Methods
     
-    func colorChanged(aNotification: NSNotification) {
-        self.setupColors()
-        self.setNeedsDisplay()
+    @objc func colorChanged(_ aNotification: Notification) {
+        setupColors()
+        setNeedsDisplay()
     }
     
     // MARK: - Internal Methods
     
-    func modifyLabel(aLabel: DynoTableLabel, withStandardConditionColor: UIColor, seriesColor: UIColor) {
-        aLabel.font = UIFont.systemFontOfSize(16.0)
+    func modifyLabel(_ aLabel: XTRTableLabel, withStandardConditionColor: UIColor, seriesColor: UIColor) {
+        aLabel.font = UIFont.systemFont(ofSize: 16.0)
         aLabel.textColor = withStandardConditionColor
         aLabel.backgroundColor = seriesColor
-        aLabel.autoresizingMask = [UIViewAutoresizing.FlexibleRightMargin, UIViewAutoresizing.FlexibleHeight]
+        aLabel.autoresizingMask = [UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleHeight]
     }
     
     func modifyCellProperties() {
-        let seriesColor : UIColor = self.element.seriesColor()
-        let selectedColor : UIColor = seriesColor.inverseColor()
+        let seriesColor = element.seriesColor
+        let selectedColor = seriesColor.inverseColor()
         
-        self.selectedBackgroundView = UIImageView.init(image: UIImage.imageFromColor(selectedColor, andSize: self.frame.size))
+        selectedBackgroundView = UIImageView(image: UIImage.imageFromColor(selectedColor, andSize: frame.size))
         
-        self.modifyLabel(self.atomicNumberLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.atomicNumberLabel.text = String.init(format: "%@", self.element.atomicNumber())
-        self.atomicNumberLabel.textAlignment = NSTextAlignment.Right
+        modifyLabel(atomicNumberLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        atomicNumberLabel.text = String(element.atomicNumber)
+        atomicNumberLabel.textAlignment = .right
+        
+        modifyLabel(symbolLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        symbolLabel.font = UIFont.systemFont(ofSize: 26.0)
+        symbolLabel.text = String(format: "%@", element.symbol!)
+        symbolLabel.textAlignment = .center
+        
+        modifyLabel(nameLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        nameLabel.text = String(format: "%@", element.name!)
+        nameLabel.textAlignment = .left
+        
+        modifyLabel(atomicMassLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        atomicMassLabel.text = element.value(forKeyPath: ELEMENT_ATOMIC_MASS) as? String
+        atomicMassLabel.textAlignment = .right
+        
+        modifyLabel(boilingPointLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        boilingPointLabel.text = element.value(forKeyPath: ELEMENT_BOILING_POINT) as? String
+        boilingPointLabel.textAlignment = .right
+        
+        modifyLabel(meltingPointLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        meltingPointLabel.text = element.value(forKeyPath: ELEMENT_MELTING_POINT) as? String
+        meltingPointLabel.textAlignment = .right
+        
+        modifyLabel(densityLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        densityLabel.text = element.value(forKeyPath: ELEMENT_DENSITY) as? String
+        densityLabel.textAlignment = .right
+        
+        modifyLabel(seriesLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        seriesLabel.text = String(format: "%@", element.series!)
+        seriesLabel.textAlignment = .left
+        
+        modifyLabel(periodLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        periodLabel.text = String(format: "%@", element.period!)
+        periodLabel.textAlignment = .right
+        
+        modifyLabel(groupLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
 
-        self.modifyLabel(self.symbolLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.symbolLabel.font = UIFont.systemFontOfSize(26.0)
-        self.symbolLabel.text = String.init(format: "%@", self.element.symbol()!)
-        self.symbolLabel.textAlignment = NSTextAlignment.Center
-        
-        self.modifyLabel(self.nameLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.nameLabel.text = String.init(format: "%@", self.element.name()!)
-        self.nameLabel.textAlignment = NSTextAlignment.Left
-        
-        self.modifyLabel(self.atomicMassLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.atomicMassLabel.text = String.init(format: "%@", (self.element.atomicMass() == 0) ? STRING_EMPTY : self.element.atomicMass())
-        self.atomicMassLabel.textAlignment = NSTextAlignment.Right
-        
-        self.modifyLabel(self.boilingPointLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.boilingPointLabel.text = String.init(format: "%@", (self.element.boilingPoint() == 0) ? STRING_EMPTY : self.element.boilingPoint())
-        self.boilingPointLabel.textAlignment = NSTextAlignment.Right
-        
-        self.modifyLabel(self.meltingPointLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.meltingPointLabel.text = String.init(format: "%@", (self.element.meltingPoint() == 0) ? STRING_EMPTY : self.element.meltingPoint())
-        self.meltingPointLabel.textAlignment = NSTextAlignment.Right
-        
-        self.modifyLabel(self.densityLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.densityLabel.text = String.init(format: "%@", (self.element.density() == 0) ? STRING_EMPTY : self.element.density())
-        self.densityLabel.textAlignment = NSTextAlignment.Right
-
-        self.modifyLabel(self.seriesLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.seriesLabel.text = String.init(format: "%@", self.element.series()!)
-        self.seriesLabel.textAlignment = NSTextAlignment.Left
-        
-        self.modifyLabel(self.periodLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.periodLabel.text = String.init(format: "%@", self.element.period()!)
-        self.periodLabel.textAlignment = NSTextAlignment.Right
-        
-        self.modifyLabel(self.groupLabel, withStandardConditionColor: self.element.standardConditionColor(), seriesColor: self.element.seriesColor())
-        self.groupLabel.text = String.init(format: "%@", (self.element.group()! == 0) ? STRING_EMPTY : self.element.group()!)
-        self.groupLabel.textAlignment = NSTextAlignment.Right
+        let aGroup = element.group!
+        groupLabel.text = (aGroup != 0) ? String(format: "%d", aGroup) : STRING_EMPTY
+        groupLabel.textAlignment = .right
     }
     
     func setupColors() {
-        let aSeriesColor : UIColor = self.element.seriesColor()
+        let aSeriesColor = element.seriesColor
         
-        self.atomicNumberLabel.backgroundColor = aSeriesColor
-        self.symbolLabel.backgroundColor = aSeriesColor
-        self.nameLabel.backgroundColor = aSeriesColor
-        self.atomicMassLabel.backgroundColor = aSeriesColor
-        self.boilingPointLabel.backgroundColor = aSeriesColor
-        self.meltingPointLabel.backgroundColor = aSeriesColor
-        self.densityLabel.backgroundColor = aSeriesColor
-        self.seriesLabel.backgroundColor = aSeriesColor
-        self.periodLabel.backgroundColor = aSeriesColor
-        self.groupLabel.backgroundColor = aSeriesColor
+        atomicNumberLabel.backgroundColor = aSeriesColor
+        symbolLabel.backgroundColor = aSeriesColor
+        nameLabel.backgroundColor = aSeriesColor
+        atomicMassLabel.backgroundColor = aSeriesColor
+        boilingPointLabel.backgroundColor = aSeriesColor
+        meltingPointLabel.backgroundColor = aSeriesColor
+        densityLabel.backgroundColor = aSeriesColor
+        seriesLabel.backgroundColor = aSeriesColor
+        periodLabel.backgroundColor = aSeriesColor
+        groupLabel.backgroundColor = aSeriesColor
     }
     
     // MARK: - Memory Management Methods
-
+    
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NOTIFICATION_SERIES_COLOR_CHANGED, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .seriesColorChangedNotification, object: nil)
     }
+    
 }

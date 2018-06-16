@@ -3,10 +3,11 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRHelpBalloonViewController : UIViewController, UIWebViewDelegate {
+class XTRHelpBalloonViewController : UIViewController, UIWebViewDelegate {
+    
     @IBOutlet var backButton : UIBarButtonItem!
     @IBOutlet var forwardButton : UIBarButtonItem!
     @IBOutlet var titleLabel: UILabel!
@@ -20,111 +21,110 @@
     
     // MARK: - Internal Methods
     
-    func loadDocument(documentName: String) {
-        let path : String? = NSBundle.mainBundle().pathForResource(documentName, ofType: FILE_TYPE_HTML, inDirectory: "ElementTipHelp")
+    func loadDocument(_ documentName: String) {
+        guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "ElementTipHelp") else { return }
         
-        if (path != nil) {
-            let url : NSURL = NSURL.fileURLWithPath(path!)
-            let request : NSURLRequest = NSURLRequest.init(URL: url)
-            self.webView.loadRequest(request)
-        }
+        webView.loadRequest(URLRequest(url: URL(fileURLWithPath: path)))
     }
     
-    func showElementHelp(aNotification: NSNotification) {
-        let object : String? = aNotification.object as? String
-        self.loadDocument(object!)
+    @objc func showElementHelp(_ aNotification: Notification) {
+        guard let object = aNotification.object as? String else { return }
+        loadDocument(object)
     }
     
     // MARK: - Action Methods
     
-    @IBAction func dismiss(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion:  nil)
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true, completion:  nil)
     }
     
-    @IBAction func backButtonPressed(sender: UIButton) {
-        self.webView.goBack()
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        webView.goBack()
     }
     
-    @IBAction func forwardButtonPressed(sender: UIButton) {
-        self.webView.goForward()
-    }
-    
-    // MARK: - WebView Delegate Methods
-    
-    func webViewDidStartLoad(webView: UIWebView) {
-        self.backButton.enabled = false
-        self.forwardButton.enabled = false
-        self.backButton.tintColor = UIColor.blackColor()
-        self.forwardButton.tintColor = UIColor.blackColor()
-    }
-    
-    func webViewDidFinishLoad(aWebView: UIWebView) {
-        if (aWebView.canGoBack) {
-            self.backButton.enabled = true
-            self.backButton.tintColor = UIColor.whiteColor()
-        } else if (!aWebView.canGoBack) {
-            self.backButton.enabled = false
-            self.backButton.tintColor = UIColor.blackColor()
-        }
-        
-        if (aWebView.canGoForward) {
-            self.forwardButton.enabled = true
-            self.forwardButton.tintColor = UIColor.whiteColor()
-        } else if (!aWebView.canGoForward) {
-            self.forwardButton.enabled = false
-            self.forwardButton.tintColor = UIColor.blackColor()
-        }
+    @IBAction func forwardButtonPressed(_ sender: UIButton) {
+        webView.goForward()
     }
     
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let layer : CALayer = CALayer.init()
+        let layer = CALayer()
         
-        layer.bounds = self.webView.bounds
-        layer.position = self.webView.center
-        layer.backgroundColor = UIColor(hexString: "dddd00").CGColor
+        layer.bounds = webView.bounds
+        layer.position = webView.center
+        layer.backgroundColor = UIColor.color(hexString: "dddd00").cgColor
         layer.shadowRadius = 5
         layer.shadowOpacity = 0.75
-        layer.shadowOffset = CGSizeMake(5, 5)
+        layer.shadowOffset = CGSize(width: 5, height: 5)
         layer.cornerRadius = 8
         layer.borderWidth = 1
-
-        self.backButton.enabled = false
-        self.forwardButton.enabled = false
-        self.backButton.tintColor = UIColor.blackColor()
-        self.forwardButton.tintColor = UIColor.blackColor()
         
-        self.view.backgroundColor = UIColor(hexString: "dddd00")
-        self.view.layer.insertSublayer(layer, below: self.webView.layer)
+        backButton.isEnabled = false
+        forwardButton.isEnabled = false
+        backButton.tintColor = UIColor.black
+        forwardButton.tintColor = UIColor.black
         
-        self.titleLabel.layer.cornerRadius = 8
-        self.titleLabel.layer.masksToBounds = true
+        view.backgroundColor = UIColor.color(hexString: "dddd00")
+        view.layer.insertSublayer(layer, below: webView.layer)
         
-        self.webView.layer.cornerRadius = 8
-        self.webView.layer.masksToBounds = true
-        self.webView.delegate = self
+        titleLabel.layer.cornerRadius = 8
+        titleLabel.layer.masksToBounds = true
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(XTRHelpBalloonViewController.showElementHelp(_:)), name: NOTIFICATION_ELEMENT_HELP_SELECTED, object: nil)
+        webView.layer.cornerRadius = 8
+        webView.layer.masksToBounds = true
+        webView.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(XTRHelpBalloonViewController.showElementHelp(_:)), name: .elementHelpSelectedNotification, object: nil)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.backButton = nil
-        self.forwardButton = nil
-        self.titleLabel = nil
-        self.webView.delegate = nil
-        self.webView = nil
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NOTIFICATION_ELEMENT_HELP_SELECTED, object: nil)
+        backButton = nil
+        forwardButton = nil
+        titleLabel = nil
+        webView.delegate = nil
+        webView = nil
+        NotificationCenter.default.removeObserver(self, name: .elementHelpSelectedNotification, object: nil)
     }
+    
+}
+
+extension XTRHelpBalloonViewController { // WebView Delegate Methods
+
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        backButton.isEnabled = false
+        forwardButton.isEnabled = false
+        backButton.tintColor = UIColor.black
+        forwardButton.tintColor = UIColor.black
+    }
+    
+    func webViewDidFinishLoad(_ aWebView: UIWebView) {
+        if aWebView.canGoBack {
+            backButton.isEnabled = true
+            backButton.tintColor = UIColor.white
+        } else if !aWebView.canGoBack {
+            backButton.isEnabled = false
+            backButton.tintColor = UIColor.black
+        }
+        
+        if aWebView.canGoForward {
+            forwardButton.isEnabled = true
+            forwardButton.tintColor = UIColor.white
+        } else if !aWebView.canGoForward {
+            forwardButton.isEnabled = false
+            forwardButton.tintColor = UIColor.black
+        }
+    }
+
 }

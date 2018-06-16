@@ -3,54 +3,63 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/20/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRApplication : UIApplication {
+class XTRApplication : UIApplication {
     
     // MARK: Initialization Methods
     
     override init() {
         super.init()
-        let aDefault : String? = NSUserDefaults.standardUserDefaults().stringForKey(SPLASH_SCREEN_DEFAULT)
+        let aDefault : String? = UserDefaults.standard.string(forKey: XTRProperty.splashScreen)
         
-        if (aDefault == nil) {
-            self.registerDefaultsFromSettingsBundle()
+        if aDefault == nil {
+            registerDefaultsFromSettingsBundle()
         }
         
-        XTRDataSource.sharedInstance()
+        _ = XTRDataSource.sharedInstance()
     }
     
     // MARK: Internal Methods
     
     func registerDefaultsFromSettingsBundle() {
-        guard let settingsBundle = NSBundle.mainBundle().pathForResource("Settings", ofType: "bundle") else {
-            NSLog("Could not find Settings.bundle")
+        guard let settingsBundlePath = Bundle.main.path(forResource: "Settings", ofType: "bundle") else {
+            print("Could not find Settings.bundle")
             return
         }
         
-        let url : NSURL = NSURL.init(fileURLWithPath: settingsBundle)
-        let url2 = url.URLByAppendingPathComponent("Root.plist")
-        let settings : NSDictionary = NSDictionary.init(contentsOfURL: url2!)!
-        
-        guard let preferences = settings.objectForKey("PreferenceSpecifiers") as? NSArray else {
-            return
-        }
-        var defaultsToRegister = [String : AnyObject]()
-        
-        for index in 0..<preferences.count {
-            let prefSpecification : NSDictionary = preferences.objectAtIndex(index) as! NSDictionary
-            let key : String? = prefSpecification.objectForKey("Key") as? String
+        do {
+            let data : Data?
+            let url : URL = URL(fileURLWithPath: settingsBundlePath)
+            try data = Data(contentsOf: url.appendingPathComponent("Root.plist"), options: [])
             
-            if (key != nil) {
-                let defaultValue : Bool? = prefSpecification.objectForKey("DefaultValue") as? Bool
-                if (defaultValue != nil) {
-                    defaultsToRegister[key!] = defaultValue
+            do {
+                var settings = [String : Any]()
+                try settings = PropertyListSerialization.propertyList(from: data!, options: [], format: nil) as! [String : Any]
+                
+                guard let preferences = settings["PreferenceSpecifiers"] as? [AnyObject] else {
+                    return
                 }
+                var defaultsToRegister = [String : AnyObject]()
+                
+                for index in 0..<preferences.count {
+                    let prefSpecification = preferences[index] as! [String : AnyObject]
+                    
+                    if let key = prefSpecification["Key"] as? String {
+                        if let defaultValue = prefSpecification["DefaultValue"] {
+                            defaultsToRegister[key] = defaultValue as AnyObject?
+                        }
+                    }
+                }
+                
+                UserDefaults.standard.register(defaults: defaultsToRegister)
+            } catch {
+                
             }
+        } catch {
+            
         }
-        
-        NSUserDefaults.standardUserDefaults().registerDefaults(defaultsToRegister)
     }
     
     // MARK: UIApplication implemented Methods

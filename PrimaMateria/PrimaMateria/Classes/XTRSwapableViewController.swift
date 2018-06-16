@@ -3,10 +3,11 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/20/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRSwapableViewController : UIViewController {
+class XTRSwapableViewController : UIViewController {
+    
     var element : XTRElement?
 
     // MARK: - Initialization Methods
@@ -20,12 +21,12 @@
     
     // MARK: - View Management Methods
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods

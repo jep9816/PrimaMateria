@@ -3,10 +3,11 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/14/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgressHUDDelegate {
+class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgressHUDDelegate {
+    
     @IBOutlet var backButton : UIBarButtonItem!
     @IBOutlet var titleButtonItem: UIBarButtonItem!
     @IBOutlet var forwardButton : UIBarButtonItem!
@@ -15,6 +16,7 @@
     private var progressHUD : MBProgressHUD?
     private var responseData : NSMutableData?
     private var request : NSMutableURLRequest?
+    
     var elementName : String?
     
     // MARK: - Initialization Methods
@@ -25,73 +27,67 @@
     
     // MARK: - Internal Methods
     
-    func prepareRequest() {
-        let path : String = String.init(format: "https://en.wikipedia.org/wiki/%@", arguments: [self.elementName!])
-        let url : NSURL = NSURL(string: path)!
-        let request : NSMutableURLRequest = NSMutableURLRequest.init(URL: url)
-        
-        self.webView.loadRequest(request)
+    func prepareRequest() {        
+        webView.loadRequest(URLRequest(url: URL(string: "https://en.wikipedia.org/wiki/\(elementName!)")!))
     }
     
     // MARK: - Action Methods
     
-    @IBAction func dismiss(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion:  nil)
+    @IBAction func dismiss(_ sender: UIButton) {
+        dismiss(animated: true, completion:  nil)
     }
     
-    @IBAction func backButtonPressed(sender: UIButton) {
-        self.progressHUD?.showAnimated(true)
-        self.webView.goBack()
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        progressHUD?.show(animated: true)
+        webView.goBack()
     }
     
-    @IBAction func forwardButtonPressed(sender: UIButton) {
-        self.progressHUD?.showAnimated(true)
-        self.webView.goForward()
+    @IBAction func forwardButtonPressed(_ sender: UIButton) {
+        progressHUD?.show(animated: true)
+        webView.goForward()
     }
     
     // MARK: - WebView Delegate Methods
     
-    func webViewDidStartLoad(webView: UIWebView) {
-        self.progressHUD?.showAnimated(true)
-        self.backButton.enabled = false
-        self.forwardButton.enabled = false
-        self.backButton.tintColor = UIColor.blackColor()
-        self.forwardButton.tintColor = UIColor.blackColor()
+    func webViewDidStartLoad(_ webView: UIWebView) {
+        progressHUD?.show(animated: true)
+        backButton.isEnabled = false
+        forwardButton.isEnabled = false
+        backButton.tintColor = UIColor.black
+        forwardButton.tintColor = UIColor.black
     }
     
-    func webViewDidFinishLoad(aWebView: UIWebView) {
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
+    func webViewDidFinishLoad(_ aWebView: UIWebView) {
+        MBProgressHUD.hide(for: view, animated: true)
         
-        if (aWebView.canGoBack) {
-            self.backButton.enabled = true
-            self.backButton.tintColor = UIColor.whiteColor()
-        } else if (!aWebView.canGoBack) {
-            self.backButton.enabled = false
-            self.backButton.tintColor = UIColor.blackColor()
+        if aWebView.canGoBack {
+            backButton.isEnabled = true
+            backButton.tintColor = UIColor.white
+        } else if !aWebView.canGoBack {
+            backButton.isEnabled = false
+            backButton.tintColor = UIColor.black
         }
         
-        if (aWebView.canGoForward) {
-            self.forwardButton.enabled = true
-            self.forwardButton.tintColor = UIColor.whiteColor()
-        } else if (!aWebView.canGoForward) {
-            self.forwardButton.enabled = false
-            self.forwardButton.tintColor = UIColor.blackColor()
+        if aWebView.canGoForward {
+            forwardButton.isEnabled = true
+            forwardButton.tintColor = UIColor.white
+        } else if !aWebView.canGoForward {
+            forwardButton.isEnabled = false
+            forwardButton.tintColor = UIColor.black
         }
     }
     
-    func webView(webView: UIWebView, didFailLoadWithError error: NSError?) {
-        let path: String = NSBundle.mainBundle().pathForResource("LoadFailure", ofType: FILE_TYPE_HTML)!
-        let url : NSURL = NSURL.init(fileURLWithPath: path)
-        let request : NSMutableURLRequest = NSMutableURLRequest.init(URL: url)
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        let path = Bundle.main.path(forResource: "LoadFailure", ofType: FileType.html)!
+
+        MBProgressHUD.hide(for: view, animated: true)
         
-        MBProgressHUD.hideHUDForView(self.view, animated: true)
-        
-        self.webView.loadRequest(request)
+        webView.loadRequest(URLRequest(url: URL(fileURLWithPath: path)))
     }
     
     // MARK: - MBProgressHUDDelegate methods
     
-    func hudWasHidden(aProgressHUD: MBProgressHUD) {
+    func hudWasHidden(_ aProgressHUD: MBProgressHUD) {
         aProgressHUD.removeFromSuperview()
     }
     
@@ -99,56 +95,55 @@
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let textAttributes: [String: AnyObject]? = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont.boldSystemFontOfSize(20)
+        
+        let textAttributes: [NSAttributedStringKey: AnyObject]? = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)
         ]
         
-        let detailsLabelText : String = String.init(format: "Loading Wikipedia Page for element: %@.", arguments: [self.elementName!])
+        titleButtonItem.setTitleTextAttributes(textAttributes, for: UIControlState())
         
-        self.titleButtonItem.setTitleTextAttributes(textAttributes, forState: UIControlState.Normal)
+        preferredContentSize = CGSize(width: 768, height: 620)
         
-        self.preferredContentSize = CGSizeMake(768, 620)
-        
-        self.progressHUD = MBProgressHUD.init(view: self.view)
-        self.progressHUD!.label.font = UIFont.boldSystemFontOfSize(26)
-        self.progressHUD!.detailsLabel.font = UIFont.boldSystemFontOfSize(15)
-        self.progressHUD!.delegate = self
-        self.progressHUD!.label.text = "Please Wait"
-        self.progressHUD!.detailsLabel.text = detailsLabelText
-        self.webView.delegate = self
+        progressHUD = MBProgressHUD(view: view)
+        progressHUD!.label.font = UIFont.boldSystemFont(ofSize: 26)
+        progressHUD!.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        progressHUD!.delegate = self
+        progressHUD!.label.text = "Please Wait"
+        progressHUD!.detailsLabel.text = "Loading Wikipedia Page for element: \(elementName!)."
+        webView.delegate = self
     }
     
-    override func viewWillAppear(animated: Bool)  {
+    override func viewWillAppear(_ animated: Bool)  {
         super.viewWillAppear(animated)
-        let title : String = String.init(format: "Wikipedia Entry for element:  %@", arguments: [self.elementName!])
         
-        self.titleButtonItem.title = title
-        self.backButton.enabled = false
-        self.backButton.tintColor = UIColor.blackColor()
-        self.forwardButton.enabled = false
-        self.forwardButton.tintColor = UIColor.blackColor()
+        titleButtonItem.title = "Wikipedia Entry for element: \(elementName!)"
+        backButton.isEnabled = false
+        backButton.tintColor = UIColor.black
+        forwardButton.isEnabled = false
+        forwardButton.tintColor = UIColor.black
         
-        self.view.addSubview(self.progressHUD!)
-        self.progressHUD?.showAnimated(true)
-        self.prepareRequest()
+        view.addSubview(progressHUD!)
+        progressHUD?.show(animated: true)
+        prepareRequest()
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.backButton = nil
-        self.forwardButton = nil
-        self.titleButtonItem = nil
-        self.webView.delegate = nil
-        self.webView = nil
+        backButton = nil
+        forwardButton = nil
+        titleButtonItem = nil
+        webView.delegate = nil
+        webView = nil
     }
+    
 }

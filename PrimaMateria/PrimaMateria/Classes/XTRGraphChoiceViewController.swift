@@ -3,10 +3,10 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRGraphChoiceViewController : UIViewController {
+class XTRGraphChoiceViewController : UIViewController {
     
     // MARK: - Initialization Methods
     
@@ -18,19 +18,26 @@
     
     // MARK: - Action Methods
     
-    @IBAction func chooseGraph(sender: UIButton) {
-        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_GRAPH_SELECTED, object: sender.tag)
+    @IBAction func chooseGraph(_ sender: UIButton) {
+        NotificationCenter.default.post(name: .graphSelectedNotification, object: sender.tag)
     }
     
     // MARK: - View Management Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-    override func shouldAutorotate() -> Bool {
-        return true
+        view.backgroundColor = XTRColorFactory.popupArrowColor
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var shouldAutorotate : Bool {
+        return false
+    }
+    
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
+    
 }

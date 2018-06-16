@@ -32,7 +32,6 @@
 @class MBBackgroundView;
 @protocol MBProgressHUDDelegate;
 
-
 extern CGFloat const MBProgressMaxOffset;
 
 typedef NS_ENUM(NSInteger, MBProgressHUDMode) {
@@ -392,7 +391,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)hide:(BOOL)animated __attribute__((deprecated("Use hideAnimated: instead.")));
 - (void)hide:(BOOL)animated afterDelay:(NSTimeInterval)delay __attribute__((deprecated("Use hideAnimated:afterDelay: instead.")));
 
-typedef void (^MBProgressHUDCompletionBlock)();
+typedef void (^MBProgressHUDCompletionBlock)(void);
 
 - (void)showWhileExecuting:(SEL)method onTarget:(id)target withObject:(id)object animated:(BOOL)animated __attribute__((deprecated("Use GCD directly.")));
 - (void)showAnimated:(BOOL)animated whileExecutingBlock:(dispatch_block_t)block __attribute__((deprecated("Use GCD directly.")));

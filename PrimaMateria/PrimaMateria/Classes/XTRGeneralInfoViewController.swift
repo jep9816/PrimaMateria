@@ -3,10 +3,13 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRGeneralInfoViewController : XTRSwapableViewController, UIWebViewDelegate {
+import PDFKit
+
+class XTRGeneralInfoViewController : XTRSwapableViewController, UIWebViewDelegate {
+    
     @IBOutlet var discovererLabel : UILabel!
     @IBOutlet var discoveryLocationLabel : UILabel!
     @IBOutlet var discoveryYearLabel : UILabel!
@@ -17,6 +20,7 @@
     private var progressHUD : MBProgressHUD?
     private var responseData : NSMutableData?
     private var request : NSMutableURLRequest?
+    
     var elementName : String?
     
     // MARK: - Initialization Methods
@@ -28,55 +32,56 @@
     // MARK: - Internal Methods
     
     func assignGeneralInfo() {
-        let path : String = self.element!.pathForGeneralInfoDoc()
-        let url : NSURL = NSURL(string: path)!
-        let request : NSURLRequest = NSURLRequest.init(URL: url)
-        self.webView.loadRequest(request)
+        let aPath = element!.pathForGeneralInfoDoc()
+        
+        if !aPath.isEmpty {
+            webView.loadRequest(URLRequest(url: URL(string: aPath)!))
+        }
     }
     
     // MARK: - Miscellaneous Methods
     
     override func setupUI() {
-        if (self.element != nil) {
-            self.discovererLabel.text = self.element!.valueForKey(ELEMENT_DISCOVERER) as? String
-            self.discoveryLocationLabel.text = self.element!.valueForKey(ELEMENT_DISCOVERY_LOCATION) as? String
-            self.discoveryYearLabel.text = self.element!.valueForKey(ELEMENT_DISCOVERY_YEAR) as? String
-            self.abundanceCrustLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_ABUNDANCE_CRUST) as! String])
-            self.abundanceSeaLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_ABUNDANCE_SEA) as! String])
-            self.assignGeneralInfo()
-        }
+        guard let localElement = element else { return }
+        discovererLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERER) as? String
+        discoveryLocationLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERY_LOCATION) as? String
+        discoveryYearLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERY_YEAR) as? String
+        abundanceCrustLabel.text = "\(localElement.value(forKeyPath: ELEMENT_ABUNDANCE_CRUST)!)"
+        abundanceSeaLabel.text = "\(localElement.value(forKeyPath: ELEMENT_ABUNDANCE_SEA)!)"
+        assignGeneralInfo()
     }
     
     // MARK: - Action Methods
     
-    @IBAction func showWikipediaEntry(sender: UIButton) {
-        self.performSegueWithIdentifier(SHOW_WIKIPEDIA_VIEW_CONTROLLER_FROM_GENERAL_VIEW_CONTROLLER, sender: self)
+    @IBAction func showWikipediaEntry(_ sender: UIButton) {
+        performSegue(withIdentifier: SegueName.showWikipediaViewControllerFromGeneralViewController, sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let destController : XTRWikipediaViewController = segue.destinationViewController as! XTRWikipediaViewController
-        destController.elementName = self.element!.name()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destController = segue.destination as! XTRWikipediaViewController
+        destController.elementName = element!.name
     }
     
     // MARK: - View Management Methods
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.abundanceCrustLabel = nil
-        self.abundanceSeaLabel = nil
-        self.discovererLabel = nil
-        self.discoveryLocationLabel = nil
-        self.discoveryYearLabel = nil
-        self.webView.delegate = nil
-        self.webView = nil
+        abundanceCrustLabel = nil
+        abundanceSeaLabel = nil
+        discovererLabel = nil
+        discoveryLocationLabel = nil
+        discoveryYearLabel = nil
+        webView.delegate = nil
+        webView = nil
     }
+    
 }

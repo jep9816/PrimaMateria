@@ -3,286 +3,253 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRColorFactory : NSObject {
+import UIKit
+
+let RGB_CONSTANT = 255.0
+let HSB_CONSTANT = 359.0
+
+class XTRColorFactory : NSObject {
     
-    class func colorFromDefaultsForKey(aColorKey: String) -> UIColor? {
-        let colorData : NSData? = XTRPropertiesStore.retreiveColorDataForColorKey(aColorKey)
+    class func colorFromDefaultsForKey(_ aColorKey: String) -> UIColor? {
+        let colorData : Data? = XTRPropertiesStore.getColorDataForKey(aColorKey)
         var aColor : UIColor?
         
-        if(colorData != nil) {
-            aColor = NSKeyedUnarchiver.unarchiveObjectWithData(colorData!) as? UIColor
+        if colorData != nil {
+            aColor = NSKeyedUnarchiver.unarchiveObject(with: colorData!) as? UIColor
         }
+        
         return aColor
     }
     
-    class func colorForString(aString: String) -> UIColor {
-        if (aString == SERIES_ACTINIDE) {
-            return XTRColorFactory.actinideColor()
-        } else if (aString == SERIES_ALKALI_EARTH_METAL) {
-            return XTRColorFactory.alkaliEarthMetalColor()
-        } else if (aString == SERIES_ALKALI_METAL) {
-            return XTRColorFactory.alkaliMetalColor()
-        } else if (aString == SERIES_HALOGEN) {
-            return XTRColorFactory.halogenColor()
-        } else if (aString == SERIES_LANTHANIDE) {
-            return XTRColorFactory.lanthanideColor()
-        } else if (aString == SERIES_METAL) {
-            return XTRColorFactory.metalColor()
-        } else if (aString == SERIES_NON_METAL) {
-            return XTRColorFactory.nonMetalColor()
-        } else if (aString == SERIES_NOBLE_GAS) {
-            return XTRColorFactory.nobleGasColor()
-        } else if (aString == SERIES_TRANSACTINIDES) {
-            return XTRColorFactory.transactinideColor()
-        } else if (aString == SERIES_TRANSITION_METAL) {
-            return XTRColorFactory.transitionMetalColor()
-        } else if (aString == STANDARD_CONDITION_GAS) {
-            return XTRColorFactory.gasConditionColor()
-        } else if (aString == STANDARD_CONDITION_LIQUID) {
-            return XTRColorFactory.liquidConditionColor()
-        } else if (aString == STANDARD_CONDITION_SOLID) {
-            return XTRColorFactory.solidConditionColor()
-        } else if (aString == STANDARD_CONDITION_SYNTHETIC) {
-            return XTRColorFactory.syntheticConditionColor()
+    class func colorForString(_ aString: String) -> UIColor {
+        if aString == ElementSeries.actinide {
+            return XTRColorFactory.actinideColor
+        } else if aString == ElementSeries.alkaliEarthMetal {
+            return XTRColorFactory.alkaliEarthMetalColor
+        } else if aString == ElementSeries.alkaliMetal {
+            return XTRColorFactory.alkaliMetalColor
+        } else if aString == ElementSeries.halogen {
+            return XTRColorFactory.halogenColor
+        } else if aString == ElementSeries.lanthanide {
+            return XTRColorFactory.lanthanideColor
+        } else if aString == ElementSeries.metal {
+            return XTRColorFactory.metalColor
+        } else if aString == ElementSeries.nonMetal {
+            return XTRColorFactory.nonMetalColor
+        } else if aString == ElementSeries.nobleGas {
+            return XTRColorFactory.nobleGasColor
+        } else if aString == ElementSeries.transactinides {
+            return XTRColorFactory.transactinideColor
+        } else if aString == ElementSeries.transitionMetal {
+            return XTRColorFactory.transitionMetalColor
+        } else if aString == ElementStandardCondition.gas {
+            return XTRColorFactory.gasConditionColor
+        } else if aString == ElementStandardCondition.liquid {
+            return XTRColorFactory.liquidConditionColor
+        } else if aString == ElementStandardCondition.solid {
+            return XTRColorFactory.solidConditionColor
+        } else if aString == ElementStandardCondition.synthetic {
+            return XTRColorFactory.syntheticConditionColor
         } else {
-            return UIColor.whiteColor()
+            return UIColor.white
         }
     }
     
     // MARK: - Series Colors
     
-    class func actinideColor() -> UIColor {
-        let actinideColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_ACTINIDE)
-        if (aColor != nil) {
-            actinideColor = aColor
-        } else {
-            actinideColor = XTRColorFactory.defaultActinideColor()
+    class var actinideColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.actinide) else { return XTRColorFactory.defaultActinideColor }
+            return aColor
         }
-        return actinideColor!
     }
     
-    class func alkaliEarthMetalColor() -> UIColor {
-        let alkaliEarthMetalColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_ALKALI_EARTH_METAL)
-        if (aColor != nil) {
-            alkaliEarthMetalColor = aColor
-        } else {
-            alkaliEarthMetalColor = XTRColorFactory.defaultAlkaliEarthMetalColor()
+    class var alkaliEarthMetalColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.alkaliEarthMetal) else { return XTRColorFactory.defaultAlkaliEarthMetalColor }
+            return aColor
         }
-        return alkaliEarthMetalColor!
     }
     
-    class func alkaliMetalColor() -> UIColor {
-        let alkaliMetalColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_ALKALI_METAL)
-        if (aColor != nil) {
-            alkaliMetalColor = aColor
-        } else {
-            alkaliMetalColor = XTRColorFactory.defaultAlkaliMetalColor()
+    class var alkaliMetalColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.alkaliMetal) else { return XTRColorFactory.defaultAlkaliMetalColor }
+            return aColor
         }
-        return alkaliMetalColor!
     }
     
-    class func halogenColor() -> UIColor {
-        let halogenColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_HALOGEN)
-        if (aColor != nil) {
-            halogenColor = aColor
-        } else {
-            halogenColor = XTRColorFactory.defaultHalogenColor()
+    class var halogenColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.halogen) else { return XTRColorFactory.defaultHalogenColor }
+            return aColor
         }
-        return halogenColor!
     }
     
-    class func lanthanideColor() -> UIColor {
-        let lanthanideColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_LANTHANIDE)
-        if (aColor != nil) {
-            lanthanideColor = aColor
-        } else {
-            lanthanideColor = XTRColorFactory.defaultLanthanideColor()
+    class var lanthanideColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.lanthanide) else { return XTRColorFactory.defaultLanthanideColor }
+            return aColor
         }
-        return lanthanideColor!
     }
     
-    class func metalColor() -> UIColor {
-        let metalColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_METAL)
-        if (aColor != nil) {
-            metalColor = aColor
-        } else {
-            metalColor = XTRColorFactory.defaultMetalColor()
+    class var metalColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.metal) else { return XTRColorFactory.defaultMetalColor }
+            return aColor
         }
-        return metalColor!
     }
     
-    class func nonMetalColor() -> UIColor {
-        let nonMetalColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_NON_METAL)
-        if (aColor != nil) {
-            nonMetalColor = aColor
-        } else {
-            nonMetalColor = XTRColorFactory.defaultNonMetalColor()
+    class var nonMetalColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.nonMetal) else { return XTRColorFactory.defaultNonMetalColor }
+            return aColor
         }
-        return nonMetalColor!
     }
     
-    class func nobleGasColor() -> UIColor {
-        let nobleGasColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_NOBLE_GAS)
-        if (aColor != nil) {
-            nobleGasColor = aColor
-        } else {
-            nobleGasColor = XTRColorFactory.defaultNobleGasColor()
+    class var nobleGasColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.nobleGas) else { return XTRColorFactory.defaultNobleGasColor }
+            return aColor
         }
-        return nobleGasColor!
     }
     
-    class func transactinideColor() -> UIColor {
-        let transactinideColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_TRANSACTINIDES)
-        if (aColor != nil) {
-            transactinideColor = aColor
-        } else {
-            transactinideColor = XTRColorFactory.defaultTransactinideColor()
+    class var transactinideColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.transactinides) else { return XTRColorFactory.defaultTransactinideColor }
+            return aColor
         }
-        return transactinideColor!
     }
     
-    class func transitionMetalColor() -> UIColor {
-        let transitionMetalColor : UIColor?
-        let aColor : UIColor? = XTRColorFactory.colorFromDefaultsForKey(SERIES_TRANSITION_METAL)
-        if (aColor != nil) {
-            transitionMetalColor = aColor
-        } else {
-            transitionMetalColor = XTRColorFactory.defaultTransitionMetalColor()
+    class var transitionMetalColor: UIColor {
+        get {
+            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.transitionMetal) else { return XTRColorFactory.defaultTransitionMetalColor }
+            return aColor
         }
-        return transitionMetalColor!
     }
     
-    class func defaultActinideColor() -> UIColor {
-        return UIColor(red: CGFloat(177 / RGB_CONSTANT), green: CGFloat(247 / RGB_CONSTANT), blue: CGFloat(255 / RGB_CONSTANT), alpha: 1)
+    class var defaultActinideColor: UIColor {
+        return UIColor.color(hexString: "B1F7FF")
     }
     
-    class func defaultAlkaliEarthMetalColor() -> UIColor {
-        return UIColor(red: CGFloat(127 / RGB_CONSTANT), green: CGFloat(133 / RGB_CONSTANT), blue: CGFloat(255 / RGB_CONSTANT), alpha: 1)
+    class var defaultAlkaliEarthMetalColor: UIColor {
+        return UIColor.color(hexString: "7F85FF")
     }
     
-    class func defaultAlkaliMetalColor() -> UIColor {
-        return UIColor(red: CGFloat(255 / RGB_CONSTANT), green: CGFloat(124 / RGB_CONSTANT), blue: CGFloat(236 / RGB_CONSTANT), alpha: 1)
+    class var defaultAlkaliMetalColor: UIColor {
+        return UIColor.color(hexString: "FF7CEC")
     }
     
-    class func defaultHalogenColor() -> UIColor {
-        return UIColor(red: CGFloat(255 / RGB_CONSTANT), green: CGFloat(212 / RGB_CONSTANT), blue: CGFloat(122 / RGB_CONSTANT), alpha: 1)
+    class var defaultHalogenColor: UIColor {
+        return UIColor.color(hexString: "FFD47A")
     }
     
-    class func defaultLanthanideColor() -> UIColor {
-        return UIColor(red: CGFloat(68 / RGB_CONSTANT), green: CGFloat(215 / RGB_CONSTANT), blue: CGFloat(255 / RGB_CONSTANT), alpha: 1)
+    class var defaultLanthanideColor: UIColor {
+        return UIColor.color(hexString: "44D7FF")
     }
     
-    class func defaultMetalColor() -> UIColor {
-        return UIColor(red: CGFloat(149 / RGB_CONSTANT), green: CGFloat(255 / RGB_CONSTANT), blue: CGFloat(164 / RGB_CONSTANT), alpha: 1)
+    class var defaultMetalColor: UIColor {
+        return UIColor.color(hexString: "95FFA4")
     }
     
-    class func defaultNobleGasColor() -> UIColor {
-        return UIColor(red: CGFloat(255 / RGB_CONSTANT), green: CGFloat(145 / RGB_CONSTANT), blue: CGFloat(125 / RGB_CONSTANT), alpha: 1)
+    class var defaultNobleGasColor: UIColor {
+        return UIColor.color(hexString: "FF917D")
     }
     
-    class func defaultNonMetalColor() -> UIColor {
-        return UIColor(red: CGFloat(255 / RGB_CONSTANT), green: CGFloat(255 / RGB_CONSTANT), blue: CGFloat(119 / RGB_CONSTANT), alpha: 1)
+    class var defaultNonMetalColor: UIColor {
+        return UIColor.color(hexString: "FFFF77")
     }
     
-    class func defaultTransactinideColor() -> UIColor {
-        return UIColor(red: CGFloat(122 / RGB_CONSTANT), green: CGFloat(255 / RGB_CONSTANT), blue: CGFloat(202 / RGB_CONSTANT), alpha: 1)
+    class var defaultTransactinideColor: UIColor {
+        return UIColor.color(hexString: "7AFFCA")
     }
     
-    class func defaultTransitionMetalColor() -> UIColor {
-        return UIColor(red: CGFloat(119 / RGB_CONSTANT), green: CGFloat(255 / RGB_CONSTANT), blue: CGFloat(92 / RGB_CONSTANT), alpha: 1)
+    class var defaultTransitionMetalColor: UIColor {
+        return UIColor.color(hexString: "77FF5C")
     }
     
     // MARK: - Standard Condition Colors
     
-    class func gasConditionColor() -> UIColor {
-        return XTRColorFactory.defaultGasConditionColor()
+    class var gasConditionColor: UIColor {
+        return XTRColorFactory.defaultGasConditionColor
     }
     
-    class func solidConditionColor() -> UIColor {
-        return XTRColorFactory.defaultSolidConditionColor()
+    class var solidConditionColor: UIColor {
+        return XTRColorFactory.defaultSolidConditionColor
     }
     
-    class func liquidConditionColor() -> UIColor {
-        return XTRColorFactory.defaultLiquidConditionColor()
+    class var liquidConditionColor: UIColor {
+        return XTRColorFactory.defaultLiquidConditionColor
     }
     
-    class func syntheticConditionColor() -> UIColor {
-        return XTRColorFactory.defaultSyntheticConditionColor()
+    class var syntheticConditionColor: UIColor {
+        return XTRColorFactory.defaultSyntheticConditionColor
     }
     
-    class func defaultGasConditionColor() -> UIColor {
-    return UIColor.redColor()
+    class var defaultGasConditionColor: UIColor {
+        return UIColor.red
     }
     
-    class func defaultSolidConditionColor() -> UIColor {
-        return UIColor.blackColor()
+    class var defaultSolidConditionColor: UIColor {
+        return UIColor.black
     }
     
-    class func defaultLiquidConditionColor() -> UIColor {
-        return UIColor.blueColor()
+    class var defaultLiquidConditionColor: UIColor {
+        return UIColor.blue
     }
     
-    class func defaultSyntheticConditionColor() -> UIColor {
-        return UIColor.yellowColor()
+    class var defaultSyntheticConditionColor: UIColor {
+        return UIColor.yellow
     }
     
-    class func navigationBarColor() -> UIColor {
-        return UIColor(red: CGFloat(36 / RGB_CONSTANT), green: CGFloat(36 / RGB_CONSTANT), blue: CGFloat(36 / RGB_CONSTANT), alpha: 1)
+    class var navigationBarColor: UIColor {
+        return UIColor.color(hexString: "242424")
     }
     
-    class func toolBarColor() -> UIColor {
-        return UIColor(red: CGFloat(36 / RGB_CONSTANT), green: CGFloat(36 / RGB_CONSTANT), blue: CGFloat(36 / RGB_CONSTANT), alpha: 1)
+    class var toolBarColor: UIColor {
+        return UIColor.color(hexString: "242424")
     }
     
-    class func alternateRowColor() -> UIColor {
-        return UIColor(red: CGFloat(36 / RGB_CONSTANT), green: CGFloat(245.0 / RGB_CONSTANT), blue: CGFloat(245.0 / RGB_CONSTANT), alpha: 1)
+    class var alternateRowColor: UIColor {
+        return UIColor.color(hexString: "24F5F5")
     }
     
-    class func rowColor() -> UIColor {
-        return UIColor(red: CGFloat(245.0 / RGB_CONSTANT), green: CGFloat(255.0 / RGB_CONSTANT), blue: CGFloat(255.0 / RGB_CONSTANT), alpha: 1)
+    class var rowColor: UIColor {
+        return UIColor.color(hexString: "EDF3FF")
     }
     
-    class func alternateRowTableCellTextLabelColor() -> UIColor {
-        return UIColor.blackColor()
+    class var alternateRowTableCellTextLabelColor: UIColor {
+        return UIColor.black
     }
     
-    class func rowTableCellTextLabelColor() -> UIColor {
-        return UIColor.whiteColor()
+    class var rowTableCellTextLabelColor: UIColor {
+        return UIColor.white
     }
     
-    class func labelColor() -> UIColor {
-        return UIColor(red: CGFloat(44.0 / RGB_CONSTANT), green: CGFloat(119.0 / RGB_CONSTANT), blue: CGFloat(164.0 / RGB_CONSTANT), alpha: 1)
+    class var labelColor: UIColor {
+        return UIColor.color(hexString: "2C77A4")
     }
     
-    class func tableBackgroundColor() -> UIColor {
-        return UIColor.clearColor()
+    class var tableBackgroundColor: UIColor {
+        return UIColor.clear
     }
     
-    class func viewBackgroundColor() -> UIColor {
-        return UIColor.whiteColor()
+    class var viewBackgroundColor: UIColor {
+        return UIColor.white
     }
     
-    class func tableViewCellDetailLabelColor() -> UIColor {
-        return UIColor(red: CGFloat(50.0 / RGB_CONSTANT), green: CGFloat(79.0 / RGB_CONSTANT), blue: CGFloat(133.0 / RGB_CONSTANT), alpha: 1)
+    class var tableViewCellDetailLabelColor: UIColor {
+        return UIColor.color(hexString: "324F85")
     }
     
-    class func tableViewCellBorderColor() -> UIColor {
-        return UIColor(red: CGFloat(191.0 / RGB_CONSTANT), green: CGFloat(191.0 / RGB_CONSTANT), blue: CGFloat(191.0 / RGB_CONSTANT), alpha: 1)
+    class var tableViewCellBorderColor: UIColor {
+        return UIColor.color(hexString: "BFBFBF")
     }
     
-    class func popupArrowColor() -> UIColor {
-        return UIColor.init(red: 0.64, green: 0.64, blue: 0.64, alpha: 1.0)
+    class var popupArrowColor: UIColor {
+        return UIColor.color(hexString: "A3A3A3")
     }
+    
 }

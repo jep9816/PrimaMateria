@@ -3,10 +3,10 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/14/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRSplashViewController : UIViewController {
+class XTRSplashViewController : UIViewController {
     
     @IBOutlet var appNameLabel: UILabel!
     @IBOutlet var versionLabel : UILabel!
@@ -21,37 +21,43 @@
     
     // MARK: - Internal Methods
     
-    func wait() {
-        NSThread.sleepForTimeInterval(5.0)
-        self.view.removeFromSuperview()
+    @objc func done() {
+        view.removeFromSuperview()
+    }
+    
+    @objc func wait() {
+        Thread.sleep(forTimeInterval: 5.0)
+        performSelector(onMainThread: #selector(XTRSplashViewController.done), with: nil, waitUntilDone: true)
     }
     
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.appNameLabel.text = XTRVersionChecker.appNameString()
-        self.versionLabel.text = XTRVersionChecker.appVersionString()
-        self.cpyRightLabel.text = XTRVersionChecker.copywriteString()
-        self.wrapperView.layer.cornerRadius = 5
         
-        NSThread.detachNewThreadSelector(#selector(XTRSplashViewController.wait), toTarget: self, withObject: nil)
+        appNameLabel.text = XTRVersionChecker.appNameString
+        versionLabel.text = XTRVersionChecker.appVersionString
+        cpyRightLabel.text = XTRVersionChecker.copywriteString
+        wrapperView.layer.cornerRadius = 5
+        
+        Thread.detachNewThreadSelector(#selector(XTRSplashViewController.wait), toTarget: self, with: nil)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
 
     // MARK: - Memory Management Methods
     
     deinit {
-        self.appNameLabel = nil
-        self.versionLabel = nil
-        self.cpyRightLabel = nil
-        self.wrapperView = nil
+        appNameLabel = nil
+        versionLabel = nil
+        cpyRightLabel = nil
+        wrapperView = nil
     }
+    
 }

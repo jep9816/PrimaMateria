@@ -3,71 +3,90 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/20/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRAppDelegate : UIResponder, UIApplicationDelegate {
+class XTRAppDelegate : UIResponder, UIApplicationDelegate {
+    
     var window : UIWindow?
     
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject : AnyObject]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         XTRAppDelegate.applyStyle()
-//        let fontFamiles : NSArray = UIFont.familyNames()
-//        print("%@", fontFamiles);
-//        let fontNames : NSArray = UIFont.fontNamesForFamilyName("Verdana")
-//        print("%@", fontNames);
+        //        let fontFamiles : [Any] = UIFont.familyNames()
+        //        print("%@", fontFamiles)
+        //        let fontNames : [Any] = UIFont.fontNamesForFamilyName("Verdana")
+        //        print("%@", fontNames)
         return true
     }
     
     class func storyboard() -> UIStoryboard {
-        return UIStoryboard.init(name: MAIN_STORY_BOARD, bundle: nil)
+        return UIStoryboard(name: MAIN_STORY_BOARD, bundle: nil)
     }
     
     class func applyStyle() {
-        let navigationBarAppearance : UINavigationBar = UINavigationBar.appearance()
-        let toolBarAppearance : UIToolbar = UIToolbar.appearance()
-        let tabBarAppearance : UITabBar = UITabBar.appearance()
-        let tabBarItemAppearance : UITabBarItem = UITabBarItem.appearance()
-        let segmentedControlBarAppearance : UISegmentedControl = UISegmentedControl.appearance()
-        let switchAppearance : UISwitch = UISwitch.appearance()
+        let navigationBarAppearance = UINavigationBar.appearance()
+        let toolBarAppearance = UIToolbar.appearance()
+        let tabBarAppearance = UITabBar.appearance()
+        let tabBarItemAppearance = UITabBarItem.appearance()
+        let segmentedControlBarAppearance = UISegmentedControl.appearance()
+        let switchAppearance = UISwitch.appearance()
         
-        let navigationBarTextAttributes: [String: AnyObject]? = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont.boldSystemFontOfSize(20)
+        let navigationBarTextAttributes: [NSAttributedStringKey: AnyObject]? = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)
         ]
         
-        let tabBarNormalItemTextAttributes: [String: AnyObject]? = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont.boldSystemFontOfSize(14)
-        ]
+        let segmentedControlTextAttributes: [NSAttributedStringKey: AnyObject]?
+        let tabBarNormalItemTextAttributes: [NSAttributedStringKey: AnyObject]?
+        let tabBarSelectedItemTextAttributes: [NSAttributedStringKey: AnyObject]?
         
-        let tabBarSelectedItemTextAttributes: [String: AnyObject]? = [
-            NSForegroundColorAttributeName: UIColor.init(hexString: "333333"),
-            NSFontAttributeName: UIFont.boldSystemFontOfSize(14)
-        ]
+        if #available(iOS 11.0, *) {
+            segmentedControlTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "4093ff"),
+                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 13)
+            ]
+            tabBarNormalItemTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.white,
+                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+            ]
+            tabBarSelectedItemTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "4093ff"),
+                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+            ]
+            tabBarAppearance.tintColor = UIColor.color(hexString: "4093ff")
+        } else {
+            segmentedControlTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "666666"),
+                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 13)
+            ]
+            tabBarNormalItemTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.white,
+                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
+            ]
+            tabBarSelectedItemTextAttributes = [
+                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "333333"),
+                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
+            ]
+            tabBarAppearance.tintColor = UIColor.color(hexString: "333333")
+        }
         
-        let segmentedControlTextAttributes: [String: AnyObject]? = [
-            NSForegroundColorAttributeName: UIColor.whiteColor(),
-            NSFontAttributeName: UIFont.systemFontOfSize(13)
-        ]
+        tabBarItemAppearance.setTitleTextAttributes(tabBarNormalItemTextAttributes, for: UIControlState())
+        tabBarItemAppearance.setTitleTextAttributes(tabBarSelectedItemTextAttributes, for: .selected)
+        
+        tabBarAppearance.backgroundColor = UIColor.color(hexString: "999999")
+        
+        segmentedControlBarAppearance.setTitleTextAttributes(segmentedControlTextAttributes, for: .selected)
         
         navigationBarAppearance.titleTextAttributes = navigationBarTextAttributes
-        navigationBarAppearance.tintColor = UIColor.init(hexString: "eeeeee")
+        navigationBarAppearance.tintColor = UIColor.color(hexString: "eeeeee")
         
-        toolBarAppearance.tintColor = UIColor.init(hexString: "eeeeee")
+        toolBarAppearance.tintColor = UIColor.color(hexString: "eeeeee")
         
-        tabBarItemAppearance.setTitleTextAttributes(tabBarNormalItemTextAttributes, forState: UIControlState.Normal)
-        tabBarItemAppearance.setTitleTextAttributes(tabBarSelectedItemTextAttributes, forState: UIControlState.Selected)
-        
-        tabBarAppearance.tintColor = UIColor.init(hexString: "333333")
-        tabBarAppearance.backgroundColor = UIColor.init(hexString: "999999")
-        
-        segmentedControlBarAppearance.setTitleTextAttributes(segmentedControlTextAttributes, forState: UIControlState.Normal)
-        
-        switchAppearance.onTintColor = UIColor.init(hexString: "666666")
+        switchAppearance.onTintColor = UIColor.color(hexString: "666666")
     }
     
-    
-    func application(application: UIApplication, supportedInterfaceOrientationsForWindow window: UIWindow?) -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Landscape
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        return .landscape
     }
+    
 }

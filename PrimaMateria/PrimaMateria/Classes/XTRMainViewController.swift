@@ -3,10 +3,10 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRMainViewController : UITabBarController, UITabBarControllerDelegate {
+class XTRMainViewController : UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Initialization Methods
     
@@ -17,63 +17,70 @@
     // MARK: - Internal Methods
     
     func customizeTabBarItems() {
-        let rect : CGRect = self.tabBar.frame
-        let newSize : CGSize = CGSizeMake(90, rect.size.height)
-        let selectionImage : UIImage = UIImage.imageFromColor(UIColor.lightGrayColor(), andSize: newSize)
-        let imageView : UIImageView = UIImageView(image: selectionImage)
+        let rect = tabBar.frame
+        let newSize = CGSize(width: 120, height: rect.size.height)
+        let selectionImage = UIImage.imageFromColor(UIColor.lightGray, andSize: newSize)
+        let imageView = UIImageView(image: selectionImage)
         
-        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, UIScreen.mainScreen().scale)
+        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, UIScreen.main.scale)
         
-        UIBezierPath.init(roundedRect: imageView.bounds, cornerRadius: 8.0).addClip()
+        UIBezierPath(roundedRect: imageView.bounds, cornerRadius: 8.0).addClip()
         
-        selectionImage.drawInRect(imageView.bounds)
+        selectionImage.draw(in: imageView.bounds)
         
-        self.tabBar.selectionIndicatorImage = UIGraphicsGetImageFromCurrentImageContext()
+        tabBar.selectionIndicatorImage = UIGraphicsGetImageFromCurrentImageContext()
         
         UIGraphicsEndImageContext()
     }
     
     func showSplash() {
-        let defaultState : Bool = XTRPropertiesStore.retreiveSplashScreenState()
+        let defaultState = XTRPropertiesStore.splashScreenState
         
-        if (defaultState) {
-            let splashViewController : XTRSplashViewController = XTRAppDelegate.storyboard().instantiateViewControllerWithIdentifier("XTRSplashViewController") as! XTRSplashViewController
-            self.view.addSubview(splashViewController.view)
+        if defaultState {
+            let splashViewController : XTRSplashViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRSplashViewController.nameOfClass) as! XTRSplashViewController
+            view.addSubview(splashViewController.view)
         }
     }
     
     // MARK: - Action Methods
     
-    // MARK: - UITabBarControllerDelegate Methods
-    
-    func tabBarController(tabBarController: UITabBarController, animationControllerForTransitionFromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let defaultState : Bool = XTRPropertiesStore.retreiveShowTransitionsState()
-        
-        if (defaultState) {
-            return XTRPopoutAnimationController()
-            // XTRSlideDownAnimationController()
-            // XTRSimpleTransitionController()
-        }
-        return nil
-    }
-    
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.showSplash()
-        self.customizeTabBarItems()
-        self.delegate = self
+        showSplash()
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            customizeTabBarItems()
+        }
+        
+        delegate = self
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
+}
+
+extension XTRMainViewController { // UITabBarControllerDelegate Methods
+    
+    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        let defaultState = XTRPropertiesStore.showTransitionsState
+        
+        if defaultState {
+            //return XTRPopoutAnimationController()
+            // XTRSlideDownAnimationController()
+            return XTRSimpleTransitionController()
+        }
+        return nil
+    }
+
 }

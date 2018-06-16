@@ -3,10 +3,11 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/22/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRPreferencesViewController : UIViewController, UIPopoverPresentationControllerDelegate {
+class XTRPreferencesViewController : UIViewController, UIPopoverPresentationControllerDelegate {
+    
     @IBOutlet var appNameLabel : UILabel!
     @IBOutlet var cpyRightLabel : UILabel!
     
@@ -35,137 +36,123 @@
     
     // MARK: - Internal Methods
     
-    func colorSelected(notification: NSNotification) {
-        guard let onObject = notification.object else { return }
+    @objc func colorSelected(notification: Notification) {
+        guard let anObject : [String : AnyObject] = notification.object as! [String : AnyObject]? else { return }
         
-        let redComponent : NSNumber = onObject.objectForKey(RED_COLOR_COMPONENT) as! NSNumber
-        let greenComponent : NSNumber = onObject.objectForKey(GREEN_COLOR_COMPONENT) as! NSNumber
-        let blueComponent : NSNumber = onObject.objectForKey(BLUE_COLOR_COMPONENT) as! NSNumber
-        let seriesColorKey : String = onObject.objectForKey(SERIES_COLOR_KEY) as! String
-        let aColor : UIColor = UIColor.init(red: CGFloat(redComponent), green: CGFloat(greenComponent), blue: CGFloat(blueComponent), alpha: 1.0)
-        let colorData : NSData = NSKeyedArchiver.archivedDataWithRootObject(aColor)
+        let redComponent = anObject[ColorComponent.red] as! NSNumber
+        let greenComponent = anObject[ColorComponent.green] as! NSNumber
+        let blueComponent = anObject[ColorComponent.blue] as! NSNumber
+        let alphaComponent = anObject[ColorComponent.alpha] as! NSNumber
         
-        XTRPropertiesStore.storeColorData(colorData, forColorKey: seriesColorKey)
+        let seriesColorKey = anObject[SERIES_COLOR_KEY] as! String
+        let aColor = UIColor(red: CGFloat(redComponent.floatValue), green: CGFloat(greenComponent.floatValue), blue: CGFloat(blueComponent.floatValue), alpha: CGFloat(alphaComponent.floatValue))
+        let colorData = NSKeyedArchiver.archivedData(withRootObject: aColor)
         
-        if (seriesColorKey == SERIES_ACTINIDE) {
-            self.updateSeriesButtonProperties(self.seriesActinideButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_ALKALI_EARTH_METAL) {
-            self.updateSeriesButtonProperties(self.seriesAlkaliEarthMetalButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_ALKALI_METAL) {
-            self.updateSeriesButtonProperties(self.seriesAlkaliMetalButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_HALOGEN) {
-            self.updateSeriesButtonProperties(self.seriesHalogenButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_LANTHANIDE) {
-            self.updateSeriesButtonProperties(self.seriesLanthanideButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_METAL) {
-            self.updateSeriesButtonProperties(self.seriesMetalButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_NOBLE_GAS) {
-            self.updateSeriesButtonProperties(self.seriesNobleGasButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_NON_METAL) {
-            self.updateSeriesButtonProperties(self.seriesNonMetalButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_TRANSACTINIDES) {
-            self.updateSeriesButtonProperties(self.seriesTransactinidesButton, aColor: aColor)
-        } else if (seriesColorKey == SERIES_TRANSITION_METAL) {
-            self.updateSeriesButtonProperties(self.seriesTransitionMetalButton, aColor: aColor)
+        XTRPropertiesStore.setColorData(colorData, key: seriesColorKey)
+        
+        if seriesColorKey == ElementSeries.actinide {
+            updateSeriesButtonProperties(seriesActinideButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.alkaliEarthMetal {
+            updateSeriesButtonProperties(seriesAlkaliEarthMetalButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.alkaliMetal {
+            updateSeriesButtonProperties(seriesAlkaliMetalButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.halogen {
+            updateSeriesButtonProperties(seriesHalogenButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.lanthanide {
+            updateSeriesButtonProperties(seriesLanthanideButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.metal {
+            updateSeriesButtonProperties(seriesMetalButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.nobleGas {
+            updateSeriesButtonProperties(seriesNobleGasButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.nonMetal {
+            updateSeriesButtonProperties(seriesNonMetalButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.transactinides {
+            updateSeriesButtonProperties(seriesTransactinidesButton, aColor: aColor)
+        } else if seriesColorKey == ElementSeries.transitionMetal {
+            updateSeriesButtonProperties(seriesTransitionMetalButton, aColor: aColor)
         }
         
-        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_SERIES_COLOR_CHANGED, object: nil)
+        NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
         
-        self.dismissViewControllerAnimated(true, completion: nil)
+        dismiss(animated: true, completion: nil)
     }
     
-    func loadDocument(documentName: String, inView: UIWebView) {
-        let aPath : String? = NSBundle(forClass: XTRElement.classForCoder()).pathForResource(documentName, ofType: nil)
-        let url : NSURL = NSURL(fileURLWithPath: aPath!)
-        let request : NSURLRequest = NSURLRequest(URL: url)
+    func loadDocument(_ documentName: String, inView: UIWebView) {
+        guard let aPath = Bundle(for: XTRElement.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
         
-        webView.loadRequest(request)
+        webView.loadRequest(URLRequest(url: URL(fileURLWithPath: aPath)))
     }
     
     func loadUserDefaults() {
-        self.self.elementBubbleSwitch.on = XTRPropertiesStore.retreiveElementBubblesState()
-        self.showTransitionsBubbleSwitch.on = XTRPropertiesStore.retreiveShowTransitionsState()
-        self.splashScreenSwitch.on = XTRPropertiesStore.retreiveSplashScreenState()
+        elementBubbleSwitch.isOn = XTRPropertiesStore.elementBubblesState
+        showTransitionsBubbleSwitch.isOn = XTRPropertiesStore.showTransitionsState
+        splashScreenSwitch.isOn = XTRPropertiesStore.splashScreenState
     }
     
-    func updateSeriesButtonProperties(aButton: UIButton, aColor: UIColor) {
+    func updateSeriesButtonProperties(_ aButton: UIButton, aColor: UIColor) {
         aButton.backgroundColor = aColor
-        aButton.setTitleColor(aColor.inverseColor(), forState: UIControlState.Normal)
+        aButton.setTitleColor(aColor.inverseColor(), for: UIControlState())
     }
     
     func populateSeriesColors() {
-        self.updateSeriesButtonProperties(self.seriesActinideButton, aColor: XTRColorFactory.actinideColor())
-        self.updateSeriesButtonProperties(self.seriesAlkaliEarthMetalButton, aColor: XTRColorFactory.alkaliEarthMetalColor())
-        self.updateSeriesButtonProperties(self.seriesAlkaliMetalButton, aColor: XTRColorFactory.alkaliMetalColor())
-        self.updateSeriesButtonProperties(self.seriesHalogenButton, aColor: XTRColorFactory.halogenColor())
-        self.updateSeriesButtonProperties(self.seriesLanthanideButton, aColor: XTRColorFactory.lanthanideColor())
-        self.updateSeriesButtonProperties(self.seriesMetalButton, aColor: XTRColorFactory.metalColor())
-        self.updateSeriesButtonProperties(self.seriesNobleGasButton, aColor: XTRColorFactory.nobleGasColor())
-        self.updateSeriesButtonProperties(self.seriesNonMetalButton, aColor: XTRColorFactory.nonMetalColor())
-        self.updateSeriesButtonProperties(self.seriesTransactinidesButton, aColor: XTRColorFactory.transactinideColor())
-        self.updateSeriesButtonProperties(self.seriesTransitionMetalButton, aColor: XTRColorFactory.transitionMetalColor())
+        updateSeriesButtonProperties(seriesActinideButton, aColor: XTRColorFactory.actinideColor)
+        updateSeriesButtonProperties(seriesAlkaliEarthMetalButton, aColor: XTRColorFactory.alkaliEarthMetalColor)
+        updateSeriesButtonProperties(seriesAlkaliMetalButton, aColor: XTRColorFactory.alkaliMetalColor)
+        updateSeriesButtonProperties(seriesHalogenButton, aColor: XTRColorFactory.halogenColor)
+        updateSeriesButtonProperties(seriesLanthanideButton, aColor: XTRColorFactory.lanthanideColor)
+        updateSeriesButtonProperties(seriesMetalButton, aColor: XTRColorFactory.metalColor)
+        updateSeriesButtonProperties(seriesNobleGasButton, aColor: XTRColorFactory.nobleGasColor)
+        updateSeriesButtonProperties(seriesNonMetalButton, aColor: XTRColorFactory.nonMetalColor)
+        updateSeriesButtonProperties(seriesTransactinidesButton, aColor: XTRColorFactory.transactinideColor)
+        updateSeriesButtonProperties(seriesTransitionMetalButton, aColor: XTRColorFactory.transitionMetalColor)
     }
     
-    func populateElementBubbleState(aFlag: Bool)  {
-        XTRPropertiesStore.storeElementBubblesState(aFlag)
+    func populateElementBubbleState(_ aFlag: Bool)  {
+        XTRPropertiesStore.elementBubblesState = aFlag
     }
     
-    func populateShowTransitionsState(aFlag: Bool) {
-        XTRPropertiesStore.storeShowTranitionsState(aFlag)
+    func populateShowTransitionsState(_ aFlag: Bool) {
+        XTRPropertiesStore.showTransitionsState = aFlag
     }
     
-    func populateSplashScreenState(aFlag: Bool) {
-        XTRPropertiesStore.storeSplashScreenState(aFlag)
+    func populateSplashScreenState(_ aFlag: Bool) {
+        XTRPropertiesStore.splashScreenState = aFlag
     }
     
     // MARK: - Action Methods
     
-    @IBAction func setElementBubbleState(sender: UISwitch) {
-        self.populateElementBubbleState(self.elementBubbleSwitch.on)
+    @IBAction func setElementBubbleState(_ sender: UISwitch) {
+        populateElementBubbleState(elementBubbleSwitch.isOn)
     }
     
-    @IBAction func setShowTransitionsState(sender: UISwitch) {
-        self.populateShowTransitionsState(self.showTransitionsBubbleSwitch.on)
+    @IBAction func setShowTransitionsState(_ sender: UISwitch) {
+        populateShowTransitionsState(showTransitionsBubbleSwitch.isOn)
     }
     
-    @IBAction func setSplashScreenState(sender: UISwitch) {
-        self.populateSplashScreenState(self.splashScreenSwitch.on)
+    @IBAction func setSplashScreenState(_ sender: UISwitch) {
+        populateSplashScreenState(splashScreenSwitch.isOn)
     }
     
-    @IBAction func showColorPicker(sender: UIButton) {
-        let title : String = sender.titleLabel!.text!
-        let aColor : UIColor = XTRColorFactory.colorForString(title)
-        let colorPicker : XTRColorPickerViewController = XTRAppDelegate.storyboard().instantiateViewControllerWithIdentifier("XTRColorPickerViewController") as! XTRColorPickerViewController
-        let popover : UIPopoverPresentationController?
-        
-        colorPicker.modalPresentationStyle = UIModalPresentationStyle.Popover
-        colorPicker.preferredContentSize = CGSizeMake(270, 175)
-        
-        popover = colorPicker.popoverPresentationController! as UIPopoverPresentationController
-        popover!.permittedArrowDirections = UIPopoverArrowDirection.Left
-        popover!.sourceView = sender
-        popover!.sourceRect = CGRectMake(100, 17, 5, 5)
-        
-        self.presentViewController(colorPicker, animated: true, completion: nil)
-        
-        colorPicker.colorTitle.text = title
-        colorPicker.previewView.backgroundColor = aColor
-        colorPicker.presetSlidersWithColor(aColor)
-    }
-    
-    @IBAction func resetPreferences(sender: UIButton) {
+    @IBAction func resetPreferences(_ sender: UIButton) {
         XTRPropertiesStore.resetPreferences()
         
-        self.populateSeriesColors()
-        self.populateElementBubbleState(true)
-        self.populateShowTransitionsState(true)
-        self.populateSplashScreenState(true)
+        populateSeriesColors()
+        populateElementBubbleState(true)
+        populateShowTransitionsState(true)
+        populateSplashScreenState(true)
         
-        self.elementBubbleSwitch.on = true
-        self.showTransitionsBubbleSwitch.on = true
-        self.splashScreenSwitch.on = true
+        elementBubbleSwitch.isOn = true
+        showTransitionsBubbleSwitch.isOn = true
+        splashScreenSwitch.isOn = true
         
-        NSNotificationCenter.defaultCenter().postNotificationName(NOTIFICATION_SERIES_COLOR_CHANGED, object: nil)
+        NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destController = segue.destination as! XTRColorPickerViewController
+        let seriesName = (sender as! UIButton).titleLabel!.text!
+        destController.seriesName = seriesName
+        destController.preferredContentSize = CGSize(width: 270, height: 270)
     }
     
     // MARK: - View Management Methods
@@ -173,51 +160,57 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(XTRPreferencesViewController.colorSelected(_:)), name: NOTIFICATION_COLOR_SELECTED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(XTRPreferencesViewController.colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
         
-        self.loadDocument("Credits.rtf", inView: self.webView)
-        self.loadUserDefaults()
-        self.populateSeriesColors()
+        loadDocument("Credits.rtf", inView: webView)
+        loadUserDefaults()
+        populateSeriesColors()
         
-        self.appNameLabel.text = XTRVersionChecker.appNameString()
-        self.versionLabel.text = XTRVersionChecker.appVersionString()
-        self.cpyRightLabel.text = XTRVersionChecker.copywriteString()
+        appNameLabel.text = XTRVersionChecker.appNameString
+        versionLabel.text = XTRVersionChecker.appVersionString
+        cpyRightLabel.text = XTRVersionChecker.copywriteString
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        } else {
+            // Fallback on earlier versions
+        }
     }
     
-    override func viewWillAppear(animated: Bool)  {
+    override func viewWillAppear(_ animated: Bool)  {
         super.viewWillAppear(animated)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self, name: NOTIFICATION_COLOR_SELECTED, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .colorSelectedNotification, object: nil)
         
-        self.appNameLabel = nil
-        self.cpyRightLabel = nil
-        self.elementBubbleSwitch = nil
-        self.seriesActinideButton = nil
-        self.seriesAlkaliEarthMetalButton = nil
-        self.seriesAlkaliMetalButton = nil
-        self.seriesHalogenButton = nil
-        self.seriesLanthanideButton = nil
-        self.seriesMetalButton = nil
-        self.seriesNobleGasButton = nil
-        self.seriesNonMetalButton = nil
-        self.seriesTransactinidesButton = nil
-        self.seriesTransitionMetalButton = nil
-        self.showTransitionsBubbleSwitch = nil
-        self.splashScreenSwitch = nil
-        self.versionLabel = nil
-        self.webView.delegate = nil
-        self.webView = nil
+        appNameLabel = nil
+        cpyRightLabel = nil
+        elementBubbleSwitch = nil
+        seriesActinideButton = nil
+        seriesAlkaliEarthMetalButton = nil
+        seriesAlkaliMetalButton = nil
+        seriesHalogenButton = nil
+        seriesLanthanideButton = nil
+        seriesMetalButton = nil
+        seriesNobleGasButton = nil
+        seriesNonMetalButton = nil
+        seriesTransactinidesButton = nil
+        seriesTransitionMetalButton = nil
+        showTransitionsBubbleSwitch = nil
+        splashScreenSwitch = nil
+        versionLabel = nil
+        webView.delegate = nil
+        webView = nil
     }
+    
 }

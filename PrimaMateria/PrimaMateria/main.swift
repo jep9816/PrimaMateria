@@ -3,10 +3,15 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/20/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-UIApplicationMain(Process.argc, Process.unsafeArgv, NSStringFromClass(XTRApplication), NSStringFromClass(XTRAppDelegate))
+UIApplicationMain(
+    CommandLine.argc,
+    UnsafeMutableRawPointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc)),
+    NSStringFromClass(XTRApplication.self),
+    NSStringFromClass(XTRAppDelegate.self)
+)

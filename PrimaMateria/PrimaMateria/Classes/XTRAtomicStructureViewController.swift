@@ -3,18 +3,21 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2016 xTrensa. All rights reserved.
+//  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-@objc class XTRAtomicStructureViewController : XTRSwapableViewController {
+import SpriteKit
+import GameplayKit
+
+class XTRAtomicStructureViewController : XTRSwapableViewController {
     
-    enum StructureViewTypes: Int {
-        case kCrystalStructureView
-        case kShellModelView
+    enum StructureViewTypes {
+        static let kCrystalStructureView = 0
+        static let kShellModelView = 1
     }
     
-    @IBOutlet var crystalStructureView : UIImageView!
-    @IBOutlet var shellModelView : UIImageView!
+    @IBOutlet var crystalStructureView : SCNView!
+    @IBOutlet var shellModelView : SKView!
     
     @IBOutlet var atomicRadiusLabel : UILabel!
     @IBOutlet var atomicVolumeLabel : UILabel!
@@ -27,6 +30,7 @@
     @IBOutlet var numberOfElectronsLabel : UILabel!
     @IBOutlet var valenceLabel : UILabel!
     @IBOutlet var fillingOrbitalLabel : UILabel!
+    @IBOutlet var crystalStructureLabel : UILabel!
     
     @IBOutlet var kShellElectronsLabel : UILabel!
     @IBOutlet var lShellElectronsLabel : UILabel!
@@ -61,7 +65,6 @@
     
     @IBOutlet var shell7sLabel : UILabel!
     @IBOutlet var shell7pLabel : UILabel!
-    @IBOutlet var shellModelInfoLabel : UILabel!
     @IBOutlet var overlayView : UIView!
     
     // MARK: - Initialization Methods
@@ -73,76 +76,76 @@
     // MARK: - Internal Methods
     
     override func setupUI() {
-        if (self.element != nil) {
-            self.crystalStructureView.image = self.element!.crystalStructureImage();
-            self.shellModelView.image = self.element!.shellModelImage();
-            
-            self.atomicRadiusLabel.text = String.init(format: "%@", arguments: [self.element!.atomicRadius()])
-            self.atomicVolumeLabel.text = String.init(format: "%@", arguments: [self.element!.atomicVolume()])
-            self.covalentRadiusLabel.text = String.init(format: "%@", arguments: [self.element!.covalentRadius()])
-            self.crossSectionLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_COVALENT_RADIUS) as! String])
-            self.ionicRadiusLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_IONIC_RADIUS) as! String])
-            self.oxidationStatesLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_OXIDATION_STATES) as! String])
-            self.numberOfElectronsLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_NUMBER_OF_ELECTRONS) as! String])
-            self.numberOfNeutronsLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_NUMBER_OF_NEUTRONS) as! String])
-            self.numberOfProtonsLabel.text = String.init(format: "%@", arguments: [self.element!.valueForKey(ELEMENT_NUMBER_OF_PROTONS) as! String])
-            
-            self.shellModelInfoLabel.backgroundColor = self.element!.seriesColor();
-            self.shellModelInfoLabel.text = String.init(format: "%@P\n%N", arguments: [self.numberOfProtonsLabel.text!, self.numberOfNeutronsLabel.text!])
-            
-            self.valenceLabel.text = self.element!.valence();
-            self.fillingOrbitalLabel.text = self.element!.fillingOrbital();
-            
-            self.kShellElectronsLabel.text = self.element!.kShellElectrons();
-            self.lShellElectronsLabel.text = self.element!.lShellElectrons();
-            self.mShellElectronsLabel.text = self.element!.mShellElectrons();
-            self.nShellElectronsLabel.text = self.element!.nShellElectrons();
-            self.oShellElectronsLabel.text = self.element!.oShellElectrons();
-            self.pShellElectronsLabel.text = self.element!.pShellElectrons();
-            self.qShellElectronsLabel.text = self.element!.qShellElectrons();
-            
-            self.shell1sLabel.text = self.element!.shell1s();
-            
-            self.shell2sLabel.text = self.element!.shell2s();
-            self.shell2pLabel.text = self.element!.shell2p();
-            
-            self.shell3sLabel.text = self.element!.shell3s();
-            self.shell3pLabel.text = self.element!.shell3p();
-            self.shell3dLabel.text = self.element!.shell3d();
-            
-            self.shell4sLabel.text = self.element!.shell4s();
-            self.shell4pLabel.text = self.element!.shell4p();
-            self.shell4dLabel.text = self.element!.shell4d();
-            self.shell4fLabel.text = self.element!.shell4f();
-            
-            self.shell5sLabel.text = self.element!.shell5s();
-            self.shell5pLabel.text = self.element!.shell5p();
-            self.shell5dLabel.text = self.element!.shell5d();
-            self.shell5fLabel.text = self.element!.shell5f();
-            
-            self.shell6sLabel.text = self.element!.shell6s();
-            self.shell6pLabel.text = self.element!.shell6p();
-            self.shell6dLabel.text = self.element!.shell6d();
-            
-            self.shell7sLabel.text = self.element!.shell7s();
-            self.shell7pLabel.text = self.element!.shell7p();
-        }
+        guard let localElement = element else { return }
+        let crystalStructure = localElement.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
+        let scene = XTRShellModelScene(size: CGSize(width: 322, height: 322), element: localElement)
+        let scnScene = SCNScene(named: crystalStructure + ".scn")
+        
+        crystalStructureLabel.text = crystalStructure
+        shellModelView.backgroundColor = localElement.seriesColor
+        
+        scene.scaleMode = .aspectFit
+        shellModelView.presentScene(scene)
+        crystalStructureView.scene = scnScene
+        
+        atomicRadiusLabel.text = "\(localElement.atomicRadius)"
+        atomicVolumeLabel.text = "\(localElement.atomicVolume)"
+        covalentRadiusLabel.text = "\(localElement.covalentRadius)"
+        crossSectionLabel.text = "\(localElement.value(forKeyPath: ELEMENT_CROSS_SECTION)!)"
+        ionicRadiusLabel.text = "\(localElement.value(forKeyPath: ELEMENT_IONIC_RADIUS)!)"
+        oxidationStatesLabel.text = "\(localElement.value(forKeyPath: ELEMENT_OXIDATION_STATES)!)"
+        numberOfElectronsLabel.text = "\(localElement.value(forKeyPath: ELEMENT_NUMBER_OF_ELECTRONS)!)"
+        numberOfNeutronsLabel.text = "\(localElement.value(forKeyPath: ELEMENT_NUMBER_OF_NEUTRONS)!)"
+        numberOfProtonsLabel.text = "\(localElement.value(forKeyPath: ELEMENT_NUMBER_OF_PROTONS)!)"
+        
+        valenceLabel.text = localElement.valence
+        fillingOrbitalLabel.text = localElement.fillingOrbital
+        
+        kShellElectronsLabel.text = localElement.kShellElectrons
+        lShellElectronsLabel.text = localElement.lShellElectrons
+        mShellElectronsLabel.text = localElement.mShellElectrons
+        nShellElectronsLabel.text = localElement.nShellElectrons
+        oShellElectronsLabel.text = localElement.oShellElectrons
+        pShellElectronsLabel.text = localElement.pShellElectrons
+        qShellElectronsLabel.text = localElement.qShellElectrons
+        
+        shell1sLabel.text = localElement.shell1s
+        
+        shell2sLabel.text = localElement.shell2s
+        shell2pLabel.text = localElement.shell2p
+        
+        shell3sLabel.text = localElement.shell3s
+        shell3pLabel.text = localElement.shell3p
+        shell3dLabel.text = localElement.shell3d
+        
+        shell4sLabel.text = localElement.shell4s
+        shell4pLabel.text = localElement.shell4p
+        shell4dLabel.text = localElement.shell4d
+        shell4fLabel.text = localElement.shell4f
+        
+        shell5sLabel.text = localElement.shell5s
+        shell5pLabel.text = localElement.shell5p
+        shell5dLabel.text = localElement.shell5d
+        shell5fLabel.text = localElement.shell5f
+        
+        shell6sLabel.text = localElement.shell6s
+        shell6pLabel.text = localElement.shell6p
+        shell6dLabel.text = localElement.shell6d
+        
+        shell7sLabel.text = localElement.shell7s
+        shell7pLabel.text = localElement.shell7p
     }
     
     // MARK: - Action Methods
     
-    @IBAction func swapViews(sender: UISegmentedControl) {
+    @IBAction func swapViews(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case StructureViewTypes.kCrystalStructureView.rawValue:
-            self.crystalStructureView.hidden = false;
-            self.shellModelView.hidden = true;
-            self.shellModelInfoLabel.hidden = true;
-            self.overlayView.hidden = true;
-        case StructureViewTypes.kShellModelView.rawValue:
-            self.crystalStructureView.hidden = true;
-            self.shellModelView.hidden = false;
-            self.shellModelInfoLabel.hidden = false;
-            self.overlayView.hidden = false;
+        case StructureViewTypes.kCrystalStructureView:
+            crystalStructureView.isHidden = false
+            shellModelView.isHidden = true
+        case StructureViewTypes.kShellModelView:
+            crystalStructureView.isHidden = true
+            shellModelView.isHidden = false
         default:
             break
         }
@@ -153,63 +156,64 @@
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.crystalStructureView.hidden = false;
-        self.shellModelView.hidden = true;
-        self.shellModelInfoLabel.layer.cornerRadius = 30.0;
-        self.shellModelInfoLabel.layer.borderWidth = 1.0;
-        self.shellModelInfoLabel.hidden = true;
-        self.overlayView.hidden = true;
+        crystalStructureView.isHidden = false
+        crystalStructureView.allowsCameraControl = true
+        crystalStructureView.autoenablesDefaultLighting = true
+        
+        shellModelView.isHidden = true
     }
     
-    override func shouldAutorotate() -> Bool {
-        return true
+    override var shouldAutorotate : Bool {
+        return false
     }
     
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return [UIInterfaceOrientationMask.LandscapeLeft, UIInterfaceOrientationMask.LandscapeRight]
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        return .landscape
     }
     
     // MARK: - Memory Management Methods
     
     deinit {
-        self.crystalStructureView = nil;
-        self.shellModelView = nil;
-        self.atomicRadiusLabel = nil;
-        self.atomicVolumeLabel = nil;
-        self.covalentRadiusLabel = nil;
-        self.crossSectionLabel = nil;
-        self.ionicRadiusLabel = nil;
-        self.oxidationStatesLabel = nil;
-        self.numberOfNeutronsLabel = nil;
-        self.numberOfProtonsLabel = nil;
-        self.numberOfElectronsLabel = nil;
-        self.valenceLabel = nil;
-        self.fillingOrbitalLabel = nil;
-        self.kShellElectronsLabel = nil;
-        self.lShellElectronsLabel = nil;
-        self.mShellElectronsLabel = nil;
-        self.nShellElectronsLabel = nil;
-        self.oShellElectronsLabel = nil;
-        self.pShellElectronsLabel = nil;
-        self.qShellElectronsLabel = nil;
-        self.shell1sLabel = nil;
-        self.shell2sLabel = nil;
-        self.shell2pLabel = nil;
-        self.shell3sLabel = nil;
-        self.shell3pLabel = nil;
-        self.shell3dLabel = nil;
-        self.shell4sLabel = nil;
-        self.shell4pLabel = nil;
-        self.shell4dLabel = nil;
-        self.shell4fLabel = nil;
-        self.shell5sLabel = nil;
-        self.shell5pLabel = nil;
-        self.shell5dLabel = nil;
-        self.shell5fLabel = nil;
-        self.shell6sLabel = nil;
-        self.shell6pLabel = nil;
-        self.shell6dLabel = nil;
-        self.shell7sLabel = nil;
-        self.shell7pLabel = nil;
+        crystalStructureView = nil
+        crystalStructureLabel = nil
+        shellModelView = nil
+        atomicRadiusLabel = nil
+        atomicVolumeLabel = nil
+        covalentRadiusLabel = nil
+        crossSectionLabel = nil
+        ionicRadiusLabel = nil
+        oxidationStatesLabel = nil
+        numberOfNeutronsLabel = nil
+        numberOfProtonsLabel = nil
+        numberOfElectronsLabel = nil
+        valenceLabel = nil
+        fillingOrbitalLabel = nil
+        kShellElectronsLabel = nil
+        lShellElectronsLabel = nil
+        mShellElectronsLabel = nil
+        nShellElectronsLabel = nil
+        oShellElectronsLabel = nil
+        pShellElectronsLabel = nil
+        qShellElectronsLabel = nil
+        shell1sLabel = nil
+        shell2sLabel = nil
+        shell2pLabel = nil
+        shell3sLabel = nil
+        shell3pLabel = nil
+        shell3dLabel = nil
+        shell4sLabel = nil
+        shell4pLabel = nil
+        shell4dLabel = nil
+        shell4fLabel = nil
+        shell5sLabel = nil
+        shell5pLabel = nil
+        shell5dLabel = nil
+        shell5fLabel = nil
+        shell6sLabel = nil
+        shell6pLabel = nil
+        shell6dLabel = nil
+        shell7sLabel = nil
+        shell7pLabel = nil
     }
+    
 }
