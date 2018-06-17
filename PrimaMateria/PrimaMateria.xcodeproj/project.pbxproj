@@ -17,13 +17,15 @@
 		974C567F147BF0E000DDFC77 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 974C567C147BF0E000DDFC77 /* SupportingFiles */; };
 		97E33605147AA7C7008147AD /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E33604147AA7C7008147AD /* PrimaMateria.plist */; };
 		97E33668147AB701008147AD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97E33667147AB701008147AD /* Settings.bundle */; };
+		9B116A6520D6ADCF00175AF0 /* PrimaMateriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B116A4420D6A89C00175AF0 /* PrimaMateriaTests.swift */; };
+		9B116A6620D6AE3600175AF0 /* UIColor-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA72B91CCB2699000AB48B /* UIColor-Extensions.swift */; };
 		B80721451CB85FF8003233D1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
 		B827B66C1CCC5C8C009629AF /* XTRMolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66B1CCC5C8C009629AF /* XTRMolecularCalculator.swift */; };
 		B827B66D1CCC5C8C009629AF /* XTRMolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66B1CCC5C8C009629AF /* XTRMolecularCalculator.swift */; };
 		B827B66F1CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66E1CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift */; };
 		B827B6701CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66E1CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift */; };
-		B827B6721CCD4CDD009629AF /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B6711CCD4CDD009629AF /* Defines.swift */; };
-		B827B6731CCD4CDD009629AF /* Defines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B6711CCD4CDD009629AF /* Defines.swift */; };
+		B827B6721CCD4CDD009629AF /* XTRDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B6711CCD4CDD009629AF /* XTRDefines.swift */; };
+		B827B6731CCD4CDD009629AF /* XTRDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B6711CCD4CDD009629AF /* XTRDefines.swift */; };
 		B827B6781CCDB198009629AF /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
 		B827CD441CC7FD3A00E74129 /* XTRAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */; };
 		B827CD451CC7FD3A00E74129 /* XTRAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */; };
@@ -201,6 +203,16 @@
 		C16709F16D2493BB17844582 /* Pods_PrimaMateria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A77AFCF0EBE19D366BC39610 /* Pods_PrimaMateria.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		9B116A6020D6AC6B00175AF0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 97E33559147A9389008147AD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B899261C1CAAEBAD00E09063;
+			remoteInfo = "PrimaMateria Debug";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		1636C915595A793AA6D6ACC8 /* Pods-PrimaMateria Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria Debug/Pods-PrimaMateria Debug.release.xcconfig"; sourceTree = "<group>"; };
 		667BA4B8E6AB4A94BB6FAFD6 /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
@@ -220,13 +232,16 @@
 		97E3365C147AAE5D008147AD /* PrimaMateria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrimaMateria.entitlements; path = ../PrimaMateria.entitlements; sourceTree = "<group>"; };
 		97E33661147AB045008147AD /* PrimaMateria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrimaMateria.h; path = Classes/PrimaMateria.h; sourceTree = "<group>"; };
 		97E33667147AB701008147AD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		9B116A4420D6A89C00175AF0 /* PrimaMateriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaMateriaTests.swift; sourceTree = "<group>"; };
+		9B116A4620D6A89C00175AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B116A5B20D6AC6B00175AF0 /* PrimaMateriaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrimaMateriaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77AFCF0EBE19D366BC39610 /* Pods_PrimaMateria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B807213E1CB85DF2003233D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B80721411CB85FA7003233D1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B826ED20191D59EF0038C532 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		B827B66B1CCC5C8C009629AF /* XTRMolecularCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMolecularCalculator.swift; sourceTree = "<group>"; };
 		B827B66E1CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMolecularCalculatorViewController.swift; sourceTree = "<group>"; };
-		B827B6711CCD4CDD009629AF /* Defines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Defines.swift; sourceTree = "<group>"; };
+		B827B6711CCD4CDD009629AF /* XTRDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRDefines.swift; sourceTree = "<group>"; };
 		B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAppDelegate.swift; sourceTree = "<group>"; };
 		B827CD481CC8019E00E74129 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B827CD4B1CC80AA300E74129 /* XTRApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRApplication.swift; sourceTree = "<group>"; };
@@ -327,6 +342,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9B116A5820D6AC6B00175AF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B899264C1CAAEBAD00E09063 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,7 +365,7 @@
 		9738257D147AE3B600AEA344 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				B827B6711CCD4CDD009629AF /* Defines.swift */,
+				B827B6711CCD4CDD009629AF /* XTRDefines.swift */,
 				B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */,
 				B827CD4B1CC80AA300E74129 /* XTRApplication.swift */,
 				B82DA0541CC139D200BD2E41 /* XTRColorFactory.swift */,
@@ -412,6 +434,7 @@
 			isa = PBXGroup;
 			children = (
 				97E3356C147A938A008147AD /* PrimaMateria */,
+				9B116A4320D6A89C00175AF0 /* PrimaMateriaTests */,
 				97E33565147A938A008147AD /* Frameworks */,
 				97E33563147A938A008147AD /* Products */,
 				F226F17A8FDCF03E960D5971 /* Pods */,
@@ -423,6 +446,7 @@
 			children = (
 				97E33562147A938A008147AD /* PrimaMateria.app */,
 				B899266C1CAAEBAD00E09063 /* PrimaMateria.app */,
+				9B116A5B20D6AC6B00175AF0 /* PrimaMateriaTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -515,6 +539,15 @@
 				B827CD481CC8019E00E74129 /* main.swift */,
 			);
 			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		9B116A4320D6A89C00175AF0 /* PrimaMateriaTests */ = {
+			isa = PBXGroup;
+			children = (
+				9B116A4420D6A89C00175AF0 /* PrimaMateriaTests.swift */,
+				9B116A4620D6A89C00175AF0 /* Info.plist */,
+			);
+			path = PrimaMateriaTests;
 			sourceTree = "<group>";
 		};
 		B84C50671CA06AA00013D507 /* Images */ = {
@@ -616,6 +649,24 @@
 			productReference = 97E33562147A938A008147AD /* PrimaMateria.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9B116A5A20D6AC6B00175AF0 /* PrimaMateriaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B116A6220D6AC6B00175AF0 /* Build configuration list for PBXNativeTarget "PrimaMateriaTests" */;
+			buildPhases = (
+				9B116A5720D6AC6B00175AF0 /* Sources */,
+				9B116A5820D6AC6B00175AF0 /* Frameworks */,
+				9B116A5920D6AC6B00175AF0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9B116A6120D6AC6B00175AF0 /* PBXTargetDependency */,
+			);
+			name = PrimaMateriaTests;
+			productName = PrimaMateriaTests;
+			productReference = 9B116A5B20D6AC6B00175AF0 /* PrimaMateriaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		B899261C1CAAEBAD00E09063 /* PrimaMateria Debug */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B89926691CAAEBAD00E09063 /* Build configuration list for PBXNativeTarget "PrimaMateria Debug" */;
@@ -643,7 +694,8 @@
 			attributes = {
 				CLASSPREFIX = XTR;
 				LastSwiftMigration = 0720;
-				LastUpgradeCheck = 0900;
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = xTrensa;
 				TargetAttributes = {
 					97E33561147A938A008147AD = {
@@ -651,8 +703,11 @@
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
+					9B116A5A20D6AC6B00175AF0 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = B899261C1CAAEBAD00E09063;
+					};
 					B899261C1CAAEBAD00E09063 = {
-						DevelopmentTeam = T5533WY4HV;
 						DevelopmentTeamName = "Gulfstream Aerospace Corporation (Ent)";
 						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
@@ -673,6 +728,7 @@
 			targets = (
 				97E33561147A938A008147AD /* PrimaMateria */,
 				B899261C1CAAEBAD00E09063 /* PrimaMateria Debug */,
+				9B116A5A20D6AC6B00175AF0 /* PrimaMateriaTests */,
 			);
 		};
 /* End PBXProject section */
@@ -725,6 +781,13 @@
 				B8A904F71F2B6E3600539517 /* MolecularCalculator.storyboard in Resources */,
 				9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */,
 				B8A904D91F2B69DC00539517 /* Splash.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B116A5920D6AC6B00175AF0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,9 +974,18 @@
 				971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */,
 				B85CC45D1CC7C674005683F3 /* XTRNuclidesIsotopesViewController.swift in Sources */,
 				B82DA0641CC17D9200BD2E41 /* XTRMainViewController.swift in Sources */,
-				B827B6721CCD4CDD009629AF /* Defines.swift in Sources */,
+				B827B6721CCD4CDD009629AF /* XTRDefines.swift in Sources */,
 				B87214CD1CC06E290021C8F5 /* XTRDividerLabel.swift in Sources */,
 				B87214A91CC0008B0021C8F5 /* XTRBarPlot.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9B116A5720D6AC6B00175AF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B116A6520D6ADCF00175AF0 /* PrimaMateriaTests.swift in Sources */,
+				9B116A6620D6AE3600175AF0 /* UIColor-Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,13 +1040,21 @@
 				B89926491CAAEBAD00E09063 /* MBProgressHUD.m in Sources */,
 				B85CC45E1CC7C674005683F3 /* XTRNuclidesIsotopesViewController.swift in Sources */,
 				B82DA0651CC17D9200BD2E41 /* XTRMainViewController.swift in Sources */,
-				B827B6731CCD4CDD009629AF /* Defines.swift in Sources */,
+				B827B6731CCD4CDD009629AF /* XTRDefines.swift in Sources */,
 				B87214CE1CC06E290021C8F5 /* XTRDividerLabel.swift in Sources */,
 				B87214AA1CC0008B0021C8F5 /* XTRBarPlot.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9B116A6120D6AC6B00175AF0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B899261C1CAAEBAD00E09063 /* PrimaMateria Debug */;
+			targetProxy = 9B116A6020D6AC6B00175AF0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		97E33589147A938A008147AD /* Debug */ = {
@@ -988,12 +1068,14 @@
 				CLANG_WARN_BOOL_CONVERSION = NO;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -1007,6 +1089,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
@@ -1032,6 +1115,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				OBJROOT = "$(HOME)/Developer/Objects";
 				ONLY_ACTIVE_ARCH = YES;
@@ -1049,10 +1133,7 @@
 				SWIFT_VERSION = 2.3;
 				SYMROOT = "$(HOME)/Developer/Build";
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SOURCE_ROOT)/Pods/CorePlot/framework/**",
-				);
+				USER_HEADER_SEARCH_PATHS = "";
 				VALID_ARCHS = "armv7 armv7s arm64 i386";
 			};
 			name = Debug;
@@ -1068,12 +1149,14 @@
 				CLANG_WARN_BOOL_CONVERSION = NO;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = NO;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -1087,6 +1170,7 @@
 				CORE_PLOT = CorePlot_0.9;
 				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1105,6 +1189,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_PARAMETER = NO;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				OBJROOT = "$(HOME)/Developer/Objects";
 				OTHER_CFLAGS = (
@@ -1121,10 +1206,7 @@
 				SWIFT_VERSION = 2.3;
 				SYMROOT = "$(HOME)/Developer/Build";
 				TARGETED_DEVICE_FAMILY = 2;
-				USER_HEADER_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(SOURCE_ROOT)/Pods/CorePlot/framework/**",
-				);
+				USER_HEADER_SEARCH_PATHS = "";
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64 i386";
 			};
@@ -1141,17 +1223,23 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (U72S5UU4BV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = T5533WY4HV;
+				DEVELOPMENT_TEAM = LLJ69M6QV6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CorePlot\"/**",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_SHADOW = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$SOURCE_ROOT/Pods/CorePlot/framework/**";
 				INFOPLIST_FILE = "PrimaMateria/PrimaMateria-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1189,17 +1277,23 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (U72S5UU4BV)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = T5533WY4HV;
+				DEVELOPMENT_TEAM = LLJ69M6QV6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CorePlot\"/**",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_SHADOW = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "$SOURCE_ROOT/Pods/CorePlot/framework/**";
 				INFOPLIST_FILE = "PrimaMateria/PrimaMateria-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1227,6 +1321,89 @@
 			};
 			name = Release;
 		};
+		9B116A6320D6AC6B00175AF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = "/Users/jep9816/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/**";
+				INFOPLIST_FILE = PrimaMateriaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrimaMateria.app/PrimaMateria";
+			};
+			name = Debug;
+		};
+		9B116A6420D6AC6B00175AF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				HEADER_SEARCH_PATHS = "/Users/jep9816/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/**";
+				INFOPLIST_FILE = PrimaMateriaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateriaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PrimaMateria.app/PrimaMateria";
+			};
+			name = Release;
+		};
 		B899266A1CAAEBAD00E09063 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C5801BCFD644200C6736BD18 /* Pods-PrimaMateria Debug.debug.xcconfig */;
@@ -1238,16 +1415,22 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jerry Porter (4K5F63324P)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LLJ69M6QV6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CorePlot\"/**",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_SHADOW = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/Users/jep9816/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/**";
 				INFOPLIST_FILE = "PrimaMateria/PrimaMateria-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1285,16 +1468,22 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Gulfstream Aerospace Corporation (Ent)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LLJ69M6QV6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CorePlot\"/**",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PrimaMateria/PrimaMateria-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = YES;
 				GCC_WARN_SHADOW = YES;
-				HEADER_SEARCH_PATHS = "";
+				HEADER_SEARCH_PATHS = "/Users/jep9816/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/**";
 				INFOPLIST_FILE = "PrimaMateria/PrimaMateria-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1339,6 +1528,15 @@
 			buildConfigurations = (
 				97E3358C147A938A008147AD /* Debug */,
 				97E3358D147A938A008147AD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9B116A6220D6AC6B00175AF0 /* Build configuration list for PBXNativeTarget "PrimaMateriaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B116A6320D6AC6B00175AF0 /* Debug */,
+				9B116A6420D6AC6B00175AF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -117,19 +117,22 @@ extension UIColor { // Expanded
     }
     
     class func searchForColor(byName cssColorName: String) -> UIColor {
-        var result : UIColor = UIColor.white
+        var result = UIColor.white
         let searchString = ",\(cssColorName)#"
         
-        let range : Range<String.Index>? = colorNameDB.range(of: searchString)!
+        guard let range : Range<String.Index> = colorNameDB.range(of: searchString) else {
+            return result
+        }
         
-        if range != nil && !(range?.isEmpty)! {
-            let indexFrom : String.Index = colorNameDB.index((range?.lowerBound)!, offsetBy: cssColorName.count + 2)
-            let indexTo : String.Index = colorNameDB.index((range?.lowerBound)!, offsetBy: cssColorName.count + 8)
-            let newRange : Range? = indexFrom..<indexTo
+        if !range.isEmpty {
+            let indexFrom = colorNameDB.index((range.lowerBound), offsetBy: cssColorName.count + 2)
+            let indexTo = colorNameDB.index((range.lowerBound), offsetBy: cssColorName.count + 8)
+            let newRange  = indexFrom..<indexTo
             
-            if newRange != nil && !(newRange?.isEmpty)! {
-                let foundString = colorNameDB.substring(with: newRange!)
-                result =  UIColor.color(hexString: foundString)
+            if !newRange.isEmpty {
+                let foundString = colorNameDB[indexFrom..<indexTo]
+
+                result =  UIColor.color(hexString: String(foundString))
             }
         }
         

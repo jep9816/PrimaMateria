@@ -1,5 +1,5 @@
 //
-//  Constants.swift
+//  XTRDefines.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/24/16.

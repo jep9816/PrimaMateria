@@ -40,7 +40,7 @@ class XTRMolecularCalculator : NSObject {
                     // print("numbers: %@", numbers)
                     
                     if let doubleValue = Double(numbers as String) {
-                        num = Float(doubleValue)
+                        num = doubleValue != 0 ? Float(doubleValue) : 1
                     }
                     
                     multiplier = (numbers.length == 0) ? 1 : num

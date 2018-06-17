@@ -3,7 +3,7 @@
 //  spritetest
 //
 //  Created by Jerry Porter on 6/8/17.
-//  Copyright © 2017 Gulfstream. All rights reserved.
+//  Copyright © 2018 xTrensa. All rights reserved.
 //
 
 import SpriteKit

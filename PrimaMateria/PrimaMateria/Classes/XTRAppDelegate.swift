@@ -15,8 +15,8 @@ class XTRAppDelegate : UIResponder, UIApplicationDelegate {
         //        let fontFamiles : [Any] = UIFont.familyNames()
         //        print("%@", fontFamiles)
         //        let fontNames : [Any] = UIFont.fontNamesForFamilyName("Verdana")
-        //        print("%@", fontNames)
-        return true
+        //        print("%@", fonßtNames)
+         return true
     }
     
     class func storyboard() -> UIStoryboard {

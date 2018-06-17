@@ -29,16 +29,16 @@ class XTRMolecularCalculatorViewController : UIViewController {
         resultsLabel.text = STRING_EMPTY
     }
     
-    func setTextFieldForNumber(_ aNumber: Int) {
+    func updateTextField(_ number: Int) {
         var origString = formulaTextField.text!
-        origString = origString + String(format: "%d", aNumber)
+        origString = origString + String(format: "%d", number)
         formulaTextField.text = origString
     }
     
-    func setLabelForNumber(_ aNumber: Int) {
+    func updateLabel(_ number: Int) {
         let origString = formulaLabel.text!
         
-        switch (aNumber) {
+        switch (number) {
         case 0:
             formulaLabel.text = origString + "\u{2080}"
         case 1:
@@ -64,23 +64,41 @@ class XTRMolecularCalculatorViewController : UIViewController {
         }
     }
     
-    func setTextFieldForSymbol(_ aSymbol: String) {
+    func updateTextField(_ symbol: String) {
         var origString = formulaTextField.text!
-        origString = origString + aSymbol
+
+        if origString.count > 0 {
+            let lastChar = origString.suffix(1)
+            
+            var is_alpha = false
+            
+            for scalar in lastChar.unicodeScalars {
+                let value = scalar.value
+                if (value >= 65 && value <= 90) || (value >= 97 && value <= 122) {
+                    is_alpha = true
+                }
+            }
+            
+            origString = is_alpha ? origString  + "0" + symbol : origString + symbol
+            
+        } else {
+            origString = origString + symbol
+        }
+
         formulaTextField.text = origString
         errorLabel.text = STRING_EMPTY
     }
     
-    func setLabelForSymbol(_ aSymbol: String) {
+    func updateLabel(_ syymbol: String) {
         var origString = formulaLabel.text!
-        origString = origString + aSymbol
+        origString = origString + syymbol
         formulaLabel.text = origString
         errorLabel.text = STRING_EMPTY
     }
     
     func setElement(_ anElement: XTRElement) {
-        setTextFieldForSymbol(anElement.symbol!)
-        setLabelForSymbol(anElement.symbol!)
+        updateTextField(anElement.symbol!)
+        updateLabel(anElement.symbol!)
     }
     
     // MARK: - Action Methods
@@ -107,8 +125,8 @@ class XTRMolecularCalculatorViewController : UIViewController {
         if length > 0 {
             let formula = formulaTextField.text!
             let index = formula.index(formula.startIndex, offsetBy: length - 1)
-            let indexAlpha = formula.substring(from: index)
-            
+            let indexAlpha = formula[index...]
+
             var is_alpha = false
             var is_char = false
             
@@ -124,8 +142,8 @@ class XTRMolecularCalculatorViewController : UIViewController {
             }
             
             if is_alpha || is_char {
-                setTextFieldForNumber(tag)
-                setLabelForNumber(tag)
+                updateTextField(tag)
+                updateLabel(tag)
             }
         }
     }
