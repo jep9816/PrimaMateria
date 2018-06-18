@@ -6,15 +6,10 @@ DEPENDENCIES:
   - CorePlot (~> 2.2)
   - RxSwift (~> 4.0)
 
-SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
-    - CorePlot
-    - RxSwift
-
 SPEC CHECKSUMS:
   CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: 81d8c835493d6746214a3712c6a81bb8fe6fbfa2
+PODFILE CHECKSUM: dc481fab57acd1d523b5ba01f91b25c27b22cae5
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.2.1
