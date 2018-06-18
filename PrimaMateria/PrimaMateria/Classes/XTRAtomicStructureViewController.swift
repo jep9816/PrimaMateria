@@ -78,9 +78,9 @@ class XTRAtomicStructureViewController : XTRSwapableViewController {
     override func setupUI() {
         guard let localElement = element else { return }
         let crystalStructure = localElement.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
-        let scene = XTRShellModelScene(size: CGSize(width: 322, height: 322), element: localElement)
-        let scnScene = SCNScene(named: crystalStructure + ".scn")
-        
+        let scene = localElement.shellModelScene
+        let scnScene = localElement.crystalStructureScene
+
         crystalStructureLabel.text = crystalStructure
         shellModelView.backgroundColor = localElement.seriesColor
         

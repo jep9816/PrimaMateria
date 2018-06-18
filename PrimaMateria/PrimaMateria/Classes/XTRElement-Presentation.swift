@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SpriteKit
+import GameplayKit
 
 enum SuperScriptType {
     static let k0Superscript = 48
@@ -330,18 +332,13 @@ extension XTRElement {
         return XTRColorFactory.colorForString(value(forKeyPath: ELEMENT_STANDARD_CONDITION) as! String)
     }
     
-    var crystalStructureImage : UIImage {
-        get {
-            let aPath : String? = Bundle(for: XTRElement.classForCoder()).path(forResource: value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as? String, ofType: FileType.png, inDirectory: SUPPORTING_FILES)
-            return (aPath != nil) ? UIImage(contentsOfFile: aPath!)! : _unknownImage()
-        }
+    var crystalStructureScene : SCNScene {
+        let crystalStructure = self.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
+        return SCNScene(named: crystalStructure + ".scn")!
     }
     
-    var shellModelImage : UIImage {
-        get {
-            let aPath : String? = Bundle(for: XTRElement.classForCoder()).path(forResource: symbol!, ofType: FileType.png, inDirectory: SUPPORTING_FILES)
-            return (aPath != nil) ? UIImage(contentsOfFile: aPath!)! : _unknownImage()
-        }
+    var shellModelScene : XTRShellModelScene {
+        return XTRShellModelScene(size: CGSize(width: 322, height: 322), element: self)
     }
     
     var hardnessScaleBrinellScaled : Float {
@@ -390,12 +387,7 @@ extension XTRElement {
     var casRegNoString : String {
         return " \(value(forKeyPath: ELEMENT_CAS_REGISTRY_NUMBER) as! String)"
     }
-    
-    private func _unknownImage() -> UIImage {
-        let aPath : String? = Bundle(for: XTRElement.classForCoder()).path(forResource: STRING_UNKNOWN, ofType: FileType.png, inDirectory: SUPPORTING_FILES)
-        return UIImage(contentsOfFile: aPath!)!
-    }
-    
+        
     private func _attributedStringForArray(_ anArray: [Any]?) -> String? {
         if anArray == nil {
             return STRING_UNKNOWN

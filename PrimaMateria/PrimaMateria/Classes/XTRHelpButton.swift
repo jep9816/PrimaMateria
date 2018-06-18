@@ -16,9 +16,7 @@ class XTRHelpButton : UIButton, UIPopoverPresentationControllerDelegate {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        layer.cornerRadius = 8.0
-        layer.masksToBounds = true
+        setupColors()
     }
     
     // MARK: - Internal Methods
@@ -40,7 +38,17 @@ class XTRHelpButton : UIButton, UIPopoverPresentationControllerDelegate {
     func setupColors() {
         backgroundColor = UIColor.yellow
         setTitleColor(UIColor.black, for: UIControlState())
-        titleEdgeInsets = UIEdgeInsetsMake(0, -5, 0, 0)
+        layer.cornerRadius = 8.0
+        layer.masksToBounds = true
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 1.0
+        
+//        if var titleFrame = titleLabel?.frame {
+//            titleFrame.size = bounds.size
+//            titleFrame.origin = .zero
+//            titleLabel!.frame = titleFrame
+//            titleLabel!.textAlignment = .center
+//        }
     }
     
     // MARK: - Misc Methods
