@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ypQ-rt-Kto">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ypQ-rt-Kto">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,16 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xst-jJ-3ii">
-                                <rect key="frame" x="0.0" y="42" width="768" height="527"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="insetFor6xAndEarlier" minX="0.0" minY="-4" maxX="0.0" maxY="4"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="ypQ-rt-Kto" id="1Uo-uu-zmc"/>
-                                </connections>
-                            </webView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-95-yfr">
                                 <rect key="frame" x="0.0" y="-2" width="768" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,6 +56,15 @@
                                     <action selector="dismiss:" destination="ypQ-rt-Kto" eventType="touchUpInside" id="DbM-Nf-Xaf"/>
                                 </connections>
                             </button>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-I3-gJA">
+                                <rect key="frame" x="0.0" y="42" width="768" height="529"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="KzX-cX-ilA"/>
@@ -79,7 +78,7 @@
                         <outlet property="backButton" destination="Fea-lh-YWt" id="IRA-NK-QHj"/>
                         <outlet property="forwardButton" destination="GqJ-vK-2Wp" id="HA8-Gk-jav"/>
                         <outlet property="titleButtonItem" destination="aaQ-NN-nSW" id="Q3q-wT-XBQ"/>
-                        <outlet property="webView" destination="xst-jJ-3ii" id="pDp-qv-fvD"/>
+                        <outlet property="webView" destination="zjJ-I3-gJA" id="h0H-Kw-A4v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g9M-nE-MsW" userLabel="First Responder" sceneMemberID="firstResponder"/>

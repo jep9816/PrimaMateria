@@ -6,12 +6,14 @@
 //  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgressHUDDelegate {
+import WebKit
+
+class XTRWikipediaViewController : UIViewController, WKNavigationDelegate, MBProgressHUDDelegate {
     
     @IBOutlet var backButton : UIBarButtonItem!
     @IBOutlet var titleButtonItem: UIBarButtonItem!
     @IBOutlet var forwardButton : UIBarButtonItem!
-    @IBOutlet var webView : UIWebView!
+    @IBOutlet var webView : WKWebView!
     
     private var progressHUD : MBProgressHUD?
     private var responseData : NSMutableData?
@@ -28,7 +30,7 @@ class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgre
     // MARK: - Internal Methods
     
     func prepareRequest() {        
-        webView.loadRequest(URLRequest(url: URL(string: "https://en.wikipedia.org/wiki/\(elementName!)")!))
+        webView.load(URLRequest(url: URL(string: "https://en.wikipedia.org/wiki/\(elementName!)")!))
     }
     
     // MARK: - Action Methods
@@ -49,7 +51,8 @@ class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgre
     
     // MARK: - WebView Delegate Methods
     
-    func webViewDidStartLoad(_ webView: UIWebView) {
+    //func webViewDidStartLoad(_ webView: UIWebView) {
+    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         progressHUD?.show(animated: true)
         backButton.isEnabled = false
         forwardButton.isEnabled = false
@@ -57,7 +60,8 @@ class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgre
         forwardButton.tintColor = UIColor.black
     }
     
-    func webViewDidFinishLoad(_ aWebView: UIWebView) {
+    //func webViewDidFinishLoad(_ aWebView: UIWebView) {
+    public func webView(_ aWebView: WKWebView, didFinish navigation: WKNavigation!) {
         MBProgressHUD.hide(for: view, animated: true)
         
         if aWebView.canGoBack {
@@ -77,12 +81,13 @@ class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgre
         }
     }
     
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+    //func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+    public func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
         let path = Bundle.main.path(forResource: "LoadFailure", ofType: FileType.html)!
 
         MBProgressHUD.hide(for: view, animated: true)
         
-        webView.loadRequest(URLRequest(url: URL(fileURLWithPath: path)))
+        webView.load(URLRequest(url: URL(fileURLWithPath: path)))
     }
     
     // MARK: - MBProgressHUDDelegate methods
@@ -111,8 +116,8 @@ class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgre
         progressHUD!.delegate = self
         progressHUD!.label.text = "Please Wait"
         progressHUD!.detailsLabel.text = "Loading Wikipedia Page for element: \(elementName!)."
-        webView.delegate = self
-    }
+        webView.navigationDelegate = self
+   }
     
     override func viewWillAppear(_ animated: Bool)  {
         super.viewWillAppear(animated)
@@ -142,7 +147,7 @@ class XTRWikipediaViewController : UIViewController, UIWebViewDelegate, MBProgre
         backButton = nil
         forwardButton = nil
         titleButtonItem = nil
-        webView.delegate = nil
+        webView.navigationDelegate = nil
         webView = nil
     }
     

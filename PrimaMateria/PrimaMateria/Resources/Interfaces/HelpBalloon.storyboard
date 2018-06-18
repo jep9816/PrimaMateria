@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Q2-kL-Fgm">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Q2-kL-Fgm">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -47,14 +47,6 @@
                                     <action selector="forwardButtonPressed:" destination="3Q2-kL-Fgm" eventType="touchUpInside" id="miH-41-upQ"/>
                                 </connections>
                             </button>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cqe-tm-IkX">
-                                <rect key="frame" x="5" y="43" width="400" height="290"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.83921568627450982" green="0.85882352941176465" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="3Q2-kL-Fgm" id="Fyk-ZI-Ihj"/>
-                                </connections>
-                            </webView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Dcx-DB-Kfy"/>
@@ -70,7 +62,6 @@
                         <outlet property="backButton" destination="TB7-xH-7eF" id="T02-W0-eHe"/>
                         <outlet property="forwardButton" destination="YGt-Y7-Ncc" id="HIK-Sz-rys"/>
                         <outlet property="titleLabel" destination="xvk-F6-SBk" id="Qq7-xV-Sr2"/>
-                        <outlet property="webView" destination="Cqe-tm-IkX" id="hh3-5q-Ymm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eow-VH-Ckc" userLabel="First Responder" sceneMemberID="firstResponder"/>

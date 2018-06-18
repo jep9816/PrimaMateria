@@ -156,6 +156,7 @@ struct FileType {
     static let pdf = "pdf"
     static let png = "png"
     static let rtf = "rtf"
+    static let plist = "plist"
 }
 
 // MARK: - Color Constants

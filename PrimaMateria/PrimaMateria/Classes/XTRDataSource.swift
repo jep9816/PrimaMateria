@@ -37,7 +37,7 @@ class XTRDataSource : NSObject {
     }
     
     func loadElementForSymbol(_ aSymbol: String)  {
-        let theData = dataForResource(aSymbol, type: "plist", directory: SUPPORTING_FILES)
+        let theData = dataForResource(aSymbol, type: FileType.plist, directory: SUPPORTING_FILES)
         var tempDict : [String : Any]?
         
         do {
@@ -53,7 +53,7 @@ class XTRDataSource : NSObject {
     }
     
     func loadElementList() {
-        let theData = dataForResource("ElementList", type: "plist", directory: SUPPORTING_FILES)
+        let theData = dataForResource("ElementList", type: FileType.plist, directory: SUPPORTING_FILES)
         var tempList : NSArray? = nil
         
         do {
@@ -73,7 +73,7 @@ class XTRDataSource : NSObject {
     
     override init() {
         super.init()
-        let theData = dataForResource("GraphDefinitions", type: "plist", directory: SUPPORTING_FILES)
+        let theData = dataForResource("GraphDefinitions", type: FileType.plist, directory: SUPPORTING_FILES)
         
         elementList = []
         sortedElementList = NSMutableArray()

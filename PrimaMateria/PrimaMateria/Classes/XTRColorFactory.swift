@@ -58,6 +58,14 @@ class XTRColorFactory : NSObject {
         }
     }
     
+    // MARK: - Miscellaneous Colors
+    
+    class var helpBackgroundColor: UIColor {
+        get {
+            return UIColor.color(hexString: "dddd00")
+        }
+    }
+    
     // MARK: - Series Colors
     
     class var actinideColor: UIColor {

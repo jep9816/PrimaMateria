@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "97E33561147A938A008147AD"
+               BlueprintIdentifier = "B899261C1CAAEBAD00E09063"
                BuildableName = "PrimaMateria.app"
-               BlueprintName = "PrimaMateria"
+               BlueprintName = "PrimaMateria Debug"
                ReferencedContainer = "container:PrimaMateria.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -25,26 +25,16 @@
    <TestAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9B116A5A20D6AC6B00175AF0"
-               BuildableName = "PrimaMateriaTests.xctest"
-               BlueprintName = "PrimaMateriaTests"
-               ReferencedContainer = "container:PrimaMateria.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97E33561147A938A008147AD"
+            BlueprintIdentifier = "B899261C1CAAEBAD00E09063"
             BuildableName = "PrimaMateria.app"
-            BlueprintName = "PrimaMateria"
+            BlueprintName = "PrimaMateria Debug"
             ReferencedContainer = "container:PrimaMateria.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -54,7 +44,7 @@
    <LaunchAction
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       ignoresPersistentStateOnLaunch = "NO"
@@ -65,9 +55,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97E33561147A938A008147AD"
+            BlueprintIdentifier = "B899261C1CAAEBAD00E09063"
             BuildableName = "PrimaMateria.app"
-            BlueprintName = "PrimaMateria"
+            BlueprintName = "PrimaMateria Debug"
             ReferencedContainer = "container:PrimaMateria.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -84,9 +74,9 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "97E33561147A938A008147AD"
+            BlueprintIdentifier = "B899261C1CAAEBAD00E09063"
             BuildableName = "PrimaMateria.app"
-            BlueprintName = "PrimaMateria"
+            BlueprintName = "PrimaMateria Debug"
             ReferencedContainer = "container:PrimaMateria.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -21,6 +21,21 @@
 		97E33668147AB701008147AD /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97E33667147AB701008147AD /* Settings.bundle */; };
 		9B116A6520D6ADCF00175AF0 /* PrimaMateriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B116A4420D6A89C00175AF0 /* PrimaMateriaTests.swift */; };
 		9B116A6620D6AE3600175AF0 /* UIColor-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA72B91CCB2699000AB48B /* UIColor-Extensions.swift */; };
+		9B5388A620D85FFA004ED7AD /* XTRMolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66B1CCC5C8C009629AF /* XTRMolecularCalculator.swift */; };
+		9B5388A720D86185004ED7AD /* XTRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897514A1CC19B15005C76C3 /* XTRDataSource.swift */; };
+		9B5388A820D8619E004ED7AD /* XTRElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DA0571CC1471C00BD2E41 /* XTRElement.swift */; };
+		9B5388A920D861B1004ED7AD /* XTRDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B6711CCD4CDD009629AF /* XTRDefines.swift */; };
+		9B5388AA20D86203004ED7AD /* NSObject+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8528FEB1ED35AC100A19156 /* NSObject+General.swift */; };
+		9B5388AB20D86222004ED7AD /* XTRElement-Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA72B31CCAE62D000AB48B /* XTRElement-Presentation.swift */; };
+		9B5388AC20D86263004ED7AD /* XTRColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DA0541CC139D200BD2E41 /* XTRColorFactory.swift */; };
+		9B5388AD20D86281004ED7AD /* XTRShellModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E61C921EEB848E00F9504D /* XTRShellModelScene.swift */; };
+		9B5388AE20D862A5004ED7AD /* XTRPropertiesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DA04F1CC12D8800BD2E41 /* XTRPropertiesStore.swift */; };
+		9B5388AF20D864E5004ED7AD /* XTRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DA0631CC17D9200BD2E41 /* XTRMainViewController.swift */; };
+		9B5388B020D8651D004ED7AD /* UIImage-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8FA72B61CCB1BC6000AB48B /* UIImage-Extensions.swift */; };
+		9B5388B120D8652D004ED7AD /* XTRSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214B31CC023BC0021C8F5 /* XTRSplashViewController.swift */; };
+		9B5388B220D86543004ED7AD /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */; };
+		9B5388B320D8655F004ED7AD /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */; };
+		9B5388B420D86576004ED7AD /* XTRAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */; };
 		B80721451CB85FF8003233D1 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B826ED20191D59EF0038C532 /* Accelerate.framework */; };
 		B827B66C1CCC5C8C009629AF /* XTRMolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66B1CCC5C8C009629AF /* XTRMolecularCalculator.swift */; };
 		B827B66D1CCC5C8C009629AF /* XTRMolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B827B66B1CCC5C8C009629AF /* XTRMolecularCalculator.swift */; };
@@ -639,7 +654,6 @@
 				97E3355F147A938A008147AD /* Frameworks */,
 				97E33560147A938A008147AD /* Resources */,
 				6A2A5CE38BDE6920EC12D848 /* [CP] Embed Pods Frameworks */,
-				4EBAE173D787164E924CED61 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -677,7 +691,6 @@
 				B899264C1CAAEBAD00E09063 /* Frameworks */,
 				B89926541CAAEBAD00E09063 /* Resources */,
 				2B810F31F12BE89C2336F06F /* [CP] Embed Pods Frameworks */,
-				CE4D59BE79C5127D5B45FBC2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -882,22 +895,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		4EBAE173D787164E924CED61 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria-resources.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5C74BDB8834BDEE63B80C54D /* [CP] Check Pods Manifest.lock */ = {
@@ -915,7 +913,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		6A2A5CE38BDE6920EC12D848 /* [CP] Embed Pods Frameworks */ = {
@@ -936,21 +934,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CE4D59BE79C5127D5B45FBC2 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrimaMateria Debug/Pods-PrimaMateria Debug-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1017,8 +1000,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B5388A620D85FFA004ED7AD /* XTRMolecularCalculator.swift in Sources */,
+				9B5388AB20D86222004ED7AD /* XTRElement-Presentation.swift in Sources */,
+				9B5388AD20D86281004ED7AD /* XTRShellModelScene.swift in Sources */,
+				9B5388AC20D86263004ED7AD /* XTRColorFactory.swift in Sources */,
+				9B5388AF20D864E5004ED7AD /* XTRMainViewController.swift in Sources */,
+				9B5388B420D86576004ED7AD /* XTRAppDelegate.swift in Sources */,
 				9B116A6520D6ADCF00175AF0 /* PrimaMateriaTests.swift in Sources */,
+				9B5388AA20D86203004ED7AD /* NSObject+General.swift in Sources */,
+				9B5388B320D8655F004ED7AD /* Bundle+Extensions.swift in Sources */,
+				9B5388B220D86543004ED7AD /* XTRSimpleTransitionController.swift in Sources */,
+				9B5388A820D8619E004ED7AD /* XTRElement.swift in Sources */,
+				9B5388AE20D862A5004ED7AD /* XTRPropertiesStore.swift in Sources */,
+				9B5388A920D861B1004ED7AD /* XTRDefines.swift in Sources */,
+				9B5388B120D8652D004ED7AD /* XTRSplashViewController.swift in Sources */,
+				9B5388B020D8651D004ED7AD /* UIImage-Extensions.swift in Sources */,
 				9B116A6620D6AE3600175AF0 /* UIColor-Extensions.swift in Sources */,
+				9B5388A720D86185004ED7AD /* XTRDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
