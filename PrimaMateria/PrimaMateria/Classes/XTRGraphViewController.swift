@@ -292,11 +292,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         NotificationCenter.default.addObserver(self, selector: #selector(XTRGraphViewController.graphSelected(_:)), name: .graphSelectedNotification, object: nil)
         
         showGraphForChoiceAtIndex(0)
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override var shouldAutorotate : Bool {

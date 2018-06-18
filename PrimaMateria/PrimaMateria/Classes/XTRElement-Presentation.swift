@@ -341,24 +341,24 @@ extension XTRElement {
         return XTRShellModelScene(size: CGSize(width: 322, height: 322), element: self)
     }
     
-    var hardnessScaleBrinellScaled : Float {
+    var hardnessScaleBrinellScaled : Double {
         get {
             let aValue = hardnessScaleBrinell
             return aValue / 100.0
         }
     }
     
-    var hardnessScaleVickersScaled : Float {
+    var hardnessScaleVickersScaled : Double {
         get {
             let aValue = hardnessScaleVickers
-            return aValue / 100
+            return aValue / 100.0
         }
     }
     
-    var coefficientOfLinealThermalExpansionScaled : Float {
+    var coefficientOfLinealThermalExpansionScaled : Double {
         get {
             let aValue = coefficientOfLinealThermalExpansion
-            return aValue * 100000
+            return aValue * 100000.0
         }
     }
     

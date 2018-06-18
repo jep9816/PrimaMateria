@@ -49,11 +49,7 @@ class XTRMainViewController : UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         showSplash()
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            customizeTabBarItems()
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
         
         delegate = self
     }

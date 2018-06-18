@@ -1,5 +1,5 @@
 //
-//  XTRCrossfadeAnimationController.swift
+//  XTRPopoutAnimationController.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 5/18/16.

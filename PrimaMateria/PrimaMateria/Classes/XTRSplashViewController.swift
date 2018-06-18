@@ -35,9 +35,9 @@ class XTRSplashViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        appNameLabel.text = XTRVersionChecker.appNameString
-        versionLabel.text = XTRVersionChecker.appVersionString
-        cpyRightLabel.text = XTRVersionChecker.copywriteString
+        appNameLabel.text = Bundle.main.appNameString
+        versionLabel.text = Bundle.main.appVersionString
+        cpyRightLabel.text = Bundle.main.copywriteString
         wrapperView.layer.cornerRadius = 5
         
         Thread.detachNewThreadSelector(#selector(XTRSplashViewController.wait), toTarget: self, with: nil)

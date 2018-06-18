@@ -14,4 +14,16 @@ public extension NSObject { // General
         return String(describing: self)
     }
     
+    public func double(_ key: String?) -> Double {
+        var doubleValue = 0.0
+        
+        if let doubleString = value(forKeyPath: key!) as! String?  {
+            if let doubleNumber = NumberFormatter().number(from: doubleString) {
+                doubleValue = doubleNumber.doubleValue
+            }
+        }
+        
+        return doubleValue
+    }
+    
 }

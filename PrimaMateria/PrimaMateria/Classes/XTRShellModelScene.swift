@@ -26,15 +26,15 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func didMove(to view: SKView) {
-        let protons = self.element?.value(forKeyPath: ELEMENT_NUMBER_OF_PROTONS)!
-        let neutrons = self.element?.value(forKeyPath: ELEMENT_NUMBER_OF_NEUTRONS)!
-        let kShellElectrons = (self.element?.kShellElectrons.isEmpty)! ? 0 : Int((self.element?.kShellElectrons)!)!
-        let lShellElectrons = (self.element?.lShellElectrons.isEmpty)! ? 0 : Int((self.element?.lShellElectrons)!)!
-        let mShellElectrons = (self.element?.mShellElectrons.isEmpty)! ? 0 : Int((self.element?.mShellElectrons)!)!
-        let nShellElectrons = (self.element?.nShellElectrons.isEmpty)! ? 0 : Int((self.element?.nShellElectrons)!)!
-        let oShellElectrons = (self.element?.oShellElectrons.isEmpty)! ? 0 : Int((self.element?.oShellElectrons)!)!
-        let pShellElectrons = (self.element?.pShellElectrons.isEmpty)! ? 0 : Int((self.element?.pShellElectrons)!)!
-        let qShellElectrons = (self.element?.qShellElectrons.isEmpty)! ? 0 : Int((self.element?.qShellElectrons)!)!
+        let protons = element?.value(forKeyPath: ELEMENT_NUMBER_OF_PROTONS)!
+        let neutrons = element?.value(forKeyPath: ELEMENT_NUMBER_OF_NEUTRONS)!
+        let kShellElectrons = (element?.kShellElectrons.isEmpty)! ? 0 : Int((element?.kShellElectrons)!)!
+        let lShellElectrons = (element?.lShellElectrons.isEmpty)! ? 0 : Int((element?.lShellElectrons)!)!
+        let mShellElectrons = (element?.mShellElectrons.isEmpty)! ? 0 : Int((element?.mShellElectrons)!)!
+        let nShellElectrons = (element?.nShellElectrons.isEmpty)! ? 0 : Int((element?.nShellElectrons)!)!
+        let oShellElectrons = (element?.oShellElectrons.isEmpty)! ? 0 : Int((element?.oShellElectrons)!)!
+        let pShellElectrons = (element?.pShellElectrons.isEmpty)! ? 0 : Int((element?.pShellElectrons)!)!
+        let qShellElectrons = (element?.qShellElectrons.isEmpty)! ? 0 : Int((element?.qShellElectrons)!)!
         
         let maxRadius = (view.frame.size.height / 2) - ballRadius - ballRadius
         let protonLabel = SKLabelNode(text: "\(String(describing: protons!))P")
@@ -89,12 +89,7 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
             circle.strokeColor = SKColor.black
             circle.fillColor = color
             circle.lineWidth = 0.5
-            
-            //let circle = SKLabelNode(text: "⚫️")
-            //circle.fontSize = 5
-            //circle.horizontalAlignmentMode = .center
-            //circle.verticalAlignmentMode = .center
-            
+                        
             let angle = 2 * Double.pi / Double(numberOfCircles) * Double(i)
             let circleX = radius * cos(CGFloat(angle))
             let circleY = radius * sin(CGFloat(angle))

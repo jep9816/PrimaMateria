@@ -166,14 +166,10 @@ class XTRPreferencesViewController : UIViewController, UIPopoverPresentationCont
         loadUserDefaults()
         populateSeriesColors()
         
-        appNameLabel.text = XTRVersionChecker.appNameString
-        versionLabel.text = XTRVersionChecker.appVersionString
-        cpyRightLabel.text = XTRVersionChecker.copywriteString
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
+        appNameLabel.text = Bundle.main.appNameString
+        versionLabel.text = Bundle.main.appVersionString
+        cpyRightLabel.text = Bundle.main.copywriteString
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewWillAppear(_ animated: Bool)  {

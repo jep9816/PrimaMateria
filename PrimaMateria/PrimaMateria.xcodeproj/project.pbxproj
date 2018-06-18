@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084EEBBB20D83D4700C6B81D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */; };
+		084EEBBC20D83D4700C6B81D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */; };
 		27F9A341B276509608ABA5B0 /* Pods_PrimaMateria_Debug.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 756B61F8C4D1980652AEE84A /* Pods_PrimaMateria_Debug.framework */; };
 		971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187B14855B5800333B91 /* MBProgressHUD.m */; };
 		9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */; };
@@ -64,8 +66,6 @@
 		B87214AA1CC0008B0021C8F5 /* XTRBarPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214A81CC0008B0021C8F5 /* XTRBarPlot.swift */; };
 		B87214AE1CC019860021C8F5 /* XTRTableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214AD1CC019860021C8F5 /* XTRTableLabel.swift */; };
 		B87214AF1CC019860021C8F5 /* XTRTableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214AD1CC019860021C8F5 /* XTRTableLabel.swift */; };
-		B87214B11CC01F240021C8F5 /* XTRVersionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214B01CC01F240021C8F5 /* XTRVersionChecker.swift */; };
-		B87214B21CC01F240021C8F5 /* XTRVersionChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214B01CC01F240021C8F5 /* XTRVersionChecker.swift */; };
 		B87214B41CC023BC0021C8F5 /* XTRSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214B31CC023BC0021C8F5 /* XTRSplashViewController.swift */; };
 		B87214B51CC023BC0021C8F5 /* XTRSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214B31CC023BC0021C8F5 /* XTRSplashViewController.swift */; };
 		B87214B71CC02BE40021C8F5 /* XTRInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B87214B61CC02BE40021C8F5 /* XTRInfoViewController.swift */; };
@@ -214,6 +214,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		1636C915595A793AA6D6ACC8 /* Pods-PrimaMateria Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria Debug/Pods-PrimaMateria Debug.release.xcconfig"; sourceTree = "<group>"; };
 		667BA4B8E6AB4A94BB6FAFD6 /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 		756B61F8C4D1980652AEE84A /* Pods_PrimaMateria_Debug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria_Debug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -263,7 +264,6 @@
 		B87214A61CC0008B0021C8F5 /* PrimaMateria-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PrimaMateria-Bridging-Header.h"; path = "Classes/PrimaMateria-Bridging-Header.h"; sourceTree = "<group>"; };
 		B87214A81CC0008B0021C8F5 /* XTRBarPlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRBarPlot.swift; sourceTree = "<group>"; };
 		B87214AD1CC019860021C8F5 /* XTRTableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRTableLabel.swift; sourceTree = "<group>"; };
-		B87214B01CC01F240021C8F5 /* XTRVersionChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRVersionChecker.swift; sourceTree = "<group>"; };
 		B87214B31CC023BC0021C8F5 /* XTRSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSplashViewController.swift; sourceTree = "<group>"; };
 		B87214B61CC02BE40021C8F5 /* XTRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRInfoViewController.swift; sourceTree = "<group>"; };
 		B87214C01CC0417B0021C8F5 /* XTRWikipediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewController.swift; sourceTree = "<group>"; };
@@ -377,7 +377,6 @@
 				B82DA04F1CC12D8800BD2E41 /* XTRPropertiesStore.swift */,
 				B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */,
 				B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */,
-				B87214B01CC01F240021C8F5 /* XTRVersionChecker.swift */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -565,6 +564,7 @@
 		B85290001ED369AF00A19156 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */,
 				B8528FEB1ED35AC100A19156 /* NSObject+General.swift */,
 				B8FA72B91CCB2699000AB48B /* UIColor-Extensions.swift */,
 				B8FA72B61CCB1BC6000AB48B /* UIImage-Extensions.swift */,
@@ -963,6 +963,7 @@
 				B8FA72AE1CCABD09000AB48B /* XTRPreferencesViewController.swift in Sources */,
 				B87214DC1CC088B30021C8F5 /* XTRHelpButton.swift in Sources */,
 				B827B66F1CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift in Sources */,
+				084EEBBB20D83D4700C6B81D /* Bundle+Extensions.swift in Sources */,
 				B82DA0611CC16FBF00BD2E41 /* XTRElementListViewController.swift in Sources */,
 				B87214C41CC051D60021C8F5 /* XTRColorPickerViewController.swift in Sources */,
 				B897514E1CC1B791005C76C3 /* XTRAtomicStructureViewController.swift in Sources */,
@@ -973,7 +974,6 @@
 				B82DA0501CC12D8800BD2E41 /* XTRPropertiesStore.swift in Sources */,
 				B87214AE1CC019860021C8F5 /* XTRTableLabel.swift in Sources */,
 				B827CD491CC8019E00E74129 /* main.swift in Sources */,
-				B87214B11CC01F240021C8F5 /* XTRVersionChecker.swift in Sources */,
 				B87214C11CC0417B0021C8F5 /* XTRWikipediaViewController.swift in Sources */,
 				B87214DF1CC10BC60021C8F5 /* XTRElementTableViewCell.swift in Sources */,
 				B8528FFE1ED368CC00A19156 /* XTRElementButton.swift in Sources */,
@@ -1029,6 +1029,7 @@
 				B8FA72AF1CCABD09000AB48B /* XTRPreferencesViewController.swift in Sources */,
 				B87214DD1CC088B30021C8F5 /* XTRHelpButton.swift in Sources */,
 				B827B6701CCD34DF009629AF /* XTRMolecularCalculatorViewController.swift in Sources */,
+				084EEBBC20D83D4700C6B81D /* Bundle+Extensions.swift in Sources */,
 				B82DA0621CC16FBF00BD2E41 /* XTRElementListViewController.swift in Sources */,
 				B87214C51CC051D60021C8F5 /* XTRColorPickerViewController.swift in Sources */,
 				B897514F1CC1B791005C76C3 /* XTRAtomicStructureViewController.swift in Sources */,
@@ -1039,7 +1040,6 @@
 				B82DA0511CC12D8800BD2E41 /* XTRPropertiesStore.swift in Sources */,
 				B87214AF1CC019860021C8F5 /* XTRTableLabel.swift in Sources */,
 				B827CD4A1CC8019E00E74129 /* main.swift in Sources */,
-				B87214B21CC01F240021C8F5 /* XTRVersionChecker.swift in Sources */,
 				B87214C21CC0417B0021C8F5 /* XTRWikipediaViewController.swift in Sources */,
 				B87214E01CC10BC60021C8F5 /* XTRElementTableViewCell.swift in Sources */,
 				B8528FFF1ED368CC00A19156 /* XTRElementButton.swift in Sources */,
@@ -1284,7 +1284,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1335,7 +1335,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1459,7 +1459,7 @@
 				PRODUCT_NAME = PrimaMateria;
 				PROVISIONING_PROFILE = "";
 				STRIP_SWIFT_SYMBOLS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1509,7 +1509,7 @@
 				PRODUCT_NAME = PrimaMateria;
 				PROVISIONING_PROFILE = "";
 				STRIP_SWIFT_SYMBOLS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

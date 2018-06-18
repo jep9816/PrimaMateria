@@ -26,7 +26,7 @@ class XTRElementTableViewCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    func setupWithElement(_ anElement: XTRElement) {
+    func setup(_ anElement: XTRElement) {
         element = anElement
         backgroundColor = UIColor.black
         contentView.backgroundColor = UIColor.darkGray
@@ -78,11 +78,11 @@ class XTRElementTableViewCell : UITableViewCell {
     
     // MARK: - Internal Methods
     
-    func modifyLabel(_ aLabel: XTRTableLabel, withStandardConditionColor: UIColor, seriesColor: UIColor) {
-        aLabel.font = UIFont.systemFont(ofSize: 16.0)
-        aLabel.textColor = withStandardConditionColor
-        aLabel.backgroundColor = seriesColor
-        aLabel.autoresizingMask = [UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleHeight]
+    func modify(_ label: XTRTableLabel, withStandardConditionColor: UIColor, seriesColor: UIColor) {
+        label.font = UIFont.systemFont(ofSize: 16.0)
+        label.textColor = withStandardConditionColor
+        label.backgroundColor = seriesColor
+        label.autoresizingMask = [UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleHeight]
     }
     
     func modifyCellProperties() {
@@ -91,44 +91,44 @@ class XTRElementTableViewCell : UITableViewCell {
         
         selectedBackgroundView = UIImageView(image: UIImage.imageFromColor(selectedColor, andSize: frame.size))
         
-        modifyLabel(atomicNumberLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(atomicNumberLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         atomicNumberLabel.text = String(element.atomicNumber)
         atomicNumberLabel.textAlignment = .right
         
-        modifyLabel(symbolLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(symbolLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         symbolLabel.font = UIFont.systemFont(ofSize: 26.0)
         symbolLabel.text = String(format: "%@", element.symbol!)
         symbolLabel.textAlignment = .center
         
-        modifyLabel(nameLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(nameLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         nameLabel.text = String(format: "%@", element.name!)
         nameLabel.textAlignment = .left
         
-        modifyLabel(atomicMassLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(atomicMassLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         atomicMassLabel.text = element.value(forKeyPath: ELEMENT_ATOMIC_MASS) as? String
         atomicMassLabel.textAlignment = .right
         
-        modifyLabel(boilingPointLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(boilingPointLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         boilingPointLabel.text = element.value(forKeyPath: ELEMENT_BOILING_POINT) as? String
         boilingPointLabel.textAlignment = .right
         
-        modifyLabel(meltingPointLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(meltingPointLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         meltingPointLabel.text = element.value(forKeyPath: ELEMENT_MELTING_POINT) as? String
         meltingPointLabel.textAlignment = .right
         
-        modifyLabel(densityLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(densityLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         densityLabel.text = element.value(forKeyPath: ELEMENT_DENSITY) as? String
         densityLabel.textAlignment = .right
         
-        modifyLabel(seriesLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(seriesLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         seriesLabel.text = String(format: "%@", element.series!)
         seriesLabel.textAlignment = .left
         
-        modifyLabel(periodLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(periodLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         periodLabel.text = String(format: "%@", element.period!)
         periodLabel.textAlignment = .right
         
-        modifyLabel(groupLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
+        modify(groupLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
 
         let aGroup = element.group!
         groupLabel.text = (aGroup != 0) ? String(format: "%d", aGroup) : STRING_EMPTY

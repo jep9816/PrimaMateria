@@ -97,11 +97,7 @@ class XTRPeriodicTableViewController : UIViewController {
         toggleMolecularCalculatorState(false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(XTRPeriodicTableViewController.closeBubble(_:)), name: .inspectorDismissedNotification, object: nil)
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override var shouldAutorotate : Bool {

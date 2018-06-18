@@ -43,12 +43,12 @@ class XTRHelpButton : UIButton, UIPopoverPresentationControllerDelegate {
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.0
         
-//        if var titleFrame = titleLabel?.frame {
-//            titleFrame.size = bounds.size
-//            titleFrame.origin = .zero
-//            titleLabel!.frame = titleFrame
-//            titleLabel!.textAlignment = .center
-//        }
+        if var titleFrame = titleLabel?.frame {
+            titleFrame.size = bounds.size
+            titleFrame.origin = .zero
+            titleLabel!.frame = titleFrame
+            titleLabel!.textAlignment = .center
+        }
     }
     
     // MARK: - Misc Methods

@@ -40,35 +40,19 @@ class XTRAppDelegate : UIResponder, UIApplicationDelegate {
         let tabBarNormalItemTextAttributes: [NSAttributedStringKey: AnyObject]?
         let tabBarSelectedItemTextAttributes: [NSAttributedStringKey: AnyObject]?
         
-        if #available(iOS 11.0, *) {
-            segmentedControlTextAttributes = [
-                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "4093ff"),
-                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 13)
-            ]
-            tabBarNormalItemTextAttributes = [
-                NSAttributedStringKey.foregroundColor: UIColor.white,
-                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
-            ]
-            tabBarSelectedItemTextAttributes = [
-                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "4093ff"),
-                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
-            ]
-            tabBarAppearance.tintColor = UIColor.color(hexString: "4093ff")
-        } else {
-            segmentedControlTextAttributes = [
-                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "666666"),
-                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 13)
-            ]
-            tabBarNormalItemTextAttributes = [
-                NSAttributedStringKey.foregroundColor: UIColor.white,
-                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
-            ]
-            tabBarSelectedItemTextAttributes = [
-                NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "333333"),
-                NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
-            ]
-            tabBarAppearance.tintColor = UIColor.color(hexString: "333333")
-        }
+        segmentedControlTextAttributes = [
+            NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "4093ff"),
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 13)
+        ]
+        tabBarNormalItemTextAttributes = [
+            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+        ]
+        tabBarSelectedItemTextAttributes = [
+            NSAttributedStringKey.foregroundColor: UIColor.color(hexString: "4093ff"),
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+        ]
+        tabBarAppearance.tintColor = UIColor.color(hexString: "4093ff")
         
         tabBarItemAppearance.setTitleTextAttributes(tabBarNormalItemTextAttributes, for: UIControlState())
         tabBarItemAppearance.setTitleTextAttributes(tabBarSelectedItemTextAttributes, for: .selected)

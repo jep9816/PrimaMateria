@@ -70,11 +70,7 @@ class XTRElementListViewController : UIViewController, UITableViewDelegate, UITa
         _ = atomicNumberButton.toggleState()
         swapView.removeFromSuperview()
         setupTableView()
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        } else {
-            // Fallback on earlier versions
-        }
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -106,7 +102,7 @@ extension XTRElementListViewController { // TableView DataSource - Delegate
     
     func tableView(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : XTRElementTableViewCell? = aTableView.dequeueReusableCell(withIdentifier: XTRElementListViewController.tableViewCellIdentifier) as? XTRElementTableViewCell
-        cell!.setupWithElement(XTRDataSource.sharedInstance().sortedElementAtIndex(indexPath.row))
+        cell!.setup(XTRDataSource.sharedInstance().sortedElementAtIndex(indexPath.row))
         
         return cell!
     }
