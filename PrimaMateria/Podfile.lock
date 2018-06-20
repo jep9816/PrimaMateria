@@ -1,20 +1,34 @@
 PODS:
   - CorePlot (2.2)
+  - RxCocoa (4.2.0):
+    - RxSwift (~> 4.0)
   - RxSwift (4.2.0)
 
 DEPENDENCIES:
-  - CorePlot (~> 2.2)
+  - CorePlot (from `https://github.com/core-plot/core-plot.git`, branch `release-2.3`)
+  - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
-    - CorePlot
+    - RxCocoa
     - RxSwift
 
+EXTERNAL SOURCES:
+  CorePlot:
+    :branch: release-2.3
+    :git: https://github.com/core-plot/core-plot.git
+
+CHECKOUT OPTIONS:
+  CorePlot:
+    :commit: 1f14f11f840f598d687cb796589084574716faf3
+    :git: https://github.com/core-plot/core-plot.git
+
 SPEC CHECKSUMS:
-  CorePlot: cbe0c6e14220705e32e06a89c7d6a5a908b7d7d8
+  CorePlot: a89f21d4662cb54853e579c4ce560e74036cffcb
+  RxCocoa: 0b54909c902e1e581212a03e690bbd94032d8baa
   RxSwift: 99e10317ddfcc7fbe01356aafd118fde4a0be104
 
-PODFILE CHECKSUM: dc481fab57acd1d523b5ba01f91b25c27b22cae5
+PODFILE CHECKSUM: 83d86c1b5f8d12ed3c578b225f4df9bfb729cb15
 
 COCOAPODS: 1.5.3
