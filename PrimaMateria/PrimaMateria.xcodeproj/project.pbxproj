@@ -66,9 +66,6 @@
 		B82DA0621CC16FBF00BD2E41 /* XTRElementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DA0601CC16FBF00BD2E41 /* XTRElementListViewController.swift */; };
 		B82DA0641CC17D9200BD2E41 /* XTRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DA0631CC17D9200BD2E41 /* XTRMainViewController.swift */; };
 		B82DA0651CC17D9200BD2E41 /* XTRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B82DA0631CC17D9200BD2E41 /* XTRMainViewController.swift */; };
-		B84C50871CA06B210013D507 /* AscendingArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B84C507C1CA06B210013D507 /* AscendingArrow.png */; };
-		B84C50881CA06B210013D507 /* continuum.gif in Resources */ = {isa = PBXBuildFile; fileRef = B84C507D1CA06B210013D507 /* continuum.gif */; };
-		B84C508B1CA06B210013D507 /* DescendingArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B84C50801CA06B210013D507 /* DescendingArrow.png */; };
 		B8528FEC1ED35AC100A19156 /* NSObject+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8528FEB1ED35AC100A19156 /* NSObject+General.swift */; };
 		B8528FED1ED35AC100A19156 /* NSObject+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8528FEB1ED35AC100A19156 /* NSObject+General.swift */; };
 		B8528FFE1ED368CC00A19156 /* XTRElementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8528FFD1ED368CC00A19156 /* XTRElementButton.swift */; };
@@ -112,8 +109,6 @@
 		B8788CEA1CED379200D6BD5B /* XTRSlideDownAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */; };
 		B8788CEB1CED379200D6BD5B /* XTRSlideDownAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */; };
 		B881520D1CA9EFDD000FC7FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881520C1CA9EFDD000FC7FA /* LaunchScreen.storyboard */; };
-		B881520F1CA9F162000FC7FA /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B881520E1CA9F162000FC7FA /* LaunchImage.png */; };
-		B88152131CAAA646000FC7FA /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B88152111CAAA646000FC7FA /* icon.png */; };
 		B88152151CAAA685000FC7FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88152141CAAA685000FC7FA /* Images.xcassets */; };
 		B891AFFD1CC42BF500345DBE /* XTRElementPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891AFFC1CC42BF500345DBE /* XTRElementPropertiesViewController.swift */; };
 		B891B0001CC42F8200345DBE /* XTRElementPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B891AFFC1CC42BF500345DBE /* XTRElementPropertiesViewController.swift */; };
@@ -128,19 +123,14 @@
 		B897514E1CC1B791005C76C3 /* XTRAtomicStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897514D1CC1B791005C76C3 /* XTRAtomicStructureViewController.swift */; };
 		B897514F1CC1B791005C76C3 /* XTRAtomicStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897514D1CC1B791005C76C3 /* XTRAtomicStructureViewController.swift */; };
 		B89926491CAAEBAD00E09063 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187B14855B5800333B91 /* MBProgressHUD.m */; };
-		B89926551CAAEBAD00E09063 /* continuum.gif in Resources */ = {isa = PBXBuildFile; fileRef = B84C507D1CA06B210013D507 /* continuum.gif */; };
 		B89926571CAAEBAD00E09063 /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 97E33604147AA7C7008147AD /* PrimaMateria.plist */; };
 		B89926581CAAEBAD00E09063 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 97E33667147AB701008147AD /* Settings.bundle */; };
-		B899265B1CAAEBAD00E09063 /* LaunchImage.png in Resources */ = {isa = PBXBuildFile; fileRef = B881520E1CA9F162000FC7FA /* LaunchImage.png */; };
-		B899265C1CAAEBAD00E09063 /* DescendingArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B84C50801CA06B210013D507 /* DescendingArrow.png */; };
 		B899265D1CAAEBAD00E09063 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B881520C1CA9EFDD000FC7FA /* LaunchScreen.storyboard */; };
 		B899265E1CAAEBAD00E09063 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B88152141CAAA685000FC7FA /* Images.xcassets */; };
 		B899265F1CAAEBAD00E09063 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 974C5674147BF0C300DDFC77 /* Credits.rtf */; };
 		B89926601CAAEBAD00E09063 /* LoadFailure.html in Resources */ = {isa = PBXBuildFile; fileRef = 974C5676147BF0C300DDFC77 /* LoadFailure.html */; };
 		B89926621CAAEBAD00E09063 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 974C567A147BF0E000DDFC77 /* ElementTipHelp */; };
 		B89926641CAAEBAD00E09063 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 974C567C147BF0E000DDFC77 /* SupportingFiles */; };
-		B89926651CAAEBAD00E09063 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B88152111CAAA646000FC7FA /* icon.png */; };
-		B89926661CAAEBAD00E09063 /* AscendingArrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B84C507C1CA06B210013D507 /* AscendingArrow.png */; };
 		B89926671CAAEBAD00E09063 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */; };
 		B89926681CAAEBAD00E09063 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9746B1E81492503600A0DC96 /* PrimaMateriaHelp */; };
 		B8A904D91F2B69DC00539517 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904D81F2B69DC00539517 /* Splash.storyboard */; };
@@ -269,9 +259,6 @@
 		B82DA05D1CC16B9F00BD2E41 /* XTRElementBalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementBalloonViewController.swift; sourceTree = "<group>"; };
 		B82DA0601CC16FBF00BD2E41 /* XTRElementListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListViewController.swift; sourceTree = "<group>"; };
 		B82DA0631CC17D9200BD2E41 /* XTRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMainViewController.swift; sourceTree = "<group>"; };
-		B84C507C1CA06B210013D507 /* AscendingArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AscendingArrow.png; sourceTree = "<group>"; };
-		B84C507D1CA06B210013D507 /* continuum.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = continuum.gif; sourceTree = "<group>"; };
-		B84C50801CA06B210013D507 /* DescendingArrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DescendingArrow.png; sourceTree = "<group>"; };
 		B8528FEB1ED35AC100A19156 /* NSObject+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+General.swift"; sourceTree = "<group>"; };
 		B8528FFD1ED368CC00A19156 /* XTRElementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementButton.swift; sourceTree = "<group>"; };
 		B85290021ED4D4C100A19156 /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = "../../../../Build/Release-iphonesimulator/CorePlot/CorePlot.framework"; sourceTree = "<group>"; };
@@ -295,8 +282,6 @@
 		B8788CE31CED2EE900D6BD5B /* XTRPopoutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPopoutAnimationController.swift; sourceTree = "<group>"; };
 		B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSlideDownAnimationController.swift; sourceTree = "<group>"; };
 		B881520C1CA9EFDD000FC7FA /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B881520E1CA9F162000FC7FA /* LaunchImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchImage.png; sourceTree = "<group>"; };
-		B88152111CAAA646000FC7FA /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		B88152141CAAA685000FC7FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		B891AFFC1CC42BF500345DBE /* XTRElementPropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesViewController.swift; sourceTree = "<group>"; };
 		B891B0011CC4362F00345DBE /* XTRSpectrumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectrumViewController.swift; sourceTree = "<group>"; };
@@ -511,7 +496,6 @@
 				974C567C147BF0E000DDFC77 /* SupportingFiles */,
 				B8C7C21E1EFDD70C000C112C /* PrimaMateria.scnassets */,
 				B88152141CAAA685000FC7FA /* Images.xcassets */,
-				B84C50671CA06AA00013D507 /* Images */,
 				B8C7C21F1EFDD71E000C112C /* Interfaces */,
 				974C5673147BF07600DDFC77 /* Misc */,
 				B8C7C2001EFDD4F5000C112C /* Scenes */,
@@ -562,18 +546,6 @@
 				9B116A4620D6A89C00175AF0 /* Info.plist */,
 			);
 			path = PrimaMateriaTests;
-			sourceTree = "<group>";
-		};
-		B84C50671CA06AA00013D507 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				B84C507C1CA06B210013D507 /* AscendingArrow.png */,
-				B84C507D1CA06B210013D507 /* continuum.gif */,
-				B84C50801CA06B210013D507 /* DescendingArrow.png */,
-				B88152111CAAA646000FC7FA /* icon.png */,
-				B881520E1CA9F162000FC7FA /* LaunchImage.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		B85290001ED369AF00A19156 /* Extensions */ = {
@@ -755,7 +727,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8A904E21F2B6C1700539517 /* ElementProperties.storyboard in Resources */,
-				B84C50881CA06B210013D507 /* continuum.gif in Resources */,
 				B8A905061F2B71FE00539517 /* ColorPicker.storyboard in Resources */,
 				B8C7C20A1EFDD609000C112C /* Cubic.scn in Resources */,
 				B8C7C20F1EFDD609000C112C /* Orthorhombic.scn in Resources */,
@@ -763,8 +734,6 @@
 				97E33668147AB701008147AD /* Settings.bundle in Resources */,
 				B8C7C2201EFDDBC1000C112C /* PrimaMateria.scnassets in Resources */,
 				B8C7C2121EFDD609000C112C /* Unknown.scn in Resources */,
-				B881520F1CA9F162000FC7FA /* LaunchImage.png in Resources */,
-				B84C508B1CA06B210013D507 /* DescendingArrow.png in Resources */,
 				B8A904FA1F2B6E7B00539517 /* ElementInspector.storyboard in Resources */,
 				B8C7C2101EFDD609000C112C /* Rhombohedral.scn in Resources */,
 				B8A904FD1F2B6EC100539517 /* PeriodicTable.storyboard in Resources */,
@@ -789,9 +758,7 @@
 				974C567F147BF0E000DDFC77 /* SupportingFiles in Resources */,
 				B8C7C20E1EFDD609000C112C /* Monoclinic.scn in Resources */,
 				B8A904F11F2B6D7800539517 /* Info.storyboard in Resources */,
-				B88152131CAAA646000FC7FA /* icon.png in Resources */,
 				B8A904E51F2B6C6C00539517 /* AtomicStructure.storyboard in Resources */,
-				B84C50871CA06B210013D507 /* AscendingArrow.png in Resources */,
 				9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */,
 				B8A904EB1F2B6D0100539517 /* HelpBalloon.storyboard in Resources */,
 				B8A904F71F2B6E3600539517 /* MolecularCalculator.storyboard in Resources */,
@@ -812,7 +779,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8A904E31F2B6C1700539517 /* ElementProperties.storyboard in Resources */,
-				B89926551CAAEBAD00E09063 /* continuum.gif in Resources */,
 				B8A905071F2B71FE00539517 /* ColorPicker.storyboard in Resources */,
 				B8C7C2131EFDD60A000C112C /* Cubic.scn in Resources */,
 				B8C7C2181EFDD60A000C112C /* Orthorhombic.scn in Resources */,
@@ -820,8 +786,6 @@
 				B89926581CAAEBAD00E09063 /* Settings.bundle in Resources */,
 				B8C7C2211EFDDBC2000C112C /* PrimaMateria.scnassets in Resources */,
 				B8C7C21B1EFDD60A000C112C /* Unknown.scn in Resources */,
-				B899265B1CAAEBAD00E09063 /* LaunchImage.png in Resources */,
-				B899265C1CAAEBAD00E09063 /* DescendingArrow.png in Resources */,
 				B8A904FB1F2B6E7B00539517 /* ElementInspector.storyboard in Resources */,
 				B8C7C2191EFDD60A000C112C /* Rhombohedral.scn in Resources */,
 				B8A904FE1F2B6EC100539517 /* PeriodicTable.storyboard in Resources */,
@@ -846,9 +810,7 @@
 				B89926641CAAEBAD00E09063 /* SupportingFiles in Resources */,
 				B8C7C2171EFDD60A000C112C /* Monoclinic.scn in Resources */,
 				B8A904F21F2B6D7800539517 /* Info.storyboard in Resources */,
-				B89926651CAAEBAD00E09063 /* icon.png in Resources */,
 				B8A904E61F2B6C6C00539517 /* AtomicStructure.storyboard in Resources */,
-				B89926661CAAEBAD00E09063 /* AscendingArrow.png in Resources */,
 				B89926671CAAEBAD00E09063 /* MainStoryboard.storyboard in Resources */,
 				B8A904EC1F2B6D0100539517 /* HelpBalloon.storyboard in Resources */,
 				B8A904F81F2B6E3600539517 /* MolecularCalculator.storyboard in Resources */,
@@ -1286,7 +1248,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1337,7 +1299,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1461,7 +1423,7 @@
 				PRODUCT_NAME = PrimaMateria;
 				PROVISIONING_PROFILE = "";
 				STRIP_SWIFT_SYMBOLS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1511,7 +1473,7 @@
 				PRODUCT_NAME = PrimaMateria;
 				PROVISIONING_PROFILE = "";
 				STRIP_SWIFT_SYMBOLS = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

@@ -1,26 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13156.6" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="REJ-gs-Mp7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="REJ-gs-Mp7">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13137.5"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Papyrus.ttc">
-            <string>Papyrus</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Preferences-->
         <scene sceneID="6Ii-fp-jCz">
             <objects>
                 <viewController storyboardIdentifier="XTRPreferencesViewController" title="Preferences" id="REJ-gs-Mp7" customClass="XTRPreferencesViewController" customModule="PrimaMateria" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Of-Im-h85">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6t-5c-gtg">
@@ -97,7 +92,7 @@
                                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="48"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="BDX-44-c7o" customClass="XTRCornerImageView" customModule="PrimaMateria">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="BDX-44-c7o" customClass="XTRCornerImageView" customModule="PrimaMateria">
                                                 <rect key="frame" x="1" y="1" width="51" height="51"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -436,7 +431,7 @@
     </scenes>
     <resources>
         <image name="Tab04" width="30" height="30"/>
-        <image name="icon.png" width="72" height="72"/>
+        <image name="icon" width="72" height="72"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wxq-Ws-eJu"/>

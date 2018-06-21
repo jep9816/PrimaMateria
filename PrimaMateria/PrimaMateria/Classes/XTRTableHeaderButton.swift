@@ -16,8 +16,8 @@ class XTRTableHeaderButton : XTRGeneralButton {
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
-        ascendingImageView = UIImage(named: "AscendingArrow.png")!
-        descentingImageView = UIImage(named: "DescendingArrow.png")!
+        ascendingImageView = UIImage(named: "AscendingArrow")!
+        descentingImageView = UIImage(named: "DescendingArrow")!
         imageLayer = CALayer()
         
         super.init(coder:aDecoder)
