@@ -24,7 +24,7 @@ class XTRGeneralButton : UIButton {
         super.awakeFromNib()
         
         titleLabel!.textAlignment = NSTextAlignment.center
-        backgroundColor = UIColor.color(hexString: "cccccc")
+        backgroundColor = XTRColorFactory.silverColor
         setTitleColor(UIColor.white, for: UIControlState())
         createLayer()
     }

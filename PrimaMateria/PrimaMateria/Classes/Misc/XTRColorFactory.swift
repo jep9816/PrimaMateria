@@ -58,14 +58,6 @@ class XTRColorFactory : NSObject {
         }
     }
     
-    // MARK: - Miscellaneous Colors
-    
-    class var helpBackgroundColor: UIColor {
-        get {
-            return UIColor.color(hexString: "dddd00")
-        }
-    }
-    
     // MARK: - Series Colors
     
     class var actinideColor: UIColor {
@@ -212,6 +204,12 @@ class XTRColorFactory : NSObject {
         return UIColor.yellow
     }
     
+    // MARK: - Miscellaneous Colors
+    
+    class var helpBackgroundColor: UIColor {
+        return UIColor.color(hexString: "dddd00")
+    }
+
     class var navigationBarColor: UIColor {
         return UIColor.color(hexString: "242424")
     }
@@ -260,4 +258,28 @@ class XTRColorFactory : NSObject {
         return UIColor.color(hexString: "A3A3A3")
     }
     
+    class var dodgerBlueColor: UIColor {
+        return UIColor.color(hexString: "4093ff")
+    }
+    
+    class var dustyGrayColor: UIColor {
+        return UIColor.color(hexString: "999999")
+    }
+    
+    class var galleryColor: UIColor {
+        return UIColor.color(hexString: "eeeeee")
+    }
+    
+    class var doveGrayColor: UIColor {
+        return UIColor.color(hexString: "666666")
+    }
+    
+    class var silverColor: UIColor {
+        return UIColor.color(hexString: "cccccc")
+    }
+
+    class var grayColor: UIColor {
+        return UIColor.color(hexString: "808080")
+    }
+
 }

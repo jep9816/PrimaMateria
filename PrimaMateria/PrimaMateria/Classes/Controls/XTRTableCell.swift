@@ -40,7 +40,7 @@ class XTRTableCell : UITableViewCell {
         if columns.count > 0 {
             let ctx = UIGraphicsGetCurrentContext()!
             
-            ctx.setStrokeColor(UIColor.color(hexString: "808080").cgColor)
+            ctx.setStrokeColor(XTRColorFactory.grayColor.cgColor)
             ctx.setLineWidth(0.25)
             
             for index in 0...columns.count {
