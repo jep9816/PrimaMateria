@@ -453,6 +453,7 @@
 				971B187B14855B5800333B91 /* MBProgressHUD.m */,
 			);
 			name = "3rd Party";
+			path = 3rd_Party;
 			sourceTree = "<group>";
 		};
 		974C5673147BF07600DDFC77 /* Misc */ = {
@@ -597,7 +598,7 @@
 				B8FA72B61CCB1BC6000AB48B /* UIImage-Extensions.swift */,
 				B8B900AB1EE8C11C003D66BD /* UIView+LayerFlattening.swift */,
 			);
-			name = Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B8C7C2001EFDD4F5000C112C /* Scenes */ = {
