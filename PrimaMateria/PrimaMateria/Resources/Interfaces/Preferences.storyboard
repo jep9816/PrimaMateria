@@ -379,11 +379,15 @@
                                             <action selector="resetPreferences:" destination="REJ-gs-Mp7" eventType="touchUpInside" id="zgH-kd-wgT"/>
                                         </connections>
                                     </button>
-                                    <webView contentMode="scaleAspectFit" fixedFrame="YES" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DjF-3R-iTo">
+                                    <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-ac-K4n">
                                         <rect key="frame" x="221" y="98" width="797" height="570"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </webView>
+                                        <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <wkWebViewConfiguration key="configuration">
+                                            <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                            <wkPreferences key="preferences"/>
+                                        </wkWebViewConfiguration>
+                                    </wkWebView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -413,7 +417,7 @@
                         <outlet property="splashScreenSwitch" destination="qG9-qk-aot" id="AEL-Qm-6Ku"/>
                         <outlet property="versionLabel" destination="5UU-Kf-jb0" id="jnb-dt-14b"/>
                         <outlet property="view" destination="4Of-Im-h85" id="1IY-7O-A5B"/>
-                        <outlet property="webView" destination="DjF-3R-iTo" id="Brl-c9-14G"/>
+                        <outlet property="webView" destination="MrN-ac-K4n" id="ttB-J4-C0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-Pv-ksh" sceneMemberID="firstResponder"/>

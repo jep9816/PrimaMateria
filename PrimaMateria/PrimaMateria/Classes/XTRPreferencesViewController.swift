@@ -6,6 +6,8 @@
 //  Copyright ©2018 xTrensa. All rights reserved.
 //
 
+import WebKit
+
 class XTRPreferencesViewController : UIViewController {
     
     @IBOutlet var appNameLabel : UILabel!
@@ -26,7 +28,7 @@ class XTRPreferencesViewController : UIViewController {
     @IBOutlet var elementBubbleSwitch : UISwitch!
     @IBOutlet var showTransitionsBubbleSwitch : UISwitch!
     @IBOutlet var splashScreenSwitch : UISwitch!
-    @IBOutlet var webView : UIWebView!
+    @IBOutlet var webView : WKWebView!
     
     // MARK: - Initialization Methods
     
@@ -77,10 +79,10 @@ class XTRPreferencesViewController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func loadDocument(_ documentName: String, inView: UIWebView) {
+    func loadDocument(_ documentName: String, inView: WKWebView) {
         guard let aPath = Bundle(for: XTRElement.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
         
-        webView.loadRequest(URLRequest(url: URL(fileURLWithPath: aPath)))
+        webView.load(URLRequest(url: URL(fileURLWithPath: aPath)))
     }
     
     func loadUserDefaults() {
@@ -206,7 +208,6 @@ class XTRPreferencesViewController : UIViewController {
         showTransitionsBubbleSwitch = nil
         splashScreenSwitch = nil
         versionLabel = nil
-        webView.delegate = nil
         webView = nil
     }
     

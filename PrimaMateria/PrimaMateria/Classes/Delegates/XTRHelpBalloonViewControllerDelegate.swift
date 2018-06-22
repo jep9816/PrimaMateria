@@ -12,7 +12,6 @@ class XTRHelpBalloonViewControllerDelegate : NSObject, WKUIDelegate, WKNavigatio
 
     weak var controller : XTRHelpBalloonViewController?
 
-    //func webViewDidStartLoad(_ webView: UIWebView) {
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         controller?.backButton.isEnabled = false
         controller?.forwardButton.isEnabled = false
@@ -20,7 +19,6 @@ class XTRHelpBalloonViewControllerDelegate : NSObject, WKUIDelegate, WKNavigatio
         controller?.forwardButton.tintColor = UIColor.black
     }
     
-    //func webViewDidFinishLoad(_ aWebView: UIWebView) {
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if webView.canGoBack {
             controller?.backButton.isEnabled = true

@@ -7,6 +7,7 @@
 //
 
 import PDFKit
+import WebKit
 
 class XTRGeneralInfoViewController : XTRSwapableViewController {
     
@@ -15,7 +16,7 @@ class XTRGeneralInfoViewController : XTRSwapableViewController {
     @IBOutlet var discoveryYearLabel : UILabel!
     @IBOutlet var abundanceCrustLabel : UILabel!
     @IBOutlet var abundanceSeaLabel : UILabel!
-    @IBOutlet var webView : UIWebView!
+    @IBOutlet var webView : WKWebView!
     
     private var progressHUD : MBProgressHUD?
     private var responseData : NSMutableData?
@@ -35,7 +36,7 @@ class XTRGeneralInfoViewController : XTRSwapableViewController {
         let aPath = element!.pathForGeneralInfoDoc()
         
         if !aPath.isEmpty {
-            webView.loadRequest(URLRequest(url: URL(string: aPath)!))
+            webView.load(URLRequest(url: URL(string: aPath)!))
         }
     }
     
@@ -80,7 +81,7 @@ class XTRGeneralInfoViewController : XTRSwapableViewController {
         discovererLabel = nil
         discoveryLocationLabel = nil
         discoveryYearLabel = nil
-        webView.delegate = nil
+        //webView.delegate = nil
         webView = nil
     }
     

@@ -10,13 +10,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaMateria/Classes/XTRWikipediaViewController.swift"
-            timestampString = "551038664.858965"
+            timestampString = "551366393.241312"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "37"
             endingLineNumber = "37"
-            landmarkName = "dismiss(_:)"
-            landmarkType = "7">
+            landmarkName = "XTRWikipediaViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

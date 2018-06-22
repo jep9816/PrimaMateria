@@ -417,7 +417,7 @@
 				B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */,
 				B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */,
 			);
-			name = Misc;
+			path = Misc;
 			sourceTree = "<group>";
 		};
 		9738259F147AEE6A00AEA344 /* Views */ = {

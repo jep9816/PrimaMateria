@@ -8,7 +8,7 @@
 
 import WebKit
 
-class XTRWikipediaViewController : UIViewController/*, WKNavigationDelegate, MBProgressHUDDelegate*/ {
+class XTRWikipediaViewController : UIViewController {
     
     @IBOutlet var backButton : UIBarButtonItem!
     @IBOutlet var titleButtonItem: UIBarButtonItem!

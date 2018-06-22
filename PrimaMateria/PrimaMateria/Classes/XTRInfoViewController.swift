@@ -6,9 +6,11 @@
 //  Copyright ©2018 xTrensa. All rights reserved.
 //
 
+import WebKit
+
 class XTRInfoViewController : UIViewController {
     
-    @IBOutlet var webView: UIWebView!
+    @IBOutlet var webView: WKWebView!
     
     private var delegate : XTRInfoViewControllerDelegate = XTRInfoViewControllerDelegate()
 
@@ -22,14 +24,13 @@ class XTRInfoViewController : UIViewController {
     
     func loadDocument(_ documentName: String) {
         let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "PrimaMateriaHelp")!
-        webView.loadRequest(URLRequest(url: URL(fileURLWithPath: path)))
+        webView.load(URLRequest(url: URL(fileURLWithPath: path)))
     }
     
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.delegate = delegate
         loadDocument("index")
         navigationController?.navigationBar.prefersLargeTitles = true
     }
@@ -45,7 +46,6 @@ class XTRInfoViewController : UIViewController {
     // MARK: - Memory Management Methods
     
     deinit {
-        webView.delegate = nil
         webView = nil
     }
     

@@ -6,5 +6,7 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRInfoViewControllerDelegate : NSObject, UIWebViewDelegate {
+import WebKit
+
+class XTRInfoViewControllerDelegate : NSObject, WKNavigationDelegate {
 }
