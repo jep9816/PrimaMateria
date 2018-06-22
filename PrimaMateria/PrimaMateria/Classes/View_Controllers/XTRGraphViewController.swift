@@ -166,7 +166,7 @@ class XTRGraphViewController : UIViewController {
         barChart?.add(barPlot, to: plotSpace)
     }
     
-    @objc func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
+    func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
         return try! Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
     }
     
