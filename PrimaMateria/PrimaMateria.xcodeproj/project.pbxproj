@@ -260,7 +260,7 @@
 		97E33574147A938A008147AD /* PrimaMateria-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrimaMateria-Prefix.pch"; sourceTree = "<group>"; };
 		97E33604147AA7C7008147AD /* PrimaMateria.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PrimaMateria.plist; sourceTree = "<group>"; };
 		97E3365C147AAE5D008147AD /* PrimaMateria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = PrimaMateria.entitlements; path = ../PrimaMateria.entitlements; sourceTree = "<group>"; };
-		97E33661147AB045008147AD /* PrimaMateria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PrimaMateria.h; path = Classes/PrimaMateria.h; sourceTree = "<group>"; };
+		97E33661147AB045008147AD /* PrimaMateria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaMateria.h; sourceTree = "<group>"; };
 		97E33667147AB701008147AD /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		9B116A4420D6A89C00175AF0 /* PrimaMateriaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaMateriaTests.swift; sourceTree = "<group>"; };
 		9B116A4620D6A89C00175AF0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -287,7 +287,7 @@
 		B8528FFD1ED368CC00A19156 /* XTRElementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementButton.swift; sourceTree = "<group>"; };
 		B85290021ED4D4C100A19156 /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = "../../../../Build/Release-iphonesimulator/CorePlot/CorePlot.framework"; sourceTree = "<group>"; };
 		B85CC45C1CC7C674005683F3 /* XTRNuclidesIsotopesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRNuclidesIsotopesViewController.swift; sourceTree = "<group>"; };
-		B87214A61CC0008B0021C8F5 /* PrimaMateria-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "PrimaMateria-Bridging-Header.h"; path = "Classes/PrimaMateria-Bridging-Header.h"; sourceTree = "<group>"; };
+		B87214A61CC0008B0021C8F5 /* PrimaMateria-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PrimaMateria-Bridging-Header.h"; sourceTree = "<group>"; };
 		B87214A81CC0008B0021C8F5 /* XTRBarPlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRBarPlot.swift; sourceTree = "<group>"; };
 		B87214AD1CC019860021C8F5 /* XTRTableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRTableLabel.swift; sourceTree = "<group>"; };
 		B87214B31CC023BC0021C8F5 /* XTRSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSplashViewController.swift; sourceTree = "<group>"; };
@@ -426,7 +426,7 @@
 				B87214C61CC063AA0021C8F5 /* XTRCornerImageView.swift */,
 				B87214C91CC0669E0021C8F5 /* XTRShadowView.swift */,
 			);
-			name = Views;
+			path = Views;
 			sourceTree = "<group>";
 		};
 		974C5659147BEA5100DDFC77 /* Controls */ = {
@@ -506,8 +506,6 @@
 		97E3356C147A938A008147AD /* PrimaMateria */ = {
 			isa = PBXGroup;
 			children = (
-				97E33661147AB045008147AD /* PrimaMateria.h */,
-				B87214A61CC0008B0021C8F5 /* PrimaMateria-Bridging-Header.h */,
 				97E3358E147A9467008147AD /* Classes */,
 				97E33666147AB338008147AD /* Other Sources */,
 				97E3359A147A9486008147AD /* Resources */,
@@ -569,15 +567,19 @@
 				B87214C01CC0417B0021C8F5 /* XTRWikipediaViewController.swift */,
 			);
 			name = "View Controllers";
+			path = View_Controllers;
 			sourceTree = "<group>";
 		};
 		97E33666147AB338008147AD /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
+				97E33661147AB045008147AD /* PrimaMateria.h */,
+				B87214A61CC0008B0021C8F5 /* PrimaMateria-Bridging-Header.h */,
 				97E33574147A938A008147AD /* PrimaMateria-Prefix.pch */,
 				B827CD481CC8019E00E74129 /* main.swift */,
 			);
 			name = "Other Sources";
+			path = "Classes/Other Sources";
 			sourceTree = "<group>";
 		};
 		9B116A4320D6A89C00175AF0 /* PrimaMateriaTests */ = {
@@ -1182,7 +1184,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "PrimaMateria/Classes/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 2.3;
 				SYMROOT = "$(HOME)/Developer/Build";
@@ -1255,7 +1257,7 @@
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "PrimaMateria/Classes/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 2.3;
 				SYMROOT = "$(HOME)/Developer/Build";
