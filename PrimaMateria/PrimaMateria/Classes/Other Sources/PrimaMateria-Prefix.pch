@@ -1,0 +1,14 @@
+//
+// Prefix header for all source files of the 'PrimaMateria' target in the 'PrimaMateria' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_10_0
+#warning "This project uses features only available in iOS SDK 10.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import "CorePlot-CocoaTouch.h"
+    #import "PrimaMateria.h"
+#endif
