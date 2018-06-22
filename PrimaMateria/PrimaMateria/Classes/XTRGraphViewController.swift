@@ -126,13 +126,7 @@ class XTRGraphViewController : UIViewController {
         let aValue : NSNumber? = anElement.value(forKeyPath: anIdentifier) as? NSNumber
         return (aValue != nil) ? aValue! : 0
     }
-    
-    func showElementPanelForElementAtIndex(_ anIndex: Int) {
-        XTRPropertiesStore.viewTitle = title!
-        XTRPropertiesStore.atomicNumber = anIndex
-        performSegue(withIdentifier: SegueName.showInspectorFromGraphView, sender: self)
-    }
-    
+        
     func showGraphForChoiceAtIndex(_ anIndex: UInt) {
         let dict = XTRDataSource.sharedInstance().graphPropertyList?[Int(anIndex)]
         let minValue = dict?[GraphAttribute.minimumValue] as! Float
@@ -196,7 +190,11 @@ class XTRGraphViewController : UIViewController {
         
         showGraphForChoiceAtIndex(0)
         navigationController?.navigationBar.prefersLargeTitles = true
-        delegate.controller = self
+        delegate.closure = { [weak self] (index: Int) -> Void in
+            XTRPropertiesStore.viewTitle = (self?.title)!
+            XTRPropertiesStore.atomicNumber = index
+            self?.performSegue(withIdentifier: SegueName.showInspectorFromGraphView, sender: self)
+        }
     }
     
     override var shouldAutorotate : Bool {

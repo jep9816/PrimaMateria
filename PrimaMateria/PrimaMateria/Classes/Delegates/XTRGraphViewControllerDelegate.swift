@@ -8,7 +8,7 @@
 
 class XTRGraphViewControllerDelegate : NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
 
-    weak var controller : XTRGraphViewController?
+    var closure : (Int) -> Void? = { index in return }
 
     // MARK: - Plot Data Source Methods
 
@@ -100,7 +100,7 @@ class XTRGraphViewControllerDelegate : NSObject, CPTPlotDataSource, CPTBarPlotDe
     }
     
     @objc func barPlot(_ plot: CPTBarPlot, barWasSelectedAtRecord index: UInt) {
-        controller?.showElementPanelForElementAtIndex(Int(index))
+        self.closure(Int(index))
     }
     
     @objc func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: UInt) -> CPTFill {

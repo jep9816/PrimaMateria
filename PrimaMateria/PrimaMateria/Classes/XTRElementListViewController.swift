@@ -15,16 +15,8 @@ class XTRElementListViewController : UIViewController {
     @IBOutlet var atomicNumberButton : XTRTableHeaderButton!
     @IBOutlet var swapView: UIView!
     
-    var double: (Int) -> (Int) = { x in
-        return 2 * x
-    }
-
     private var tableView : UITableView?
-    private var delegate : XTRElementListViewControllerDelegate = XTRElementListViewControllerDelegate(/*closure: { (index: Int) -> Void in
-        XTRPropertiesStore.viewTitle = title!
-        XTRPropertiesStore.atomicNumber = anIndex
-        performSegue(withIdentifier: SegueName.showInspectorFromElementList, sender: self)
-    }*/)
+    private var delegate : XTRElementListViewControllerDelegate = XTRElementListViewControllerDelegate()
     
     // MARK: - Initialization Methods
     
@@ -81,7 +73,12 @@ class XTRElementListViewController : UIViewController {
         swapView.removeFromSuperview()
         setupTableView()
         navigationController?.navigationBar.prefersLargeTitles = true
-        delegate.controller = self
+        
+        delegate.closure = { [weak self] (index: Int) -> Void in
+            XTRPropertiesStore.viewTitle = (self?.title)!
+            XTRPropertiesStore.atomicNumber = index
+            self?.performSegue(withIdentifier: SegueName.showInspectorFromElementList, sender: self)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {

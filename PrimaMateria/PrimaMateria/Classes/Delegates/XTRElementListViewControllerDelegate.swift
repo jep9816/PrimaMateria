@@ -11,11 +11,7 @@ class XTRElementListViewControllerDelegate : NSObject, UITableViewDelegate, UITa
     // MARK: - UITableView DataSource Methods
     weak var controller : XTRElementListViewController?
     var indexPath : IndexPath?
-    //var closure : (Int) -> Void
-    
-//    init(closure: @escaping (Int) -> Void) {
-//        self.closure = closure
-//    }
+    var closure : (Int) -> Void? = { index in return }
     
     func tableView(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : XTRElementTableViewCell? = aTableView.dequeueReusableCell(withIdentifier: XTRElementListViewController.tableViewCellIdentifier) as? XTRElementTableViewCell
@@ -40,8 +36,7 @@ class XTRElementListViewControllerDelegate : NSObject, UITableViewDelegate, UITa
         
         self.indexPath = indexPath
         aTableView.deselectRow(at: indexPath, animated: true)
-        //self.closure(atomicNumber - 1)
-        self.controller?.showElementPanelForElementAtIndex(atomicNumber - 1)
+        self.closure(atomicNumber - 1)
     }
     
     func tableView(_ aTableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

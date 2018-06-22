@@ -443,7 +443,7 @@
 				B87214D21CC07B330021C8F5 /* XTRTableHeaderButton.swift */,
 				B87214AD1CC019860021C8F5 /* XTRTableLabel.swift */,
 			);
-			name = Controls;
+			path = Controls;
 			sourceTree = "<group>";
 		};
 		974C5672147BEFA400DDFC77 /* 3rd Party */ = {
