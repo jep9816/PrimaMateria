@@ -176,5 +176,7 @@ struct SegueName {
     static let showInspectorFromElementList = "showInspectorFromElementList"
     static let showInspectorFromElementBalloon = "showInspectorFromElementBalloon"
     static let showWikipediaViewControllerFromGeneralViewController = "showWikipediaViewControllerFromGeneralViewController"
-    static let showGraphChoice = "showGraphChoice"
+    static let showGraphChoiceSegue = "showGraphChoice"
 }
+
+public typealias ClosureType = (Int) -> ()

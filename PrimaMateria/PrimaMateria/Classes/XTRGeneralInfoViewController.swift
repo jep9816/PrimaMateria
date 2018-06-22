@@ -8,7 +8,7 @@
 
 import PDFKit
 
-class XTRGeneralInfoViewController : XTRSwapableViewController, UIWebViewDelegate {
+class XTRGeneralInfoViewController : XTRSwapableViewController {
     
     @IBOutlet var discovererLabel : UILabel!
     @IBOutlet var discoveryLocationLabel : UILabel!

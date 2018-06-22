@@ -6,10 +6,12 @@
 //  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-class XTRMainViewController : UITabBarController, UITabBarControllerDelegate {
+class XTRMainViewController : UITabBarController {
     
     // MARK: - Initialization Methods
     
+    private var controllerDelegate : XTRMainViewControllerDelegate = XTRMainViewControllerDelegate()
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
@@ -51,7 +53,7 @@ class XTRMainViewController : UITabBarController, UITabBarControllerDelegate {
         showSplash()
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        delegate = self
+        delegate = controllerDelegate
     }
     
     override var shouldAutorotate : Bool {
@@ -64,19 +66,4 @@ class XTRMainViewController : UITabBarController, UITabBarControllerDelegate {
     
     // MARK: - Memory Management Methods
     
-}
-
-extension XTRMainViewController { // UITabBarControllerDelegate Methods
-    
-    func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        let defaultState = XTRPropertiesStore.showTransitionsState
-        
-        if defaultState {
-            //return XTRPopoutAnimationController()
-            // XTRSlideDownAnimationController()
-            return XTRSimpleTransitionController()
-        }
-        return nil
-    }
-
 }

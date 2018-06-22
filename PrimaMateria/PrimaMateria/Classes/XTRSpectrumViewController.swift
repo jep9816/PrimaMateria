@@ -17,7 +17,7 @@ enum SpectrumAttribute {
     static let kVSpectrum = "V"
 }
 
-class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
+class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource*/ {
     
     @IBOutlet var hostingView : CPTGraphHostingView!
     @IBOutlet var swapView : UIView!
@@ -26,6 +26,8 @@ class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate
     var lineSpectraArray : [[String : AnyObject]]?
     var tableView : UITableView?
     
+    private var delegate : XTRSpectrumViewControllerDelegate = XTRSpectrumViewControllerDelegate()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -42,7 +44,7 @@ class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate
         let barPlot = CPTBarPlot.tubularBarPlot(with: aColor, horizontalBars: false)
         barPlot.barWidth = 20.0
         barPlot.baseValue = 1
-        barPlot.dataSource = self
+        barPlot.dataSource = delegate
         barPlot.barOffset = 0.0
         barPlot.identifier = anIdentifier as (NSCoding & NSCopying & NSObjectProtocol)?
         return barPlot
@@ -139,21 +141,6 @@ class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate
         barChart!.add(barPlot, to: plotSpace)
     }
     
-    func tableCellLabelWithXPos(_ xPos : CGFloat, YPos: CGFloat, width: CGFloat, height: CGFloat, property: String, columnPosition: Int, modulus: Int, cell: XTRTableCell) {
-        let label = UILabel(frame: CGRect(x: xPos, y: YPos, width: width, height: height))
-        
-        label.backgroundColor = (modulus == 0) ? UIColor.white : XTRColorFactory.rowColor
-        
-        cell.backgroundView?.backgroundColor = UIColor.black
-        cell.contentView.backgroundColor = UIColor.black
-        cell.addColumn(columnPosition)
-        label.font = UIFont.systemFont(ofSize: 20.0)
-        label.textAlignment = .center
-        label.textColor = UIColor.black
-        label.text = " \(property)"
-        cell.contentView.addSubview(label)
-    }
-    
     // MARK: - Action Methods
     
     override func setupUI() {
@@ -166,8 +153,8 @@ class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate
             tableView = UITableView(frame: swapView.frame, style: .plain)
             tableView!.alwaysBounceVertical = false
             tableView!.alwaysBounceHorizontal = false
-            tableView!.dataSource = self
-            tableView!.delegate = self
+            tableView!.dataSource = delegate
+            tableView!.delegate = delegate
             tableView!.separatorStyle = .none
             tableView!.backgroundColor = UIColor.black
             tableView!.backgroundView = UIView(frame: swapView.frame)
@@ -182,44 +169,12 @@ class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate
         setupBarChart()
     }
     
-    // MARK: - Plot Data Source Methods
-    
-    func numberOfRecords(for plot: CPTPlot) -> UInt {
-        return UInt(lineSpectraArray!.count)
-    }
-    
-    func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
-        var num : Float?
-        
-        if plot.isKind(of: CPTBarPlot.classForCoder()) {
-            let dict = lineSpectraArray![Int(idx)]
-            let airWavelength = Float(dict[SpectrumAttribute.kAirWavelength] as! String)!
-            let intensity = Float(dict[SpectrumAttribute.kIntensity] as! String)!
-            let spectrum = dict[SpectrumAttribute.kSpectrum] as! String
-            let identifier = plot.identifier as! String
-            
-            switch (fieldEnum) {
-            case 0:
-                num = airWavelengthValue(airWavelength, anIdentifier: identifier, aSpectrum: spectrum)
-            case 1:
-                num = intensityValue(intensity, anIdentifier: identifier, aSpectrum: spectrum)
-            default:
-                num = 0
-                break
-            }
-        }
-        return num
-    }
-    
-    func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: NSInteger) -> CPTFill? {
-        return nil
-    }
-    
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        delegate.controller = self
         swapView.removeFromSuperview()
     }
     
@@ -240,38 +195,4 @@ class XTRSpectrumViewController : XTRSwapableViewController, UITableViewDelegate
         swapView = nil
     }
     
-}
-
-extension XTRSpectrumViewController { // UITableView DataSource Methods
-    
-    func tableView(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
-        let MyIdentifier = "Column \(row)"
-        
-        var cell : XTRTableCell? = aTableView.dequeueReusableCell(withIdentifier: MyIdentifier) as? XTRTableCell
-        
-        if cell == nil {
-            let modulus = row % 2
-            let dict = lineSpectraArray![row]
-            let airWavelength = dict[SpectrumAttribute.kAirWavelength] as! String
-            let intensity = dict[SpectrumAttribute.kIntensity] as! String
-            let spectrum = dict[SpectrumAttribute.kSpectrum] as! String
-            
-            cell = XTRTableCell(style: .default, reuseIdentifier: MyIdentifier)
-            
-            tableCellLabelWithXPos(0.0, YPos: 0.0, width: 124.0, height: 32.0, property: airWavelength, columnPosition: 1, modulus: modulus, cell: cell!)
-            tableCellLabelWithXPos(125.0, YPos: 0.0, width: 115.0, height: 32.0, property: intensity, columnPosition: 2, modulus: modulus, cell: cell!)
-            tableCellLabelWithXPos(241.0, YPos: 0.0, width: 117.0, height: 32.0, property: spectrum, columnPosition: 3, modulus: modulus, cell: cell!)
-        }
-        return cell!
-    }
-    
-    func numberOfSections(in aTableView : UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return element!.lineSpectra!.count
-    }
-
 }

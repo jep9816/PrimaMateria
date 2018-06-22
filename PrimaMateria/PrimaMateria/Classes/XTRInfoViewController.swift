@@ -6,10 +6,12 @@
 //  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-class XTRInfoViewController : UIViewController, UIWebViewDelegate {
+class XTRInfoViewController : UIViewController {
     
     @IBOutlet var webView: UIWebView!
     
+    private var delegate : XTRInfoViewControllerDelegate = XTRInfoViewControllerDelegate()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -27,7 +29,7 @@ class XTRInfoViewController : UIViewController, UIWebViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        webView.delegate = self
+        webView.delegate = delegate
         loadDocument("index")
         navigationController?.navigationBar.prefersLargeTitles = true
     }

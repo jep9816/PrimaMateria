@@ -8,13 +8,16 @@
 
 import WebKit
 
-class XTRHelpBalloonViewController : UIViewController, WKUIDelegate, WKNavigationDelegate {
+class XTRHelpBalloonViewController : UIViewController {
     
     @IBOutlet var backButton : UIBarButtonItem!
     @IBOutlet var forwardButton : UIBarButtonItem!
     @IBOutlet var titleLabel: UILabel!
+    
     var webView : WKWebView!
     
+    private var delegate : XTRHelpBalloonViewControllerDelegate = XTRHelpBalloonViewControllerDelegate()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,6 +55,9 @@ class XTRHelpBalloonViewController : UIViewController, WKUIDelegate, WKNavigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        delegate.controller = self
+
 //        let subLayer = CALayer()
 //
 //        subLayer.backgroundColor = UIColor.color(hexString: "dddd00").cgColor
@@ -87,7 +93,7 @@ class XTRHelpBalloonViewController : UIViewController, WKUIDelegate, WKNavigatio
         //view.layer.insertSublayer(subLayer, below: webView.layer)
         webView.layer.cornerRadius = 8
         webView.layer.masksToBounds = true
-        webView.navigationDelegate = self
+        webView.navigationDelegate = delegate
         webView.scrollView.isScrollEnabled = true             // Make sure our view is interactable
         webView.scrollView.bounces = false                    // Things like this should be handled in web code
         webView.allowsBackForwardNavigationGestures = false   // Disable swiping to navigate
@@ -116,35 +122,4 @@ class XTRHelpBalloonViewController : UIViewController, WKUIDelegate, WKNavigatio
         NotificationCenter.default.removeObserver(self, name: .elementHelpSelectedNotification, object: nil)
     }
     
-}
-
-extension XTRHelpBalloonViewController { // WKWebView Delegate Methods
-
-    //func webViewDidStartLoad(_ webView: UIWebView) {
-    func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        backButton.isEnabled = false
-        forwardButton.isEnabled = false
-        backButton.tintColor = UIColor.black
-        forwardButton.tintColor = UIColor.black
-    }
-    
-    //func webViewDidFinishLoad(_ aWebView: UIWebView) {
-    public func webView(_ aWebView: WKWebView, didFinish navigation: WKNavigation!) {
-        if aWebView.canGoBack {
-            backButton.isEnabled = true
-            backButton.tintColor = UIColor.white
-        } else if !aWebView.canGoBack {
-            backButton.isEnabled = false
-            backButton.tintColor = UIColor.black
-        }
-        
-        if aWebView.canGoForward {
-            forwardButton.isEnabled = true
-            forwardButton.tintColor = UIColor.white
-        } else if !aWebView.canGoForward {
-            forwardButton.isEnabled = false
-            forwardButton.tintColor = UIColor.black
-        }
-    }
-
 }

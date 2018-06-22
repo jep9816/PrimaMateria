@@ -6,7 +6,7 @@
 //  Copyright ©2018 xTrensa. All rights reserved.
 //
 
-class XTRPreferencesViewController : UIViewController, UIPopoverPresentationControllerDelegate {
+class XTRPreferencesViewController : UIViewController {
     
     @IBOutlet var appNameLabel : UILabel!
     @IBOutlet var cpyRightLabel : UILabel!
@@ -151,6 +151,7 @@ class XTRPreferencesViewController : UIViewController, UIPopoverPresentationCont
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destController = segue.destination as! XTRColorPickerViewController
         let seriesName = (sender as! UIButton).titleLabel!.text!
+        
         destController.seriesName = seriesName
         destController.preferredContentSize = CGSize(width: 270, height: 270)
     }
