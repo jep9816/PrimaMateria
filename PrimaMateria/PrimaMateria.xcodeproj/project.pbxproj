@@ -17,6 +17,7 @@
 		80753FE420DC742D00E8EE5C /* XTRMainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80753FE320DC742D00E8EE5C /* XTRMainViewControllerDelegate.swift */; };
 		80753FE720DC78E200E8EE5C /* XTRInfoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80753FE620DC78E200E8EE5C /* XTRInfoViewControllerDelegate.swift */; };
 		80769E6920DD472D00DB4FC6 /* XTRMainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80753FE320DC742D00E8EE5C /* XTRMainViewControllerDelegate.swift */; };
+		80CB8BAD20DDAFCE00228CC7 /* XTCAppearanceManagerDefault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB8BAC20DDAFCE00228CC7 /* XTCAppearanceManagerDefault.swift */; };
 		971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187B14855B5800333B91 /* MBProgressHUD.m */; };
 		9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */; };
 		9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9746B1E81492503600A0DC96 /* PrimaMateriaHelp */; };
@@ -139,6 +140,7 @@
 		80753FE020DC707900E8EE5C /* XTRNuclidesIsotopesViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRNuclidesIsotopesViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80753FE320DC742D00E8EE5C /* XTRMainViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRMainViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80753FE620DC78E200E8EE5C /* XTRInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRInfoViewControllerDelegate.swift; sourceTree = "<group>"; };
+		80CB8BAC20DDAFCE00228CC7 /* XTCAppearanceManagerDefault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTCAppearanceManagerDefault.swift; sourceTree = "<group>"; };
 		971B187A14855B5800333B91 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		971B187B14855B5800333B91 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -285,11 +287,12 @@
 		9738257D147AE3B600AEA344 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				B827B6711CCD4CDD009629AF /* XTRDefines.swift */,
 				B827CD431CC7FD3A00E74129 /* XTRAppDelegate.swift */,
+				80CB8BAC20DDAFCE00228CC7 /* XTCAppearanceManagerDefault.swift */,
 				B827CD4B1CC80AA300E74129 /* XTRApplication.swift */,
 				B82DA0541CC139D200BD2E41 /* XTRColorFactory.swift */,
 				B897514A1CC19B15005C76C3 /* XTRDataSource.swift */,
+				B827B6711CCD4CDD009629AF /* XTRDefines.swift */,
 				B8FA72B31CCAE62D000AB48B /* XTRElement-Presentation.swift */,
 				B82DA0571CC1471C00BD2E41 /* XTRElement.swift */,
 				B827B66B1CCC5C8C009629AF /* XTRMolecularCalculator.swift */,
@@ -779,6 +782,7 @@
 				B87214CD1CC06E290021C8F5 /* XTRDividerLabel.swift in Sources */,
 				B87214A91CC0008B0021C8F5 /* XTRBarPlot.swift in Sources */,
 				80753FD520DC67F800E8EE5C /* XTRWikipediaViewControllerDelegate.swift in Sources */,
+				80CB8BAD20DDAFCE00228CC7 /* XTCAppearanceManagerDefault.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
