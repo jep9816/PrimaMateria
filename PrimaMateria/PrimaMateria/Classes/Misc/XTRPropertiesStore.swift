@@ -127,6 +127,25 @@ class XTRPropertiesStore : NSObject {
         }
     }
     
+    // MARK: - Appearance Name
+    
+    class var appearanceName: String {
+        get {
+            guard let objectValue = UserDefaults.standard.value(forKey: APPEARANCE_NAME_KEY) as? String else {
+                XTRPropertiesStore.appearanceName = XTRAppearanceType.classic
+                return XTRAppearanceType.classic
+            }
+            
+            return objectValue
+        }
+        
+        set(aValue) {
+            let defaults = UserDefaults.standard
+            defaults.set(aValue, forKey: APPEARANCE_NAME_KEY)
+            defaults.synchronize()
+        }
+    }
+
     class func resetPreferences() {
         let userDefaults = UserDefaults.standard
         
@@ -141,6 +160,7 @@ class XTRPropertiesStore : NSObject {
         userDefaults.removeObject(forKey: ElementSeries.nonMetal)
         userDefaults.removeObject(forKey: ElementSeries.transactinides)
         userDefaults.removeObject(forKey: ElementSeries.transitionMetal)
+        
         userDefaults.synchronize()
     }
     

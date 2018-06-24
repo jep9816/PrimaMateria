@@ -29,7 +29,8 @@ class XTRPreferencesViewController : UIViewController {
     @IBOutlet var showTransitionsBubbleSwitch : UISwitch!
     @IBOutlet var splashScreenSwitch : UISwitch!
     @IBOutlet var webView : WKWebView!
-    
+    @IBOutlet weak var styleControl : UISegmentedControl!
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -79,6 +80,18 @@ class XTRPreferencesViewController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func changeAppearance(_ sender: UISegmentedControl) {
+        var appearanceName : String = XTRAppearanceType.classic
+        
+        if styleControl.selectedSegmentIndex == 0 {
+            appearanceName = XTRAppearanceType.classic
+        } else {
+            appearanceName = XTRAppearanceType.standard
+        }
+        
+        NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearanceName)
+    }
+
     func loadDocument(_ documentName: String, inView: WKWebView) {
         guard let aPath = Bundle(for: XTRElement.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
         

@@ -113,6 +113,12 @@ let SUPPORTING_FILES = "SupportingFiles"
 let PERIODIC_VIEW_TITLE = "Periodic Table of the Elements"
 let SERIES_COLOR_KEY = "seriesColorKey"
 let MAIN_STORY_BOARD = "MainStoryboard"
+let APPEARANCE_NAME_KEY = "appearanceName"
+
+struct XTRAppearanceType {
+    static let classic = "Classic"
+    static let standard = "Standard"
+}
 
 // MARK: - Notifications
 
@@ -123,6 +129,7 @@ extension Notification.Name {
     static let colorSelectedNotification = Notification.Name("colorSelectedNotification")
     static let inspectorDismissedNotification = Notification.Name("inspectorDismissedNotification")
     static let seriesColorChangedNotification = Notification.Name("seriesColorChangedNotification")
+    static let notificationAppearanceChanged = NSNotification.Name("notificationAppearanceChanged")
 }
 
 // MARK: - Series Text

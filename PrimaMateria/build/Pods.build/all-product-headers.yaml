@@ -1,0 +1,640 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/CorePlot/CorePlot.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "CPTAnimation.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAnimation.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAnimationOperation.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAnimationOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAnimationPeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAnimationPeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAnnotation.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAnnotation.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAnnotationHostLayer.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAnnotationHostLayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAxis.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAxis.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAxisLabel.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAxisLabel.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAxisLabelGroup.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAxisLabelGroup.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAxisSet.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAxisSet.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTAxisTitle.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTAxisTitle.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTBarPlot.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTBarPlot.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTBorderedLayer.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTBorderedLayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTCalendarFormatter.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTCalendarFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTColor.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTColor.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTColorSpace.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTColorSpace.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTConstraints.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTConstraints.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTDebugQuickLook.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTDebugQuickLook.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTDefinitions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTDefinitions.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTDerivedXYGraph.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTDerivedXYGraph.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTExceptions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTExceptions.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTFill.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTFill.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTFunctionDataSource.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTFunctionDataSource.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTGradient.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTGradient.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTGraph.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTGraph.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTGraphHostingView.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/iPhoneOnly/CPTGraphHostingView.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTGridLineGroup.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTGridLineGroup.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTGridLines.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTGridLines.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTImage.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTLayer.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTLayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTLayerAnnotation.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTLayerAnnotation.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTLegend.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTLegend.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTLegendEntry.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTLegendEntry.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTLimitBand.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTLimitBand.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTLineCap.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTLineCap.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTLineStyle.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTLineStyle.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTMutableLineStyle.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTMutableLineStyle.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTMutableNumericData+TypeConversion.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTMutableNumericData+TypeConversion.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTMutableNumericData.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTMutableNumericData.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTMutablePlotRange.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTMutablePlotRange.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTMutableShadow.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTMutableShadow.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTMutableTextStyle.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTMutableTextStyle.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTNumericData+TypeConversion.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTNumericData+TypeConversion.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTNumericData.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTNumericData.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTNumericDataType.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTNumericDataType.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPathExtensions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPathExtensions.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPieChart.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPieChart.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlatformSpecificCategories.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/iPhoneOnly/CPTPlatformSpecificCategories.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlatformSpecificDefines.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/iPhoneOnly/CPTPlatformSpecificDefines.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlatformSpecificFunctions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/iPhoneOnly/CPTPlatformSpecificFunctions.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlot.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlot.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlotArea.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlotArea.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlotAreaFrame.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlotAreaFrame.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlotGroup.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlotGroup.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlotRange.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlotRange.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlotSpace.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlotSpace.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlotSpaceAnnotation.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlotSpaceAnnotation.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTPlotSymbol.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTPlotSymbol.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTRangePlot.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTRangePlot.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTResponder.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTResponder.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTScatterPlot.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTScatterPlot.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTShadow.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTShadow.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTTextLayer.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTTextLayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTTextStyle.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTTextStyle.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTTextStylePlatformSpecific.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/iPhoneOnly/CPTTextStylePlatformSpecific.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTTheme.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTTheme.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTTimeFormatter.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTTimeFormatter.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTTradingRangePlot.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTTradingRangePlot.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTUtilities.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTUtilities.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTXYAxis.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTXYAxis.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTXYAxisSet.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTXYAxisSet.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTXYGraph.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTXYGraph.h"
+        },
+        {
+          'type': 'file',
+          'name': "CPTXYPlotSpace.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/CPTXYPlotSpace.h"
+        },
+        {
+          'type': 'file',
+          'name': "CorePlot-CocoaTouch.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/CorePlot-CocoaTouch.h"
+        },
+        {
+          'type': 'file',
+          'name': "CorePlot-Swift.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/CorePlot/CorePlot.framework/Headers/CorePlot-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "CorePlot-umbrella.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/Target Support Files/CorePlot/CorePlot-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "CorePlot.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/CocoaPods/CorePlot.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSCoderExtensions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/NSCoderExtensions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSDecimalNumberExtensions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/NSDecimalNumberExtensions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSNumberExtensions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/NSNumberExtensions.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/CorePlot/CorePlot.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Pods.build/Debug-iphonesimulator/CorePlot.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/CorePlot/CorePlot.framework/PrivateHeaders",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "_CPTAnimationCGFloatPeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationCGFloatPeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTAnimationCGPointPeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationCGPointPeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTAnimationCGRectPeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationCGRectPeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTAnimationCGSizePeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationCGSizePeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTAnimationNSDecimalPeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationNSDecimalPeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTAnimationNSNumberPeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationNSNumberPeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTAnimationPlotRangePeriod.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationPlotRangePeriod.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTAnimationTimingFunctions.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTAnimationTimingFunctions.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTBorderLayer.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTBorderLayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTConstraintsFixed.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTConstraintsFixed.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTConstraintsRelative.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTConstraintsRelative.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTDarkGradientTheme.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTDarkGradientTheme.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTFillColor.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTFillColor.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTFillGradient.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTFillGradient.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTFillImage.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTFillImage.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTMaskLayer.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTMaskLayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTPlainBlackTheme.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTPlainBlackTheme.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTPlainWhiteTheme.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTPlainWhiteTheme.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTSlateTheme.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTSlateTheme.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTStocksTheme.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTStocksTheme.h"
+        },
+        {
+          'type': 'file',
+          'name': "_CPTXYTheme.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/CorePlot/framework/Source/_CPTXYTheme.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/Pods_PrimaMateria.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-PrimaMateria-umbrella.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_PrimaMateria-Swift.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/Pods_PrimaMateria.framework/Headers/Pods_PrimaMateria-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/Pods_PrimaMateria.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Pods.build/Debug-iphonesimulator/Pods-PrimaMateria.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/RxCocoa/RxCocoa.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "RxCocoa-Swift.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/RxCocoa/RxCocoa.framework/Headers/RxCocoa-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "RxCocoa-umbrella.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/Target Support Files/RxCocoa/RxCocoa-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "RxCocoa.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/RxCocoa/RxCocoa/RxCocoa.h"
+        },
+        {
+          'type': 'file',
+          'name': "RxCocoaRuntime.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/RxCocoa/RxCocoa/Runtime/include/RxCocoaRuntime.h"
+        },
+        {
+          'type': 'file',
+          'name': "_RX.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/RxCocoa/RxCocoa/Runtime/include/_RX.h"
+        },
+        {
+          'type': 'file',
+          'name': "_RXDelegateProxy.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/RxCocoa/RxCocoa/Runtime/include/_RXDelegateProxy.h"
+        },
+        {
+          'type': 'file',
+          'name': "_RXKVOObserver.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/RxCocoa/RxCocoa/Runtime/include/_RXKVOObserver.h"
+        },
+        {
+          'type': 'file',
+          'name': "_RXObjCRuntime.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/RxCocoa/RxCocoa/Runtime/include/_RXObjCRuntime.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/RxCocoa/RxCocoa.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Pods.build/Debug-iphonesimulator/RxCocoa.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/RxSwift/RxSwift.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "RxSwift-Swift.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/RxSwift/RxSwift.framework/Headers/RxSwift-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "RxSwift-umbrella.h",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Pods/Target Support Files/RxSwift/RxSwift-umbrella.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Debug-iphonesimulator/RxSwift/RxSwift.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/build/Pods.build/Debug-iphonesimulator/RxSwift.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
