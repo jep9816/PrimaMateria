@@ -25,35 +25,36 @@ class XTRColorFactory : NSObject {
     }
     
     class func colorForString(_ aString: String) -> UIColor {
-        if aString == ElementSeries.actinide {
+        switch aString {
+        case ElementSeries.actinide :
             return XTRColorFactory.actinideColor
-        } else if aString == ElementSeries.alkaliEarthMetal {
+        case ElementSeries.alkaliEarthMetal :
             return XTRColorFactory.alkaliEarthMetalColor
-        } else if aString == ElementSeries.alkaliMetal {
+        case ElementSeries.alkaliMetal :
             return XTRColorFactory.alkaliMetalColor
-        } else if aString == ElementSeries.halogen {
+        case ElementSeries.halogen :
             return XTRColorFactory.halogenColor
-        } else if aString == ElementSeries.lanthanide {
+        case ElementSeries.lanthanide :
             return XTRColorFactory.lanthanideColor
-        } else if aString == ElementSeries.metal {
+        case ElementSeries.metal :
             return XTRColorFactory.metalColor
-        } else if aString == ElementSeries.nonMetal {
+        case ElementSeries.nonMetal :
             return XTRColorFactory.nonMetalColor
-        } else if aString == ElementSeries.nobleGas {
+        case ElementSeries.nobleGas :
             return XTRColorFactory.nobleGasColor
-        } else if aString == ElementSeries.transactinides {
+        case ElementSeries.transactinides :
             return XTRColorFactory.transactinideColor
-        } else if aString == ElementSeries.transitionMetal {
+        case ElementSeries.transitionMetal :
             return XTRColorFactory.transitionMetalColor
-        } else if aString == ElementStandardCondition.gas {
+        case ElementStandardCondition.gas :
             return XTRColorFactory.gasConditionColor
-        } else if aString == ElementStandardCondition.liquid {
+        case ElementStandardCondition.liquid :
             return XTRColorFactory.liquidConditionColor
-        } else if aString == ElementStandardCondition.solid {
+        case ElementStandardCondition.solid :
             return XTRColorFactory.solidConditionColor
-        } else if aString == ElementStandardCondition.synthetic {
+        case ElementStandardCondition.synthetic :
             return XTRColorFactory.syntheticConditionColor
-        } else {
+        default:
             return UIColor.white
         }
     }
@@ -213,7 +214,7 @@ class XTRColorFactory : NSObject {
             return XTRColorFactoryStandard.border
         }
     }
-
+    
     class var successGreen : UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.success
@@ -237,7 +238,7 @@ class XTRColorFactory : NSObject {
             return XTRColorFactoryStandard.navyBlue
         }
     }
-
+    
     class var switchOnTintColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.doveGrayColor
@@ -247,9 +248,13 @@ class XTRColorFactory : NSObject {
     }
     
     class var helpBackgroundColor: UIColor {
-        return UIColor.color(hexString: "dddd00")
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return UIColor.color(hexString: "dddd00")
+        } else {
+            return UIColor.color(hexString: "dcdc00")
+        }
     }
-
+    
     class var navigationBarColor: UIColor {
         return UIColor.color(hexString: "242424")
     }

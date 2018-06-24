@@ -19,7 +19,7 @@ class XTRAppearanceManagerStandard : NSObject {
         let switchAppearance = UISwitch.appearance()
         
         let navigationBarTextAttributes: [NSAttributedStringKey: AnyObject]? = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.lightGray,
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)
         ]
         
@@ -32,7 +32,7 @@ class XTRAppearanceManagerStandard : NSObject {
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 13)
         ]
         tabBarNormalItemTextAttributes = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
+            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.lightGray,
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         tabBarSelectedItemTextAttributes = [
@@ -45,14 +45,14 @@ class XTRAppearanceManagerStandard : NSObject {
         tabBarItemAppearance.setTitleTextAttributes(tabBarNormalItemTextAttributes, for: UIControlState())
         tabBarItemAppearance.setTitleTextAttributes(tabBarSelectedItemTextAttributes, for: .selected)
         
-        tabBarAppearance.backgroundColor = XTRColorFactoryClassic.dustyGrayColor
+        tabBarAppearance.backgroundColor = XTRColorFactoryStandard.suvaGrey
         
         segmentedControlBarAppearance.setTitleTextAttributes(segmentedControlTextAttributes, for: .selected)
         
         navigationBarAppearance.titleTextAttributes = navigationBarTextAttributes
         navigationBarAppearance.tintColor = XTRColorFactoryClassic.galleryColor
         
-        toolBarAppearance.tintColor = XTRColorFactoryClassic.galleryColor
+        toolBarAppearance.tintColor = XTRColorFactoryStandard.navyBlue
         
         switchAppearance.onTintColor = XTRColorFactoryStandard.successGreen
     }
