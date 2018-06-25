@@ -14,7 +14,7 @@
         <scene sceneID="11">
             <objects>
                 <viewController storyboardIdentifier="XTRPeriodicTableViewController" title="Periodic Table of the Elements" id="2" customClass="XTRPeriodicTableViewController" customModule="PrimaMateria" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="17">
+                    <view key="view" contentMode="scaleToFill" id="17" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2809,7 +2809,7 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="jSS-qX-mvK" firstAttribute="top" secondItem="Mhz-FO-2K4" secondAttribute="top" id="f7Y-xl-5wa"/>
                             <constraint firstItem="jSS-qX-mvK" firstAttribute="trailing" secondItem="Mhz-FO-2K4" secondAttribute="trailing" id="sbG-Ex-of4"/>

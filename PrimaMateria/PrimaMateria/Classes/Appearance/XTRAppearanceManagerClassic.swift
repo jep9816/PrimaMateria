@@ -17,6 +17,7 @@ class XTRAppearanceManagerClassic : NSObject {
         let tabBarItemAppearance = UITabBarItem.appearance()
         let segmentedControlBarAppearance = UISegmentedControl.appearance()
         let switchAppearance = UISwitch.appearance()
+        let backgroundView = XTRBackgroundView.appearance()
         
         let navigationBarTextAttributes: [NSAttributedStringKey: AnyObject]? = [
             NSAttributedStringKey.foregroundColor: XTRColorFactoryClassic.white,
@@ -29,19 +30,21 @@ class XTRAppearanceManagerClassic : NSObject {
         
         segmentedControlTextAttributes = [
             NSAttributedStringKey.foregroundColor: XTRColorFactoryClassic.dodgerBlueColor,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 13)
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         tabBarNormalItemTextAttributes = [
             NSAttributedStringKey.foregroundColor: UIColor.white,
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         tabBarSelectedItemTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactory.tabBarForgroundColor,
+            NSAttributedStringKey.foregroundColor: XTRColorFactory.tabBarSelectedForgroundColor,
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         
-        tabBarAppearance.tintColor = XTRColorFactory.tabBarForgroundColor
-        
+        tabBarAppearance.tintColor = XTRColorFactory.tabBarSelectedForgroundColor
+        tabBarAppearance.backgroundColor = XTRColorFactoryClassic.graphite
+        tabBarAppearance.barTintColor = XTRColorFactoryClassic.graphite
+
         tabBarItemAppearance.setTitleTextAttributes(tabBarNormalItemTextAttributes, for: UIControlState())
         tabBarItemAppearance.setTitleTextAttributes(tabBarSelectedItemTextAttributes, for: .selected)
         
@@ -51,10 +54,16 @@ class XTRAppearanceManagerClassic : NSObject {
         
         navigationBarAppearance.titleTextAttributes = navigationBarTextAttributes
         navigationBarAppearance.tintColor = XTRColorFactoryClassic.galleryColor
-        
+        navigationBarAppearance.backgroundColor = XTRColorFactoryClassic.inkwell
+        navigationBarAppearance.barTintColor = XTRColorFactoryClassic.inkwell
+
         toolBarAppearance.tintColor = XTRColorFactoryClassic.galleryColor
-        
+        toolBarAppearance.backgroundColor = XTRColorFactoryClassic.inkwell
+        toolBarAppearance.barTintColor = XTRColorFactoryClassic.inkwell
+
         switchAppearance.onTintColor = XTRColorFactoryClassic.doveGrayColor
+        
+        backgroundView.backgroundColor = XTRColorFactory.backgroundColor
     }
     
 }

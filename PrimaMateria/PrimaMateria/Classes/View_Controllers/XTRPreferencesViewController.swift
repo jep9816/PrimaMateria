@@ -185,6 +185,8 @@ class XTRPreferencesViewController : UIViewController {
         appNameLabel.text = Bundle.main.appNameString
         versionLabel.text = Bundle.main.appVersionString
         cpyRightLabel.text = Bundle.main.copywriteString
+
+        styleControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0 : 1
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     

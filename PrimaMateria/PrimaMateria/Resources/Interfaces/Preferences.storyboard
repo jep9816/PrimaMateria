@@ -14,7 +14,7 @@
         <scene sceneID="6Ii-fp-jCz">
             <objects>
                 <viewController storyboardIdentifier="XTRPreferencesViewController" title="Preferences" id="REJ-gs-Mp7" customClass="XTRPreferencesViewController" customModule="PrimaMateria" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Of-Im-h85">
+                    <view key="view" contentMode="scaleToFill" id="4Of-Im-h85" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

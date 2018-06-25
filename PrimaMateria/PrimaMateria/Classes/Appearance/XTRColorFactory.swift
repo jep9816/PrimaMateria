@@ -231,9 +231,9 @@ class XTRColorFactory : NSObject {
         }
     }
     
-    class var tabBarForgroundColor: UIColor {
+    class var tabBarSelectedForgroundColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
-            return XTRColorFactoryClassic.dodgerBlueColor
+            return XTRColorFactoryClassic.armadillo
         } else {
             return XTRColorFactoryStandard.navyBlue
         }
@@ -252,6 +252,14 @@ class XTRColorFactory : NSObject {
             return UIColor.color(hexString: "dddd00")
         } else {
             return UIColor.color(hexString: "dcdc00")
+        }
+    }
+    
+    class var backgroundColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return UIColor.color(hexString: "404040")
+        } else {
+            return XTRColorFactoryStandard.regalBlue
         }
     }
     

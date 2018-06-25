@@ -9,7 +9,7 @@
 import UIKit
 
 class XTRColorFactoryClassic : XTRColorFactory {
-    // MARK : - Gulfstream Classic standard colors
+    // MARK : - Classic standard colors
     
     // MARK: - Grays
     
@@ -63,7 +63,7 @@ class XTRColorFactoryClassic : XTRColorFactory {
         return UIColor.color(hexString : "006897")
     }
     
-    class var gulfstreamBlue : UIColor {
+    class var jetBlue : UIColor {
         return UIColor.color(hexString : "123d63")
     }
     
