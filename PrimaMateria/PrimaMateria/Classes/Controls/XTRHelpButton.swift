@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/14/16.
-//  Copyright ©2018 xTrensa. All rights reserved.
+//  Copyright © 2018 xTrensa. All rights reserved.
 //
 
 class XTRHelpButton : UIButton, UIPopoverPresentationControllerDelegate {

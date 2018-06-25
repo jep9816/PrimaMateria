@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright ©2018 xTrensa. All rights reserved.
+//  Copyright © 2018 xTrensa. All rights reserved.
 //
 
 import UIKit
@@ -225,7 +225,7 @@ class XTRColorFactory : NSObject {
     
     class var segmentedControlForgroundColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
-            return XTRColorFactoryClassic.dodgerBlueColor
+            return XTRColorFactoryClassic.jetBlue
         } else {
             return XTRColorFactoryStandard.navyBlue
         }

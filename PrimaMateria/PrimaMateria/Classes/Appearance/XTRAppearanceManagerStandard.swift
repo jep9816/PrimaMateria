@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/24/18.
-//  Copyright ©2018 xTrensa. All rights reserved.
+//  Copyright © 2018 xTrensa. All rights reserved.
 //
 
 import UIKit
@@ -51,7 +51,8 @@ class XTRAppearanceManagerStandard : NSObject {
         tabBarAppearance.backgroundColor = XTRColorFactoryStandard.suvaGrey
         
         segmentedControlBarAppearance.setTitleTextAttributes(segmentedControlTextAttributes, for: .selected)
-        
+        segmentedControlBarAppearance.tintColor = XTRColorFactoryStandard.whiteSmoke
+
         navigationBarAppearance.titleTextAttributes = navigationBarTextAttributes
         navigationBarAppearance.tintColor = XTRColorFactoryStandard.lightGray
         navigationBarAppearance.backgroundColor = XTRColorFactoryStandard.wavesOfGrass

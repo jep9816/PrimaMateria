@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		084EEBBB20D83D4700C6B81D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */; };
+		08D7B73E20E11DA500D64E60 /* XTRBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7F8F720E0794200D75503 /* XTRBackgroundView.swift */; };
 		802165EB20DC5F9B0036A73C /* XTRElementListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802165EA20DC5F9B0036A73C /* XTRElementListViewControllerDelegate.swift */; };
 		80753FD220DC656700E8EE5C /* XTRGraphViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80753FD120DC656700E8EE5C /* XTRGraphViewControllerDelegate.swift */; };
 		80753FD520DC67F800E8EE5C /* XTRWikipediaViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80753FD420DC67F800E8EE5C /* XTRWikipediaViewControllerDelegate.swift */; };
@@ -30,7 +31,6 @@
 		8085C32120E0190B0004A16A /* XTRColorFactoryStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127E120E00EF40066FB7C /* XTRColorFactoryStandard.swift */; };
 		8085C32220E0190E0004A16A /* XTRImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127D820E007A00066FB7C /* XTRImageFactory.swift */; };
 		80CB8BAD20DDAFCE00228CC7 /* XTRAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB8BAC20DDAFCE00228CC7 /* XTRAppearanceManager.swift */; };
-		80F7F8F820E0794200D75503 /* XTRBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7F8F720E0794200D75503 /* XTRBackgroundView.swift */; };
 		971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187B14855B5800333B91 /* MBProgressHUD.m */; };
 		9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */; };
 		9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9746B1E81492503600A0DC96 /* PrimaMateriaHelp */; };
@@ -337,9 +337,9 @@
 		9738259F147AEE6A00AEA344 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				80F7F8F720E0794200D75503 /* XTRBackgroundView.swift */,
 				B87214C61CC063AA0021C8F5 /* XTRCornerImageView.swift */,
 				B87214C91CC0669E0021C8F5 /* XTRShadowView.swift */,
-				80F7F8F720E0794200D75503 /* XTRBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -789,7 +789,7 @@
 				B87214D01CC070B30021C8F5 /* XTRTableCell.swift in Sources */,
 				B8FA72BA1CCB2699000AB48B /* UIColor-Extensions.swift in Sources */,
 				80753FE120DC707900E8EE5C /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */,
-				80F7F8F820E0794200D75503 /* XTRBackgroundView.swift in Sources */,
+				08D7B73E20E11DA500D64E60 /* XTRBackgroundView.swift in Sources */,
 				B8788CDF1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift in Sources */,
 				B8528FEC1ED35AC100A19156 /* NSObject+General.swift in Sources */,
 				B827CD4F1CC81A5200E74129 /* XTRSwapableViewController.swift in Sources */,

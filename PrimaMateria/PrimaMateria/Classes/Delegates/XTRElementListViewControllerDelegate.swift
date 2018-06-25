@@ -10,6 +10,7 @@ class XTRElementListViewControllerDelegate : NSObject, UITableViewDelegate, UITa
     
     // MARK: - UITableView DataSource Methods
     weak var controller : XTRElementListViewController?
+    
     var indexPath : IndexPath?
     var closure : (Int) -> Void? = { index in return }
     

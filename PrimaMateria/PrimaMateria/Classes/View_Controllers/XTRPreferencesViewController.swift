@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/22/16.
-//  Copyright ©2018 xTrensa. All rights reserved.
+//  Copyright © 2018 xTrensa. All rights reserved.
 //
 
 import WebKit
@@ -181,12 +181,13 @@ class XTRPreferencesViewController : UIViewController {
         loadDocument("Credits.rtf", inView: webView)
         loadUserDefaults()
         populateSeriesColors()
-        
+
         appNameLabel.text = Bundle.main.appNameString
         versionLabel.text = Bundle.main.appVersionString
         cpyRightLabel.text = Bundle.main.copywriteString
 
         styleControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0 : 1
+        
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
