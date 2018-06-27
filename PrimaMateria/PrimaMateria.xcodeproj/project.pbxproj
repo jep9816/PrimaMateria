@@ -23,6 +23,7 @@
 		808127DF20E00C2C0066FB7C /* XTRAppearanceManagerStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127DD20E00C2B0066FB7C /* XTRAppearanceManagerStandard.swift */; };
 		808127E220E00EF40066FB7C /* XTRColorFactoryClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127E020E00EF30066FB7C /* XTRColorFactoryClassic.swift */; };
 		808127E320E00EF40066FB7C /* XTRColorFactoryStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127E120E00EF40066FB7C /* XTRColorFactoryStandard.swift */; };
+		8084773B20E30BD600529C8C /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8084773920E30BD500529C8C /* MBProgressHUD.m */; };
 		8085C31C20E018FB0004A16A /* XTRAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB8BAC20DDAFCE00228CC7 /* XTRAppearanceManager.swift */; };
 		8085C31D20E018FE0004A16A /* XTRAppearanceManagerClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127DC20E00C2B0066FB7C /* XTRAppearanceManagerClassic.swift */; };
 		8085C31E20E019010004A16A /* XTRAppearanceManagerStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127DD20E00C2B0066FB7C /* XTRAppearanceManagerStandard.swift */; };
@@ -31,7 +32,6 @@
 		8085C32120E0190B0004A16A /* XTRColorFactoryStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127E120E00EF40066FB7C /* XTRColorFactoryStandard.swift */; };
 		8085C32220E0190E0004A16A /* XTRImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808127D820E007A00066FB7C /* XTRImageFactory.swift */; };
 		80CB8BAD20DDAFCE00228CC7 /* XTRAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CB8BAC20DDAFCE00228CC7 /* XTRAppearanceManager.swift */; };
-		971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 971B187B14855B5800333B91 /* MBProgressHUD.m */; };
 		9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */; };
 		9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 9746B1E81492503600A0DC96 /* PrimaMateriaHelp */; };
 		974C5677147BF0C300DDFC77 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 974C5674147BF0C300DDFC77 /* Credits.rtf */; };
@@ -141,7 +141,6 @@
 
 /* Begin PBXFileReference section */
 		084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
-		1636C915595A793AA6D6ACC8 /* Pods-PrimaMateria Debug.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria Debug.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria Debug/Pods-PrimaMateria Debug.release.xcconfig"; sourceTree = "<group>"; };
 		667BA4B8E6AB4A94BB6FAFD6 /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 		756B61F8C4D1980652AEE84A /* Pods_PrimaMateria_Debug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria_Debug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		802165EA20DC5F9B0036A73C /* XTRElementListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementListViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -157,10 +156,10 @@
 		808127DD20E00C2B0066FB7C /* XTRAppearanceManagerStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAppearanceManagerStandard.swift; sourceTree = "<group>"; };
 		808127E020E00EF30066FB7C /* XTRColorFactoryClassic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRColorFactoryClassic.swift; sourceTree = "<group>"; };
 		808127E120E00EF40066FB7C /* XTRColorFactoryStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRColorFactoryStandard.swift; sourceTree = "<group>"; };
+		8084773920E30BD500529C8C /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		8084773A20E30BD500529C8C /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		80CB8BAC20DDAFCE00228CC7 /* XTRAppearanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRAppearanceManager.swift; sourceTree = "<group>"; };
 		80F7F8F720E0794200D75503 /* XTRBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRBackgroundView.swift; sourceTree = "<group>"; };
-		971B187A14855B5800333B91 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
-		971B187B14855B5800333B91 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		9744F9E21487C3BF006FD9B2 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9746B1E81492503600A0DC96 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		974C5674147BF0C300DDFC77 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
@@ -262,7 +261,6 @@
 		B8FA72B31CCAE62D000AB48B /* XTRElement-Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XTRElement-Presentation.swift"; sourceTree = "<group>"; };
 		B8FA72B61CCB1BC6000AB48B /* UIImage-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Extensions.swift"; sourceTree = "<group>"; };
 		B8FA72B91CCB2699000AB48B /* UIColor-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extensions.swift"; sourceTree = "<group>"; };
-		C5801BCFD644200C6736BD18 /* Pods-PrimaMateria Debug.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria Debug.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria Debug/Pods-PrimaMateria Debug.debug.xcconfig"; sourceTree = "<group>"; };
 		F934C7DC4D0E762D542645C8 /* Pods-PrimaMateria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -364,8 +362,8 @@
 		974C5672147BEFA400DDFC77 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
-				971B187A14855B5800333B91 /* MBProgressHUD.h */,
-				971B187B14855B5800333B91 /* MBProgressHUD.m */,
+				8084773A20E30BD500529C8C /* MBProgressHUD.h */,
+				8084773920E30BD500529C8C /* MBProgressHUD.m */,
 			);
 			name = "3rd Party";
 			path = 3rd_Party;
@@ -566,8 +564,6 @@
 			children = (
 				667BA4B8E6AB4A94BB6FAFD6 /* Pods-PrimaMateria.debug.xcconfig */,
 				F934C7DC4D0E762D542645C8 /* Pods-PrimaMateria.release.xcconfig */,
-				C5801BCFD644200C6736BD18 /* Pods-PrimaMateria Debug.debug.xcconfig */,
-				1636C915595A793AA6D6ACC8 /* Pods-PrimaMateria Debug.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -778,6 +774,7 @@
 				B8528FFE1ED368CC00A19156 /* XTRElementButton.swift in Sources */,
 				B8B186DC1CC1DC5800113993 /* XTRGeneralInfoViewController.swift in Sources */,
 				B87214B71CC02BE40021C8F5 /* XTRInfoViewController.swift in Sources */,
+				8084773B20E30BD600529C8C /* MBProgressHUD.m in Sources */,
 				B8B5BF081CCA9CC700DF9668 /* XTRGraphViewController.swift in Sources */,
 				B8FA72B71CCB1BC6000AB48B /* UIImage-Extensions.swift in Sources */,
 				B8788CE41CED2EE900D6BD5B /* XTRPopoutAnimationController.swift in Sources */,
@@ -809,7 +806,6 @@
 				808127E220E00EF40066FB7C /* XTRColorFactoryClassic.swift in Sources */,
 				B82DA0581CC1471C00BD2E41 /* XTRElement.swift in Sources */,
 				808127D920E007A00066FB7C /* XTRImageFactory.swift in Sources */,
-				971B187C14855B5800333B91 /* MBProgressHUD.m in Sources */,
 				808127DF20E00C2C0066FB7C /* XTRAppearanceManagerStandard.swift in Sources */,
 				B85CC45D1CC7C674005683F3 /* XTRNuclidesIsotopesViewController.swift in Sources */,
 				B82DA0641CC17D9200BD2E41 /* XTRMainViewController.swift in Sources */,
@@ -1034,6 +1030,7 @@
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/CorePlot\"/**",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/RxSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD\"",
 				);
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1052,7 +1049,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
+				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1103,7 +1100,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
+				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
