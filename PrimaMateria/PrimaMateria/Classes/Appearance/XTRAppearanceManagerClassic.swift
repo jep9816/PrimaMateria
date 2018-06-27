@@ -18,6 +18,7 @@ class XTRAppearanceManagerClassic : NSObject {
         let segmentedControlBarAppearance = UISegmentedControl.appearance()
         let switchAppearance = UISwitch.appearance()
         let backgroundView = XTRBackgroundView.appearance()
+        let tableHeaderButtonAppearance = XTRTableHeaderButton.appearance()
         
         let navigationBarTextAttributes: [NSAttributedStringKey: AnyObject]? = [
             NSAttributedStringKey.foregroundColor: XTRColorFactoryClassic.white,
@@ -65,6 +66,7 @@ class XTRAppearanceManagerClassic : NSObject {
         switchAppearance.onTintColor = XTRColorFactoryClassic.doveGrayColor
         
         backgroundView.backgroundColor = XTRColorFactory.backgroundColor
+        tableHeaderButtonAppearance.backgroundColor = XTRColorFactoryClassic.armadillo
     }
     
 }

@@ -9,15 +9,15 @@
 class XTRTableHeaderButton : XTRGeneralButton {
     
     var imageLayer : CALayer
-    var descentingImageView : UIImage
-    var ascendingImageView : UIImage
+    var descendingImage : UIImage
+    var ascendingImage : UIImage
     var toggle : Bool = false
     
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
-        ascendingImageView = UIImage(named: "AscendingArrow")!
-        descentingImageView = UIImage(named: "DescendingArrow")!
+        ascendingImage = XTRImageFactory.ascendingArrowImage
+        descendingImage = XTRImageFactory.descendingArrowImage
         imageLayer = CALayer()
         
         super.init(coder:aDecoder)
@@ -29,7 +29,6 @@ class XTRTableHeaderButton : XTRGeneralButton {
         NotificationCenter.default.addObserver(self, selector: #selector(XTRTableHeaderButton.tableHeaderCellSelected(_:)), name: .tableHeaderCellSelectedNotification, object: nil)
         
         layer.addSublayer(imageLayer)
-        backgroundColor = UIColor.lightGray
     }
     
     // MARK: - Notification Methods
@@ -45,7 +44,7 @@ class XTRTableHeaderButton : XTRGeneralButton {
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.0)
         imageLayer.frame = (aFlag) ? CGRect(x: (frame.size.width / 2) - 6, y: 2, width: 12, height: 12) : CGRect(x: (frame.size.width / 2) - 6, y: 30, width: 12, height: 12)
-        imageLayer.contents = (aFlag) ? ascendingImageView.cgImage : descentingImageView.cgImage
+        imageLayer.contents = (aFlag) ? ascendingImage.cgImage : descendingImage.cgImage
         CATransaction.commit()
         toggle = aFlag
     }

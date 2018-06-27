@@ -6,5 +6,13 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRImageFactory : NSObject {
+class XTRImageFactory {
+    
+    class var ascendingArrowImage : UIImage {
+        return UIImage(named: "AscendingArrow")!
+    }
+
+    class var descendingArrowImage : UIImage {
+        return UIImage(named: "DescendingArrow")!
+    }
 }
