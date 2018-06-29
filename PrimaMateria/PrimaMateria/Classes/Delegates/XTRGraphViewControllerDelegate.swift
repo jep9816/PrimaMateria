@@ -16,11 +16,11 @@ class XTRGraphViewControllerDelegate : NSObject, CPTPlotDataSource, CPTBarPlotDe
     
     // MARK: - Plot Data Source Methods
     
-    @objc func numberOfRecords(for plot: CPTPlot) -> UInt {
+    func numberOfRecords(for plot: CPTPlot) -> UInt {
         return UInt(XTRDataSource.sharedInstance().elementCount())
     }
     
-    @objc func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
+    func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
         var num : NSNumber = 0
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {

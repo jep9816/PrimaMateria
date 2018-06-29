@@ -95,8 +95,8 @@ class XTRElement : NSObject {
         return value(forKeyPath: ELEMENT_NAME) as? String
     }
     
-    var nuclidesAndIsotopes: [AnyObject]? {
-        return value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [AnyObject]
+    var nuclidesAndIsotopes: [[String : AnyObject]]? {
+        return value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String : AnyObject]]
     }
     
     var period: String? {

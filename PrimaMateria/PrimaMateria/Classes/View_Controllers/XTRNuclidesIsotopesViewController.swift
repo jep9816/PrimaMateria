@@ -8,8 +8,8 @@
 
 class XTRNuclidesIsotopesViewController : XTRSwapableViewController {
     
-    @IBOutlet var headerView : UIView!
-    @IBOutlet var swapView: UIView!
+    @IBOutlet weak var headerView : UIView!
+    @IBOutlet weak var swapView: UIView!
     
     var nuclidesAndIsotopesArray : [[String : AnyObject]]?
     
@@ -31,6 +31,7 @@ class XTRNuclidesIsotopesViewController : XTRSwapableViewController {
                 tableView = nil
             }
             
+            nuclidesAndIsotopesArray = element?.nuclidesAndIsotopes
             tableView = UITableView(frame: swapView.frame, style: .plain)
 
             tableView!.alwaysBounceVertical = false
@@ -43,8 +44,8 @@ class XTRNuclidesIsotopesViewController : XTRSwapableViewController {
             tableView!.backgroundView = UIView(frame: swapView.frame)
             tableView!.backgroundView!.backgroundColor = UIColor.black
             tableView!.isOpaque = false
-            nuclidesAndIsotopesArray = element!.nuclidesAndIsotopes as! [[String : AnyObject]]?
             view.addSubview(tableView!)
+            
             tableView!.reloadData()
         }
     }
