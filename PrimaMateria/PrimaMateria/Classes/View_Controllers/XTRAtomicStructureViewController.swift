@@ -76,6 +76,7 @@ class XTRAtomicStructureViewController : XTRSwapableViewController {
     // MARK: - Internal Methods
     
     override func setupUI() {
+        title = NSLocalizedString("atomicStructure", comment: "")
         guard let localElement = element else { return }
         let crystalStructure = localElement.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
         let scene = localElement.shellModelScene

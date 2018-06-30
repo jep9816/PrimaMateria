@@ -1,0 +1,30 @@
+
+/* Class = "UILabel"; text = " Year:"; ObjectID = "0C8-hC-ecE"; */
+"0C8-hC-ecE.text" = " Year:";
+
+/* Class = "UILabel"; text = " Sea: (ml/L)"; ObjectID = "8em-eJ-tiI"; */
+"8em-eJ-tiI.text" = " Sea: (ml/L)";
+
+/* Class = "UILabel"; text = " By:"; ObjectID = "D1i-ej-EO7"; */
+"D1i-ej-EO7.text" = " By:";
+
+/* Class = "UIButton"; normalTitle = "Wikipedia Entry"; ObjectID = "Pbm-vp-c5Q"; */
+"Pbm-vp-c5Q.normalTitle" = "Wikipedia Entry";
+
+/* Class = "UILabel"; text = "Abundance"; ObjectID = "WCe-1d-9P5"; */
+"WCe-1d-9P5.text" = "Abundance";
+
+/* Class = "UILabel"; text = "Discovery Information"; ObjectID = "k8D-sZ-zfp"; */
+"k8D-sZ-zfp.text" = "Discovery Information";
+
+/* Class = "UIViewController"; title = "General Info"; ObjectID = "lMs-hR-g0H"; */
+"lMs-hR-g0H.title" = "General Info";
+
+/* Class = "UILabel"; text = "Miscellaneous"; ObjectID = "s32-y4-nKc"; */
+"s32-y4-nKc.text" = "Miscellaneous";
+
+/* Class = "UILabel"; text = " Crust: (mg/kg)"; ObjectID = "sf0-2r-cbI"; */
+"sf0-2r-cbI.text" = " Crust: (mg/kg)";
+
+/* Class = "UILabel"; text = " Location:"; ObjectID = "w78-m9-sxs"; */
+"w78-m9-sxs.text" = " Location:";

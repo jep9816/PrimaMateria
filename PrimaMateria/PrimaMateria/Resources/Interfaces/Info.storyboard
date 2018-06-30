@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="XTRInfoViewController" title="Info" id="7fp-zS-WwY" customClass="XTRInfoViewController" customModule="PrimaMateria" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WtL-bt-RkY" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8ic-3o-pC4">
@@ -41,9 +41,8 @@
                     <tabBarItem key="tabBarItem" tag="4" title="Info" image="Tab05" id="TGV-FY-EmJ"/>
                     <navigationItem key="navigationItem" title="Info" id="4fc-9U-Tvd"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navigationBar" destination="0ns-px-iSu" id="sL0-di-PQ3"/>
                         <outlet property="webView" destination="8ic-3o-pC4" id="qrp-Ta-Xen"/>
                     </connections>
                 </viewController>

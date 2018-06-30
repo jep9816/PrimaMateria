@@ -1,0 +1,108 @@
+
+/* Class = "UIButton"; disabledTitle = "series"; ObjectID = "09T-BG-ct9"; */
+"09T-BG-ct9.disabledTitle" = "series";
+
+/* Class = "UIButton"; normalTitle = "? "; ObjectID = "09T-BG-ct9"; */
+"09T-BG-ct9.normalTitle" = "? ";
+
+/* Class = "UILabel"; text = " Swipe Left for Previous Element"; ObjectID = "0GD-8I-rl4"; */
+"0GD-8I-rl4.text" = " Swipe Left for Previous Element";
+
+/* Class = "UIButton"; normalTitle = "◀︎ Prev Element"; ObjectID = "2Xk-Wh-yyy"; */
+"2Xk-Wh-yyy.normalTitle" = "◀︎ Prev Element";
+
+/* Class = "UISegmentedControl"; 3dK-f5-lJ7.segmentTitles[0] = "Atomic Structure"; ObjectID = "3dK-f5-lJ7"; */
+"3dK-f5-lJ7.segmentTitles[0]" = "Atomic Structure";
+
+/* Class = "UISegmentedControl"; 3dK-f5-lJ7.segmentTitles[1] = "Element Properties"; ObjectID = "3dK-f5-lJ7"; */
+"3dK-f5-lJ7.segmentTitles[1]" = "Element Properties";
+
+/* Class = "UISegmentedControl"; 3dK-f5-lJ7.segmentTitles[2] = "Nuclides / Isotopes"; ObjectID = "3dK-f5-lJ7"; */
+"3dK-f5-lJ7.segmentTitles[2]" = "Nuclides / Isotopes";
+
+/* Class = "UISegmentedControl"; 3dK-f5-lJ7.segmentTitles[3] = "Spectrum"; ObjectID = "3dK-f5-lJ7"; */
+"3dK-f5-lJ7.segmentTitles[3]" = "Spectrum";
+
+/* Class = "UISegmentedControl"; 3dK-f5-lJ7.segmentTitles[4] = "General Info"; ObjectID = "3dK-f5-lJ7"; */
+"3dK-f5-lJ7.segmentTitles[4]" = "General Info";
+
+/* Class = "UILabel"; text = "Number:"; ObjectID = "3xC-pG-Jo7"; */
+"3xC-pG-Jo7.text" = "Number:";
+
+/* Class = "UILabel"; text = "Period:"; ObjectID = "5Ve-Hf-30y"; */
+"5Ve-Hf-30y.text" = "Period:";
+
+/* Class = "UILabel"; text = "XXX"; ObjectID = "5eU-NM-kaD"; */
+"5eU-NM-kaD.text" = "XXX";
+
+/* Class = "UILabel"; text = "CAS Res No:"; ObjectID = "5vZ-4t-Pne"; */
+"5vZ-4t-Pne.text" = "CAS Res No:";
+
+/* Class = "UIButton"; disabledTitle = "casRegistryNumber"; ObjectID = "79P-Sm-Dxd"; */
+"79P-Sm-Dxd.disabledTitle" = "casRegistryNumber";
+
+/* Class = "UIButton"; normalTitle = "? "; ObjectID = "79P-Sm-Dxd"; */
+"79P-Sm-Dxd.normalTitle" = "? ";
+
+/* Class = "UINavigationItem"; title = "Element Inspector"; ObjectID = "7ps-7A-YCp"; */
+"7ps-7A-YCp.title" = "Element Inspector";
+
+/* Class = "UILabel"; text = " Swipe Right for Next Element  "; ObjectID = "GC1-eV-UC6"; */
+"GC1-eV-UC6.text" = " Swipe Right for Next Element  ";
+
+/* Class = "UIButton"; disabledTitle = "group"; ObjectID = "KRs-Ud-a7y"; */
+"KRs-Ud-a7y.disabledTitle" = "group";
+
+/* Class = "UIButton"; normalTitle = "? "; ObjectID = "KRs-Ud-a7y"; */
+"KRs-Ud-a7y.normalTitle" = "? ";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "Kfc-TK-tPD"; */
+"Kfc-TK-tPD.text" = "00";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "MzH-dW-fzN"; */
+"MzH-dW-fzN.text" = "00";
+
+/* Class = "UILabel"; text = "Swap View"; ObjectID = "RE8-v0-2Ny"; */
+"RE8-v0-2Ny.text" = "Swap View";
+
+/* Class = "UIButton"; disabledTitle = "atomicNumber"; ObjectID = "S9A-2X-iYM"; */
+"S9A-2X-iYM.disabledTitle" = "atomicNumber";
+
+/* Class = "UIButton"; normalTitle = "? "; ObjectID = "S9A-2X-iYM"; */
+"S9A-2X-iYM.normalTitle" = "? ";
+
+/* Class = "UILabel"; text = "Group:"; ObjectID = "SZz-eH-FsK"; */
+"SZz-eH-FsK.text" = "Group:";
+
+/* Class = "UILabel"; text = "Alkali Earth Metal"; ObjectID = "T6L-6w-yvA"; */
+"T6L-6w-yvA.text" = "Alkali Earth Metal";
+
+/* Class = "UIButton"; normalTitle = "Next Element ▶︎"; ObjectID = "bK2-KM-4IZ"; */
+"bK2-KM-4IZ.normalTitle" = "Next Element ▶︎";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "eVs-YQ-rFr"; */
+"eVs-YQ-rFr.title" = "Back";
+
+/* Class = "UILabel"; text = "Atomic"; ObjectID = "iab-Gq-JEy"; */
+"iab-Gq-JEy.text" = "Atomic";
+
+/* Class = "UILabel"; text = "00"; ObjectID = "tOH-U6-Rju"; */
+"tOH-U6-Rju.text" = "00";
+
+/* Class = "UILabel"; text = "000"; ObjectID = "vhC-n5-iTp"; */
+"vhC-n5-iTp.text" = "000";
+
+/* Class = "UITabBarItem"; title = "Periodic Table"; ObjectID = "vwa-tc-8Bh"; */
+"vwa-tc-8Bh.title" = "Periodic Table";
+
+/* Class = "UIButton"; disabledTitle = "period"; ObjectID = "wOr-bR-aFr"; */
+"wOr-bR-aFr.disabledTitle" = "period";
+
+/* Class = "UIButton"; normalTitle = "? "; ObjectID = "wOr-bR-aFr"; */
+"wOr-bR-aFr.normalTitle" = "? ";
+
+/* Class = "UIViewController"; title = "Element Inspector"; ObjectID = "yBj-la-3m7"; */
+"yBj-la-3m7.title" = "Element Inspector";
+
+/* Class = "UILabel"; text = "Series:"; ObjectID = "zC5-X1-tor"; */
+"zC5-X1-tor.text" = "Series:";

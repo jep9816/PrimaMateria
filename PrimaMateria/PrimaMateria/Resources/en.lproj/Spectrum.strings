@@ -1,0 +1,18 @@
+
+/* Class = "UILabel"; text = "Spectrum Color Key:"; ObjectID = "66l-eC-NuP"; */
+"66l-eC-NuP.text" = "Spectrum Color Key:";
+
+/* Class = "UIViewController"; title = "Spectrum"; ObjectID = "JCz-IE-cQD"; */
+"JCz-IE-cQD.title" = "Spectrum";
+
+/* Class = "UIButton"; normalTitle = "Spectrum"; ObjectID = "RYP-Hl-pLK"; */
+"RYP-Hl-pLK.normalTitle" = "Spectrum";
+
+/* Class = "UIButton"; normalTitle = "Intensity"; ObjectID = "ai3-ft-lGT"; */
+"ai3-ft-lGT.normalTitle" = "Intensity";
+
+/* Class = "UIButton"; normalTitle = "Wavelength Air(Å)"; ObjectID = "lZV-Ol-xLw"; */
+"lZV-Ol-xLw.normalTitle" = "Wavelength Air(Å)";
+
+/* Class = "UILabel"; text = "Spectrum View"; ObjectID = "uCm-qf-6Qg"; */
+"uCm-qf-6Qg.text" = "Spectrum View";

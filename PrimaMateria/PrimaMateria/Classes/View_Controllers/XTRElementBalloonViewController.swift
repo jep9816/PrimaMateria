@@ -34,6 +34,7 @@ class XTRElementBalloonViewController : UIViewController {
         atomicMassLabel.text = " \(element.atomicMassAggregate)"
         boilingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_BOILING_POINT)!)"
         meltingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_MELTING_POINT)!)"
+        title = NSLocalizedString("elementBalloon", comment: "")
     }
     
     // MARK: - Action Methods

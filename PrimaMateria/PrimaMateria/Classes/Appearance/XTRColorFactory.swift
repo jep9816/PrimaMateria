@@ -215,6 +215,14 @@ class XTRColorFactory : NSObject {
         }
     }
     
+    class var buttonBorderColor : UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.buttonBorderColor
+        } else {
+            return XTRColorFactoryStandard.buttonBorderColor
+        }
+    }
+
     class var successGreen : UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.success

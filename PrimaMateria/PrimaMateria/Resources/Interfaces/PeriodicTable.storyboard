@@ -2675,7 +2675,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Group" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gDm-Kk-dh5">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="group" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="gDm-Kk-dh5" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                         <rect key="frame" x="60" y="20" width="936" height="27"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -2695,7 +2695,7 @@
                                             <action selector="showMolecularCalculator:" destination="2" eventType="valueChanged" id="jWT-9W-VKy"/>
                                         </connections>
                                     </switch>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Period" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="I6H-VS-Dxq">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="period" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="I6H-VS-Dxq" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                         <rect key="frame" x="20" y="100" width="10" height="378"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -2703,7 +2703,7 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Molecular Calculator:" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k9C-rM-k21">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="molecularCalculator" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k9C-rM-k21" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                         <rect key="frame" x="700" y="117" width="162" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -2711,7 +2711,7 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Lanthanide Series" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xF4-0a-GXJ">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="lanthanideSeries" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="xF4-0a-GXJ" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                         <rect key="frame" x="59" y="544" width="152" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2720,7 +2720,7 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="2" height="1"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="Actinide Series" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-1k-Zu6">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="actinideSeries" lineBreakMode="tailTruncation" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-1k-Zu6" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                         <rect key="frame" x="59" y="598" width="152" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -2805,7 +2805,7 @@
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-FO-2K4">
                                 <rect key="frame" x="0.0" y="20" width="1024" height="44"/>
                                 <items>
-                                    <navigationItem title="Periodic Table of the Elements" id="ybh-DN-psR"/>
+                                    <navigationItem title="periodicTableElements" id="ybh-DN-psR"/>
                                 </items>
                             </navigationBar>
                         </subviews>
@@ -2822,6 +2822,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="navigationBar" destination="Mhz-FO-2K4" id="XIX-PX-aDM"/>
                         <outlet property="swapView" destination="w53-Jf-msB" id="RdJ-9O-78D"/>
                         <segue destination="VbE-uV-39X" kind="modal" identifier="showInspectorFromPeriodicTable" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Wbc-ML-l8K"/>
                     </connections>

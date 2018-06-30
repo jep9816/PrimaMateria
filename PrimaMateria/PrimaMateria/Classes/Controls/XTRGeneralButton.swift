@@ -6,7 +6,19 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRGeneralButton : UIButton {
+class XTRLocalizedButton : UIButton {
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        for state in [UIControlState.normal, UIControlState.highlighted, UIControlState.selected, UIControlState.disabled] {
+            if let title = title(for: state) {
+                setTitle(NSLocalizedString(title, comment: ""), for: state)
+            }
+        }
+    }
+}
+
+class XTRGeneralButton : XTRLocalizedButton {
     
     private var highColor : UIColor = UIColor.white
     private var lowColor : UIColor = UIColor.white

@@ -18,23 +18,6 @@ class XTRMainViewController : UITabBarController {
     
     // MARK: - Internal Methods
     
-    func customizeTabBarItems() {
-        let rect = tabBar.frame
-        let newSize = CGSize(width: 120, height: rect.size.height)
-        let selectionImage = UIImage.imageFromColor(UIColor.lightGray, andSize: newSize)
-        let imageView = UIImageView(image: selectionImage)
-        
-        UIGraphicsBeginImageContextWithOptions(imageView.bounds.size, false, UIScreen.main.scale)
-        
-        UIBezierPath(roundedRect: imageView.bounds, cornerRadius: 8.0).addClip()
-        
-        selectionImage.draw(in: imageView.bounds)
-        
-        tabBar.selectionIndicatorImage = UIGraphicsGetImageFromCurrentImageContext()
-        
-        UIGraphicsEndImageContext()
-    }
-    
     func showSplash() {
         let defaultState = XTRPropertiesStore.splashScreenState
         
@@ -52,7 +35,12 @@ class XTRMainViewController : UITabBarController {
         super.viewDidLoad()
         showSplash()
         navigationController?.navigationBar.prefersLargeTitles = true
-        
+        viewControllers![0].title = NSLocalizedString("periodicTable", comment: "")
+        viewControllers![1].title = NSLocalizedString("elementList", comment: "")
+        viewControllers![2].title = NSLocalizedString("graphs", comment: "")
+        viewControllers![3].title = NSLocalizedString("preferences", comment: "")
+        viewControllers![4].title = NSLocalizedString("info", comment: "")
+
         delegate = controllerDelegate
     }
     

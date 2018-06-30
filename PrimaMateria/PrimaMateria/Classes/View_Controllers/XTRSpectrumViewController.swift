@@ -144,6 +144,7 @@ class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelega
     // MARK: - Action Methods
     
     override func setupUI() {
+        title = NSLocalizedString("spectrum", comment: "")
         if element != nil {
             if tableView != nil {
                 tableView!.removeFromSuperview()

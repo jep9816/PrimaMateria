@@ -1,0 +1,12 @@
+
+/* Class = "UIViewController"; title = "Help Balloon"; ObjectID = "3Q2-kL-Fgm"; */
+"3Q2-kL-Fgm.title" = "Help Balloon";
+
+/* Class = "UIButton"; normalTitle = "◀︎"; ObjectID = "TB7-xH-7eF"; */
+"TB7-xH-7eF.normalTitle" = "◀︎";
+
+/* Class = "UIButton"; normalTitle = "▶︎"; ObjectID = "YGt-Y7-Ncc"; */
+"YGt-Y7-Ncc.normalTitle" = "▶︎";
+
+/* Class = "UILabel"; text = "Help"; ObjectID = "xvk-F6-SBk"; */
+"xvk-F6-SBk.text" = "Help";

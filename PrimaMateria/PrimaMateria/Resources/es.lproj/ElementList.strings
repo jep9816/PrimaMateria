@@ -1,0 +1,72 @@
+
+/* Class = "UIViewController"; title = "Element List"; ObjectID = "3"; */
+"3.title" = "Element List";
+
+/* Class = "UITabBarItem"; title = "Element List"; ObjectID = "6"; */
+"6.title" = "Element List";
+
+/* Class = "UINavigationItem"; title = "Element List"; ObjectID = "24"; */
+"24.title" = "Element List";
+
+/* Class = "UIButton"; accessibilityLabel = "name"; ObjectID = "1Hy-CR-Xjl"; */
+"1Hy-CR-Xjl.accessibilityLabel" = "name";
+
+/* Class = "UIButton"; normalTitle = "Name"; ObjectID = "1Hy-CR-Xjl"; */
+"1Hy-CR-Xjl.normalTitle" = "Name";
+
+/* Class = "UILabel"; text = "Swap View"; ObjectID = "J9A-XA-QiY"; */
+"J9A-XA-QiY.text" = "Swap View";
+
+/* Class = "UIButton"; accessibilityLabel = "series"; ObjectID = "N09-5q-jhq"; */
+"N09-5q-jhq.accessibilityLabel" = "series";
+
+/* Class = "UIButton"; normalTitle = "Series"; ObjectID = "N09-5q-jhq"; */
+"N09-5q-jhq.normalTitle" = "Series";
+
+/* Class = "UIButton"; accessibilityLabel = "atomicVolume"; ObjectID = "Pb5-BH-2ri"; */
+"Pb5-BH-2ri.accessibilityLabel" = "atomicVolume";
+
+/* Class = "UIButton"; normalTitle = "Period"; ObjectID = "Pb5-BH-2ri"; */
+"Pb5-BH-2ri.normalTitle" = "Period";
+
+/* Class = "UIButton"; accessibilityLabel = "density"; ObjectID = "RUx-Kk-Gz9"; */
+"RUx-Kk-Gz9.accessibilityLabel" = "density";
+
+/* Class = "UIButton"; normalTitle = "Density"; ObjectID = "RUx-Kk-Gz9"; */
+"RUx-Kk-Gz9.normalTitle" = "Density";
+
+/* Class = "UIButton"; accessibilityLabel = "meltingPoint"; ObjectID = "WNT-7d-dzS"; */
+"WNT-7d-dzS.accessibilityLabel" = "meltingPoint";
+
+/* Class = "UIButton"; normalTitle = "Melting Point"; ObjectID = "WNT-7d-dzS"; */
+"WNT-7d-dzS.normalTitle" = "Melting Point";
+
+/* Class = "UIButton"; accessibilityLabel = "atomicNumber"; ObjectID = "YFv-sO-0oM"; */
+"YFv-sO-0oM.accessibilityLabel" = "atomicNumber";
+
+/* Class = "UIButton"; normalTitle = "Number"; ObjectID = "YFv-sO-0oM"; */
+"YFv-sO-0oM.normalTitle" = "Number";
+
+/* Class = "UIButton"; accessibilityLabel = "atomicWeight"; ObjectID = "dgz-bY-1qD"; */
+"dgz-bY-1qD.accessibilityLabel" = "atomicWeight";
+
+/* Class = "UIButton"; normalTitle = "Atomic Mass"; ObjectID = "dgz-bY-1qD"; */
+"dgz-bY-1qD.normalTitle" = "Atomic Mass";
+
+/* Class = "UIButton"; accessibilityLabel = "atomicSymbol"; ObjectID = "kVX-m2-Ph0"; */
+"kVX-m2-Ph0.accessibilityLabel" = "atomicSymbol";
+
+/* Class = "UIButton"; normalTitle = "Symbol"; ObjectID = "kVX-m2-Ph0"; */
+"kVX-m2-Ph0.normalTitle" = "Symbol";
+
+/* Class = "UIButton"; accessibilityLabel = "boilingPoint"; ObjectID = "lUX-HY-fRg"; */
+"lUX-HY-fRg.accessibilityLabel" = "boilingPoint";
+
+/* Class = "UIButton"; normalTitle = "Boiling Point"; ObjectID = "lUX-HY-fRg"; */
+"lUX-HY-fRg.normalTitle" = "Boiling Point";
+
+/* Class = "UIButton"; accessibilityLabel = "group"; ObjectID = "w9m-Qo-C1d"; */
+"w9m-Qo-C1d.accessibilityLabel" = "group";
+
+/* Class = "UIButton"; normalTitle = "Group"; ObjectID = "w9m-Qo-C1d"; */
+"w9m-Qo-C1d.normalTitle" = "Group";

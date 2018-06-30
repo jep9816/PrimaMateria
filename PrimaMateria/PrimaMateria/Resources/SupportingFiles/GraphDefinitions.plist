@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>title</key>
-		<string>Atomic Mass</string>
+		<string>graphAtomicMass</string>
 		<key>attributeName</key>
 		<string>atomicMass</string>
 		<key>majorTickMarks</key>
@@ -18,7 +18,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Atomic Radius</string>
+		<string>graphAtomicRadius</string>
 		<key>attributeName</key>
 		<string>atomicRadius</string>
 		<key>majorTickMarks</key>
@@ -32,7 +32,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Boiling Point</string>
+		<string>graphBoilingPoint</string>
 		<key>attributeName</key>
 		<string>boilingPoint</string>
 		<key>majorTickMarks</key>
@@ -46,7 +46,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Coefficient of Lineal Thermal Expansion * 100K</string>
+		<string>graphCoefficientOfLinealThermalExpansion</string>
 		<key>attributeName</key>
 		<string>coefficientOfLinealThermalExpansion</string>
 		<key>majorTickMarks</key>
@@ -60,7 +60,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Covalent Radius</string>
+		<string>graphCovalentRadius</string>
 		<key>attributeName</key>
 		<string>covalentRadius</string>
 		<key>majorTickMarks</key>
@@ -74,7 +74,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Cross Section</string>
+		<string>graphCrossSection</string>
 		<key>attributeName</key>
 		<string>crossSection</string>
 		<key>majorTickMarks</key>
@@ -88,7 +88,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Density</string>
+		<string>graphDensity</string>
 		<key>attributeName</key>
 		<string>density</string>
 		<key>majorTickMarks</key>
@@ -102,7 +102,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Elastic Modulus - Bulk</string>
+		<string>graphElasticModulusBulk</string>
 		<key>attributeName</key>
 		<string>elasticModulusBulk</string>
 		<key>majorTickMarks</key>
@@ -116,7 +116,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Elastic Modulus - Rigidity</string>
+		<string>graphElasticModulusRigidity</string>
 		<key>attributeName</key>
 		<string>elasticModulusRigidity</string>
 		<key>majorTickMarks</key>
@@ -130,7 +130,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Elastic Modulus - Youngs</string>
+		<string>graphElasticModulusYoungs</string>
 		<key>attributeName</key>
 		<string>elasticModulusYoungs</string>
 		<key>majorTickMarks</key>
@@ -144,7 +144,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Electro Chemical Equivalent</string>
+		<string>graphElectroChemicalEquivalent</string>
 		<key>attributeName</key>
 		<string>electroChemicalEquivalent</string>
 		<key>majorTickMarks</key>
@@ -158,7 +158,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Electro Negativity</string>
+		<string>graphElectroNegativity</string>
 		<key>attributeName</key>
 		<string>electroNegativity</string>
 		<key>majorTickMarks</key>
@@ -172,7 +172,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Electron Work Function</string>
+		<string>graphElectronWorkFunction</string>
 		<key>attributeName</key>
 		<string>electronWorkFunction</string>
 		<key>majorTickMarks</key>
@@ -186,7 +186,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Enthalpy of Atomization</string>
+		<string>graphEnthalpyOfAtomization</string>
 		<key>attributeName</key>
 		<string>enthalpyOfAtomization</string>
 		<key>majorTickMarks</key>
@@ -200,7 +200,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Enthalpy of Fusion</string>
+		<string>graphEnthalpyOfFusion</string>
 		<key>attributeName</key>
 		<string>enthalpyOfFusion</string>
 		<key>majorTickMarks</key>
@@ -214,7 +214,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Enthalpy of Vaporization</string>
+		<string>graphEnthalpyOfVaporization</string>
 		<key>attributeName</key>
 		<string>enthalpyOfVaporization</string>
 		<key>majorTickMarks</key>
@@ -228,7 +228,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Ionic Radius</string>
+		<string>graphIonicRadius</string>
 		<key>attributeName</key>
 		<string>ionicRadius</string>
 		<key>majorTickMarks</key>
@@ -242,7 +242,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Hardness Scale - Brinell</string>
+		<string>graphHardnessScaleBrinell</string>
 		<key>attributeName</key>
 		<string>hardnessScaleBrinell</string>
 		<key>majorTickMarks</key>
@@ -256,7 +256,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Hardness Scale - Mohs</string>
+		<string>graphHardnessScaleMohs</string>
 		<key>attributeName</key>
 		<string>hardnessScaleMohs</string>
 		<key>majorTickMarks</key>
@@ -270,7 +270,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Hardness Scale - Vickers</string>
+		<string>grapHardnessScaleVickers</string>
 		<key>attributeName</key>
 		<string>hardnessScaleVickers</string>
 		<key>majorTickMarks</key>
@@ -284,7 +284,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Heat of Fusion</string>
+		<string>graphHeatOfFusion</string>
 		<key>attributeName</key>
 		<string>heatOfFusion</string>
 		<key>majorTickMarks</key>
@@ -298,7 +298,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Heat of Vaporization</string>
+		<string>graphHeatOfVaporization</string>
 		<key>attributeName</key>
 		<string>heatOfVaporization</string>
 		<key>majorTickMarks</key>
@@ -312,7 +312,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Ionization Potential - First</string>
+		<string>graphIonizationPotentialFirst</string>
 		<key>attributeName</key>
 		<string>ionizationPotentialFirst</string>
 		<key>majorTickMarks</key>
@@ -326,7 +326,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Ionization Potential - Second</string>
+		<string>graphIonizationPotentialSecond</string>
 		<key>attributeName</key>
 		<string>ionizationPotentialSecond</string>
 		<key>majorTickMarks</key>
@@ -340,7 +340,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Ionization Potential - Third</string>
+		<string>graphIonizationPotentialThird</string>
 		<key>attributeName</key>
 		<string>ionizationPotentialThird</string>
 		<key>majorTickMarks</key>
@@ -354,7 +354,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Melting Point</string>
+		<string>graphMeltingPoint</string>
 		<key>attributeName</key>
 		<string>meltingPoint</string>
 		<key>majorTickMarks</key>
@@ -368,7 +368,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Molar Heat Capacity</string>
+		<string>graphMolarHeatCapacity</string>
 		<key>attributeName</key>
 		<string>molarHeatCapacity</string>
 		<key>majorTickMarks</key>
@@ -382,7 +382,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Molar Volume</string>
+		<string>graphMolarVolume</string>
 		<key>attributeName</key>
 		<string>molarVolume</string>
 		<key>majorTickMarks</key>
@@ -396,7 +396,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Specific Heat</string>
+		<string>graphSpecificHeat</string>
 		<key>attributeName</key>
 		<string>specificHeat</string>
 		<key>majorTickMarks</key>
@@ -410,7 +410,7 @@
 	</dict>
 	<dict>
 		<key>title</key>
-		<string>Valence Electron Potential</string>
+		<string>graphValenceElectronPotential</string>
 		<key>attributeName</key>
 		<string>valenceElectronPotential</string>
 		<key>majorTickMarks</key>

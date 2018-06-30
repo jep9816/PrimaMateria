@@ -8,8 +8,8 @@
 
 class XTRNuclidesIsotopesViewController : XTRSwapableViewController {
     
-    @IBOutlet weak var headerView : UIView!
-    @IBOutlet weak var swapView: UIView!
+    @IBOutlet var headerView : UIView!
+    @IBOutlet var swapView: UIView!
     
     var nuclidesAndIsotopesArray : [[String : AnyObject]]?
     

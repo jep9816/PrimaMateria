@@ -27,3 +27,16 @@ public extension NSObject { // General
     }
     
 }
+
+extension UILabel {
+    
+    var localizedText: String {
+        set (key) {
+            text = NSLocalizedString(key, comment: "")
+        }
+        get {
+            return text!
+        }
+    }
+    
+}

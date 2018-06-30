@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Green:"; ObjectID = "Lfd-dh-lzL"; */
+"Lfd-dh-lzL.text" = "Green:";
+
+/* Class = "UIViewController"; title = "Color Picker"; ObjectID = "R02-XX-nRq"; */
+"R02-XX-nRq.title" = "Color Picker";
+
+/* Class = "UILabel"; text = "Blue:"; ObjectID = "R7U-5R-zkq"; */
+"R7U-5R-zkq.text" = "Blue:";
+
+/* Class = "UIButton"; normalTitle = "Choose Color"; ObjectID = "UDW-Tk-aoT"; */
+"UDW-Tk-aoT.normalTitle" = "Choose Color";
+
+/* Class = "UILabel"; text = "Alkali Earth Metal"; ObjectID = "bUq-aZ-1XQ"; */
+"bUq-aZ-1XQ.text" = "Alkali Earth Metal";
+
+/* Class = "UILabel"; text = "Red:"; ObjectID = "gGX-sd-YGr"; */
+"gGX-sd-YGr.text" = "Red:";
+
+/* Class = "UILabel"; text = "Alpha:"; ObjectID = "gcJ-At-DDL"; */
+"gcJ-At-DDL.text" = "Alpha:";

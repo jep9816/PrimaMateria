@@ -15,7 +15,7 @@
             <objects>
                 <viewController storyboardIdentifier="XTRGraphViewController" title="Graph" id="9lF-bs-rIl" customClass="XTRGraphViewController" customModule="PrimaMateria" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IGX-tg-4DX" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="704"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6v-Zc-Eld">
@@ -44,11 +44,10 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="2" title="Graphs" image="Tab03" id="2gP-Vl-cKa"/>
                     <nil key="simulatedStatusBarMetrics"/>
-                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="button" destination="PFl-aJ-df6" id="hpy-2v-5D3"/>
+                        <outlet property="barButtonItem" destination="PFl-aJ-df6" id="hpy-2v-5D3"/>
                         <outlet property="hostingView" destination="AvU-Jp-ufm" id="dPE-b3-8Ae"/>
+                        <outlet property="navigationBar" destination="R6v-Zc-Eld" id="Uyl-bt-TSI"/>
                         <segue destination="VbE-uV-39X" kind="modal" identifier="showInspectorFromGraphView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Cif-Fg-Pfi"/>
                     </connections>
                 </viewController>

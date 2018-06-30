@@ -14,7 +14,8 @@ class XTRColorPickerViewController : UIViewController {
     @IBOutlet var alphaSlider : UISlider!
     @IBOutlet var colorTitle : UILabel!
     @IBOutlet var previewView: UIView!
-    
+    @IBOutlet var selectColorButton: XTRLocalizedButton!
+
     var seriesName : String?
     
     // MARK: - Initialization Methods
@@ -69,11 +70,18 @@ class XTRColorPickerViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = NSLocalizedString("colorPicker", comment: "")
         
         let aColor = XTRColorFactory.colorForString(seriesName!)
         colorTitle.text = seriesName!
+        // TODO:
+        // Localize this after localizing Series names
+        // maybe put this in Element presentation
         previewView.backgroundColor = aColor
         presetSlidersWithColor(aColor)
+        selectColorButton.layer.cornerRadius = 4
+        selectColorButton.layer.borderColor = XTRColorFactory.buttonBorderColor.cgColor
+        selectColorButton.layer.borderWidth = 1
     }
     
     override var shouldAutorotate : Bool {

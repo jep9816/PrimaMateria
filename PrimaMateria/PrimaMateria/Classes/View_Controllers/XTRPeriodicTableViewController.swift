@@ -13,7 +13,8 @@ class XTRPeriodicTableViewController : UIViewController {
     var molecularCalculatorState : Bool = false
     var elementBalloonViewController : XTRElementBalloonViewController!
     var molecularCalculatorViewController : XTRMolecularCalculatorViewController!
-    
+    @IBOutlet var navigationBar: UINavigationBar!
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -89,6 +90,9 @@ class XTRPeriodicTableViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        title = NSLocalizedString("periodicTableElements", comment: "")
+        navigationBar.topItem?.title = NSLocalizedString("periodicTableElements", comment: "")
         
         molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMolecularCalculatorViewController.nameOfClass) as! XTRMolecularCalculatorViewController
         molecularCalculatorViewController.view.frame = swapView.frame

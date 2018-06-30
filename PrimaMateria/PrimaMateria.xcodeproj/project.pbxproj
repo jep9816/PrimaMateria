@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		084EEBBB20D83D4700C6B81D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */; };
 		08D7B73E20E11DA500D64E60 /* XTRBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7F8F720E0794200D75503 /* XTRBackgroundView.swift */; };
+		8014785320E5D7FD0090EF8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8014785520E5D7FD0090EF8A /* Localizable.strings */; };
+		8014787B20E5DFCD0090EF8A /* AtomicStructure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8014787A20E5DFCC0090EF8A /* AtomicStructure.storyboard */; };
+		8014787D20E66B340090EF8A /* XTRLocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014787C20E66B340090EF8A /* XTRLocalizedLabel.swift */; };
 		802165EB20DC5F9B0036A73C /* XTRElementListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802165EA20DC5F9B0036A73C /* XTRElementListViewControllerDelegate.swift */; };
 		80753FD220DC656700E8EE5C /* XTRGraphViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80753FD120DC656700E8EE5C /* XTRGraphViewControllerDelegate.swift */; };
 		80753FD520DC67F800E8EE5C /* XTRWikipediaViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80753FD420DC67F800E8EE5C /* XTRWikipediaViewControllerDelegate.swift */; };
@@ -104,7 +107,6 @@
 		B8A904DC1F2B6BA700539517 /* NuclidesIsotopes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904DB1F2B6BA700539517 /* NuclidesIsotopes.storyboard */; };
 		B8A904DF1F2B6BE000539517 /* Spectrum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904DE1F2B6BE000539517 /* Spectrum.storyboard */; };
 		B8A904E21F2B6C1700539517 /* ElementProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904E11F2B6C1700539517 /* ElementProperties.storyboard */; };
-		B8A904E51F2B6C6C00539517 /* AtomicStructure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904E41F2B6C6C00539517 /* AtomicStructure.storyboard */; };
 		B8A904E81F2B6CA900539517 /* GeneralInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904E71F2B6CA900539517 /* GeneralInfo.storyboard */; };
 		B8A904EB1F2B6D0100539517 /* HelpBalloon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904EA1F2B6D0100539517 /* HelpBalloon.storyboard */; };
 		B8A904EE1F2B6D5200539517 /* GraphChoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A904ED1F2B6D5200539517 /* GraphChoice.storyboard */; };
@@ -143,6 +145,10 @@
 		084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		667BA4B8E6AB4A94BB6FAFD6 /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 		756B61F8C4D1980652AEE84A /* Pods_PrimaMateria_Debug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria_Debug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8014785420E5D7FD0090EF8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8014786D20E5DA690090EF8A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8014787A20E5DFCC0090EF8A /* AtomicStructure.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AtomicStructure.storyboard; sourceTree = "<group>"; };
+		8014787C20E66B340090EF8A /* XTRLocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRLocalizedLabel.swift; sourceTree = "<group>"; };
 		802165EA20DC5F9B0036A73C /* XTRElementListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementListViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80753FD120DC656700E8EE5C /* XTRGraphViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80753FD420DC67F800E8EE5C /* XTRWikipediaViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -228,7 +234,6 @@
 		B8A904DB1F2B6BA700539517 /* NuclidesIsotopes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NuclidesIsotopes.storyboard; sourceTree = "<group>"; };
 		B8A904DE1F2B6BE000539517 /* Spectrum.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Spectrum.storyboard; sourceTree = "<group>"; };
 		B8A904E11F2B6C1700539517 /* ElementProperties.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElementProperties.storyboard; sourceTree = "<group>"; };
-		B8A904E41F2B6C6C00539517 /* AtomicStructure.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AtomicStructure.storyboard; sourceTree = "<group>"; };
 		B8A904E71F2B6CA900539517 /* GeneralInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GeneralInfo.storyboard; sourceTree = "<group>"; };
 		B8A904EA1F2B6D0100539517 /* HelpBalloon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HelpBalloon.storyboard; sourceTree = "<group>"; };
 		B8A904ED1F2B6D5200539517 /* GraphChoice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphChoice.storyboard; sourceTree = "<group>"; };
@@ -285,6 +290,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8014786020E5D9EC0090EF8A /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				8014785520E5D7FD0090EF8A /* Localizable.strings */,
+			);
+			name = Strings;
+			sourceTree = "<group>";
+		};
 		802165ED20DC64C20036A73C /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,7 +340,6 @@
 				B8788CE31CED2EE900D6BD5B /* XTRPopoutAnimationController.swift */,
 				B82DA04F1CC12D8800BD2E41 /* XTRPropertiesStore.swift */,
 				B8788CDE1CED2B8100D6BD5B /* XTRSimpleTransitionController.swift */,
-				B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -351,6 +363,7 @@
 				B87214DE1CC10BC60021C8F5 /* XTRElementTableViewCell.swift */,
 				B87214D81CC087590021C8F5 /* XTRGeneralButton.swift */,
 				B87214DB1CC088B30021C8F5 /* XTRHelpButton.swift */,
+				8014787C20E66B340090EF8A /* XTRLocalizedLabel.swift */,
 				B8E61C921EEB848E00F9504D /* XTRShellModelScene.swift */,
 				B87214CF1CC070B30021C8F5 /* XTRTableCell.swift */,
 				B87214D21CC07B330021C8F5 /* XTRTableHeaderButton.swift */,
@@ -443,14 +456,15 @@
 		97E3359A147A9486008147AD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8014786020E5D9EC0090EF8A /* Strings */,
 				974C567A147BF0E000DDFC77 /* ElementTipHelp */,
-				9746B1E81492503600A0DC96 /* PrimaMateriaHelp */,
-				974C567C147BF0E000DDFC77 /* SupportingFiles */,
-				B8C7C21E1EFDD70C000C112C /* PrimaMateria.scnassets */,
 				B88152141CAAA685000FC7FA /* Images.xcassets */,
 				B8C7C21F1EFDD71E000C112C /* Interfaces */,
 				974C5673147BF07600DDFC77 /* Misc */,
+				B8C7C21E1EFDD70C000C112C /* PrimaMateria.scnassets */,
+				9746B1E81492503600A0DC96 /* PrimaMateriaHelp */,
 				B8C7C2001EFDD4F5000C112C /* Scenes */,
+				974C567C147BF0E000DDFC77 /* SupportingFiles */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -467,6 +481,7 @@
 				B8B186DB1CC1DC5800113993 /* XTRGeneralInfoViewController.swift */,
 				B89751421CC18B94005C76C3 /* XTRGraphChoiceViewController.swift */,
 				B8B5BF071CCA9CC700DF9668 /* XTRGraphViewController.swift */,
+				B8788CE91CED379200D6BD5B /* XTRSlideDownAnimationController.swift */,
 				B82DA05A1CC164F700BD2E41 /* XTRHelpBalloonViewController.swift */,
 				B87214B61CC02BE40021C8F5 /* XTRInfoViewController.swift */,
 				B82DA0631CC17D9200BD2E41 /* XTRMainViewController.swift */,
@@ -535,7 +550,7 @@
 		B8C7C21F1EFDD71E000C112C /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				B8A904E41F2B6C6C00539517 /* AtomicStructure.storyboard */,
+				8014787A20E5DFCC0090EF8A /* AtomicStructure.storyboard */,
 				B8A905051F2B71FE00539517 /* ColorPicker.storyboard */,
 				B8A905081F2B727D00539517 /* ElementBalloon.storyboard */,
 				B8A904F91F2B6E7B00539517 /* ElementInspector.storyboard */,
@@ -637,6 +652,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 			);
 			mainGroup = 97E33557147A9389008147AD;
 			productRefGroup = 97E33563147A938A008147AD /* Products */;
@@ -682,13 +698,14 @@
 				974C567D147BF0E000DDFC77 /* ElementTipHelp in Resources */,
 				B8A904F41F2B6DE200539517 /* Preferences.storyboard in Resources */,
 				B8A905091F2B727D00539517 /* ElementBalloon.storyboard in Resources */,
+				8014787B20E5DFCD0090EF8A /* AtomicStructure.storyboard in Resources */,
 				B8A904E81F2B6CA900539517 /* GeneralInfo.storyboard in Resources */,
 				974C567F147BF0E000DDFC77 /* SupportingFiles in Resources */,
 				B8C7C20E1EFDD609000C112C /* Monoclinic.scn in Resources */,
 				B8A904F11F2B6D7800539517 /* Info.storyboard in Resources */,
-				B8A904E51F2B6C6C00539517 /* AtomicStructure.storyboard in Resources */,
 				9744F9E31487C3BF006FD9B2 /* MainStoryboard.storyboard in Resources */,
 				B8A904EB1F2B6D0100539517 /* HelpBalloon.storyboard in Resources */,
+				8014785320E5D7FD0090EF8A /* Localizable.strings in Resources */,
 				B8A904F71F2B6E3600539517 /* MolecularCalculator.storyboard in Resources */,
 				9746B1E91492503600A0DC96 /* PrimaMateriaHelp in Resources */,
 				B8A904D91F2B69DC00539517 /* Splash.storyboard in Resources */,
@@ -803,6 +820,7 @@
 				B891AFFD1CC42BF500345DBE /* XTRElementPropertiesViewController.swift in Sources */,
 				80753FE420DC742D00E8EE5C /* XTRMainViewControllerDelegate.swift in Sources */,
 				B8E61C931EEB850400F9504D /* XTRShellModelScene.swift in Sources */,
+				8014787D20E66B340090EF8A /* XTRLocalizedLabel.swift in Sources */,
 				808127E220E00EF40066FB7C /* XTRColorFactoryClassic.swift in Sources */,
 				B82DA0581CC1471C00BD2E41 /* XTRElement.swift in Sources */,
 				808127D920E007A00066FB7C /* XTRImageFactory.swift in Sources */,
@@ -853,12 +871,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		8014785520E5D7FD0090EF8A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8014785420E5D7FD0090EF8A /* en */,
+				8014786D20E5DA690090EF8A /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		97E33589147A938A008147AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
@@ -940,6 +971,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;

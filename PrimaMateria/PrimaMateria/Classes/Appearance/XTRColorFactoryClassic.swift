@@ -89,10 +89,14 @@ class XTRColorFactoryClassic : XTRColorFactory {
         return UIColor.color(hexString: "cc0000")
     }
     
+    override class var buttonBorderColor : UIColor {
+        return UIColor.color(hexString: "0000ff")
+    }
+    
     override class var border : UIColor {
         return UIColor.color(hexString: "000000")
     }
-    
+
     class var dodgerBlueColor: UIColor {
         return UIColor.color(hexString: "4093ff")
     }

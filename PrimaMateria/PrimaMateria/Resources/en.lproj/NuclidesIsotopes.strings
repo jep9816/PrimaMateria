@@ -1,0 +1,72 @@
+
+/* Class = "UIButton"; accessibilityLabel = "atomicNumber"; ObjectID = "02k-XH-uq9"; */
+"02k-XH-uq9.accessibilityLabel" = "atomicNumber";
+
+/* Class = "UIButton"; normalTitle = "Nuclide Symbol"; ObjectID = "02k-XH-uq9"; */
+"02k-XH-uq9.normalTitle" = "Nuclide Symbol";
+
+/* Class = "UIButton"; accessibilityLabel = "atomicWeight"; ObjectID = "6Rw-Fk-SK9"; */
+"6Rw-Fk-SK9.accessibilityLabel" = "atomicWeight";
+
+/* Class = "UIButton"; normalTitle = "Natural Variation Range"; ObjectID = "6Rw-Fk-SK9"; */
+"6Rw-Fk-SK9.normalTitle" = "Natural Variation Range";
+
+/* Class = "UIViewController"; title = "Nuclides Isotopes"; ObjectID = "A4X-8f-v0f"; */
+"A4X-8f-v0f.title" = "Nuclides Isotopes";
+
+/* Class = "UIButton"; accessibilityLabel = "density"; ObjectID = "FWp-bj-yES"; */
+"FWp-bj-yES.accessibilityLabel" = "density";
+
+/* Class = "UIButton"; normalTitle = "Decay Mode(s)"; ObjectID = "FWp-bj-yES"; */
+"FWp-bj-yES.normalTitle" = "Decay Mode(s)";
+
+/* Class = "UIButton"; accessibilityLabel = "series"; ObjectID = "JVB-lk-Cw7"; */
+"JVB-lk-Cw7.accessibilityLabel" = "series";
+
+/* Class = "UIButton"; normalTitle = "Daughter Isotopes(s)"; ObjectID = "JVB-lk-Cw7"; */
+"JVB-lk-Cw7.normalTitle" = "Daughter Isotopes(s)";
+
+/* Class = "UILabel"; text = "Swap View"; ObjectID = "OQr-N1-fql"; */
+"OQr-N1-fql.text" = "Swap View";
+
+/* Class = "UIButton"; accessibilityLabel = "group"; ObjectID = "RFP-lC-aJ9"; */
+"RFP-lC-aJ9.accessibilityLabel" = "group";
+
+/* Class = "UIButton"; normalTitle = "Decay Energy (MeV)"; ObjectID = "RFP-lC-aJ9"; */
+"RFP-lC-aJ9.normalTitle" = "Decay Energy (MeV)";
+
+/* Class = "UIButton"; accessibilityLabel = "atomicSymbol"; ObjectID = "UFK-FR-meV"; */
+"UFK-FR-meV.accessibilityLabel" = "atomicSymbol";
+
+/* Class = "UIButton"; normalTitle = "Isotopic Mass (u)"; ObjectID = "UFK-FR-meV"; */
+"UFK-FR-meV.normalTitle" = "Isotopic Mass (u)";
+
+/* Class = "UIButton"; accessibilityLabel = "meltingPoint"; ObjectID = "URX-hY-auy"; */
+"URX-hY-auy.accessibilityLabel" = "meltingPoint";
+
+/* Class = "UIButton"; normalTitle = "Half Life"; ObjectID = "URX-hY-auy"; */
+"URX-hY-auy.normalTitle" = "Half Life";
+
+/* Class = "UIButton"; accessibilityLabel = "name"; ObjectID = "Wzy-go-u2R"; */
+"Wzy-go-u2R.accessibilityLabel" = "name";
+
+/* Class = "UIButton"; normalTitle = "N(n)"; ObjectID = "Wzy-go-u2R"; */
+"Wzy-go-u2R.normalTitle" = "N(n)";
+
+/* Class = "UIButton"; accessibilityLabel = "boilingPoint"; ObjectID = "aZz-gw-46V"; */
+"aZz-gw-46V.accessibilityLabel" = "boilingPoint";
+
+/* Class = "UIButton"; normalTitle = "Nuclear Spin"; ObjectID = "aZz-gw-46V"; */
+"aZz-gw-46V.normalTitle" = "Nuclear Spin";
+
+/* Class = "UIButton"; accessibilityLabel = "period"; ObjectID = "dhI-vj-Uji"; */
+"dhI-vj-Uji.accessibilityLabel" = "period";
+
+/* Class = "UIButton"; normalTitle = "Z(p)"; ObjectID = "dhI-vj-Uji"; */
+"dhI-vj-Uji.normalTitle" = "Z(p)";
+
+/* Class = "UIButton"; accessibilityLabel = "atomicWeight"; ObjectID = "pjh-Vx-6VZ"; */
+"pjh-Vx-6VZ.accessibilityLabel" = "atomicWeight";
+
+/* Class = "UIButton"; normalTitle = "Iosotopic Composition"; ObjectID = "pjh-Vx-6VZ"; */
+"pjh-Vx-6VZ.normalTitle" = "Iosotopic Composition";

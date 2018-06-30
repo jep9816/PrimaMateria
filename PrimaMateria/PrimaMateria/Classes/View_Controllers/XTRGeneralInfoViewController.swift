@@ -17,7 +17,7 @@ class XTRGeneralInfoViewController : XTRSwapableViewController {
     @IBOutlet var abundanceCrustLabel : UILabel!
     @IBOutlet var abundanceSeaLabel : UILabel!
     @IBOutlet var webView : WKWebView!
-    
+
     private var progressHUD : MBProgressHUD?
     private var responseData : NSMutableData?
     private var request : NSMutableURLRequest?
@@ -42,7 +42,7 @@ class XTRGeneralInfoViewController : XTRSwapableViewController {
     
     // MARK: - Miscellaneous Methods
     
-    override func setupUI() {
+    override func setupUI() {        
         guard let localElement = element else { return }
         discovererLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERER) as? String
         discoveryLocationLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERY_LOCATION) as? String

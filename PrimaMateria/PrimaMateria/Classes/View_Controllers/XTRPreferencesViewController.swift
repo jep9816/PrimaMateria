@@ -29,8 +29,9 @@ class XTRPreferencesViewController : UIViewController {
     @IBOutlet var showTransitionsBubbleSwitch : UISwitch!
     @IBOutlet var splashScreenSwitch : UISwitch!
     @IBOutlet var webView : WKWebView!
-    @IBOutlet weak var styleControl : UISegmentedControl!
-
+    @IBOutlet var styleControl : UISegmentedControl!
+    @IBOutlet var navigationBar: UINavigationBar!
+    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -176,6 +177,9 @@ class XTRPreferencesViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = NSLocalizedString("preferences", comment: "")
+        navigationBar.topItem?.title = NSLocalizedString("preferences", comment: "")
+
         NotificationCenter.default.addObserver(self, selector: #selector(XTRPreferencesViewController.colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
         
         loadDocument("Credits.rtf", inView: webView)

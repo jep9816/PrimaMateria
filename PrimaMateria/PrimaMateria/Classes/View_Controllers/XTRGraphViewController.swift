@@ -20,9 +20,10 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     let customTickLocations = [1, 10, 20, 30,  40, 50, 60, 70, 80, 90, 100, 110]
     let xAxisLabels = ["1", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110"]
 
-    @IBOutlet var button : UIBarButtonItem!
+    @IBOutlet var barButtonItem : UIBarButtonItem!
     @IBOutlet var hostingView : CPTGraphHostingView!
-    
+    @IBOutlet var navigationBar: UINavigationBar!
+
     var barChart : CPTXYGraph?
     var errorString : String?
     
@@ -68,7 +69,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         x.majorIntervalLength = 1
         x.majorGridLineStyle = minorTickStyle
         x.orthogonalPosition = 0
-        x.title = "Atomic Number"
+        x.title = NSLocalizedString("atomicNumber", comment: "")
         x.titleLocation = XTRDataSource.sharedInstance().elementCount() / 2 as NSNumber?
         x.titleOffset = 30.0
         x.titleTextStyle = textStyle
@@ -93,7 +94,8 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     
     func createYAxis(_ axisSet: CPTXYAxisSet, minorTicks: Float, majorTickStyle: CPTLineStyle, minorTickStyle: CPTLineStyle, majorTicks: Float, dict: [String : AnyObject], maxValue: Float, minValue: Float) {
         let y = axisSet.yAxis!
-        let title = dict[GraphAttribute.title] as? String
+        let titleKey = dict[GraphAttribute.title] as? String
+        let title = NSLocalizedString(titleKey!, comment: "")
         let textStyle = CPTMutableTextStyle.init()
         
         textStyle.color = CPTColor.black()
@@ -285,6 +287,10 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = NSLocalizedString("graphs", comment: "")
+        navigationBar.topItem?.title = NSLocalizedString("graphs", comment: "")
+        barButtonItem.title = NSLocalizedString("chooseGraph", comment: "")
+
         //delegate.controller = self
         NotificationCenter.default.addObserver(self, selector: #selector(XTRGraphViewController.graphSelected(_:)), name: .graphSelectedNotification, object: nil)
         
@@ -304,7 +310,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .graphSelectedNotification, object: nil)
-        button = nil
+        barButtonItem = nil
         hostingView = nil
     }
     

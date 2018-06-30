@@ -107,7 +107,7 @@ class XTRMolecularCalculatorViewController : UIViewController {
         let result = XTRMolecularCalculator.calculateWithFormula(formulaTextField.text)
         
         if result == 0 {
-            errorLabel.text = "Unknown symbol or syntax error."
+            errorLabel.text = NSLocalizedString("errorMessage", comment: "")
         } else {
             resultsLabel.text = String(format: "%f", result)
             errorLabel.text =  STRING_EMPTY

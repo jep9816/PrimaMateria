@@ -71,15 +71,15 @@ class XTRWikipediaViewController : UIViewController {
         progressHUD!.label.font = UIFont.boldSystemFont(ofSize: 26)
         progressHUD!.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
         progressHUD!.delegate = delegate
-        progressHUD!.label.text = "Please Wait"
-        progressHUD!.detailsLabel.text = "Loading Wikipedia Page for element: \(elementName!)."
+        progressHUD!.label.text = NSLocalizedString("pleaseWait", comment: "")
+        progressHUD!.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) \(elementName!)."
         webView.navigationDelegate = delegate
     }
     
     override func viewWillAppear(_ animated: Bool)  {
         super.viewWillAppear(animated)
         
-        titleButtonItem.title = "Wikipedia Entry for element: \(elementName!)"
+        titleButtonItem.title = "\(NSLocalizedString("wikipediaEntry", comment: "")) \(elementName!)"
         backButton.isEnabled = false
         backButton.tintColor = UIColor.black
         forwardButton.isEnabled = false

@@ -72,7 +72,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         nextButton.setTitle(nextTitle, for: .highlighted)
         nextButton.setTitle(nextTitle, for: .selected)
         
-        nextLabel.text = " Swipe Right for \(nextElement.name!)"
+        nextLabel.text = " \(NSLocalizedString("swipeRight", comment: "")) \(nextElement.name!)"
         
         var previousAtomicNumber = element!.atomicNumber - 1
         
@@ -92,7 +92,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         previousButton.setTitle(previousTitle, for: UIControlState())
         previousButton.setTitle(previousTitle, for: .highlighted)
         previousButton.setTitle(previousTitle, for: .selected)
-        previousLabel.text = " Swipe Left for \(previousElement.name!)"
+        previousLabel.text = " \(NSLocalizedString("swipeLeft", comment: "")) \(previousElement.name!)"
     }
     
     func setupPageItemView() {
@@ -156,6 +156,14 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
             }
         }
         view.bringSubview(toFront: pageItemView)
+        let rect = segmentedControl.frame
+        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
+        segmentedControl.frame = newRect
+        segmentedControl.setTitle(NSLocalizedString("atomicStructure", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("elementProperties", comment: ""), forSegmentAt: 1)
+        segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: 2)
+        segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: 3)
+        segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: 4)
     }
     
     // MARK: - Action Methods

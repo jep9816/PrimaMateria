@@ -81,6 +81,10 @@ class XTRColorFactoryStandard : XTRColorFactory {
         return UIColor.color(hexString : "fe3824")
     }
     
+    override class var buttonBorderColor : UIColor {
+        return UIColor.color(hexString: "000000")
+    }
+
     override class var border : UIColor {
         return UIColor.lightGray
     }

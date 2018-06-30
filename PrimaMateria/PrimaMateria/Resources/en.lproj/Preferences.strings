@@ -1,0 +1,78 @@
+
+/* Class = "UIButton"; normalTitle = "Noble Gas"; ObjectID = "5JV-Qz-rew"; */
+"5JV-Qz-rew.normalTitle" = "Noble Gas";
+
+/* Class = "UILabel"; text = "Style:"; ObjectID = "CRR-g7-jPb"; */
+"CRR-g7-jPb.text" = "Style:";
+
+/* Class = "UILabel"; text = "Credits"; ObjectID = "DYd-sB-Z1a"; */
+"DYd-sB-Z1a.text" = "Credits";
+
+/* Class = "UILabel"; text = "Version:"; ObjectID = "EHk-NG-C73"; */
+"EHk-NG-C73.text" = "Version:";
+
+/* Class = "UIButton"; normalTitle = "Lanthanide"; ObjectID = "EcA-Tb-wrH"; */
+"EcA-Tb-wrH.normalTitle" = "Lanthanide";
+
+/* Class = "UIButton"; normalTitle = "Transition Metal"; ObjectID = "H7H-ue-WGL"; */
+"H7H-ue-WGL.normalTitle" = "Transition Metal";
+
+/* Class = "UINavigationItem"; title = "Preferences"; ObjectID = "KEo-Mu-3ao"; */
+"KEo-Mu-3ao.title" = "Preferences";
+
+/* Class = "UILabel"; text = "Show View Transitions:"; ObjectID = "LLK-J6-L7m"; */
+"LLK-J6-L7m.text" = "Show View Transitions:";
+
+/* Class = "UIButton"; normalTitle = "Actinide"; ObjectID = "Mqf-4w-AYh"; */
+"Mqf-4w-AYh.normalTitle" = "Actinide";
+
+/* Class = "UIButton"; normalTitle = "Alkali Metal"; ObjectID = "Mww-aS-dwa"; */
+"Mww-aS-dwa.normalTitle" = "Alkali Metal";
+
+/* Class = "UIViewController"; title = "Preferences"; ObjectID = "REJ-gs-Mp7"; */
+"REJ-gs-Mp7.title" = "Preferences";
+
+/* Class = "UIButton"; normalTitle = "Metal"; ObjectID = "SDV-8u-hkI"; */
+"SDV-8u-hkI.normalTitle" = "Metal";
+
+/* Class = "UIButton"; normalTitle = "Halogen"; ObjectID = "V7C-Hl-V2V"; */
+"V7C-Hl-V2V.normalTitle" = "Halogen";
+
+/* Class = "UISegmentedControl"; ZmD-U7-NsZ.segmentTitles[0] = "Classic"; ObjectID = "ZmD-U7-NsZ"; */
+"ZmD-U7-NsZ.segmentTitles[0]" = "Classic";
+
+/* Class = "UISegmentedControl"; ZmD-U7-NsZ.segmentTitles[1] = "Standard"; ObjectID = "ZmD-U7-NsZ"; */
+"ZmD-U7-NsZ.segmentTitles[1]" = "Standard";
+
+/* Class = "UILabel"; text = "Element Help Bubbles:"; ObjectID = "eNy-LB-20f"; */
+"eNy-LB-20f.text" = "Element Help Bubbles:";
+
+/* Class = "UITabBarItem"; title = "Preferences"; ObjectID = "fmL-lX-hqt"; */
+"fmL-lX-hqt.title" = "Preferences";
+
+/* Class = "UILabel"; text = "Show Splash Screen:"; ObjectID = "gGf-Rr-VIY"; */
+"gGf-Rr-VIY.text" = "Show Splash Screen:";
+
+/* Class = "UIButton"; normalTitle = "Reset Preferences"; ObjectID = "gtd-nd-r9v"; */
+"gtd-nd-r9v.normalTitle" = "Reset Preferences";
+
+/* Class = "UILabel"; text = "Settings:"; ObjectID = "jqe-d7-TwM"; */
+"jqe-d7-TwM.text" = "Settings:";
+
+/* Class = "UIButton"; normalTitle = "Transactinide"; ObjectID = "pMi-ww-pLO"; */
+"pMi-ww-pLO.normalTitle" = "Transactinide";
+
+/* Class = "UILabel"; text = "Series Colors:"; ObjectID = "pWZ-ZB-EjQ"; */
+"pWZ-ZB-EjQ.text" = "Series Colors:";
+
+/* Class = "UILabel"; text = "Copyright:"; ObjectID = "paP-c6-pi2"; */
+"paP-c6-pi2.text" = "Copyright:";
+
+/* Class = "UILabel"; text = "AppName"; ObjectID = "sMV-Pp-XDb"; */
+"sMV-Pp-XDb.text" = "AppName";
+
+/* Class = "UIButton"; normalTitle = "Non Metal"; ObjectID = "vij-uz-T4X"; */
+"vij-uz-T4X.normalTitle" = "Non Metal";
+
+/* Class = "UIButton"; normalTitle = "Alkali Earth Metal"; ObjectID = "zSr-Gs-i0a"; */
+"zSr-Gs-i0a.normalTitle" = "Alkali Earth Metal";

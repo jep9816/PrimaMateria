@@ -1,0 +1,96 @@
+
+/* Class = "UIViewController"; title = "Molecular Calculator"; ObjectID = "0Nd-5l-EE5"; */
+"0Nd-5l-EE5.title" = "Molecular Calculator";
+
+/* Class = "UILabel"; text = "Atomic Weight:"; ObjectID = "275-W7-mnP"; */
+"275-W7-mnP.text" = "Atomic Weight:";
+
+/* Class = "UIButton"; accessibilityLabel = "one"; ObjectID = "6Jh-4J-6Wg"; */
+"6Jh-4J-6Wg.accessibilityLabel" = "one";
+
+/* Class = "UIButton"; normalTitle = "1️⃣"; ObjectID = "6Jh-4J-6Wg"; */
+"6Jh-4J-6Wg.normalTitle" = "1️⃣";
+
+/* Class = "UIButton"; accessibilityLabel = "zero"; ObjectID = "AB7-GB-OqH"; */
+"AB7-GB-OqH.accessibilityLabel" = "zero";
+
+/* Class = "UIButton"; normalTitle = "0️⃣"; ObjectID = "AB7-GB-OqH"; */
+"AB7-GB-OqH.normalTitle" = "0️⃣";
+
+/* Class = "UIButton"; accessibilityLabel = "seven"; ObjectID = "EsP-g5-OAm"; */
+"EsP-g5-OAm.accessibilityLabel" = "seven";
+
+/* Class = "UIButton"; normalTitle = "7️⃣"; ObjectID = "EsP-g5-OAm"; */
+"EsP-g5-OAm.normalTitle" = "7️⃣";
+
+/* Class = "UIButton"; accessibilityLabel = "three"; ObjectID = "GJq-gb-aif"; */
+"GJq-gb-aif.accessibilityLabel" = "three";
+
+/* Class = "UIButton"; normalTitle = "3️⃣"; ObjectID = "GJq-gb-aif"; */
+"GJq-gb-aif.normalTitle" = "3️⃣";
+
+/* Class = "UIButton"; accessibilityHint = "Calculate"; ObjectID = "IY5-OV-qOW"; */
+"IY5-OV-qOW.accessibilityHint" = "Calculate";
+
+/* Class = "UIButton"; accessibilityLabel = "calculate"; ObjectID = "IY5-OV-qOW"; */
+"IY5-OV-qOW.accessibilityLabel" = "calculate";
+
+/* Class = "UIButton"; normalTitle = "✅"; ObjectID = "IY5-OV-qOW"; */
+"IY5-OV-qOW.normalTitle" = "✅";
+
+/* Class = "UILabel"; text = "WWWWWWWWWWW"; ObjectID = "PIL-2R-nGC"; */
+"PIL-2R-nGC.text" = "WWWWWWWWWWW";
+
+/* Class = "UIButton"; accessibilityLabel = "six"; ObjectID = "PXg-d9-EI4"; */
+"PXg-d9-EI4.accessibilityLabel" = "six";
+
+/* Class = "UIButton"; normalTitle = "6️⃣"; ObjectID = "PXg-d9-EI4"; */
+"PXg-d9-EI4.normalTitle" = "6️⃣";
+
+/* Class = "UILabel"; text = "WWWWWWWWWWW"; ObjectID = "RBL-qh-FSg"; */
+"RBL-qh-FSg.text" = "WWWWWWWWWWW";
+
+/* Class = "UIButton"; accessibilityLabel = "five"; ObjectID = "SFo-cg-98K"; */
+"SFo-cg-98K.accessibilityLabel" = "five";
+
+/* Class = "UIButton"; normalTitle = "5️⃣"; ObjectID = "SFo-cg-98K"; */
+"SFo-cg-98K.normalTitle" = "5️⃣";
+
+/* Class = "UIButton"; accessibilityLabel = "four"; ObjectID = "W34-22-Pso"; */
+"W34-22-Pso.accessibilityLabel" = "four";
+
+/* Class = "UIButton"; normalTitle = "4️⃣"; ObjectID = "W34-22-Pso"; */
+"W34-22-Pso.normalTitle" = "4️⃣";
+
+/* Class = "UIButton"; accessibilityLabel = "nine"; ObjectID = "ZHn-3q-tOJ"; */
+"ZHn-3q-tOJ.accessibilityLabel" = "nine";
+
+/* Class = "UIButton"; normalTitle = "9️⃣"; ObjectID = "ZHn-3q-tOJ"; */
+"ZHn-3q-tOJ.normalTitle" = "9️⃣";
+
+/* Class = "UILabel"; text = "Molecular Formula:"; ObjectID = "e0O-t3-gvK"; */
+"e0O-t3-gvK.text" = "Molecular Formula:";
+
+/* Class = "UILabel"; text = "Error:"; ObjectID = "i9X-K9-3ds"; */
+"i9X-K9-3ds.text" = "Error:";
+
+/* Class = "UIButton"; accessibilityLabel = "eight"; ObjectID = "vZg-q9-RZu"; */
+"vZg-q9-RZu.accessibilityLabel" = "eight";
+
+/* Class = "UIButton"; normalTitle = "8️⃣"; ObjectID = "vZg-q9-RZu"; */
+"vZg-q9-RZu.normalTitle" = "8️⃣";
+
+/* Class = "UIButton"; accessibilityHint = "Clear"; ObjectID = "y1m-IW-Hp2"; */
+"y1m-IW-Hp2.accessibilityHint" = "Clear";
+
+/* Class = "UIButton"; accessibilityLabel = "clear"; ObjectID = "y1m-IW-Hp2"; */
+"y1m-IW-Hp2.accessibilityLabel" = "clear";
+
+/* Class = "UIButton"; normalTitle = "❎"; ObjectID = "y1m-IW-Hp2"; */
+"y1m-IW-Hp2.normalTitle" = "❎";
+
+/* Class = "UIButton"; accessibilityLabel = "two"; ObjectID = "yl6-ze-O1r"; */
+"yl6-ze-O1r.accessibilityLabel" = "two";
+
+/* Class = "UIButton"; normalTitle = "2️⃣"; ObjectID = "yl6-ze-O1r"; */
+"yl6-ze-O1r.normalTitle" = "2️⃣";
