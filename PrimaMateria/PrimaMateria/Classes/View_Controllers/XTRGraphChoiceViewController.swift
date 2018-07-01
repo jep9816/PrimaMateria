@@ -28,6 +28,7 @@ class XTRGraphChoiceViewController : UIViewController {
         super.viewDidLoad()
         
         view.backgroundColor = XTRColorFactory.popupArrowColor
+        preferredContentSize = CGSize(width: 378, height: 668)
     }
     
     override var shouldAutorotate : Bool {

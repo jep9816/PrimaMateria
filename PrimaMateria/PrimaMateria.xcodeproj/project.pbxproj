@@ -150,6 +150,7 @@
 		8014787A20E5DFCC0090EF8A /* AtomicStructure.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AtomicStructure.storyboard; sourceTree = "<group>"; };
 		8014787C20E66B340090EF8A /* XTRLocalizedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRLocalizedLabel.swift; sourceTree = "<group>"; };
 		802165EA20DC5F9B0036A73C /* XTRElementListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementListViewControllerDelegate.swift; sourceTree = "<group>"; };
+		806235A220E87661001AF8FF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		80753FD120DC656700E8EE5C /* XTRGraphViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80753FD420DC67F800E8EE5C /* XTRWikipediaViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80753FD720DC69CC00E8EE5C /* XTRSpectrumViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRSpectrumViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -653,6 +654,7 @@
 			knownRegions = (
 				en,
 				es,
+				ru,
 			);
 			mainGroup = 97E33557147A9389008147AD;
 			productRefGroup = 97E33563147A938A008147AD /* Products */;
@@ -877,6 +879,7 @@
 			children = (
 				8014785420E5D7FD0090EF8A /* en */,
 				8014786D20E5DA690090EF8A /* es */,
+				806235A220E87661001AF8FF /* ru */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

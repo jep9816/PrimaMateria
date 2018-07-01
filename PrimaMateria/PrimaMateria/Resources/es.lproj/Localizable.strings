@@ -6,12 +6,12 @@
   Copyright © 2018 xTrensa. All rights reserved.
 */
 
-"atomic" = "Atomico";
 "actinide" = "Actínido";
 "actinideSeries" = "Serie Actinide";
 "alkaliEarthMetal" = "Alcalino Tierra Metal";
 "alkaliMetal" = "Metal Alcalino";
 "alpha" = "Alfa";
+"atomic" = "Atomico";
 "atomicMass" = "Masa atomica";
 "atomicNumber" = "Número atómico";
 "atomicRadius" = "Radio atómico (Å)";
@@ -20,6 +20,7 @@
 "atomicWeight" = "Peso Atomico";
 "blue" = "Azul";
 "boilingPoint" = "Punto de ebullición";
+"casResNo" = "CAS Res No";
 "chooseColor" = "Elige color";
 "chooseGraph" = "Elija el gráfico";
 "classic" = "Clásico";
@@ -27,9 +28,9 @@
 "colorPicker" = "Selector de color";
 "configuration" = "Configuración";
 "copyright" = "Derechos de autor";
-"covalentRadius" = "Radio covalente: (Å)";
+"covalentRadius" = "Radio covalente (Å)";
 "credits" = "Créditos";
-"crossSection" = "Sección transversal: (barns)";
+"crossSection" = "Sección transversal (barns)";
 "crystalStructure" = "Estructura cristalina";
 "electronStructure" = "Estructura electrónica";
 "elementBalloon" = "Globo de elemento";
@@ -46,19 +47,18 @@
 "elementListPeriod" = "Período";
 "elementListSeries" = "Serie";
 "elementListSymbol" = "Símbolo";
-
-"graphAtomicMass" = "Masa atomica";
-"graphAtomicRadius" = "Radio atómico";
-"graphBoilingPoint" = "Punto de ebullición";
-"graphCoefficientOfLinealThermalExpansion" = "Coeficiente de Expansión Térmica Lineal * 100K";
-
+"elementProperties" = "Propiedades del elemento";
 "error" = "Error";
 "errorMessage" = "Símbolo desconocido o error de sintaxis.";
 "fillingOrbital" = "Orbital de relleno";
-
+"generalInfo" = "Información general";
+"graphAtomicMass" = "Masa atomica";
 "graphAtomicMass" = "Masa atómica";
 "graphAtomicRadius" = "Radio atómico";
+"graphAtomicRadius" = "Radio atómico";
 "graphBoilingPoint" = "Punto de ebullición";
+"graphBoilingPoint" = "Punto de ebullición";
+"graphCoefficientOfLinealThermalExpansion" = "Coeficiente de Expansión Térmica Lineal * 100K";
 "graphCoefficientOfLinealThermalExpansion" = "Coeficiente de expansión térmica lineal * 100K";
 "graphCovalentRadius" = "Radio covalente";
 "graphCrossSection" = "Sección transversal";
@@ -70,23 +70,22 @@
 "graphElectroNegativity" = "Electro Negatividad";
 "graphElectronWorkFunction" = "Función de trabajo de electrones";
 "graphEnthalpyOfAtomization" = "Entalpía de la atomización";
-"graphEnthalpyOfFusion" = "Enthalpy of Fusion";
+"graphEnthalpyOfFusion" = "Entalpía de fusión";
 "graphEnthalpyOfVaporization" = "Entalpía de la vaporización";
-"graphIonicRadius" = "Radio iónico";
 "graphHardnessScaleBrinell" = "Escala de dureza - Brinell";
 "graphHardnessScaleMohs" = "Escala de dureza - Mohs";
 "graphHardnessScaleVickers" = "Escala de dureza - Vickers";
 "graphHeatOfFusion" = "Calor de fusión";
 "graphHeatOfVaporization" = "Calor de la vaporización";
-"graphIonizationPotentialFirst" = "Potencial de ionización: primero";
-"graphIonizationPotentialSecond" = "Potencial de ionización: segundo";
-"graphIonizationPotentialThird" = "Potencial de ionización: tercero";
+"graphIonicRadius" = "Radio iónico";
+"graphIonizationPotentialFirst" = "Potencial de ionización primero";
+"graphIonizationPotentialSecond" = "Potencial de ionización segundo";
+"graphIonizationPotentialThird" = "Potencial de ionización tercero";
 "graphMeltingPoint" = "Punto de fusión";
 "graphMolarHeatCapacity" = "Capacidad de calor molar";
 "graphMolarVolume" = "Volumen molar";
 "graphSpecificHeat" = "Calor específico";
-"graphValenceElectronPotential" = "Valence Electron Potential";
-
+"graphValenceElectronPotential" = "Potencial de electrones de valencia";
 "graphs" = "Gráficos";
 "green" = "Verde";
 "group" = "Grupo";
@@ -94,7 +93,7 @@
 "help" = "Ayuda";
 "info" = "Información";
 "intensity" = "Intensidad";
-"ionicRadius" = "Radio Iónico: (Å)";
+"ionicRadius" = "Radio Iónico (Å)";
 "lanthanide" = "Lantánido";
 "lanthanideSeries" = "Serie Lanthanide";
 "loadingWikipedia" = "Cargando la página de Wikipedia para el elemento";
@@ -104,10 +103,11 @@
 "molecularFormula" = "Fórmula Molecular";
 "nobleGas" = "Gas noble";
 "nonMetal" = "No Metal";
+"nuclidesIsotopes" = "Nucleidos / Isótopos";
 "numPerLevel" = "# Por nivel";
 "number" = "Número";
-"numberOfElectrons" = "Cantidad de electrones: (sin cargo)";
-"numberOfNeutrons" = "Número de neutrones: (nucleido más común / estable)";
+"numberOfElectrons" = "Cantidad de electrones (sin cargo)";
+"numberOfNeutrons" = "Número de neutrones (nucleido más común / estable)";
 "numberOfProtons" = "Cantidad de protones";
 "oxidationStates" = "Estados de oxidación";
 "period" = "Período";
@@ -127,16 +127,11 @@
 "spectrumColorKey" = "Clave de color del espectro";
 "standard" = "Estándar";
 "style" = "Estilo";
+"swipeLeft" = "Desliza hacia la izquierda para";
+"swipeRight" = "Desliza hacia la derecha para";
 "transactinide" = "Transactinida";
 "transitionMetal" = "Metal de Transición";
 "valence" = "Valencia";
 "version" = "Versión";
 "wavelengthAir" = "Longitud de onda del aire (Å)";
 "wikipediaEntry" = "Entrada de Wikipedia para el elemento";
-
-"elementProperties" = "Propiedades del elemento";
-"nuclidesIsotopes" = "Nucleidos / Isótopos";
-"generalInfo" = "Información general";
-"swipeLeft" = "Desliza hacia la izquierda para";
-"swipeRight" = "Desliza hacia la derecha para";
-"casResNo" = "CAS Res No";

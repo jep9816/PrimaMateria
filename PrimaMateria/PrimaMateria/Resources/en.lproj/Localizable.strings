@@ -6,12 +6,12 @@
   Copyright © 2018 xTrensa. All rights reserved.
 */
 
-"atomic" = "Atomic";
 "actinide" = "Actinide";
 "actinideSeries" = "Actinide Series";
 "alkaliEarthMetal" = "Alkali Earth Metal";
 "alkaliMetal" = "Alkali Metal";
 "alpha" = "Alpha";
+"atomic" = "Atomic";
 "atomicMass" = "Atomic Mass";
 "atomicNumber" = "Atomic Number";
 "atomicRadius" = "Atomic Radius (Å)";
@@ -20,6 +20,7 @@
 "atomicWeight" = "Atomic Weight";
 "blue" = "Blue";
 "boilingPoint" = "Boiling Point";
+"casResNo" = "CAS Res No";
 "chooseColor" = "Choose Color";
 "chooseGraph" = "Choose Graph";
 "classic" = "Classic";
@@ -27,9 +28,9 @@
 "colorPicker" = "Color Picker";
 "configuration" = "Configuration";
 "copyright" = "Copyright";
-"covalentRadius" = "Covalent Radius: (Å)";
+"covalentRadius" = "Covalent Radius (Å)";
 "credits" = "Credits";
-"crossSection" = "Cross Section: (barns)";
+"crossSection" = "Cross Section (barns)";
 "crystalStructure" = "Crystal Structure";
 "electronStructure" = "Electron Structure";
 "elementBalloon" = "Element Balloon";
@@ -46,11 +47,11 @@
 "elementListPeriod" = "Period";
 "elementListSeries" = "Series";
 "elementListSymbol" = "Symbol";
-
+"elementProperties" = "Element Properties";
 "error" = "Error";
 "errorMessage" = "Unknown symbol or syntax error.";
 "fillingOrbital" = "Filling Orbital";
-
+"generalInfo" = "General Info";
 "graphAtomicMass" = "Atomic Mass";
 "graphAtomicRadius" = "Atomic Radius";
 "graphBoilingPoint" = "Boiling Point";
@@ -67,12 +68,12 @@
 "graphEnthalpyOfAtomization" = "Enthalpy of Atomization";
 "graphEnthalpyOfFusion" = "Enthalpy of Fusion";
 "graphEnthalpyOfVaporization" = "Enthalpy of Vaporization";
-"graphIonicRadius" = "Ionic Radius";
 "graphHardnessScaleBrinell" = "Hardness Scale - Brinell";
 "graphHardnessScaleMohs" = "Hardness Scale - Mohs";
 "graphHardnessScaleVickers" = "Hardness Scale - Vickers";
 "graphHeatOfFusion" = "Heat of Fusion";
 "graphHeatOfVaporization" = "Heat of Vaporization";
+"graphIonicRadius" = "Ionic Radius";
 "graphIonizationPotentialFirst" = "Ionization Potential - First";
 "graphIonizationPotentialSecond" = "Ionization Potential - Second";
 "graphIonizationPotentialThird" = "Ionization Potential - Third";
@@ -81,7 +82,6 @@
 "graphMolarVolume" = "Molar Volume";
 "graphSpecificHeat" = "Specific Heat";
 "graphValenceElectronPotential" = "Valence Electron Potential";
-
 "graphs" = "graphs";
 "green" = "Green";
 "group" = "Group";
@@ -89,7 +89,7 @@
 "help" = "Help";
 "info" = "Info";
 "intensity" = "Intensity";
-"ionicRadius" = "Ionic Radius: (Å)";
+"ionicRadius" = "Ionic Radius (Å)";
 "lanthanide" = "Lanthanide";
 "lanthanideSeries" = "Lanthanide Series";
 "loadingWikipedia" = "Loading Wikipedia Page for element";
@@ -99,10 +99,11 @@
 "molecularFormula" = "Molecular Formula";
 "nobleGas" = "Noble Gas";
 "nonMetal" = "Non Metal";
+"nuclidesIsotopes" = "Nuclides / Isotopes";
 "numPerLevel" = "# Per Level";
 "number" = "Number";
-"numberOfElectrons" = "Number of Electrons: (with no charge)";
-"numberOfNeutrons" = "Number of Neutrons: (most common/stable nuclide)";
+"numberOfElectrons" = "Number of Electrons (with no charge)";
+"numberOfNeutrons" = "Number of Neutrons (most common/stable nuclide)";
 "numberOfProtons" = "Number of Protons";
 "oxidationStates" = "Oxidation States";
 "period" = "Period";
@@ -110,11 +111,10 @@
 "periodicTableElements" = "Periodic Table of the Elements";
 "pleaseWait" = "Please Wait";
 "preferences" = "Preferences";
-"preferences" = "Preferences";
 "red" = "Red";
 "resetPreferences" = "Reset Preferences";
-"seriesColors" = "Series Colors";
 "series" = "Series";
+"seriesColors" = "Series Colors";
 "settings" = "Settings";
 "shellModel" = "Shell Model";
 "showSplashScreen" = "Show Splash Screen";
@@ -123,16 +123,11 @@
 "spectrumColorKey" = "Spectrum Color Key";
 "standard" = "Standard";
 "style" = "Style";
+"swipeLeft" = "Swipe Left for";
+"swipeRight" = "Swipe Right for";
 "transactinide" = "Transactinide";
 "transitionMetal" = "Transition Metal";
 "valence" = "Valence";
 "version" = "Version";
 "wavelengthAir" = "Wavelength Air (Å)";
 "wikipediaEntry" = "Wikipedia Entry for element";
-
-"elementProperties" = "Element Properties";
-"nuclidesIsotopes" = "Nuclides / Isotopes";
-"generalInfo" = "General Info";
-"swipeLeft" = "Swipe Left for";
-"swipeRight" = "Swipe Right for";
-"casResNo" = "CAS Res No";
