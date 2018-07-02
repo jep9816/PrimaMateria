@@ -18,7 +18,7 @@
 "atomicStructure" = "Атомная структура";
 "atomicVolume" = "Атомный объем (см³ / моль)";
 "atomicWeight" = "Атомный вес";
-"blue" = "синий";
+"blue" = "Синий";
 "boilingPoint" = "Точка кипения";
 "casResNo" = "CAS Res No";
 "chooseColor" = "Выбрать цвет";
@@ -114,7 +114,7 @@
 "red" = "красный";
 "resetPreferences" = "Сбросить настройки";
 "series" = "Серия";
-"seriesColors" = "Цвета серии";
+"seriesColors" = "Цвета Серии";
 "settings" = "настройки";
 "shellModel" = "Модель раковины";
 "showSplashScreen" = "Показать экран заставки";
@@ -132,3 +132,39 @@
 "wavelengthAir" = "длина волны воздуха (Å)";
 "wikipediaEntry" = "Википедия Запись для элемента";
 
+"physicalProperties" = "Физические Свойства";
+"chemicalProperties" = "Химические Свойства";
+
+"discoveredBy" = "От";
+"discoveredLocation" = "Местоположение";
+"discoveryInformation" = "Информация об обнаружении";
+"discoveryYear" = "Год";
+"abundance" = "изобилие";
+"miscellaneous" = "Разное";
+"abundanceCrust" = "Корка (мг/кг)";
+"abundanceSea" = "Море (мл/л)";
+"wikipediaEntryButton" = "Запись в Википедии";
+
+"nuclideSymbol" = "Символ";
+"nuclideZp" = "Z(p)";
+"nuclideNn" = "N(n)";
+"nuclideIsotopicMass" = "изотопическая масса (u)";
+"nuclideHalfLife" = "Период полураспада";
+"nuclideDecayModes" = "Режим (ы) затухания";
+"nuclideDecayEnergy" = "Энергия распада (МэВ)";
+"nuclideDaughterIsotopes" = "Дотальные изотопы (ы)";
+"nuclideNuclearSpin" = "Ядерная спина";
+"nuclideIosotopicComposition" = "Иосотопическая композиция";
+"nuclideNaturalVariationRange" = "Диапазон естественных вариаций";
+
+"first" = "Первый";
+"second" = "второй";
+"third" = "третий";
+"ionizationPotential" = "потенциал ионизации";
+"electrochemicalEquivalent" = "Электрохимический эквивалент (г/амп-час)";
+"electronicWorkFunction" = "Функция работы электрона";
+"electroNegativity" = "Электроотрицательность (Pauling)";
+"heatOfFusion" = "Теплота плавления (KJ/mol)";
+"incompatibilities" = "Несовместимость";
+"qualitativeSolubility" = "Качественная растворимость (г/100 Н₂0)";
+"valenceElectronPotential" = "Валансный электронный потенциал (-eV)";

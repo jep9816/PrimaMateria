@@ -33,6 +33,7 @@
 "crossSection" = "Sección transversal (barns)";
 "crystalStructure" = "Estructura cristalina";
 "electronStructure" = "Estructura electrónica";
+
 "elementBalloon" = "Globo de elemento";
 "elementDetails" = "Detalles del elemento";
 "elementHelpBubbles" = "Elemento Ayuda Burbujas";
@@ -52,13 +53,9 @@
 "errorMessage" = "Símbolo desconocido o error de sintaxis.";
 "fillingOrbital" = "Orbital de relleno";
 "generalInfo" = "Información general";
-"graphAtomicMass" = "Masa atomica";
 "graphAtomicMass" = "Masa atómica";
 "graphAtomicRadius" = "Radio atómico";
-"graphAtomicRadius" = "Radio atómico";
 "graphBoilingPoint" = "Punto de ebullición";
-"graphBoilingPoint" = "Punto de ebullición";
-"graphCoefficientOfLinealThermalExpansion" = "Coeficiente de Expansión Térmica Lineal * 100K";
 "graphCoefficientOfLinealThermalExpansion" = "Coeficiente de expansión térmica lineal * 100K";
 "graphCovalentRadius" = "Radio covalente";
 "graphCrossSection" = "Sección transversal";
@@ -106,10 +103,10 @@
 "nuclidesIsotopes" = "Nucleidos / Isótopos";
 "numPerLevel" = "# Por nivel";
 "number" = "Número";
-"numberOfElectrons" = "Cantidad de electrones (sin cargo)";
-"numberOfNeutrons" = "Número de neutrones (nucleido más común / estable)";
-"numberOfProtons" = "Cantidad de protones";
-"oxidationStates" = "Estados de oxidación";
+"numberOfElectrons" = "Cantidad de Electrones (Sin Cargo)";
+"numberOfNeutrons" = "Número de Neutrones (Nucleido Más Común / Estable)";
+"numberOfProtons" = "Cantidad de Protones";
+"oxidationStates" = "Estados de Oxidación";
 "period" = "Período";
 "periodicTable" = "Tabla Periódica";
 "periodicTableElements" = "Tabla Periódica de los Elementos";
@@ -124,14 +121,51 @@
 "showSplashScreen" = "Mostrar Pantalla de Bienvenida";
 "showViewTransitions" = "Mostrar Transiciones de Vista";
 "spectrum" = "Espectro";
-"spectrumColorKey" = "Clave de color del espectro";
+"spectrumColorKey" = "Clave de Color del Espectro";
 "standard" = "Estándar";
 "style" = "Estilo";
-"swipeLeft" = "Desliza hacia la izquierda para";
-"swipeRight" = "Desliza hacia la derecha para";
+"swipeLeft" = "Desliza Hacia la Izquierda Para";
+"swipeRight" = "Desliza Hacia la Derecha Para";
 "transactinide" = "Transactinida";
 "transitionMetal" = "Metal de Transición";
 "valence" = "Valencia";
 "version" = "Versión";
 "wavelengthAir" = "Longitud de onda del aire (Å)";
 "wikipediaEntry" = "Entrada de Wikipedia para el elemento";
+
+"physicalProperties" = "Propiedades Físicas";
+"chemicalProperties" = "Propiedades Químicas";
+
+"discoveredBy" = "Por";
+"discoveredLocation" = "Ubicación";
+"discoveryInformation" = "Información de descubrimiento";
+"discoveryYear" = "Año";
+"abundance" = "Abundancia";
+"miscellaneous" = "Varios";
+"abundanceCrust" = "Corteza (mg/kg)";
+"abundanceSea" = "Mar (ml/L)";
+"wikipediaEntryButton" = "Entrada de Wikipedia";
+
+"nuclideSymbol" = "Símbolo";
+"nuclideZp" = "Z(p)";
+"nuclideNn" = "N(n)";
+"nuclideIsotopicMass" = "Masa Isotópica(u)";
+"nuclideHalfLife" = "Media vida";
+"nuclideDecayModes" = "Modo(s) de Degradación";
+"nuclideDecayEnergy" = "Energía de Decaimiento (MeV)";
+"nuclideDaughterIsotopes" = "Isótopos hijo (s)";
+"nuclideNuclearSpin" = "Giro Nuclear";
+"nuclideIosotopicComposition" = "Composición Iosotópica";
+"nuclideNaturalVariationRange" = "Rango de Variación Natural";
+
+"first" = "Primero";
+"second" = "Segundo";
+"third" = "Tercero";
+"ionizationPotential" = "Potencial de ionización";
+"electrochemicalEquivalent" = "Equivalente Electroquímico (g/amp-hr)";
+"electronWorkFunction" = "Función de trabajo de electrones";
+"electroNegativity" = "Electro Negativity (Pauling)";
+"heatOfFusion" = "Calor de fusión (KJ / mol)";
+"incompatibilities" = "Incompatibilidades";
+"qualitativeSolubility" = "Solubilidad cualitativa (g / 100 H₂0)";
+"valenceElectronPotential" = "Valence Electron Potential (-eV)";

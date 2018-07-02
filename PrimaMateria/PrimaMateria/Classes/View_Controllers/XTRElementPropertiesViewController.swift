@@ -13,6 +13,7 @@ class XTRElementPropertiesViewController : XTRSwapableViewController {
         static let kChemicalPropertiesView = 1
     }
     
+    @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var atomicMassFootnoteLabel : UILabel!
     @IBOutlet var atomicMassLabel : UILabel!
     @IBOutlet var boilingPointLabel : UILabel!
@@ -149,6 +150,9 @@ class XTRElementPropertiesViewController : XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        segmentedControl.setTitle(NSLocalizedString("physicalProperties", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("chemicalProperties", comment: ""), forSegmentAt: 1)
+
         chemicalPropertiesView.frame = swapView.frame
         chemicalPropertiesView.bounds = swapView.bounds
         chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 500)

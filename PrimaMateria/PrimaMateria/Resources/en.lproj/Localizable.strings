@@ -131,3 +131,40 @@
 "version" = "Version";
 "wavelengthAir" = "Wavelength Air (Å)";
 "wikipediaEntry" = "Wikipedia Entry for element";
+
+"physicalProperties" = "Physical Properties";
+"chemicalProperties" = "Chemical Properties";
+
+"discoveredBy" = "By";
+"discoveredLocation" = "Location";
+"discoveryInformation" = "Discovery Information";
+"discoveryYear" = "Year";
+"abundance" = "Abundance";
+"miscellaneous" = "Miscellaneous";
+"abundanceCrust" = "Crust (mg/kg)";
+"abundanceSea" = "Sea (ml/L)";
+"wikipediaEntryButton" = "Wikipedia Entry";
+
+"nuclideSymbol" = "Symbol";
+"nuclideZp" = "Z(p)";
+"nuclideNn" = "N(n)";
+"nuclideIsotopicMass" = "Isotopic Mass (u)";
+"nuclideHalfLife" = "Half Life";
+"nuclideDecayModes" = "Decay Mode(s)";
+"nuclideDecayEnergy" = "Decay Energy (MeV)";
+"nuclideDaughterIsotopes" = "Daughter Isotopes(s)";
+"nuclideNuclearSpin" = "Nuclear Spin";
+"nuclideIosotopicComposition" = "Iosotopic Composition";
+"nuclideNaturalVariationRange" = "Natural Variation Range";
+
+"first" = "First";
+"second" = "Second";
+"third" = "Third";
+"ionizationPotential" = "Ionization Potential";
+"electrochemicalEquivalent" = "Electrochemical Equivalent (g/amp-hr)";
+"electronWorkFunction" = "Electron Work Function";
+"electroNegativity" = "Electro Negativity (Pauling)";
+"heatOfFusion" = "Heat of Fusion (KJ/mol)";
+"incompatibilities" = "Incompatibilities";
+"qualitativeSolubility" = "Qualitative Solubility (g/100 H₂0)";
+"valenceElectronPotential" = "Valence Electron Potential (-eV)";

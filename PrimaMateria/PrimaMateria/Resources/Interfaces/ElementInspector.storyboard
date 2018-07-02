@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Element Inspector" id="7ps-7A-YCp">
+                                    <navigationItem title="elementInspector" id="7ps-7A-YCp">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="eVs-YQ-rFr">
                                             <connections>
                                                 <action selector="dismiss:" destination="yBj-la-3m7" id="f5k-hs-kKQ"/>
@@ -327,7 +327,7 @@
                                         <size key="shadowOffset" width="2" height="2"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="swipeRight" textAlignment="right" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GC1-eV-UC6" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
-                                        <rect key="frame" x="620" y="1" width="400" height="25"/>
+                                        <rect key="frame" x="615" y="1" width="400" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <accessibility key="accessibilityConfiguration">
