@@ -129,7 +129,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     }
     
     func showGraphForChoiceAtIndex(_ anIndex: UInt) {
-        let dict = XTRDataSource.sharedInstance().graphPropertyList?[Int(anIndex)]
+        let dict = XTRDataSource.sharedInstance().graphPropertyList?.value[Int(anIndex)]
         let minValue = dict?[GraphAttribute.minimumValue] as! Float
         let maxValue = dict?[GraphAttribute.maximumValue] as! Float
         let majorTicks = dict?[GraphAttribute.majorTickMarks] as! Float

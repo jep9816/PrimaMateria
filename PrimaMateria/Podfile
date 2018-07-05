@@ -8,8 +8,10 @@ target 'PrimaMateria' do
     #pod 'CorePlot', '~> 2.2'
     pod 'CorePlot', :git => 'https://github.com/core-plot/core-plot.git', :branch => 'release-2.3'
 
-    pod 'RxSwift',    '~> 4.0'
-    pod 'RxCocoa',    '~> 4.0'
+    pod 'RxSwift'
+    pod 'RxCocoa'
+    pod 'RxSwiftExt'
+    pod 'RxDataSources'
 end
 
 #target 'PrimaMateria Debug' do

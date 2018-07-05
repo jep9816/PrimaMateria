@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 let sortColumns = [ELEMENT_ATOMIC_NUMBER, ELEMENT_SYMBOL, ELEMENT_NAME, ELEMENT_ATOMIC_MASS, ELEMENT_BOILING_POINT, ELEMENT_MELTING_POINT, ELEMENT_DENSITY, ELEMENT_SERIES, ELEMENT_PERIOD, ELEMENT_GROUP]
 
@@ -17,7 +18,7 @@ class XTRDataSource : NSObject {
     
     var elementList : [XTRElement]!
     var sortedElementList : NSMutableArray?
-    var graphPropertyList : [[String : AnyObject]]?
+    var graphPropertyList : RelaySubject<[[String : AnyObject]]>?
     var columnSortSelector : Selector?
     
     struct Static {
@@ -78,7 +79,7 @@ class XTRDataSource : NSObject {
         elementList = []
         sortedElementList = NSMutableArray()
         do {
-            try graphPropertyList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [[String : AnyObject]]
+            try graphPropertyList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? RelaySubject<[[String : AnyObject]]>
         } catch _ {
             graphPropertyList = nil
         }
