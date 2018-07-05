@@ -16,7 +16,7 @@ class XTRDataSource : NSObject {
     private static var __once: () = { _sharedInstance = XTRDataSource() }()
     static var _sharedInstance : XTRDataSource!
     
-    var elementList : [XTRElement]!
+    var elementList : [XTRElementModel]!
     var sortedElementList : NSMutableArray?
     var graphPropertyList : RelaySubject<[[String : AnyObject]]>?
     var columnSortSelector : Selector?
@@ -42,7 +42,7 @@ class XTRDataSource : NSObject {
         var tempDict : [String : Any]?
         
         do {
-            let element = XTRElement()
+            let element = XTRElementModel()
             
             try tempDict = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String : Any]
             
@@ -111,7 +111,7 @@ class XTRDataSource : NSObject {
     
     // MARK: - Accessor Methods
     
-    func elementForSymbol(_ symbol: String) -> XTRElement? {
+    func elementForSymbol(_ symbol: String) -> XTRElementModel? {
         for index in 0..<elementList.count {
             let element = elementList[index]
             
@@ -123,11 +123,11 @@ class XTRDataSource : NSObject {
         return nil
     }
     
-    func sortedElementAtIndex(_ anIndex: Int) -> XTRElement {
-        return sortedElementList!.object(at: anIndex) as! XTRElement
+    func sortedElementAtIndex(_ anIndex: Int) -> XTRElementModel {
+        return sortedElementList!.object(at: anIndex) as! XTRElementModel
     }
     
-    func elementAtIndex(_ anIndex: Int) -> XTRElement {
+    func elementAtIndex(_ anIndex: Int) -> XTRElementModel {
         return elementList[anIndex]
     }
     

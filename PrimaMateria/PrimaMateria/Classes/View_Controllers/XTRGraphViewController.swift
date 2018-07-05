@@ -117,7 +117,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         y.titleTextStyle = textStyle
     }
     
-    func element(_ anElement: XTRElement, anIdentifier: String) -> NSNumber {
+    func element(_ anElement: XTRElementModel, anIdentifier: String) -> NSNumber {
         let aValue : NSNumber? = anElement.value(forKeyPath: anIdentifier) as? NSNumber
         return (aValue != nil) ? aValue! : 0
     }

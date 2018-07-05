@@ -33,10 +33,13 @@ class XTRGeneralInfoViewController : XTRSwapableViewController {
     // MARK: - Internal Methods
     
     func assignGeneralInfo() {
-        let aPath = element!.pathForGeneralInfoDoc()
+        let path = element!.pathForGeneralInfoDoc()
         
-        if !aPath.isEmpty {
-            webView.load(URLRequest(url: URL(string: aPath)!))
+        if !path.isEmpty {
+            let url = URL(fileURLWithPath: path)
+            let request = URLRequest(url: url)
+
+            webView.load(request)
         }
     }
     

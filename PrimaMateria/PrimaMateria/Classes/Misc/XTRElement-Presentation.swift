@@ -23,10 +23,10 @@ enum SuperScriptType {
     static let k9Superscript = 57
 }
 
-extension XTRElement {
+extension XTRElementModel {
     
     func pathForGeneralInfoDoc() -> String {
-        if let aPath = Bundle(for: XTRElement.classForCoder()).path(forResource: symbol, ofType: FileType.rtf, inDirectory: SUPPORTING_FILES) {
+        if let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: symbol, ofType: FileType.rtf, inDirectory: SUPPORTING_FILES) {
             return aPath
         }
         

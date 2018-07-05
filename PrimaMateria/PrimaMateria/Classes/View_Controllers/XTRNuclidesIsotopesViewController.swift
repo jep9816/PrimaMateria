@@ -11,7 +11,7 @@ class XTRNuclidesIsotopesViewController : XTRSwapableViewController {
     @IBOutlet var headerView : UIView!
     @IBOutlet var swapView: UIView!
     
-    var nuclidesAndIsotopesArray : [[String : AnyObject]]?
+    var nuclidesAndIsotopesArray : [XTRIsotopeModel]?
     
     private var tableView : UITableView?
     private var delegate : XTRNuclidesIsotopesViewControllerDelegate = XTRNuclidesIsotopesViewControllerDelegate()

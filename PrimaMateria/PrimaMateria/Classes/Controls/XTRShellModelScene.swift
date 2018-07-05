@@ -14,9 +14,9 @@ let shellTextXOffset : CGFloat = 12.0
 
 class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     
-    var element: XTRElement?
+    var element: XTRElementModel?
     
-    init(size: CGSize, element: XTRElement) {
+    init(size: CGSize, element: XTRElementModel) {
         super.init(size: size)
         self.element = element
     }

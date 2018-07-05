@@ -8,7 +8,7 @@
 
 class XTRBarPlot : CPTBarPlot {
     
-    var element: XTRElement!
+    var element: XTRElementModel!
     
     // MARK: - Initialization Methods
 
