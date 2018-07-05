@@ -336,8 +336,8 @@
 		80BDF04D20EDBBFD00C846FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				80BDF04A20EDAF8200C846FA /* XTRIsotopeModel.swift */,
 				B82DA0571CC1471C00BD2E41 /* XTRElementModel.swift */,
+				80BDF04A20EDAF8200C846FA /* XTRIsotopeModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";

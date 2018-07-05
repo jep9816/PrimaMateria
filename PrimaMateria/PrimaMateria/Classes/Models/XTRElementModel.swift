@@ -95,6 +95,7 @@ class XTRElementModel : NSObject {
     
     var nuclidesAndIsotopes: [XTRIsotopeModel]? {
         let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String : AnyObject]]
+        
         var isotopes: [XTRIsotopeModel] = []
 
         if let list = list {
