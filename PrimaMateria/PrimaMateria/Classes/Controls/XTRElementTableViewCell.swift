@@ -18,7 +18,7 @@ class XTRElementTableViewCell : UITableViewCell {
     var seriesLabel : XTRTableLabel!
     var periodLabel : XTRTableLabel!
     var groupLabel : XTRTableLabel!
-    var element : XTRElement!
+    var element : XTRElementModel!
     
     // MARK: - Initialization Methods
     
@@ -26,7 +26,7 @@ class XTRElementTableViewCell : UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
-    func setup(_ anElement: XTRElement) {
+    func setup(_ anElement: XTRElementModel) {
         element = anElement
         backgroundColor = UIColor.black
         contentView.backgroundColor = UIColor.darkGray

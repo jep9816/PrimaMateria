@@ -6,9 +6,7 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-import UIKit
-
-class XTRElement : NSObject {
+class XTRElementModel : NSObject {
     
     var elementDictionary : [String: Any] = [:]
     
@@ -95,8 +93,17 @@ class XTRElement : NSObject {
         return value(forKeyPath: ELEMENT_NAME) as? String
     }
     
-    var nuclidesAndIsotopes: [[String : AnyObject]]? {
-        return value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String : AnyObject]]
+    var nuclidesAndIsotopes: [XTRIsotopeModel]? {
+        let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String : AnyObject]]
+        var isotopes: [XTRIsotopeModel] = []
+
+        if let list = list {
+            for item in list {
+                let model = XTRIsotopeModel(dictionary: item)
+                isotopes.append(model)
+            }
+        }
+        return isotopes
     }
     
     var period: String? {

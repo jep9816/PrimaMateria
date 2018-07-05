@@ -96,7 +96,7 @@ class XTRMolecularCalculatorViewController : UIViewController {
         errorLabel.text = STRING_EMPTY
     }
     
-    func setElement(_ anElement: XTRElement) {
+    func setElement(_ anElement: XTRElementModel) {
         updateTextField(anElement.symbol!)
         updateLabel(anElement.symbol!)
     }

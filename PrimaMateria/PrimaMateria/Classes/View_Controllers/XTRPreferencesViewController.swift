@@ -94,7 +94,7 @@ class XTRPreferencesViewController : UIViewController {
     }
 
     func loadDocument(_ documentName: String, inView: WKWebView) {
-        guard let aPath = Bundle(for: XTRElement.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
+        guard let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
         
         webView.load(URLRequest(url: URL(fileURLWithPath: aPath)))
     }

@@ -8,7 +8,7 @@
 
 class XTRSwapableViewController : UIViewController {
     
-    var element : XTRElement?
+    var element : XTRElementModel?
 
     // MARK: - Initialization Methods
     
