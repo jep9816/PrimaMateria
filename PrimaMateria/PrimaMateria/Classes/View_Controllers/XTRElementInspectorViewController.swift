@@ -231,7 +231,6 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipePreviousElement)
         setupPageItemView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {

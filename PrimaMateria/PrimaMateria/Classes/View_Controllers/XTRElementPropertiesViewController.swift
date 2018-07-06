@@ -163,6 +163,10 @@ class XTRElementPropertiesViewController : XTRSwapableViewController {
         physicalPropertiesView.bounds = swapView.bounds
         physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1670)
         physicalPropertiesView.isHidden = false
+        let rect = segmentedControl.frame
+        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
+        segmentedControl.frame = newRect
+
         view.addSubview(physicalPropertiesView)
         
         swapView.removeFromSuperview()

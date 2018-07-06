@@ -129,11 +129,11 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     }
     
     func showGraphForChoiceAtIndex(_ anIndex: UInt) {
-        let dict = XTRDataSource.sharedInstance().graphPropertyList?.value[Int(anIndex)]
-        let minValue = dict?[GraphAttribute.minimumValue] as! Float
-        let maxValue = dict?[GraphAttribute.maximumValue] as! Float
-        let majorTicks = dict?[GraphAttribute.majorTickMarks] as! Float
-        let minorTicks = dict?[GraphAttribute.minorTickMarks] as! Float
+        let dict = XTRDataSource.sharedInstance().graphPropertyList![Int(anIndex)]
+        let minValue = dict[GraphAttribute.minimumValue] as! Float
+        let maxValue = dict[GraphAttribute.maximumValue] as! Float
+        let majorTicks = dict[GraphAttribute.majorTickMarks] as! Float
+        let minorTicks = dict[GraphAttribute.minorTickMarks] as! Float
         let majorTickStyle = CPTMutableLineStyle.init()
         let minorTickStyle = CPTMutableLineStyle.init()
         let length = XTRDataSource.sharedInstance().elementCount() + 1
@@ -153,7 +153,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         minorTickStyle.lineColor = CPTColor.darkGray()
         
         createXAxis(axisSet, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle)
-        createYAxis(axisSet, minorTicks: minorTicks, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle, majorTicks: majorTicks, dict: dict!, maxValue: maxValue, minValue: minValue)
+        createYAxis(axisSet, minorTicks: minorTicks, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle, majorTicks: majorTicks, dict: dict, maxValue: maxValue, minValue: minValue)
         
         barPlot.element = XTRDataSource.sharedInstance().elementAtIndex(Int(anIndex))
         barPlot.delegate = self
@@ -163,7 +163,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         barPlot.dataSource = self
         //barPlot.dataSource = delegate
         barPlot.barOffset = 0.0
-        barPlot.identifier = dict?[GraphAttribute.name] as! String as (NSCoding & NSCopying & NSObjectProtocol)?
+        barPlot.identifier = dict[GraphAttribute.name] as! String as (NSCoding & NSCopying & NSObjectProtocol)?
         barPlot.barCornerRadius = 0.0
         
         barChart?.add(barPlot, to: plotSpace)

@@ -95,16 +95,15 @@ class XTRElementModel : NSObject {
     
     var nuclidesAndIsotopes: [XTRIsotopeModel]? {
         let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String : AnyObject]]
-        
-        var isotopes: [XTRIsotopeModel] = []
+        var models: [XTRIsotopeModel] = []
 
         if let list = list {
             for item in list {
                 let model = XTRIsotopeModel(dictionary: item)
-                isotopes.append(model)
+                models.append(model)
             }
         }
-        return isotopes
+        return models
     }
     
     var period: String? {
@@ -119,8 +118,19 @@ class XTRElementModel : NSObject {
         return value(forKeyPath: ELEMENT_SYMBOL) as? String
     }
     
-    var lineSpectra: [[String : AnyObject]]? {
-        return value(forKeyPath: ELEMENT_LINE_SPECTRA) as! [[String : AnyObject]]?
+    var lineSpectra: [XTRSpectraModel]? {
+        let list = value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String : AnyObject]]?
+        var models: [XTRSpectraModel] = []
+        
+        if let list = list {
+            for item in list! {
+                let model = XTRSpectraModel(dictionary: item)
+                models.append(model)
+            }
+        }
+
+        return models
+        //return value(forKeyPath: ELEMENT_LINE_SPECTRA) as! [[String : AnyObject]]?
     }
     
     var vaporPressure: [String : AnyObject]? {

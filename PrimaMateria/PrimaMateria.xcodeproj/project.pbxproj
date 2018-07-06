@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		084EEBBB20D83D4700C6B81D /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */; };
 		08D7B73E20E11DA500D64E60 /* XTRBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F7F8F720E0794200D75503 /* XTRBackgroundView.swift */; };
+		80127BC720EEFF1700ABC706 /* XTRSpectraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127BC620EEFF1700ABC706 /* XTRSpectraModel.swift */; };
+		80127BC820EF031600ABC706 /* XTRSpectraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127BC620EEFF1700ABC706 /* XTRSpectraModel.swift */; };
 		8014785320E5D7FD0090EF8A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8014785520E5D7FD0090EF8A /* Localizable.strings */; };
 		8014787B20E5DFCD0090EF8A /* AtomicStructure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8014787A20E5DFCC0090EF8A /* AtomicStructure.storyboard */; };
 		8014787D20E66B340090EF8A /* XTRLocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8014787C20E66B340090EF8A /* XTRLocalizedLabel.swift */; };
@@ -148,6 +150,7 @@
 		084EEBBA20D83D4700C6B81D /* Bundle+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
 		667BA4B8E6AB4A94BB6FAFD6 /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 		756B61F8C4D1980652AEE84A /* Pods_PrimaMateria_Debug.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria_Debug.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80127BC620EEFF1700ABC706 /* XTRSpectraModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRSpectraModel.swift; sourceTree = "<group>"; };
 		8014785420E5D7FD0090EF8A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8014786D20E5DA690090EF8A /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8014787A20E5DFCC0090EF8A /* AtomicStructure.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AtomicStructure.storyboard; sourceTree = "<group>"; };
@@ -338,6 +341,7 @@
 			children = (
 				B82DA0571CC1471C00BD2E41 /* XTRElementModel.swift */,
 				80BDF04A20EDAF8200C846FA /* XTRIsotopeModel.swift */,
+				80127BC620EEFF1700ABC706 /* XTRSpectraModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -850,6 +854,7 @@
 				B82DA0581CC1471C00BD2E41 /* XTRElementModel.swift in Sources */,
 				808127D920E007A00066FB7C /* XTRImageFactory.swift in Sources */,
 				808127DF20E00C2C0066FB7C /* XTRAppearanceManagerStandard.swift in Sources */,
+				80127BC720EEFF1700ABC706 /* XTRSpectraModel.swift in Sources */,
 				B85CC45D1CC7C674005683F3 /* XTRNuclidesIsotopesViewController.swift in Sources */,
 				B82DA0641CC17D9200BD2E41 /* XTRMainViewController.swift in Sources */,
 				B827B6721CCD4CDD009629AF /* XTRDefines.swift in Sources */,
@@ -876,6 +881,7 @@
 				8085C32120E0190B0004A16A /* XTRColorFactoryStandard.swift in Sources */,
 				9B5388AD20D86281004ED7AD /* XTRShellModelScene.swift in Sources */,
 				80769E6920DD472D00DB4FC6 /* XTRMainViewControllerDelegate.swift in Sources */,
+				80127BC820EF031600ABC706 /* XTRSpectraModel.swift in Sources */,
 				9B5388AF20D864E5004ED7AD /* XTRMainViewController.swift in Sources */,
 				9B5388B420D86576004ED7AD /* XTRAppDelegate.swift in Sources */,
 				9B116A6520D6ADCF00175AF0 /* PrimaMateriaTests.swift in Sources */,
@@ -977,7 +983,7 @@
 					"-iquote",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CorePlot/CorePlot.framework/Headers\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1050,7 +1056,7 @@
 					"-iquote",
 					"\"$PODS_CONFIGURATION_BUILD_DIR/CorePlot/CorePlot.framework/Headers\"",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "";
 				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)";
 				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
@@ -1103,12 +1109,12 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.primamateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;
@@ -1157,12 +1163,12 @@
 				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "$(inherited)";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.primamateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "$inherited";
+				SWIFT_OBJC_BRIDGING_HEADER = $inherited;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

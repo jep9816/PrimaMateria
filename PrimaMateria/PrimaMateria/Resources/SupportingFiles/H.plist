@@ -108,7 +108,7 @@
 	<array>
 		<dict>
 			<key>airWavelength</key>
-			<string>4101.7400</string>
+			<string>4101.74</string>
 			<key>intensity</key>
 			<string>15</string>
 			<key>spectrum</key>
@@ -206,8 +206,8 @@
 			<string>¹H</string>
 			<key>nuclearSpin</key>
 			<string>1/2+</string>
-            <key>naturalRangeVariation</key>
-            <string>0.9998–0.9999</string>
+			<key>naturalRangeVariation</key>
+			<string>0.9998–0.9999</string>
 		</dict>
 		<dict>
 			<key>isotopicComposition</key>
@@ -230,8 +230,8 @@
 			<string>²H (D)</string>
 			<key>nuclearSpin</key>
 			<string>1+</string>
-            <key>naturalRangeVariation</key>
-            <string>0.0000–0.0001</string>
+			<key>naturalRangeVariation</key>
+			<string>0.0000–0.0001</string>
 		</dict>
 		<dict>
 			<key>isotopicComposition</key>
@@ -254,8 +254,8 @@
 			<string>³H (T)</string>
 			<key>nuclearSpin</key>
 			<string>1/2+</string>
-            <key>naturalRangeVariation</key>
-            <string></string>
+			<key>naturalRangeVariation</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>isotopicComposition</key>
@@ -278,8 +278,8 @@
 			<string>⁴H</string>
 			<key>nuclearSpin</key>
 			<string>2-</string>
-            <key>naturalRangeVariation</key>
-            <string></string>
+			<key>naturalRangeVariation</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>isotopicComposition</key>
@@ -295,15 +295,15 @@
 			<key>daughterIsotopes</key>
 			<string>³H</string>
 			<key>halfLife</key>
-			<string>>9.1×10⁻²² s ?</string>
+			<string>&gt;9.1×10⁻²² s ?</string>
 			<key>nn</key>
 			<string>4</string>
 			<key>nuclideSymbol</key>
 			<string>⁵H</string>
 			<key>nuclearSpin</key>
 			<string>(1/2+)</string>
-            <key>naturalRangeVariation</key>
-            <string></string>
+			<key>naturalRangeVariation</key>
+			<string></string>
 		</dict>
 		<dict>
 			<key>isotopicComposition</key>
@@ -325,58 +325,58 @@
 			<key>nuclideSymbol</key>
 			<string>⁶H</string>
 			<key>nuclearSpin</key>
-            <string>2-#</string>
-            <key>naturalRangeVariation</key>
-            <string></string>
+			<string>2-#</string>
+			<key>naturalRangeVariation</key>
+			<string></string>
 		</dict>
-        <dict>
-            <key>isotopicComposition</key>
-            <string></string>
-            <key>atomicMass</key>
-            <string></string>
-            <key>zp</key>
-            <string></string>
-            <key>decayEnergy</key>
-            <string></string>
-            <key>decayModes</key>
-            <string>4n</string>
-            <key>daughterIsotopes</key>
-            <string>²H</string>
-            <key>halfLife</key>
-            <string></string>
-            <key>nn</key>
-            <string></string>
-            <key>nuclideSymbol</key>
-            <string></string>
-            <key>nuclearSpin</key>
-            <string></string>
-            <key>naturalRangeVariation</key>
-            <string></string>
-        </dict>
-        <dict>
-            <key>isotopicComposition</key>
-            <string>Syn</string>
-            <key>atomicMass</key>
-            <string>7.0522</string>
-            <key>zp</key>
-            <string>1</string>
-            <key>decayEnergy</key>
-            <string></string>
-            <key>decayModes</key>
-            <string>4n</string>
-            <key>daughterIsotopes</key>
-            <string>²He</string>
-            <key>halfLife</key>
-            <string>2.3(6)×10⁻²³ s#</string>
-            <key>nn</key>
-            <string>5</string>
-            <key>nuclideSymbol</key>
-            <string>⁷H</string>
-            <key>nuclearSpin</key>
-            <string>1/2+#</string>
-            <key>naturalRangeVariation</key>
-            <string></string>
-        </dict>
+		<dict>
+			<key>isotopicComposition</key>
+			<string></string>
+			<key>atomicMass</key>
+			<string></string>
+			<key>zp</key>
+			<string></string>
+			<key>decayEnergy</key>
+			<string></string>
+			<key>decayModes</key>
+			<string>4n</string>
+			<key>daughterIsotopes</key>
+			<string>²H</string>
+			<key>halfLife</key>
+			<string></string>
+			<key>nn</key>
+			<string></string>
+			<key>nuclideSymbol</key>
+			<string></string>
+			<key>nuclearSpin</key>
+			<string></string>
+			<key>naturalRangeVariation</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>isotopicComposition</key>
+			<string>Syn</string>
+			<key>atomicMass</key>
+			<string>7.0522</string>
+			<key>zp</key>
+			<string>1</string>
+			<key>decayEnergy</key>
+			<string></string>
+			<key>decayModes</key>
+			<string>4n</string>
+			<key>daughterIsotopes</key>
+			<string>²He</string>
+			<key>halfLife</key>
+			<string>2.3(6)×10⁻²³ s#</string>
+			<key>nn</key>
+			<string>5</string>
+			<key>nuclideSymbol</key>
+			<string>⁷H</string>
+			<key>nuclearSpin</key>
+			<string>1/2+#</string>
+			<key>naturalRangeVariation</key>
+			<string></string>
+		</dict>
 	</array>
 	<key>numberOfElectrons</key>
 	<string>1</string>

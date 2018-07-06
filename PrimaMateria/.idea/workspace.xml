@@ -23,53 +23,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9b6f6ca8-a962-4dcc-bdae-971494682b72" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRLocalizedLabel.swift" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/en.lproj/Localizable.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/AtomicStructure.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/ColorPicker.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/ElementBalloon.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/ElementInspector.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/ElementList.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/ElementProperties.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/GeneralInfo.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/Graph.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/GraphChoice.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/HelpBalloon.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/Info.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/LaunchScreen.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/Localizable.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/MainStoryboard.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/MolecularCalculator.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/NuclidesIsotopes.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/PeriodicTable.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/Preferences.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/Spectrum.strings" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PrimaMateria/Resources/es.lproj/Splash.strings" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRColorFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRColorFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRColorFactoryClassic.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRColorFactoryClassic.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRColorFactoryStandard.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRColorFactoryStandard.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRGeneralButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRGeneralButton.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Extensions/NSObject+General.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Extensions/NSObject+General.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRAtomicStructureViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRAtomicStructureViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRColorPickerViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRColorPickerViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRElementBalloonViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRElementBalloonViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRNuclidesIsotopesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRNuclidesIsotopesViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRPreferencesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRPreferencesViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRSpectrumViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRSpectrumViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRWikipediaViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRWikipediaViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/ColorPicker.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/ColorPicker.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/ElementBalloon.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/ElementBalloon.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/NuclidesIsotopes.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/NuclidesIsotopes.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/Spectrum.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/Spectrum.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/Splash.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/Splash.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/Wikipedia.storyboard" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/Wikipedia.storyboard" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/Interfaces/en.lproj/AtomicStructure.storyboard" beforeDir="false" />
-    </list>
+    <list default="true" id="9b6f6ca8-a962-4dcc-bdae-971494682b72" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/../../../DerivedData/PrimaMateria-cqegpwzgimhxgxbswwxsjvouofmr/" />
     <ignored path="$PROJECT_DIR$/../../../DerivedData/Build/Products/" />
     <ignored path="$PROJECT_DIR$/../../../DerivedData/Build/Intermediates.noindex/" />
@@ -86,8 +40,8 @@
       <file leaf-file-name="XTRMainViewController.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRMainViewController.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+            <state relative-caret-position="315">
+              <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -150,7 +104,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="140" />
     <option name="y" value="43" />
     <option name="width" value="1400" />
@@ -162,6 +116,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,7 +147,6 @@
         </subPane>
       </pane>
       <pane id="Cidr.FilesView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,14 +191,15 @@
       <workItem from="1530116060882" duration="644000" />
       <workItem from="1530197441107" duration="172000" />
       <workItem from="1530295823987" duration="202000" />
+      <workItem from="1530804993368" duration="11000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1379000" />
+    <option name="totallyTimeSpent" value="1390000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="140" y="43" width="1400" height="987" extended-state="1" />
+    <frame x="140" y="43" width="1400" height="987" extended-state="0" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
@@ -253,7 +208,7 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26804122" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27172312" />
       <window_info anchor="bottom" id="TeamCity" order="7" />
       <window_info anchor="right" id="LuaJ" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -276,6 +231,34 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRMainViewController.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRImageFactory.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrimaMateria/Classes/Appearance/XTRColorFactoryStandard.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/PrimaMateria/Classes/Delegates/XTRGraphViewControllerDelegate.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRMainViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -383,8 +366,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/PrimaMateria/Classes/View_Controllers/XTRMainViewController.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="29" selection-start-line="23" selection-start-column="29" selection-end-line="23" selection-end-column="29" />
+        <state relative-caret-position="315">
+          <caret line="21" column="29" selection-start-line="21" selection-start-column="29" selection-end-line="21" selection-end-column="29" />
         </state>
       </provider>
     </entry>

@@ -31,17 +31,24 @@ class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITable
         var num : Float?
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
-            let dict = controller?.lineSpectraArray![Int(idx)]
-            let airWavelength = Float(dict![SpectrumAttribute.kAirWavelength] as! String)!
-            let intensity = Float(dict![SpectrumAttribute.kIntensity] as! String)!
-            let spectrum = dict![SpectrumAttribute.kSpectrum] as! String
+            let model = controller?.lineSpectraArray![Int(idx)]
+            var airWavelength : Float = 0.0
+            var intensity : Float = 0.0
+            let spectrum = model?.spectrum
             let identifier = plot.identifier as! String
-            
+
+            if let value1 = model?.airWavelength {
+                airWavelength = Float(value1)!
+            }
+            if let value2 = model?.intensity {
+                intensity = Float(value2)!
+            }
+
             switch (fieldEnum) {
             case 0:
-                num = controller?.airWavelengthValue(airWavelength, anIdentifier: identifier, aSpectrum: spectrum)
+                num = controller?.airWavelengthValue(airWavelength, anIdentifier: identifier, aSpectrum: spectrum!)
             case 1:
-                num = controller?.intensityValue(intensity, anIdentifier: identifier, aSpectrum: spectrum)
+                num = controller?.intensityValue(intensity, anIdentifier: identifier, aSpectrum: spectrum!)
             default:
                 num = 0
                 break
@@ -62,16 +69,16 @@ class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITable
         
         if cell == nil {
             let modulus = row % 2
-            let dict = controller?.lineSpectraArray![row]
-            let airWavelength = dict![SpectrumAttribute.kAirWavelength] as! String
-            let intensity = dict![SpectrumAttribute.kIntensity] as! String
-            let spectrum = dict![SpectrumAttribute.kSpectrum] as! String
+            let model = controller?.lineSpectraArray![row]
+            let airWavelength = model?.airWavelength
+            let intensity = model?.intensity
+            let spectrum = model?.spectrum
             
             cell = XTRTableCell(style: .default, reuseIdentifier: MyIdentifier)
             
-            tableCellLabelWithXPos(0.0, YPos: 0.0, width: 124.0, height: 32.0, property: airWavelength, columnPosition: 1, modulus: modulus, cell: cell!)
-            tableCellLabelWithXPos(125.0, YPos: 0.0, width: 115.0, height: 32.0, property: intensity, columnPosition: 2, modulus: modulus, cell: cell!)
-            tableCellLabelWithXPos(241.0, YPos: 0.0, width: 117.0, height: 32.0, property: spectrum, columnPosition: 3, modulus: modulus, cell: cell!)
+            tableCellLabelWithXPos(0.0, YPos: 0.0, width: 124.0, height: 32.0, property: airWavelength!, columnPosition: 1, modulus: modulus, cell: cell!)
+            tableCellLabelWithXPos(125.0, YPos: 0.0, width: 115.0, height: 32.0, property: intensity!, columnPosition: 2, modulus: modulus, cell: cell!)
+            tableCellLabelWithXPos(241.0, YPos: 0.0, width: 117.0, height: 32.0, property: spectrum!, columnPosition: 3, modulus: modulus, cell: cell!)
         }
         
         return cell!

@@ -23,7 +23,7 @@ class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelega
     @IBOutlet var swapView : UIView!
     
     var barChart : CPTXYGraph?
-    var lineSpectraArray : [[String : AnyObject]]?
+    var lineSpectraArray : [XTRSpectraModel]?
     var tableView : UITableView?
     
     private var delegate : XTRSpectrumViewControllerDelegate = XTRSpectrumViewControllerDelegate()
