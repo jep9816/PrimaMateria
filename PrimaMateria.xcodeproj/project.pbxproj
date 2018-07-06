@@ -1,0 +1,986 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		80127C2B20F0268C00ABC706 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80127C2520F0268B00ABC706 /* Images.xcassets */; };
+		8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD620F0270400ABC706 /* MBProgressHUD.m */; };
+		8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */; };
+		8012802E20F0270500ABC706 /* XTRPropertiesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */; };
+		8012802F20F0270500ABC706 /* XTRMolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */; };
+		8012803020F0270500ABC706 /* XTRAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDC20F0270400ABC706 /* XTRAppDelegate.swift */; };
+		8012803120F0270500ABC706 /* XTRApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDD20F0270400ABC706 /* XTRApplication.swift */; };
+		8012803220F0270500ABC706 /* XTRPopoutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */; };
+		8012803320F0270500ABC706 /* XTRDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDF20F0270400ABC706 /* XTRDefines.swift */; };
+		8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FE020F0270400ABC706 /* XTRDataSource.swift */; };
+		8012803520F0270500ABC706 /* XTRElement-Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FE120F0270400ABC706 /* XTRElement-Presentation.swift */; };
+		8012803F20F0270500ABC706 /* XTRElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FED20F0270400ABC706 /* XTRElementModel.swift */; };
+		8012804020F0270500ABC706 /* XTRIsotopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */; };
+		8012804120F0270500ABC706 /* XTRSpectraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */; };
+		8012804220F0270500ABC706 /* XTRGraphDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF020F0270400ABC706 /* XTRGraphDefinitionModel.swift */; };
+		8012804320F0270500ABC706 /* UIColor-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF220F0270400ABC706 /* UIColor-Extensions.swift */; };
+		8012804420F0270500ABC706 /* UIImage-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF320F0270400ABC706 /* UIImage-Extensions.swift */; };
+		8012804520F0270500ABC706 /* NSObject+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF420F0270400ABC706 /* NSObject+General.swift */; };
+		8012804620F0270500ABC706 /* UIView+LayerFlattening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */; };
+		8012804720F0270500ABC706 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF620F0270400ABC706 /* Bundle+Extensions.swift */; };
+		8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF820F0270400ABC706 /* XTRElementButton.swift */; };
+		8012804920F0270500ABC706 /* XTRLocalizedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF920F0270400ABC706 /* XTRLocalizedLabel.swift */; };
+		8012804A20F0270500ABC706 /* XTRBarPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FFA20F0270400ABC706 /* XTRBarPlot.swift */; };
+		8012804B20F0270500ABC706 /* XTRTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FFB20F0270400ABC706 /* XTRTableCell.swift */; };
+		8012804C20F0270500ABC706 /* XTRDividerLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FFC20F0270400ABC706 /* XTRDividerLabel.swift */; };
+		8012804D20F0270500ABC706 /* XTRElementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FFD20F0270400ABC706 /* XTRElementTableViewCell.swift */; };
+		8012804E20F0270500ABC706 /* XTRTableHeaderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FFE20F0270400ABC706 /* XTRTableHeaderButton.swift */; };
+		8012804F20F0270500ABC706 /* XTRGraphChoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */; };
+		8012805020F0270500ABC706 /* XTRTableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800020F0270400ABC706 /* XTRTableLabel.swift */; };
+		8012805120F0270500ABC706 /* XTRShellModelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800120F0270400ABC706 /* XTRShellModelScene.swift */; };
+		8012805220F0270500ABC706 /* XTRHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800220F0270400ABC706 /* XTRHelpButton.swift */; };
+		8012805320F0270500ABC706 /* XTRGeneralButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800320F0270400ABC706 /* XTRGeneralButton.swift */; };
+		8012805420F0270500ABC706 /* XTRNuclidesIsotopesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800520F0270400ABC706 /* XTRNuclidesIsotopesViewController.swift */; };
+		8012805520F0270500ABC706 /* XTRColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */; };
+		8012805620F0270500ABC706 /* XTRGraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800720F0270400ABC706 /* XTRGraphViewController.swift */; };
+		8012805720F0270500ABC706 /* XTRGeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */; };
+		8012805820F0270500ABC706 /* XTRSlideDownAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800920F0270400ABC706 /* XTRSlideDownAnimationController.swift */; };
+		8012805920F0270500ABC706 /* XTRMolecularCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */; };
+		8012805A20F0270500ABC706 /* XTRElementInspectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */; };
+		8012805B20F0270500ABC706 /* XTRPeriodicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */; };
+		8012805C20F0270500ABC706 /* XTRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800D20F0270400ABC706 /* XTRMainViewController.swift */; };
+		8012805D20F0270500ABC706 /* XTRElementPropertiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */; };
+		8012805E20F0270500ABC706 /* XTRGraphChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */; };
+		8012805F20F0270500ABC706 /* XTRElementListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801020F0270400ABC706 /* XTRElementListViewController.swift */; };
+		8012806020F0270500ABC706 /* XTRSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801120F0270400ABC706 /* XTRSplashViewController.swift */; };
+		8012806120F0270500ABC706 /* XTRInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801220F0270400ABC706 /* XTRInfoViewController.swift */; };
+		8012806220F0270500ABC706 /* XTRElementBalloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */; };
+		8012806320F0270500ABC706 /* XTRSwapableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801420F0270400ABC706 /* XTRSwapableViewController.swift */; };
+		8012806420F0270500ABC706 /* XTRSpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */; };
+		8012806520F0270500ABC706 /* XTRPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */; };
+		8012806620F0270500ABC706 /* XTRWikipediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */; };
+		8012806720F0270500ABC706 /* XTRAtomicStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */; };
+		8012806820F0270500ABC706 /* XTRHelpBalloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */; };
+		8012806920F0270500ABC706 /* XTRMainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801B20F0270400ABC706 /* XTRMainViewControllerDelegate.swift */; };
+		8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */; };
+		8012806B20F0270500ABC706 /* XTRInfoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */; };
+		8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */; };
+		8012806D20F0270500ABC706 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */; };
+		8012806E20F0270500ABC706 /* XTRElementListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */; };
+		8012806F20F0270500ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802120F0270400ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift */; };
+		8012807020F0270500ABC706 /* XTRGraphViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */; };
+		8012807120F0270500ABC706 /* XTRBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802420F0270400ABC706 /* XTRBackgroundView.swift */; };
+		8012807220F0270500ABC706 /* XTRCornerImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802520F0270400ABC706 /* XTRCornerImageView.swift */; };
+		8012807320F0270500ABC706 /* XTRShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802620F0270400ABC706 /* XTRShadowView.swift */; };
+		8012807420F0270500ABC706 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802B20F0270400ABC706 /* main.swift */; };
+		801281F620F0272000ABC706 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8012807620F0271F00ABC706 /* Localizable.strings */; };
+		801281F720F0272000ABC706 /* Cubic.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807920F0271F00ABC706 /* Cubic.scn */; };
+		801281F820F0272000ABC706 /* Monoclinic.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807A20F0271F00ABC706 /* Monoclinic.scn */; };
+		801281F920F0272000ABC706 /* CubicFace.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807B20F0271F00ABC706 /* CubicFace.scn */; };
+		801281FA20F0272000ABC706 /* CubicBody.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807C20F0271F00ABC706 /* CubicBody.scn */; };
+		801281FB20F0272000ABC706 /* Unknown.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807D20F0271F00ABC706 /* Unknown.scn */; };
+		801281FC20F0272000ABC706 /* Orthorhombic.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807E20F0271F00ABC706 /* Orthorhombic.scn */; };
+		801281FD20F0272000ABC706 /* Rhombohedral.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807F20F0271F00ABC706 /* Rhombohedral.scn */; };
+		801281FE20F0272000ABC706 /* Hexagonal.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012808020F0271F00ABC706 /* Hexagonal.scn */; };
+		801281FF20F0272000ABC706 /* Tetragonal.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012808120F0271F00ABC706 /* Tetragonal.scn */; };
+		8012820720F0272000ABC706 /* PrimaMateria.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */; };
+		8012820820F0272000ABC706 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8012808C20F0271F00ABC706 /* Settings.bundle */; };
+		8012820920F0272000ABC706 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8012808D20F0271F00ABC706 /* Credits.rtf */; };
+		8012826820F0272000ABC706 /* LoadFailure.html in Resources */ = {isa = PBXBuildFile; fileRef = 801280EE20F0272000ABC706 /* LoadFailure.html */; };
+		8012835720F0272000ABC706 /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 801281DE20F0272000ABC706 /* PrimaMateria.plist */; };
+		8012835820F0272000ABC706 /* MainStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = 801281DF20F0272000ABC706 /* MainStyle.css */; };
+		8012835920F0272000ABC706 /* GraphChoice.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E120F0272000ABC706 /* GraphChoice.storyboard */; };
+		8012835A20F0272000ABC706 /* Preferences.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E220F0272000ABC706 /* Preferences.storyboard */; };
+		8012835B20F0272000ABC706 /* Info.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E320F0272000ABC706 /* Info.storyboard */; };
+		8012835C20F0272000ABC706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E420F0272000ABC706 /* LaunchScreen.storyboard */; };
+		8012835D20F0272000ABC706 /* HelpBalloon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E520F0272000ABC706 /* HelpBalloon.storyboard */; };
+		8012835F20F0272000ABC706 /* GeneralInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E720F0272000ABC706 /* GeneralInfo.storyboard */; };
+		8012836020F0272000ABC706 /* MolecularCalculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E820F0272000ABC706 /* MolecularCalculator.storyboard */; };
+		8012836120F0272000ABC706 /* Spectrum.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E920F0272000ABC706 /* Spectrum.storyboard */; };
+		8012836220F0272000ABC706 /* ElementProperties.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281EA20F0272000ABC706 /* ElementProperties.storyboard */; };
+		8012836320F0272000ABC706 /* AtomicStructure.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281EB20F0272000ABC706 /* AtomicStructure.storyboard */; };
+		8012836420F0272000ABC706 /* ElementInspector.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281EC20F0272000ABC706 /* ElementInspector.storyboard */; };
+		8012836520F0272000ABC706 /* ColorPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281ED20F0272000ABC706 /* ColorPicker.storyboard */; };
+		8012836620F0272000ABC706 /* ElementList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281EE20F0272000ABC706 /* ElementList.storyboard */; };
+		8012836720F0272000ABC706 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281EF20F0272000ABC706 /* Splash.storyboard */; };
+		8012836820F0272000ABC706 /* PeriodicTable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281F020F0272000ABC706 /* PeriodicTable.storyboard */; };
+		8012836920F0272000ABC706 /* Graph.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281F120F0272000ABC706 /* Graph.storyboard */; };
+		8012836A20F0272000ABC706 /* NuclidesIsotopes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281F220F0272000ABC706 /* NuclidesIsotopes.storyboard */; };
+		8012836B20F0272000ABC706 /* ElementBalloon.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281F320F0272000ABC706 /* ElementBalloon.storyboard */; };
+		8012836C20F0272000ABC706 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281F420F0272000ABC706 /* MainStoryboard.storyboard */; };
+		8012836D20F0272000ABC706 /* Wikipedia.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281F520F0272000ABC706 /* Wikipedia.storyboard */; };
+		8012836F20F02B6500ABC706 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012836E20F02B6500ABC706 /* UIKit.framework */; };
+		8012837120F02B6D00ABC706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012837020F02B6D00ABC706 /* Foundation.framework */; };
+		8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837220F02D6000ABC706 /* XTRColorFactoryStandard.swift */; };
+		8012837B20F02D6100ABC706 /* XTRAppearanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837320F02D6000ABC706 /* XTRAppearanceManager.swift */; };
+		8012837D20F02D6100ABC706 /* XTRImageFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837520F02D6100ABC706 /* XTRImageFactory.swift */; };
+		8012837E20F02D6100ABC706 /* XTRAppearanceManagerClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837620F02D6100ABC706 /* XTRAppearanceManagerClassic.swift */; };
+		8012837F20F02D6100ABC706 /* XTRAppearanceManagerStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837720F02D6100ABC706 /* XTRAppearanceManagerStandard.swift */; };
+		8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837820F02D6100ABC706 /* XTRColorFactoryClassic.swift */; };
+		8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837920F02D6100ABC706 /* XTRColorFactory.swift */; };
+		8012838320F02DFE00ABC706 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012838220F02DFE00ABC706 /* CorePlot.framework */; };
+		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
+		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
+		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
+		AF8083CEBAEA2DD6400DF648 /* Pods_PrimaMateria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1732C3DCFE44437A23AA8F9D /* Pods-PrimaMateria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.release.xcconfig"; sourceTree = "<group>"; };
+		46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		80127C0E20F0253000ABC706 /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		80127C2520F0268B00ABC706 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PrimaMateria-Info.plist"; sourceTree = "<group>"; };
+		80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PrimaMateria.entitlements; sourceTree = "<group>"; };
+		80127FD620F0270400ABC706 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		80127FD720F0270400ABC706 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSimpleTransitionController.swift; sourceTree = "<group>"; };
+		80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPropertiesStore.swift; sourceTree = "<group>"; };
+		80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMolecularCalculator.swift; sourceTree = "<group>"; };
+		80127FDC20F0270400ABC706 /* XTRAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAppDelegate.swift; sourceTree = "<group>"; };
+		80127FDD20F0270400ABC706 /* XTRApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRApplication.swift; sourceTree = "<group>"; };
+		80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPopoutAnimationController.swift; sourceTree = "<group>"; };
+		80127FDF20F0270400ABC706 /* XTRDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRDefines.swift; sourceTree = "<group>"; };
+		80127FE020F0270400ABC706 /* XTRDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRDataSource.swift; sourceTree = "<group>"; };
+		80127FE120F0270400ABC706 /* XTRElement-Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XTRElement-Presentation.swift"; sourceTree = "<group>"; };
+		80127FED20F0270400ABC706 /* XTRElementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementModel.swift; sourceTree = "<group>"; };
+		80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRIsotopeModel.swift; sourceTree = "<group>"; };
+		80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectraModel.swift; sourceTree = "<group>"; };
+		80127FF020F0270400ABC706 /* XTRGraphDefinitionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphDefinitionModel.swift; sourceTree = "<group>"; };
+		80127FF220F0270400ABC706 /* UIColor-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extensions.swift"; sourceTree = "<group>"; };
+		80127FF320F0270400ABC706 /* UIImage-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Extensions.swift"; sourceTree = "<group>"; };
+		80127FF420F0270400ABC706 /* NSObject+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+General.swift"; sourceTree = "<group>"; };
+		80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayerFlattening.swift"; sourceTree = "<group>"; };
+		80127FF620F0270400ABC706 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
+		80127FF820F0270400ABC706 /* XTRElementButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementButton.swift; sourceTree = "<group>"; };
+		80127FF920F0270400ABC706 /* XTRLocalizedLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRLocalizedLabel.swift; sourceTree = "<group>"; };
+		80127FFA20F0270400ABC706 /* XTRBarPlot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRBarPlot.swift; sourceTree = "<group>"; };
+		80127FFB20F0270400ABC706 /* XTRTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRTableCell.swift; sourceTree = "<group>"; };
+		80127FFC20F0270400ABC706 /* XTRDividerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRDividerLabel.swift; sourceTree = "<group>"; };
+		80127FFD20F0270400ABC706 /* XTRElementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementTableViewCell.swift; sourceTree = "<group>"; };
+		80127FFE20F0270400ABC706 /* XTRTableHeaderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRTableHeaderButton.swift; sourceTree = "<group>"; };
+		80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceCell.swift; sourceTree = "<group>"; };
+		8012800020F0270400ABC706 /* XTRTableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRTableLabel.swift; sourceTree = "<group>"; };
+		8012800120F0270400ABC706 /* XTRShellModelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRShellModelScene.swift; sourceTree = "<group>"; };
+		8012800220F0270400ABC706 /* XTRHelpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHelpButton.swift; sourceTree = "<group>"; };
+		8012800320F0270400ABC706 /* XTRGeneralButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGeneralButton.swift; sourceTree = "<group>"; };
+		8012800520F0270400ABC706 /* XTRNuclidesIsotopesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRNuclidesIsotopesViewController.swift; sourceTree = "<group>"; };
+		8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRColorPickerViewController.swift; sourceTree = "<group>"; };
+		8012800720F0270400ABC706 /* XTRGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphViewController.swift; sourceTree = "<group>"; };
+		8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGeneralInfoViewController.swift; sourceTree = "<group>"; };
+		8012800920F0270400ABC706 /* XTRSlideDownAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSlideDownAnimationController.swift; sourceTree = "<group>"; };
+		8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMolecularCalculatorViewController.swift; sourceTree = "<group>"; };
+		8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementInspectorViewController.swift; sourceTree = "<group>"; };
+		8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPeriodicTableViewController.swift; sourceTree = "<group>"; };
+		8012800D20F0270400ABC706 /* XTRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMainViewController.swift; sourceTree = "<group>"; };
+		8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesViewController.swift; sourceTree = "<group>"; };
+		8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewController.swift; sourceTree = "<group>"; };
+		8012801020F0270400ABC706 /* XTRElementListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListViewController.swift; sourceTree = "<group>"; };
+		8012801120F0270400ABC706 /* XTRSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSplashViewController.swift; sourceTree = "<group>"; };
+		8012801220F0270400ABC706 /* XTRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRInfoViewController.swift; sourceTree = "<group>"; };
+		8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementBalloonViewController.swift; sourceTree = "<group>"; };
+		8012801420F0270400ABC706 /* XTRSwapableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSwapableViewController.swift; sourceTree = "<group>"; };
+		8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectrumViewController.swift; sourceTree = "<group>"; };
+		8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPreferencesViewController.swift; sourceTree = "<group>"; };
+		8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewController.swift; sourceTree = "<group>"; };
+		8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAtomicStructureViewController.swift; sourceTree = "<group>"; };
+		8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHelpBalloonViewController.swift; sourceTree = "<group>"; };
+		8012801B20F0270400ABC706 /* XTRMainViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMainViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectrumViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRInfoViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHelpBalloonViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012802120F0270400ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRNuclidesIsotopesViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012802420F0270400ABC706 /* XTRBackgroundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRBackgroundView.swift; sourceTree = "<group>"; };
+		8012802520F0270400ABC706 /* XTRCornerImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRCornerImageView.swift; sourceTree = "<group>"; };
+		8012802620F0270400ABC706 /* XTRShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRShadowView.swift; sourceTree = "<group>"; };
+		8012802820F0270400ABC706 /* PrimaMateria-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrimaMateria-Prefix.pch"; sourceTree = "<group>"; };
+		8012802920F0270400ABC706 /* PrimaMateria-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "PrimaMateria-Bridging-Header.h"; sourceTree = "<group>"; };
+		8012802A20F0270400ABC706 /* PrimaMateria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrimaMateria.h; sourceTree = "<group>"; };
+		8012802B20F0270400ABC706 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		8012807720F0271F00ABC706 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8012807920F0271F00ABC706 /* Cubic.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Cubic.scn; sourceTree = "<group>"; };
+		8012807A20F0271F00ABC706 /* Monoclinic.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Monoclinic.scn; sourceTree = "<group>"; };
+		8012807B20F0271F00ABC706 /* CubicFace.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CubicFace.scn; sourceTree = "<group>"; };
+		8012807C20F0271F00ABC706 /* CubicBody.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = CubicBody.scn; sourceTree = "<group>"; };
+		8012807D20F0271F00ABC706 /* Unknown.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Unknown.scn; sourceTree = "<group>"; };
+		8012807E20F0271F00ABC706 /* Orthorhombic.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Orthorhombic.scn; sourceTree = "<group>"; };
+		8012807F20F0271F00ABC706 /* Rhombohedral.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Rhombohedral.scn; sourceTree = "<group>"; };
+		8012808020F0271F00ABC706 /* Hexagonal.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Hexagonal.scn; sourceTree = "<group>"; };
+		8012808120F0271F00ABC706 /* Tetragonal.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Tetragonal.scn; sourceTree = "<group>"; };
+		8012808A20F0271F00ABC706 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = PrimaMateria.scnassets; sourceTree = "<group>"; };
+		8012808C20F0271F00ABC706 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8012808D20F0271F00ABC706 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
+		801280ED20F0272000ABC706 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		801280EE20F0272000ABC706 /* LoadFailure.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = LoadFailure.html; sourceTree = "<group>"; };
+		801281DE20F0272000ABC706 /* PrimaMateria.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PrimaMateria.plist; sourceTree = "<group>"; };
+		801281DF20F0272000ABC706 /* MainStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = MainStyle.css; sourceTree = "<group>"; };
+		801281E120F0272000ABC706 /* GraphChoice.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GraphChoice.storyboard; sourceTree = "<group>"; };
+		801281E220F0272000ABC706 /* Preferences.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Preferences.storyboard; sourceTree = "<group>"; };
+		801281E320F0272000ABC706 /* Info.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Info.storyboard; sourceTree = "<group>"; };
+		801281E420F0272000ABC706 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		801281E520F0272000ABC706 /* HelpBalloon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HelpBalloon.storyboard; sourceTree = "<group>"; };
+		801281E720F0272000ABC706 /* GeneralInfo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = GeneralInfo.storyboard; sourceTree = "<group>"; };
+		801281E820F0272000ABC706 /* MolecularCalculator.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MolecularCalculator.storyboard; sourceTree = "<group>"; };
+		801281E920F0272000ABC706 /* Spectrum.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Spectrum.storyboard; sourceTree = "<group>"; };
+		801281EA20F0272000ABC706 /* ElementProperties.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElementProperties.storyboard; sourceTree = "<group>"; };
+		801281EB20F0272000ABC706 /* AtomicStructure.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AtomicStructure.storyboard; sourceTree = "<group>"; };
+		801281EC20F0272000ABC706 /* ElementInspector.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElementInspector.storyboard; sourceTree = "<group>"; };
+		801281ED20F0272000ABC706 /* ColorPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ColorPicker.storyboard; sourceTree = "<group>"; };
+		801281EE20F0272000ABC706 /* ElementList.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElementList.storyboard; sourceTree = "<group>"; };
+		801281EF20F0272000ABC706 /* Splash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		801281F020F0272000ABC706 /* PeriodicTable.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PeriodicTable.storyboard; sourceTree = "<group>"; };
+		801281F120F0272000ABC706 /* Graph.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Graph.storyboard; sourceTree = "<group>"; };
+		801281F220F0272000ABC706 /* NuclidesIsotopes.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NuclidesIsotopes.storyboard; sourceTree = "<group>"; };
+		801281F320F0272000ABC706 /* ElementBalloon.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ElementBalloon.storyboard; sourceTree = "<group>"; };
+		801281F420F0272000ABC706 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		801281F520F0272000ABC706 /* Wikipedia.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Wikipedia.storyboard; sourceTree = "<group>"; };
+		8012836E20F02B6500ABC706 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		8012837020F02B6D00ABC706 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		8012837220F02D6000ABC706 /* XTRColorFactoryStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRColorFactoryStandard.swift; sourceTree = "<group>"; };
+		8012837320F02D6000ABC706 /* XTRAppearanceManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAppearanceManager.swift; sourceTree = "<group>"; };
+		8012837520F02D6100ABC706 /* XTRImageFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRImageFactory.swift; sourceTree = "<group>"; };
+		8012837620F02D6100ABC706 /* XTRAppearanceManagerClassic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAppearanceManagerClassic.swift; sourceTree = "<group>"; };
+		8012837720F02D6100ABC706 /* XTRAppearanceManagerStandard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAppearanceManagerStandard.swift; sourceTree = "<group>"; };
+		8012837820F02D6100ABC706 /* XTRColorFactoryClassic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRColorFactoryClassic.swift; sourceTree = "<group>"; };
+		8012837920F02D6100ABC706 /* XTRColorFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRColorFactory.swift; sourceTree = "<group>"; };
+		8012838220F02DFE00ABC706 /* CorePlot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CorePlot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8012838420F02F9B00ABC706 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
+		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
+		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
+		E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		80127C0B20F0253000ABC706 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8012838320F02DFE00ABC706 /* CorePlot.framework in Frameworks */,
+				8012837120F02B6D00ABC706 /* Foundation.framework in Frameworks */,
+				8012836F20F02B6500ABC706 /* UIKit.framework in Frameworks */,
+				AF8083CEBAEA2DD6400DF648 /* Pods_PrimaMateria.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		199983B141A801B329B6C872 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */,
+				1732C3DCFE44437A23AA8F9D /* Pods-PrimaMateria.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		80127C0520F0253000ABC706 = {
+			isa = PBXGroup;
+			children = (
+				80127C1020F0253000ABC706 /* PrimaMateria */,
+				80127C0F20F0253000ABC706 /* Products */,
+				199983B141A801B329B6C872 /* Pods */,
+				F7E587BE9504334DFC476A2E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		80127C0F20F0253000ABC706 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				80127C0E20F0253000ABC706 /* PrimaMateria.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		80127C1020F0253000ABC706 /* PrimaMateria */ = {
+			isa = PBXGroup;
+			children = (
+				80127FD420F0270400ABC706 /* Classes */,
+				8012807520F0271F00ABC706 /* Resources */,
+			);
+			path = PrimaMateria;
+			sourceTree = "<group>";
+		};
+		80127FD420F0270400ABC706 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				80127FD520F0270400ABC706 /* 3rd Party */,
+				80127FE220F0270400ABC706 /* Appearance */,
+				80127FF720F0270400ABC706 /* Controls */,
+				8012801A20F0270400ABC706 /* Delegates */,
+				80127FF120F0270400ABC706 /* Extensions */,
+				80127FD820F0270400ABC706 /* Misc */,
+				80127FEC20F0270400ABC706 /* Models */,
+				8012802720F0270400ABC706 /* Other Sources */,
+				8012800420F0270400ABC706 /* View Controllers */,
+				8012802320F0270400ABC706 /* Views */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		80127FD520F0270400ABC706 /* 3rd Party */ = {
+			isa = PBXGroup;
+			children = (
+				80127FD620F0270400ABC706 /* MBProgressHUD.m */,
+				80127FD720F0270400ABC706 /* MBProgressHUD.h */,
+			);
+			path = "3rd Party";
+			sourceTree = "<group>";
+		};
+		80127FD820F0270400ABC706 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */,
+				80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */,
+				80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */,
+				80127FDC20F0270400ABC706 /* XTRAppDelegate.swift */,
+				80127FDD20F0270400ABC706 /* XTRApplication.swift */,
+				80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */,
+				80127FDF20F0270400ABC706 /* XTRDefines.swift */,
+				80127FE020F0270400ABC706 /* XTRDataSource.swift */,
+				80127FE120F0270400ABC706 /* XTRElement-Presentation.swift */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
+		80127FE220F0270400ABC706 /* Appearance */ = {
+			isa = PBXGroup;
+			children = (
+				8012837320F02D6000ABC706 /* XTRAppearanceManager.swift */,
+				8012837620F02D6100ABC706 /* XTRAppearanceManagerClassic.swift */,
+				8012837720F02D6100ABC706 /* XTRAppearanceManagerStandard.swift */,
+				8012837920F02D6100ABC706 /* XTRColorFactory.swift */,
+				8012837820F02D6100ABC706 /* XTRColorFactoryClassic.swift */,
+				8012837220F02D6000ABC706 /* XTRColorFactoryStandard.swift */,
+				8012837520F02D6100ABC706 /* XTRImageFactory.swift */,
+			);
+			path = Appearance;
+			sourceTree = "<group>";
+		};
+		80127FEC20F0270400ABC706 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				80127FED20F0270400ABC706 /* XTRElementModel.swift */,
+				80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */,
+				80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */,
+				80127FF020F0270400ABC706 /* XTRGraphDefinitionModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		80127FF120F0270400ABC706 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80127FF220F0270400ABC706 /* UIColor-Extensions.swift */,
+				80127FF320F0270400ABC706 /* UIImage-Extensions.swift */,
+				80127FF420F0270400ABC706 /* NSObject+General.swift */,
+				80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */,
+				80127FF620F0270400ABC706 /* Bundle+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80127FF720F0270400ABC706 /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				80127FF820F0270400ABC706 /* XTRElementButton.swift */,
+				80127FF920F0270400ABC706 /* XTRLocalizedLabel.swift */,
+				80127FFA20F0270400ABC706 /* XTRBarPlot.swift */,
+				80127FFB20F0270400ABC706 /* XTRTableCell.swift */,
+				80127FFC20F0270400ABC706 /* XTRDividerLabel.swift */,
+				80127FFD20F0270400ABC706 /* XTRElementTableViewCell.swift */,
+				80127FFE20F0270400ABC706 /* XTRTableHeaderButton.swift */,
+				80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */,
+				8012800020F0270400ABC706 /* XTRTableLabel.swift */,
+				8012800120F0270400ABC706 /* XTRShellModelScene.swift */,
+				8012800220F0270400ABC706 /* XTRHelpButton.swift */,
+				8012800320F0270400ABC706 /* XTRGeneralButton.swift */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		8012800420F0270400ABC706 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8012800520F0270400ABC706 /* XTRNuclidesIsotopesViewController.swift */,
+				8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */,
+				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
+				8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */,
+				8012800920F0270400ABC706 /* XTRSlideDownAnimationController.swift */,
+				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
+				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
+				8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */,
+				8012800D20F0270400ABC706 /* XTRMainViewController.swift */,
+				8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */,
+				8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */,
+				8012801020F0270400ABC706 /* XTRElementListViewController.swift */,
+				8012801120F0270400ABC706 /* XTRSplashViewController.swift */,
+				8012801220F0270400ABC706 /* XTRInfoViewController.swift */,
+				8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */,
+				8012801420F0270400ABC706 /* XTRSwapableViewController.swift */,
+				8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */,
+				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
+				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
+				8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */,
+				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		8012801A20F0270400ABC706 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8012801B20F0270400ABC706 /* XTRMainViewControllerDelegate.swift */,
+				8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */,
+				8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */,
+				8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */,
+				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
+				8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */,
+				8012802120F0270400ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift */,
+				8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		8012802320F0270400ABC706 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8012802420F0270400ABC706 /* XTRBackgroundView.swift */,
+				8012802520F0270400ABC706 /* XTRCornerImageView.swift */,
+				8012802620F0270400ABC706 /* XTRShadowView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8012802720F0270400ABC706 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8012802920F0270400ABC706 /* PrimaMateria-Bridging-Header.h */,
+				8012802A20F0270400ABC706 /* PrimaMateria.h */,
+				8012802820F0270400ABC706 /* PrimaMateria-Prefix.pch */,
+				8012802B20F0270400ABC706 /* main.swift */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		8012807520F0271F00ABC706 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8012838620F02F9B00ABC706 /* ElementTipHelp */,
+				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
+				8012838520F02F9B00ABC706 /* SupportingFiles */,
+				80127C2520F0268B00ABC706 /* Images.xcassets */,
+				801281E020F0272000ABC706 /* Interfaces */,
+				8012838A20F032A000ABC706 /* Misc */,
+				8012807820F0271F00ABC706 /* Scenes */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8012807820F0271F00ABC706 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				8012807920F0271F00ABC706 /* Cubic.scn */,
+				8012807A20F0271F00ABC706 /* Monoclinic.scn */,
+				8012807B20F0271F00ABC706 /* CubicFace.scn */,
+				8012807C20F0271F00ABC706 /* CubicBody.scn */,
+				8012807D20F0271F00ABC706 /* Unknown.scn */,
+				8012807E20F0271F00ABC706 /* Orthorhombic.scn */,
+				8012807F20F0271F00ABC706 /* Rhombohedral.scn */,
+				8012808020F0271F00ABC706 /* Hexagonal.scn */,
+				8012808120F0271F00ABC706 /* Tetragonal.scn */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		801281E020F0272000ABC706 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				801281E120F0272000ABC706 /* GraphChoice.storyboard */,
+				801281E220F0272000ABC706 /* Preferences.storyboard */,
+				801281E320F0272000ABC706 /* Info.storyboard */,
+				801281E420F0272000ABC706 /* LaunchScreen.storyboard */,
+				801281E520F0272000ABC706 /* HelpBalloon.storyboard */,
+				801281E720F0272000ABC706 /* GeneralInfo.storyboard */,
+				801281E820F0272000ABC706 /* MolecularCalculator.storyboard */,
+				801281E920F0272000ABC706 /* Spectrum.storyboard */,
+				801281EA20F0272000ABC706 /* ElementProperties.storyboard */,
+				801281EB20F0272000ABC706 /* AtomicStructure.storyboard */,
+				801281EC20F0272000ABC706 /* ElementInspector.storyboard */,
+				801281ED20F0272000ABC706 /* ColorPicker.storyboard */,
+				801281EE20F0272000ABC706 /* ElementList.storyboard */,
+				801281EF20F0272000ABC706 /* Splash.storyboard */,
+				801281F020F0272000ABC706 /* PeriodicTable.storyboard */,
+				801281F120F0272000ABC706 /* Graph.storyboard */,
+				801281F220F0272000ABC706 /* NuclidesIsotopes.storyboard */,
+				801281F320F0272000ABC706 /* ElementBalloon.storyboard */,
+				801281F420F0272000ABC706 /* MainStoryboard.storyboard */,
+				801281F520F0272000ABC706 /* Wikipedia.storyboard */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		8012838A20F032A000ABC706 /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */,
+				80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */,
+				8012807620F0271F00ABC706 /* Localizable.strings */,
+				8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */,
+				8012808C20F0271F00ABC706 /* Settings.bundle */,
+				8012808D20F0271F00ABC706 /* Credits.rtf */,
+				801280EE20F0272000ABC706 /* LoadFailure.html */,
+				801281DE20F0272000ABC706 /* PrimaMateria.plist */,
+				801281DF20F0272000ABC706 /* MainStyle.css */,
+			);
+			name = Misc;
+			sourceTree = "<group>";
+		};
+		F7E587BE9504334DFC476A2E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8012838220F02DFE00ABC706 /* CorePlot.framework */,
+				8012837020F02B6D00ABC706 /* Foundation.framework */,
+				8012836E20F02B6500ABC706 /* UIKit.framework */,
+				46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		80127C0D20F0253000ABC706 /* PrimaMateria */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 80127C2020F0253200ABC706 /* Build configuration list for PBXNativeTarget "PrimaMateria" */;
+			buildPhases = (
+				CC7153F934806072CC4FF7CB /* [CP] Check Pods Manifest.lock */,
+				80127C0A20F0253000ABC706 /* Sources */,
+				80127C0B20F0253000ABC706 /* Frameworks */,
+				80127C0C20F0253000ABC706 /* Resources */,
+				AADED3F8A28D6A440B198395 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PrimaMateria;
+			productName = PrimaMateria;
+			productReference = 80127C0E20F0253000ABC706 /* PrimaMateria.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		80127C0620F0253000ABC706 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Jerry Porter";
+				TargetAttributes = {
+					80127C0D20F0253000ABC706 = {
+						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 0930;
+					};
+				};
+			};
+			buildConfigurationList = 80127C0920F0253000ABC706 /* Build configuration list for PBXProject "PrimaMateria" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				es,
+				ru,
+			);
+			mainGroup = 80127C0520F0253000ABC706;
+			productRefGroup = 80127C0F20F0253000ABC706 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				80127C0D20F0253000ABC706 /* PrimaMateria */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		80127C0C20F0253000ABC706 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8012835720F0272000ABC706 /* PrimaMateria.plist in Resources */,
+				801281FF20F0272000ABC706 /* Tetragonal.scn in Resources */,
+				8012836220F0272000ABC706 /* ElementProperties.storyboard in Resources */,
+				801281FE20F0272000ABC706 /* Hexagonal.scn in Resources */,
+				80127C2B20F0268C00ABC706 /* Images.xcassets in Resources */,
+				8012836C20F0272000ABC706 /* MainStoryboard.storyboard in Resources */,
+				801281F720F0272000ABC706 /* Cubic.scn in Resources */,
+				8012835920F0272000ABC706 /* GraphChoice.storyboard in Resources */,
+				8012836A20F0272000ABC706 /* NuclidesIsotopes.storyboard in Resources */,
+				8012836020F0272000ABC706 /* MolecularCalculator.storyboard in Resources */,
+				8012835B20F0272000ABC706 /* Info.storyboard in Resources */,
+				801281FC20F0272000ABC706 /* Orthorhombic.scn in Resources */,
+				801281F620F0272000ABC706 /* Localizable.strings in Resources */,
+				801281F820F0272000ABC706 /* Monoclinic.scn in Resources */,
+				8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */,
+				8012835A20F0272000ABC706 /* Preferences.storyboard in Resources */,
+				8012836D20F0272000ABC706 /* Wikipedia.storyboard in Resources */,
+				8012836B20F0272000ABC706 /* ElementBalloon.storyboard in Resources */,
+				801281F920F0272000ABC706 /* CubicFace.scn in Resources */,
+				8012835C20F0272000ABC706 /* LaunchScreen.storyboard in Resources */,
+				8012836720F0272000ABC706 /* Splash.storyboard in Resources */,
+				8012836520F0272000ABC706 /* ColorPicker.storyboard in Resources */,
+				8012820720F0272000ABC706 /* PrimaMateria.scnassets in Resources */,
+				8012838820F02F9B00ABC706 /* SupportingFiles in Resources */,
+				8012836320F0272000ABC706 /* AtomicStructure.storyboard in Resources */,
+				801281FD20F0272000ABC706 /* Rhombohedral.scn in Resources */,
+				8012836820F0272000ABC706 /* PeriodicTable.storyboard in Resources */,
+				8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */,
+				8012836620F0272000ABC706 /* ElementList.storyboard in Resources */,
+				8012820820F0272000ABC706 /* Settings.bundle in Resources */,
+				8012835820F0272000ABC706 /* MainStyle.css in Resources */,
+				8012826820F0272000ABC706 /* LoadFailure.html in Resources */,
+				801281FB20F0272000ABC706 /* Unknown.scn in Resources */,
+				8012836120F0272000ABC706 /* Spectrum.storyboard in Resources */,
+				8012836420F0272000ABC706 /* ElementInspector.storyboard in Resources */,
+				8012836920F0272000ABC706 /* Graph.storyboard in Resources */,
+				8012835F20F0272000ABC706 /* GeneralInfo.storyboard in Resources */,
+				8012835D20F0272000ABC706 /* HelpBalloon.storyboard in Resources */,
+				8012820920F0272000ABC706 /* Credits.rtf in Resources */,
+				801281FA20F0272000ABC706 /* CubicBody.scn in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		AADED3F8A28D6A440B198395 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC7153F934806072CC4FF7CB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PrimaMateria-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		80127C0A20F0253000ABC706 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8012805A20F0270500ABC706 /* XTRElementInspectorViewController.swift in Sources */,
+				8012804B20F0270500ABC706 /* XTRTableCell.swift in Sources */,
+				8012806F20F0270500ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */,
+				8012805420F0270500ABC706 /* XTRNuclidesIsotopesViewController.swift in Sources */,
+				8012803120F0270500ABC706 /* XTRApplication.swift in Sources */,
+				8012807420F0270500ABC706 /* main.swift in Sources */,
+				8012804220F0270500ABC706 /* XTRGraphDefinitionModel.swift in Sources */,
+				8012805320F0270500ABC706 /* XTRGeneralButton.swift in Sources */,
+				8012802F20F0270500ABC706 /* XTRMolecularCalculator.swift in Sources */,
+				8012804C20F0270500ABC706 /* XTRDividerLabel.swift in Sources */,
+				8012804720F0270500ABC706 /* Bundle+Extensions.swift in Sources */,
+				8012805E20F0270500ABC706 /* XTRGraphChoiceViewController.swift in Sources */,
+				8012803020F0270500ABC706 /* XTRAppDelegate.swift in Sources */,
+				8012807020F0270500ABC706 /* XTRGraphViewControllerDelegate.swift in Sources */,
+				8012804D20F0270500ABC706 /* XTRElementTableViewCell.swift in Sources */,
+				8012805820F0270500ABC706 /* XTRSlideDownAnimationController.swift in Sources */,
+				8012805620F0270500ABC706 /* XTRGraphViewController.swift in Sources */,
+				8012837D20F02D6100ABC706 /* XTRImageFactory.swift in Sources */,
+				8012804920F0270500ABC706 /* XTRLocalizedLabel.swift in Sources */,
+				8012804520F0270500ABC706 /* NSObject+General.swift in Sources */,
+				8012805720F0270500ABC706 /* XTRGeneralInfoViewController.swift in Sources */,
+				8012807120F0270500ABC706 /* XTRBackgroundView.swift in Sources */,
+				8012806020F0270500ABC706 /* XTRSplashViewController.swift in Sources */,
+				8012806520F0270500ABC706 /* XTRPreferencesViewController.swift in Sources */,
+				8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */,
+				8012805020F0270500ABC706 /* XTRTableLabel.swift in Sources */,
+				8012805220F0270500ABC706 /* XTRHelpButton.swift in Sources */,
+				8012804F20F0270500ABC706 /* XTRGraphChoiceCell.swift in Sources */,
+				8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */,
+				8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */,
+				8012805C20F0270500ABC706 /* XTRMainViewController.swift in Sources */,
+				8012806820F0270500ABC706 /* XTRHelpBalloonViewController.swift in Sources */,
+				8012806E20F0270500ABC706 /* XTRElementListViewControllerDelegate.swift in Sources */,
+				8012837E20F02D6100ABC706 /* XTRAppearanceManagerClassic.swift in Sources */,
+				8012803320F0270500ABC706 /* XTRDefines.swift in Sources */,
+				8012804120F0270500ABC706 /* XTRSpectraModel.swift in Sources */,
+				8012805520F0270500ABC706 /* XTRColorPickerViewController.swift in Sources */,
+				8012804320F0270500ABC706 /* UIColor-Extensions.swift in Sources */,
+				8012806120F0270500ABC706 /* XTRInfoViewController.swift in Sources */,
+				8012805B20F0270500ABC706 /* XTRPeriodicTableViewController.swift in Sources */,
+				8012806B20F0270500ABC706 /* XTRInfoViewControllerDelegate.swift in Sources */,
+				8012804620F0270500ABC706 /* UIView+LayerFlattening.swift in Sources */,
+				8012806620F0270500ABC706 /* XTRWikipediaViewController.swift in Sources */,
+				8012806220F0270500ABC706 /* XTRElementBalloonViewController.swift in Sources */,
+				8012805F20F0270500ABC706 /* XTRElementListViewController.swift in Sources */,
+				8012805D20F0270500ABC706 /* XTRElementPropertiesViewController.swift in Sources */,
+				8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
+				8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
+				8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */,
+				8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */,
+				8012807320F0270500ABC706 /* XTRShadowView.swift in Sources */,
+				8012805120F0270500ABC706 /* XTRShellModelScene.swift in Sources */,
+				8012803520F0270500ABC706 /* XTRElement-Presentation.swift in Sources */,
+				8012807220F0270500ABC706 /* XTRCornerImageView.swift in Sources */,
+				8012803F20F0270500ABC706 /* XTRElementModel.swift in Sources */,
+				8012804E20F0270500ABC706 /* XTRTableHeaderButton.swift in Sources */,
+				8012837B20F02D6100ABC706 /* XTRAppearanceManager.swift in Sources */,
+				8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */,
+				8012804020F0270500ABC706 /* XTRIsotopeModel.swift in Sources */,
+				8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */,
+				8012837F20F02D6100ABC706 /* XTRAppearanceManagerStandard.swift in Sources */,
+				8012804420F0270500ABC706 /* UIImage-Extensions.swift in Sources */,
+				8012806D20F0270500ABC706 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */,
+				8012804A20F0270500ABC706 /* XTRBarPlot.swift in Sources */,
+				8012803220F0270500ABC706 /* XTRPopoutAnimationController.swift in Sources */,
+				8012806920F0270500ABC706 /* XTRMainViewControllerDelegate.swift in Sources */,
+				8012806720F0270500ABC706 /* XTRAtomicStructureViewController.swift in Sources */,
+				8012802E20F0270500ABC706 /* XTRPropertiesStore.swift in Sources */,
+				8012805920F0270500ABC706 /* XTRMolecularCalculatorViewController.swift in Sources */,
+				8012806420F0270500ABC706 /* XTRSpectrumViewController.swift in Sources */,
+				8012806320F0270500ABC706 /* XTRSwapableViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8012807620F0271F00ABC706 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8012807720F0271F00ABC706 /* en */,
+				8012808A20F0271F00ABC706 /* es */,
+				801280ED20F0272000ABC706 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		80127C1E20F0253200ABC706 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		80127C1F20F0253200ABC706 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		80127C2120F0253200ABC706 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		80127C2220F0253200ABC706 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1732C3DCFE44437A23AA8F9D /* Pods-PrimaMateria.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = "";
+				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		80127C0920F0253000ABC706 /* Build configuration list for PBXProject "PrimaMateria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80127C1E20F0253200ABC706 /* Debug */,
+				80127C1F20F0253200ABC706 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		80127C2020F0253200ABC706 /* Build configuration list for PBXNativeTarget "PrimaMateria" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				80127C2120F0253200ABC706 /* Debug */,
+				80127C2220F0253200ABC706 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 80127C0620F0253000ABC706 /* Project object */;
+}
