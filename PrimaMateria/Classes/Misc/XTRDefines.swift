@@ -114,6 +114,7 @@ let PERIODIC_VIEW_TITLE = "Periodic Table of the Elements"
 let SERIES_COLOR_KEY = "seriesColorKey"
 let MAIN_STORY_BOARD = "MainStoryboard"
 let APPEARANCE_NAME_KEY = "appearanceName"
+let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 
 struct XTRAppearanceType {
     static let classic = "Classic"

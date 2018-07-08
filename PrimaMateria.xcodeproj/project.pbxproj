@@ -405,27 +405,27 @@
 		8012800420F0270400ABC706 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8012800520F0270400ABC706 /* XTRNuclidesIsotopesViewController.swift */,
-				8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */,
-				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
-				8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */,
-				8012800920F0270400ABC706 /* XTRSlideDownAnimationController.swift */,
-				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
-				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
-				8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */,
-				8012800D20F0270400ABC706 /* XTRMainViewController.swift */,
-				8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */,
-				8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */,
-				8012801020F0270400ABC706 /* XTRElementListViewController.swift */,
-				8012801120F0270400ABC706 /* XTRSplashViewController.swift */,
-				8012801220F0270400ABC706 /* XTRInfoViewController.swift */,
-				8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */,
-				8012801420F0270400ABC706 /* XTRSwapableViewController.swift */,
-				8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */,
-				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
-				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
 				8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */,
+				8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */,
+				8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */,
+				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
+				8012801020F0270400ABC706 /* XTRElementListViewController.swift */,
+				8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */,
+				8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */,
+				8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */,
+				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
 				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
+				8012801220F0270400ABC706 /* XTRInfoViewController.swift */,
+				8012800D20F0270400ABC706 /* XTRMainViewController.swift */,
+				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
+				8012800520F0270400ABC706 /* XTRNuclidesIsotopesViewController.swift */,
+				8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */,
+				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
+				8012800920F0270400ABC706 /* XTRSlideDownAnimationController.swift */,
+				8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */,
+				8012801120F0270400ABC706 /* XTRSplashViewController.swift */,
+				8012801420F0270400ABC706 /* XTRSwapableViewController.swift */,
+				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -499,25 +499,25 @@
 		801281E020F0272000ABC706 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
+				801281EB20F0272000ABC706 /* AtomicStructure.storyboard */,
+				801281ED20F0272000ABC706 /* ColorPicker.storyboard */,
+				801281F320F0272000ABC706 /* ElementBalloon.storyboard */,
+				801281EC20F0272000ABC706 /* ElementInspector.storyboard */,
+				801281EE20F0272000ABC706 /* ElementList.storyboard */,
+				801281EA20F0272000ABC706 /* ElementProperties.storyboard */,
+				801281E720F0272000ABC706 /* GeneralInfo.storyboard */,
+				801281F120F0272000ABC706 /* Graph.storyboard */,
 				801281E120F0272000ABC706 /* GraphChoice.storyboard */,
-				801281E220F0272000ABC706 /* Preferences.storyboard */,
+				801281E520F0272000ABC706 /* HelpBalloon.storyboard */,
 				801281E320F0272000ABC706 /* Info.storyboard */,
 				801281E420F0272000ABC706 /* LaunchScreen.storyboard */,
-				801281E520F0272000ABC706 /* HelpBalloon.storyboard */,
-				801281E720F0272000ABC706 /* GeneralInfo.storyboard */,
-				801281E820F0272000ABC706 /* MolecularCalculator.storyboard */,
-				801281E920F0272000ABC706 /* Spectrum.storyboard */,
-				801281EA20F0272000ABC706 /* ElementProperties.storyboard */,
-				801281EB20F0272000ABC706 /* AtomicStructure.storyboard */,
-				801281EC20F0272000ABC706 /* ElementInspector.storyboard */,
-				801281ED20F0272000ABC706 /* ColorPicker.storyboard */,
-				801281EE20F0272000ABC706 /* ElementList.storyboard */,
-				801281EF20F0272000ABC706 /* Splash.storyboard */,
-				801281F020F0272000ABC706 /* PeriodicTable.storyboard */,
-				801281F120F0272000ABC706 /* Graph.storyboard */,
-				801281F220F0272000ABC706 /* NuclidesIsotopes.storyboard */,
-				801281F320F0272000ABC706 /* ElementBalloon.storyboard */,
 				801281F420F0272000ABC706 /* MainStoryboard.storyboard */,
+				801281E820F0272000ABC706 /* MolecularCalculator.storyboard */,
+				801281F220F0272000ABC706 /* NuclidesIsotopes.storyboard */,
+				801281F020F0272000ABC706 /* PeriodicTable.storyboard */,
+				801281E220F0272000ABC706 /* Preferences.storyboard */,
+				801281E920F0272000ABC706 /* Spectrum.storyboard */,
+				801281EF20F0272000ABC706 /* Splash.storyboard */,
 				801281F520F0272000ABC706 /* Wikipedia.storyboard */,
 			);
 			path = Interfaces;
@@ -667,11 +667,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CorePlot/CorePlot.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CorePlot.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

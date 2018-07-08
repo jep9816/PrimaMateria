@@ -6,6 +6,9 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
+import RxSwift
+import RxCocoa
+
 class XTRColorPickerViewController : UIViewController {
     
     @IBOutlet var redSlider : UISlider!
@@ -15,8 +18,10 @@ class XTRColorPickerViewController : UIViewController {
     @IBOutlet var colorTitle : UILabel!
     @IBOutlet var previewView: UIView!
     @IBOutlet var selectColorButton: XTRLocalizedButton!
-
+    
     var seriesName : String?
+    var seriesIdentifier : String?
+    var disposeBag = DisposeBag()
     
     // MARK: - Initialization Methods
     
@@ -25,17 +30,6 @@ class XTRColorPickerViewController : UIViewController {
     }
     
     // MARK: - Internal Methods
-    
-    // MARK: - Action Methods
-    
-    @IBAction func selectColor(_ sender: UIButton) {
-        let values = [redSlider.value, greenSlider.value, blueSlider.value, alphaSlider.value, colorTitle.text!] as [Any]
-        let keys = [ColorComponent.red, ColorComponent.green, ColorComponent.blue, ColorComponent.alpha, SERIES_COLOR_KEY]
-        let dict = zip(keys, values).reduce([String : Any]()){ var d = $0; d[$1.0] = $1.1; return d }
-        
-        dismiss(animated: true, completion:  nil)
-        NotificationCenter.default.post(name: .colorSelectedNotification, object: dict)
-    }
     
     func presetSlidersWithColor(_ aColor: UIColor) {
         redSlider.setValue(Float(aColor.red()), animated:  true)
@@ -46,42 +40,81 @@ class XTRColorPickerViewController : UIViewController {
         previewView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
     
-    @IBAction func redSliderValueChanged(_ sender: UISlider) {
-        UIView.beginAnimations(nil, context: nil)
-        previewView.backgroundColor = UIColor(red: CGFloat(sender.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
-    }
-    
-    @IBAction func greenSliderValueChanged(_ sender: UISlider) {
-        UIView.beginAnimations(nil, context: nil)
-        previewView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(sender.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
-    }
-    
-    @IBAction func blueSliderValueChanged(_ sender: UISlider) {
-        UIView.beginAnimations(nil, context: nil)
-        previewView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(sender.value), alpha: CGFloat(alphaSlider.value))
-    }
-    
-    @IBAction func alphaSliderValueChanged(_ sender: UISlider) {
-        UIView.beginAnimations(nil, context: nil)
-        previewView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(sender.value))
-    }
-    
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = NSLocalizedString("colorPicker", comment: "")
-        
         let aColor = XTRColorFactory.colorForString(seriesName!)
+
+        title = NSLocalizedString("colorPicker", comment: "")
         colorTitle.text = seriesName!
-        // TODO:
-        // Localize this after localizing Series names
-        // maybe put this in Element presentation
+        
         previewView.backgroundColor = aColor
-        presetSlidersWithColor(aColor)
+        previewView.layer.cornerRadius = 9
+        
         selectColorButton.layer.cornerRadius = 4
         selectColorButton.layer.borderColor = XTRColorFactory.buttonBorderColor.cgColor
         selectColorButton.layer.borderWidth = 1
+        
+        presetSlidersWithColor(aColor)
+
+        setupRx()
+    }
+    
+    func setupRx() {
+        redSlider.rx.value
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                UIView.beginAnimations(nil, context: nil)
+                self.previewView.backgroundColor = UIColor(red: CGFloat(newValue), green: CGFloat(self.greenSlider.value), blue: CGFloat(self.blueSlider.value), alpha: CGFloat(self.alphaSlider.value))
+            }).disposed(by: disposeBag)
+        
+        greenSlider.rx.value
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                UIView.beginAnimations(nil, context: nil)
+                self.previewView.backgroundColor = UIColor(red: CGFloat(self.redSlider.value), green: CGFloat(newValue), blue: CGFloat(self.blueSlider.value), alpha: CGFloat(self.alphaSlider.value))
+            }).disposed(by: disposeBag)
+        
+        blueSlider.rx.value
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                UIView.beginAnimations(nil, context: nil)
+                self.previewView.backgroundColor = UIColor(red: CGFloat(self.redSlider.value), green: CGFloat(self.greenSlider.value), blue: CGFloat(newValue), alpha: CGFloat(self.alphaSlider.value))
+            }).disposed(by: disposeBag)
+        
+        alphaSlider.rx.value
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                UIView.beginAnimations(nil, context: nil)
+                self.previewView.backgroundColor = UIColor(red: CGFloat(self.redSlider.value), green: CGFloat(self.greenSlider.value), blue: CGFloat(self.blueSlider.value), alpha: CGFloat(newValue))
+            }).disposed(by: disposeBag)
+        
+        selectColorButton.rx.tap.subscribe(onNext: { newValue in
+            let dict = zip(
+                [
+                    ColorComponent.red,
+                    ColorComponent.green,
+                    ColorComponent.blue,
+                    ColorComponent.alpha,
+                    SERIES_COLOR_KEY,
+                    SERIES_IDENTIFIER_KEY
+                ], [
+                    self.redSlider.value,
+                    self.greenSlider.value,
+                    self.blueSlider.value,
+                    self.alphaSlider.value,
+                    String(describing: self.colorTitle.text),
+                    self.seriesIdentifier!
+                ]).reduce([String : Any]()) {
+                    var d = $0;
+                    d[$1.0] = $1.1;
+                    return d
+            }
+            
+            self.dismiss(animated: true, completion:  nil)
+            NotificationCenter.default.post(name: .colorSelectedNotification, object: dict)
+        }).disposed(by: disposeBag)
     }
     
     override var shouldAutorotate : Bool {

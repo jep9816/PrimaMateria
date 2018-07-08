@@ -48,31 +48,32 @@ class XTRPreferencesViewController : UIViewController {
         let blueComponent = anObject[ColorComponent.blue] as! NSNumber
         let alphaComponent = anObject[ColorComponent.alpha] as! NSNumber
         
-        let seriesColorKey = anObject[SERIES_COLOR_KEY] as! String
+        let seriesIdentifier = anObject[SERIES_IDENTIFIER_KEY] as! String
         let aColor = UIColor(red: CGFloat(redComponent.floatValue), green: CGFloat(greenComponent.floatValue), blue: CGFloat(blueComponent.floatValue), alpha: CGFloat(alphaComponent.floatValue))
         let colorData = NSKeyedArchiver.archivedData(withRootObject: aColor)
         
-        XTRPropertiesStore.setColorData(colorData, key: seriesColorKey)
+        XTRPropertiesStore.setColorData(colorData, key: seriesIdentifier)
         
-        if seriesColorKey == ElementSeries.actinide {
+        switch (seriesIdentifier) {
+        case ElementSeries.actinide :
             updateSeriesButtonProperties(seriesActinideButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.alkaliEarthMetal {
+        case ElementSeries.alkaliEarthMetal :
             updateSeriesButtonProperties(seriesAlkaliEarthMetalButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.alkaliMetal {
+        case ElementSeries.alkaliMetal :
             updateSeriesButtonProperties(seriesAlkaliMetalButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.halogen {
+        case ElementSeries.halogen :
             updateSeriesButtonProperties(seriesHalogenButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.lanthanide {
+        case ElementSeries.lanthanide :
             updateSeriesButtonProperties(seriesLanthanideButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.metal {
+        case ElementSeries.metal :
             updateSeriesButtonProperties(seriesMetalButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.nobleGas {
+        case ElementSeries.nobleGas :
             updateSeriesButtonProperties(seriesNobleGasButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.nonMetal {
+        case ElementSeries.nonMetal :
             updateSeriesButtonProperties(seriesNonMetalButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.transactinides {
+        case ElementSeries.transactinides :
             updateSeriesButtonProperties(seriesTransactinidesButton, aColor: aColor)
-        } else if seriesColorKey == ElementSeries.transitionMetal {
+        default :
             updateSeriesButtonProperties(seriesTransitionMetalButton, aColor: aColor)
         }
         
@@ -82,17 +83,11 @@ class XTRPreferencesViewController : UIViewController {
     }
     
     @IBAction func changeAppearance(_ sender: UISegmentedControl) {
-        var appearanceName : String = XTRAppearanceType.classic
-        
-        if styleControl.selectedSegmentIndex == 0 {
-            appearanceName = XTRAppearanceType.classic
-        } else {
-            appearanceName = XTRAppearanceType.standard
-        }
+        let appearanceName = (styleControl.selectedSegmentIndex == 0) ? XTRAppearanceType.classic : XTRAppearanceType.standard
         
         NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearanceName)
     }
-
+    
     func loadDocument(_ documentName: String, inView: WKWebView) {
         guard let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
         
@@ -166,10 +161,13 @@ class XTRPreferencesViewController : UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destController = segue.destination as! XTRColorPickerViewController
-        let seriesName = (sender as! UIButton).titleLabel!.text!
+        let seriesIdentifier = (sender as! UIButton).accessibilityIdentifier
+        let seriesName = (sender as! UIButton).titleLabel?.text
         
         destController.seriesName = seriesName
+        destController.seriesIdentifier = seriesIdentifier
         destController.preferredContentSize = CGSize(width: 270, height: 270)
+        destController.popoverPresentationController?.permittedArrowDirections = .left
     }
     
     // MARK: - View Management Methods
@@ -179,17 +177,17 @@ class XTRPreferencesViewController : UIViewController {
         
         title = NSLocalizedString("preferences", comment: "")
         navigationBar.topItem?.title = NSLocalizedString("preferences", comment: "")
-
+        
         NotificationCenter.default.addObserver(self, selector: #selector(XTRPreferencesViewController.colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
         
         loadDocument("Credits.rtf", inView: webView)
         loadUserDefaults()
         populateSeriesColors()
-
+        
         appNameLabel.text = Bundle.main.appNameString
         versionLabel.text = Bundle.main.appVersionString
         cpyRightLabel.text = Bundle.main.copywriteString
-
+        
         styleControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0 : 1
         
         navigationController?.navigationBar.prefersLargeTitles = true
