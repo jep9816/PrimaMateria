@@ -7,6 +7,8 @@
 //
 
 import WebKit
+import RxSwift
+import RxCocoa
 
 class XTRPreferencesViewController : UIViewController {
     
@@ -24,6 +26,7 @@ class XTRPreferencesViewController : UIViewController {
     @IBOutlet var seriesTransactinidesButton : UIButton!
     @IBOutlet var seriesTransitionMetalButton : UIButton!
     
+    @IBOutlet var resetPreferencesButton : UIButton!
     @IBOutlet var versionLabel : UILabel!
     @IBOutlet var elementBubbleSwitch : UISwitch!
     @IBOutlet var showTransitionsBubbleSwitch : UISwitch!
@@ -32,6 +35,8 @@ class XTRPreferencesViewController : UIViewController {
     @IBOutlet var styleControl : UISegmentedControl!
     @IBOutlet var navigationBar: UINavigationBar!
     
+    var disposeBag = DisposeBag()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -82,12 +87,6 @@ class XTRPreferencesViewController : UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func changeAppearance(_ sender: UISegmentedControl) {
-        let appearanceName = (styleControl.selectedSegmentIndex == 0) ? XTRAppearanceType.classic : XTRAppearanceType.standard
-        
-        NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearanceName)
-    }
-    
     func loadDocument(_ documentName: String, inView: WKWebView) {
         guard let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
         
@@ -132,19 +131,7 @@ class XTRPreferencesViewController : UIViewController {
     
     // MARK: - Action Methods
     
-    @IBAction func setElementBubbleState(_ sender: UISwitch) {
-        populateElementBubbleState(elementBubbleSwitch.isOn)
-    }
-    
-    @IBAction func setShowTransitionsState(_ sender: UISwitch) {
-        populateShowTransitionsState(showTransitionsBubbleSwitch.isOn)
-    }
-    
-    @IBAction func setSplashScreenState(_ sender: UISwitch) {
-        populateSplashScreenState(splashScreenSwitch.isOn)
-    }
-    
-    @IBAction func resetPreferences(_ sender: UIButton) {
+    func resetPreferences() {
         XTRPropertiesStore.resetPreferences()
         
         populateSeriesColors()
@@ -191,10 +178,58 @@ class XTRPreferencesViewController : UIViewController {
         styleControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0 : 1
         
         navigationController?.navigationBar.prefersLargeTitles = true
+        setupRx()
     }
     
-    override func viewWillAppear(_ animated: Bool)  {
-        super.viewWillAppear(animated)
+    func setupRx() {
+        styleControl.rx.value
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                let appearanceName = (newValue == 0) ? XTRAppearanceType.classic : XTRAppearanceType.standard
+                
+                NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearanceName)
+            }).disposed(by: disposeBag)
+
+        elementBubbleSwitch.rx.isOn
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                self.populateElementBubbleState(newValue)
+            }).disposed(by: disposeBag)
+        
+        showTransitionsBubbleSwitch.rx.isOn
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                self.populateShowTransitionsState(newValue)
+            }).disposed(by: disposeBag)
+        
+        splashScreenSwitch.rx.isOn
+            .asObservable()
+            .subscribe(onNext: { newValue in
+                self.populateSplashScreenState(newValue)
+            }).disposed(by: disposeBag)
+
+       resetPreferencesButton.rx.tap.subscribe(onNext: { newValue in
+            self.resetPreferences()
+        }).disposed(by: disposeBag)
+
+//        let o = Observable.of(seriesActinideButton.rx.tap,
+//                              seriesAlkaliEarthMetalButton.rx.tap,
+//                              seriesAlkaliMetalButton.rx.tap,
+//                              seriesHalogenButton.rx.tap,
+//                              seriesLanthanideButton.rx.tap,
+//                              seriesMetalButton.rx.tap,
+//                              seriesNobleGasButton.rx.tap,
+//                              seriesNonMetalButton.rx.tap,
+//                              seriesTransactinidesButton.rx.tap,
+//                              seriesTransitionMetalButton.rx.tap).merge()
+//        
+//        o.subscribe(onNext: { newValue in
+//            //let seriesIdentifier = (sender as! UIButton).accessibilityIdentifier
+//            //let seriesName = (sender as! UIButton).titleLabel?.text
+//
+//            self.performSegue(withIdentifier: "series", sender: <#T##Any?#>)
+//        }).disposed(by: disposeBag)
+        
     }
     
     override var shouldAutorotate : Bool {

@@ -337,9 +337,6 @@
                                                 <rect key="frame" x="170" y="26" width="51" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <connections>
-                                                    <action selector="setElementBubbleState:" destination="REJ-gs-Mp7" eventType="valueChanged" id="LWM-Fg-3Zg"/>
-                                                </connections>
                                             </switch>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showSplashScreen" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-Rr-VIY" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="73" width="155" height="36"/>
@@ -356,9 +353,6 @@
                                                 <rect key="frame" x="170" y="76" width="51" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <connections>
-                                                    <action selector="setSplashScreenState:" destination="REJ-gs-Mp7" eventType="valueChanged" id="Pom-LB-ltF"/>
-                                                </connections>
                                             </switch>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showViewTransitions" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLK-J6-L7m" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="123" width="155" height="36"/>
@@ -375,9 +369,6 @@
                                                 <rect key="frame" x="170" y="126" width="51" height="31"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <connections>
-                                                    <action selector="setShowTransitionsState:" destination="REJ-gs-Mp7" eventType="valueChanged" id="CO7-ke-P53"/>
-                                                </connections>
                                             </switch>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZmD-U7-NsZ">
                                                 <rect key="frame" x="79" y="177" width="141" height="29"/>
@@ -386,9 +377,6 @@
                                                     <segment title="Classic"/>
                                                     <segment title="Standard"/>
                                                 </segments>
-                                                <connections>
-                                                    <action selector="changeAppearance:" destination="REJ-gs-Mp7" eventType="valueChanged" id="UVx-d4-Hf9"/>
-                                                </connections>
                                             </segmentedControl>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="style" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRR-g7-jPb" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="177" width="60" height="29"/>
@@ -443,6 +431,7 @@
                         <outlet property="cpyRightLabel" destination="uN1-Ou-nWC" id="SWN-WO-4cq"/>
                         <outlet property="elementBubbleSwitch" destination="OMO-Jc-daF" id="SBV-2P-eHd"/>
                         <outlet property="navigationBar" destination="V6t-5c-gtg" id="NRV-QH-Tsu"/>
+                        <outlet property="resetPreferencesButton" destination="gtd-nd-r9v" id="TjH-fP-Clh"/>
                         <outlet property="seriesActinideButton" destination="Mqf-4w-AYh" id="Ngb-9V-lY1"/>
                         <outlet property="seriesAlkaliEarthMetalButton" destination="zSr-Gs-i0a" id="dw5-RW-mCc"/>
                         <outlet property="seriesAlkaliMetalButton" destination="Mww-aS-dwa" id="oNh-mI-swh"/>

@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaMateria/Classes/View Controllers/XTRPreferencesViewController.swift"
-            timestampString = "552704758.150506"
+            timestampString = "552789480.459671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
-            landmarkName = "supportedInterfaceOrientations"
-            landmarkType = "24">
+            startingLineNumber = "188"
+            endingLineNumber = "188"
+            landmarkName = "setupRx()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
