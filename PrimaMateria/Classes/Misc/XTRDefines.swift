@@ -113,6 +113,7 @@ let SUPPORTING_FILES = "SupportingFiles"
 let PERIODIC_VIEW_TITLE = "Periodic Table of the Elements"
 let SERIES_COLOR_KEY = "seriesColorKey"
 let MAIN_STORY_BOARD = "MainStoryboard"
+let COLOR_PICKER_STORY_BOARD = "ColorPicker"
 let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 

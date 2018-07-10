@@ -10,6 +10,10 @@ import WebKit
 import RxSwift
 import RxCocoa
 
+struct XTRPreferencesViewControllerConfig {
+    static let colorPickerContentSize = CGSize(width: 270, height: 270)
+}
+
 class XTRPreferencesViewController : UIViewController {
     
     @IBOutlet var appNameLabel : UILabel!
@@ -36,7 +40,7 @@ class XTRPreferencesViewController : UIViewController {
     @IBOutlet var navigationBar: UINavigationBar!
     
     var disposeBag = DisposeBag()
-
+    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -54,7 +58,11 @@ class XTRPreferencesViewController : UIViewController {
         let alphaComponent = anObject[ColorComponent.alpha] as! NSNumber
         
         let seriesIdentifier = anObject[SERIES_IDENTIFIER_KEY] as! String
-        let aColor = UIColor(red: CGFloat(redComponent.floatValue), green: CGFloat(greenComponent.floatValue), blue: CGFloat(blueComponent.floatValue), alpha: CGFloat(alphaComponent.floatValue))
+        let aColor = UIColor(
+            red: CGFloat(redComponent.floatValue),
+            green: CGFloat(greenComponent.floatValue),
+            blue: CGFloat(blueComponent.floatValue),
+            alpha: CGFloat(alphaComponent.floatValue))
         let colorData = NSKeyedArchiver.archivedData(withRootObject: aColor)
         
         XTRPropertiesStore.setColorData(colorData, key: seriesIdentifier)
@@ -146,17 +154,6 @@ class XTRPreferencesViewController : UIViewController {
         NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destController = segue.destination as! XTRColorPickerViewController
-        let seriesIdentifier = (sender as! UIButton).accessibilityIdentifier
-        let seriesName = (sender as! UIButton).titleLabel?.text
-        
-        destController.seriesName = seriesName
-        destController.seriesIdentifier = seriesIdentifier
-        destController.preferredContentSize = CGSize(width: 270, height: 270)
-        destController.popoverPresentationController?.permittedArrowDirections = .left
-    }
-    
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
@@ -189,7 +186,7 @@ class XTRPreferencesViewController : UIViewController {
                 
                 NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearanceName)
             }).disposed(by: disposeBag)
-
+        
         elementBubbleSwitch.rx.isOn
             .asObservable()
             .subscribe(onNext: { newValue in
@@ -207,29 +204,48 @@ class XTRPreferencesViewController : UIViewController {
             .subscribe(onNext: { newValue in
                 self.populateSplashScreenState(newValue)
             }).disposed(by: disposeBag)
-
-       resetPreferencesButton.rx.tap.subscribe(onNext: { newValue in
+        
+        resetPreferencesButton.rx.tap.subscribe(onNext: { newValue in
             self.resetPreferences()
         }).disposed(by: disposeBag)
-
-//        let o = Observable.of(seriesActinideButton.rx.tap,
-//                              seriesAlkaliEarthMetalButton.rx.tap,
-//                              seriesAlkaliMetalButton.rx.tap,
-//                              seriesHalogenButton.rx.tap,
-//                              seriesLanthanideButton.rx.tap,
-//                              seriesMetalButton.rx.tap,
-//                              seriesNobleGasButton.rx.tap,
-//                              seriesNonMetalButton.rx.tap,
-//                              seriesTransactinidesButton.rx.tap,
-//                              seriesTransitionMetalButton.rx.tap).merge()
-//        
-//        o.subscribe(onNext: { newValue in
-//            //let seriesIdentifier = (sender as! UIButton).accessibilityIdentifier
-//            //let seriesName = (sender as! UIButton).titleLabel?.text
-//
-//            self.performSegue(withIdentifier: "series", sender: <#T##Any?#>)
-//        }).disposed(by: disposeBag)
         
+        Observable.of(
+            mapToObserver(button: seriesActinideButton),
+            mapToObserver(button: seriesAlkaliEarthMetalButton),
+            mapToObserver(button: seriesAlkaliMetalButton),
+            mapToObserver(button: seriesHalogenButton),
+            mapToObserver(button: seriesLanthanideButton),
+            mapToObserver(button: seriesMetalButton),
+            mapToObserver(button: seriesNobleGasButton),
+            mapToObserver(button: seriesNonMetalButton),
+            mapToObserver(button: seriesTransactinidesButton),
+            mapToObserver(button: seriesTransitionMetalButton)
+            ).merge().subscribe(onNext: { sender in
+                self.presentColorPicker(sender)
+            }).disposed(by: disposeBag)
+    }
+    
+    func mapToObserver(button: UIButton) -> Observable<UIButton> {
+        return button.rx.tap.map { _ in return button}
+    }
+    
+    func presentColorPicker(_ sender: UIButton) {
+        let storyboard = UIStoryboard.init(name: COLOR_PICKER_STORY_BOARD, bundle: nil)
+        let colorPicker : XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
+        let seriesIdentifier = sender.accessibilityIdentifier
+        let seriesName = sender.titleLabel?.text
+        
+        colorPicker.seriesName = seriesName
+        colorPicker.seriesIdentifier = seriesIdentifier
+        colorPicker.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
+        colorPicker.modalPresentationStyle = .popover
+        
+        self.present(colorPicker, animated: true, completion: nil)
+        
+        let presentationController = colorPicker.popoverPresentationController
+        presentationController?.permittedArrowDirections = .left
+        presentationController?.sourceView = sender.superview
+        presentationController?.sourceRect = sender.frame
     }
     
     override var shouldAutorotate : Bool {

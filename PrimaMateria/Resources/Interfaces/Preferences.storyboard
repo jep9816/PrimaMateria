@@ -130,11 +130,6 @@
                                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerActinide" popoverAnchorView="Mqf-4w-AYh" id="Ioh-eL-qVD">
-                                                        <popoverArrowDirection key="popoverArrowDirection" left="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-Gs-i0a" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="66" width="220" height="32"/>
@@ -149,11 +144,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerAlkaliEarthMetal" popoverAnchorView="zSr-Gs-i0a" id="cPf-Kw-RH2">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mww-aS-dwa" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="103" width="220" height="32"/>
@@ -168,11 +158,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerAlkaliMetal" popoverAnchorView="Mww-aS-dwa" id="h4I-CC-bVJ">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7C-Hl-V2V" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="140" width="220" height="32"/>
@@ -187,11 +172,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerHalogen" popoverAnchorView="V7C-Hl-V2V" id="wxq-Ws-eJu">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcA-Tb-wrH" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="177" width="220" height="32"/>
@@ -206,11 +186,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPicker Lanthanide" popoverAnchorView="EcA-Tb-wrH" id="56I-7K-LuE">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDV-8u-hkI" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="214" width="220" height="32"/>
@@ -225,11 +200,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerMetal" popoverAnchorView="SDV-8u-hkI" id="XHT-Cb-gAF">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JV-Qz-rew" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="251" width="220" height="32"/>
@@ -244,11 +214,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerNobleGas" popoverAnchorView="5JV-Qz-rew" id="b85-9a-NyG">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vij-uz-T4X" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="288" width="220" height="32"/>
@@ -263,11 +228,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerNonMetal" popoverAnchorView="vij-uz-T4X" id="fO8-ZO-uU4">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-ww-pLO" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="325" width="220" height="32"/>
@@ -282,11 +242,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerTransactinide" popoverAnchorView="pMi-ww-pLO" id="Z9s-hJ-jLM">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7H-ue-WGL" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="360" width="220" height="32"/>
@@ -302,11 +257,6 @@
                                                 <state key="highlighted">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
-                                                <connections>
-                                                    <segue destination="M1j-Ee-sta" kind="popover" identifier="showColorPickerTransitionMetal" popoverAnchorView="H7H-ue-WGL" id="YQW-5z-n4d">
-                                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                    </segue>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -404,9 +354,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="resetPreferences:" destination="REJ-gs-Mp7" eventType="touchUpInside" id="zgH-kd-wgT"/>
-                                        </connections>
                                     </button>
                                     <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-ac-K4n">
                                         <rect key="frame" x="241" y="98" width="777" height="570"/>
@@ -467,7 +414,4 @@
         <image name="Tab04" width="30" height="30"/>
         <image name="icon" width="72" height="72"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="wxq-Ws-eJu"/>
-    </inferredMetricsTieBreakers>
 </document>

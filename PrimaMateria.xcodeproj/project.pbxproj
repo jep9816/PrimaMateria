@@ -333,15 +333,15 @@
 		80127FD820F0270400ABC706 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */,
-				80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */,
-				80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */,
 				80127FDC20F0270400ABC706 /* XTRAppDelegate.swift */,
 				80127FDD20F0270400ABC706 /* XTRApplication.swift */,
-				80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */,
-				80127FDF20F0270400ABC706 /* XTRDefines.swift */,
 				80127FE020F0270400ABC706 /* XTRDataSource.swift */,
+				80127FDF20F0270400ABC706 /* XTRDefines.swift */,
 				80127FE120F0270400ABC706 /* XTRElement-Presentation.swift */,
+				80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */,
+				80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */,
+				80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */,
+				80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
