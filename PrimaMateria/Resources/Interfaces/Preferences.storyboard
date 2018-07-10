@@ -401,14 +401,6 @@
             </objects>
             <point key="canvasLocation" x="2277" y="467"/>
         </scene>
-        <!--Color Picker-->
-        <scene sceneID="g78-oD-0QF">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRColorPickerViewController" storyboardName="ColorPicker" referencedIdentifier="XTRColorPickerViewController" id="M1j-Ee-sta" userLabel="Color Picker" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GMA-04-lP3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3226" y="468"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Tab04" width="30" height="30"/>
