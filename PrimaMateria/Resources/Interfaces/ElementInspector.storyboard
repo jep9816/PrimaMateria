@@ -296,7 +296,7 @@
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <segments>
-                                            <segment title="atomicStructure" width="145"/>
+                                            <segment title="atomicStructure"/>
                                             <segment title="elementProperties" width="145"/>
                                             <segment title="nuclidesIsotopes" width="145"/>
                                             <segment title="spectrum" width="145"/>

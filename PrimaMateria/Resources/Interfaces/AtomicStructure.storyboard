@@ -1066,6 +1066,7 @@
                         <outlet property="oxidationStatesLabel" destination="zdP-DX-NIQ" id="cMd-ce-qiZ"/>
                         <outlet property="pShellElectronsLabel" destination="FQZ-dY-h7t" id="EOa-TP-H9K"/>
                         <outlet property="qShellElectronsLabel" destination="XBI-wr-15B" id="AIX-8n-hvV"/>
+                        <outlet property="segmentedControl" destination="8Tj-1B-cew" id="Jsi-j4-BrR"/>
                         <outlet property="shell1sLabel" destination="Xne-2E-ktW" id="xWW-Sz-uB3"/>
                         <outlet property="shell2pLabel" destination="kxD-yv-TVN" id="1f2-Jg-8Q7"/>
                         <outlet property="shell2sLabel" destination="s9t-Sf-8v8" id="SC7-Rf-0Ai"/>

@@ -16,6 +16,7 @@ class XTRAtomicStructureViewController : XTRSwapableViewController {
         static let kShellModelView = 1
     }
     
+    @IBOutlet var segmentedControl : UISegmentedControl!
     @IBOutlet var crystalStructureView : SCNView!
     @IBOutlet var shellModelView : SKView!
     
@@ -81,6 +82,9 @@ class XTRAtomicStructureViewController : XTRSwapableViewController {
         let crystalStructure = localElement.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
         let scene = localElement.shellModelScene
         let scnScene = localElement.crystalStructureScene
+
+        segmentedControl.setTitle(NSLocalizedString("crystalStructure", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("shellModel", comment: ""), forSegmentAt: 1)
 
         crystalStructureLabel.text = crystalStructure
         shellModelView.backgroundColor = localElement.seriesColor

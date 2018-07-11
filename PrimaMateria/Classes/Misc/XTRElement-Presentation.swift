@@ -377,7 +377,7 @@ extension XTRElementModel {
     }
     
     func nameString() -> String {
-        return "Element Inspector for \( name!)"
+        return "\(NSLocalizedString("elementInspectorFor", comment: "")) \( name!)"
     }
     
     var groupString : String {
