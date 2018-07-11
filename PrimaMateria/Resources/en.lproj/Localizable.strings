@@ -168,3 +168,18 @@
 "incompatibilities" = "Incompatibilities";
 "qualitativeSolubility" = "Qualitative Solubility (g/100 H₂0)";
 "valenceElectronPotential" = "Valence Electron Potential (-eV)";
+
+"boilingPointC" = "Boiling Point (°C)";
+"coefficientOfLinealThermalExpansion" = "Coefficient of Lineal Thermal Expansion cm/cm/°C (0°C)";
+"criticalTemperature" = "Critical Temperature (°C)";
+"description" = "Description";
+"density" = "Density (g cm-³)";
+"flammabiltyClass" = "Flammabilty Class";
+"heatOfVaporization" = "Heat of Vaporization (kj/mole)";
+"magneticSusceptibility" = "Magnetic Susceptibility";
+"meltingPointC" = "Melting Point (°C)";
+"molarVolume" = "Molar Volume (cm³/mol)";
+"opticalReflectivity" = "Optical Reflectivity: (%)";
+"opticalRefractiveIndex" = "Optical Refractive Index";
+"relativeGasDensity" = "Relative Gas Density (Air = 1)"
+"vaporPressure" = "Vapor Pressure (°C)"

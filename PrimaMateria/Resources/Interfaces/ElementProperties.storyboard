@@ -558,7 +558,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </view>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Optical Refractive Index:" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-of-HoM">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="opticalRefractiveIndex" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="vGd-of-HoM" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="474" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -567,7 +567,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Magnetic Susceptibility:" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="kh6-B6-ybB">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="magneticSusceptibility" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="kh6-B6-ybB" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="338" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -576,7 +576,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="1 Pa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oIL-Ki-rSJ">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="1 Pa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oIL-Ki-rSJ" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="1" y="576" width="168" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -585,7 +585,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Bulk: (GPs)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Sgq-fc-AbV">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Bulk: (GPs)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Sgq-fc-AbV" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="746" width="310" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -594,7 +594,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Optical Reflectivity: (%)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XhV-eM-Sar">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="opticalReflectivity" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XhV-eM-Sar" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="440" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -639,7 +639,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Rigidity: (GPs)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rd5-dw-IRa">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Rigidity: (GPs)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rd5-dw-IRa" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="371" y="746" width="310" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -657,7 +657,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Youngs: (GPs)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-DS-bUc">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Youngs: (GPs)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="5Vt-DS-bUc" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="712" y="746" width="311" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -675,7 +675,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Critical Temperature: (°C)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AB7-65-PNL">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="criticalTemperature" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="AB7-65-PNL" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="136" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -693,7 +693,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Boiling Point: (°C)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="q9t-4p-cnw">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="boilingPointC" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="q9t-4p-cnw" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="36" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -711,7 +711,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Molar Volume: (cm³/mol)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bYg-jb-Y2B">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="molarVolume" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bYg-jb-Y2B" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="406" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -720,7 +720,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Melting Point: (°C)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ywz-SY-g4H">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="meltingPointC" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Ywz-SY-g4H" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="372" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -738,7 +738,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Heat of Vaporization: (kj/mole)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sMo-Pp-fgX">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="heatOfVaporization" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sMo-Pp-fgX" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="304" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -756,7 +756,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Atomization: (kJ/mole)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XSp-HE-KCS">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Atomization: (kJ/mole)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="XSp-HE-KCS" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="848" width="310" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -774,7 +774,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Fusion: (kJ/mole)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="moW-PQ-CK3">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Fusion: (kJ/mole)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="moW-PQ-CK3" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="370" y="848" width="311" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -792,7 +792,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Flammabilty Class:" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-XD-asF">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="flammabiltyClass" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WI7-XD-asF" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="270" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -810,7 +810,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Atomic Mass:" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-iE-Mwr">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="atomicMass" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="2tR-iE-Mwr" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="2" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -828,7 +828,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Relative Gas Density: (Air = 1)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jud-Jr-7L4">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="relativeGasDensity" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jud-Jr-7L4" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="508" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -837,7 +837,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Coefficient of Lineal Thermal Expansion: cm/cm/°C (0°C)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IV5-fX-eiN">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="coefficientOfLinealThermalExpansion" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IV5-fX-eiN" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="70" width="333" height="64"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -855,7 +855,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="10 Pa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xgf-dl-NjX">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="10 Pa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xgf-dl-NjX" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="171" y="576" width="168" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -873,7 +873,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="100 Pa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mj2-br-8Zc">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="100 Pa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mj2-br-8Zc" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="341" y="576" width="168" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -891,7 +891,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="1 kPa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="d1q-xy-oc0">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="1 kPa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="d1q-xy-oc0" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="511" y="576" width="168" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -909,7 +909,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="10 kPa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="59j-xY-1gZ">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="10 kPa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="59j-xY-1gZ" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="681" y="576" width="168" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -927,7 +927,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="100 kPa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IU4-YW-mPO">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="100 kPa:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="IU4-YW-mPO" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="851" y="576" width="172" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -972,7 +972,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Description:" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bei-wR-Bkh">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="description" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bei-wR-Bkh" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="170" width="333" height="64"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -981,7 +981,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Density: (g cm-³)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="azy-JY-Yg2">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="density" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="azy-JY-Yg2" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="236" width="333" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1008,8 +1008,8 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" fixedFrame="YES" text="Vapor Pressure (°C)" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ANF-6b-Ddp">
-                                    <rect key="frame" x="392" y="540" width="240" height="29"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" fixedFrame="YES" text="vaporPressure" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ANF-6b-Ddp">
+                                    <rect key="frame" x="0.0" y="540" width="1024" height="29"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -1037,7 +1037,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Vaporization: (kJ/mole)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dlN-SX-j5O">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Vaporization: (kJ/mole)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dlN-SX-j5O" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="711" y="848" width="311" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1046,7 +1046,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Brinell: (MN m-³)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="GSY-Bh-gwa">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Brinell: (MN m-³)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="GSY-Bh-gwa" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="29" y="950" width="311" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1064,7 +1064,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Mohs:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sAB-oZ-kZq">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Mohs:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="sAB-oZ-kZq" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="370" y="950" width="311" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1082,7 +1082,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Vickers: (MN m-³)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="m2i-VW-6Xl">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Vickers: (MN m-³)" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="m2i-VW-6Xl" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="712" y="950" width="310" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="0.92941176469999998" green="0.95294117649999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1109,7 +1109,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Specific: (J/gK)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="48m-jH-zLd">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Specific: (J/gK)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="48m-jH-zLd" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="29" y="1052" width="175" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1127,7 +1127,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Molar: (J/mol K)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-XT-qod">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Molar: (J/mol K)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="yyv-XT-qod" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="538" y="1052" width="175" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1174,7 +1174,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Thermal: (W/cmK)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z2c-jH-Y2Z">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Thermal: (W/cmK)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Z2c-jH-Y2Z" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="30" y="678" width="197" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1192,7 +1192,7 @@
                                     <nil key="highlightedColor"/>
                                     <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 </label>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Electrical: (10³ cmΩ)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KNd-hm-d7d">
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Electrical: (10³ cmΩ)" lineBreakMode="wordWrap" numberOfLines="2" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KNd-hm-d7d" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                     <rect key="frame" x="542" y="678" width="221" height="32"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
