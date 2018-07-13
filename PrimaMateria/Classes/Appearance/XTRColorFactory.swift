@@ -222,7 +222,7 @@ class XTRColorFactory : NSObject {
             return XTRColorFactoryStandard.buttonBorderColor
         }
     }
-
+    
     class var successGreen : UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.success
@@ -319,19 +319,45 @@ class XTRColorFactory : NSObject {
         return UIColor.color(hexString: "A3A3A3")
     }
     
+<<<<<<< HEAD
     class var pageIndicatorTintColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.doveGrayColor
         } else {
             return XTRColorFactoryStandard.lavender
+=======
+    class var transparentColor: UIColor {
+        return UIColor.clear
+    }
+
+    class var pageControlLabelColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.denim
+        } else {
+            return XTRColorFactoryStandard.ghost
+        }
+    }
+    
+    class var pageIndicatorTintColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.denim
+        } else {
+            return XTRColorFactoryStandard.darkText
+>>>>>>> 6ac68739dda9ed12bc10ec37b4cd2f3806645a65
         }
     }
     
     class var currentPageIndicatorTintColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
+<<<<<<< HEAD
             return XTRColorFactoryClassic.cotton
         } else {
             return XTRColorFactoryStandard.regalBlue
+=======
+            return XTRColorFactoryClassic.caution
+        } else {
+            return XTRColorFactoryStandard.ghost
+>>>>>>> 6ac68739dda9ed12bc10ec37b4cd2f3806645a65
         }
     }
     
