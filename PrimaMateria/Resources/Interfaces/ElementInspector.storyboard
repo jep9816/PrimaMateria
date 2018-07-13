@@ -310,35 +310,9 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLw-TN-p4j">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jLw-TN-p4j" customClass="XTRPageControl" customModule="PrimaMateria" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="723" width="1024" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="swipeLeft" lineBreakMode="wordWrap" minimumFontSize="19" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0GD-8I-rl4" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
-                                        <rect key="frame" x="5" y="1" width="400" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <integer key="isElement" value="0"/>
-                                        </accessibility>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="highlightedColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="2" height="2"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="swipeRight" textAlignment="right" lineBreakMode="wordWrap" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GC1-eV-UC6" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
-                                        <rect key="frame" x="615" y="1" width="400" height="25"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <accessibility key="accessibilityConfiguration">
-                                            <integer key="isElement" value="0"/>
-                                        </accessibility>
-                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="highlightedColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <size key="shadowOffset" width="2" height="2"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                             <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXY-Or-ZJL" userLabel="Swap View">
@@ -380,11 +354,9 @@
                         <outlet property="casRegNoLabel" destination="MzH-dW-fzN" id="szx-kY-IYk"/>
                         <outlet property="groupLabel" destination="Kfc-TK-tPD" id="mpd-h2-F5x"/>
                         <outlet property="nextButton" destination="bK2-KM-4IZ" id="NCZ-9t-wkC"/>
-                        <outlet property="nextLabel" destination="GC1-eV-UC6" id="r2t-Z6-1Ud"/>
-                        <outlet property="pageItemView" destination="jLw-TN-p4j" id="L7d-Oh-3DX"/>
+                        <outlet property="pageControl" destination="jLw-TN-p4j" id="L7d-Oh-3DX"/>
                         <outlet property="periodLabel" destination="tOH-U6-Rju" id="1t4-Fa-sSr"/>
                         <outlet property="previousButton" destination="2Xk-Wh-yyy" id="uau-K2-Q4M"/>
-                        <outlet property="previousLabel" destination="0GD-8I-rl4" id="zpG-fk-lmc"/>
                         <outlet property="segmentedControl" destination="3dK-f5-lJ7" id="Vih-Bq-qwa"/>
                         <outlet property="seriesLabel" destination="T6L-6w-yvA" id="VpO-7h-HFU"/>
                         <outlet property="swapView" destination="zXY-Or-ZJL" id="Rsq-PV-3kx"/>

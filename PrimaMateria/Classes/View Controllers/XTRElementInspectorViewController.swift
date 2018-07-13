@@ -23,7 +23,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
     @IBOutlet var previousLabel : UILabel!
     @IBOutlet var seriesLabel : UILabel!
     @IBOutlet var titleItem : UINavigationItem!
-    @IBOutlet var pageItemView : UIView!
+    @IBOutlet var pageControl : XTRPageControl!
     @IBOutlet var swapView : UIView!
     
     // MARK: - Initialization Methods
@@ -50,31 +50,26 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
     }
     
     func assignNavigationHints() {
-        let atomicNumber = element!.atomicNumber
-        let currentLabel = pageItemView.subviews[atomicNumber + 1] as! UILabel
         var nextAtomicNumber = element!.atomicNumber + 1
         
-        currentLabel.font = UIFont.systemFont(ofSize: 10.0)
-        currentLabel.textColor = UIColor.white
+        pageControl.updateCurrentLabel(atomicNumber: element!.atomicNumber)
         
         if nextAtomicNumber > XTRDataSource.sharedInstance().elementCount() {
             nextAtomicNumber = 1
         }
         
         if nextAtomicNumber - 1 < XTRDataSource.sharedInstance().elementCount()  {
-            let localNextLabel = pageItemView.subviews[nextAtomicNumber + 1] as! UILabel
-            localNextLabel.font = UIFont.systemFont(ofSize: 10.0)
-            localNextLabel.textColor = UIColor.darkGray
+            pageControl.updateNextLabel(atomicNumber: nextAtomicNumber)
         }
         
         let nextElement = XTRDataSource.sharedInstance().elementAtIndex(nextAtomicNumber - 1)
-        let nextTitle = " ▶︎ \(nextElement.name!)"
+        let nextTitle = "▶︎ \(nextElement.name!)"
         
         nextButton.setTitle(nextTitle, for: UIControlState())
         nextButton.setTitle(nextTitle, for: .highlighted)
         nextButton.setTitle(nextTitle, for: .selected)
         
-        nextLabel.text = " \(NSLocalizedString("swipeRight", comment: "")) \(nextElement.name!)"
+        pageControl.populateRightLabel(name: nextElement.name!)
         
         var previousAtomicNumber = element!.atomicNumber - 1
         
@@ -83,35 +78,17 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         }
         
         if previousAtomicNumber > 0 {
-            let localPreviousLabel = pageItemView.subviews[previousAtomicNumber + 1] as! UILabel
-            localPreviousLabel.font = UIFont.systemFont(ofSize: 10.0)
-            localPreviousLabel.textColor = UIColor.darkGray
+            pageControl.updatePreviousLabel(atomicNumber: previousAtomicNumber)
         }
         
         let previousElement = XTRDataSource.sharedInstance().elementAtIndex(previousAtomicNumber - 1)
-        let previousTitle = " ◀︎ \(previousElement.name!)"
+        let previousTitle = "◀︎ \(previousElement.name!)"
         
         previousButton.setTitle(previousTitle, for: UIControlState())
         previousButton.setTitle(previousTitle, for: .highlighted)
         previousButton.setTitle(previousTitle, for: .selected)
-        previousLabel.text = " \(NSLocalizedString("swipeLeft", comment: "")) \(previousElement.name!)"
-    }
-    
-    func setupPageItemView() {
-        var rect = CGRect(x: 4, y: 30, width: 8, height: 8)
-        let count = XTRDataSource.sharedInstance().elementCount() - 1
         
-        for _ in 0...count {
-            let label = UILabel(frame: rect)
-            label.text = "●"
-            label.textAlignment = .center
-            label.font = UIFont.systemFont(ofSize: 10.0)
-            label.textColor = UIColor.darkGray
-            label.backgroundColor = UIColor.clear
-            pageItemView.addSubview(label)
-            rect = CGRect(x: label.frame.origin.x + 8.6, y: 30, width: 8, height: 8)
-        }
-        view.bringSubview(toFront: pageItemView)
+        pageControl.populateLeftLabel(name: previousElement.name!)
     }
     
     override func addChildViewController(_ aViewController: UIViewController) {
@@ -124,9 +101,8 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
     
     func animateForDirection(_ direction: String) {
         setupUI()
-        let defaultState = XTRPropertiesStore.showTransitionsState
         
-        if defaultState {
+        if XTRPropertiesStore.showTransitionsState {
             let currentView : UIView = view
             let theWindow = currentView.superview!
             let animation = CATransition()
@@ -146,6 +122,16 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
     // MARK: - Misellaneous Methods
     
     override func setupUI() {
+        let rect = segmentedControl.frame
+        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
+        
+        segmentedControl.frame = newRect
+        segmentedControl.setTitle(NSLocalizedString("atomicStructure", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("elementProperties", comment: ""), forSegmentAt: 1)
+        segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: 2)
+        segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: 3)
+        segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: 4)
+
         if element != nil {
             assignAtomicSymbolTextFieldProperties()
             assignOtherLabels()
@@ -157,15 +143,6 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
                 controller.setupUI()
             }
         }
-        view.bringSubview(toFront: pageItemView)
-        let rect = segmentedControl.frame
-        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
-        segmentedControl.frame = newRect
-        segmentedControl.setTitle(NSLocalizedString("atomicStructure", comment: ""), forSegmentAt: 0)
-        segmentedControl.setTitle(NSLocalizedString("elementProperties", comment: ""), forSegmentAt: 1)
-        segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: 2)
-        segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: 3)
-        segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: 4)
     }
     
     // MARK: - Action Methods
@@ -232,7 +209,6 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         let swipePreviousElement = UISwipeGestureRecognizer(target:self, action: #selector(XTRElementInspectorViewController.previousElement(_:)))
         swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipePreviousElement)
-        setupPageItemView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -274,6 +250,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         nextLabel = nil
         previousLabel = nil
         titleItem = nil
+        pageControl = nil
     }
     
 }

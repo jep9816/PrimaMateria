@@ -222,7 +222,7 @@ class XTRColorFactory : NSObject {
             return XTRColorFactoryStandard.buttonBorderColor
         }
     }
-
+    
     class var successGreen : UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.success
@@ -317,6 +317,34 @@ class XTRColorFactory : NSObject {
     
     class var popupArrowColor: UIColor {
         return UIColor.color(hexString: "A3A3A3")
+    }
+    
+    class var transparentColor: UIColor {
+        return UIColor.clear
+    }
+
+    class var pageControlLabelColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.denim
+        } else {
+            return XTRColorFactoryStandard.ghost
+        }
+    }
+    
+    class var pageIndicatorTintColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.denim
+        } else {
+            return XTRColorFactoryStandard.darkText
+        }
+    }
+    
+    class var currentPageIndicatorTintColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.caution
+        } else {
+            return XTRColorFactoryStandard.ghost
+        }
     }
     
 }

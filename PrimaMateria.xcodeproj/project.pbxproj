@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB996C20F8D4C800711159 /* XTRPageControl.swift */; };
 		80127C2B20F0268C00ABC706 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80127C2520F0268B00ABC706 /* Images.xcassets */; };
 		8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD620F0270400ABC706 /* MBProgressHUD.m */; };
 		8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */; };
@@ -125,6 +126,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08AB996C20F8D4C800711159 /* XTRPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPageControl.swift; sourceTree = "<group>"; };
 		1732C3DCFE44437A23AA8F9D /* Pods-PrimaMateria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.release.xcconfig"; sourceTree = "<group>"; };
 		46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80127C0E20F0253000ABC706 /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -387,18 +389,19 @@
 		80127FF720F0270400ABC706 /* Controls */ = {
 			isa = PBXGroup;
 			children = (
-				80127FF820F0270400ABC706 /* XTRElementButton.swift */,
-				80127FF920F0270400ABC706 /* XTRLocalizedLabel.swift */,
 				80127FFA20F0270400ABC706 /* XTRBarPlot.swift */,
-				80127FFB20F0270400ABC706 /* XTRTableCell.swift */,
 				80127FFC20F0270400ABC706 /* XTRDividerLabel.swift */,
+				80127FF820F0270400ABC706 /* XTRElementButton.swift */,
 				80127FFD20F0270400ABC706 /* XTRElementTableViewCell.swift */,
-				80127FFE20F0270400ABC706 /* XTRTableHeaderButton.swift */,
-				80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */,
-				8012800020F0270400ABC706 /* XTRTableLabel.swift */,
-				8012800120F0270400ABC706 /* XTRShellModelScene.swift */,
-				8012800220F0270400ABC706 /* XTRHelpButton.swift */,
 				8012800320F0270400ABC706 /* XTRGeneralButton.swift */,
+				80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */,
+				8012800220F0270400ABC706 /* XTRHelpButton.swift */,
+				80127FF920F0270400ABC706 /* XTRLocalizedLabel.swift */,
+				08AB996C20F8D4C800711159 /* XTRPageControl.swift */,
+				8012800120F0270400ABC706 /* XTRShellModelScene.swift */,
+				80127FFB20F0270400ABC706 /* XTRTableCell.swift */,
+				80127FFE20F0270400ABC706 /* XTRTableHeaderButton.swift */,
+				8012800020F0270400ABC706 /* XTRTableLabel.swift */,
 			);
 			path = Controls;
 			sourceTree = "<group>";
@@ -759,6 +762,7 @@
 				8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */,
 				8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */,
 				8012807320F0270500ABC706 /* XTRShadowView.swift in Sources */,
+				08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */,
 				8012805120F0270500ABC706 /* XTRShellModelScene.swift in Sources */,
 				8012803520F0270500ABC706 /* XTRElement-Presentation.swift in Sources */,
 				8012807220F0270500ABC706 /* XTRCornerImageView.swift in Sources */,

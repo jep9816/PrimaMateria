@@ -19,6 +19,7 @@ class XTRAppearanceManagerStandard : NSObject {
         progressViewAppearance()
         searchBarAppearance()
         segmentedControlAppearance()
+        sliderAppearance()
         stepperAppearance()
         switchAppearance()
         tabBarAppearance()
@@ -142,6 +143,10 @@ class XTRAppearanceManagerStandard : NSObject {
         //- (UIOffset)contentPositionAdjustmentForSegmentType:(UISegmentedControlSegment)leftCenterRightOrAlone barMetrics:(UIBarMetrics)barMetrics;
     }
     
+    func sliderAppearance() {
+        
+    }
+
     func stepperAppearance() {
         //- (void)setBackgroundImage:(nullable UIImage*)image forState:(UIControlState)state;
         //- (nullable UIImage*)backgroundImageForState:(UIControlState)state;
