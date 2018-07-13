@@ -250,6 +250,7 @@
 		8012838420F02F9B00ABC706 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
+		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -597,6 +598,7 @@
 				Base,
 				es,
 				ru,
+				fr,
 			);
 			mainGroup = 80127C0520F0253000ABC706;
 			productRefGroup = 80127C0F20F0253000ABC706 /* Products */;
@@ -789,6 +791,7 @@
 				8012807720F0271F00ABC706 /* en */,
 				8012808A20F0271F00ABC706 /* es */,
 				801280ED20F0272000ABC706 /* ru */,
+				8054205B20F83824002E7C27 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

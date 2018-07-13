@@ -1,0 +1,62 @@
+// Strings file generated with App Translator
+// Project: PrimaMateria
+// Language: fr
+// Date: Thu Jul 12 21:34:50 2018
+
+/*  */
+"abundance"="Abondance";
+
+/*  */
+"abundanceCrust"="Croûte (mg/kg)";
+
+/*  */
+"abundanceSea"="Mer (ml/L)";
+
+/*  */
+"actinide"="Actinide";
+
+/*  */
+"actinideSeries"="Série des actinides";
+
+/*  */
+"alkaliEarthMetal"="Métal alcalin";
+
+/*  */
+"alkaliMetal"="Métaux alcalins";
+
+/*  */
+"alpha"="Alpha";
+
+/*  */
+"atomic"="Atomique";
+
+/*  */
+"atomicMass"="Masse atomique";
+
+/*  */
+"atomicNumber"="Numéro atomique";
+
+/*  */
+"atomicRadius"="Rayon atomique (Å)";
+
+/*  */
+"atomicStructure"="Structure atomique";
+
+/*  */
+"atomicVolume"="Volume atomique (cm³/mol)";
+
+/*  */
+"vaporPressure"="Pression de vapeur (° C)";
+
+/*  */
+"version"="Version";
+
+/*  */
+"wavelengthAir"="Air de longueur d’onde (Å)";
+
+/*  */
+"wikipediaEntry"="Entrée de Wikipedia pour élément";
+
+/*  */
+"wikipediaEntryButton"="Entrée de wikipedia";
+

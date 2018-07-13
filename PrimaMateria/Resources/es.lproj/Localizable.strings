@@ -1,200 +1,581 @@
-/* 
-  Localizable.strings
-  PrimaMateria
-  Spanish
-  Created by Jerry Porter on 6/28/18.
-  Copyright © 2018 xTrensa. All rights reserved.
-*/
+// Strings file generated with App Translator
+// Project: PrimaMateria
+// Language: es
+// Date: Thu Jul 12 21:34:50 2018
 
-"abundance" = "Abundancia";
-"abundanceCrust" = "Corteza (mg/kg)";
-"abundanceSea" = "Mar (ml/L)";
-"actinide" = "Actínido";
-"actinideSeries" = "Serie Actinide";
-"alkaliEarthMetal" = "Alcalino Tierra Metal";
-"alkaliMetal" = "Metal Alcalino";
-"alpha" = "Alfa";
-"atomic" = "Atomico";
-"atomicMass" = "Masa atomica";
-"atomicNumber" = "Número atómico";
-"atomicRadius" = "Radio atómico (Å)";
-"atomicStructure" = "Estructura atomica";
-"atomicVolume" = "Volumen atómico (cm³ / mol)";
-"atomicWeight" = "Peso Atomico";
-"blue" = "Azul";
-"boilingPoint" = "Punto de ebullición";
-"boilingPointC" = "Punto de ebullición (° C)";
-"casResNo" = "CAS Res No";
-"chemicalProperties" = "Propiedades Químicas";
-"chooseColor" = "Elige color";
-"chooseGraph" = "Elija el gráfico";
-"classic" = "Clásico";
-"close" = "Cerca";
-"coefficientOfLinealThermalExpansion" = "Coeficiente de expansión térmica lineal cm/cm/°C (0 °C)";
-"colorPicker" = "Selector de color";
-"conductivity" = "Conductividad";
-"conductivityElectrical" = "Eléctrico (10³ cmΩ)";
-"conductivityThermal" = "Térmico (W/cmK)";
-"configuration" = "Configuración";
-"copyright" = "Derechos de autor";
-"covalentRadius" = "Radio covalente (Å)";
-"credits" = "Créditos";
-"criticalTemperature" = "Temperatura crítica (°C)";
-"crossSection" = "Sección transversal (barns)";
-"crystalStructure" = "Estructura cristalina";
-"density" = "Densidad (gcm-³)";
-"description" = "Descripción";
-"discoveredBy" = "Por";
-"discoveredLocation" = "Ubicación";
-"discoveryInformation" = "Información de descubrimiento";
-"discoveryYear" = "Año";
-"elasticModulus" = "Módulo elástico";
-"elasticModulusBulk" = "Bulk (GPs)";
-"elasticModulusRigidity" = "Rigidez (GP)";
-"elasticModulusYoungs" = "Youngs (GPs)";
-"electroNegativity" = "Electro Negativity (Pauling)";
-"electrochemicalEquivalent" = "Equivalente Electroquímico (g/amp-hr)";
-"electronStructure" = "Estructura electrónica";
-"electronWorkFunction" = "Función de trabajo de electrones";
-"elementBalloon" = "Globo de elemento";
-"elementDetails" = "Detalles del elemento";
-"elementHelpBubbles" = "Elemento Ayuda Burbujas";
-"elementInspectorFor" = "Inspector de elementos para";
-"elementList" = "Lista de Elementos";
-"elementListAtomicMass" = "Masa atomica";
-"elementListBoilingPoint" = "Punto de ebullición";
-"elementListDensity" = "Densidad";
-"elementListGroup" = "Grupo";
-"elementListMeltingPoint" = "Punto de fusion";
-"elementListName" = "Nombre";
-"elementListNumber" = "Número";
-"elementListPeriod" = "Período";
-"elementListSeries" = "Serie";
-"elementListSymbol" = "Símbolo";
-"elementProperties" = "Propiedades del elemento";
-"enthalpy" = "Entalpia";
-"enthalpyAtomization" = "Atomización (kJ/mol)";
-"enthalpyFusion" = "Fusion (kJ/mol)";
-"enthalpyVaporization" = "Vaporización (kJ/mol)";
-"error" = "Error";
-"errorMessage" = "Símbolo desconocido o error de sintaxis.";
-"fillingOrbital" = "Orbital de relleno";
-"first" = "Primero";
-"flammabiltyClass" = "Clase de inflamabilidad";
-"generalInfo" = "Información general";
-"graphAtomicMass" = "Masa atómica";
-"graphAtomicRadius" = "Radio atómico";
-"graphBoilingPoint" = "Punto de ebullición";
-"graphCoefficientOfLinealThermalExpansion" = "Coeficiente de expansión térmica lineal * 100K";
-"graphCovalentRadius" = "Radio covalente";
-"graphCrossSection" = "Sección transversal";
-"graphDensity" = "Densidad";
-"graphElasticModulusBulk" = "Módulo elástico - a granel";
-"graphElasticModulusRigidity" = "Módulo elástico - Rigidez";
-"graphElasticModulusYoungs" = "Módulo elástico - Youngs";
-"graphElectroChemicalEquivalent" = "Equivalente electroquímico";
-"graphElectroNegativity" = "Electro Negatividad";
-"graphElectronWorkFunction" = "Función de trabajo de electrones";
-"graphEnthalpyOfAtomization" = "Entalpía de la atomización";
-"graphEnthalpyOfFusion" = "Entalpía de fusión";
-"graphEnthalpyOfVaporization" = "Entalpía de la vaporización";
-"graphHardnessScaleBrinell" = "Escala de dureza - Brinell";
-"graphHardnessScaleMohs" = "Escala de dureza - Mohs";
-"graphHardnessScaleVickers" = "Escala de dureza - Vickers";
-"graphHeatOfFusion" = "Calor de fusión";
-"graphHeatOfVaporization" = "Calor de la vaporización";
-"graphIonicRadius" = "Radio iónico";
-"graphIonizationPotentialFirst" = "Potencial de ionización primero";
-"graphIonizationPotentialSecond" = "Potencial de ionización segundo";
-"graphIonizationPotentialThird" = "Potencial de ionización tercero";
-"graphMeltingPoint" = "Punto de fusión";
-"graphMolarHeatCapacity" = "Capacidad de calor molar";
-"graphMolarVolume" = "Volumen molar";
-"graphSpecificHeat" = "Calor específico";
-"graphValenceElectronPotential" = "Potencial de electrones de valencia";
-"graphs" = "Gráficos";
-"green" = "Verde";
-"group" = "Grupo";
-"halogen" = "Halógeno";
-"hardnessScale" = "Escala de dureza";
-"hardnessScaleBrinell" = "Brinell (MNm-³)";
-"hardnessScaleMohs" = "Mohs";
-"hardnessScaleVickers" = "Vickers (MNm-³)";
-"heatCapacity" = "Capacidad de calor";
-"heatCapacityMolar" = "Molar (J/mol K)";
-"heatCapacitySpecific" = "Específico (J/gK)";
-"heatOfFusion" = "Calor de fusión (KJ / mol)";
-"heatOfVaporization" = "Calor de la vaporización (kj/mol)";
-"help" = "Ayuda";
-"incompatibilities" = "Incompatibilidades";
-"info" = "Información";
-"intensity" = "Intensidad";
-"ionicRadius" = "Radio Iónico (Å)";
-"ionizationPotential" = "Potencial de ionización";
-"lanthanide" = "Lantánido";
-"lanthanideSeries" = "Serie Lanthanide";
-"loadingWikipedia" = "Cargando la página de Wikipedia para el elemento";
-"magneticSusceptibility" = "Susceptibilidad magnética";
-"meltingPoint" = "Punto de fusion";
-"meltingPointC" = "Punto de fusión (°C)";
-"metal" = "Metal";
-"miscellaneous" = "Varios";
-"molarVolume" = "Volumen molar (cm³/mol)";
-"molecularCalculator" = "Calculadora Molecular";
-"molecularFormula" = "Fórmula Molecular";
-"nobleGas" = "Gas noble";
-"nonMetal" = "No Metal";
-"nuclideDaughterIsotopes" = "Isótopos hijo (s)";
-"nuclideDecayEnergy" = "Energía de Decaimiento (MeV)";
-"nuclideDecayModes" = "Modo(s) de Degradación";
-"nuclideHalfLife" = "Media vida";
-"nuclideIosotopicComposition" = "Composición Iosotópica";
-"nuclideIsotopicMass" = "Masa Isotópica(u)";
-"nuclideNaturalVariationRange" = "Rango de Variación Natural";
-"nuclideNn" = "N(n)";
-"nuclideNuclearSpin" = "Giro Nuclear";
-"nuclideSymbol" = "Símbolo";
-"nuclideZp" = "Z(p)";
-"nuclidesIsotopes" = "Nucleidos / Isótopos";
-"numPerLevel" = "# Por nivel";
-"number" = "Número";
-"numberOfElectrons" = "Cantidad de Electrones (Sin Cargo)";
-"numberOfNeutrons" = "Número de Neutrones (Nucleido Más Común / Estable)";
-"numberOfProtons" = "Cantidad de Protones";
-"opticalReflectivity" = "Reflectividad óptica (%)";
-"opticalRefractiveIndex" = "Índice de refracción óptica";
-"oxidationStates" = "Estados de Oxidación";
-"period" = "Período";
-"periodicTable" = "Tabla Periódica";
-"periodicTableElements" = "Tabla Periódica de los Elementos";
-"physicalProperties" = "Propiedades Físicas";
-"pleaseWait" = "Por favor espera";
-"preferences" = "Preferencias";
-"qualitativeSolubility" = "Solubilidad cualitativa (g / 100 H₂0)";
-"red" = "Rojo";
-"relativeGasDensity" = "Densidad de gas relativa (Aire=1)";
-"resetPreferences" = "Reiniciar Preferencias";
-"second" = "Segundo";
-"selectGraph" = "Seleccionar gráfico";
-"series" = "Serie";
-"seriesColors" = "Colores de la Serie";
-"settings" = "Configuraciones";
-"shellModel" = "Modelo de Shell";
-"showSplashScreen" = "Mostrar Pantalla de Bienvenida";
-"showViewTransitions" = "Mostrar Transiciones de Vista";
-"spectrum" = "Espectro";
-"spectrumColorKey" = "Clave de Color del Espectro";
-"standard" = "Estándar";
-"style" = "Estilo";
-"swipeLeft" = "Desliza Hacia la Izquierda Para";
-"swipeRight" = "Desliza Hacia la Derecha Para";
-"third" = "Tercero";
-"transactinide" = "Transactinida";
-"transitionMetal" = "Metal de Transición";
-"valence" = "Valencia";
-"valenceElectronPotential" = "Valence Electron Potential (-eV)";
-"vaporPressure" = "Presión de vapor (°C)";
-"version" = "Versión";
-"wavelengthAir" = "Longitud de onda del aire (Å)";
-"wikipediaEntry" = "Entrada de Wikipedia para el elemento";
-"wikipediaEntryButton" = "Entrada de Wikipedia";
+/*  */
+"abundance"="Abundancia";
+
+/*  */
+"abundanceCrust"="Corteza (mg/kg)";
+
+/*  */
+"abundanceSea"="Mar (ml/L)";
+
+/*  */
+"actinide"="Actínido";
+
+/*  */
+"actinideSeries"="Serie Actinide";
+
+/*  */
+"alkaliEarthMetal"="Alcalino Tierra Metal";
+
+/*  */
+"alkaliMetal"="Metal Alcalino";
+
+/*  */
+"alpha"="Alfa";
+
+/*  */
+"atomic"="Atomico";
+
+/*  */
+"atomicMass"="Masa atomica";
+
+/*  */
+"atomicNumber"="Número atómico";
+
+/*  */
+"atomicRadius"="Radio atómico (Å)";
+
+/*  */
+"atomicStructure"="Estructura atomica";
+
+/*  */
+"atomicVolume"="Volumen atómico (cm³ / mol)";
+
+/*  */
+"atomicWeight"="Peso Atomico";
+
+/*  */
+"blue"="Azul";
+
+/*  */
+"boilingPoint"="Punto de ebullición";
+
+/*  */
+"boilingPointC"="Punto de ebullición (° C)";
+
+/*  */
+"casResNo"="CAS Res No";
+
+/*  */
+"chemicalProperties"="Propiedades Químicas";
+
+/*  */
+"chooseColor"="Elige color";
+
+/*  */
+"chooseGraph"="Elija el gráfico";
+
+/*  */
+"classic"="Clásico";
+
+/*  */
+"close"="Cerca";
+
+/*  */
+"coefficientOfLinealThermalExpansion"="Coeficiente de expansión térmica lineal cm/cm/°C (0 °C)";
+
+/*  */
+"colorPicker"="Selector de color";
+
+/*  */
+"conductivity"="Conductividad";
+
+/*  */
+"conductivityElectrical"="Eléctrico (10³ cmΩ)";
+
+/*  */
+"conductivityThermal"="Térmico (W/cmK)";
+
+/*  */
+"configuration"="Configuración";
+
+/*  */
+"copyright"="Derechos de autor";
+
+/*  */
+"covalentRadius"="Radio covalente (Å)";
+
+/*  */
+"credits"="Créditos";
+
+/*  */
+"criticalTemperature"="Temperatura crítica (°C)";
+
+/*  */
+"crossSection"="Sección transversal (barns)";
+
+/*  */
+"crystalStructure"="Estructura cristalina";
+
+/*  */
+"density"="Densidad (gcm-³)";
+
+/*  */
+"description"="Descripción";
+
+/*  */
+"discoveredBy"="Por";
+
+/*  */
+"discoveredLocation"="Ubicación";
+
+/*  */
+"discoveryInformation"="Información de descubrimiento";
+
+/*  */
+"discoveryYear"="Año";
+
+/*  */
+"elasticModulus"="Módulo elástico";
+
+/*  */
+"elasticModulusBulk"="Bulk (GPs)";
+
+/*  */
+"elasticModulusRigidity"="Rigidez (GP)";
+
+/*  */
+"elasticModulusYoungs"="Youngs (GPs)";
+
+/*  */
+"electroNegativity"="Electro Negativity (Pauling)";
+
+/*  */
+"electrochemicalEquivalent"="Equivalente Electroquímico (g/amp-hr)";
+
+/*  */
+"electronStructure"="Estructura electrónica";
+
+/*  */
+"electronWorkFunction"="Función de trabajo de electrones";
+
+/*  */
+"elementBalloon"="Globo de elemento";
+
+/*  */
+"elementDetails"="Detalles del elemento";
+
+/*  */
+"elementHelpBubbles"="Elemento Ayuda Burbujas";
+
+/*  */
+"elementInspectorFor"="Inspector de elementos para";
+
+/*  */
+"elementList"="Lista de Elementos";
+
+/*  */
+"elementListAtomicMass"="Masa atomica";
+
+/*  */
+"elementListBoilingPoint"="Punto de ebullición";
+
+/*  */
+"elementListDensity"="Densidad";
+
+/*  */
+"elementListGroup"="Grupo";
+
+/*  */
+"elementListMeltingPoint"="Punto de fusion";
+
+/*  */
+"elementListName"="Nombre";
+
+/*  */
+"elementListNumber"="Número";
+
+/*  */
+"elementListPeriod"="Período";
+
+/*  */
+"elementListSeries"="Serie";
+
+/*  */
+"elementListSymbol"="Símbolo";
+
+/*  */
+"elementProperties"="Propiedades del elemento";
+
+/*  */
+"enthalpy"="Entalpia";
+
+/*  */
+"enthalpyAtomization"="Atomización (kJ/mol)";
+
+/*  */
+"enthalpyFusion"="Fusion (kJ/mol)";
+
+/*  */
+"enthalpyVaporization"="Vaporización (kJ/mol)";
+
+/*  */
+"error"="Error";
+
+/*  */
+"errorMessage"="Símbolo desconocido o error de sintaxis.";
+
+/*  */
+"fillingOrbital"="Orbital de relleno";
+
+/*  */
+"first"="Primero";
+
+/*  */
+"flammabiltyClass"="Clase de inflamabilidad";
+
+/*  */
+"generalInfo"="Información general";
+
+/*  */
+"graphAtomicMass"="Masa atómica";
+
+/*  */
+"graphAtomicRadius"="Radio atómico";
+
+/*  */
+"graphBoilingPoint"="Punto de ebullición";
+
+/*  */
+"graphCoefficientOfLinealThermalExpansion"="Coeficiente de expansión térmica lineal * 100K";
+
+/*  */
+"graphCovalentRadius"="Radio covalente";
+
+/*  */
+"graphCrossSection"="Sección transversal";
+
+/*  */
+"graphDensity"="Densidad";
+
+/*  */
+"graphElasticModulusBulk"="Módulo elástico - a granel";
+
+/*  */
+"graphElasticModulusRigidity"="Módulo elástico - Rigidez";
+
+/*  */
+"graphElasticModulusYoungs"="Módulo elástico - Youngs";
+
+/*  */
+"graphElectroChemicalEquivalent"="Equivalente electroquímico";
+
+/*  */
+"graphElectroNegativity"="Electro Negatividad";
+
+/*  */
+"graphElectronWorkFunction"="Función de trabajo de electrones";
+
+/*  */
+"graphEnthalpyOfAtomization"="Entalpía de la atomización";
+
+/*  */
+"graphEnthalpyOfFusion"="Entalpía de fusión";
+
+/*  */
+"graphEnthalpyOfVaporization"="Entalpía de la vaporización";
+
+/*  */
+"graphHardnessScaleBrinell"="Escala de dureza - Brinell";
+
+/*  */
+"graphHardnessScaleMohs"="Escala de dureza - Mohs";
+
+/*  */
+"graphHardnessScaleVickers"="Escala de dureza - Vickers";
+
+/*  */
+"graphHeatOfFusion"="Calor de fusión";
+
+/*  */
+"graphHeatOfVaporization"="Calor de la vaporización";
+
+/*  */
+"graphIonicRadius"="Radio iónico";
+
+/*  */
+"graphIonizationPotentialFirst"="Potencial de ionización primero";
+
+/*  */
+"graphIonizationPotentialSecond"="Potencial de ionización segundo";
+
+/*  */
+"graphIonizationPotentialThird"="Potencial de ionización tercero";
+
+/*  */
+"graphMeltingPoint"="Punto de fusión";
+
+/*  */
+"graphMolarHeatCapacity"="Capacidad de calor molar";
+
+/*  */
+"graphMolarVolume"="Volumen molar";
+
+/*  */
+"graphSpecificHeat"="Calor específico";
+
+/*  */
+"graphValenceElectronPotential"="Potencial de electrones de valencia";
+
+/*  */
+"graphs"="Gráficos";
+
+/*  */
+"green"="Verde";
+
+/*  */
+"group"="Grupo";
+
+/*  */
+"halogen"="Halógeno";
+
+/*  */
+"hardnessScale"="Escala de dureza";
+
+/*  */
+"hardnessScaleBrinell"="Brinell (MNm-³)";
+
+/*  */
+"hardnessScaleMohs"="Mohs";
+
+/*  */
+"hardnessScaleVickers"="Vickers (MNm-³)";
+
+/*  */
+"heatCapacity"="Capacidad de calor";
+
+/*  */
+"heatCapacityMolar"="Molar (J/mol K)";
+
+/*  */
+"heatCapacitySpecific"="Específico (J/gK)";
+
+/*  */
+"heatOfFusion"="Calor de fusión (KJ / mol)";
+
+/*  */
+"heatOfVaporization"="Calor de la vaporización (kj/mol)";
+
+/*  */
+"help"="Ayuda";
+
+/*  */
+"incompatibilities"="Incompatibilidades";
+
+/*  */
+"info"="Información";
+
+/*  */
+"intensity"="Intensidad";
+
+/*  */
+"ionicRadius"="Radio Iónico (Å)";
+
+/*  */
+"ionizationPotential"="Potencial de ionización";
+
+/*  */
+"lanthanide"="Lantánido";
+
+/*  */
+"lanthanideSeries"="Serie Lanthanide";
+
+/*  */
+"loadingWikipedia"="Cargando la página de Wikipedia para el elemento";
+
+/*  */
+"magneticSusceptibility"="Susceptibilidad magnética";
+
+/*  */
+"meltingPoint"="Punto de fusion";
+
+/*  */
+"meltingPointC"="Punto de fusión (°C)";
+
+/*  */
+"metal"="Metal";
+
+/*  */
+"miscellaneous"="Varios";
+
+/*  */
+"molarVolume"="Volumen molar (cm³/mol)";
+
+/*  */
+"molecularCalculator"="Calculadora Molecular";
+
+/*  */
+"molecularFormula"="Fórmula Molecular";
+
+/*  */
+"nobleGas"="Gas noble";
+
+/*  */
+"nonMetal"="No Metal";
+
+/*  */
+"nuclideDaughterIsotopes"="Isótopos hijo (s)";
+
+/*  */
+"nuclideDecayEnergy"="Energía de Decaimiento (MeV)";
+
+/*  */
+"nuclideDecayModes"="Modo(s) de Degradación";
+
+/*  */
+"nuclideHalfLife"="Media vida";
+
+/*  */
+"nuclideIosotopicComposition"="Composición Iosotópica";
+
+/*  */
+"nuclideIsotopicMass"="Masa Isotópica(u)";
+
+/*  */
+"nuclideNaturalVariationRange"="Rango de Variación Natural";
+
+/*  */
+"nuclideNn"="N(n)";
+
+/*  */
+"nuclideNuclearSpin"="Giro Nuclear";
+
+/*  */
+"nuclideSymbol"="Símbolo";
+
+/*  */
+"nuclideZp"="Z(p)";
+
+/*  */
+"nuclidesIsotopes"="Nucleidos / Isótopos";
+
+/*  */
+"numPerLevel"="# Por nivel";
+
+/*  */
+"number"="Número";
+
+/*  */
+"numberOfElectrons"="Cantidad de Electrones (Sin Cargo)";
+
+/*  */
+"numberOfNeutrons"="Número de Neutrones (Nucleido Más Común / Estable)";
+
+/*  */
+"numberOfProtons"="Cantidad de Protones";
+
+/*  */
+"opticalReflectivity"="Reflectividad óptica (%)";
+
+/*  */
+"opticalRefractiveIndex"="Índice de refracción óptica";
+
+/*  */
+"oxidationStates"="Estados de Oxidación";
+
+/*  */
+"period"="Período";
+
+/*  */
+"periodicTable"="Tabla Periódica";
+
+/*  */
+"periodicTableElements"="Tabla Periódica de los Elementos";
+
+/*  */
+"physicalProperties"="Propiedades Físicas";
+
+/*  */
+"pleaseWait"="Por favor espera";
+
+/*  */
+"preferences"="Preferencias";
+
+/*  */
+"qualitativeSolubility"="Solubilidad cualitativa (g / 100 H₂0)";
+
+/*  */
+"red"="Rojo";
+
+/*  */
+"relativeGasDensity"="Densidad de gas relativa (Aire=1)";
+
+/*  */
+"resetPreferences"="Reiniciar Preferencias";
+
+/*  */
+"second"="Segundo";
+
+/*  */
+"selectGraph"="Seleccionar gráfico";
+
+/*  */
+"series"="Serie";
+
+/*  */
+"seriesColors"="Colores de la Serie";
+
+/*  */
+"settings"="Configuraciones";
+
+/*  */
+"shellModel"="Modelo de Shell";
+
+/*  */
+"showSplashScreen"="Mostrar Pantalla de Bienvenida";
+
+/*  */
+"showViewTransitions"="Mostrar Transiciones de Vista";
+
+/*  */
+"spectrum"="Espectro";
+
+/*  */
+"spectrumColorKey"="Clave de Color del Espectro";
+
+/*  */
+"standard"="Estándar";
+
+/*  */
+"style"="Estilo";
+
+/*  */
+"swipeLeft"="Desliza Hacia la Izquierda Para";
+
+/*  */
+"swipeRight"="Desliza Hacia la Derecha Para";
+
+/*  */
+"third"="Tercero";
+
+/*  */
+"transactinide"="Transactinida";
+
+/*  */
+"transitionMetal"="Metal de Transición";
+
+/*  */
+"valence"="Valencia";
+
+/*  */
+"valenceElectronPotential"="Valence Electron Potential (-eV)";
+
+/*  */
+"vaporPressure"="Presión de vapor (°C)";
+
+/*  */
+"version"="Versión";
+
+/*  */
+"wavelengthAir"="Longitud de onda del aire (Å)";
+
+/*  */
+"wikipediaEntry"="Entrada de Wikipedia para el elemento";
+
+/*  */
+"wikipediaEntryButton"="Entrada de Wikipedia";
+
