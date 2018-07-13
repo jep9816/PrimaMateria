@@ -89,6 +89,11 @@ class XTRAppearanceManagerClassic : NSObject {
     }
     
     func pageControlAppearance() {
+        let appearance = UIPageControl.appearance()
+        
+        appearance.pageIndicatorTintColor = XTRColorFactoryClassic.dodgerBlueColor
+        appearance.currentPageIndicatorTintColor = XTRColorFactoryClassic.alert
+        
         //@property(nullable, nonatomic,strong) UIColor *pageIndicatorTintColor;
         //@property(nullable, nonatomic,strong) UIColor *currentPageIndicatorTintColor;
     }
@@ -143,6 +148,11 @@ class XTRAppearanceManagerClassic : NSObject {
     }
     
     func stepperAppearance() {
+        let appearance = UIStepper.appearance()
+        
+        appearance.tintColor = XTRColorFactoryClassic.interactiveBlue
+        
+        //open var tintColor: UIColor!
         //- (void)setBackgroundImage:(nullable UIImage*)image forState:(UIControlState)state;
         //- (nullable UIImage*)backgroundImageForState:(UIControlState)state;
         //- (void)setDividerImage:(nullable UIImage*)image forLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState;

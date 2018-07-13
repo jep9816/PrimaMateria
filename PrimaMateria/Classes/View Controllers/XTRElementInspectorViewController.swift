@@ -239,8 +239,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         super.viewWillAppear(animated)
         
         let atomicNumber = XTRPropertiesStore.atomicNumber
-        
-        barButtonItem.title = "◀︎ \(NSLocalizedString(XTRPropertiesStore.viewTitle, comment: ""))"
+        barButtonItem.title = "◀︎ \(XTRPropertiesStore.viewTitle)"
         element = XTRDataSource.sharedInstance().elementAtIndex(atomicNumber)
         setupUI()
     }

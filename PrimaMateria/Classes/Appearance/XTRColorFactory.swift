@@ -319,4 +319,20 @@ class XTRColorFactory : NSObject {
         return UIColor.color(hexString: "A3A3A3")
     }
     
+    class var pageIndicatorTintColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.doveGrayColor
+        } else {
+            return XTRColorFactoryStandard.lavender
+        }
+    }
+    
+    class var currentPageIndicatorTintColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.cotton
+        } else {
+            return XTRColorFactoryStandard.regalBlue
+        }
+    }
+    
 }
