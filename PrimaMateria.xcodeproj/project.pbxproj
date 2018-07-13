@@ -377,11 +377,11 @@
 		80127FF120F0270400ABC706 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				80127FF620F0270400ABC706 /* Bundle+Extensions.swift */,
+				80127FF420F0270400ABC706 /* NSObject+General.swift */,
 				80127FF220F0270400ABC706 /* UIColor-Extensions.swift */,
 				80127FF320F0270400ABC706 /* UIImage-Extensions.swift */,
-				80127FF420F0270400ABC706 /* NSObject+General.swift */,
 				80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */,
-				80127FF620F0270400ABC706 /* Bundle+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

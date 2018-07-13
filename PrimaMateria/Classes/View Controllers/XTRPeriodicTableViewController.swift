@@ -53,12 +53,11 @@ class XTRPeriodicTableViewController : UIViewController {
     // MARK: - Action Methods
     
     @IBAction func showPopupForButton(_ sender: UIButton) {
-        let aRect = CGRect(x: 10, y: 10, width: 15, height: 15)
         guard let popoverController = elementBalloonViewController.popoverPresentationController else { return }
         
         XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = sender.tag
-        popoverController.sourceRect = aRect
+        popoverController.sourceRect = sender.frame
         popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
         
@@ -93,8 +92,9 @@ class XTRPeriodicTableViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = NSLocalizedString("periodicTableElements", comment: "")
-        navigationBar.topItem?.title = NSLocalizedString("periodicTableElements", comment: "")
+        let titleString = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
+        title = titleString
+        navigationBar.topItem?.title = titleString
         
         molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMolecularCalculatorViewController.nameOfClass) as! XTRMolecularCalculatorViewController
         molecularCalculatorViewController.view.frame = swapView.frame

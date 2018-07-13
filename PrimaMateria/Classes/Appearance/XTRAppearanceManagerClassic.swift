@@ -67,6 +67,7 @@ class XTRAppearanceManagerClassic : NSObject {
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 30)
         ]
 
+        appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
         appearance.titleTextAttributes = navigationBarTextAttributes
         appearance.tintColor = XTRColorFactoryClassic.galleryColor
         appearance.backgroundColor = XTRColorFactoryClassic.inkwell
@@ -149,7 +150,24 @@ class XTRAppearanceManagerClassic : NSObject {
     }
     
     func sliderAppearance() {
+        let appearance = UISlider.appearance()
         
+        appearance.minimumTrackTintColor = XTRColorFactoryClassic.dustyGrayColor
+        appearance.maximumTrackTintColor = XTRColorFactoryClassic.caution
+        appearance.thumbTintColor = XTRColorFactoryClassic.dodgerBlueColor
+        appearance.setThumbImage("🔘".image(size: CGSize(width: 45, height: 45)), for: .selected)
+        appearance.setThumbImage("🔘".image(size: CGSize(width: 45, height: 45)), for: .highlighted)
+        appearance.setThumbImage("🔘".image(size: CGSize(width: 45, height: 45)), for: .normal)
+
+        //open var minimumTrackTintColor: UIColor?
+        //open var maximumTrackTintColor: UIColor?
+        //open var thumbTintColor: UIColor?
+        //open func setThumbImage(_ image: UIImage?, for state: UIControlState)
+        //open func setMinimumTrackImage(_ image: UIImage?, for state: UIControlState)
+        //open func setMaximumTrackImage(_ image: UIImage?, for state: UIControlState)
+        //open func thumbImage(for state: UIControlState) -> UIImage?
+        //open func minimumTrackImage(for state: UIControlState) -> UIImage?
+        //open func maximumTrackImage(for state: UIControlState) -> UIImage?
     }
 
     func stepperAppearance() {

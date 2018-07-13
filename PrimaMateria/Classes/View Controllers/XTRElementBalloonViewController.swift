@@ -42,7 +42,7 @@ class XTRElementBalloonViewController : UIViewController {
     // MARK: - Action Methods
     
     @IBAction func showDetails(_ sender: UIButton) {
-        XTRPropertiesStore.viewTitle = PERIODIC_VIEW_TITLE
+        XTRPropertiesStore.viewTitle = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "") 
         XTRPropertiesStore.atomicNumber = XTRPropertiesStore.atomicNumber
         performSegue(withIdentifier: SegueName.showInspectorFromElementBalloon, sender: sender)
     }

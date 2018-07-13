@@ -149,8 +149,22 @@ class XTRAppearanceManagerStandard : NSObject {
     }
     
     func sliderAppearance() {
+        let appearance = UISlider.appearance()
+
+        appearance.minimumTrackTintColor = XTRColorFactoryStandard.nobel
+        appearance.maximumTrackTintColor = XTRColorFactoryStandard.caution
+        appearance.thumbTintColor = XTRColorFactoryStandard.regalBlue
         
-    }
+        //open var minimumTrackTintColor: UIColor?
+        //open var maximumTrackTintColor: UIColor?
+        //open var thumbTintColor: UIColor?
+        //open func setThumbImage(_ image: UIImage?, for state: UIControlState)
+        //open func setMinimumTrackImage(_ image: UIImage?, for state: UIControlState)
+        //open func setMaximumTrackImage(_ image: UIImage?, for state: UIControlState)
+        //open func thumbImage(for state: UIControlState) -> UIImage?
+        //open func minimumTrackImage(for state: UIControlState) -> UIImage?
+        //open func maximumTrackImage(for state: UIControlState) -> UIImage?
+   }
 
     func stepperAppearance() {
         let appearance = UIStepper.appearance()
