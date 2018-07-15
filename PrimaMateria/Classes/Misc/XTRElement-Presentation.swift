@@ -325,7 +325,9 @@ extension XTRElementModel {
     }
     
     var seriesColor : UIColor {
-        return XTRColorFactory.colorForString(value(forKeyPath: ELEMENT_SERIES) as! String)
+        let series = value(forKeyPath: ELEMENT_SERIES) as! String
+        let camelCased = series.camelCasedString.lowercasingFirstLetter()
+        return XTRColorFactory.colorForString(camelCased)
     }
     
     var standardConditionColor : UIColor {

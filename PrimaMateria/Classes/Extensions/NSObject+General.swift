@@ -55,4 +55,18 @@ extension String {
         return image
     }
     
+    func capitalizingFirstLetter() -> String {
+        return prefix(1).uppercased() + dropFirst()
+    }
+    
+    func lowercasingFirstLetter() -> String {
+        return prefix(1).lowercased() + dropFirst()
+    }
+
+    var camelCasedString: String {
+        return self.components(separatedBy: " ")
+            .map { return $0.lowercased().capitalizingFirstLetter() }
+            .joined()
+    }
+    
 }

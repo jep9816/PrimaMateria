@@ -152,8 +152,8 @@ class XTRAppearanceManagerClassic : NSObject {
     func sliderAppearance() {
         let appearance = UISlider.appearance()
         
-        appearance.minimumTrackTintColor = XTRColorFactoryClassic.dustyGrayColor
-        appearance.maximumTrackTintColor = XTRColorFactoryClassic.caution
+        appearance.minimumTrackTintColor = XTRColorFactoryClassic.caution
+        appearance.maximumTrackTintColor = XTRColorFactoryClassic.interactiveBlue
         appearance.thumbTintColor = XTRColorFactoryClassic.dodgerBlueColor
         appearance.setThumbImage("🔘".image(size: CGSize(width: 45, height: 45)), for: .selected)
         appearance.setThumbImage("🔘".image(size: CGSize(width: 45, height: 45)), for: .highlighted)
@@ -192,8 +192,6 @@ class XTRAppearanceManagerClassic : NSObject {
         appearance.onTintColor = XTRColorFactoryClassic.favorite
         appearance.tintColor = XTRColorFactoryClassic.white
         appearance.thumbTintColor = XTRColorFactoryClassic.cotton
-        appearance.borderColor = XTRColorFactoryClassic.buttonBorderColor
-        appearance.borderWidth = 2
 
         //open var onTintColor: UIColor?
         //open var tintColor: UIColor!

@@ -22,7 +22,7 @@ class XTRElementButton : XTRGeneralButton {
         backgroundColor = UIColor.clear
         setTitleColor(element.standardConditionColor, for: UIControlState())
         
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRElementButton.colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
     
     // MARK: - Notification Methods

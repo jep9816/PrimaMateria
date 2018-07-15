@@ -11,12 +11,13 @@ import UIKit
 class XTRPeriodicTableViewController : UIViewController {
     
     @IBOutlet var swapView : UIView!
+    @IBOutlet var navigationBar: UINavigationBar!
+    @IBOutlet var molecularCalculatorSwitch: UISwitch!
     
     var molecularCalculatorState : Bool = false
     var elementBalloonViewController : XTRElementBalloonViewController!
     var molecularCalculatorViewController : XTRMolecularCalculatorViewController!
-    @IBOutlet var navigationBar: UINavigationBar!
-
+    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,7 +34,7 @@ class XTRPeriodicTableViewController : UIViewController {
     
     func setupPopUp() {
         let contentSize = CGSize(width: 324.0, height: 210.0)
-
+        
         elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRElementBalloonViewController.nameOfClass) as! XTRElementBalloonViewController
         elementBalloonViewController.preferredContentSize = contentSize
         elementBalloonViewController.modalPresentationStyle = .popover
@@ -57,7 +58,7 @@ class XTRPeriodicTableViewController : UIViewController {
         
         XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = sender.tag
-        popoverController.sourceRect = sender.frame
+        popoverController.sourceRect = CGRect(x: 0, y: 0, width: 52, height: 54)
         popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
         
@@ -102,8 +103,10 @@ class XTRPeriodicTableViewController : UIViewController {
         setupPopUp()
         toggleMolecularCalculatorState(false)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRPeriodicTableViewController.closeBubble(_:)), name: .inspectorDismissedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(closeBubble(_:)), name: .inspectorDismissedNotification, object: nil)
         navigationController?.navigationBar.prefersLargeTitles = true
+        molecularCalculatorSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
+        molecularCalculatorSwitch.cornerRadius = SWITCH_CORNER_RADIUS
     }
     
     override var shouldAutorotate : Bool {
@@ -119,6 +122,8 @@ class XTRPeriodicTableViewController : UIViewController {
     deinit {
         NotificationCenter.default.removeObserver(self, name: .inspectorDismissedNotification, object: nil)
         swapView = nil
+        molecularCalculatorSwitch = nil
+        navigationBar = nil
     }
     
 }

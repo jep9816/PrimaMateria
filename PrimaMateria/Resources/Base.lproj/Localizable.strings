@@ -1,10 +1,7 @@
-/* 
-  Localizable.strings
-  PrimaMateria
-  English
-  Created by Jerry Porter on 6/28/18.
-  Copyright © 2018 xTrensa. All rights reserved.
-*/
+// Strings file generated with App Translator
+// Project: PrimaMateria
+// Language: en
+// Date: Sat Jul 14 17:28:06 2018
 
 "abundance" = "Abundance";
 "abundanceCrust" = "Crust (mg/kg)";

@@ -18,7 +18,6 @@ class XTRPreferencesViewController : UIViewController {
     
     @IBOutlet var appNameLabel : UILabel!
     @IBOutlet var cpyRightLabel : UILabel!
-    
     @IBOutlet var seriesActinideButton : UIButton!
     @IBOutlet var seriesAlkaliEarthMetalButton : UIButton!
     @IBOutlet var seriesAlkaliMetalButton : UIButton!
@@ -29,7 +28,6 @@ class XTRPreferencesViewController : UIViewController {
     @IBOutlet var seriesNonMetalButton : UIButton!
     @IBOutlet var seriesTransactinidesButton : UIButton!
     @IBOutlet var seriesTransitionMetalButton : UIButton!
-    
     @IBOutlet var resetPreferencesButton : UIButton!
     @IBOutlet var versionLabel : UILabel!
     @IBOutlet var elementBubbleSwitch : UISwitch!
@@ -84,7 +82,7 @@ class XTRPreferencesViewController : UIViewController {
             updateSeriesButtonProperties(seriesNobleGasButton, aColor: aColor)
         case ElementSeries.nonMetal :
             updateSeriesButtonProperties(seriesNonMetalButton, aColor: aColor)
-        case ElementSeries.transactinides :
+        case ElementSeries.transactinide :
             updateSeriesButtonProperties(seriesTransactinidesButton, aColor: aColor)
         default :
             updateSeriesButtonProperties(seriesTransitionMetalButton, aColor: aColor)
@@ -162,7 +160,7 @@ class XTRPreferencesViewController : UIViewController {
         title = NSLocalizedString("preferences", comment: "")
         navigationBar.topItem?.title = NSLocalizedString("preferences", comment: "")
         
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRPreferencesViewController.colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
         
         loadDocument("Credits.rtf", inView: webView)
         loadUserDefaults()
@@ -187,18 +185,24 @@ class XTRPreferencesViewController : UIViewController {
                 NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearanceName)
             }).disposed(by: disposeBag)
         
+        elementBubbleSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
+        elementBubbleSwitch.cornerRadius = SWITCH_CORNER_RADIUS
         elementBubbleSwitch.rx.isOn
             .asObservable()
             .subscribe(onNext: { newValue in
                 self.populateElementBubbleState(newValue)
             }).disposed(by: disposeBag)
         
+        showTransitionsBubbleSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
+        showTransitionsBubbleSwitch.cornerRadius = SWITCH_CORNER_RADIUS
         showTransitionsBubbleSwitch.rx.isOn
             .asObservable()
             .subscribe(onNext: { newValue in
                 self.populateShowTransitionsState(newValue)
             }).disposed(by: disposeBag)
         
+        splashScreenSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
+        splashScreenSwitch.cornerRadius = SWITCH_CORNER_RADIUS
         splashScreenSwitch.rx.isOn
             .asObservable()
             .subscribe(onNext: { newValue in
@@ -232,11 +236,8 @@ class XTRPreferencesViewController : UIViewController {
     func presentColorPicker(_ sender: UIButton) {
         let storyboard = UIStoryboard.init(name: COLOR_PICKER_STORY_BOARD, bundle: nil)
         let colorPicker : XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
-        let seriesIdentifier = sender.accessibilityIdentifier
-        let seriesName = sender.titleLabel?.text
         
-        colorPicker.seriesName = seriesName
-        colorPicker.seriesIdentifier = seriesIdentifier
+        colorPicker.seriesIdentifier = sender.accessibilityIdentifier
         colorPicker.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
         colorPicker.modalPresentationStyle = .popover
         
@@ -263,7 +264,6 @@ class XTRPreferencesViewController : UIViewController {
         
         appNameLabel = nil
         cpyRightLabel = nil
-        elementBubbleSwitch = nil
         seriesActinideButton = nil
         seriesAlkaliEarthMetalButton = nil
         seriesAlkaliMetalButton = nil
@@ -274,10 +274,14 @@ class XTRPreferencesViewController : UIViewController {
         seriesNonMetalButton = nil
         seriesTransactinidesButton = nil
         seriesTransitionMetalButton = nil
+        resetPreferencesButton = nil
+        versionLabel = nil
+        elementBubbleSwitch = nil
         showTransitionsBubbleSwitch = nil
         splashScreenSwitch = nil
-        versionLabel = nil
         webView = nil
+        styleControl = nil
+        navigationBar = nil
     }
     
 }

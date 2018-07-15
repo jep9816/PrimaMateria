@@ -106,55 +106,55 @@
  <entry key="boilingPointC" comment="">
   <translation text="Точка кипения (°C)" lang="ru"/>
   <translation text="Boiling Point (°C)" lang="en"/>
-  <translation text="Point d’ébullition (° C)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Punto de ebullición (° C)" lang="es"/>
  </entry>
  <entry key="casResNo" comment="">
   <translation text="CAS Res No" lang="ru"/>
   <translation text="CAS Res No" lang="en"/>
-  <translation text="No de CAS Res" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="CAS Res No" lang="es"/>
  </entry>
  <entry key="chemicalProperties" comment="">
   <translation text="Химические Свойства" lang="ru"/>
   <translation text="Chemical Properties" lang="en"/>
-  <translation text="Propriétés chimiques" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Propiedades Químicas" lang="es"/>
  </entry>
  <entry key="chooseColor" comment="">
   <translation text="Выбрать цвет" lang="ru"/>
   <translation text="Choose Color" lang="en"/>
-  <translation text="Choisissez la couleur" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Elige color" lang="es"/>
  </entry>
  <entry key="chooseGraph" comment="">
   <translation text="Выберите График" lang="ru"/>
   <translation text="Choose Graph" lang="en"/>
-  <translation text="Choisir le graphique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Elija el gráfico" lang="es"/>
  </entry>
  <entry key="classic" comment="">
   <translation text="классический" lang="ru"/>
   <translation text="Classic" lang="en"/>
-  <translation text="Classique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Clásico" lang="es"/>
  </entry>
  <entry key="close" comment="">
   <translation text="Закрыть" lang="ru"/>
   <translation text="Close" lang="en"/>
-  <translation text="Fermer" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Cerca" lang="es"/>
  </entry>
  <entry key="coefficientOfLinealThermalExpansion" comment="">
   <translation text="Коэффициент линейного теплового расширения см / см / ° C (0 ° C)" lang="ru"/>
   <translation text="Coefficient of Lineal Thermal Expansion cm/cm/°C (0°C)" lang="en"/>
-  <translation text="Coefficient de dilatation thermique linéaire cm/cm / ° C (0° C)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Coeficiente de expansión térmica lineal cm/cm/°C (0 °C)" lang="es"/>
  </entry>
  <entry key="colorPicker" comment="">
   <translation text="Выбор цвета" lang="ru"/>
   <translation text="Color Picker" lang="en"/>
-  <translation text="Sélecteur de couleurs" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Selector de color" lang="es"/>
  </entry>
  <entry key="conductivity" comment="">
@@ -166,7 +166,7 @@
  <entry key="conductivityElectrical" comment="">
   <translation text="Электрическая (10 м³ Ом)" lang="ru"/>
   <translation text="Electrical (10³ cmΩ)" lang="en"/>
-  <translation text="Électrique (10³ cmΩ)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Eléctrico (10³ cmΩ)" lang="es"/>
  </entry>
  <entry key="conductivityThermal" comment="">
@@ -208,31 +208,31 @@
  <entry key="crossSection" comment="">
   <translation text="Сечение (амбары)" lang="ru"/>
   <translation text="Cross Section (barns)" lang="en"/>
-  <translation text="Coupe transversale (granges)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Sección transversal (barns)" lang="es"/>
  </entry>
  <entry key="crystalStructure" comment="">
   <translation text="Кристаллическая структура" lang="ru"/>
   <translation text="Crystal Structure" lang="en"/>
-  <translation text="Structure cristalline" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Estructura cristalina" lang="es"/>
  </entry>
  <entry key="density" comment="">
   <translation text="плотность (г см-3)" lang="ru"/>
   <translation text="Density (g cm-³)" lang="en"/>
-  <translation text="Densité (g ³-cm)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Densidad (gcm-³)" lang="es"/>
  </entry>
  <entry key="description" comment="">
   <translation text="Описание" lang="ru"/>
   <translation text="Description" lang="en"/>
-  <translation text="Description" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Descripción" lang="es"/>
  </entry>
  <entry key="discoveredBy" comment="">
   <translation text="От" lang="ru"/>
   <translation text="By" lang="en"/>
-  <translation text="Par" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Por" lang="es"/>
  </entry>
  <entry key="discoveredLocation" comment="">
@@ -268,625 +268,625 @@
  <entry key="elasticModulusRigidity" comment="">
   <translation text="Жесткость (ГП)" lang="ru"/>
   <translation text="Rigidity (GPs)" lang="en"/>
-  <translation text="Rigidité (GPs)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Rigidez (GP)" lang="es"/>
  </entry>
  <entry key="elasticModulusYoungs" comment="">
   <translation text="Янгс (GPs)" lang="ru"/>
   <translation text="Youngs (GPs)" lang="en"/>
-  <translation text="Youngs (GPs)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Youngs (GPs)" lang="es"/>
  </entry>
  <entry key="electroNegativity" comment="">
   <translation text="Электроотрицательность (Pauling)" lang="ru"/>
   <translation text="Electro Negativity (Pauling)" lang="en"/>
-  <translation text="Négativité Electro (Pauling)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Electro Negativity (Pauling)" lang="es"/>
  </entry>
  <entry key="electrochemicalEquivalent" comment="">
   <translation text="Электрохимический эквивалент (г/амп-час)" lang="ru"/>
   <translation text="Electrochemical Equivalent (g/amp-hr)" lang="en"/>
-  <translation text="Équivalent électrochimique (g/amp-h)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Equivalente Electroquímico (g/amp-hr)" lang="es"/>
  </entry>
  <entry key="electronStructure" comment="">
   <translation text="электронная структура" lang="ru"/>
   <translation text="Electron Structure" lang="en"/>
-  <translation text="Structure de l’électron" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Estructura electrónica" lang="es"/>
  </entry>
  <entry key="electronWorkFunction" comment="">
   <translation text="Работа функции электронов" lang="ru"/>
   <translation text="Electron Work Function" lang="en"/>
-  <translation text="Fonction de travail électronique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Función de trabajo de electrones" lang="es"/>
  </entry>
  <entry key="elementBalloon" comment="">
   <translation text="Элемент Воздушный шар" lang="ru"/>
   <translation text="Element Balloon" lang="en"/>
-  <translation text="Ballon de l’élément" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Globo de elemento" lang="es"/>
  </entry>
  <entry key="elementDetails" comment="">
   <translation text="Элемент детали" lang="ru"/>
   <translation text="Element Details" lang="en"/>
-  <translation text="Détails de l’élément" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Detalles del elemento" lang="es"/>
  </entry>
  <entry key="elementHelpBubbles" comment="">
   <translation text="Элемент Справка Пузыри" lang="ru"/>
   <translation text="Element Help Bubbles" lang="en"/>
-  <translation text="Bulles d’aide élément" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Elemento Ayuda Burbujas" lang="es"/>
  </entry>
  <entry key="elementInspectorFor" comment="">
   <translation text="Инспектор элементов для" lang="ru"/>
   <translation text="Element Inspector for" lang="en"/>
-  <translation text="Inspecteur de l’élément pour" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Inspector de elementos para" lang="es"/>
  </entry>
  <entry key="elementList" comment="">
   <translation text="Список элементов" lang="ru"/>
   <translation text="Element List" lang="en"/>
-  <translation text="Liste des éléments" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Lista de Elementos" lang="es"/>
  </entry>
  <entry key="elementListAtomicMass" comment="">
   <translation text="Атомная масса" lang="ru"/>
   <translation text="Atomic Mass" lang="en"/>
-  <translation text="Masse atomique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Masa atomica" lang="es"/>
  </entry>
  <entry key="elementListBoilingPoint" comment="">
   <translation text="Точка кипения" lang="ru"/>
   <translation text="Boiling Point" lang="en"/>
-  <translation text="Point d’ébullition" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Punto de ebullición" lang="es"/>
  </entry>
  <entry key="elementListDensity" comment="">
   <translation text="Плотность" lang="ru"/>
   <translation text="Density" lang="en"/>
-  <translation text="Densité" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Densidad" lang="es"/>
  </entry>
  <entry key="elementListGroup" comment="">
   <translation text="Группа" lang="ru"/>
   <translation text="Group" lang="en"/>
-  <translation text="Groupe" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Grupo" lang="es"/>
  </entry>
  <entry key="elementListMeltingPoint" comment="">
   <translation text="Точка плавления" lang="ru"/>
   <translation text="Melting Point" lang="en"/>
-  <translation text="Point de fusion" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Punto de fusion" lang="es"/>
  </entry>
  <entry key="elementListName" comment="">
   <translation text="имя" lang="ru"/>
   <translation text="Name" lang="en"/>
-  <translation text="Nom" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Nombre" lang="es"/>
  </entry>
  <entry key="elementListNumber" comment="">
   <translation text="Число" lang="ru"/>
   <translation text="Number" lang="en"/>
-  <translation text="Nombre" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Número" lang="es"/>
  </entry>
  <entry key="elementListPeriod" comment="">
   <translation text="Период" lang="ru"/>
   <translation text="Period" lang="en"/>
-  <translation text="Période" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Período" lang="es"/>
  </entry>
  <entry key="elementListSeries" comment="">
   <translation text="Серия" lang="ru"/>
   <translation text="Series" lang="en"/>
-  <translation text="Série" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Serie" lang="es"/>
  </entry>
  <entry key="elementListSymbol" comment="">
   <translation text="Символ" lang="ru"/>
   <translation text="Symbol" lang="en"/>
-  <translation text="Symbole" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Símbolo" lang="es"/>
  </entry>
  <entry key="elementProperties" comment="">
   <translation text="Свойства элемента" lang="ru"/>
   <translation text="Element Properties" lang="en"/>
-  <translation text="Propriétés de l’élément" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Propiedades del elemento" lang="es"/>
  </entry>
  <entry key="enthalpy" comment="">
   <translation text="Энтальпия" lang="ru"/>
   <translation text="Enthalpy" lang="en"/>
-  <translation text="Enthalpie" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Entalpia" lang="es"/>
  </entry>
  <entry key="enthalpyAtomization" comment="">
   <translation text="Распыление (кДж/моль)" lang="ru"/>
   <translation text="Atomization (kJ/mole)" lang="en"/>
-  <translation text="Atomisation (kJ/mole)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Atomización (kJ/mol)" lang="es"/>
  </entry>
  <entry key="enthalpyFusion" comment="">
   <translation text="сплавление (кДж/моль)" lang="ru"/>
   <translation text="Fusion (kJ/mole)" lang="en"/>
-  <translation text="Fusion (kJ/mole)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Fusion (kJ/mol)" lang="es"/>
  </entry>
  <entry key="enthalpyVaporization" comment="">
   <translation text="испарение (кДж/моль)" lang="ru"/>
   <translation text="Vaporization (kJ/mole)" lang="en"/>
-  <translation text="Vaporisation (kJ/mole)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Vaporización (kJ/mol)" lang="es"/>
  </entry>
  <entry key="error" comment="">
   <translation text="ошибка" lang="ru"/>
   <translation text="Error" lang="en"/>
-  <translation text="Erreur" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Error" lang="es"/>
  </entry>
  <entry key="errorMessage" comment="">
   <translation text="Неизвестный символ или синтаксическая ошибка." lang="ru"/>
   <translation text="Unknown symbol or syntax error." lang="en"/>
-  <translation text="Erreur de syntaxe ou de symbole inconnue." lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Símbolo desconocido o error de sintaxis." lang="es"/>
  </entry>
  <entry key="fillingOrbital" comment="">
   <translation text="Заполнение орбиты" lang="ru"/>
   <translation text="Filling Orbital" lang="en"/>
-  <translation text="Remplissage des orbitales" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Orbital de relleno" lang="es"/>
  </entry>
  <entry key="first" comment="">
   <translation text="Первый" lang="ru"/>
   <translation text="First" lang="en"/>
-  <translation text="Première" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Primero" lang="es"/>
  </entry>
  <entry key="flammabiltyClass" comment="">
   <translation text="Класс воспламеняемости" lang="ru"/>
   <translation text="Flammabilty Class" lang="en"/>
-  <translation text="Classe d’inflammabilité" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Clase de inflamabilidad" lang="es"/>
  </entry>
  <entry key="generalInfo" comment="">
   <translation text="Общая информация" lang="ru"/>
   <translation text="General Info" lang="en"/>
-  <translation text="Infos générales" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Información general" lang="es"/>
  </entry>
  <entry key="graphAtomicMass" comment="">
   <translation text="Атомная масса" lang="ru"/>
   <translation text="Atomic Mass" lang="en"/>
-  <translation text="Masse atomique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Masa atómica" lang="es"/>
  </entry>
  <entry key="graphAtomicRadius" comment="">
   <translation text="Атомный радиус" lang="ru"/>
   <translation text="Atomic Radius" lang="en"/>
-  <translation text="Rayon atomique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Radio atómico" lang="es"/>
  </entry>
  <entry key="graphBoilingPoint" comment="">
   <translation text="точка кипения" lang="ru"/>
   <translation text="Boiling Point" lang="en"/>
-  <translation text="Point d’ébullition" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Punto de ebullición" lang="es"/>
  </entry>
  <entry key="graphCoefficientOfLinealThermalExpansion" comment="">
   <translation text="Коэффициент линейного теплового расширения * 100K" lang="ru"/>
   <translation text="Coefficient of Lineal Thermal Expansion * 100K" lang="en"/>
-  <translation text="Coefficient de dilatation thermique linéaire * 100K" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Coeficiente de expansión térmica lineal * 100K" lang="es"/>
  </entry>
  <entry key="graphCovalentRadius" comment="">
   <translation text="Ковалентный радиус" lang="ru"/>
   <translation text="Covalent Radius" lang="en"/>
-  <translation text="Rayon de covalence" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Radio covalente" lang="es"/>
  </entry>
  <entry key="graphCrossSection" comment="">
   <translation text="Поперечное сечение" lang="ru"/>
   <translation text="Cross Section" lang="en"/>
-  <translation text="Coupe transversale" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Sección transversal" lang="es"/>
  </entry>
  <entry key="graphDensity" comment="">
   <translation text="Плотность" lang="ru"/>
   <translation text="Density" lang="en"/>
-  <translation text="Densité" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Densidad" lang="es"/>
  </entry>
  <entry key="graphElasticModulusBulk" comment="">
   <translation text="Модуль упругости - массовый" lang="ru"/>
   <translation text="Elastic Modulus - Bulk" lang="en"/>
-  <translation text="Module d’élasticité - en vrac" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Módulo elástico - a granel" lang="es"/>
  </entry>
  <entry key="graphElasticModulusRigidity" comment="">
   <translation text="Модуль упругости - жесткость" lang="ru"/>
   <translation text="Elastic Modulus - Rigidity" lang="en"/>
-  <translation text="Module d’élasticité - rigidité" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Módulo elástico - Rigidez" lang="es"/>
  </entry>
  <entry key="graphElasticModulusYoungs" comment="">
   <translation text="Модуль упругости - молодые" lang="ru"/>
   <translation text="Elastic Modulus - Youngs" lang="en"/>
-  <translation text="Module d’élasticité - Youngs" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Módulo elástico - Youngs" lang="es"/>
  </entry>
  <entry key="graphElectroChemicalEquivalent" comment="">
   <translation text="Электрохимический эквивалент" lang="ru"/>
   <translation text="Electro Chemical Equivalent" lang="en"/>
-  <translation text="Équivalent de Electro Chemical" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Equivalente electroquímico" lang="es"/>
  </entry>
  <entry key="graphElectroNegativity" comment="">
   <translation text="Электроотрицательность" lang="ru"/>
   <translation text="Electro Negativity" lang="en"/>
-  <translation text="Négativité Electro" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Electro Negatividad" lang="es"/>
  </entry>
  <entry key="graphElectronWorkFunction" comment="">
   <translation text="Функция работы электрона" lang="ru"/>
   <translation text="Electron Work Function" lang="en"/>
-  <translation text="Fonction de travail électronique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Función de trabajo de electrones" lang="es"/>
  </entry>
  <entry key="graphEnthalpyOfAtomization" comment="">
   <translation text="Энтальпия распыления" lang="ru"/>
   <translation text="Enthalpy of Atomization" lang="en"/>
-  <translation text="Enthalpie de vaporisation" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Entalpía de la atomización" lang="es"/>
  </entry>
  <entry key="graphEnthalpyOfFusion" comment="">
   <translation text="Энтальпия слияния" lang="ru"/>
   <translation text="Enthalpy of Fusion" lang="en"/>
-  <translation text="Enthalpie de Fusion" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Entalpía de fusión" lang="es"/>
  </entry>
  <entry key="graphEnthalpyOfVaporization" comment="">
   <translation text="Энтальпия испарения" lang="ru"/>
   <translation text="Enthalpy of Vaporization" lang="en"/>
-  <translation text="Enthalpie de vaporisation" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Entalpía de la vaporización" lang="es"/>
  </entry>
  <entry key="graphHardnessScaleBrinell" comment="">
   <translation text="Шкала твердости - Бринелл" lang="ru"/>
   <translation text="Hardness Scale - Brinell" lang="en"/>
-  <translation text="-Échelle de dureté Brinell" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Escala de dureza - Brinell" lang="es"/>
  </entry>
  <entry key="graphHardnessScaleMohs" comment="">
   <translation text="Шкала твердости - Mohs" lang="ru"/>
   <translation text="Hardness Scale - Mohs" lang="en"/>
-  <translation text="-Échelle de dureté Mohs" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Escala de dureza - Mohs" lang="es"/>
  </entry>
  <entry key="graphHardnessScaleVickers" comment="">
   <translation text="Шкала твердости - Виккерс" lang="ru"/>
   <translation text="Hardness Scale - Vickers" lang="en"/>
-  <translation text="-Échelle de dureté Vickers" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Escala de dureza - Vickers" lang="es"/>
  </entry>
  <entry key="graphHeatOfFusion" comment="">
   <translation text="Теплота плавления" lang="ru"/>
   <translation text="Heat of Fusion" lang="en"/>
-  <translation text="Enthalpie de Fusion" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Calor de fusión" lang="es"/>
  </entry>
  <entry key="graphHeatOfVaporization" comment="">
   <translation text="Теплота испарения" lang="ru"/>
   <translation text="Heat of Vaporization" lang="en"/>
-  <translation text="Enthalpie d’évaporation" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Calor de la vaporización" lang="es"/>
  </entry>
  <entry key="graphIonicRadius" comment="">
   <translation text="Ионный радиус" lang="ru"/>
   <translation text="Ionic Radius" lang="en"/>
-  <translation text="Rayon ionique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Radio iónico" lang="es"/>
  </entry>
  <entry key="graphIonizationPotentialFirst" comment="">
   <translation text="Потенциал ионизации - первый" lang="ru"/>
   <translation text="Ionization Potential - First" lang="en"/>
-  <translation text="Potentiel d’ionisation - première" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Potencial de ionización primero" lang="es"/>
  </entry>
  <entry key="graphIonizationPotentialSecond" comment="">
   <translation text="Потенциал ионизации - второй" lang="ru"/>
   <translation text="Ionization Potential - Second" lang="en"/>
-  <translation text="Potentiel d’ionisation - seconde" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Potencial de ionización segundo" lang="es"/>
  </entry>
  <entry key="graphIonizationPotentialThird" comment="">
   <translation text="Потенциал ионизации - третий" lang="ru"/>
   <translation text="Ionization Potential - Third" lang="en"/>
-  <translation text="Potentiel d’ionisation - troisième" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Potencial de ionización tercero" lang="es"/>
  </entry>
  <entry key="graphMeltingPoint" comment="">
   <translation text="точка плавления" lang="ru"/>
   <translation text="Melting Point" lang="en"/>
-  <translation text="Point de fusion" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Punto de fusión" lang="es"/>
  </entry>
  <entry key="graphMolarHeatCapacity" comment="">
   <translation text="Молярная теплоемкость" lang="ru"/>
   <translation text="Molar Heat Capacity" lang="en"/>
-  <translation text="Capacité thermique molaire" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Capacidad de calor molar" lang="es"/>
  </entry>
  <entry key="graphMolarVolume" comment="">
   <translation text="Молярный объем" lang="ru"/>
   <translation text="Molar Volume" lang="en"/>
-  <translation text="Volume molaire" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Volumen molar" lang="es"/>
  </entry>
  <entry key="graphSpecificHeat" comment="">
   <translation text="Удельная теплота" lang="ru"/>
   <translation text="Specific Heat" lang="en"/>
-  <translation text="Chaleur spécifique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Calor específico" lang="es"/>
  </entry>
  <entry key="graphValenceElectronPotential" comment="">
   <translation text="Валансный электронный потенциал" lang="ru"/>
   <translation text="Valence Electron Potential" lang="en"/>
-  <translation text="Potentiel de l’électron de Valence" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Potencial de electrones de valencia" lang="es"/>
  </entry>
  <entry key="graphs" comment="">
   <translation text="диаграммы" lang="ru"/>
   <translation text="Graphs" lang="en"/>
-  <translation text="Graphes" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Gráficos" lang="es"/>
  </entry>
  <entry key="green" comment="">
   <translation text="зеленый" lang="ru"/>
   <translation text="Green" lang="en"/>
-  <translation text="Vert" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Verde" lang="es"/>
  </entry>
  <entry key="group" comment="">
   <translation text="группа" lang="ru"/>
   <translation text="Group" lang="en"/>
-  <translation text="Groupe" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Grupo" lang="es"/>
  </entry>
  <entry key="halogen" comment="">
   <translation text="галоген" lang="ru"/>
   <translation text="Halogen" lang="en"/>
-  <translation text="Halogène" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Halógeno" lang="es"/>
  </entry>
  <entry key="hardnessScale" comment="">
   <translation text="Шкала твердости" lang="ru"/>
   <translation text="Hardness Scale" lang="en"/>
-  <translation text="Échelle de dureté" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Escala de dureza" lang="es"/>
  </entry>
  <entry key="hardnessScaleBrinell" comment="">
   <translation text="Бринеллю (MN m-³)" lang="ru"/>
   <translation text="Brinell (MN m-³)" lang="en"/>
-  <translation text="Brinell (MN m-³)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Brinell (MNm-³)" lang="es"/>
  </entry>
  <entry key="hardnessScaleMohs" comment="">
   <translation text="Mohs" lang="ru"/>
   <translation text="Mohs" lang="en"/>
-  <translation text="Mohs" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Mohs" lang="es"/>
  </entry>
  <entry key="hardnessScaleVickers" comment="">
   <translation text="Vickers (MN m-³)" lang="ru"/>
   <translation text="Vickers (MN m-³)" lang="en"/>
-  <translation text="Vickers (MN m-³)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Vickers (MNm-³)" lang="es"/>
  </entry>
  <entry key="heatCapacity" comment="">
   <translation text="Теплоемкость" lang="ru"/>
   <translation text="Heat Capacity" lang="en"/>
-  <translation text="Capacité calorifique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Capacidad de calor" lang="es"/>
  </entry>
  <entry key="heatCapacityMolar" comment="">
   <translation text="молярный (J/mol K)" lang="ru"/>
   <translation text="Molar (J/mol K)" lang="en"/>
-  <translation text="Molar (J/mol K)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Molar (J/mol K)" lang="es"/>
  </entry>
  <entry key="heatCapacitySpecific" comment="">
   <translation text="Конкретный (J/gK)" lang="ru"/>
   <translation text="Specific (J/gK)" lang="en"/>
-  <translation text="Spécifique (J/gK)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Específico (J/gK)" lang="es"/>
  </entry>
  <entry key="heatOfFusion" comment="">
   <translation text="Теплота плавления (KJ/mol)" lang="ru"/>
   <translation text="Heat of Fusion (KJ/mol)" lang="en"/>
-  <translation text="Enthalpie de Fusion (KJ/mol)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Calor de fusión (KJ / mol)" lang="es"/>
  </entry>
  <entry key="heatOfVaporization" comment="">
   <translation text="Теплота испарения (kj/моль)" lang="ru"/>
   <translation text="Heat of Vaporization (kj/mole)" lang="en"/>
-  <translation text="Chaleur de vaporisation (kj/mole)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Calor de la vaporización (kj/mol)" lang="es"/>
  </entry>
  <entry key="help" comment="">
   <translation text="Помощь" lang="ru"/>
   <translation text="Help" lang="en"/>
-  <translation text="Aide" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Ayuda" lang="es"/>
  </entry>
  <entry key="incompatibilities" comment="">
   <translation text="Несовместимость" lang="ru"/>
   <translation text="Incompatibilities" lang="en"/>
-  <translation text="Incompatibilités" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Incompatibilidades" lang="es"/>
  </entry>
  <entry key="info" comment="">
   <translation text="Информация" lang="ru"/>
   <translation text="Info" lang="en"/>
-  <translation text="Info" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Información" lang="es"/>
  </entry>
  <entry key="intensity" comment="">
   <translation text="интенсивность" lang="ru"/>
   <translation text="Intensity" lang="en"/>
-  <translation text="Intensité" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Intensidad" lang="es"/>
  </entry>
  <entry key="ionicRadius" comment="">
   <translation text="Ионный радиус (Å)" lang="ru"/>
   <translation text="Ionic Radius (Å)" lang="en"/>
-  <translation text="Rayon ionique (Å)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Radio Iónico (Å)" lang="es"/>
  </entry>
  <entry key="ionizationPotential" comment="">
   <translation text="потенциал ионизации" lang="ru"/>
   <translation text="Ionization Potential" lang="en"/>
-  <translation text="Potentiel d’ionisation" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Potencial de ionización" lang="es"/>
  </entry>
  <entry key="lanthanide" comment="">
   <translation text="лантанид" lang="ru"/>
   <translation text="Lanthanide" lang="en"/>
-  <translation text="Lanthanide." lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Lantánido" lang="es"/>
  </entry>
  <entry key="lanthanideSeries" comment="">
   <translation text="Серия лантанидов" lang="ru"/>
   <translation text="Lanthanide Series" lang="en"/>
-  <translation text="Série des lanthanides" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Serie Lanthanide" lang="es"/>
  </entry>
  <entry key="loadingWikipedia" comment="">
   <translation text="Загрузка страницы Википедии для элемента" lang="ru"/>
   <translation text="Loading Wikipedia Page for element" lang="en"/>
-  <translation text="Chargement de la Wikipedia Page pour élément" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Cargando la página de Wikipedia para el elemento" lang="es"/>
  </entry>
  <entry key="magneticSusceptibility" comment="">
   <translation text="магнитная восприимчивость" lang="ru"/>
   <translation text="Magnetic Susceptibility" lang="en"/>
-  <translation text="Susceptibilité magnétique" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Susceptibilidad magnética" lang="es"/>
  </entry>
  <entry key="meltingPoint" comment="">
   <translation text="точка плавления" lang="ru"/>
   <translation text="Melting Point" lang="en"/>
-  <translation text="Point de fusion" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Punto de fusion" lang="es"/>
  </entry>
  <entry key="meltingPointC" comment="">
   <translation text="Температура плавления (°C)" lang="ru"/>
   <translation text="Melting Point (°C)" lang="en"/>
-  <translation text="Point de fusion (° C)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Punto de fusión (°C)" lang="es"/>
  </entry>
  <entry key="metal" comment="">
   <translation text="металл" lang="ru"/>
   <translation text="Metal" lang="en"/>
-  <translation text="Metal" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Metal" lang="es"/>
  </entry>
  <entry key="miscellaneous" comment="">
   <translation text="Разное" lang="ru"/>
   <translation text="Miscellaneous" lang="en"/>
-  <translation text="Divers" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Varios" lang="es"/>
  </entry>
  <entry key="molarVolume" comment="">
   <translation text="Молярный объем (см³/моль)" lang="ru"/>
   <translation text="Molar Volume (cm³/mol)" lang="en"/>
-  <translation text="Volume molaire (mol/cm³)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Volumen molar (cm³/mol)" lang="es"/>
  </entry>
  <entry key="molecularCalculator" comment="">
   <translation text="Молекулярный калькулятор" lang="ru"/>
   <translation text="Molecular Calculator" lang="en"/>
-  <translation text="Moléculaire calculatrice" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Calculadora Molecular" lang="es"/>
  </entry>
  <entry key="molecularFormula" comment="">
   <translation text="Молекулярная формула" lang="ru"/>
   <translation text="Molecular Formula" lang="en"/>
-  <translation text="Formule moléculaire" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Fórmula Molecular" lang="es"/>
  </entry>
  <entry key="nobleGas" comment="">
   <translation text="Благородный газ" lang="ru"/>
   <translation text="Noble Gas" lang="en"/>
-  <translation text="Gaz noble" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Gas noble" lang="es"/>
  </entry>
  <entry key="nonMetal" comment="">
   <translation text="неметалл" lang="ru"/>
   <translation text="Non Metal" lang="en"/>
-  <translation text="Métal non" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="No Metal" lang="es"/>
  </entry>
  <entry key="nuclideDaughterIsotopes" comment="">
   <translation text="Дотальные изотопы (ы)" lang="ru"/>
   <translation text="Daughter Isotopes(s)" lang="en"/>
-  <translation text="Isotopes de fille (s)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Isótopos hijo (s)" lang="es"/>
  </entry>
  <entry key="nuclideDecayEnergy" comment="">
   <translation text="Энергия распада (МэВ)" lang="ru"/>
   <translation text="Decay Energy (MeV)" lang="en"/>
-  <translation text="Énergie de désintégration (MeV)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Energía de Decaimiento (MeV)" lang="es"/>
  </entry>
  <entry key="nuclideDecayModes" comment="">
   <translation text="Режим (ы) затухания" lang="ru"/>
   <translation text="Decay Mode(s)" lang="en"/>
-  <translation text="Décomposition ou les modes" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Modo(s) de Degradación" lang="es"/>
  </entry>
  <entry key="nuclideHalfLife" comment="">
   <translation text="Период полураспада" lang="ru"/>
   <translation text="Half Life" lang="en"/>
-  <translation text="Half Life" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Media vida" lang="es"/>
  </entry>
  <entry key="nuclideIosotopicComposition" comment="">
   <translation text="Иосотопическая композиция" lang="ru"/>
   <translation text="Iosotopic Composition" lang="en"/>
-  <translation text="Composition Iosotopic" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Composición Iosotópica" lang="es"/>
  </entry>
  <entry key="nuclideIsotopicMass" comment="">
   <translation text="изотопическая масса (u)" lang="ru"/>
   <translation text="Isotopic Mass (u)" lang="en"/>
-  <translation text="Masse isotopique (u)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Masa Isotópica(u)" lang="es"/>
  </entry>
  <entry key="nuclideNaturalVariationRange" comment="">
   <translation text="Диапазон естественных вариаций" lang="ru"/>
   <translation text="Natural Variation Range" lang="en"/>
-  <translation text="Plage de Variation naturelle" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Rango de Variación Natural" lang="es"/>
  </entry>
  <entry key="nuclideNn" comment="">
   <translation text="N(n)" lang="ru"/>
   <translation text="N(n)" lang="en"/>
-  <translation text="N(n)" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="N(n)" lang="es"/>
  </entry>
  <entry key="nuclideNuclearSpin" comment="">
   <translation text="Ядерная спина" lang="ru"/>
   <translation text="Nuclear Spin" lang="en"/>
-  <translation text="Spin nucléaire" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Giro Nuclear" lang="es"/>
  </entry>
  <entry key="nuclideSymbol" comment="">
   <translation text="Символ" lang="ru"/>
   <translation text="Symbol" lang="en"/>
-  <translation text="Symbole" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Símbolo" lang="es"/>
  </entry>
  <entry key="nuclideZp" comment="">
@@ -898,13 +898,13 @@
  <entry key="nuclidesIsotopes" comment="">
   <translation text="Нуклиды / изотопы" lang="ru"/>
   <translation text="Nuclides / Isotopes" lang="en"/>
-  <translation text="Nucléides / Isotopes" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="Nucleidos / Isótopos" lang="es"/>
  </entry>
  <entry key="numPerLevel" comment="">
   <translation text="# за уровень" lang="ru"/>
   <translation text="# Per Level" lang="en"/>
-  <translation text="# Par niveau" lang="fr"/>
+  <translation text="" lang="fr"/>
   <translation text="# Por nivel" lang="es"/>
  </entry>
  <entry key="number" comment="">
@@ -930,6 +930,18 @@
   <translation text="Number of Protons" lang="en"/>
   <translation text="Nombre de Protons" lang="fr"/>
   <translation text="Cantidad de Protones" lang="es"/>
+ </entry>
+ <entry key="off" comment="">
+  <translation text="Выкл" lang="ru"/>
+  <translation text="Off" lang="en"/>
+  <translation text="Hors" lang="fr"/>
+  <translation text="De" lang="es"/>
+ </entry>
+ <entry key="on" comment="">
+  <translation text="На" lang="ru"/>
+  <translation text="On" lang="en"/>
+  <translation text="Sur" lang="fr"/>
+  <translation text="En" lang="es"/>
  </entry>
  <entry key="opticalReflectivity" comment="">
   <translation text="Оптическая отражательная способность (%)" lang="ru"/>

@@ -100,7 +100,7 @@ class XTRHelpBalloonViewController : UIViewController {
         webView.contentMode = .scaleToFill                    // Scale the page to fill the web view
        // webView.backgroundColor = XTRColorFactory.helpBackgroundColor
         
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRHelpBalloonViewController.showElementHelp(_:)), name: .elementHelpSelectedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(showElementHelp(_:)), name: .elementHelpSelectedNotification, object: nil)
     }
     
     override var shouldAutorotate : Bool {

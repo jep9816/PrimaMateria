@@ -121,4 +121,7 @@ class XTRColorFactoryClassic : XTRColorFactory {
         return UIColor.color(hexString: "808080")
     }
 
+    override class var switchBackgroundColor : UIColor {
+        return XTRColorFactoryClassic.jetBlue
+    }
 }

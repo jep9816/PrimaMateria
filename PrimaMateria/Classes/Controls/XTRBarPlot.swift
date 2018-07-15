@@ -17,13 +17,13 @@ class XTRBarPlot : CPTBarPlot {
     override init(frame:CGRect) {
         super.init(frame:frame)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRBarPlot.colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder:aDecoder)!
         
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRBarPlot.colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
     
     // MARK: - Notification Methods

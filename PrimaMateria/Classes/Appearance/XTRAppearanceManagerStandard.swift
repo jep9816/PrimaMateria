@@ -151,10 +151,13 @@ class XTRAppearanceManagerStandard : NSObject {
     func sliderAppearance() {
         let appearance = UISlider.appearance()
 
-        appearance.minimumTrackTintColor = XTRColorFactoryStandard.nobel
-        appearance.maximumTrackTintColor = XTRColorFactoryStandard.caution
+        appearance.minimumTrackTintColor = XTRColorFactoryStandard.caution
+        appearance.maximumTrackTintColor = XTRColorFactoryStandard.nobel
         appearance.thumbTintColor = XTRColorFactoryStandard.regalBlue
-        
+        appearance.setThumbImage("⦿".image(size: CGSize(width: 45, height: 45)), for: .selected)
+        appearance.setThumbImage("◎".image(size: CGSize(width: 45, height: 45)), for: .highlighted)
+        appearance.setThumbImage("◉".image(size: CGSize(width: 45, height: 45)), for: .normal)
+
         //open var minimumTrackTintColor: UIColor?
         //open var maximumTrackTintColor: UIColor?
         //open var thumbTintColor: UIColor?
@@ -188,8 +191,6 @@ class XTRAppearanceManagerStandard : NSObject {
         appearance.onTintColor = XTRColorFactoryStandard.successGreen
         appearance.tintColor = XTRColorFactoryStandard.regalBlue
         appearance.thumbTintColor = XTRColorFactoryStandard.ghost
-        appearance.borderColor = XTRColorFactoryStandard.buttonBorderColor
-        appearance.borderWidth = 2
 
         //open var onTintColor: UIColor?
         //open var tintColor: UIColor!

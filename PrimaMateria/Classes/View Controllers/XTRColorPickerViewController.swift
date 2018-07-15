@@ -19,7 +19,7 @@ class XTRColorPickerViewController : UIViewController {
     @IBOutlet var previewView: UIView!
     @IBOutlet var selectColorButton: XTRLocalizedButton!
     
-    var seriesName : String?
+    //var seriesName : String?
     var seriesIdentifier : String?
     var disposeBag = DisposeBag()
     
@@ -44,10 +44,10 @@ class XTRColorPickerViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let aColor = XTRColorFactory.colorForString(seriesName!)
+        let aColor = XTRColorFactory.colorForString(seriesIdentifier!)
 
         title = NSLocalizedString("colorPicker", comment: "")
-        colorTitle.text = seriesName!
+        colorTitle.text =  NSLocalizedString(seriesIdentifier!, comment: "")
         
         previewView.backgroundColor = aColor
         previewView.layer.cornerRadius = 9
@@ -97,14 +97,12 @@ class XTRColorPickerViewController : UIViewController {
                     ColorComponent.green,
                     ColorComponent.blue,
                     ColorComponent.alpha,
-                    SERIES_COLOR_KEY,
                     SERIES_IDENTIFIER_KEY
                 ], [
                     self.redSlider.value,
                     self.greenSlider.value,
                     self.blueSlider.value,
                     self.alphaSlider.value,
-                    String(describing: self.colorTitle.text),
                     self.seriesIdentifier!
                 ]).reduce([String : Any]()) {
                     var d = $0;

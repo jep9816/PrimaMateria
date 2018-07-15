@@ -158,7 +158,7 @@ class XTRPropertiesStore : NSObject {
         userDefaults.removeObject(forKey: ElementSeries.metal)
         userDefaults.removeObject(forKey: ElementSeries.nobleGas)
         userDefaults.removeObject(forKey: ElementSeries.nonMetal)
-        userDefaults.removeObject(forKey: ElementSeries.transactinides)
+        userDefaults.removeObject(forKey: ElementSeries.transactinide)
         userDefaults.removeObject(forKey: ElementSeries.transitionMetal)
         
         userDefaults.synchronize()

@@ -294,7 +294,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         barButtonItem.title = NSLocalizedString("chooseGraph", comment: "")
 
         //delegate.controller = self
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRGraphViewController.graphSelected(_:)), name: .graphSelectedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(graphSelected(_:)), name: .graphSelectedNotification, object: nil)
         
         showGraphForChoiceAtIndex(0)
         navigationController?.navigationBar.prefersLargeTitles = true

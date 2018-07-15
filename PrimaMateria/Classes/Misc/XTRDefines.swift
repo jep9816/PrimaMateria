@@ -116,6 +116,7 @@ let MAIN_STORY_BOARD = "MainStoryboard"
 let COLOR_PICKER_STORY_BOARD = "ColorPicker"
 let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
+let SWITCH_CORNER_RADIUS : CGFloat = 16.0
 
 struct XTRAppearanceType {
     static let classic = "Classic"
@@ -137,16 +138,16 @@ extension Notification.Name {
 // MARK: - Series Text
 
 struct ElementSeries {
-    static let actinide = "Actinide"
-    static let alkaliEarthMetal = "Alkali Earth Metal"
-    static let alkaliMetal = "Alkali Metal"
-    static let halogen = "Halogen"
-    static let lanthanide = "Lanthanide"
-    static let metal = "Metal"
-    static let nobleGas = "Noble Gas"
-    static let nonMetal = "Non Metal"
-    static let transactinides = "Transactinide"
-    static let transitionMetal = "Transition Metal"
+    static let actinide = "actinide"
+    static let alkaliEarthMetal = "alkaliEarthMetal"
+    static let alkaliMetal = "alkaliMetal"
+    static let halogen = "halogen"
+    static let lanthanide = "lanthanide"
+    static let metal = "metal"
+    static let nobleGas = "nobleGas"
+    static let nonMetal = "nonMetal"
+    static let transactinide = "transactinide"
+    static let transitionMetal = "transitionMetal"
 }
 
 // MARK: - Standard Condition Text
@@ -185,7 +186,6 @@ struct SegueName {
     static let showInspectorFromElementList = "showInspectorFromElementList"
     static let showInspectorFromElementBalloon = "showInspectorFromElementBalloon"
     static let showWikipediaViewControllerFromGeneralViewController = "showWikipediaViewControllerFromGeneralViewController"
-    static let showGraphChoiceSegue = "showGraphChoice"
 }
 
 public typealias ClosureType = (Int) -> ()

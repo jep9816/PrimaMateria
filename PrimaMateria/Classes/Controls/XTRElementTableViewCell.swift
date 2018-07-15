@@ -64,7 +64,7 @@ class XTRElementTableViewCell : UITableViewCell {
         contentView.addSubview(groupLabel)
         
         modifyCellProperties()
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRElementTableViewCell.colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
     
     required init?(coder aDecoder: NSCoder) {

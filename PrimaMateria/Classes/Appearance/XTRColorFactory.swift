@@ -26,7 +26,7 @@ class XTRColorFactory : NSObject {
     
     class func colorForString(_ aString: String) -> UIColor {
         switch aString {
-        case ElementSeries.actinide :
+        case ElementSeries.actinide:
             return XTRColorFactory.actinideColor
         case ElementSeries.alkaliEarthMetal :
             return XTRColorFactory.alkaliEarthMetalColor
@@ -42,7 +42,7 @@ class XTRColorFactory : NSObject {
             return XTRColorFactory.nonMetalColor
         case ElementSeries.nobleGas :
             return XTRColorFactory.nobleGasColor
-        case ElementSeries.transactinides :
+        case ElementSeries.transactinide :
             return XTRColorFactory.transactinideColor
         case ElementSeries.transitionMetal :
             return XTRColorFactory.transitionMetalColor
@@ -63,71 +63,101 @@ class XTRColorFactory : NSObject {
     
     class var actinideColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.actinide) else { return XTRColorFactory.defaultActinideColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.actinide)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultActinideColor
+            }
+            
+            return aColor!
         }
     }
     
     class var alkaliEarthMetalColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.alkaliEarthMetal) else { return XTRColorFactory.defaultAlkaliEarthMetalColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.alkaliEarthMetal)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultAlkaliEarthMetalColor
+            }
+            return aColor!
         }
     }
     
     class var alkaliMetalColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.alkaliMetal) else { return XTRColorFactory.defaultAlkaliMetalColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.alkaliMetal)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultAlkaliMetalColor
+            }
+            return aColor!
         }
     }
     
     class var halogenColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.halogen) else { return XTRColorFactory.defaultHalogenColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.halogen)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultHalogenColor
+            }
+            return aColor!
         }
     }
     
     class var lanthanideColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.lanthanide) else { return XTRColorFactory.defaultLanthanideColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.lanthanide)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultLanthanideColor
+            }
+            return aColor!
         }
     }
     
     class var metalColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.metal) else { return XTRColorFactory.defaultMetalColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.metal)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultMetalColor
+            }
+            return aColor!
         }
     }
     
     class var nonMetalColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.nonMetal) else { return XTRColorFactory.defaultNonMetalColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.nonMetal)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultNonMetalColor
+            }
+            return aColor!
         }
     }
     
     class var nobleGasColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.nobleGas) else { return XTRColorFactory.defaultNobleGasColor }
-            return aColor
-        }
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.nobleGas)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultNobleGasColor
+            }
+            return aColor!        }
     }
     
     class var transactinideColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.transactinides) else { return XTRColorFactory.defaultTransactinideColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.transactinide)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultTransactinideColor
+            }
+            return aColor!
         }
     }
     
     class var transitionMetalColor: UIColor {
         get {
-            guard let aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.transitionMetal) else { return XTRColorFactory.defaultTransitionMetalColor }
-            return aColor
+            var aColor = XTRColorFactory.colorFromDefaultsForKey(ElementSeries.transitionMetal)
+            if aColor == nil {
+                aColor = XTRColorFactory.defaultTransitionMetalColor
+            }
+            return aColor!
         }
     }
     
@@ -322,7 +352,7 @@ class XTRColorFactory : NSObject {
     class var transparentColor: UIColor {
         return UIColor.clear
     }
-
+    
     class var pageControlLabelColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.denim
@@ -347,4 +377,12 @@ class XTRColorFactory : NSObject {
         }
     }
     
+    class var switchBackgroundColor : UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.buttonBorderColor
+        } else {
+            return XTRColorFactoryStandard.buttonBorderColor
+        }
+    }
+
 }

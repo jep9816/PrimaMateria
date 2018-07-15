@@ -28,7 +28,7 @@ class XTRTableHeaderButton : XTRGeneralButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(XTRTableHeaderButton.tableHeaderCellSelected(_:)), name: .tableHeaderCellSelectedNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(tableHeaderCellSelected(_:)), name: .tableHeaderCellSelectedNotification, object: nil)
         
         layer.addSublayer(imageLayer)
     }

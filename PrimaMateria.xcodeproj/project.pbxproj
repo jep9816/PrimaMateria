@@ -253,6 +253,7 @@
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -530,15 +531,15 @@
 		8012838A20F032A000ABC706 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */,
-				80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */,
-				8012807620F0271F00ABC706 /* Localizable.strings */,
-				8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */,
-				8012808C20F0271F00ABC706 /* Settings.bundle */,
 				8012808D20F0271F00ABC706 /* Credits.rtf */,
 				801280EE20F0272000ABC706 /* LoadFailure.html */,
-				801281DE20F0272000ABC706 /* PrimaMateria.plist */,
+				8012807620F0271F00ABC706 /* Localizable.strings */,
 				801281DF20F0272000ABC706 /* MainStyle.css */,
+				80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */,
+				80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */,
+				801281DE20F0272000ABC706 /* PrimaMateria.plist */,
+				8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */,
+				8012808C20F0271F00ABC706 /* Settings.bundle */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -796,6 +797,7 @@
 				8012808A20F0271F00ABC706 /* es */,
 				801280ED20F0272000ABC706 /* ru */,
 				8054205B20F83824002E7C27 /* fr */,
+				808FA35520FAA2EA00A8161C /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
