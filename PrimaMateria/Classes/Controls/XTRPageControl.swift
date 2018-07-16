@@ -46,6 +46,8 @@ class XTRPageControl: UIView {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
+        
         var rect = CGRect(x: 12, y: 30, width: 8, height: 8)
         let count = XTRDataSource.sharedInstance().elementCount() - 1
         

@@ -234,7 +234,7 @@ class XTRPreferencesViewController : UIViewController {
     }
     
     func presentColorPicker(_ sender: UIButton) {
-        let storyboard = UIStoryboard.init(name: COLOR_PICKER_STORY_BOARD, bundle: nil)
+        let storyboard = UIStoryboard(name: COLOR_PICKER_STORY_BOARD, bundle: nil)
         let colorPicker : XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
         
         colorPicker.seriesIdentifier = sender.accessibilityIdentifier

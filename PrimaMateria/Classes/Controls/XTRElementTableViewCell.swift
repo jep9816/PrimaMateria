@@ -94,16 +94,16 @@ class XTRElementTableViewCell : UITableViewCell {
         selectedBackgroundView = UIImageView(image: UIImage.imageFromColor(selectedColor, andSize: frame.size))
         
         modify(atomicNumberLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
-        atomicNumberLabel.text = String(element.atomicNumber)
+        atomicNumberLabel.text = "\(element.atomicNumber)"
         atomicNumberLabel.textAlignment = .right
         
         modify(symbolLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
         symbolLabel.font = UIFont.systemFont(ofSize: 26.0)
-        symbolLabel.text = String(format: "%@", element.symbol!)
+        symbolLabel.text = "\(element.symbol!)"
         symbolLabel.textAlignment = .center
         
         modify(nameLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
-        nameLabel.text = String(format: "%@", element.name!)
+        nameLabel.text = "\(element.name!)"
         nameLabel.textAlignment = .left
         
         modify(atomicMassLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
@@ -123,17 +123,17 @@ class XTRElementTableViewCell : UITableViewCell {
         densityLabel.textAlignment = .right
         
         modify(seriesLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
-        seriesLabel.text = String(format: "%@", element.series!)
+        seriesLabel.text = "\(element.series!)"
         seriesLabel.textAlignment = .left
         
         modify(periodLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
-        periodLabel.text = String(format: "%@", element.period!)
+        periodLabel.text = "\(element.period!)"
         periodLabel.textAlignment = .right
         
         modify(groupLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
 
         let aGroup = element.group!
-        groupLabel.text = (aGroup != 0) ? String(format: "%d", aGroup) : STRING_EMPTY
+        groupLabel.text = (aGroup != 0) ? "\(aGroup)" : STRING_EMPTY
         groupLabel.textAlignment = .right
     }
     

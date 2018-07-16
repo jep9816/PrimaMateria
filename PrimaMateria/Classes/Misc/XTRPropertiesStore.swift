@@ -150,6 +150,9 @@ class XTRPropertiesStore : NSObject {
         let userDefaults = UserDefaults.standard
         
         userDefaults.removeObject(forKey: XTRProperty.elementBubble)
+        userDefaults.removeObject(forKey: XTRProperty.showTransitions)
+        userDefaults.removeObject(forKey: XTRProperty.splashScreen)
+        
         userDefaults.removeObject(forKey: ElementSeries.actinide)
         userDefaults.removeObject(forKey: ElementSeries.alkaliEarthMetal)
         userDefaults.removeObject(forKey: ElementSeries.alkaliMetal)

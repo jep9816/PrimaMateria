@@ -193,7 +193,7 @@ class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelega
     // MARK: - Memory Management Methods
     
     deinit {
-        tableView!.delegate = nil
+        //tableView!.delegate = nil
         tableView = nil
         hostingView = nil
         swapView = nil

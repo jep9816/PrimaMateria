@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class XTRElementBalloonViewController : UIViewController {
     
@@ -16,7 +18,10 @@ class XTRElementBalloonViewController : UIViewController {
     @IBOutlet var boilingPointLabel : UILabel!
     @IBOutlet var meltingPointLabel : UILabel!
     @IBOutlet var wrapperView : UIView!
+    @IBOutlet var elementDetailsButton: XTRGeneralButton!
     
+    var disposeBag = DisposeBag()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -28,23 +33,18 @@ class XTRElementBalloonViewController : UIViewController {
     func setupUI() {
         let element = XTRDataSource.sharedInstance().elementAtIndex(XTRPropertiesStore.atomicNumber)
         
+        title = NSLocalizedString("elementBalloon", comment: "")
+
         elementNameLabel.textColor = element.standardConditionColor
         elementNameLabel.backgroundColor = element.seriesColor
-        
         elementNameLabel.text = " \(element.name!)"
+        
         atomicNumberLabel.text = " \(String(element.atomicNumber))"
         atomicMassLabel.text = " \(element.atomicMassAggregate)"
+        
         boilingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_BOILING_POINT)!)"
+        
         meltingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_MELTING_POINT)!)"
-        title = NSLocalizedString("elementBalloon", comment: "")
-    }
-    
-    // MARK: - Action Methods
-    
-    @IBAction func showDetails(_ sender: UIButton) {
-        XTRPropertiesStore.viewTitle = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "") 
-        XTRPropertiesStore.atomicNumber = XTRPropertiesStore.atomicNumber
-        performSegue(withIdentifier: SegueName.showInspectorFromElementBalloon, sender: sender)
     }
     
     // MARK: - View Management Methods
@@ -53,6 +53,18 @@ class XTRElementBalloonViewController : UIViewController {
         super.viewDidLoad()
         wrapperView.layer.cornerRadius = 10.0
         wrapperView.clipsToBounds = true
+
+        elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] newValue in
+            let storyBoard = UIStoryboard.init(name: "ElementInspector", bundle: nil)
+            let controller = storyBoard.instantiateViewController(withIdentifier: XTRElementInspectorViewController.nameOfClass) as! XTRElementInspectorViewController
+
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .crossDissolve
+ 
+            XTRPropertiesStore.viewTitle = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
+            XTRPropertiesStore.atomicNumber = XTRPropertiesStore.atomicNumber
+            self?.present(controller, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+        }).disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool)  {
@@ -77,6 +89,7 @@ class XTRElementBalloonViewController : UIViewController {
         boilingPointLabel = nil
         meltingPointLabel = nil
         wrapperView = nil
+        elementDetailsButton = nil
     }
     
 }

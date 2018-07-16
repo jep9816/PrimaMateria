@@ -17,10 +17,8 @@ class XTRElementButton : XTRGeneralButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        let element = XTRDataSource.sharedInstance().elementAtIndex(tag)
-
         backgroundColor = UIColor.clear
-        setTitleColor(element.standardConditionColor, for: UIControlState())
+        setTitleColor(XTRDataSource.sharedInstance().elementAtIndex(tag).standardConditionColor, for: UIControlState())
         
         NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
@@ -35,13 +33,10 @@ class XTRElementButton : XTRGeneralButton {
     // MARK: - Internal Methods
 
     override func setupColors() {
-        let element = XTRDataSource.sharedInstance().elementAtIndex(tag)
-        let backgroundColor = element.seriesColor
-        let selectedColor = backgroundColor.inverseColor()
-        let backgroundImage = UIImage.imageFromColor(backgroundColor, andSize: frame.size)
-        let selectedImage = UIImage.imageFromColor(selectedColor, andSize: frame.size)
+        let backgroundColor = XTRDataSource.sharedInstance().elementAtIndex(tag).seriesColor
+        let selectedImage = UIImage.imageFromColor(backgroundColor.inverseColor(), andSize: frame.size)
         
-        setBackgroundImage(backgroundImage, for: UIControlState())
+        setBackgroundImage(UIImage.imageFromColor(backgroundColor, andSize: frame.size), for: UIControlState())
         setBackgroundImage(selectedImage, for: .highlighted)
         setBackgroundImage(selectedImage, for: .selected)
     }

@@ -14,9 +14,9 @@ class XTRMainViewControllerDelegate : NSObject, UITabBarControllerDelegate {
         let defaultState = XTRPropertiesStore.showTransitionsState
         
         if defaultState {
-            //return XTRPopoutAnimationController()
+            return XTRPopoutAnimationController()
             // XTRSlideDownAnimationController()
-            return XTRSimpleTransitionController()
+            //return XTRSimpleTransitionController()
         }
         return nil
     }

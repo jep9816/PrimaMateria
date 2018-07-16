@@ -58,14 +58,12 @@ class XTRHelpButton : UIButton, UIPopoverPresentationControllerDelegate {
         
         let controller = viewController()
         let content = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRHelpBalloonViewController.nameOfClass) as! XTRHelpBalloonViewController
-        let aFrame = bounds
-        let aRect = aFrame //(label == "periodicTable") ? CGRect(x: 5, y: 5, width: aFrame.size.width - 5, height: aFrame.size.height - 5) : CGRect(x: 5, y: 5, width: aFrame.size.width - 5, height: aFrame.size.height - 5)
         
         content.preferredContentSize = CGSize(width: 410, height: 338)
         content.modalPresentationStyle = .popover
         controller.present(content, animated: true, completion: nil)
         let presentationController = content.popoverPresentationController
-        presentationController?.sourceRect = aRect
+        presentationController?.sourceRect = bounds
         presentationController?.sourceView = self
         presentationController?.backgroundColor = XTRColorFactory.popupArrowColor
         NotificationCenter.default.post(name: .elementHelpSelectedNotification, object: label)

@@ -23,6 +23,8 @@ class XTRLocalizedLabel : UILabel {
     }
     
     override func awakeFromNib() {
+        super.awakeFromNib()
+        
         if let text = text {
             if isTitleLabel {
                 self.text = " \(NSLocalizedString(text, comment: "")):"

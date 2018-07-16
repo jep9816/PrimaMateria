@@ -125,9 +125,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="showDetails:" destination="M1k-aa-oXH" eventType="touchUpInside" id="3lM-n7-GZy"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -143,6 +140,7 @@
                         <outlet property="atomicMassLabel" destination="x6Q-yb-75K" id="ana-EJ-0B6"/>
                         <outlet property="atomicNumberLabel" destination="GDz-X9-iqE" id="pWc-rt-y6w"/>
                         <outlet property="boilingPointLabel" destination="eEC-aD-qnY" id="MO5-wD-Ocv"/>
+                        <outlet property="elementDetailsButton" destination="1wF-w7-B7V" id="M1g-ch-4Jw"/>
                         <outlet property="elementNameLabel" destination="vvH-SZ-kad" id="Wb2-Zo-EaO"/>
                         <outlet property="meltingPointLabel" destination="iAe-61-tWs" id="npm-H0-YqA"/>
                         <outlet property="wrapperView" destination="1Rd-Rr-nV3" id="oDt-PL-1xz"/>
