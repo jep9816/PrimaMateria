@@ -8,20 +8,20 @@
 
 import WebKit
 
-class XTRWikipediaViewController : UIViewController {
+class XTRWikipediaViewController: UIViewController {
     
-    @IBOutlet var backButton : UIBarButtonItem!
+    @IBOutlet var backButton: UIBarButtonItem!
     @IBOutlet var titleButtonItem: UIBarButtonItem!
-    @IBOutlet var forwardButton : UIBarButtonItem!
-    @IBOutlet var webView : WKWebView!
+    @IBOutlet var forwardButton: UIBarButtonItem!
+    @IBOutlet var webView: WKWebView!
     
-    public var progressHUD : MBProgressHUD?
+    public var progressHUD: MBProgressHUD?
     
-    private var responseData : NSMutableData?
-    private var request : NSMutableURLRequest?
-    private var delegate : XTRWikipediaViewControllerDelegate = XTRWikipediaViewControllerDelegate()
+    private var responseData: NSMutableData?
+    private var request: NSMutableURLRequest?
+    private weak var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
     
-    var elementName : String?
+    var elementName: String?
     
     // MARK: - Initialization Methods
     
@@ -38,7 +38,7 @@ class XTRWikipediaViewController : UIViewController {
     // MARK: - Action Methods
     
     @IBAction func dismiss(_ sender: UIButton) {
-        dismiss(animated: true, completion:  nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -56,7 +56,7 @@ class XTRWikipediaViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        delegate.controller = self
+        delegate?.controller = self
         
         let textAttributes: [NSAttributedStringKey: AnyObject]? = [
             NSAttributedStringKey.foregroundColor: UIColor.white,
@@ -76,7 +76,7 @@ class XTRWikipediaViewController : UIViewController {
         webView.navigationDelegate = delegate
     }
     
-    override func viewWillAppear(_ animated: Bool)  {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         titleButtonItem.title = "\(NSLocalizedString("wikipediaEntry", comment: "")) \(elementName!)"
@@ -90,11 +90,11 @@ class XTRWikipediaViewController : UIViewController {
         prepareRequest()
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

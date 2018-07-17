@@ -11,15 +11,15 @@ import UIKit
 
 let sortColumns = [ELEMENT_ATOMIC_NUMBER, ELEMENT_SYMBOL, ELEMENT_NAME, ELEMENT_ATOMIC_MASS, ELEMENT_BOILING_POINT, ELEMENT_MELTING_POINT, ELEMENT_DENSITY, ELEMENT_SERIES, ELEMENT_PERIOD, ELEMENT_GROUP]
 
-class XTRDataSource : NSObject {
+class XTRDataSource: NSObject {
     
     private static var __once: () = { _sharedInstance = XTRDataSource() }()
-    static var _sharedInstance : XTRDataSource!
+    static var _sharedInstance: XTRDataSource!
     
-    var elementList : [XTRElementModel]!
-    var sortedElementList : NSMutableArray?
-    var graphPropertyList : [[String : AnyObject]]?
-    var columnSortSelector : Selector?
+    var elementList: [XTRElementModel]!
+    var sortedElementList: NSMutableArray?
+    var graphPropertyList: [[String: AnyObject]]?
+    var columnSortSelector: Selector?
     
     struct Static {
         static var dispatchOnceToken = 0
@@ -28,8 +28,13 @@ class XTRDataSource : NSObject {
     func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
         let bundle = Bundle(for: classForCoder)
         let path = bundle.path(forResource: aResourceName, ofType: type, inDirectory: directory)!
+        var data: Data = Data()
         
-        return try! Data(contentsOf: URL(fileURLWithPath: path))
+        do {
+            data = try Data(contentsOf: URL(fileURLWithPath: path))
+        } catch {
+        }
+        return data
     }
     
     class func sharedInstance() -> XTRDataSource {
@@ -37,14 +42,14 @@ class XTRDataSource : NSObject {
         return _sharedInstance
     }
     
-    func loadElementForSymbol(_ aSymbol: String)  {
+    func loadElementForSymbol(_ aSymbol: String) {
         let theData = dataForResource(aSymbol, type: FileType.plist, directory: SUPPORTING_FILES)
-        var tempDict : [String : Any]?
+        var tempDict: [String: Any]?
         
         do {
             let element = XTRElementModel()
             
-            try tempDict = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String : Any]
+            try tempDict = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String: Any]
             
             element.elementDictionary = tempDict!
             elementList.append(element)
@@ -55,13 +60,13 @@ class XTRDataSource : NSObject {
     
     func loadElementList() {
         let theData = dataForResource("ElementList", type: FileType.plist, directory: SUPPORTING_FILES)
-        var tempList : NSArray? = nil
+        var tempList: NSArray? = nil
         
         do {
             try tempList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? NSArray
             
             for index in 0..<tempList!.count {
-                let symbol : String? = tempList?.object(at: index) as? String
+                let symbol: String? = tempList?.object(at: index) as? String
                 loadElementForSymbol(symbol!)
                 sortedElementList!.add(elementList[index])
             }
@@ -79,7 +84,7 @@ class XTRDataSource : NSObject {
         elementList = []
         sortedElementList = NSMutableArray()
         do {
-            try graphPropertyList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [[String : AnyObject]]
+            try graphPropertyList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [[String: AnyObject]]
         } catch _ {
             graphPropertyList = nil
         }

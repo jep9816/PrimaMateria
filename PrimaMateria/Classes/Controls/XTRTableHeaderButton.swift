@@ -8,12 +8,12 @@
 
 import UIKit
 
-class XTRTableHeaderButton : XTRGeneralButton {
+class XTRTableHeaderButton: XTRGeneralButton {
     
-    var imageLayer : CALayer
-    var descendingImage : UIImage
-    var ascendingImage : UIImage
-    var toggle : Bool = false
+    var imageLayer: CALayer
+    var descendingImage: UIImage
+    var ascendingImage: UIImage
+    var toggle: Bool = false
     
     // MARK: - Initialization Methods
     
@@ -22,7 +22,7 @@ class XTRTableHeaderButton : XTRGeneralButton {
         descendingImage = XTRImageFactory.descendingArrowImage
         imageLayer = CALayer()
         
-        super.init(coder:aDecoder)
+        super.init(coder: aDecoder)
     }
     
     override func awakeFromNib() {
@@ -45,8 +45,8 @@ class XTRTableHeaderButton : XTRGeneralButton {
         NotificationCenter.default.post(name: .tableHeaderCellSelectedNotification, object: nil)
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.0)
-        imageLayer.frame = (aFlag) ? CGRect(x: (frame.size.width / 2) - 6, y: 2, width: 12, height: 12) : CGRect(x: (frame.size.width / 2) - 6, y: 30, width: 12, height: 12)
-        imageLayer.contents = (aFlag) ? ascendingImage.cgImage : descendingImage.cgImage
+        imageLayer.frame = (aFlag) ? CGRect(x: (frame.size.width / 2) - 6, y: 2, width: 12, height: 12): CGRect(x: (frame.size.width / 2) - 6, y: 30, width: 12, height: 12)
+        imageLayer.contents = (aFlag) ? ascendingImage.cgImage: descendingImage.cgImage
         CATransaction.commit()
         toggle = aFlag
     }

@@ -9,12 +9,12 @@
 import Foundation
 import RxSwift
 
-class XTRElementModel : NSObject {
+class XTRElementModel: NSObject {
     
-    var elementDictionary : [String: Any] = [:]
+    var elementDictionary: [String: Any] = [:]
     
     override func value(forKeyPath keyPath: String) -> Any? {
-        switch (keyPath){
+        switch keyPath {
         case ELEMENT_KSHELL_ELECTRONS:
             return kShellElectrons as AnyObject
         case ELEMENT_LSHELL_ELECTRONS:
@@ -33,7 +33,7 @@ class XTRElementModel : NSObject {
             return atomicMassAggregate as AnyObject
         default:
             let aValue = elementDictionary[keyPath]
-            return (aValue != nil) ? aValue! as AnyObject : "" as AnyObject
+            return (aValue != nil) ? aValue! as AnyObject: "" as AnyObject
         }
     }
     
@@ -77,15 +77,13 @@ class XTRElementModel : NSObject {
         return value(forKeyPath: ELEMENT_DESCR) as? String
     }
     
-    var electronConfiguration: [String : AnyObject]? {
-        return value(forKeyPath: ELEMENT_ELECTRON_CONFIGURATION) as? [String : AnyObject]
+    var electronConfiguration: [String: AnyObject]? {
+        return value(forKeyPath: ELEMENT_ELECTRON_CONFIGURATION) as? [String: AnyObject]
     }
     
     var group: Int? {
-        get {
-            let aValue : String? = value(forKeyPath: ELEMENT_GROUP) as? String
-            return (aValue! == STRING_EMPTY) ? 0 : Int(aValue!)
-        }
+        let aValue: String? = value(forKeyPath: ELEMENT_GROUP) as? String
+        return (aValue! == STRING_EMPTY) ? 0: Int(aValue!)
     }
     
     var meltingPoint: Double {
@@ -97,9 +95,9 @@ class XTRElementModel : NSObject {
     }
     
     var nuclidesAndIsotopes: Variable<[XTRIsotopeModel]>? {
-        let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String : AnyObject]]
+        let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String: AnyObject]]
         let models: Variable<[XTRIsotopeModel]> = Variable([])
-
+        
         if let list = list {
             for item in list {
                 let model = XTRIsotopeModel(dictionary: item)
@@ -123,7 +121,7 @@ class XTRElementModel : NSObject {
     }
     
     var lineSpectra: Variable<[XTRSpectraModel]>? {
-        let list = value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String : AnyObject]]?
+        let list = value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String: AnyObject]]?
         let models: Variable<[XTRSpectraModel]> = Variable([])
         
         if let list = list {
@@ -132,12 +130,12 @@ class XTRElementModel : NSObject {
                 models.value.append(model)
             }
         }
-
+        
         return models
     }
     
-    var vaporPressure: [String : AnyObject]? {
-        return value(forKeyPath: ELEMENT_VAPOR_PRESSURE) as? [String : AnyObject]
+    var vaporPressure: [String: AnyObject]? {
+        return value(forKeyPath: ELEMENT_VAPOR_PRESSURE) as? [String: AnyObject]
     }
     
     var elasticModulusBulk: Double {

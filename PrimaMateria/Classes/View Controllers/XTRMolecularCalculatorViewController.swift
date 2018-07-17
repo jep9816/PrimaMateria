@@ -8,13 +8,13 @@
 
 import UIKit
 
-class XTRMolecularCalculatorViewController : UIViewController {
+class XTRMolecularCalculatorViewController: UIViewController {
     
-    @IBOutlet var errorLabel : UILabel!
-    @IBOutlet var formulaLabel : UILabel!
-    @IBOutlet var resultsLabel : UILabel!
-    @IBOutlet var formulaTextField : UITextField!
-    @IBOutlet var backgroundView : UIView!
+    @IBOutlet var errorLabel: UILabel!
+    @IBOutlet var formulaLabel: UILabel!
+    @IBOutlet var resultsLabel: UILabel!
+    @IBOutlet var formulaTextField: UITextField!
+    @IBOutlet var backgroundView: UIView!
     
     // MARK: - Initialization Methods
     
@@ -33,14 +33,14 @@ class XTRMolecularCalculatorViewController : UIViewController {
     
     func updateTextField(_ number: Int) {
         var origString = formulaTextField.text!
-        origString = origString + String(format: "%d", number)
+        origString += String(format: "%d", number)
         formulaTextField.text = origString
     }
     
     func updateLabel(_ number: Int) {
         let origString = formulaLabel.text!
         
-        switch (number) {
+        switch number {
         case 0:
             formulaLabel.text = origString + "\u{2080}"
         case 1:
@@ -69,7 +69,7 @@ class XTRMolecularCalculatorViewController : UIViewController {
     func updateTextField(_ symbol: String) {
         var origString = formulaTextField.text!
 
-        if origString.count > 0 {
+        if origString.isEmpty {
             let lastChar = origString.suffix(1)
             
             var is_alpha = false
@@ -81,19 +81,19 @@ class XTRMolecularCalculatorViewController : UIViewController {
                 }
             }
             
-            origString = is_alpha ? origString  + "0" + symbol : origString + symbol
+            origString = is_alpha ? origString  + "0" + symbol: origString + symbol
             
         } else {
-            origString = origString + symbol
+            origString += symbol
         }
 
         formulaTextField.text = origString
         errorLabel.text = STRING_EMPTY
     }
     
-    func updateLabel(_ syymbol: String) {
+    func updateLabel(_ symbol: String) {
         var origString = formulaLabel.text!
-        origString = origString + syymbol
+        origString += symbol
         formulaLabel.text = origString
         errorLabel.text = STRING_EMPTY
     }
@@ -162,17 +162,17 @@ class XTRMolecularCalculatorViewController : UIViewController {
         clear()
     }
     
-    override func viewWillDisappear(_ animated: Bool)  {
+    override func viewWillDisappear(_ animated: Bool) {
         clear()
         
         super.viewWillDisappear(animated)
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

@@ -8,9 +8,9 @@
 
 import WebKit
 
-class XTRWikipediaViewControllerDelegate : NSObject, WKNavigationDelegate, MBProgressHUDDelegate {
+class XTRWikipediaViewControllerDelegate: NSObject, WKNavigationDelegate, MBProgressHUDDelegate {
 
-    weak var controller : XTRWikipediaViewController?
+    weak var controller: XTRWikipediaViewController?
 
     // MARK: - WebView Delegate Methods
     

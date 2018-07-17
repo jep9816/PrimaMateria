@@ -8,9 +8,9 @@
 
 import WebKit
 
-class XTRHelpBalloonViewControllerDelegate : NSObject, WKUIDelegate, WKNavigationDelegate {
+class XTRHelpBalloonViewControllerDelegate: NSObject, WKUIDelegate, WKNavigationDelegate {
 
-    weak var controller : XTRHelpBalloonViewController?
+    weak var controller: XTRHelpBalloonViewController?
 
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         controller?.backButton.isEnabled = false

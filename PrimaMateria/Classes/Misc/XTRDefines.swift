@@ -115,7 +115,7 @@ let MAIN_STORY_BOARD = "MainStoryboard"
 let COLOR_PICKER_STORY_BOARD = "ColorPicker"
 let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
-let SWITCH_CORNER_RADIUS : CGFloat = 16.0
+let SWITCH_CORNER_RADIUS: CGFloat = 16.0
 
 struct XTRAppearanceType {
     static let classic = "Classic"
@@ -187,4 +187,4 @@ struct SegueName {
     static let showWikipediaViewControllerFromGeneralViewController = "showWikipediaViewControllerFromGeneralViewController"
 }
 
-public typealias ClosureType = (Int) -> ()
+//public typealias ClosureType = (Int) -> ()

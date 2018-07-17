@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class XTRApplication : UIApplication {
+class XTRApplication: UIApplication {
     
     // MARK: Initialization Methods
     
     override init() {
         super.init()
-        let aDefault : String? = UserDefaults.standard.string(forKey: XTRProperty.splashScreen)
+        let aDefault: String? = UserDefaults.standard.string(forKey: XTRProperty.splashScreen)
         
         if aDefault == nil {
             registerDefaultsFromSettingsBundle()
@@ -33,21 +33,21 @@ class XTRApplication : UIApplication {
         }
         
         do {
-            let data : Data?
-            let url : URL = URL(fileURLWithPath: settingsBundlePath)
+            let data: Data?
+            let url: URL = URL(fileURLWithPath: settingsBundlePath)
             try data = Data(contentsOf: url.appendingPathComponent("Root.plist"), options: [])
             
             do {
-                var settings = [String : Any]()
-                try settings = PropertyListSerialization.propertyList(from: data!, options: [], format: nil) as! [String : Any]
+                var settings = [String: Any]()
+                try settings = PropertyListSerialization.propertyList(from: data!, options: [], format: nil) as! [String: Any]
                 
                 guard let preferences = settings["PreferenceSpecifiers"] as? [AnyObject] else {
                     return
                 }
-                var defaultsToRegister = [String : AnyObject]()
+                var defaultsToRegister = [String: AnyObject]()
                 
                 for index in 0..<preferences.count {
-                    let prefSpecification = preferences[index] as! [String : AnyObject]
+                    let prefSpecification = preferences[index] as! [String: AnyObject]
                     
                     if let key = prefSpecification["Key"] as? String {
                         if let defaultValue = prefSpecification["DefaultValue"] {

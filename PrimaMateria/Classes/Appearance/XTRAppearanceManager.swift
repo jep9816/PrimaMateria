@@ -9,20 +9,20 @@
 import Foundation
 import UIKit
 
-var _manager : XTRAppearanceManager!
+var _manager: XTRAppearanceManager!
 
-class XTRAppearanceManager : NSObject {
+class XTRAppearanceManager: NSObject {
     
-    private var _window : UIWindow?
-    private var _classicManager : XTRAppearanceManagerClassic!
-    private var _standardManager : XTRAppearanceManagerStandard!
+    private var _window: UIWindow?
+    private var _classicManager: XTRAppearanceManagerClassic!
+    private var _standardManager: XTRAppearanceManagerStandard!
     
     override init() {
         super.init()
         _classicManager = XTRAppearanceManagerClassic()
         _standardManager = XTRAppearanceManagerStandard()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(changeAppearance(notification:)), name: .notificationAppearanceChanged, object:  nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(changeAppearance(notification:)), name: .notificationAppearanceChanged, object: nil)
     }
     
     convenience init(window: UIWindow) {
@@ -31,7 +31,7 @@ class XTRAppearanceManager : NSObject {
         commonAppearance()
     }
     
-    class var manager : XTRAppearanceManager {
+    class var manager: XTRAppearanceManager {
         if _manager == nil {
             _manager = XTRAppearanceManager()
         }
@@ -54,7 +54,7 @@ class XTRAppearanceManager : NSObject {
         commonAppearance()
     }
     
-    private func reset(appearanceName:  String) {
+    private func reset(appearanceName: String) {
         let currentview = _window?.rootViewController?.view
         let superview = currentview?.superview
         currentview?.removeFromSuperview()
@@ -92,7 +92,7 @@ class XTRAppearanceManager : NSObject {
     func statusBarStyle() {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             UIApplication.shared.statusBarStyle = .default
-        }  else {
+        } else {
             UIApplication.shared.statusBarStyle = .default
         }
     }

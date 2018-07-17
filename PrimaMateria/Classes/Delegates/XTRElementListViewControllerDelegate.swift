@@ -6,16 +6,16 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRElementListViewControllerDelegate : NSObject, UITableViewDelegate, UITableViewDataSource {
+class XTRElementListViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - UITableView DataSource Methods
-    weak var controller : XTRElementListViewController?
+    weak var controller: XTRElementListViewController?
     
-    var indexPath : IndexPath?
-    var closure : (Int) -> Void? = { index in return }
+    var indexPath: IndexPath?
+    var closure: (Int) -> Void? = { index in return }
     
     func tableView(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : XTRElementTableViewCell? = aTableView.dequeueReusableCell(withIdentifier: XTRElementListViewController.tableViewCellIdentifier) as? XTRElementTableViewCell
+        let cell: XTRElementTableViewCell? = aTableView.dequeueReusableCell(withIdentifier: XTRElementListViewController.tableViewCellIdentifier) as? XTRElementTableViewCell
         cell!.setup(XTRDataSource.sharedInstance().sortedElementAtIndex(indexPath.row))
         
         return cell!

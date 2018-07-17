@@ -122,6 +122,7 @@
 		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
+		80773C7E20FE9840008B7B43 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 80773C7D20FE983F008B7B43 /* .swiftlint.yml */; };
 		AF8083CEBAEA2DD6400DF648 /* Pods_PrimaMateria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */; };
 /* End PBXBuildFile section */
 
@@ -253,6 +254,7 @@
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		80773C7D20FE983F008B7B43 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -284,6 +286,7 @@
 		80127C0520F0253000ABC706 = {
 			isa = PBXGroup;
 			children = (
+				80773C7D20FE983F008B7B43 /* .swiftlint.yml */,
 				80127C1020F0253000ABC706 /* PrimaMateria */,
 				80127C0F20F0253000ABC706 /* Products */,
 				199983B141A801B329B6C872 /* Pods */,
@@ -563,6 +566,7 @@
 			buildConfigurationList = 80127C2020F0253200ABC706 /* Build configuration list for PBXNativeTarget "PrimaMateria" */;
 			buildPhases = (
 				CC7153F934806072CC4FF7CB /* [CP] Check Pods Manifest.lock */,
+				80773C7F20FE9859008B7B43 /* Swift Lint */,
 				80127C0A20F0253000ABC706 /* Sources */,
 				80127C0B20F0253000ABC706 /* Frameworks */,
 				80127C0C20F0253000ABC706 /* Resources */,
@@ -653,6 +657,7 @@
 				8012826820F0272000ABC706 /* LoadFailure.html in Resources */,
 				801281FB20F0272000ABC706 /* Unknown.scn in Resources */,
 				8012836120F0272000ABC706 /* Spectrum.storyboard in Resources */,
+				80773C7E20FE9840008B7B43 /* .swiftlint.yml in Resources */,
 				8012836420F0272000ABC706 /* ElementInspector.storyboard in Resources */,
 				8012836920F0272000ABC706 /* Graph.storyboard in Resources */,
 				8012835F20F0272000ABC706 /* GeneralInfo.storyboard in Resources */,
@@ -665,6 +670,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		80773C7F20FE9859008B7B43 /* Swift Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Swift Lint";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    brew install swiftlint\nfi";
+		};
 		AADED3F8A28D6A440B198395 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

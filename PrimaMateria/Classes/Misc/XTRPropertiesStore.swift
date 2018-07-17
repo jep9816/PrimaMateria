@@ -16,7 +16,7 @@ struct XTRProperty {
     static let viewTitle = "viewTitle"
 }
 
-class XTRPropertiesStore : NSObject {
+class XTRPropertiesStore: NSObject {
     
     class var atomicNumber: Int {
         get {
@@ -120,7 +120,7 @@ class XTRPropertiesStore : NSObject {
     
     class func setColorData(_ data: Data!, key: String!) {
         if data != nil && key != nil {
-            let userDefaults : UserDefaults = UserDefaults.standard
+            let userDefaults: UserDefaults = UserDefaults.standard
             
             userDefaults.set(data, forKey: key)
             userDefaults.synchronize()

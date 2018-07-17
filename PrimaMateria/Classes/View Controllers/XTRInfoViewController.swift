@@ -8,12 +8,12 @@
 
 import WebKit
 
-class XTRInfoViewController : UIViewController {
+class XTRInfoViewController: UIViewController {
     
     @IBOutlet var webView: WKWebView!
     @IBOutlet var navigationBar: UINavigationBar!
 
-    private var delegate : XTRInfoViewControllerDelegate = XTRInfoViewControllerDelegate()
+    private weak var delegate: XTRInfoViewControllerDelegate? = XTRInfoViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -39,11 +39,11 @@ class XTRInfoViewController : UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

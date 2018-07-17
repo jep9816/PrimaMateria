@@ -6,12 +6,12 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRHelpButton : UIButton, UIPopoverPresentationControllerDelegate {
+class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
     
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)!
+        super.init(coder: aDecoder)!
     }
     
     override func awakeFromNib() {

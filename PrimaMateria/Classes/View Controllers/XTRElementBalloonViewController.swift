@@ -10,14 +10,14 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class XTRElementBalloonViewController : UIViewController {
+class XTRElementBalloonViewController: UIViewController {
     
-    @IBOutlet var elementNameLabel : UILabel!
-    @IBOutlet var atomicNumberLabel : UILabel!
-    @IBOutlet var atomicMassLabel : UILabel!
-    @IBOutlet var boilingPointLabel : UILabel!
-    @IBOutlet var meltingPointLabel : UILabel!
-    @IBOutlet var wrapperView : UIView!
+    @IBOutlet var elementNameLabel: UILabel!
+    @IBOutlet var atomicNumberLabel: UILabel!
+    @IBOutlet var atomicMassLabel: UILabel!
+    @IBOutlet var boilingPointLabel: UILabel!
+    @IBOutlet var meltingPointLabel: UILabel!
+    @IBOutlet var wrapperView: UIView!
     @IBOutlet var elementDetailsButton: XTRGeneralButton!
     
     var disposeBag = DisposeBag()
@@ -54,7 +54,7 @@ class XTRElementBalloonViewController : UIViewController {
         wrapperView.layer.cornerRadius = 10.0
         wrapperView.clipsToBounds = true
 
-        elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] newValue in
+        elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] _ in
             let storyBoard = UIStoryboard.init(name: "ElementInspector", bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: XTRElementInspectorViewController.nameOfClass) as! XTRElementInspectorViewController
 
@@ -67,16 +67,16 @@ class XTRElementBalloonViewController : UIViewController {
         }).disposed(by: disposeBag)
     }
     
-    override func viewWillAppear(_ animated: Bool)  {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupUI()
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

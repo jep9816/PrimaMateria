@@ -8,11 +8,11 @@
 
 import UIKit
 
-class XTRMainViewController : UITabBarController {
+class XTRMainViewController: UITabBarController {
     
     // MARK: - Initialization Methods
     
-    private var controllerDelegate : XTRMainViewControllerDelegate = XTRMainViewControllerDelegate()
+    private weak var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -24,7 +24,7 @@ class XTRMainViewController : UITabBarController {
         let defaultState = XTRPropertiesStore.splashScreenState
         
         if defaultState {
-            let splashViewController : XTRSplashViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRSplashViewController.nameOfClass) as! XTRSplashViewController
+            let splashViewController: XTRSplashViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRSplashViewController.nameOfClass) as! XTRSplashViewController
             view.addSubview(splashViewController.view)
         }
     }
@@ -46,11 +46,11 @@ class XTRMainViewController : UITabBarController {
         delegate = controllerDelegate
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

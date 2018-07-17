@@ -6,12 +6,12 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRSplashViewController : UIViewController {
+class XTRSplashViewController: UIViewController {
     
     @IBOutlet var appNameLabel: UILabel!
-    @IBOutlet var versionLabel : UILabel!
-    @IBOutlet var cpyRightLabel : UILabel!
-    @IBOutlet var wrapperView : UIView!
+    @IBOutlet var versionLabel: UILabel!
+    @IBOutlet var cpyRightLabel: UILabel!
+    @IBOutlet var wrapperView: UIView!
     
     // MARK: - Initialization Methods
     
@@ -43,11 +43,11 @@ class XTRSplashViewController : UIViewController {
         Thread.detachNewThreadSelector(#selector(XTRSplashViewController.wait), toTarget: self, with: nil)
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
 

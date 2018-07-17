@@ -9,15 +9,15 @@
 import Foundation
 import UIKit
 
-class XTRDividerLabel : UILabel {
+class XTRDividerLabel: UILabel {
     
-    var highColor : UIColor?
-    var lowColor : UIColor?
+    var highColor: UIColor?
+    var lowColor: UIColor?
     
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)!
+        super.init(coder: aDecoder)!
     }
     
     override func awakeFromNib() {

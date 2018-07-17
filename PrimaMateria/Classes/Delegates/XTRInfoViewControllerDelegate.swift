@@ -8,5 +8,5 @@
 
 import WebKit
 
-class XTRInfoViewControllerDelegate : NSObject, WKNavigationDelegate {
+class XTRInfoViewControllerDelegate: NSObject, WKNavigationDelegate {
 }

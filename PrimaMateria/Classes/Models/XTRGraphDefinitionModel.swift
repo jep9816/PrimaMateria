@@ -16,7 +16,7 @@
 
 import Foundation
 
-class XTRGraphDefinitionModel : NSObject {
+class XTRGraphDefinitionModel: NSObject {
     
     var title: String = STRING_EMPTY
     var attributeName: String = STRING_EMPTY
@@ -25,7 +25,7 @@ class XTRGraphDefinitionModel : NSObject {
     var maximumValue: Float = 0
     var minimumValue: Float = 0
     
-    convenience init(dictionary: [String : Any]) {
+    convenience init(dictionary: [String: Any]) {
         self.init()
         
         if let value1 = dictionary[GraphAttribute.title] as? String {

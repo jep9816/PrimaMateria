@@ -9,9 +9,9 @@
 import UIKit
 import CorePlot
 
-class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
+class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
     
-    weak var controller : XTRSpectrumViewController?
+    weak var controller: XTRSpectrumViewController?
     
     func toUint(signed: Int) -> UInt {
         
@@ -29,12 +29,12 @@ class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITable
     }
     
     func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
-        var num : Float?
+        var num: Float?
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
             let model = controller?.lineSpectraArray!.value[Int(idx)]
-            var airWavelength : Float = 0.0
-            var intensity : Float = 0.0
+            var airWavelength: Float = 0.0
+            var intensity: Float = 0.0
             let spectrum = model?.spectrum
             let identifier = plot.identifier as! String
 
@@ -45,14 +45,13 @@ class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITable
                 intensity = Float(value2)!
             }
 
-            switch (fieldEnum) {
+            switch fieldEnum {
             case 0:
                 num = controller?.airWavelengthValue(airWavelength, anIdentifier: identifier, aSpectrum: spectrum!)
             case 1:
                 num = controller?.intensityValue(intensity, anIdentifier: identifier, aSpectrum: spectrum!)
             default:
                 num = 0
-                break
             }
         }
         return num
@@ -66,7 +65,7 @@ class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITable
         let row = indexPath.row
         let MyIdentifier = "Column \(row)"
         
-        var cell : XTRTableCell? = aTableView.dequeueReusableCell(withIdentifier: MyIdentifier) as? XTRTableCell
+        var cell: XTRTableCell? = aTableView.dequeueReusableCell(withIdentifier: MyIdentifier) as? XTRTableCell
         
         if cell == nil {
             let modulus = row % 2
@@ -85,7 +84,7 @@ class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITable
         return cell!
     }
     
-    func numberOfSections(in aTableView : UITableView) -> Int {
+    func numberOfSections(in aTableView: UITableView) -> Int {
         return 1
     }
     
@@ -93,10 +92,10 @@ class XTRSpectrumViewControllerDelegate : NSObject, UITableViewDelegate, UITable
         return controller!.element!.lineSpectra!.value.count
     }
     
-    func tableCellLabel(_ xPos : CGFloat, YPos: CGFloat, width: CGFloat, height: CGFloat, property: String, columnPosition: Int, modulus: Int, cell: XTRTableCell) {
+    func tableCellLabel(_ xPos: CGFloat, YPos: CGFloat, width: CGFloat, height: CGFloat, property: String, columnPosition: Int, modulus: Int, cell: XTRTableCell) {
         let label = UILabel(frame: CGRect(x: xPos, y: YPos, width: width, height: height))
         
-        label.backgroundColor = (modulus == 0) ? UIColor.white : XTRColorFactory.rowColor
+        label.backgroundColor = (modulus == 0) ? UIColor.white: XTRColorFactory.rowColor
         
         cell.backgroundView?.backgroundColor = UIColor.black
         cell.contentView.backgroundColor = UIColor.black

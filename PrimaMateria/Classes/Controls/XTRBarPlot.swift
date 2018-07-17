@@ -8,20 +8,20 @@
 
 import CorePlot
 
-class XTRBarPlot : CPTBarPlot {
+class XTRBarPlot: CPTBarPlot {
     
     var element: XTRElementModel!
     
     // MARK: - Initialization Methods
 
-    override init(frame:CGRect) {
-        super.init(frame:frame)
+    override init(frame: CGRect) {
+        super.init(frame: frame)
         
         NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)!
+        super.init(coder: aDecoder)!
         
         NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
@@ -29,7 +29,7 @@ class XTRBarPlot : CPTBarPlot {
     // MARK: - Notification Methods
 
     @objc func colorChanged(_ aNotification: Notification) {
-        fill = CPTFill(color:CPTColor(cgColor:element.seriesColor.cgColor))
+        fill = CPTFill(color: CPTColor(cgColor: element.seriesColor.cgColor))
         reloadBarFills()
     }
 
@@ -40,7 +40,7 @@ class XTRBarPlot : CPTBarPlot {
         let barLineStyle = CPTMutableLineStyle()
         let fillGradient = CPTGradient(beginning: color, ending: CPTColor.black())
 
-        fillGradient.angle = horizontal ? -90.0 : 0.0
+        fillGradient.angle = horizontal ? -90.0: 0.0
 
         barLineStyle.lineWidth = 1.0
         barLineStyle.lineColor = CPTColor.black()

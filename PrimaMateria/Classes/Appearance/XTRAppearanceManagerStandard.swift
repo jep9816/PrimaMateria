@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XTRAppearanceManagerStandard : NSObject {
+class XTRAppearanceManagerStandard: NSObject {
     
     func appearance() {
         activityIndicatorViewAppearance()

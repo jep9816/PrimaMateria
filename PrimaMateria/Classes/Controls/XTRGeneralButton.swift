@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XTRLocalizedButton : UIButton {
+class XTRLocalizedButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -20,15 +20,15 @@ class XTRLocalizedButton : UIButton {
     }
 }
 
-class XTRGeneralButton : XTRLocalizedButton {
+class XTRGeneralButton: XTRLocalizedButton {
     
-    private var highColor : UIColor = UIColor.white
-    private var lowColor : UIColor = UIColor.white
+    private var highColor = UIColor.white
+    private var lowColor = UIColor.white
     
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder:aDecoder)!
+        super.init(coder: aDecoder)!
         
         highColor = UIColor.white
         lowColor = UIColor.white

@@ -8,23 +8,23 @@
 
 import UIKit
 
-class XTRElementInspectorViewController : XTRSwapableViewController {
+class XTRElementInspectorViewController: XTRSwapableViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
-    @IBOutlet var barButtonItem : UIBarButtonItem!
-    @IBOutlet var nextButton : UIButton!
-    @IBOutlet var previousButton : UIButton!
-    @IBOutlet var atomicNumberLabel : UILabel!
-    @IBOutlet var atomicSymbolLabel : UILabel!
-    @IBOutlet var casRegNoLabel : UILabel!
-    @IBOutlet var groupLabel : UILabel!
-    @IBOutlet var nextLabel : UILabel!
-    @IBOutlet var periodLabel : UILabel!
-    @IBOutlet var previousLabel : UILabel!
-    @IBOutlet var seriesLabel : UILabel!
-    @IBOutlet var titleItem : UINavigationItem!
-    @IBOutlet var pageControl : XTRPageControl!
-    @IBOutlet var swapView : UIView!
+    @IBOutlet var barButtonItem: UIBarButtonItem!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var previousButton: UIButton!
+    @IBOutlet var atomicNumberLabel: UILabel!
+    @IBOutlet var atomicSymbolLabel: UILabel!
+    @IBOutlet var casRegNoLabel: UILabel!
+    @IBOutlet var groupLabel: UILabel!
+    @IBOutlet var nextLabel: UILabel!
+    @IBOutlet var periodLabel: UILabel!
+    @IBOutlet var previousLabel: UILabel!
+    @IBOutlet var seriesLabel: UILabel!
+    @IBOutlet var titleItem: UINavigationItem!
+    @IBOutlet var pageControl: XTRPageControl!
+    @IBOutlet var swapView: UIView!
     
     // MARK: - Initialization Methods
     
@@ -58,7 +58,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
             nextAtomicNumber = 1
         }
         
-        if nextAtomicNumber - 1 < XTRDataSource.sharedInstance().elementCount()  {
+        if nextAtomicNumber - 1 < XTRDataSource.sharedInstance().elementCount() {
             pageControl.updateNextLabel(atomicNumber: nextAtomicNumber)
         }
         
@@ -103,7 +103,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         setupUI()
         
         if XTRPropertiesStore.showTransitionsState {
-            let currentView : UIView = view
+            let currentView: UIView = view
             let theWindow = currentView.superview!
             let animation = CATransition()
 
@@ -111,7 +111,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
             
             animation.duration = 1.0
             animation.type = kCATransitionReveal
-            animation.subtype = (direction == "Next") ? kCATransitionFromLeft : kCATransitionFromRight
+            animation.subtype = (direction == "Next") ? kCATransitionFromLeft: kCATransitionFromRight
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             theWindow.layer.add(animation, forKey: "SwitchInspectorView")
             theWindow.addSubview(currentView)
@@ -206,7 +206,7 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         swipeNextElement.direction = UISwipeGestureRecognizerDirection.right
         view.addGestureRecognizer(swipeNextElement)
         
-        let swipePreviousElement = UISwipeGestureRecognizer(target:self, action: #selector(XTRElementInspectorViewController.previousElement(_:)))
+        let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(XTRElementInspectorViewController.previousElement(_:)))
         swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipePreviousElement)
     }
@@ -225,11 +225,11 @@ class XTRElementInspectorViewController : XTRSwapableViewController {
         super.viewWillDisappear(animated)
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

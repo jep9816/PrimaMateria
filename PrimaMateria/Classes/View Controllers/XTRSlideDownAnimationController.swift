@@ -8,9 +8,9 @@
 
 import UIKit
 
-class XTRSlideDownAnimationController : NSObject, UIViewControllerAnimatedTransitioning {
+class XTRSlideDownAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
-    let duration :TimeInterval = 0.5
+    let duration: TimeInterval = 0.5
     
     // ---- UIViewControllerAnimatedTransitioning methods
     
@@ -18,7 +18,7 @@ class XTRSlideDownAnimationController : NSObject, UIViewControllerAnimatedTransi
         return duration
     }
     
-    func animateTransition(using transitionContext: UIViewControllerContextTransitioning)  {
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         animatePresentationWithTransitionContext(transitionContext)
     }
     
@@ -27,7 +27,7 @@ class XTRSlideDownAnimationController : NSObject, UIViewControllerAnimatedTransi
     func animatePresentationWithTransitionContext(_ transitionContext: UIViewControllerContextTransitioning) {
         guard let presentedController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to),
             let presentedControllerView = transitionContext.view(forKey: UITransitionContextViewKey.to) else { return }
-        let containerView : UIView = transitionContext.containerView
+        let containerView: UIView = transitionContext.containerView
         
         // Position the presented view off the top of the container view
         presentedControllerView.frame = transitionContext.finalFrame(for: presentedController)

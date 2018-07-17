@@ -8,19 +8,19 @@
 
 import UIKit
 
-class XTRElementTableViewCell : UITableViewCell {
+class XTRElementTableViewCell: UITableViewCell {
     
-    var atomicNumberLabel : XTRTableLabel!
-    var symbolLabel : XTRTableLabel!
-    var nameLabel : XTRTableLabel!
-    var atomicMassLabel : XTRTableLabel!
-    var boilingPointLabel : XTRTableLabel!
-    var meltingPointLabel : XTRTableLabel!
-    var densityLabel : XTRTableLabel!
-    var seriesLabel : XTRTableLabel!
-    var periodLabel : XTRTableLabel!
-    var groupLabel : XTRTableLabel!
-    var element : XTRElementModel!
+    var atomicNumberLabel: XTRTableLabel!
+    var symbolLabel: XTRTableLabel!
+    var nameLabel: XTRTableLabel!
+    var atomicMassLabel: XTRTableLabel!
+    var boilingPointLabel: XTRTableLabel!
+    var meltingPointLabel: XTRTableLabel!
+    var densityLabel: XTRTableLabel!
+    var seriesLabel: XTRTableLabel!
+    var periodLabel: XTRTableLabel!
+    var groupLabel: XTRTableLabel!
+    var element: XTRElementModel!
     
     // MARK: - Initialization Methods
     
@@ -133,7 +133,7 @@ class XTRElementTableViewCell : UITableViewCell {
         modify(groupLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
 
         let aGroup = element.group!
-        groupLabel.text = (aGroup != 0) ? "\(aGroup)" : STRING_EMPTY
+        groupLabel.text = (aGroup != 0) ? "\(aGroup)": STRING_EMPTY
         groupLabel.textAlignment = .right
     }
     

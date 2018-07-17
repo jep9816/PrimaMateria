@@ -8,21 +8,21 @@
 
 import Foundation
 
-class XTRIsotopeModel : NSObject {
+class XTRIsotopeModel: NSObject {
     
     var isotopicComposition: String = STRING_EMPTY
     var isotopicMass: String = STRING_EMPTY
-    var zp: String = STRING_EMPTY
+    var zpValue: String = STRING_EMPTY
     var decayEnergy: String = STRING_EMPTY
     var decayModes: String = STRING_EMPTY
     var daughterIsotopes: String = STRING_EMPTY
     var halfLife: String = STRING_EMPTY
-    var nn: String = STRING_EMPTY
+    var nnValue: String = STRING_EMPTY
     var nuclideSymbol: String = STRING_EMPTY
     var nuclearSpin: String = STRING_EMPTY
-    var naturalRangeVariation : String = STRING_EMPTY
+    var naturalRangeVariation: String = STRING_EMPTY
 
-    convenience init(dictionary: [String : Any]) {
+    convenience init(dictionary: [String: Any]) {
         self.init()
 
         if let value1 = dictionary[ELEMENT_NUCLIDE_ISOTOPIC_COMPOSITION] as? String {
@@ -32,7 +32,7 @@ class XTRIsotopeModel : NSObject {
             isotopicMass = value2
         }
         if let value3 = dictionary[ELEMENT_NUCLIDE_ZP] as? String {
-            zp = value3
+            zpValue = value3
         }
         if let value4 = dictionary[ELEMENT_NUCLIDE_DECAY_ENERGY] as? String {
             decayEnergy = value4
@@ -47,7 +47,7 @@ class XTRIsotopeModel : NSObject {
             halfLife = value7
         }
         if let value8 = dictionary[ELEMENT_NUCLIDE_NN] as? String {
-            nn = value8
+            nnValue = value8
         }
         if let value9 = dictionary[ELEMENT_NUCLIDE_SYMBOL] as? String {
             nuclideSymbol = value9

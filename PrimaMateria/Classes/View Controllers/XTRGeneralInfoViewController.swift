@@ -9,20 +9,20 @@
 import PDFKit
 import WebKit
 
-class XTRGeneralInfoViewController : XTRSwapableViewController {
+class XTRGeneralInfoViewController: XTRSwapableViewController {
     
-    @IBOutlet var discovererLabel : UILabel!
-    @IBOutlet var discoveryLocationLabel : UILabel!
-    @IBOutlet var discoveryYearLabel : UILabel!
-    @IBOutlet var abundanceCrustLabel : UILabel!
-    @IBOutlet var abundanceSeaLabel : UILabel!
-    @IBOutlet var webView : WKWebView!
+    @IBOutlet var discovererLabel: UILabel!
+    @IBOutlet var discoveryLocationLabel: UILabel!
+    @IBOutlet var discoveryYearLabel: UILabel!
+    @IBOutlet var abundanceCrustLabel: UILabel!
+    @IBOutlet var abundanceSeaLabel: UILabel!
+    @IBOutlet var webView: WKWebView!
 
-    private var progressHUD : MBProgressHUD?
-    private var responseData : NSMutableData?
-    private var request : NSMutableURLRequest?
+    private var progressHUD: MBProgressHUD?
+    private var responseData: NSMutableData?
+    private var request: NSMutableURLRequest?
     
-    var elementName : String?
+    var elementName: String?
     
     // MARK: - Initialization Methods
     
@@ -68,11 +68,11 @@ class XTRGeneralInfoViewController : XTRSwapableViewController {
     
     // MARK: - View Management Methods
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

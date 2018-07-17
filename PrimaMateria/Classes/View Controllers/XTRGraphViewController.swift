@@ -17,19 +17,19 @@ struct GraphAttribute {
     static let minimumValue = "minimumValue"
 }
 
-class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDelegate {
+class XTRGraphViewController: UIViewController, CPTPlotDataSource, CPTBarPlotDelegate {
     
-    let customTickLocations = [1, 10, 20, 30,  40, 50, 60, 70, 80, 90, 100, 110]
+    let customTickLocations = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
     let xAxisLabels = ["1", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110"]
 
-    @IBOutlet var barButtonItem : UIBarButtonItem!
-    @IBOutlet var hostingView : CPTGraphHostingView!
+    @IBOutlet var barButtonItem: UIBarButtonItem!
+    @IBOutlet var hostingView: CPTGraphHostingView!
     @IBOutlet var navigationBar: UINavigationBar!
 
-    var barChart : CPTXYGraph?
-    var errorString : String?
+    var barChart: CPTXYGraph?
+    var errorString: String?
     
-    //var delegate : XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
+    //var delegate: XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
     
     // MARK: - Initialization Methods
     
@@ -54,9 +54,9 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         barChart!.delegate = self
     }
     
-    func createXAxis(_ axisSet :CPTXYAxisSet, majorTickStyle: CPTLineStyle,  minorTickStyle: CPTLineStyle) {
+    func createXAxis(_ axisSet: CPTXYAxisSet, majorTickStyle: CPTLineStyle, minorTickStyle: CPTLineStyle) {
         let x = axisSet.xAxis!
-        var customLabels : [CPTAxisLabel] = []
+        var customLabels: [CPTAxisLabel] = []
         let textStyle = CPTMutableTextStyle.init()
         
         textStyle.color = CPTColor.black()
@@ -94,7 +94,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         x.axisLabels =  aSet as? Set<CPTAxisLabel>
     }
     
-    func createYAxis(_ axisSet: CPTXYAxisSet, minorTicks: Float, majorTickStyle: CPTLineStyle, minorTickStyle: CPTLineStyle, majorTicks: Float, dict: [String : AnyObject], maxValue: Float, minValue: Float) {
+    func createYAxis(_ axisSet: CPTXYAxisSet, minorTicks: Float, majorTickStyle: CPTLineStyle, minorTickStyle: CPTLineStyle, majorTicks: Float, dict: [String: AnyObject], maxValue: Float, minValue: Float) {
         let y = axisSet.yAxis!
         let titleKey = dict[GraphAttribute.title] as? String
         let title = NSLocalizedString(titleKey!, comment: "")
@@ -120,8 +120,8 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     }
     
     func element(_ anElement: XTRElementModel, anIdentifier: String) -> NSNumber {
-        let aValue : NSNumber? = anElement.value(forKeyPath: anIdentifier) as? NSNumber
-        return (aValue != nil) ? aValue! : 0
+        let aValue: NSNumber? = anElement.value(forKeyPath: anIdentifier) as? NSNumber
+        return (aValue != nil) ? aValue!: 0
     }
     
     func showElementPanelForElementAtIndex(_ anIndex: Int) {
@@ -172,7 +172,14 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     }
     
     @objc func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
-        return try! Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
+        var data: Data = Data()
+        
+        do {
+            data = try Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
+        } catch {
+        }
+        
+        return data
     }
     
     // MARK: - Action Methods
@@ -193,7 +200,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
     }
     
     func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
-        var num : NSNumber = 0
+        var num: NSNumber = 0
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
             let element = XTRDataSource.sharedInstance().elementAtIndex(Int(idx))
@@ -211,7 +218,7 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
                 case ELEMENT_BOILING_POINT :
                     num = NSNumber(value: element.boilingPoint)
                 case ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION :
-                    num = NSNumber(value: element.coefficientOfLinealThermalExpansionScaled)
+                    num = NSNumber(value: element.coeffOfLinealThermExpansScaled)
                 case ELEMENT_COVALENT_RADIUS :
                     num = NSNumber(value: element.covalentRadius)
                 case ELEMENT_CROSS_SECTION :
@@ -300,11 +307,11 @@ class XTRGraphViewController : UIViewController, CPTPlotDataSource, CPTBarPlotDe
         navigationController?.navigationBar.prefersLargeTitles = true
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

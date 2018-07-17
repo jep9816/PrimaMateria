@@ -14,27 +14,27 @@ struct XTRPreferencesViewControllerConfig {
     static let colorPickerContentSize = CGSize(width: 270, height: 270)
 }
 
-class XTRPreferencesViewController : UIViewController {
+class XTRPreferencesViewController: UIViewController {
     
-    @IBOutlet var appNameLabel : UILabel!
-    @IBOutlet var cpyRightLabel : UILabel!
-    @IBOutlet var seriesActinideButton : UIButton!
-    @IBOutlet var seriesAlkaliEarthMetalButton : UIButton!
-    @IBOutlet var seriesAlkaliMetalButton : UIButton!
-    @IBOutlet var seriesHalogenButton : UIButton!
-    @IBOutlet var seriesLanthanideButton : UIButton!
-    @IBOutlet var seriesMetalButton : UIButton!
-    @IBOutlet var seriesNobleGasButton : UIButton!
-    @IBOutlet var seriesNonMetalButton : UIButton!
-    @IBOutlet var seriesTransactinidesButton : UIButton!
-    @IBOutlet var seriesTransitionMetalButton : UIButton!
-    @IBOutlet var resetPreferencesButton : UIButton!
-    @IBOutlet var versionLabel : UILabel!
-    @IBOutlet var elementBubbleSwitch : UISwitch!
-    @IBOutlet var showTransitionsBubbleSwitch : UISwitch!
-    @IBOutlet var splashScreenSwitch : UISwitch!
-    @IBOutlet var webView : WKWebView!
-    @IBOutlet var styleControl : UISegmentedControl!
+    @IBOutlet var appNameLabel: UILabel!
+    @IBOutlet var cpyRightLabel: UILabel!
+    @IBOutlet var seriesActinideButton: UIButton!
+    @IBOutlet var seriesAlkaliEarthMetalButton: UIButton!
+    @IBOutlet var seriesAlkaliMetalButton: UIButton!
+    @IBOutlet var seriesHalogenButton: UIButton!
+    @IBOutlet var seriesLanthanideButton: UIButton!
+    @IBOutlet var seriesMetalButton: UIButton!
+    @IBOutlet var seriesNobleGasButton: UIButton!
+    @IBOutlet var seriesNonMetalButton: UIButton!
+    @IBOutlet var seriesTransactinidesButton: UIButton!
+    @IBOutlet var seriesTransitionMetalButton: UIButton!
+    @IBOutlet var resetPreferencesButton: UIButton!
+    @IBOutlet var versionLabel: UILabel!
+    @IBOutlet var elementBubbleSwitch: UISwitch!
+    @IBOutlet var showTransitionsBubbleSwitch: UISwitch!
+    @IBOutlet var splashScreenSwitch: UISwitch!
+    @IBOutlet var webView: WKWebView!
+    @IBOutlet var styleControl: UISegmentedControl!
     @IBOutlet var navigationBar: UINavigationBar!
     
     var disposeBag = DisposeBag()
@@ -48,7 +48,7 @@ class XTRPreferencesViewController : UIViewController {
     // MARK: - Internal Methods
     
     @objc func colorSelected(notification: Notification) {
-        guard let anObject : [String : AnyObject] = notification.object as! [String : AnyObject]? else { return }
+        guard let anObject: [String: AnyObject] = notification.object as! [String: AnyObject]? else { return }
         
         let redComponent = anObject[ColorComponent.red] as! NSNumber
         let greenComponent = anObject[ColorComponent.green] as! NSNumber
@@ -65,7 +65,7 @@ class XTRPreferencesViewController : UIViewController {
         
         XTRPropertiesStore.setColorData(colorData, key: seriesIdentifier)
         
-        switch (seriesIdentifier) {
+        switch seriesIdentifier {
         case ElementSeries.actinide :
             updateSeriesButtonProperties(seriesActinideButton, aColor: aColor)
         case ElementSeries.alkaliEarthMetal :
@@ -123,7 +123,7 @@ class XTRPreferencesViewController : UIViewController {
         updateSeriesButtonProperties(seriesTransitionMetalButton, aColor: XTRColorFactory.transitionMetalColor)
     }
     
-    func populateElementBubbleState(_ aFlag: Bool)  {
+    func populateElementBubbleState(_ aFlag: Bool) {
         XTRPropertiesStore.elementBubblesState = aFlag
     }
     
@@ -170,7 +170,7 @@ class XTRPreferencesViewController : UIViewController {
         versionLabel.text = Bundle.main.appVersionString
         cpyRightLabel.text = Bundle.main.copywriteString
         
-        styleControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0 : 1
+        styleControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0: 1
         
         navigationController?.navigationBar.prefersLargeTitles = true
         setupRx()
@@ -180,7 +180,7 @@ class XTRPreferencesViewController : UIViewController {
         styleControl.rx.value
             .asObservable()
             .subscribe(onNext: { newValue in
-                let appearanceName = (newValue == 0) ? XTRAppearanceType.classic : XTRAppearanceType.standard
+                let appearanceName = (newValue == 0) ? XTRAppearanceType.classic: XTRAppearanceType.standard
                 
                 NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearanceName)
             }).disposed(by: disposeBag)
@@ -209,7 +209,7 @@ class XTRPreferencesViewController : UIViewController {
                 self.populateSplashScreenState(newValue)
             }).disposed(by: disposeBag)
         
-        resetPreferencesButton.rx.tap.subscribe(onNext: { newValue in
+        resetPreferencesButton.rx.tap.subscribe(onNext: { _ in
             self.resetPreferences()
         }).disposed(by: disposeBag)
         
@@ -235,7 +235,7 @@ class XTRPreferencesViewController : UIViewController {
     
     func presentColorPicker(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: COLOR_PICKER_STORY_BOARD, bundle: nil)
-        let colorPicker : XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
+        let colorPicker: XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
         
         colorPicker.seriesIdentifier = sender.accessibilityIdentifier
         colorPicker.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
@@ -249,11 +249,11 @@ class XTRPreferencesViewController : UIViewController {
         presentationController?.sourceRect = sender.frame
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

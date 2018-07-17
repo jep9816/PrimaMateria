@@ -20,16 +20,16 @@ enum SpectrumAttribute {
     static let kVSpectrum = "V"
 }
 
-class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource*/ {
+class XTRSpectrumViewController: XTRSwapableViewController/*, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource*/ {
     
-    @IBOutlet var hostingView : CPTGraphHostingView!
-    @IBOutlet var swapView : UIView!
+    @IBOutlet var hostingView: CPTGraphHostingView!
+    @IBOutlet var swapView: UIView!
     
-    var barChart : CPTXYGraph?
-    var lineSpectraArray : Variable<[XTRSpectraModel]>?
-    var tableView : UITableView?
+    var barChart: CPTXYGraph?
+    var lineSpectraArray: Variable<[XTRSpectraModel]>?
+    var tableView: UITableView?
     
-    private var delegate : XTRSpectrumViewControllerDelegate = XTRSpectrumViewControllerDelegate()
+    private weak var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -40,10 +40,10 @@ class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelega
     // MARK: - Internal Methods
     
     func airWavelengthValue(_ anAirWavelength: Float, anIdentifier: String, aSpectrum: String) -> Float {
-        return aSpectrum.hasSuffix("\(anIdentifier)") ? anAirWavelength : 0
+        return aSpectrum.hasSuffix("\(anIdentifier)") ? anAirWavelength: 0
     }
     
-    func addSpectrumPlotWithIdentifier(_ anIdentifier : String, aColor: CPTColor) -> CPTBarPlot {
+    func addSpectrumPlotWithIdentifier(_ anIdentifier: String, aColor: CPTColor) -> CPTBarPlot {
         let barPlot = CPTBarPlot.tubularBarPlot(with: aColor, horizontalBars: false)
         barPlot.barWidth = 20.0
         barPlot.baseValue = 1
@@ -54,7 +54,7 @@ class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelega
     }
     
     func intensityValue(_ anIntensity: Float, anIdentifier: String, aSpectrum: String) -> Float {
-        return aSpectrum.hasSuffix("\(anIdentifier)") ? anIntensity : 0
+        return aSpectrum.hasSuffix("\(anIdentifier)") ? anIntensity: 0
     }
     
     func setupBarChart() {
@@ -78,7 +78,7 @@ class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelega
         let customTickLocations = [4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500]
         let xAxisLabels = ["4000", "4500", "5000", "5500", "6000", "6500", "7000", "7500"]
         var labelLocation = 0
-        var customLabels : [AnyObject?] = [AnyObject?](repeating: nil, count: xAxisLabels.count)
+        var customLabels: [AnyObject?] = [AnyObject?](repeating: nil, count: xAxisLabels.count)
         
         // Add plot space for horizontal bar charts
         plotSpace.yRange = CPTPlotRange(location: 0.0, length: 1000.0)
@@ -178,15 +178,15 @@ class XTRSpectrumViewController : XTRSwapableViewController/*, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        delegate.controller = self
+        delegate?.controller = self
         swapView.removeFromSuperview()
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

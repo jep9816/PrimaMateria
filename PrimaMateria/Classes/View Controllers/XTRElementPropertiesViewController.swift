@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XTRElementPropertiesViewController : XTRSwapableViewController {
+class XTRElementPropertiesViewController: XTRSwapableViewController {
     
     enum PropertiesViewTypes {
         static let kPhysicalPropertiesView = 0
@@ -16,56 +16,56 @@ class XTRElementPropertiesViewController : XTRSwapableViewController {
     }
     
     @IBOutlet var segmentedControl: UISegmentedControl!
-    @IBOutlet var atomicMassFootnoteLabel : UILabel!
-    @IBOutlet var atomicMassLabel : UILabel!
-    @IBOutlet var boilingPointLabel : UILabel!
-    @IBOutlet var coefficientOfLinealThermalExpansionLabel : UILabel!
-    @IBOutlet var conductivityElectricalLabel : UILabel!
-    @IBOutlet var conductivityThermalLabel : UILabel!
-    @IBOutlet var criticalTemperatureLabel : UILabel!
-    @IBOutlet var densityLabel : UILabel!
-    @IBOutlet var descriptionLabel : UILabel!
-    @IBOutlet var elasticModulusBulkLabel : UILabel!
-    @IBOutlet var elasticModulusRigidityLabel : UILabel!
-    @IBOutlet var elasticModulusYoungsLabel : UILabel!
-    @IBOutlet var electroChemicalEquivalentLabel : UILabel!
-    @IBOutlet var electroNegativityLabel : UILabel!
-    @IBOutlet var electronWorkFunctionLabel : UILabel!
-    @IBOutlet var enthalpyAtomizationLabel : UILabel!
-    @IBOutlet var enthalpyFusionLabel : UILabel!
-    @IBOutlet var enthalpyVaporizationLabel : UILabel!
-    @IBOutlet var flammabilityClass : UILabel!
-    @IBOutlet var hardnessScaleBrinellLabel : UILabel!
-    @IBOutlet var hardnessScaleMohsLabel : UILabel!
-    @IBOutlet var hardnessScaleVickersLabel : UILabel!
-    @IBOutlet var heatCapacityMolarLabel : UILabel!
-    @IBOutlet var heatCapacitySpecificLabel : UILabel!
-    @IBOutlet var heatOfFusionLabel : UILabel!
-    @IBOutlet var heatOfVaporizationLabel : UILabel!
-    @IBOutlet var incompatabilitiesLabel : UILabel!
-    @IBOutlet var ionizationPotentialFirstLabel : UILabel!
-    @IBOutlet var ionizationPotentialSecondLabel : UILabel!
-    @IBOutlet var ionizationPotentialThirdLabel : UILabel!
-    @IBOutlet var magneticSusceptibilityLabel : UILabel!
-    @IBOutlet var meltingPointFootnoteLabel : UILabel!
-    @IBOutlet var meltingPointLabel : UILabel!
-    @IBOutlet var molarVolumeLabel : UILabel!
-    @IBOutlet var opticalReflectivityLabel : UILabel!
-    @IBOutlet var opticalRefractiveIndexLabel : UILabel!
-    @IBOutlet var qualitativeSolubilityLabel : UILabel!
-    @IBOutlet var relativeGasDensityLabel : UILabel!
-    @IBOutlet var valenceElectronPotentialLabel : UILabel!
-    @IBOutlet var vaporPressure100PaLabel : UILabel!
-    @IBOutlet var vaporPressure100kPaLabel : UILabel!
-    @IBOutlet var vaporPressure10PaLabel : UILabel!
-    @IBOutlet var vaporPressure10kPaLabel : UILabel!
-    @IBOutlet var vaporPressure1PaLabel : UILabel!
-    @IBOutlet var vaporPressure1kPaLabel : UILabel!
-    @IBOutlet var chemicalPropertiesScrollView : UIScrollView!
-    @IBOutlet var physicalPropertiesScrollView : UIScrollView!
-    @IBOutlet var chemicalPropertiesView : UIView!
-    @IBOutlet var physicalPropertiesView : UIView!
-    @IBOutlet var swapView : UIView!
+    @IBOutlet var atomicMassFootnoteLabel: UILabel!
+    @IBOutlet var atomicMassLabel: UILabel!
+    @IBOutlet var boilingPointLabel: UILabel!
+    @IBOutlet var coefficientOfLinealThermalExpansionLabel: UILabel!
+    @IBOutlet var conductivityElectricalLabel: UILabel!
+    @IBOutlet var conductivityThermalLabel: UILabel!
+    @IBOutlet var criticalTemperatureLabel: UILabel!
+    @IBOutlet var densityLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    @IBOutlet var elasticModulusBulkLabel: UILabel!
+    @IBOutlet var elasticModulusRigidityLabel: UILabel!
+    @IBOutlet var elasticModulusYoungsLabel: UILabel!
+    @IBOutlet var electroChemicalEquivalentLabel: UILabel!
+    @IBOutlet var electroNegativityLabel: UILabel!
+    @IBOutlet var electronWorkFunctionLabel: UILabel!
+    @IBOutlet var enthalpyAtomizationLabel: UILabel!
+    @IBOutlet var enthalpyFusionLabel: UILabel!
+    @IBOutlet var enthalpyVaporizationLabel: UILabel!
+    @IBOutlet var flammabilityClass: UILabel!
+    @IBOutlet var hardnessScaleBrinellLabel: UILabel!
+    @IBOutlet var hardnessScaleMohsLabel: UILabel!
+    @IBOutlet var hardnessScaleVickersLabel: UILabel!
+    @IBOutlet var heatCapacityMolarLabel: UILabel!
+    @IBOutlet var heatCapacitySpecificLabel: UILabel!
+    @IBOutlet var heatOfFusionLabel: UILabel!
+    @IBOutlet var heatOfVaporizationLabel: UILabel!
+    @IBOutlet var incompatabilitiesLabel: UILabel!
+    @IBOutlet var ionizationPotentialFirstLabel: UILabel!
+    @IBOutlet var ionizationPotentialSecondLabel: UILabel!
+    @IBOutlet var ionizationPotentialThirdLabel: UILabel!
+    @IBOutlet var magneticSusceptibilityLabel: UILabel!
+    @IBOutlet var meltingPointFootnoteLabel: UILabel!
+    @IBOutlet var meltingPointLabel: UILabel!
+    @IBOutlet var molarVolumeLabel: UILabel!
+    @IBOutlet var opticalReflectivityLabel: UILabel!
+    @IBOutlet var opticalRefractiveIndexLabel: UILabel!
+    @IBOutlet var qualitativeSolubilityLabel: UILabel!
+    @IBOutlet var relativeGasDensityLabel: UILabel!
+    @IBOutlet var valenceElectronPotentialLabel: UILabel!
+    @IBOutlet var vaporPressure100PaLabel: UILabel!
+    @IBOutlet var vaporPressure100kPaLabel: UILabel!
+    @IBOutlet var vaporPressure10PaLabel: UILabel!
+    @IBOutlet var vaporPressure10kPaLabel: UILabel!
+    @IBOutlet var vaporPressure1PaLabel: UILabel!
+    @IBOutlet var vaporPressure1kPaLabel: UILabel!
+    @IBOutlet var chemicalPropertiesScrollView: UIScrollView!
+    @IBOutlet var physicalPropertiesScrollView: UIScrollView!
+    @IBOutlet var chemicalPropertiesView: UIView!
+    @IBOutlet var physicalPropertiesView: UIView!
+    @IBOutlet var swapView: UIView!
     
     // MARK: - Initialization Methods
     
@@ -135,7 +135,7 @@ class XTRElementPropertiesViewController : XTRSwapableViewController {
     // MARK: - Action Methods
     
     @IBAction func swapViews(_ sender: UISegmentedControl) {
-        switch (sender.selectedSegmentIndex) {
+        switch sender.selectedSegmentIndex {
         case PropertiesViewTypes.kChemicalPropertiesView:
             chemicalPropertiesView.isHidden = false
             physicalPropertiesView.isHidden = true
@@ -174,11 +174,11 @@ class XTRElementPropertiesViewController : XTRSwapableViewController {
         swapView.removeFromSuperview()
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

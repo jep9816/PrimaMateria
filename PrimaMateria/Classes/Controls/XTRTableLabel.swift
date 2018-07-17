@@ -6,21 +6,21 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRTableLabel : UILabel {
+class XTRTableLabel: UILabel {
     
-    private var edgeInsets : UIEdgeInsets
+    private var edgeInsets: UIEdgeInsets
     
     // MARK: - Initialization Methods
     
     init(frame: CGRect, backgroundColor: UIColor) {
-        edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5)
-        super.init(frame:frame)
+        edgeInsets =  UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        super.init(frame: frame)
         self.backgroundColor = backgroundColor
     }
     
     required init?(coder aDecoder: NSCoder) {
-        edgeInsets = UIEdgeInsetsMake(0, 5, 0, 5)
-        super.init(coder:aDecoder)!
+        edgeInsets = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5)
+        super.init(coder: aDecoder)!
     }
     
     // MARK: - View Management Methods

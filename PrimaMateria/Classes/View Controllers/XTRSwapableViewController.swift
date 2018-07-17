@@ -8,9 +8,9 @@
 
 import UIKit
 
-class XTRSwapableViewController : UIViewController {
+class XTRSwapableViewController: UIViewController {
     
-    var element : XTRElementModel?
+    var element: XTRElementModel?
 
     // MARK: - Initialization Methods
     
@@ -23,11 +23,11 @@ class XTRSwapableViewController : UIViewController {
     
     // MARK: - View Management Methods
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

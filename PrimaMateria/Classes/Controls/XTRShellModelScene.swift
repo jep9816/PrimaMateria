@@ -9,8 +9,8 @@
 import SpriteKit
 import GameplayKit
 
-let ballRadius : CGFloat = 5.0
-let shellTextXOffset : CGFloat = 12.0
+let ballRadius: CGFloat = 5.0
+let shellTextXOffset: CGFloat = 12.0
 
 class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     
@@ -28,13 +28,13 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     override func didMove(to view: SKView) {
         let protons = element?.value(forKeyPath: ELEMENT_NUMBER_OF_PROTONS)!
         let neutrons = element?.value(forKeyPath: ELEMENT_NUMBER_OF_NEUTRONS)!
-        let kShellElectrons = (element?.kShellElectrons.isEmpty)! ? 0 : Int((element?.kShellElectrons)!)!
-        let lShellElectrons = (element?.lShellElectrons.isEmpty)! ? 0 : Int((element?.lShellElectrons)!)!
-        let mShellElectrons = (element?.mShellElectrons.isEmpty)! ? 0 : Int((element?.mShellElectrons)!)!
-        let nShellElectrons = (element?.nShellElectrons.isEmpty)! ? 0 : Int((element?.nShellElectrons)!)!
-        let oShellElectrons = (element?.oShellElectrons.isEmpty)! ? 0 : Int((element?.oShellElectrons)!)!
-        let pShellElectrons = (element?.pShellElectrons.isEmpty)! ? 0 : Int((element?.pShellElectrons)!)!
-        let qShellElectrons = (element?.qShellElectrons.isEmpty)! ? 0 : Int((element?.qShellElectrons)!)!
+        let kShellElectrons = (element?.kShellElectrons.isEmpty)! ? 0: Int((element?.kShellElectrons)!)!
+        let lShellElectrons = (element?.lShellElectrons.isEmpty)! ? 0: Int((element?.lShellElectrons)!)!
+        let mShellElectrons = (element?.mShellElectrons.isEmpty)! ? 0: Int((element?.mShellElectrons)!)!
+        let nShellElectrons = (element?.nShellElectrons.isEmpty)! ? 0: Int((element?.nShellElectrons)!)!
+        let oShellElectrons = (element?.oShellElectrons.isEmpty)! ? 0: Int((element?.oShellElectrons)!)!
+        let pShellElectrons = (element?.pShellElectrons.isEmpty)! ? 0: Int((element?.pShellElectrons)!)!
+        let qShellElectrons = (element?.qShellElectrons.isEmpty)! ? 0: Int((element?.qShellElectrons)!)!
         
         let maxRadius = (view.frame.size.height / 2) - ballRadius - ballRadius
         let protonLabel = SKLabelNode(text: "\(String(describing: protons!))P")
@@ -84,16 +84,16 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
         
         view?.layer.addSublayer(shapeLayer)
         
-        for i in 0...numberOfCircles {
+        for idx in 0...numberOfCircles {
             let circle = SKShapeNode(circleOfRadius: ballRadius)
             circle.strokeColor = SKColor.black
             circle.fillColor = color
             circle.lineWidth = 0.5
                         
-            let angle = 2 * Double.pi / Double(numberOfCircles) * Double(i)
+            let angle = 2 * Double.pi / Double(numberOfCircles) * Double(idx)
             let circleX = radius * cos(CGFloat(angle))
             let circleY = radius * sin(CGFloat(angle))
-            let tempPath : UIBezierPath!
+            let tempPath: UIBezierPath!
             
             if clockwise {
                 tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat(angle), endAngle: CGFloat((Double.pi * 2) + angle), clockwise: true)
@@ -102,7 +102,7 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
             }
             let followCirclePath = SKAction.follow(tempPath.cgPath, asOffset: false, orientToPath: true, duration: duration)
             
-            circle.name = String(format:"circle%d",i)
+            circle.name = String(format: "circle%d", idx)
             circle.position = CGPoint(x: circleX + frame.midX, y: circleY + frame.midY)
             
             addChild(circle)
@@ -111,18 +111,18 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addShellLabels() {
-        addShellLabel(at: CGPoint(x: 161, y: shellTextXOffset + 120), text: "K")
-        addShellLabel(at: CGPoint(x: 161, y: shellTextXOffset + 100), text: "L")
-        addShellLabel(at: CGPoint(x: 161, y: shellTextXOffset + 80), text: "M")
-        addShellLabel(at: CGPoint(x: 161, y: shellTextXOffset + 60), text: "N")
-        addShellLabel(at: CGPoint(x: 161, y: shellTextXOffset + 40), text: "O")
-        addShellLabel(at: CGPoint(x: 161, y: shellTextXOffset + 20), text: "P")
-        addShellLabel(at: CGPoint(x: 161, y: shellTextXOffset), text: "Q")
+        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 120), text: "K")
+        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 100), text: "L")
+        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 80), text: "M")
+        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 60), text: "N")
+        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 40), text: "O")
+        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 20), text: "P")
+        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset), text: "Q")
     }
     
-    func addShellLabel(at: CGPoint, text: String) {
+    func addShellLabel(atLocation: CGPoint, text: String) {
         let aLabel = SKLabelNode(text: text)
-        aLabel.position = at
+        aLabel.position = atLocation
         aLabel.fontSize = 10
         aLabel.horizontalAlignmentMode = .center
         aLabel.color = SKColor.darkGray

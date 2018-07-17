@@ -8,15 +8,15 @@
 
 import UIKit
 
-class XTRPeriodicTableViewController : UIViewController {
+class XTRPeriodicTableViewController: UIViewController {
     
-    @IBOutlet var swapView : UIView!
+    @IBOutlet var swapView: UIView!
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var molecularCalculatorSwitch: UISwitch!
     
-    var molecularCalculatorState : Bool = false
-    var elementBalloonViewController : XTRElementBalloonViewController!
-    var molecularCalculatorViewController : XTRMolecularCalculatorViewController!
+    var molecularCalculatorState: Bool = false
+    var elementBalloonViewController: XTRElementBalloonViewController!
+    var molecularCalculatorViewController: XTRMolecularCalculatorViewController!
     
     // MARK: - Initialization Methods
     
@@ -109,11 +109,11 @@ class XTRPeriodicTableViewController : UIViewController {
         molecularCalculatorSwitch.cornerRadius = SWITCH_CORNER_RADIUS
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

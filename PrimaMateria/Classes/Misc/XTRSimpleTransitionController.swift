@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XTRSimpleTransitionController : NSObject, UIViewControllerAnimatedTransitioning {
+class XTRSimpleTransitionController: NSObject, UIViewControllerAnimatedTransitioning {
 
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.35
@@ -21,7 +21,7 @@ class XTRSimpleTransitionController : NSObject, UIViewControllerAnimatedTransiti
         toViewController.view.alpha = 0.0
         UIView.animate(withDuration: 0.35, animations: {
             toViewController.view.alpha = 1.0
-            }, completion: { (finished) in
+            }, completion: { _ in
                 transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
         })
     }

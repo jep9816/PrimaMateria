@@ -10,15 +10,15 @@ import Foundation
 import UIKit
 import RxSwift
 
-class XTRNuclidesIsotopesViewController : XTRSwapableViewController {
+class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
     
-    @IBOutlet var headerView : UIView!
+    @IBOutlet var headerView: UIView!
     @IBOutlet var swapView: UIView!
     
-    var nuclidesAndIsotopesArray : Variable<[XTRIsotopeModel]>?
+    var nuclidesAndIsotopesArray: Variable<[XTRIsotopeModel]>?
     
-    private var tableView : UITableView?
-    private var delegate : XTRNuclidesIsotopesViewControllerDelegate = XTRNuclidesIsotopesViewControllerDelegate()
+    private var tableView: UITableView?
+    private weak var delegate: XTRNuclidesIsotopesViewControllerDelegate? = XTRNuclidesIsotopesViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -61,15 +61,15 @@ class XTRNuclidesIsotopesViewController : XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        delegate.controller = self
+        delegate?.controller = self
         swapView.removeFromSuperview()
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

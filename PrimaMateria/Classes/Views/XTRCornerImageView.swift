@@ -6,9 +6,9 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRCornerImageView : UIImageView {
+class XTRCornerImageView: UIImageView {
     
-    private var gradientLayer:  CAGradientLayer!
+    private var gradientLayer: CAGradientLayer!
     
     // MARK: - Initialization Methods
     

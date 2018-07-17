@@ -8,15 +8,15 @@
 
 import WebKit
 
-class XTRHelpBalloonViewController : UIViewController {
+class XTRHelpBalloonViewController: UIViewController {
     
-    @IBOutlet var backButton : UIBarButtonItem!
-    @IBOutlet var forwardButton : UIBarButtonItem!
+    @IBOutlet var backButton: UIBarButtonItem!
+    @IBOutlet var forwardButton: UIBarButtonItem!
     @IBOutlet var titleLabel: UILabel!
     
-    var webView : WKWebView!
+    var webView: WKWebView!
     
-    private var delegate : XTRHelpBalloonViewControllerDelegate = XTRHelpBalloonViewControllerDelegate()
+    private weak var delegate: XTRHelpBalloonViewControllerDelegate? = XTRHelpBalloonViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -40,7 +40,7 @@ class XTRHelpBalloonViewController : UIViewController {
     // MARK: - Action Methods
     
     @IBAction func dismiss(_ sender: UIButton) {
-        dismiss(animated: true, completion:  nil)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func backButtonPressed(_ sender: UIButton) {
@@ -56,16 +56,7 @@ class XTRHelpBalloonViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        delegate.controller = self
-
-//        let subLayer = CALayer()
-//
-//        subLayer.backgroundColor = UIColor.color(hexString: "dddd00").cgColor
-//        subLayer.shadowRadius = 5
-//        subLayer.shadowOpacity = 0.75
-//        subLayer.shadowOffset = CGSize(width: 5, height: 5)
-//        subLayer.cornerRadius = 8
-//        subLayer.borderWidth = 1
+        delegate?.controller = self
         
         backButton.isEnabled = false
         forwardButton.isEnabled = false
@@ -85,7 +76,7 @@ class XTRHelpBalloonViewController : UIViewController {
         controller.addUserScript(viewportScript)
         config.userContentController = controller
         
-        webView = WKWebView(frame: CGRect(x:5, y: 43, width: 400, height: 288), configuration: config)
+        webView = WKWebView(frame: CGRect(x: 5, y: 43, width: 400, height: 288), configuration: config)
         view.addSubview(webView)
         
         //subLayer.bounds = webView.bounds
@@ -103,11 +94,11 @@ class XTRHelpBalloonViewController : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(showElementHelp(_:)), name: .elementHelpSelectedNotification, object: nil)
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

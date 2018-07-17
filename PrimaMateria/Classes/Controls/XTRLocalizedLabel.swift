@@ -9,9 +9,9 @@
 import UIKit
 
 @IBDesignable
-class XTRLocalizedLabel : UILabel {
+class XTRLocalizedLabel: UILabel {
     
-    private var _isTitleLabel : Bool = false
+    private var _isTitleLabel = false
     
     @IBInspectable var isTitleLabel: Bool {
         set {

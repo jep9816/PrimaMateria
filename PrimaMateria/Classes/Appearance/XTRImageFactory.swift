@@ -8,11 +8,11 @@
 
 class XTRImageFactory {
     
-    class var ascendingArrowImage : UIImage {
+    class var ascendingArrowImage: UIImage {
         return UIImage(named: "AscendingArrow")!
     }
 
-    class var descendingArrowImage : UIImage {
+    class var descendingArrowImage: UIImage {
         return UIImage(named: "DescendingArrow")!
     }
 }

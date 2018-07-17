@@ -8,6 +8,5 @@
 
 import UIKit
 
-class XTRBackgroundView : UIView {
-    
+class XTRBackgroundView: UIView {
 }

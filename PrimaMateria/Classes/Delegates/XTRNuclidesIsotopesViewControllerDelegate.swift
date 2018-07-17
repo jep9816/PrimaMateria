@@ -9,27 +9,27 @@
 import UIKit
 import RxSwift
 
-class XTRNuclidesIsotopesViewControllerDelegate : NSObject, UITableViewDelegate, UITableViewDataSource {
+class XTRNuclidesIsotopesViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
 
-    weak var controller : XTRNuclidesIsotopesViewController?
+    weak var controller: XTRNuclidesIsotopesViewController?
 
-    // MARK:- UITableView DataSource Methods
+    // MARK: - UITableView DataSource Methods
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = indexPath.row
         let MyIdentifier = "Column \(row)"
         
-        var cell : XTRTableCell? = tableView.dequeueReusableCell(withIdentifier: MyIdentifier) as? XTRTableCell
+        var cell: XTRTableCell? = tableView.dequeueReusableCell(withIdentifier: MyIdentifier) as? XTRTableCell
         
         if cell == nil {
             let modulus = row % 2
-            let model : XTRIsotopeModel = (controller?.nuclidesAndIsotopesArray?.value[row])!
+            let model: XTRIsotopeModel = (controller?.nuclidesAndIsotopesArray?.value[row])!
 
             cell = XTRTableCell(style: .default, reuseIdentifier: MyIdentifier)
             
             tableCellLabel(0, yPos: 0, aWidth: 63, aHeight: 32, property: model.nuclideSymbol, columnPosition: 1, aModulus: modulus, cell: cell!)
-            tableCellLabel(64, yPos: 0, aWidth: 41, aHeight: 32, property: model.zp, columnPosition: 2, aModulus: modulus, cell: cell!)
-            tableCellLabel(106, yPos: 0, aWidth: 41, aHeight: 32, property: model.nn, columnPosition: 3, aModulus: modulus, cell: cell!)
+            tableCellLabel(64, yPos: 0, aWidth: 41, aHeight: 32, property: model.zpValue, columnPosition: 2, aModulus: modulus, cell: cell!)
+            tableCellLabel(106, yPos: 0, aWidth: 41, aHeight: 32, property: model.nnValue, columnPosition: 3, aModulus: modulus, cell: cell!)
             tableCellLabel(148, yPos: 0, aWidth: 124, aHeight: 32, property: model.isotopicMass, columnPosition: 4, aModulus: modulus, cell: cell!)
             tableCellLabel(273, yPos: 0, aWidth: 131, aHeight: 32, property: model.halfLife, columnPosition: 5, aModulus: modulus, cell: cell!)
             tableCellLabel(405, yPos: 0, aWidth: 118, aHeight: 32, property: model.decayModes, columnPosition: 6, aModulus: modulus, cell: cell!)
@@ -60,7 +60,7 @@ class XTRNuclidesIsotopesViewControllerDelegate : NSObject, UITableViewDelegate,
     func tableCellLabel(_ xPos: CGFloat, yPos: CGFloat, aWidth: CGFloat, aHeight: CGFloat, property: String, columnPosition: Int, aModulus: Int, cell: XTRTableCell) {
         let label = UILabel(frame: CGRect(x: xPos, y: yPos, width: aWidth, height: aHeight))
         
-        label.backgroundColor = (aModulus == 0) ? UIColor.white : XTRColorFactory.rowColor
+        label.backgroundColor = (aModulus == 0) ? UIColor.white: XTRColorFactory.rowColor
         label.font = UIFont.systemFont(ofSize: 14.0)
         label.textAlignment = .center
         label.textColor = UIColor.black
@@ -73,4 +73,3 @@ class XTRNuclidesIsotopesViewControllerDelegate : NSObject, UITableViewDelegate,
         cell.contentView.addSubview(label)
     }
 }
-

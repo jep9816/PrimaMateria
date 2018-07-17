@@ -9,64 +9,64 @@
 import SpriteKit
 import GameplayKit
 
-class XTRAtomicStructureViewController : XTRSwapableViewController {
+class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     enum StructureViewTypes {
         static let kCrystalStructureView = 0
         static let kShellModelView = 1
     }
     
-    @IBOutlet var segmentedControl : UISegmentedControl!
-    @IBOutlet var crystalStructureView : SCNView!
-    @IBOutlet var shellModelView : SKView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet var crystalStructureView: SCNView!
+    @IBOutlet var shellModelView: SKView!
     
-    @IBOutlet var atomicRadiusLabel : UILabel!
-    @IBOutlet var atomicVolumeLabel : UILabel!
-    @IBOutlet var covalentRadiusLabel : UILabel!
-    @IBOutlet var crossSectionLabel : UILabel!
-    @IBOutlet var ionicRadiusLabel : UILabel!
-    @IBOutlet var oxidationStatesLabel : UILabel!
-    @IBOutlet var numberOfNeutronsLabel : UILabel!
-    @IBOutlet var numberOfProtonsLabel : UILabel!
-    @IBOutlet var numberOfElectronsLabel : UILabel!
-    @IBOutlet var valenceLabel : UILabel!
-    @IBOutlet var fillingOrbitalLabel : UILabel!
-    @IBOutlet var crystalStructureLabel : UILabel!
+    @IBOutlet var atomicRadiusLabel: UILabel!
+    @IBOutlet var atomicVolumeLabel: UILabel!
+    @IBOutlet var covalentRadiusLabel: UILabel!
+    @IBOutlet var crossSectionLabel: UILabel!
+    @IBOutlet var ionicRadiusLabel: UILabel!
+    @IBOutlet var oxidationStatesLabel: UILabel!
+    @IBOutlet var numberOfNeutronsLabel: UILabel!
+    @IBOutlet var numberOfProtonsLabel: UILabel!
+    @IBOutlet var numberOfElectronsLabel: UILabel!
+    @IBOutlet var valenceLabel: UILabel!
+    @IBOutlet var fillingOrbitalLabel: UILabel!
+    @IBOutlet var crystalStructureLabel: UILabel!
     
-    @IBOutlet var kShellElectronsLabel : UILabel!
-    @IBOutlet var lShellElectronsLabel : UILabel!
-    @IBOutlet var mShellElectronsLabel : UILabel!
-    @IBOutlet var nShellElectronsLabel : UILabel!
-    @IBOutlet var oShellElectronsLabel : UILabel!
-    @IBOutlet var pShellElectronsLabel : UILabel!
-    @IBOutlet var qShellElectronsLabel : UILabel!
+    @IBOutlet var kShellElectronsLabel: UILabel!
+    @IBOutlet var lShellElectronsLabel: UILabel!
+    @IBOutlet var mShellElectronsLabel: UILabel!
+    @IBOutlet var nShellElectronsLabel: UILabel!
+    @IBOutlet var oShellElectronsLabel: UILabel!
+    @IBOutlet var pShellElectronsLabel: UILabel!
+    @IBOutlet var qShellElectronsLabel: UILabel!
     
-    @IBOutlet var shell1sLabel : UILabel!
+    @IBOutlet var shell1sLabel: UILabel!
     
-    @IBOutlet var shell2sLabel : UILabel!
-    @IBOutlet var shell2pLabel : UILabel!
+    @IBOutlet var shell2sLabel: UILabel!
+    @IBOutlet var shell2pLabel: UILabel!
     
-    @IBOutlet var shell3sLabel : UILabel!
-    @IBOutlet var shell3pLabel : UILabel!
-    @IBOutlet var shell3dLabel : UILabel!
+    @IBOutlet var shell3sLabel: UILabel!
+    @IBOutlet var shell3pLabel: UILabel!
+    @IBOutlet var shell3dLabel: UILabel!
     
-    @IBOutlet var shell4sLabel : UILabel!
-    @IBOutlet var shell4pLabel : UILabel!
-    @IBOutlet var shell4dLabel : UILabel!
-    @IBOutlet var shell4fLabel : UILabel!
+    @IBOutlet var shell4sLabel: UILabel!
+    @IBOutlet var shell4pLabel: UILabel!
+    @IBOutlet var shell4dLabel: UILabel!
+    @IBOutlet var shell4fLabel: UILabel!
     
-    @IBOutlet var shell5sLabel : UILabel!
-    @IBOutlet var shell5pLabel : UILabel!
-    @IBOutlet var shell5dLabel : UILabel!
-    @IBOutlet var shell5fLabel : UILabel!
+    @IBOutlet var shell5sLabel: UILabel!
+    @IBOutlet var shell5pLabel: UILabel!
+    @IBOutlet var shell5dLabel: UILabel!
+    @IBOutlet var shell5fLabel: UILabel!
     
-    @IBOutlet var shell6sLabel : UILabel!
-    @IBOutlet var shell6pLabel : UILabel!
-    @IBOutlet var shell6dLabel : UILabel!
+    @IBOutlet var shell6sLabel: UILabel!
+    @IBOutlet var shell6pLabel: UILabel!
+    @IBOutlet var shell6dLabel: UILabel!
     
-    @IBOutlet var shell7sLabel : UILabel!
-    @IBOutlet var shell7pLabel : UILabel!
-    @IBOutlet var overlayView : UIView!
+    @IBOutlet var shell7sLabel: UILabel!
+    @IBOutlet var shell7pLabel: UILabel!
+    @IBOutlet var overlayView: UIView!
     
     // MARK: - Initialization Methods
     
@@ -168,11 +168,11 @@ class XTRAtomicStructureViewController : XTRSwapableViewController {
         shellModelView.isHidden = true
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

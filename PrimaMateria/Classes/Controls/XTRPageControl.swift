@@ -10,8 +10,8 @@ import UIKit
 
 class XTRPageControl: UIView {
     
-    var nextLabel : UILabel!
-    var previousLabel : UILabel!
+    var nextLabel: UILabel!
+    var previousLabel: UILabel!
     
     // MARK: - Initialization Methods
     

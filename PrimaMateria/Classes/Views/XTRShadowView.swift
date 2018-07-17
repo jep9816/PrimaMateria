@@ -6,7 +6,7 @@
 //  Copyright © 2018 xTrensa. All rights reserved.
 //
 
-class XTRShadowView : UIImageView {
+class XTRShadowView: UIImageView {
     
     // MARK: - Initialization Methods
     

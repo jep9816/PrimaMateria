@@ -8,20 +8,20 @@
 
 import Foundation
 
-class XTRMolecularCalculator : NSObject {
+class XTRMolecularCalculator: NSObject {
     
     class func calculateWithFormula(_ formula: String?) -> Double {
         var total = 0.0
         
         if let localFormula = formula.map({ $0 as NSString }) {
             if localFormula.length > 0 {
-                var regex : NSRegularExpression? = nil
+                var regex: NSRegularExpression? = nil
                 
                 do {
                     try regex = NSRegularExpression(pattern: "[A-Z][a-z]*\\d*|\\([^)]+\\)\\d*", options: NSRegularExpression.Options.caseInsensitive)
                     // print("Testing: %@", formula)
                     
-                    let components = regex!.matches(in: localFormula as String, options: NSRegularExpression.MatchingOptions.anchored, range: NSMakeRange(0, localFormula.length))
+                    let components = regex!.matches(in: localFormula as String, options: NSRegularExpression.MatchingOptions.anchored, range: NSRange(location: 0, length: localFormula.length))
                     
                     for index in 0..<components.count {
                         let match = components[index]
@@ -41,11 +41,11 @@ class XTRMolecularCalculator : NSObject {
                         // print("numbers: %@", numbers)
                         
                         if let doubleValue = Double(numbers as String) {
-                            num = doubleValue != 0 ? doubleValue : 1.0
+                            num = doubleValue != 0 ? doubleValue: 1.0
                         }
                         
-                        multiplier = (numbers.length == 0) ? 1 : num
-                        total = total + (atomicMass * multiplier)
+                        multiplier = (numbers.length == 0) ? 1: num
+                        total += (atomicMass * multiplier)
                         // print("total: %f", total)
                     }
                 } catch {

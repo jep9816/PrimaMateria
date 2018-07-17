@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XTRGraphChoiceViewController : UIViewController {
+class XTRGraphChoiceViewController: UIViewController {
     
     // MARK: - Initialization Methods
     
@@ -45,11 +45,11 @@ class XTRGraphChoiceViewController : UIViewController {
         collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: true)
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

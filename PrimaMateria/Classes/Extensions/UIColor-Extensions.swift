@@ -45,7 +45,7 @@ let colorNameDB = "," +
 
 extension UIColor { // Expanded
     
-    var colorSpaceModel : CGColorSpaceModel {
+    var colorSpaceModel: CGColorSpaceModel {
         return cgColor.colorSpace!.model
     }
     
@@ -60,32 +60,32 @@ extension UIColor { // Expanded
     
     func red() -> CGFloat {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -red")
-        let c: [CGFloat] = cgColor.components!
-        return c[0]
+        let components = cgColor.components!
+        return components[0]
     }
     
     func green() -> CGFloat {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -green")
-        let c: [CGFloat] = cgColor.components!
+        let components = cgColor.components!
         if colorSpaceModel == .monochrome {
-            return c[0]
+            return components[0]
         }
-        return c[1]
+        return components[1]
     }
     
     func blue() -> CGFloat {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -blue")
-        let c: [CGFloat] = cgColor.components!
+        let components = cgColor.components!
         if colorSpaceModel == .monochrome {
-            return c[0]
+            return components[0]
         }
-        return c[2]
+        return components[2]
     }
     
     func white() -> CGFloat {
         assert(colorSpaceModel == .monochrome, "Must be a Monochrome color to use -white")
-        let c: [CGFloat] = cgColor.components!
-        return c[0]
+        let components = cgColor.components!
+        return components[0]
     }
     
     func alpha() -> CGFloat {
@@ -103,7 +103,7 @@ extension UIColor { // Expanded
     
     class func color(hexString: String) -> UIColor {
         let scanner = Scanner(string: hexString)
-        let hexNum : UnsafeMutablePointer<UInt32> = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
+        let hexNum: UnsafeMutablePointer<UInt32> = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
         
         if !scanner.scanHexInt32(hexNum) {
             return UIColor.white
@@ -120,7 +120,7 @@ extension UIColor { // Expanded
         var result = UIColor.white
         let searchString = ",\(cssColorName)#"
         
-        guard let range : Range<String.Index> = colorNameDB.range(of: searchString) else {
+        guard let range: Range<String.Index> = colorNameDB.range(of: searchString) else {
             return result
         }
         
@@ -181,13 +181,12 @@ extension UIColor { // Expanded
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
-        var a: CGFloat = 0
+        var alpha: CGFloat = 0
         
-        
-        if !self.red(&r, green: &g, blue: &b, alpha: &a) {
+        if !self.red(&r, green: &g, blue: &b, alpha: &alpha) {
             return [CGFloat]()
         }
-        return [r, g, b, a]
+        return [r, g, b, alpha]
     }
     
     func red( _ red: inout CGFloat, green: inout CGFloat, blue: inout CGFloat, alpha: inout CGFloat) -> Bool {
@@ -195,18 +194,18 @@ extension UIColor { // Expanded
         var r: CGFloat
         var g: CGFloat
         var b: CGFloat
-        var a: CGFloat
+        var alphaValue: CGFloat
         switch self.colorSpaceModel {
         case .monochrome:
             r = components[0]
             g = components[0]
             b = components[0]
-            a = components[1]
+            alphaValue = components[1]
         case CGColorSpaceModel.rgb:
             r = components[0]
             g = components[1]
             b = components[2]
-            a = components[3]
+            alphaValue = components[3]
         default:
             // We don't know how to handle this model
             return false
@@ -222,35 +221,35 @@ extension UIColor { // Expanded
             blue = b
         }
         if alpha != 0.0 {
-            alpha = a
+            alpha = alphaValue
         }
         return true
     }
     
     func toHexString() -> String {
-        var r:CGFloat = 0
-        var g:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
+        var r: CGFloat = 0
+        var g: CGFloat = 0
+        var b: CGFloat = 0
+        var alpha: CGFloat = 0
         
-        getRed(&r, green: &g, blue: &b, alpha: &a)
+        getRed(&r, green: &g, blue: &b, alpha: &alpha)
         let pt1 = (Int)(r*255)<<16
         let pt2 = (Int)(g*255)<<8
         let pt3 = (Int)(b*255)<<0
         
         let rgb = pt1 | pt2 | pt3
         
-        return String(format:"#%06x", rgb)
+        return String(format: "#%06x", rgb)
     }
     
     func inverseColor() -> UIColor {
         var r: CGFloat = 0.0
         var g: CGFloat = 0.0
         var b: CGFloat = 0.0
-        var a: CGFloat = 0.0
+        var alpha: CGFloat = 0.0
         
-        if getRed(&r, green: &g, blue: &b, alpha: &a) {
-            return UIColor(red: 1.0-r, green: 1.0 - g, blue: 1.0 - b, alpha: a)
+        if getRed(&r, green: &g, blue: &b, alpha: &alpha) {
+            return UIColor(red: 1.0-r, green: 1.0 - g, blue: 1.0 - b, alpha: alpha)
         }
         return self
     }

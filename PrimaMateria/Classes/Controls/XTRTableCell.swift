@@ -8,15 +8,15 @@
 
 import UIKit
 
-class XTRTableCell : UITableViewCell {
+class XTRTableCell: UITableViewCell {
     
-    private var columns : [Int]
+    private var columns: [Int]
     
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
         columns = []
-        super.init(coder:aDecoder)!
+        super.init(coder: aDecoder)!
     }
     
     override func awakeFromNib() {
@@ -38,17 +38,18 @@ class XTRTableCell : UITableViewCell {
     func setup() {
         backgroundColor = UIColor.black
         contentView.backgroundColor = UIColor.black
+        let counter = columns.count
         
-        if columns.count > 0 {
+        if counter > 0 {
             let ctx = UIGraphicsGetCurrentContext()!
             
             ctx.setStrokeColor(XTRColorFactoryClassic.grayColor.cgColor)
             ctx.setLineWidth(0.25)
             
-            for index in 0...columns.count {
-                let f = CGFloat(columns[index])
-                ctx.move(to: CGPoint(x: f, y: 0))
-                ctx.addLine(to: CGPoint(x: f, y: bounds.size.height))
+            for index in 0...counter {
+                let xPos = CGFloat(columns[index])
+                ctx.move(to: CGPoint(x: xPos, y: 0))
+                ctx.addLine(to: CGPoint(x: xPos, y: bounds.size.height))
             }
             
             ctx.strokePath()

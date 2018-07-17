@@ -8,16 +8,16 @@
 
 import UIKit
 
-class XTRElementListViewController : UIViewController {
+class XTRElementListViewController: UIViewController {
     
     static let tableViewCellIdentifier = "XTRElementTableViewCell"
     
-    @IBOutlet var atomicNumberButton : XTRTableHeaderButton!
+    @IBOutlet var atomicNumberButton: XTRTableHeaderButton!
     @IBOutlet var swapView: UIView!
     @IBOutlet var navigationBar: UINavigationBar!
     
-    private var tableView : UITableView?
-    private var delegate : XTRElementListViewControllerDelegate = XTRElementListViewControllerDelegate()
+    private var tableView: UITableView?
+    private weak var delegate: XTRElementListViewControllerDelegate? = XTRElementListViewControllerDelegate()
     
     // MARK: - Initialization Methods
     
@@ -27,7 +27,7 @@ class XTRElementListViewController : UIViewController {
     
     // MARK: - Internal Methods
     
-    public func showElementPanelForElementAtIndex(_ anIndex: Int)  {
+    public func showElementPanelForElementAtIndex(_ anIndex: Int) {
         XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = anIndex
         performSegue(withIdentifier: SegueName.showInspectorFromElementList, sender: self)
@@ -78,7 +78,7 @@ class XTRElementListViewController : UIViewController {
         setupTableView()
         navigationController?.navigationBar.prefersLargeTitles = true
         
-        delegate.closure = { [weak self] (index: Int) -> Void in
+        delegate?.closure = { [weak self] (index: Int) -> Void in
             XTRPropertiesStore.viewTitle = (self?.title)!
             XTRPropertiesStore.atomicNumber = index
             self?.performSegue(withIdentifier: SegueName.showInspectorFromElementList, sender: self)
@@ -86,17 +86,17 @@ class XTRElementListViewController : UIViewController {
     }
     
     override func viewDidDisappear(_ animated: Bool) {
-        if delegate.indexPath != nil  {
-            tableView!.deselectRow(at: delegate.indexPath!, animated: true)
+        if delegate?.indexPath != nil {
+            tableView!.deselectRow(at: (delegate?.indexPath!)!, animated: true)
         }
         super.viewDidDisappear(animated)
     }
     
-    override var shouldAutorotate : Bool {
+    override var shouldAutorotate: Bool {
         return false
     }
     
-    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
     

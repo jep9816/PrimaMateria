@@ -8,7 +8,7 @@
 
 import UIKit
 
-class XTRPopoutAnimationController : NSObject, UIViewControllerAnimatedTransitioning {
+class XTRPopoutAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.35

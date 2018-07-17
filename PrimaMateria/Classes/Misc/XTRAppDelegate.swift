@@ -8,19 +8,19 @@
 
 import UIKit
 
-class XTRAppDelegate : UIResponder, UIApplicationDelegate {
+class XTRAppDelegate: UIResponder, UIApplicationDelegate {
     
-    var window : UIWindow?
-    private var appearanceManager : XTRAppearanceManager!
+    var window: UIWindow?
+    private var appearanceManager: XTRAppearanceManager!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         let notification = Notification(name: .notificationAppearanceChanged, object: XTRPropertiesStore.appearanceName, userInfo: nil)
         appearanceManager = XTRAppearanceManager.init(window: window!)
         appearanceManager.changeAppearance(notification: notification as NSNotification)
 
-        //        let fontFamiles : [Any] = UIFont.familyNames()
+        //        let fontFamiles: [Any] = UIFont.familyNames()
         //        print("%@", fontFamiles)
-        //        let fontNames : [Any] = UIFont.fontNamesForFamilyName("Verdana")
+        //        let fontNames: [Any] = UIFont.fontNamesForFamilyName("Verdana")
         //        print("%@", fonßtNames)
         
          return true

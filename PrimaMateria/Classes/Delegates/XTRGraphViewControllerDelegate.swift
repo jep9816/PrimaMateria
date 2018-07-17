@@ -8,12 +8,19 @@
 
 import CorePlot
 
-class XTRGraphViewControllerDelegate : NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
+class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
     
     var controller: XTRGraphViewController?
     
         @objc func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
-            return try! Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
+            var data: Data = Data()
+            
+            do {
+                data = try Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
+            } catch {
+            }
+            
+            return data
         }
     
     // MARK: - Plot Data Source Methods
@@ -23,7 +30,7 @@ class XTRGraphViewControllerDelegate : NSObject, CPTPlotDataSource, CPTBarPlotDe
     }
     
     func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
-        var num : NSNumber = 0
+        var num: NSNumber = 0
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
             let element = XTRDataSource.sharedInstance().elementAtIndex(Int(idx))
@@ -41,7 +48,7 @@ class XTRGraphViewControllerDelegate : NSObject, CPTPlotDataSource, CPTBarPlotDe
                 case ELEMENT_BOILING_POINT :
                     num = NSNumber(value: element.boilingPoint)
                 case ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION :
-                    num = NSNumber(value: element.coefficientOfLinealThermalExpansionScaled)
+                    num = NSNumber(value: element.coeffOfLinealThermExpansScaled)
                 case ELEMENT_COVALENT_RADIUS :
                     num = NSNumber(value: element.covalentRadius)
                 case ELEMENT_CROSS_SECTION :
@@ -114,4 +121,3 @@ class XTRGraphViewControllerDelegate : NSObject, CPTPlotDataSource, CPTBarPlotDe
         return CPTFill(color: CPTColor(cgColor: element.seriesColor.cgColor))
     }
 }
-
