@@ -54,20 +54,19 @@ class XTRDataSource: NSObject {
             element.elementDictionary = tempDict!
             elementList.append(element)
         } catch _ {
-            assert(nil != tempDict, "Could not read property list of elements.")
+            assert(nil != tempDict, "Could not read property list of element: \(aSymbol).")
         }
     }
     
     func loadElementList() {
         let theData = dataForResource("ElementList", type: FileType.plist, directory: SUPPORTING_FILES)
-        var tempList: NSArray? = nil
+        var tempList: [String]?
         
         do {
-            try tempList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? NSArray
+            try tempList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String]
             
-            for index in 0..<tempList!.count {
-                let symbol: String? = tempList?.object(at: index) as? String
-                loadElementForSymbol(symbol!)
+            for (index, symbol) in (tempList?.enumerated())! {
+                loadElementForSymbol(symbol)
                 sortedElementList!.add(elementList[index])
             }
         } catch _ {
@@ -117,12 +116,8 @@ class XTRDataSource: NSObject {
     // MARK: - Accessor Methods
     
     func elementForSymbol(_ symbol: String) -> XTRElementModel? {
-        for index in 0..<elementList.count {
-            let element = elementList[index]
-            
-            if element.symbol == symbol {
-                return element
-            }
+        for element in elementList where element.symbol == symbol {
+            return element
         }
         
         return nil

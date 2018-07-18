@@ -13,7 +13,7 @@ class XTRInfoViewController: UIViewController {
     @IBOutlet var webView: WKWebView!
     @IBOutlet var navigationBar: UINavigationBar!
 
-    private weak var delegate: XTRInfoViewControllerDelegate? = XTRInfoViewControllerDelegate()
+    private var delegate: XTRInfoViewControllerDelegate? = XTRInfoViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -33,7 +33,7 @@ class XTRInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = NSLocalizedString("info", comment: "")
-        navigationBar.topItem?.title = NSLocalizedString("info", comment: "")
+        navigationBar.topItem?.title = title
 
         loadDocument("index")
         navigationController?.navigationBar.prefersLargeTitles = true

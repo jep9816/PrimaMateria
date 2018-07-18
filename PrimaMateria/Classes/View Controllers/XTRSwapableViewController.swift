@@ -8,7 +8,11 @@
 
 import UIKit
 
-class XTRSwapableViewController: UIViewController {
+protocol XTRSwapable {
+    func setupUI()
+}
+
+class XTRSwapableViewController: UIViewController, XTRSwapable {
     
     var element: XTRElementModel?
 

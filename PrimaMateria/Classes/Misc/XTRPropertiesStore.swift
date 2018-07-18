@@ -8,12 +8,13 @@
 
 import UIKit
 
-struct XTRProperty {
+struct XTRPropertiesStoreConfig {
     static let elementBubble = "elementBubbleState"
     static let showTransitions = "showViewTransitionsState"
     static let splashScreen = "splashScreenState"
     static let atomicNumber = "atomicNumber"
     static let viewTitle = "viewTitle"
+    static let noneValue = "None"
 }
 
 class XTRPropertiesStore: NSObject {
@@ -21,7 +22,7 @@ class XTRPropertiesStore: NSObject {
     class var atomicNumber: Int {
         get {
             let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: XTRProperty.atomicNumber) as? Int else {
+            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.atomicNumber) as? Int else {
                 XTRPropertiesStore.atomicNumber = 1
                 return 1
             }
@@ -32,7 +33,7 @@ class XTRPropertiesStore: NSObject {
         set {
             let userDefaults = UserDefaults.standard
             
-            userDefaults.set(newValue, forKey: XTRProperty.atomicNumber)
+            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.atomicNumber)
             userDefaults.synchronize()
         }
     }
@@ -40,9 +41,9 @@ class XTRPropertiesStore: NSObject {
     class var viewTitle: String {
         get {
             let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: XTRProperty.viewTitle) as? String else {
-                XTRPropertiesStore.viewTitle = "None"
-                return "None"
+            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.viewTitle) as? String else {
+                XTRPropertiesStore.viewTitle = XTRPropertiesStoreConfig.noneValue
+                return XTRPropertiesStoreConfig.noneValue
             }
             
             return defaultValue
@@ -51,7 +52,7 @@ class XTRPropertiesStore: NSObject {
         set {
             let userDefaults = UserDefaults.standard
             
-            userDefaults.set(newValue, forKey: XTRProperty.viewTitle)
+            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.viewTitle)
             userDefaults.synchronize()
         }
     }
@@ -59,7 +60,7 @@ class XTRPropertiesStore: NSObject {
     class var splashScreenState: Bool {
         get {
             let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: XTRProperty.splashScreen) as? Bool else {
+            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.splashScreen) as? Bool else {
                 XTRPropertiesStore.splashScreenState = false
                 return false
             }
@@ -70,7 +71,7 @@ class XTRPropertiesStore: NSObject {
         set {
             let userDefaults = UserDefaults.standard
             
-            userDefaults.set(newValue, forKey: XTRProperty.splashScreen)
+            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.splashScreen)
             userDefaults.synchronize()
         }
     }
@@ -78,7 +79,7 @@ class XTRPropertiesStore: NSObject {
     class var showTransitionsState: Bool {
         get {
             let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: XTRProperty.showTransitions) as? Bool else {
+            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.showTransitions) as? Bool else {
                 XTRPropertiesStore.showTransitionsState = false
                 return false
             }
@@ -89,7 +90,7 @@ class XTRPropertiesStore: NSObject {
         set {
             let userDefaults = UserDefaults.standard
             
-            userDefaults.set(newValue, forKey: XTRProperty.showTransitions)
+            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.showTransitions)
             userDefaults.synchronize()
         }
     }
@@ -97,7 +98,7 @@ class XTRPropertiesStore: NSObject {
     class var elementBubblesState: Bool {
         get {
             let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: XTRProperty.elementBubble) as? Bool else {
+            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.elementBubble) as? Bool else {
                 XTRPropertiesStore.elementBubblesState = false
                 return false
             }
@@ -108,7 +109,7 @@ class XTRPropertiesStore: NSObject {
         set {
             let userDefaults = UserDefaults.standard
             
-            userDefaults.set(newValue, forKey: XTRProperty.elementBubble)
+            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.elementBubble)
             userDefaults.synchronize()
         }
     }
@@ -149,9 +150,9 @@ class XTRPropertiesStore: NSObject {
     class func resetPreferences() {
         let userDefaults = UserDefaults.standard
         
-        userDefaults.removeObject(forKey: XTRProperty.elementBubble)
-        userDefaults.removeObject(forKey: XTRProperty.showTransitions)
-        userDefaults.removeObject(forKey: XTRProperty.splashScreen)
+        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.elementBubble)
+        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.showTransitions)
+        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.splashScreen)
         
         userDefaults.removeObject(forKey: ElementSeries.actinide)
         userDefaults.removeObject(forKey: ElementSeries.alkaliEarthMetal)

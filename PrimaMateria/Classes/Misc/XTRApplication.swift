@@ -15,7 +15,7 @@ class XTRApplication: UIApplication {
     
     override init() {
         super.init()
-        let aDefault: String? = UserDefaults.standard.string(forKey: XTRProperty.splashScreen)
+        let aDefault: String? = UserDefaults.standard.string(forKey: XTRPropertiesStoreConfig.splashScreen)
         
         if aDefault == nil {
             registerDefaultsFromSettingsBundle()

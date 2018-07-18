@@ -8,6 +8,11 @@
 
 import UIKit
 
+struct XTRPeriodicTableViewControllerConfig {
+    static let buttonRect = CGRect(x: 0, y: 0, width: 52, height: 54)
+    static let popupContentSize = CGSize(width: 324.0, height: 210.0)
+}
+
 class XTRPeriodicTableViewController: UIViewController {
     
     @IBOutlet var swapView: UIView!
@@ -33,10 +38,8 @@ class XTRPeriodicTableViewController: UIViewController {
     }
     
     func setupPopUp() {
-        let contentSize = CGSize(width: 324.0, height: 210.0)
-        
         elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRElementBalloonViewController.nameOfClass) as! XTRElementBalloonViewController
-        elementBalloonViewController.preferredContentSize = contentSize
+        elementBalloonViewController.preferredContentSize = XTRPeriodicTableViewControllerConfig.popupContentSize
         elementBalloonViewController.modalPresentationStyle = .popover
     }
     
@@ -58,7 +61,7 @@ class XTRPeriodicTableViewController: UIViewController {
         
         XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = sender.tag
-        popoverController.sourceRect = CGRect(x: 0, y: 0, width: 52, height: 54)
+        popoverController.sourceRect = XTRPeriodicTableViewControllerConfig.buttonRect
         popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
         

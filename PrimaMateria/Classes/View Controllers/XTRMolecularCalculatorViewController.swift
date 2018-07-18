@@ -72,16 +72,16 @@ class XTRMolecularCalculatorViewController: UIViewController {
         if origString.isEmpty {
             let lastChar = origString.suffix(1)
             
-            var is_alpha = false
+            var isAlpha = false
             
             for scalar in lastChar.unicodeScalars {
                 let value = scalar.value
                 if (value >= 65 && value <= 90) || (value >= 97 && value <= 122) {
-                    is_alpha = true
+                    isAlpha = true
                 }
             }
             
-            origString = is_alpha ? origString  + "0" + symbol: origString + symbol
+            origString = isAlpha ? origString  + "0" + symbol: origString + symbol
             
         } else {
             origString += symbol
@@ -129,21 +129,21 @@ class XTRMolecularCalculatorViewController: UIViewController {
             let index = formula.index(formula.startIndex, offsetBy: length - 1)
             let indexAlpha = formula[index...]
 
-            var is_alpha = false
-            var is_char = false
+            var isAlpha = false
+            var isChar = false
             
             for scalar in indexAlpha.unicodeScalars {
                 let value = scalar.value
                 if (value >= 65 && value <= 90) || (value >= 97 && value <= 122) {
-                    is_alpha = true
+                    isAlpha = true
                 }
                 
                 if value >= 48 && value <= 57 {
-                    is_char = true
+                    isChar = true
                 }
             }
             
-            if is_alpha || is_char {
+            if isAlpha || isChar {
                 updateTextField(tag)
                 updateLabel(tag)
             }

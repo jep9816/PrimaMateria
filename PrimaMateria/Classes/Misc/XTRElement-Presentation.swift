@@ -344,7 +344,7 @@ extension XTRElementModel {
                     let aValue = allValues[idx]
                     
                     if aKey != "New item" {
-                        let aString = String(aValue[aValue.startIndex]) //Array(arrayLiteral: aValue)[0]
+                        let aString = String(aValue[aValue.startIndex])
                         let character = Int(aString)!
                         attributedString += aKey
                         

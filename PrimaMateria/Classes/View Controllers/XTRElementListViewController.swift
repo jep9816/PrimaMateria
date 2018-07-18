@@ -17,7 +17,7 @@ class XTRElementListViewController: UIViewController {
     @IBOutlet var navigationBar: UINavigationBar!
     
     private var tableView: UITableView?
-    private weak var delegate: XTRElementListViewControllerDelegate? = XTRElementListViewControllerDelegate()
+    private var delegate: XTRElementListViewControllerDelegate? = XTRElementListViewControllerDelegate()
     
     // MARK: - Initialization Methods
     
@@ -71,7 +71,7 @@ class XTRElementListViewController: UIViewController {
         super.viewDidLoad()
         
         title = NSLocalizedString("elementList", comment: "")
-        navigationBar.topItem?.title = NSLocalizedString("elementList", comment: "")
+        navigationBar.topItem?.title = title
 
         _ = atomicNumberButton.toggleState()
         swapView.removeFromSuperview()

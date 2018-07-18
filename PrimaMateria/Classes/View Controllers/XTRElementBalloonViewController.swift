@@ -55,7 +55,7 @@ class XTRElementBalloonViewController: UIViewController {
         wrapperView.clipsToBounds = true
 
         elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            let storyBoard = UIStoryboard.init(name: "ElementInspector", bundle: nil)
+            let storyBoard = UIStoryboard(name: ELEMENT_INSPECTOR_STORY_BOARD, bundle: nil)
             let controller = storyBoard.instantiateViewController(withIdentifier: XTRElementInspectorViewController.nameOfClass) as! XTRElementInspectorViewController
 
             controller.modalPresentationStyle = .fullScreen

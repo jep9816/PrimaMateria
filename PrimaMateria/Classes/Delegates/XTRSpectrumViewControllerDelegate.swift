@@ -9,28 +9,6 @@
 import UIKit
 import CorePlot
 
-class SpectrumModel: NSObject {
-    let xPos: Int
-    let yPos: Int
-    let width: Int
-    let height: Int
-    let property: String
-    let columnPosition: Int
-    let modulus: Int
-    let cell: XTRTableCell
-    
-    init(xPos: Int, yPos: Int, width: Int, height: Int, property: String, columnPosition: Int, modulus: Int, cell: XTRTableCell) {
-        self.xPos = xPos
-        self.yPos = yPos
-        self.width = width
-        self.height = height
-        self.property = property
-        self.columnPosition = columnPosition
-        self.modulus = modulus
-        self.cell = cell
-        super.init()
-    }
-}
 class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
     
     weak var controller: XTRSpectrumViewController?
@@ -51,7 +29,7 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
     }
     
     func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
-        var num: Float?
+        var num: Float = 0
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
             let model = controller?.lineSpectraArray!.value[Int(idx)]
@@ -69,9 +47,9 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
 
             switch fieldEnum {
             case 0:
-                num = controller?.airWavelengthValue(airWavelength, anIdentifier: identifier, aSpectrum: spectrum!)
+                num = (controller?.airWavelengthValue(airWavelength, anIdentifier: identifier, aSpectrum: spectrum!))!
             case 1:
-                num = controller?.intensityValue(intensity, anIdentifier: identifier, aSpectrum: spectrum!)
+                num = (controller?.intensityValue(intensity, anIdentifier: identifier, aSpectrum: spectrum!))!
             default:
                 num = 0
             }
@@ -98,9 +76,9 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
             
             cell = XTRTableCell(style: .default, reuseIdentifier: MyIdentifier)
 
-            tableCellLabel(model: SpectrumModel(xPos: 0, yPos: 0, width: 124, height: 32, property: airWavelength!, columnPosition: 1, modulus: modulus, cell: cell!))
-            tableCellLabel(model: SpectrumModel(xPos: 125, yPos: 0, width: 115, height: 32, property: intensity!, columnPosition: 2, modulus: modulus, cell: cell!))
-            tableCellLabel(model: SpectrumModel(xPos: 241, yPos: 0, width: 117, height: 32, property: spectrum!, columnPosition: 3, modulus: modulus, cell: cell!))
+            createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 0, yPos: 0, width: 124, height: 32, property: airWavelength!, columnPosition: 1, modulus: modulus, cell: cell!))
+            createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 125, yPos: 0, width: 115, height: 32, property: intensity!, columnPosition: 2, modulus: modulus, cell: cell!))
+            createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 241, yPos: 0, width: 117, height: 32, property: spectrum!, columnPosition: 3, modulus: modulus, cell: cell!))
         }
         
         return cell!
@@ -114,7 +92,7 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
         return controller!.element!.lineSpectra!.value.count
     }
     
-    func tableCellLabel(model: SpectrumModel) {
+    func createTableCellLabel(model: XTRTableViewCellViewModel) {
         let label = UILabel(frame: CGRect(x: model.xPos, y: model.yPos, width: model.width, height: model.height))
         
         label.backgroundColor = (model.modulus == 0) ? UIColor.white: XTRColorFactory.rowColor

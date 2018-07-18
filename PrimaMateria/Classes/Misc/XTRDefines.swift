@@ -113,6 +113,7 @@ let SUPPORTING_FILES = "SupportingFiles"
 let PERIODIC_VIEW_TITLE = "periodicTableElements"
 let MAIN_STORY_BOARD = "MainStoryboard"
 let COLOR_PICKER_STORY_BOARD = "ColorPicker"
+let ELEMENT_INSPECTOR_STORY_BOARD = "ElementInspector"
 let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 let SWITCH_CORNER_RADIUS: CGFloat = 16.0

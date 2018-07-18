@@ -158,7 +158,7 @@ class XTRPreferencesViewController: UIViewController {
         super.viewDidLoad()
         
         title = NSLocalizedString("preferences", comment: "")
-        navigationBar.topItem?.title = NSLocalizedString("preferences", comment: "")
+        navigationBar.topItem?.title = title
         
         NotificationCenter.default.addObserver(self, selector: #selector(colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
         

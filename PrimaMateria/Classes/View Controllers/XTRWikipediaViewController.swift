@@ -19,7 +19,7 @@ class XTRWikipediaViewController: UIViewController {
     
     private var responseData: NSMutableData?
     private var request: NSMutableURLRequest?
-    private weak var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
+    private var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
     
     var elementName: String?
     

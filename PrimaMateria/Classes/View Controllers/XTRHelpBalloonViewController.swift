@@ -16,7 +16,7 @@ class XTRHelpBalloonViewController: UIViewController {
     
     var webView: WKWebView!
     
-    private weak var delegate: XTRHelpBalloonViewControllerDelegate? = XTRHelpBalloonViewControllerDelegate()
+    private var delegate: XTRHelpBalloonViewControllerDelegate? = XTRHelpBalloonViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -79,9 +79,6 @@ class XTRHelpBalloonViewController: UIViewController {
         webView = WKWebView(frame: CGRect(x: 5, y: 43, width: 400, height: 288), configuration: config)
         view.addSubview(webView)
         
-        //subLayer.bounds = webView.bounds
-        //subLayer.position = webView.center
-        //view.layer.insertSublayer(subLayer, below: webView.layer)
         webView.layer.cornerRadius = 8
         webView.layer.masksToBounds = true
         webView.navigationDelegate = delegate
@@ -89,7 +86,6 @@ class XTRHelpBalloonViewController: UIViewController {
         webView.scrollView.bounces = false                    // Things like this should be handled in web code
         webView.allowsBackForwardNavigationGestures = false   // Disable swiping to navigate
         webView.contentMode = .scaleToFill                    // Scale the page to fill the web view
-       // webView.backgroundColor = XTRColorFactory.helpBackgroundColor
         
         NotificationCenter.default.addObserver(self, selector: #selector(showElementHelp(_:)), name: .elementHelpSelectedNotification, object: nil)
     }
@@ -108,8 +104,6 @@ class XTRHelpBalloonViewController: UIViewController {
         backButton = nil
         forwardButton = nil
         titleLabel = nil
-        //webView.navigationDelegate = nil
-        //webView = nil
         NotificationCenter.default.removeObserver(self, name: .elementHelpSelectedNotification, object: nil)
     }
     

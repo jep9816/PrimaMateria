@@ -18,7 +18,7 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
     var nuclidesAndIsotopesArray: Variable<[XTRIsotopeModel]>?
     
     private var tableView: UITableView?
-    private weak var delegate: XTRNuclidesIsotopesViewControllerDelegate? = XTRNuclidesIsotopesViewControllerDelegate()
+    private var delegate: XTRNuclidesIsotopesViewControllerDelegate? = XTRNuclidesIsotopesViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -28,8 +28,8 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
         
     // MARK: - Misc Methods
     
-    override func setupUI() {
-        if element != nil {
+    override func setupUI() {        
+       if element != nil {
             if tableView != nil {
                 tableView!.removeFromSuperview()
                 tableView = nil

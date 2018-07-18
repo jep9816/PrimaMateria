@@ -9,7 +9,7 @@
 import CorePlot
 import RxSwift
 
-enum SpectrumAttribute {
+enum XTRSpectrumViewControllerConfig {
     static let kAirWavelength = "airWavelength"
     static let kIntensity = "intensity"
     static let kSpectrum = "spectrum"
@@ -20,7 +20,7 @@ enum SpectrumAttribute {
     static let kVSpectrum = "V"
 }
 
-class XTRSpectrumViewController: XTRSwapableViewController/*, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource*/ {
+class XTRSpectrumViewController: XTRSwapableViewController {
     
     @IBOutlet var hostingView: CPTGraphHostingView!
     @IBOutlet var swapView: UIView!
@@ -28,8 +28,10 @@ class XTRSpectrumViewController: XTRSwapableViewController/*, UITableViewDelegat
     var barChart: CPTXYGraph?
     var lineSpectraArray: Variable<[XTRSpectraModel]>?
     var tableView: UITableView?
-    
-    private weak var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()
+    let customTickLocations = [4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500]
+    let xAxisLabels = ["4000", "4500", "5000", "5500", "6000", "6500", "7000", "7500"]
+
+    private var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()
 
     // MARK: - Initialization Methods
     
@@ -75,8 +77,6 @@ class XTRSpectrumViewController: XTRSwapableViewController/*, UITableViewDelegat
         let axisSet = barChart!.axisSet as! CPTXYAxisSet
         let x = axisSet.xAxis!
         let y = axisSet.yAxis!
-        let customTickLocations = [4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500]
-        let xAxisLabels = ["4000", "4500", "5000", "5500", "6000", "6500", "7000", "7500"]
         var labelLocation = 0
         var customLabels: [AnyObject?] = [AnyObject?](repeating: nil, count: xAxisLabels.count)
         
@@ -123,24 +123,24 @@ class XTRSpectrumViewController: XTRSwapableViewController/*, UITableViewDelegat
         y.majorIntervalLength = 100
         y.majorGridLineStyle = minorTickStyle
         y.orthogonalPosition = 4000
-        y.title = "Intensity"
+        y.title = NSLocalizedString("intensity", comment: "")
         y.titleOffset = 50.0
         y.titleLocation = 500.0
         
-        var barPlot = addSpectrumPlotWithIdentifier(SpectrumAttribute.kISpectrum, aColor: CPTColor.red())
+        var barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kISpectrum, aColor: CPTColor.red())
         
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(SpectrumAttribute.kIISpectrum, aColor: CPTColor.blue())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kIISpectrum, aColor: CPTColor.blue())
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(SpectrumAttribute.kIIISpectrum, aColor: CPTColor.green())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kIIISpectrum, aColor: CPTColor.green())
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(SpectrumAttribute.kIVSpectrum, aColor: CPTColor.cyan())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kIVSpectrum, aColor: CPTColor.cyan())
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(SpectrumAttribute.kVSpectrum, aColor: CPTColor.magenta())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kVSpectrum, aColor: CPTColor.magenta())
         barChart!.add(barPlot, to: plotSpace)
     }
     
@@ -148,6 +148,7 @@ class XTRSpectrumViewController: XTRSwapableViewController/*, UITableViewDelegat
     
     override func setupUI() {
         title = NSLocalizedString("spectrum", comment: "")
+        
         if element != nil {
             if tableView != nil {
                 tableView!.removeFromSuperview()
@@ -193,7 +194,6 @@ class XTRSpectrumViewController: XTRSwapableViewController/*, UITableViewDelegat
     // MARK: - Memory Management Methods
     
     deinit {
-        //tableView!.delegate = nil
         tableView = nil
         hostingView = nil
         swapView = nil

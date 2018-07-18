@@ -296,7 +296,7 @@ class XTRGraphViewController: UIViewController, CPTPlotDataSource, CPTBarPlotDel
         super.viewDidLoad()
         
         title = NSLocalizedString("graphs", comment: "")
-        navigationBar.topItem?.title = NSLocalizedString("graphs", comment: "")
+        navigationBar.topItem?.title = title
         barButtonItem.title = NSLocalizedString("chooseGraph", comment: "")
 
         //delegate.controller = self

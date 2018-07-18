@@ -12,7 +12,7 @@ class XTRMainViewController: UITabBarController {
     
     // MARK: - Initialization Methods
     
-    private weak var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
+    private var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!

@@ -93,9 +93,11 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     
     override func addChildViewController(_ aViewController: UIViewController) {
         super.addChildViewController(aViewController)
+        
         aViewController.view.frame = swapView.frame
         aViewController.view.bounds = swapView.bounds
         aViewController.view.isHidden = true
+        
         view.addSubview(aViewController.view)
     }
     
@@ -113,6 +115,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             animation.type = kCATransitionReveal
             animation.subtype = (direction == "Next") ? kCATransitionFromLeft: kCATransitionFromRight
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            
             theWindow.layer.add(animation, forKey: "SwitchInspectorView")
             theWindow.addSubview(currentView)
             theWindow.layer.removeAnimation(forKey: "SwitchInspectorView")
@@ -155,8 +158,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     @IBAction func swapViews(_ sender: UISegmentedControl) {
         let viewController = childViewControllers[sender.selectedSegmentIndex]
         
-        for index in 0..<childViewControllers.count {
-            let controller = childViewControllers[Int(index)] as! XTRSwapableViewController
+        for controller in childViewControllers {
             controller.view.isHidden = true
             viewController.view.isHidden = false
         }
@@ -222,6 +224,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         dismiss(animated: true, completion: nil)
+        
         super.viewWillDisappear(animated)
     }
     

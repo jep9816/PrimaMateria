@@ -84,7 +84,6 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         discovererLabel = nil
         discoveryLocationLabel = nil
         discoveryYearLabel = nil
-        //webView.delegate = nil
         webView = nil
     }
     

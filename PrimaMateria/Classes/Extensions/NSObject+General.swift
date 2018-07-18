@@ -44,7 +44,6 @@ extension UILabel {
 extension String {
     
     func image(size: CGSize) -> UIImage? {
-        //let size = CGSize(width: 40, height: 40)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
         UIColor.clear.set()
         let rect = CGRect(origin: .zero, size: size)
