@@ -43,18 +43,18 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
         protonLabel.position = CGPoint(x: 161, y: 161)
         protonLabel.fontSize = 12
         protonLabel.horizontalAlignmentMode = .center
-        protonLabel.color = SKColor.black
+        protonLabel.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         protonLabel.fontName = "Verdana-Bold"
-        protonLabel.fontColor = SKColor.black
+        protonLabel.fontColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
         neutronLabel.position = CGPoint(x: 161, y: 151)
         neutronLabel.fontSize = 12
         neutronLabel.horizontalAlignmentMode = .center
-        neutronLabel.color = SKColor.black
+        neutronLabel.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         neutronLabel.fontName = "Verdana-Bold"
-        neutronLabel.fontColor = SKColor.black
+        neutronLabel.fontColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         
-        backgroundColor = SKColor.white
+        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         circleOfDots(numberOfCircles: kShellElectrons, radius: maxRadius - 120, color: SKColor.red) // K
         circleOfDots(numberOfCircles: lShellElectrons, radius: maxRadius - 100, color: SKColor.green) // L
@@ -125,9 +125,9 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
         aLabel.position = atLocation
         aLabel.fontSize = 10
         aLabel.horizontalAlignmentMode = .center
-        aLabel.color = SKColor.darkGray
+        aLabel.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         aLabel.fontName = "Verdana"
-        aLabel.fontColor = SKColor.darkGray
+        aLabel.fontColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
         addChild(aLabel)
     }
     
