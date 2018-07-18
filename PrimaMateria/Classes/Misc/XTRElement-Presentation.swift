@@ -339,40 +339,38 @@ extension XTRElementModel {
                 let allValues = Array(valuesCollection)
                 let counter = allKeys.count
                 
-                if counter > 0 {
-                    for idx in 0..<counter {
-                        let aKey = allKeys[idx]
-                        let aValue = allValues[idx]
+                for idx in 0..<counter {
+                    let aKey = allKeys[idx]
+                    let aValue = allValues[idx]
+                    
+                    if aKey != "New item" {
+                        let aString = String(aValue[aValue.startIndex]) //Array(arrayLiteral: aValue)[0]
+                        let character = Int(aString)!
+                        attributedString += aKey
                         
-                        if aKey != "New item" {
-                            let aString = String(aValue[aValue.startIndex]) //Array(arrayLiteral: aValue)[0]
-                            let character = Int(aString)!
-                            attributedString += aKey
-                            
-                            switch character {
-                            case SuperScriptType.k0Superscript:
-                                attributedString += "⁰"
-                            case SuperScriptType.k1Superscript:
-                                attributedString += "¹"
-                            case SuperScriptType.k2Superscript:
-                                attributedString += "²"
-                            case SuperScriptType.k3Superscript:
-                                attributedString += "³"
-                            case SuperScriptType.k4Superscript:
-                                attributedString += "⁴"
-                            case SuperScriptType.k5Superscript:
-                                attributedString += "⁵"
-                            case SuperScriptType.k6Superscript:
-                                attributedString += "⁶"
-                            case SuperScriptType.k7Superscript:
-                                attributedString += "⁷"
-                            case SuperScriptType.k8Superscript:
-                                attributedString += "⁸"
-                            case SuperScriptType.k9Superscript:
-                                attributedString += "⁹"
-                            default:
-                                break
-                            }
+                        switch character {
+                        case SuperScriptType.k0Superscript:
+                            attributedString += "⁰"
+                        case SuperScriptType.k1Superscript:
+                            attributedString += "¹"
+                        case SuperScriptType.k2Superscript:
+                            attributedString += "²"
+                        case SuperScriptType.k3Superscript:
+                            attributedString += "³"
+                        case SuperScriptType.k4Superscript:
+                            attributedString += "⁴"
+                        case SuperScriptType.k5Superscript:
+                            attributedString += "⁵"
+                        case SuperScriptType.k6Superscript:
+                            attributedString += "⁶"
+                        case SuperScriptType.k7Superscript:
+                            attributedString += "⁷"
+                        case SuperScriptType.k8Superscript:
+                            attributedString += "⁸"
+                        case SuperScriptType.k9Superscript:
+                            attributedString += "⁹"
+                        default:
+                            break
                         }
                     }
                 }

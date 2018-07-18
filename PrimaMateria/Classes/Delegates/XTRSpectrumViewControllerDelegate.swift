@@ -9,6 +9,28 @@
 import UIKit
 import CorePlot
 
+class SpectrumModel: NSObject {
+    let xPos: Int
+    let yPos: Int
+    let width: Int
+    let height: Int
+    let property: String
+    let columnPosition: Int
+    let modulus: Int
+    let cell: XTRTableCell
+    
+    init(xPos: Int, yPos: Int, width: Int, height: Int, property: String, columnPosition: Int, modulus: Int, cell: XTRTableCell) {
+        self.xPos = xPos
+        self.yPos = yPos
+        self.width = width
+        self.height = height
+        self.property = property
+        self.columnPosition = columnPosition
+        self.modulus = modulus
+        self.cell = cell
+        super.init()
+    }
+}
 class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
     
     weak var controller: XTRSpectrumViewController?
@@ -75,10 +97,10 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
             let spectrum = model?.spectrum
             
             cell = XTRTableCell(style: .default, reuseIdentifier: MyIdentifier)
-            
-            tableCellLabel(0.0, YPos: 0.0, width: 124.0, height: 32.0, property: airWavelength!, columnPosition: 1, modulus: modulus, cell: cell!)
-            tableCellLabel(125.0, YPos: 0.0, width: 115.0, height: 32.0, property: intensity!, columnPosition: 2, modulus: modulus, cell: cell!)
-            tableCellLabel(241.0, YPos: 0.0, width: 117.0, height: 32.0, property: spectrum!, columnPosition: 3, modulus: modulus, cell: cell!)
+
+            tableCellLabel(model: SpectrumModel(xPos: 0, yPos: 0, width: 124, height: 32, property: airWavelength!, columnPosition: 1, modulus: modulus, cell: cell!))
+            tableCellLabel(model: SpectrumModel(xPos: 125, yPos: 0, width: 115, height: 32, property: intensity!, columnPosition: 2, modulus: modulus, cell: cell!))
+            tableCellLabel(model: SpectrumModel(xPos: 241, yPos: 0, width: 117, height: 32, property: spectrum!, columnPosition: 3, modulus: modulus, cell: cell!))
         }
         
         return cell!
@@ -92,19 +114,19 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
         return controller!.element!.lineSpectra!.value.count
     }
     
-    func tableCellLabel(_ xPos: CGFloat, YPos: CGFloat, width: CGFloat, height: CGFloat, property: String, columnPosition: Int, modulus: Int, cell: XTRTableCell) {
-        let label = UILabel(frame: CGRect(x: xPos, y: YPos, width: width, height: height))
+    func tableCellLabel(model: SpectrumModel) {
+        let label = UILabel(frame: CGRect(x: model.xPos, y: model.yPos, width: model.width, height: model.height))
         
-        label.backgroundColor = (modulus == 0) ? UIColor.white: XTRColorFactory.rowColor
+        label.backgroundColor = (model.modulus == 0) ? UIColor.white: XTRColorFactory.rowColor
         
-        cell.backgroundView?.backgroundColor = UIColor.black
-        cell.contentView.backgroundColor = UIColor.black
-        cell.addColumn(columnPosition)
+        model.cell.backgroundView?.backgroundColor = UIColor.black
+        model.cell.contentView.backgroundColor = UIColor.black
+        model.cell.addColumn(model.columnPosition)
         label.font = UIFont.systemFont(ofSize: 20.0)
         label.textAlignment = .center
         label.textColor = UIColor.black
-        label.text = " \(property)"
-        cell.contentView.addSubview(label)
+        label.text = " \(model.property)"
+        model.cell.contentView.addSubview(label)
     }
     
 }

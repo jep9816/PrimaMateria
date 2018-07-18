@@ -204,13 +204,12 @@ class XTRGraphViewController: UIViewController, CPTPlotDataSource, CPTBarPlotDel
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
             let element = XTRDataSource.sharedInstance().elementAtIndex(Int(idx))
-            let identifier = plot.identifier as! String
             
             switch fieldEnum {
             case 0:
                 num = NSNumber(value: idx + 1)
             case 1:
-                switch identifier {
+                switch plot.identifier as! String {
                 case ELEMENT_ATOMIC_MASS :
                     num = NSNumber(value: element.atomicMass)
                 case ELEMENT_ATOMIC_RADIUS :

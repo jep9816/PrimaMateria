@@ -8,7 +8,7 @@
 
 import CorePlot
 
-class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
+/*class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
     
     var controller: XTRGraphViewController?
     
@@ -120,4 +120,4 @@ class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDel
         let element = XTRDataSource.sharedInstance().elementAtIndex(Int(recordIndex))
         return CPTFill(color: CPTColor(cgColor: element.seriesColor.cgColor))
     }
-}
+}*/
