@@ -17,8 +17,6 @@ class XTRWikipediaViewController: UIViewController {
     
     public var progressHUD: MBProgressHUD?
     
-    private var responseData: NSMutableData?
-    private var request: NSMutableURLRequest?
     private var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
     
     var elementName: String?

@@ -8,20 +8,20 @@
 
 import CorePlot
 
-/*class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
+class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
     
-    var controller: XTRGraphViewController?
+    weak var controller: XTRGraphViewController?
     
-        @objc func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
-            var data: Data = Data()
-            
-            do {
-                data = try Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
-            } catch {
-            }
-            
-            return data
+    @objc func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
+        var data: Data = Data()
+        
+        do {
+            data = try Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
+        } catch {
         }
+        
+        return data
+    }
     
     // MARK: - Plot Data Source Methods
     
@@ -34,13 +34,12 @@ import CorePlot
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
             let element = XTRDataSource.sharedInstance().elementAtIndex(Int(idx))
-            let identifier = plot.identifier as! String
             
             switch fieldEnum {
             case 0:
                 num = NSNumber(value: idx + 1)
             case 1:
-                switch identifier {
+                switch plot.identifier as! String {
                 case ELEMENT_ATOMIC_MASS :
                     num = NSNumber(value: element.atomicMass)
                 case ELEMENT_ATOMIC_RADIUS :
@@ -116,8 +115,8 @@ import CorePlot
         controller?.showElementPanelForElementAtIndex(Int(index))
     }
     
-    func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: UInt) -> CPTFill {
+    @objc func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: UInt) -> CPTFill {
         let element = XTRDataSource.sharedInstance().elementAtIndex(Int(recordIndex))
         return CPTFill(color: CPTColor(cgColor: element.seriesColor.cgColor))
     }
-}*/
+}

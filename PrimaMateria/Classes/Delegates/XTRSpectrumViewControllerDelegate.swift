@@ -12,20 +12,11 @@ import CorePlot
 class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
     
     weak var controller: XTRSpectrumViewController?
-    
-    func toUint(signed: Int) -> UInt {
         
-        let unsigned = signed >= 0 ?
-            UInt(signed) :
-            UInt(signed  - Int.min) + UInt(Int.max) + 1
-        
-        return unsigned
-    }
-    
     // MARK: - Plot Data Source Methodså
     
     func numberOfRecords(for plot: CPTPlot) -> UInt {
-        return toUint(signed: controller!.lineSpectraArray!.value.count)
+        return NSObject.toUint(signed: controller!.lineSpectraArray!.value.count)
     }
     
     func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {

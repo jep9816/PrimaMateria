@@ -124,6 +124,7 @@
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
 		80773C7E20FE9840008B7B43 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 80773C7D20FE983F008B7B43 /* .swiftlint.yml */; };
 		80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */; };
+		80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */; };
 		AF8083CEBAEA2DD6400DF648 /* Pods_PrimaMateria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */; };
 /* End PBXBuildFile section */
 
@@ -258,6 +259,7 @@
 		80773C7D20FE983F008B7B43 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -445,6 +447,7 @@
 			isa = PBXGroup;
 			children = (
 				8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */,
+				80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */,
 				8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */,
 				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
 				8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */,
@@ -802,6 +805,7 @@
 				8012804A20F0270500ABC706 /* XTRBarPlot.swift in Sources */,
 				8012803220F0270500ABC706 /* XTRPopoutAnimationController.swift in Sources */,
 				8012806920F0270500ABC706 /* XTRMainViewControllerDelegate.swift in Sources */,
+				80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */,
 				8012806720F0270500ABC706 /* XTRAtomicStructureViewController.swift in Sources */,
 				8012802E20F0270500ABC706 /* XTRPropertiesStore.swift in Sources */,
 				8012805920F0270500ABC706 /* XTRMolecularCalculatorViewController.swift in Sources */,

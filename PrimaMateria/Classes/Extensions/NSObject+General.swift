@@ -26,6 +26,15 @@ public extension NSObject { // General
         return doubleValue
     }
     
+    public class func toUint(signed: Int) -> UInt {
+        
+        let unsigned = signed >= 0 ?
+            UInt(signed) :
+            UInt(signed  - Int.min) + UInt(Int.max) + 1
+        
+        return unsigned
+    }
+
 }
 
 extension UILabel {

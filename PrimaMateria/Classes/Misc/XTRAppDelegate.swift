@@ -17,7 +17,9 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
         let notification = Notification(name: .notificationAppearanceChanged, object: XTRPropertiesStore.appearanceName, userInfo: nil)
         appearanceManager = XTRAppearanceManager.init(window: window!)
         appearanceManager.changeAppearance(notification: notification as NSNotification)
-
+        // TODO: Hack remove this
+        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+        
         //        let fontFamiles: [Any] = UIFont.familyNames()
         //        print("%@", fontFamiles)
         //        let fontNames: [Any] = UIFont.fontNamesForFamilyName("Verdana")

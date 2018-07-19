@@ -1,5 +1,5 @@
 //
-//  GameScene.swift
+//  XTRShellModelScene.swift
 //  spritetest
 //
 //  Created by Jerry Porter on 6/8/17.
