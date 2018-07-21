@@ -18,7 +18,7 @@ class XTRDataSource: NSObject {
     
     var elementList: [XTRElementModel]!
     var sortedElementList: NSMutableArray?
-    var graphPropertyList: [[String: AnyObject]]?
+    var graphPropertyList: [XTRGraphDefinitionModel] = []
     var columnSortSelector: Selector?
     
     struct Static {
@@ -58,9 +58,28 @@ class XTRDataSource: NSObject {
         }
     }
     
+    func loadGraphPropertyList() {
+        let theData = dataForResource("GraphDefinitions", type: FileType.plist, directory: SUPPORTING_FILES)
+        var tempList: [[String: AnyObject]]?
+        
+        graphPropertyList = []
+        
+        do {
+            tempList = try PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [[String: AnyObject]]
+            for item in tempList! {
+                let model = XTRGraphDefinitionModel(dictionary: item)
+                graphPropertyList.append(model)
+            }
+        } catch _ {
+            assert(nil != tempList, "Could not read graph property list.")
+        }
+    }
+    
     func loadElementList() {
         let theData = dataForResource("ElementList", type: FileType.plist, directory: SUPPORTING_FILES)
         var tempList: [String]?
+        
+        elementList = []
         
         do {
             try tempList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String]
@@ -78,16 +97,10 @@ class XTRDataSource: NSObject {
     
     override init() {
         super.init()
-        let theData = dataForResource("GraphDefinitions", type: FileType.plist, directory: SUPPORTING_FILES)
         
-        elementList = []
         sortedElementList = NSMutableArray()
-        do {
-            try graphPropertyList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [[String: AnyObject]]
-        } catch _ {
-            graphPropertyList = nil
-        }
         
+        loadGraphPropertyList()
         loadElementList()
     }
     

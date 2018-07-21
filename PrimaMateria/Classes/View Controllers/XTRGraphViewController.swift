@@ -93,10 +93,10 @@ class XTRGraphViewController: UIViewController {
         x.axisLabels =  aSet as? Set<CPTAxisLabel>
     }
     
-    func createYAxis(_ axisSet: CPTXYAxisSet, minorTicks: Float, majorTickStyle: CPTLineStyle, minorTickStyle: CPTLineStyle, majorTicks: Float, dict: [String: AnyObject], maxValue: Float, minValue: Float) {
+    func createYAxis(_ axisSet: CPTXYAxisSet, minorTicks: Float, majorTickStyle: CPTLineStyle, minorTickStyle: CPTLineStyle, majorTicks: Float, title: String, maxValue: Float, minValue: Float) {
         let y = axisSet.yAxis!
-        let titleKey = dict[GraphAttribute.title] as? String
-        let title = NSLocalizedString(titleKey!, comment: "")
+        let titleKey = title
+        let title = NSLocalizedString(titleKey, comment: "")
         let textStyle = CPTMutableTextStyle.init()
         
         textStyle.color = CPTColor.black()
@@ -130,11 +130,11 @@ class XTRGraphViewController: UIViewController {
     }
     
     func showGraphForChoiceAtIndex(_ anIndex: Int) {
-        let dict = XTRDataSource.sharedInstance().graphPropertyList![anIndex]
-        let minValue = dict[GraphAttribute.minimumValue] as! Float
-        let maxValue = dict[GraphAttribute.maximumValue] as! Float
-        let majorTicks = dict[GraphAttribute.majorTickMarks] as! Float
-        let minorTicks = dict[GraphAttribute.minorTickMarks] as! Float
+        let model = XTRDataSource.sharedInstance().graphPropertyList[anIndex]
+        let minValue = model.minimumValue
+        let maxValue = model.maximumValue
+        let majorTicks = model.majorTickMarks
+        let minorTicks = model.minorTickMarks
         let majorTickStyle = CPTMutableLineStyle.init()
         let minorTickStyle = CPTMutableLineStyle.init()
         let length = XTRDataSource.sharedInstance().elementCount() + 1
@@ -147,6 +147,7 @@ class XTRGraphViewController: UIViewController {
         
         plotSpace.yRange = CPTPlotRange.init(location: NSNumber(value: Float(minValue)), length: NSNumber(value: Float(maxValue)))
         plotSpace.xRange = CPTPlotRange.init(location: 0.0, length: NSNumber(value: length))
+        
         majorTickStyle.lineWidth = 2.0
         majorTickStyle.lineColor = CPTColor.darkGray()
         
@@ -154,16 +155,15 @@ class XTRGraphViewController: UIViewController {
         minorTickStyle.lineColor = CPTColor.darkGray()
         
         createXAxis(axisSet, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle)
-        createYAxis(axisSet, minorTicks: minorTicks, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle, majorTicks: majorTicks, dict: dict, maxValue: maxValue, minValue: minValue)
+        createYAxis(axisSet, minorTicks: minorTicks, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle, majorTicks: majorTicks, title: model.title, maxValue: maxValue, minValue: minValue)
         
         barPlot.element = XTRDataSource.sharedInstance().elementAtIndex(Int(anIndex))
-        //barPlot.delegate = self
         barPlot.delegate = delegate
         barPlot.barWidth = 1.0
         barPlot.baseValue = 0
         barPlot.dataSource = delegate
         barPlot.barOffset = 0.0
-        barPlot.identifier = dict[GraphAttribute.name] as! String as (NSCoding & NSCopying & NSObjectProtocol)?
+        barPlot.identifier = model.attributeName as (NSCoding & NSCopying & NSObjectProtocol)?
         barPlot.barCornerRadius = 0.0
         
         barChart?.add(barPlot, to: plotSpace)
