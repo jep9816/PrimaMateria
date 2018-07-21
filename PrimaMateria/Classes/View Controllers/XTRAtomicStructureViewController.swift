@@ -9,12 +9,16 @@
 import SpriteKit
 import GameplayKit
 
-class XTRAtomicStructureViewController: XTRSwapableViewController {
+struct XTRAtomicStructureViewControllerConfig {
     
     enum StructureViewTypes {
         static let kCrystalStructureView = 0
         static let kShellModelView = 1
     }
+
+}
+
+class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var crystalStructureView: SCNView!
@@ -76,79 +80,81 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     // MARK: - Internal Methods
     
-    override func setupUI() {
+    override func setupUI(element: XTRElementModel) {
+        super.setupUI(element: element)
+        
         title = NSLocalizedString("atomicStructure", comment: "")
-        guard let localElement = element else { return }
-        let crystalStructure = localElement.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
-        let scene = localElement.shellModelScene
-        let scnScene = localElement.crystalStructureScene
+        
+        let crystalStructure = element.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
+        let scene = element.shellModelScene
+        let scnScene = element.crystalStructureScene
 
         segmentedControl.setTitle(NSLocalizedString("crystalStructure", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("shellModel", comment: ""), forSegmentAt: 1)
 
         crystalStructureLabel.text = crystalStructure
-        shellModelView.backgroundColor = localElement.seriesColor
+        shellModelView.backgroundColor = element.seriesColor
         
         scene.scaleMode = .aspectFit
         shellModelView.presentScene(scene)
         crystalStructureView.scene = scnScene
         
-        atomicRadiusLabel.text = "\(localElement.atomicRadius)"
-        atomicVolumeLabel.text = "\(localElement.atomicVolume)"
-        covalentRadiusLabel.text = "\(localElement.covalentRadius)"
-        crossSectionLabel.text = "\(localElement.value(forKeyPath: ELEMENT_CROSS_SECTION)!)"
-        ionicRadiusLabel.text = "\(localElement.value(forKeyPath: ELEMENT_IONIC_RADIUS)!)"
-        oxidationStatesLabel.text = "\(localElement.value(forKeyPath: ELEMENT_OXIDATION_STATES)!)"
-        numberOfElectronsLabel.text = "\(localElement.value(forKeyPath: ELEMENT_NUMBER_OF_ELECTRONS)!)"
-        numberOfNeutronsLabel.text = "\(localElement.value(forKeyPath: ELEMENT_NUMBER_OF_NEUTRONS)!)"
-        numberOfProtonsLabel.text = "\(localElement.value(forKeyPath: ELEMENT_NUMBER_OF_PROTONS)!)"
+        atomicRadiusLabel.text = "\(element.atomicRadius)"
+        atomicVolumeLabel.text = "\(element.atomicVolume)"
+        covalentRadiusLabel.text = "\(element.covalentRadius)"
+        crossSectionLabel.text = "\(element.value(forKeyPath: ELEMENT_CROSS_SECTION)!)"
+        ionicRadiusLabel.text = "\(element.value(forKeyPath: ELEMENT_IONIC_RADIUS)!)"
+        oxidationStatesLabel.text = "\(element.value(forKeyPath: ELEMENT_OXIDATION_STATES)!)"
+        numberOfElectronsLabel.text = "\(element.value(forKeyPath: ELEMENT_NUMBER_OF_ELECTRONS)!)"
+        numberOfNeutronsLabel.text = "\(element.value(forKeyPath: ELEMENT_NUMBER_OF_NEUTRONS)!)"
+        numberOfProtonsLabel.text = "\(element.value(forKeyPath: ELEMENT_NUMBER_OF_PROTONS)!)"
         
-        valenceLabel.text = localElement.valence
-        fillingOrbitalLabel.text = localElement.fillingOrbital
+        valenceLabel.text = element.valence
+        fillingOrbitalLabel.text = element.fillingOrbital
         
-        kShellElectronsLabel.text = localElement.kShellElectrons
-        lShellElectronsLabel.text = localElement.lShellElectrons
-        mShellElectronsLabel.text = localElement.mShellElectrons
-        nShellElectronsLabel.text = localElement.nShellElectrons
-        oShellElectronsLabel.text = localElement.oShellElectrons
-        pShellElectronsLabel.text = localElement.pShellElectrons
-        qShellElectronsLabel.text = localElement.qShellElectrons
+        kShellElectronsLabel.text = element.kShellElectrons
+        lShellElectronsLabel.text = element.lShellElectrons
+        mShellElectronsLabel.text = element.mShellElectrons
+        nShellElectronsLabel.text = element.nShellElectrons
+        oShellElectronsLabel.text = element.oShellElectrons
+        pShellElectronsLabel.text = element.pShellElectrons
+        qShellElectronsLabel.text = element.qShellElectrons
         
-        shell1sLabel.text = localElement.shell1s
+        shell1sLabel.text = element.shell1s
         
-        shell2sLabel.text = localElement.shell2s
-        shell2pLabel.text = localElement.shell2p
+        shell2sLabel.text = element.shell2s
+        shell2pLabel.text = element.shell2p
         
-        shell3sLabel.text = localElement.shell3s
-        shell3pLabel.text = localElement.shell3p
-        shell3dLabel.text = localElement.shell3d
+        shell3sLabel.text = element.shell3s
+        shell3pLabel.text = element.shell3p
+        shell3dLabel.text = element.shell3d
         
-        shell4sLabel.text = localElement.shell4s
-        shell4pLabel.text = localElement.shell4p
-        shell4dLabel.text = localElement.shell4d
-        shell4fLabel.text = localElement.shell4f
+        shell4sLabel.text = element.shell4s
+        shell4pLabel.text = element.shell4p
+        shell4dLabel.text = element.shell4d
+        shell4fLabel.text = element.shell4f
         
-        shell5sLabel.text = localElement.shell5s
-        shell5pLabel.text = localElement.shell5p
-        shell5dLabel.text = localElement.shell5d
-        shell5fLabel.text = localElement.shell5f
+        shell5sLabel.text = element.shell5s
+        shell5pLabel.text = element.shell5p
+        shell5dLabel.text = element.shell5d
+        shell5fLabel.text = element.shell5f
         
-        shell6sLabel.text = localElement.shell6s
-        shell6pLabel.text = localElement.shell6p
-        shell6dLabel.text = localElement.shell6d
+        shell6sLabel.text = element.shell6s
+        shell6pLabel.text = element.shell6p
+        shell6dLabel.text = element.shell6d
         
-        shell7sLabel.text = localElement.shell7s
-        shell7pLabel.text = localElement.shell7p
+        shell7sLabel.text = element.shell7s
+        shell7pLabel.text = element.shell7p
     }
     
     // MARK: - Action Methods
     
     @IBAction func swapViews(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case StructureViewTypes.kCrystalStructureView:
+        case XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView:
             crystalStructureView.isHidden = false
             shellModelView.isHidden = true
-        case StructureViewTypes.kShellModelView:
+        case XTRAtomicStructureViewControllerConfig.StructureViewTypes.kShellModelView:
             crystalStructureView.isHidden = true
             shellModelView.isHidden = false
         default:

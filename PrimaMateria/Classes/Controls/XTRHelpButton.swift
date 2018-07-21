@@ -38,7 +38,7 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
     func setupColors() {
         backgroundColor = XTRColorFactory.helpBackgroundColor
         setTitleColor(UIColor.black, for: UIControlState())
-        layer.cornerRadius = 8.0
+        layer.cornerRadius = VIEW_CORNER_RADIUS
         layer.masksToBounds = true
         layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1.0

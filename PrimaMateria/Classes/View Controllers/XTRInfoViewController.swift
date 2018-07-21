@@ -24,8 +24,14 @@ class XTRInfoViewController: UIViewController {
     // MARK: - Internal Methods
     
     func loadDocument(_ documentName: String) {
-        let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "PrimaMateriaHelp")!
-        webView.load(URLRequest(url: URL(fileURLWithPath: path)))
+        guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "PrimaMateriaHelp") else { return }
+        
+        if !path.isEmpty {
+            let url = URL(fileURLWithPath: path)
+            let request = URLRequest(url: url)
+            
+            webView.load(request)
+        }
     }
     
     // MARK: - View Management Methods

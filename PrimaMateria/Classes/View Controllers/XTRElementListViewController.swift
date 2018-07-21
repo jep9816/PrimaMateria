@@ -35,23 +35,21 @@ class XTRElementListViewController: UIViewController {
     
     private func setupTableView() {
         tableView = UITableView(frame: swapView.frame, style: .plain)
-        guard let localTableView = tableView else { return }
-        localTableView.alwaysBounceVertical = false
-        localTableView.alwaysBounceHorizontal = false
-        localTableView.delegate = delegate
-        localTableView.dataSource = delegate
-        localTableView.separatorStyle = .none
-        localTableView.backgroundColor = UIColor.black
-        localTableView.allowsSelection = true
-        localTableView.allowsMultipleSelection = false
-        localTableView.register(XTRElementTableViewCell.classForCoder(), forCellReuseIdentifier: XTRElementListViewController.tableViewCellIdentifier)
+        tableView!.alwaysBounceVertical = false
+        tableView!.alwaysBounceHorizontal = false
+        tableView!.delegate = delegate
+        tableView!.dataSource = delegate
+        tableView!.separatorStyle = .none
+        tableView!.backgroundColor = UIColor.black
+        tableView!.allowsSelection = true
+        tableView!.allowsMultipleSelection = false
+        tableView!.register(XTRElementTableViewCell.classForCoder(), forCellReuseIdentifier: XTRElementListViewController.tableViewCellIdentifier)
         view.addSubview(tableView!)
     }
     
     // MARK: - Action Methods
     
     @IBAction func sortTableView(_ sender: XTRTableHeaderButton) {
-        let toggleState = sender.toggleState()
         
         if tableView != nil {
             tableView!.delegate = nil
@@ -60,7 +58,7 @@ class XTRElementListViewController: UIViewController {
             tableView = nil
         }
         
-        XTRDataSource.sharedInstance().sortByColumnPosition(sender.tag, andOrdering: toggleState)
+        XTRDataSource.sharedInstance().sortByColumnPosition(sender.tag, andOrdering: sender.toggleState())
         setupTableView()
         tableView!.reloadData()
     }
@@ -105,6 +103,7 @@ class XTRElementListViewController: UIViewController {
     deinit {
         atomicNumberButton = nil
         swapView = nil
+        navigationBar =  nil
     }
     
 }

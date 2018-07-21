@@ -117,6 +117,7 @@ let ELEMENT_INSPECTOR_STORY_BOARD = "ElementInspector"
 let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 let SWITCH_CORNER_RADIUS: CGFloat = 16.0
+let VIEW_CORNER_RADIUS: CGFloat = 8.0
 
 struct XTRAppearanceType {
     static let classic = "Classic"

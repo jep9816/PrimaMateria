@@ -20,7 +20,6 @@ struct GraphAttribute {
 class XTRGraphViewController: UIViewController {
     
     let customTickLocations = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
-    let xAxisLabels = ["1", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100", "110"]
 
     @IBOutlet var barButtonItem: UIBarButtonItem!
     @IBOutlet var hostingView: CPTGraphHostingView!
@@ -82,7 +81,7 @@ class XTRGraphViewController: UIViewController {
         
         for index in 0..<customTickLocations.count {
             let tickLocation = customTickLocations[index]
-            let labelValue = xAxisLabels[index]
+            let labelValue = String("\(customTickLocations[index])")
             let newLabel = CPTAxisLabel.init(text: labelValue, textStyle: x.labelTextStyle)
             newLabel.tickLocation = NSNumber(value: tickLocation)
             newLabel.offset = x.labelOffset + x.majorTickLength

@@ -34,12 +34,12 @@ class XTRShadowView: UIImageView {
         sublayer.borderColor = UIColor.black.cgColor
         sublayer.backgroundColor = UIColor.black.cgColor
         sublayer.borderWidth = 1.0
-        sublayer.cornerRadius = 10.0
+        sublayer.cornerRadius = VIEW_CORNER_RADIUS
         
         superView.layer.addSublayer(sublayer)
         
         layer.masksToBounds = true
-        layer.cornerRadius = 10.0
+        layer.cornerRadius = VIEW_CORNER_RADIUS
         layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
         layer.borderWidth = 3.0
         isOpaque = false

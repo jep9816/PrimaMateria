@@ -82,7 +82,7 @@ class XTRElementModel: NSObject {
     }
     
     var group: Int? {
-        let aValue: String? = value(forKeyPath: ELEMENT_GROUP) as? String
+        let aValue = value(forKeyPath: ELEMENT_GROUP) as? String
         return (aValue! == STRING_EMPTY) ? 0: Int(aValue!)
     }
     
@@ -95,14 +95,11 @@ class XTRElementModel: NSObject {
     }
     
     var nuclidesAndIsotopes: Variable<[XTRIsotopeModel]>? {
-        let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String: AnyObject]]
         let models: Variable<[XTRIsotopeModel]> = Variable([])
-        
-        if let list = list {
-            for item in list {
-                let model = XTRIsotopeModel(dictionary: item)
-                models.value.append(model)
-            }
+        guard let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String: AnyObject]] else { return models }
+
+        for item in list {
+            models.value.append(XTRIsotopeModel(dictionary: item))
         }
         
         return models
@@ -121,14 +118,11 @@ class XTRElementModel: NSObject {
     }
     
     var lineSpectra: Variable<[XTRSpectraModel]>? {
-        let list = value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String: AnyObject]]?
         let models: Variable<[XTRSpectraModel]> = Variable([])
+        guard let list = value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String: AnyObject]]? else { return models }
         
-        if let list = list {
-            for item in list! {
-                let model = XTRSpectraModel(dictionary: item)
-                models.value.append(model)
-            }
+        for item in list! {
+            models.value.append(XTRSpectraModel(dictionary: item))
         }
         
         return models

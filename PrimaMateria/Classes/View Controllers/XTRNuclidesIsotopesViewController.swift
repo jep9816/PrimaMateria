@@ -28,30 +28,30 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
         
     // MARK: - Misc Methods
     
-    override func setupUI() {        
-       if element != nil {
-            if tableView != nil {
-                tableView!.removeFromSuperview()
-                tableView = nil
-            }
-            
-            nuclidesAndIsotopesArray = element?.nuclidesAndIsotopes
-            tableView = UITableView(frame: swapView.frame, style: .plain)
-
-            tableView!.alwaysBounceVertical = false
-            tableView!.alwaysBounceHorizontal = false
-            tableView!.dataSource = delegate
-            tableView!.delegate = delegate
-            tableView!.separatorStyle = .none
-            tableView!.allowsSelection = false
-            tableView!.backgroundColor = UIColor.black
-            tableView!.backgroundView = UIView(frame: swapView.frame)
-            tableView!.backgroundView!.backgroundColor = UIColor.black
-            tableView!.isOpaque = false
-            view.addSubview(tableView!)
-            
-            tableView!.reloadData()
+    override func setupUI(element: XTRElementModel) {
+        super.setupUI(element: element)
+        
+        if tableView != nil {
+            tableView!.removeFromSuperview()
+            tableView = nil
         }
+        
+        nuclidesAndIsotopesArray = element.nuclidesAndIsotopes
+        tableView = UITableView(frame: swapView.frame, style: .plain)
+
+        tableView!.alwaysBounceVertical = false
+        tableView!.alwaysBounceHorizontal = false
+        tableView!.dataSource = delegate
+        tableView!.delegate = delegate
+        tableView!.separatorStyle = .none
+        tableView!.allowsSelection = false
+        tableView!.backgroundColor = UIColor.black
+        tableView!.backgroundView = UIView(frame: swapView.frame)
+        tableView!.backgroundView!.backgroundColor = UIColor.black
+        tableView!.isOpaque = false
+        view.addSubview(tableView!)
+        
+        tableView!.reloadData()
     }
     
     // MARK: - Action Methods

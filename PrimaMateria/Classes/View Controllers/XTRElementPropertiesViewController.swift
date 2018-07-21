@@ -77,59 +77,59 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     
     // MARK: - Miscellaneous Methods
     
-    override func setupUI() {
-        if element != nil {
-            let vaporPressure = element!.vaporPressure!
-            
-            atomicMassLabel.text = element!.atomicMassAggregate
-            atomicMassFootnoteLabel.text = element!.atomicMassFootnote
-            boilingPointLabel.text = element!.value(forKeyPath: ELEMENT_BOILING_POINT) as? String
-            coefficientOfLinealThermalExpansionLabel.text = element!.value(forKeyPath: ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION) as? String
-            criticalTemperatureLabel.text = element!.value(forKeyPath: ELEMENT_CRITICAL_TEMPERATURE) as? String
-            descriptionLabel.text = element!.value(forKeyPath: ELEMENT_DESCR) as? String
-            densityLabel.text = element!.value(forKeyPath: ELEMENT_DENSITY) as? String
-            flammabilityClass.text = element!.value(forKeyPath: ELEMENT_FLAMMABILITY_CLASS) as? String
-            heatOfVaporizationLabel.text = element!.value(forKeyPath: ELEMENT_HEAT_OF_VAPORIZATION) as? String
-            magneticSusceptibilityLabel.text = element!.value(forKeyPath: ELEMENT_MAGNETIC_SUSCEPTIBILITY) as? String
-            meltingPointLabel.text = element!.value(forKeyPath: ELEMENT_MELTING_POINT) as? String
-            meltingPointFootnoteLabel.text = element!.value(forKeyPath: ELEMENT_MELTING_POINT_FOOTNOTE) as? String
-            molarVolumeLabel.text = element!.value(forKeyPath: ELEMENT_MOLAR_VOLUME) as? String
-            opticalReflectivityLabel.text = element!.value(forKeyPath: ELEMENT_OPTICAL_REFLECTIVITY) as? String
-            opticalRefractiveIndexLabel.text = element!.value(forKeyPath: ELEMENT_OPTICAL_REFRACTIVE_INDEX) as? String
-            relativeGasDensityLabel.text = element!.value(forKeyPath: ELEMENT_RELATIVE_GAS_DENSITY) as? String
-            
-            vaporPressure1PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1"] as! String, vaporPressure["pa1Footnote"] as! String])
-            vaporPressure10PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10"] as! String, vaporPressure["pa10Footnote"] as! String])
-            vaporPressure100PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100"] as! String, vaporPressure["pa100Footnote"] as! String])
-            vaporPressure1kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1k"] as! String, vaporPressure["pa1kFootnote"] as! String])
-            vaporPressure10kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10k"] as! String, vaporPressure["pa10kFootnote"] as! String])
-            vaporPressure100kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100k"] as! String, vaporPressure["pa100kFootnote"] as! String])
-            
-            conductivityThermalLabel.text = element!.value(forKeyPath: ELEMENT_CONDUCTIVITY_THERMAL) as? String
-            conductivityElectricalLabel.text = element!.value(forKeyPath: ELEMENT_CONDUCTIVITY_ELECTRICAL) as? String
-            elasticModulusBulkLabel.text = element!.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_BULK) as? String
-            elasticModulusRigidityLabel.text = element!.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_RIGIDITY) as? String
-            elasticModulusYoungsLabel.text = element!.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_YOUNGS) as? String
-            enthalpyAtomizationLabel.text = element!.value(forKeyPath: ELEMENT_ENTHALPY_OF_ATOMIZATION) as? String
-            enthalpyFusionLabel.text = element!.value(forKeyPath: ELEMENT_ENTHALPY_OF_FUSION) as? String
-            enthalpyVaporizationLabel.text = element!.value(forKeyPath: ELEMENT_ENTHALPY_OF_VAPORIZATION) as? String
-            hardnessScaleBrinellLabel.text = element!.value(forKeyPath: ELEMENT_HARDNESS_SCALE_BRINELL) as? String
-            hardnessScaleMohsLabel.text = element!.value(forKeyPath: ELEMENT_HARDNESS_SCALE_MOHS) as? String
-            hardnessScaleVickersLabel.text = element!.value(forKeyPath: ELEMENT_HARDNESS_SCALE_VICKERS) as? String
-            heatCapacitySpecificLabel.text = element!.value(forKeyPath: ELEMENT_SPECIFIC_HEAT_CAPACITY) as? String
-            heatCapacityMolarLabel.text = element!.value(forKeyPath: ELEMENT_MOLAR_HEAT_CAPACITY) as? String
-            
-            electroChemicalEquivalentLabel.text = element!.value(forKeyPath: ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT) as? String
-            electronWorkFunctionLabel.text = element!.value(forKeyPath: ELEMENT_ELECTRON_WORK_FUNCTION) as? String
-            electroNegativityLabel.text = element!.value(forKeyPath: ELEMENT_ELECTRO_NEGATIVITY) as? String
-            heatOfFusionLabel.text = element!.value(forKeyPath: ELEMENT_HEAT_OF_FUSION) as? String
-            incompatabilitiesLabel.text = element!.value(forKeyPath: ELEMENT_INCOMPATIBILITIES) as? String
-            ionizationPotentialFirstLabel.text = element!.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_FIRST) as? String
-            ionizationPotentialSecondLabel.text = element!.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_SECOND) as? String
-            ionizationPotentialThirdLabel.text = element!.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
-            qualitativeSolubilityLabel.text = element!.value(forKeyPath: ELEMENT_QUALITATIVE_SOLUBILITY) as? String
-            valenceElectronPotentialLabel.text = element!.value(forKeyPath: ELEMENT_VALENCE_ELECTRON_POTENTIAL) as? String
-        }
+    override func setupUI(element: XTRElementModel) {
+        super.setupUI(element: element)
+        
+        let vaporPressure = element.vaporPressure!
+        
+        atomicMassLabel.text = element.atomicMassAggregate
+        atomicMassFootnoteLabel.text = element.atomicMassFootnote
+        boilingPointLabel.text = element.value(forKeyPath: ELEMENT_BOILING_POINT) as? String
+        coefficientOfLinealThermalExpansionLabel.text = element.value(forKeyPath: ELEMENT_COEFFICIENT_OF_LINEAL_THERMAL_EXPANSION) as? String
+        criticalTemperatureLabel.text = element.value(forKeyPath: ELEMENT_CRITICAL_TEMPERATURE) as? String
+        descriptionLabel.text = element.value(forKeyPath: ELEMENT_DESCR) as? String
+        densityLabel.text = element.value(forKeyPath: ELEMENT_DENSITY) as? String
+        flammabilityClass.text = element.value(forKeyPath: ELEMENT_FLAMMABILITY_CLASS) as? String
+        heatOfVaporizationLabel.text = element.value(forKeyPath: ELEMENT_HEAT_OF_VAPORIZATION) as? String
+        magneticSusceptibilityLabel.text = element.value(forKeyPath: ELEMENT_MAGNETIC_SUSCEPTIBILITY) as? String
+        meltingPointLabel.text = element.value(forKeyPath: ELEMENT_MELTING_POINT) as? String
+        meltingPointFootnoteLabel.text = element.value(forKeyPath: ELEMENT_MELTING_POINT_FOOTNOTE) as? String
+        molarVolumeLabel.text = element.value(forKeyPath: ELEMENT_MOLAR_VOLUME) as? String
+        opticalReflectivityLabel.text = element.value(forKeyPath: ELEMENT_OPTICAL_REFLECTIVITY) as? String
+        opticalRefractiveIndexLabel.text = element.value(forKeyPath: ELEMENT_OPTICAL_REFRACTIVE_INDEX) as? String
+        relativeGasDensityLabel.text = element.value(forKeyPath: ELEMENT_RELATIVE_GAS_DENSITY) as? String
+        
+        vaporPressure1PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1"] as! String, vaporPressure["pa1Footnote"] as! String])
+        vaporPressure10PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10"] as! String, vaporPressure["pa10Footnote"] as! String])
+        vaporPressure100PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100"] as! String, vaporPressure["pa100Footnote"] as! String])
+        vaporPressure1kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1k"] as! String, vaporPressure["pa1kFootnote"] as! String])
+        vaporPressure10kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10k"] as! String, vaporPressure["pa10kFootnote"] as! String])
+        vaporPressure100kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100k"] as! String, vaporPressure["pa100kFootnote"] as! String])
+        
+        conductivityThermalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_THERMAL) as? String
+        conductivityElectricalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_ELECTRICAL) as? String
+        elasticModulusBulkLabel.text = element.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_BULK) as? String
+        elasticModulusRigidityLabel.text = element.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_RIGIDITY) as? String
+        elasticModulusYoungsLabel.text = element.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_YOUNGS) as? String
+        enthalpyAtomizationLabel.text = element.value(forKeyPath: ELEMENT_ENTHALPY_OF_ATOMIZATION) as? String
+        enthalpyFusionLabel.text = element.value(forKeyPath: ELEMENT_ENTHALPY_OF_FUSION) as? String
+        enthalpyVaporizationLabel.text = element.value(forKeyPath: ELEMENT_ENTHALPY_OF_VAPORIZATION) as? String
+        hardnessScaleBrinellLabel.text = element.value(forKeyPath: ELEMENT_HARDNESS_SCALE_BRINELL) as? String
+        hardnessScaleMohsLabel.text = element.value(forKeyPath: ELEMENT_HARDNESS_SCALE_MOHS) as? String
+        hardnessScaleVickersLabel.text = element.value(forKeyPath: ELEMENT_HARDNESS_SCALE_VICKERS) as? String
+        heatCapacitySpecificLabel.text = element.value(forKeyPath: ELEMENT_SPECIFIC_HEAT_CAPACITY) as? String
+        heatCapacityMolarLabel.text = element.value(forKeyPath: ELEMENT_MOLAR_HEAT_CAPACITY) as? String
+        
+        electroChemicalEquivalentLabel.text = element.value(forKeyPath: ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT) as? String
+        electronWorkFunctionLabel.text = element.value(forKeyPath: ELEMENT_ELECTRON_WORK_FUNCTION) as? String
+        electroNegativityLabel.text = element.value(forKeyPath: ELEMENT_ELECTRO_NEGATIVITY) as? String
+        heatOfFusionLabel.text = element.value(forKeyPath: ELEMENT_HEAT_OF_FUSION) as? String
+        incompatabilitiesLabel.text = element.value(forKeyPath: ELEMENT_INCOMPATIBILITIES) as? String
+        ionizationPotentialFirstLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_FIRST) as? String
+        ionizationPotentialSecondLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_SECOND) as? String
+        ionizationPotentialThirdLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
+        qualitativeSolubilityLabel.text = element.value(forKeyPath: ELEMENT_QUALITATIVE_SOLUBILITY) as? String
+        valenceElectronPotentialLabel.text = element.value(forKeyPath: ELEMENT_VALENCE_ELECTRON_POTENTIAL) as? String
     }
     
     // MARK: - Action Methods
@@ -152,8 +152,12 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let rect = segmentedControl.frame
+        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
+
         segmentedControl.setTitle(NSLocalizedString("physicalProperties", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("chemicalProperties", comment: ""), forSegmentAt: 1)
+        segmentedControl.frame = newRect
 
         chemicalPropertiesView.frame = swapView.frame
         chemicalPropertiesView.bounds = swapView.bounds
@@ -165,10 +169,6 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         physicalPropertiesView.bounds = swapView.bounds
         physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1670)
         physicalPropertiesView.isHidden = false
-        let rect = segmentedControl.frame
-        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
-        segmentedControl.frame = newRect
-
         view.addSubview(physicalPropertiesView)
         
         swapView.removeFromSuperview()

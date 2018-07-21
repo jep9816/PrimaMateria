@@ -29,7 +29,12 @@ class XTRHelpBalloonViewController: UIViewController {
     func loadDocument(_ documentName: String) {
         guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "ElementTipHelp") else { return }
         
-        webView.load(URLRequest(url: URL(fileURLWithPath: path)))
+        if !path.isEmpty {
+            let url = URL(fileURLWithPath: path)
+            let request = URLRequest(url: url)
+            
+            webView.load(request)
+        }
     }
     
     @objc func showElementHelp(_ aNotification: Notification) {
@@ -65,7 +70,7 @@ class XTRHelpBalloonViewController: UIViewController {
         
         view.backgroundColor = XTRColorFactory.helpBackgroundColor
         
-        titleLabel.layer.cornerRadius = 8
+        titleLabel.layer.cornerRadius = VIEW_CORNER_RADIUS
         titleLabel.layer.masksToBounds = true
         
         let viewportScriptString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); meta.setAttribute('initial-scale', '1.0'); meta.setAttribute('maximum-scale', '1.0'); meta.setAttribute('minimum-scale', '1.0'); meta.setAttribute('user-scalable', 'no'); document.getElementsByTagName('head')[0].appendChild(meta);"
@@ -79,7 +84,7 @@ class XTRHelpBalloonViewController: UIViewController {
         webView = WKWebView(frame: CGRect(x: 5, y: 43, width: 400, height: 288), configuration: config)
         view.addSubview(webView)
         
-        webView.layer.cornerRadius = 8
+        webView.layer.cornerRadius = VIEW_CORNER_RADIUS
         webView.layer.masksToBounds = true
         webView.navigationDelegate = delegate
         webView.scrollView.isScrollEnabled = true             // Make sure our view is interactable

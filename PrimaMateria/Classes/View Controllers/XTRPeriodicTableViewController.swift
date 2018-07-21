@@ -44,11 +44,11 @@ class XTRPeriodicTableViewController: UIViewController {
     }
     
     func toggleMolecularCalculatorState(_ aFlag: Bool) {
+        molecularCalculatorState = aFlag
+        
         if aFlag {
-            molecularCalculatorState = true
             view.addSubview(molecularCalculatorViewController.view)
         } else {
-            molecularCalculatorState = false
             molecularCalculatorViewController.view.removeFromSuperview()
             molecularCalculatorViewController.viewWillDisappear(true)
         }
@@ -61,6 +61,7 @@ class XTRPeriodicTableViewController: UIViewController {
         
         XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = sender.tag
+        
         popoverController.sourceRect = XTRPeriodicTableViewControllerConfig.buttonRect
         popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
@@ -74,8 +75,7 @@ class XTRPeriodicTableViewController: UIViewController {
     
     @IBAction func showElementInspector(_ sender: UIButton) {
         if molecularCalculatorState {
-            let element = XTRDataSource.sharedInstance().elementAtIndex(sender.tag)
-            molecularCalculatorViewController.setElement(element)
+            molecularCalculatorViewController.setElement(XTRDataSource.sharedInstance().elementAtIndex(sender.tag))
         } else {
             if XTRPropertiesStore.elementBubblesState {
                 showPopupForButton(sender)
@@ -96,12 +96,12 @@ class XTRPeriodicTableViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let titleString = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
-        title = titleString
-        navigationBar.topItem?.title = titleString
+        title = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
+        navigationBar.topItem?.title = title
         
         molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMolecularCalculatorViewController.nameOfClass) as! XTRMolecularCalculatorViewController
         molecularCalculatorViewController.view.frame = swapView.frame
+        
         swapView.removeFromSuperview()
         setupPopUp()
         toggleMolecularCalculatorState(false)

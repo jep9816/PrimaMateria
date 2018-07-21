@@ -29,8 +29,11 @@ class XTRWikipediaViewController: UIViewController {
     
     // MARK: - Internal Methods
     
-    func prepareRequest() {        
-        webView.load(URLRequest(url: URL(string: "https://en.wikipedia.org/wiki/\(elementName!)")!))
+    func prepareRequest() {
+        let url = URL(string: "https://en.wikipedia.org/wiki/\(elementName!)")!
+        let request = URLRequest(url: url)
+        
+        webView.load(request)
     }
     
     // MARK: - Action Methods

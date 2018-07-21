@@ -38,18 +38,16 @@ class XTRTableCell: UITableViewCell {
     func setup() {
         backgroundColor = UIColor.black
         contentView.backgroundColor = UIColor.black
-        let counter = columns.count
         
-        if counter > 0 {
+        if !columns.isEmpty {
             let ctx = UIGraphicsGetCurrentContext()!
             
             ctx.setStrokeColor(XTRColorFactoryClassic.grayColor.cgColor)
             ctx.setLineWidth(0.25)
             
-            for index in 0...counter {
-                let xPos = CGFloat(columns[index])
-                ctx.move(to: CGPoint(x: xPos, y: 0))
-                ctx.addLine(to: CGPoint(x: xPos, y: bounds.size.height))
+            for column in columns {
+                ctx.move(to: CGPoint(x: column, y: 0))
+                ctx.addLine(to: CGPoint(x: column, y: Int(bounds.size.height)))
             }
             
             ctx.strokePath()

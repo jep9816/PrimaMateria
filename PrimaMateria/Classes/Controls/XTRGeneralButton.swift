@@ -49,7 +49,7 @@ class XTRGeneralButton: XTRLocalizedButton {
     }
     
     func createLayer() {
-        layer.cornerRadius = 8.0
+        layer.cornerRadius = VIEW_CORNER_RADIUS
         layer.masksToBounds = true
         layer.borderWidth = 1.0
         layer.borderColor = UIColor.darkGray.cgColor

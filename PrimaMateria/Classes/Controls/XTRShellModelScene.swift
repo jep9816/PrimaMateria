@@ -86,21 +86,23 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
         
         for idx in 0...numberOfCircles {
             let circle = SKShapeNode(circleOfRadius: ballRadius)
-            circle.strokeColor = SKColor.black
-            circle.fillColor = color
-            circle.lineWidth = 0.5
-                        
+            let followCirclePath: SKAction
             let angle = 2 * Double.pi / Double(numberOfCircles) * Double(idx)
             let circleX = radius * cos(CGFloat(angle))
             let circleY = radius * sin(CGFloat(angle))
             let tempPath: UIBezierPath!
+ 
+            circle.strokeColor = SKColor.black
+            circle.fillColor = color
+            circle.lineWidth = 0.5
             
             if clockwise {
                 tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat(angle), endAngle: CGFloat((Double.pi * 2) + angle), clockwise: true)
             } else {
                 tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat((Double.pi * 2) + angle), endAngle: CGFloat(angle), clockwise: false)
             }
-            let followCirclePath = SKAction.follow(tempPath.cgPath, asOffset: false, orientToPath: true, duration: duration)
+            
+            followCirclePath = SKAction.follow(tempPath.cgPath, asOffset: false, orientToPath: true, duration: duration)
             
             circle.name = String(format: "circle%d", idx)
             circle.position = CGPoint(x: circleX + frame.midX, y: circleY + frame.midY)

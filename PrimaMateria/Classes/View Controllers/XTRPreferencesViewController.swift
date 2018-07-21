@@ -56,36 +56,36 @@ class XTRPreferencesViewController: UIViewController {
         let alphaComponent = anObject[ColorComponent.alpha] as! NSNumber
         
         let seriesIdentifier = anObject[SERIES_IDENTIFIER_KEY] as! String
-        let aColor = UIColor(
+        let color = UIColor(
             red: CGFloat(redComponent.floatValue),
             green: CGFloat(greenComponent.floatValue),
             blue: CGFloat(blueComponent.floatValue),
             alpha: CGFloat(alphaComponent.floatValue))
-        let colorData = NSKeyedArchiver.archivedData(withRootObject: aColor)
+        let colorData = NSKeyedArchiver.archivedData(withRootObject: color)
         
         XTRPropertiesStore.setColorData(colorData, key: seriesIdentifier)
         
         switch seriesIdentifier {
         case ElementSeries.actinide :
-            updateSeriesButtonProperties(seriesActinideButton, aColor: aColor)
+            updateSeriesProperties(seriesActinideButton, color: color)
         case ElementSeries.alkaliEarthMetal :
-            updateSeriesButtonProperties(seriesAlkaliEarthMetalButton, aColor: aColor)
+            updateSeriesProperties(seriesAlkaliEarthMetalButton, color: color)
         case ElementSeries.alkaliMetal :
-            updateSeriesButtonProperties(seriesAlkaliMetalButton, aColor: aColor)
+            updateSeriesProperties(seriesAlkaliMetalButton, color: color)
         case ElementSeries.halogen :
-            updateSeriesButtonProperties(seriesHalogenButton, aColor: aColor)
+            updateSeriesProperties(seriesHalogenButton, color: color)
         case ElementSeries.lanthanide :
-            updateSeriesButtonProperties(seriesLanthanideButton, aColor: aColor)
+            updateSeriesProperties(seriesLanthanideButton, color: color)
         case ElementSeries.metal :
-            updateSeriesButtonProperties(seriesMetalButton, aColor: aColor)
+            updateSeriesProperties(seriesMetalButton, color: color)
         case ElementSeries.nobleGas :
-            updateSeriesButtonProperties(seriesNobleGasButton, aColor: aColor)
+            updateSeriesProperties(seriesNobleGasButton, color: color)
         case ElementSeries.nonMetal :
-            updateSeriesButtonProperties(seriesNonMetalButton, aColor: aColor)
+            updateSeriesProperties(seriesNonMetalButton, color: color)
         case ElementSeries.transactinide :
-            updateSeriesButtonProperties(seriesTransactinidesButton, aColor: aColor)
+            updateSeriesProperties(seriesTransactinidesButton, color: color)
         default :
-            updateSeriesButtonProperties(seriesTransitionMetalButton, aColor: aColor)
+            updateSeriesProperties(seriesTransitionMetalButton, color: color)
         }
         
         NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
@@ -93,8 +93,8 @@ class XTRPreferencesViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
-    func loadDocument(_ documentName: String, inView: WKWebView) {
-        guard let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: documentName, ofType: nil) else { return }
+    func loadDocument(_ name: String, inView: WKWebView) {
+        guard let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: name, ofType: nil) else { return }
         
         webView.load(URLRequest(url: URL(fileURLWithPath: aPath)))
     }
@@ -105,34 +105,34 @@ class XTRPreferencesViewController: UIViewController {
         splashScreenSwitch.isOn = XTRPropertiesStore.splashScreenState
     }
     
-    func updateSeriesButtonProperties(_ aButton: UIButton, aColor: UIColor) {
-        aButton.backgroundColor = aColor
-        aButton.setTitleColor(aColor.inverseColor(), for: UIControlState())
+    func updateSeriesProperties(_ button: UIButton, color: UIColor) {
+        button.backgroundColor = color
+        button.setTitleColor(color.inverseColor(), for: UIControlState())
     }
     
     func populateSeriesColors() {
-        updateSeriesButtonProperties(seriesActinideButton, aColor: XTRColorFactory.actinideColor)
-        updateSeriesButtonProperties(seriesAlkaliEarthMetalButton, aColor: XTRColorFactory.alkaliEarthMetalColor)
-        updateSeriesButtonProperties(seriesAlkaliMetalButton, aColor: XTRColorFactory.alkaliMetalColor)
-        updateSeriesButtonProperties(seriesHalogenButton, aColor: XTRColorFactory.halogenColor)
-        updateSeriesButtonProperties(seriesLanthanideButton, aColor: XTRColorFactory.lanthanideColor)
-        updateSeriesButtonProperties(seriesMetalButton, aColor: XTRColorFactory.metalColor)
-        updateSeriesButtonProperties(seriesNobleGasButton, aColor: XTRColorFactory.nobleGasColor)
-        updateSeriesButtonProperties(seriesNonMetalButton, aColor: XTRColorFactory.nonMetalColor)
-        updateSeriesButtonProperties(seriesTransactinidesButton, aColor: XTRColorFactory.transactinideColor)
-        updateSeriesButtonProperties(seriesTransitionMetalButton, aColor: XTRColorFactory.transitionMetalColor)
+        updateSeriesProperties(seriesActinideButton, color: XTRColorFactory.actinideColor)
+        updateSeriesProperties(seriesAlkaliEarthMetalButton, color: XTRColorFactory.alkaliEarthMetalColor)
+        updateSeriesProperties(seriesAlkaliMetalButton, color: XTRColorFactory.alkaliMetalColor)
+        updateSeriesProperties(seriesHalogenButton, color: XTRColorFactory.halogenColor)
+        updateSeriesProperties(seriesLanthanideButton, color: XTRColorFactory.lanthanideColor)
+        updateSeriesProperties(seriesMetalButton, color: XTRColorFactory.metalColor)
+        updateSeriesProperties(seriesNobleGasButton, color: XTRColorFactory.nobleGasColor)
+        updateSeriesProperties(seriesNonMetalButton, color: XTRColorFactory.nonMetalColor)
+        updateSeriesProperties(seriesTransactinidesButton, color: XTRColorFactory.transactinideColor)
+        updateSeriesProperties(seriesTransitionMetalButton, color: XTRColorFactory.transitionMetalColor)
     }
     
-    func populateElementBubbleState(_ aFlag: Bool) {
-        XTRPropertiesStore.elementBubblesState = aFlag
+    func populateElementBubbleState(_ flag: Bool) {
+        XTRPropertiesStore.elementBubblesState = flag
     }
     
-    func populateShowTransitionsState(_ aFlag: Bool) {
-        XTRPropertiesStore.showTransitionsState = aFlag
+    func populateShowTransitionsState(_ flag: Bool) {
+        XTRPropertiesStore.showTransitionsState = flag
     }
     
-    func populateSplashScreenState(_ aFlag: Bool) {
-        XTRPropertiesStore.splashScreenState = aFlag
+    func populateSplashScreenState(_ flag: Bool) {
+        XTRPropertiesStore.splashScreenState = flag
     }
     
     // MARK: - Action Methods

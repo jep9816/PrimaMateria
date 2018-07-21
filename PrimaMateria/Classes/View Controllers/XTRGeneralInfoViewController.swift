@@ -45,13 +45,14 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     
     // MARK: - Miscellaneous Methods
     
-    override func setupUI() {        
-        guard let localElement = element else { return }
-        discovererLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERER) as? String
-        discoveryLocationLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERY_LOCATION) as? String
-        discoveryYearLabel.text = localElement.value(forKeyPath: ELEMENT_DISCOVERY_YEAR) as? String
-        abundanceCrustLabel.text = "\(localElement.value(forKeyPath: ELEMENT_ABUNDANCE_CRUST)!)"
-        abundanceSeaLabel.text = "\(localElement.value(forKeyPath: ELEMENT_ABUNDANCE_SEA)!)"
+    override func setupUI(element: XTRElementModel) {
+        super.setupUI(element: element)
+        
+        discovererLabel.text = element.value(forKeyPath: ELEMENT_DISCOVERER) as? String
+        discoveryLocationLabel.text = element.value(forKeyPath: ELEMENT_DISCOVERY_LOCATION) as? String
+        discoveryYearLabel.text = element.value(forKeyPath: ELEMENT_DISCOVERY_YEAR) as? String
+        abundanceCrustLabel.text = "\(element.value(forKeyPath: ELEMENT_ABUNDANCE_CRUST)!)"
+        abundanceSeaLabel.text = "\(element.value(forKeyPath: ELEMENT_ABUNDANCE_SEA)!)"
         assignGeneralInfo()
     }
     

@@ -9,7 +9,7 @@
 import UIKit
 
 protocol XTRSwapable {
-    func setupUI()
+    func setupUI(element: XTRElementModel)
 }
 
 class XTRSwapableViewController: UIViewController, XTRSwapable {
@@ -22,7 +22,8 @@ class XTRSwapableViewController: UIViewController, XTRSwapable {
         super.init(coder: aDecoder)!
     }
 
-    func setupUI() {
+    func setupUI(element: XTRElementModel) {
+        self.element = element
     }
     
     // MARK: - View Management Methods

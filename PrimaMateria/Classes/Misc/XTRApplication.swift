@@ -46,9 +46,7 @@ class XTRApplication: UIApplication {
                 }
                 var defaultsToRegister = [String: AnyObject]()
                 
-                for index in 0..<preferences.count {
-                    let prefSpecification = preferences[index] as! [String: AnyObject]
-                    
+                for prefSpecification in preferences {
                     if let key = prefSpecification["Key"] as? String {
                         if let defaultValue = prefSpecification["DefaultValue"] {
                             defaultsToRegister[key] = defaultValue as AnyObject?

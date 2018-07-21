@@ -157,7 +157,7 @@ class XTRMolecularCalculatorViewController: UIViewController {
         
         backgroundView.layer.borderColor = UIColor.black.cgColor
         backgroundView.layer.borderWidth = 2
-        backgroundView.layer.cornerRadius = 8
+        backgroundView.layer.cornerRadius = VIEW_CORNER_RADIUS
         
         clear()
     }

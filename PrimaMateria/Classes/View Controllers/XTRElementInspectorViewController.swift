@@ -102,7 +102,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     func animateForDirection(_ direction: String) {
-        setupUI()
+        setupUI(element: element!)
         
         if XTRPropertiesStore.showTransitionsState {
             let currentView: UIView = view
@@ -124,7 +124,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     
     // MARK: - Misellaneous Methods
     
-    override func setupUI() {
+    override func setupUI(element: XTRElementModel) {
+        super.setupUI(element: element)
+        
         let rect = segmentedControl.frame
         let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
         
@@ -135,16 +137,13 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: 3)
         segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: 4)
 
-        if element != nil {
-            assignAtomicSymbolTextFieldProperties()
-            assignOtherLabels()
-            assignNavigationHints()
-            
-            for index in 0..<childViewControllers.count {
-                let controller = childViewControllers[Int(index)] as! XTRSwapableViewController
-                controller.element = element
-                controller.setupUI()
-            }
+        assignAtomicSymbolTextFieldProperties()
+        assignOtherLabels()
+        assignNavigationHints()
+        
+        for item in childViewControllers {
+            let controller = item as! XTRSwapableViewController
+            controller.setupUI(element: element)
         }
     }
     
@@ -216,10 +215,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let atomicNumber = XTRPropertiesStore.atomicNumber
         barButtonItem.title = "◀︎ \(XTRPropertiesStore.viewTitle)"
-        element = XTRDataSource.sharedInstance().elementAtIndex(atomicNumber)
-        setupUI()
+        element = XTRDataSource.sharedInstance().elementAtIndex(XTRPropertiesStore.atomicNumber)
+        setupUI(element: element!)
     }
     
     override func viewWillDisappear(_ animated: Bool) {

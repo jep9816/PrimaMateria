@@ -23,8 +23,7 @@ class XTRMolecularCalculator: NSObject {
                     
                     let components = regex!.matches(in: localFormula as String, options: NSRegularExpression.MatchingOptions.anchored, range: NSRange(location: 0, length: localFormula.length))
                     
-                    for index in 0..<components.count {
-                        let match = components[index]
+                    for match in components {
                         let matchRange = match.range(at: 0)
                         let subString = localFormula.substring(with: matchRange) as NSString
                         let characters = subString.trimmingCharacters(in: CharacterSet.decimalDigits) as NSString

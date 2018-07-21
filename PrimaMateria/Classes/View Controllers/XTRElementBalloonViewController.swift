@@ -41,9 +41,7 @@ class XTRElementBalloonViewController: UIViewController {
         
         atomicNumberLabel.text = " \(String(element.atomicNumber))"
         atomicMassLabel.text = " \(element.atomicMassAggregate)"
-        
         boilingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_BOILING_POINT)!)"
-        
         meltingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_MELTING_POINT)!)"
     }
     
@@ -51,7 +49,7 @@ class XTRElementBalloonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        wrapperView.layer.cornerRadius = 10.0
+        wrapperView.layer.cornerRadius = VIEW_CORNER_RADIUS
         wrapperView.clipsToBounds = true
 
         elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] _ in

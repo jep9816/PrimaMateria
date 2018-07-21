@@ -29,7 +29,6 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     var lineSpectraArray: Variable<[XTRSpectraModel]>?
     var tableView: UITableView?
     let customTickLocations = [4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500]
-    let xAxisLabels = ["4000", "4500", "5000", "5500", "6000", "6500", "7000", "7500"]
 
     private var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()
 
@@ -78,7 +77,7 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         let x = axisSet.xAxis!
         let y = axisSet.yAxis!
         var labelLocation = 0
-        var customLabels: [AnyObject?] = [AnyObject?](repeating: nil, count: xAxisLabels.count)
+        var customLabels: [AnyObject?] = [AnyObject?](repeating: nil, count: customTickLocations.count)
         
         // Add plot space for horizontal bar charts
         plotSpace.yRange = CPTPlotRange(location: 0.0, length: 1000.0)
@@ -106,7 +105,7 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         
         for index in 0..<customTickLocations.count {
             labelLocation += labelLocation
-            let newLabel = CPTAxisLabel.init(text: xAxisLabels[labelLocation], textStyle: x.labelTextStyle)
+            let newLabel = CPTAxisLabel.init(text: String("\(customTickLocations[labelLocation])"), textStyle: x.labelTextStyle)
             let tickLocation = customTickLocations[index] as NSNumber
             newLabel.tickLocation = tickLocation
             newLabel.offset = x.labelOffset + x.majorTickLength
@@ -146,31 +145,31 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     
     // MARK: - Action Methods
     
-    override func setupUI() {
+    override func setupUI(element: XTRElementModel) {
+        super .setupUI(element: element)
+        
         title = NSLocalizedString("spectrum", comment: "")
         
-        if element != nil {
-            if tableView != nil {
-                tableView!.removeFromSuperview()
-                tableView = nil
-            }
-            
-            tableView = UITableView(frame: swapView.frame, style: .plain)
-            tableView!.alwaysBounceVertical = false
-            tableView!.alwaysBounceHorizontal = false
-            tableView!.dataSource = delegate
-            tableView!.delegate = delegate
-            tableView!.separatorStyle = .none
-            tableView!.backgroundColor = UIColor.black
-            tableView!.backgroundView = UIView(frame: swapView.frame)
-            tableView!.backgroundView!.backgroundColor = UIColor.black
-            tableView!.isOpaque = false
-            tableView!.rowHeight = 34.0
-            tableView!.allowsSelection = false
-            view.addSubview(tableView!)
-            lineSpectraArray = element?.lineSpectra
-            tableView!.reloadData()
+        if tableView != nil {
+            tableView!.removeFromSuperview()
+            tableView = nil
         }
+        
+        tableView = UITableView(frame: swapView.frame, style: .plain)
+        tableView!.alwaysBounceVertical = false
+        tableView!.alwaysBounceHorizontal = false
+        tableView!.dataSource = delegate
+        tableView!.delegate = delegate
+        tableView!.separatorStyle = .none
+        tableView!.backgroundColor = UIColor.black
+        tableView!.backgroundView = UIView(frame: swapView.frame)
+        tableView!.backgroundView!.backgroundColor = UIColor.black
+        tableView!.isOpaque = false
+        tableView!.rowHeight = 34.0
+        tableView!.allowsSelection = false
+        view.addSubview(tableView!)
+        lineSpectraArray = element.lineSpectra
+        tableView!.reloadData()
         setupBarChart()
     }
     

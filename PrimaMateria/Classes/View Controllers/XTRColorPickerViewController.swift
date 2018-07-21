@@ -19,7 +19,6 @@ class XTRColorPickerViewController: UIViewController {
     @IBOutlet var previewView: UIView!
     @IBOutlet var selectColorButton: XTRLocalizedButton!
     
-    //var seriesName: String?
     var seriesIdentifier: String?
     var disposeBag = DisposeBag()
     
@@ -50,9 +49,9 @@ class XTRColorPickerViewController: UIViewController {
         colorTitle.text =  NSLocalizedString(seriesIdentifier!, comment: "")
         
         previewView.backgroundColor = aColor
-        previewView.layer.cornerRadius = 9
+        previewView.layer.cornerRadius = VIEW_CORNER_RADIUS + 2.0
         
-        selectColorButton.layer.cornerRadius = 4
+        selectColorButton.layer.cornerRadius = VIEW_CORNER_RADIUS
         selectColorButton.layer.borderColor = XTRColorFactory.buttonBorderColor.cgColor
         selectColorButton.layer.borderWidth = 1
         

@@ -38,7 +38,7 @@ class XTRSplashViewController: UIViewController {
         appNameLabel.text = Bundle.main.appNameString
         versionLabel.text = Bundle.main.appVersionString
         cpyRightLabel.text = Bundle.main.copywriteString
-        wrapperView.layer.cornerRadius = 5
+        wrapperView.layer.cornerRadius = VIEW_CORNER_RADIUS
         
         Thread.detachNewThreadSelector(#selector(XTRSplashViewController.wait), toTarget: self, with: nil)
     }
