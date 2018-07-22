@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 public extension NSObject { // General
     
@@ -33,6 +35,10 @@ public extension NSObject { // General
             UInt(signed  - Int.min) + UInt(Int.max) + 1
         
         return unsigned
+    }
+
+    func mapToObserver(button: UIButton) -> Observable<UIButton> {
+        return button.rx.tap.map { _ in return button}
     }
 
 }

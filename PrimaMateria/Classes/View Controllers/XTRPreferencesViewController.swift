@@ -189,28 +189,28 @@ class XTRPreferencesViewController: UIViewController {
         elementBubbleSwitch.cornerRadius = SWITCH_CORNER_RADIUS
         elementBubbleSwitch.rx.isOn
             .asObservable()
-            .subscribe(onNext: { newValue in
-                self.populateElementBubbleState(newValue)
+            .subscribe(onNext: { [weak self] newValue in
+                self?.populateElementBubbleState(newValue)
             }).disposed(by: disposeBag)
         
         showTransitionsBubbleSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
         showTransitionsBubbleSwitch.cornerRadius = SWITCH_CORNER_RADIUS
         showTransitionsBubbleSwitch.rx.isOn
             .asObservable()
-            .subscribe(onNext: { newValue in
-                self.populateShowTransitionsState(newValue)
+            .subscribe(onNext: { [weak self] newValue in
+                self?.populateShowTransitionsState(newValue)
             }).disposed(by: disposeBag)
         
         splashScreenSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
         splashScreenSwitch.cornerRadius = SWITCH_CORNER_RADIUS
         splashScreenSwitch.rx.isOn
             .asObservable()
-            .subscribe(onNext: { newValue in
-                self.populateSplashScreenState(newValue)
+            .subscribe(onNext: { [weak self] newValue in
+                self?.populateSplashScreenState(newValue)
             }).disposed(by: disposeBag)
         
-        resetPreferencesButton.rx.tap.subscribe(onNext: { _ in
-            self.resetPreferences()
+        resetPreferencesButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.resetPreferences()
         }).disposed(by: disposeBag)
         
         Observable.of(
@@ -224,15 +224,11 @@ class XTRPreferencesViewController: UIViewController {
             mapToObserver(button: seriesNonMetalButton),
             mapToObserver(button: seriesTransactinidesButton),
             mapToObserver(button: seriesTransitionMetalButton)
-            ).merge().subscribe(onNext: { sender in
-                self.presentColorPicker(sender)
+            ).merge().subscribe(onNext: { [weak self] sender in
+                self?.presentColorPicker(sender)
             }).disposed(by: disposeBag)
     }
-    
-    func mapToObserver(button: UIButton) -> Observable<UIButton> {
-        return button.rx.tap.map { _ in return button}
-    }
-    
+        
     func presentColorPicker(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: COLOR_PICKER_STORY_BOARD, bundle: nil)
         let colorPicker: XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController

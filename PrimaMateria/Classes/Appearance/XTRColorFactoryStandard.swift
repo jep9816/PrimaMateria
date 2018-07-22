@@ -114,4 +114,5 @@ class XTRColorFactoryStandard: XTRColorFactory {
     override class var switchBackgroundColor: UIColor {
         return XTRColorFactoryStandard.navyBlue
     }
+
 }

@@ -7,20 +7,24 @@
 //
 
 import WebKit
+import RxSwift
+import RxCocoa
 
 class XTRWikipediaViewController: UIViewController {
     
     @IBOutlet var backButton: UIBarButtonItem!
-    @IBOutlet var titleButtonItem: UIBarButtonItem!
     @IBOutlet var forwardButton: UIBarButtonItem!
+    @IBOutlet var titleButtonItem: UIBarButtonItem!
+    @IBOutlet var dismissButton: UIButton!
     @IBOutlet var webView: WKWebView!
     
-    public var progressHUD: MBProgressHUD?
+    public var progressHUD: MBProgressHUD!
     
     private var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
     
     var elementName: String?
-    
+    var disposeBag = DisposeBag()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,20 +41,6 @@ class XTRWikipediaViewController: UIViewController {
     }
     
     // MARK: - Action Methods
-    
-    @IBAction func dismiss(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        progressHUD?.show(animated: true)
-        webView.goBack()
-    }
-    
-    @IBAction func forwardButtonPressed(_ sender: UIButton) {
-        progressHUD?.show(animated: true)
-        webView.goForward()
-    }
     
     // MARK: - View Management Methods
     
@@ -69,12 +59,31 @@ class XTRWikipediaViewController: UIViewController {
         preferredContentSize = CGSize(width: 768, height: 620)
         
         progressHUD = MBProgressHUD(view: view)
-        progressHUD!.label.font = UIFont.boldSystemFont(ofSize: 26)
-        progressHUD!.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        progressHUD!.delegate = delegate
-        progressHUD!.label.text = NSLocalizedString("pleaseWait", comment: "")
-        progressHUD!.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) \(elementName!)."
+        progressHUD.label.font = UIFont.boldSystemFont(ofSize: 26)
+        progressHUD.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        progressHUD.label.text = NSLocalizedString("pleaseWait", comment: "")
+        progressHUD.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) \(elementName!)."
+        //progressHUD.backgroundView.blurEffectStyle = .prominent
+        //progressHUD.backgroundView.style = .blur
+        progressHUD.backgroundView.backgroundColor = UIColor.clear
+        //progressHUD.animationType = .zoomIn
+        //progressHUD.areDefaultMotionEffectsEnabled = true
         webView.navigationDelegate = delegate
+        view.addSubview(progressHUD)
+
+        backButton.rx.tap.subscribe(onNext: { [weak self] _ in
+           self?.progressHUD.show(animated: true)
+            self?.webView.goBack()
+        }).disposed(by: disposeBag)
+        
+        forwardButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.progressHUD.show(animated: true)
+            self?.webView.goForward()
+        }).disposed(by: disposeBag)
+        
+        dismissButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.dismiss(animated: true, completion: nil)
+        }).disposed(by: disposeBag)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -86,8 +95,7 @@ class XTRWikipediaViewController: UIViewController {
         forwardButton.isEnabled = false
         forwardButton.tintColor = UIColor.black
         
-        view.addSubview(progressHUD!)
-        progressHUD?.show(animated: true)
+        progressHUD.show(animated: true)
         prepareRequest()
     }
     
@@ -105,6 +113,7 @@ class XTRWikipediaViewController: UIViewController {
         backButton = nil
         forwardButton = nil
         titleButtonItem = nil
+        dismissButton = nil
         webView.navigationDelegate = nil
         webView = nil
     }

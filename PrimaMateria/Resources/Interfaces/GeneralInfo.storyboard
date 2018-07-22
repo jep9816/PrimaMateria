@@ -182,12 +182,15 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" scalesPageToFit="YES" allowsInlineMediaPlayback="NO" mediaPlaybackRequiresUserAction="NO" mediaPlaybackAllowsAirPlay="NO" paginationMode="topToBottom" translatesAutoresizingMaskIntoConstraints="NO" id="H9l-2H-wqZ">
-                                <rect key="frame" x="0.0" y="208" width="1024" height="365"/>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QGW-7L-kwY">
+                                <rect key="frame" x="0.0" y="210" width="1024" height="365"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <dataDetectorType key="dataDetectorTypes"/>
-                            </webView>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="cf9-VF-72L"/>
@@ -203,7 +206,7 @@
                         <outlet property="discoveryLocationLabel" destination="Ydh-gT-pOs" id="KQM-eW-ZO3"/>
                         <outlet property="discoveryYearLabel" destination="4JZ-HZ-JsD" id="0xL-uW-eM8"/>
                         <outlet property="view" destination="mFj-D5-h5x" id="8qK-vK-HX9"/>
-                        <outlet property="webView" destination="H9l-2H-wqZ" id="f4T-Ko-cEd"/>
+                        <outlet property="webView" destination="QGW-7L-kwY" id="Usv-8D-Mqv"/>
                         <segue destination="10T-Ux-jH6" kind="modal" identifier="showWikipediaViewControllerFromGeneralViewController" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="x5m-p1-6D2"/>
                     </connections>
                 </viewController>

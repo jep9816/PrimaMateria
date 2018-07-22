@@ -110,4 +110,5 @@ class XTRAppearanceManager: NSObject {
     deinit {
         NotificationCenter.default.removeObserver(self, name: .notificationAppearanceChanged, object: nil)
     }
+    
 }

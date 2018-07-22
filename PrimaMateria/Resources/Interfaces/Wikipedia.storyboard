@@ -18,31 +18,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="620"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-95-yfr">
-                                <rect key="frame" x="0.0" y="-2" width="768" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rRe-95-yfr">
+                                <rect key="frame" x="0.0" y="18" width="768" height="44"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
-                                    <barButtonItem title="◀︎" id="Fea-lh-YWt">
-                                        <connections>
-                                            <action selector="backButtonPressed:" destination="ypQ-rt-Kto" id="pQU-7d-Ct5"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="◀︎" id="Fea-lh-YWt"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pni-Hc-3wk"/>
                                     <barButtonItem title="Wikipedia" style="plain" id="aaQ-NN-nSW"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cPF-10-LxC"/>
-                                    <barButtonItem title="▶︎" id="GqJ-vK-2Wp">
-                                        <connections>
-                                            <action selector="forwardButtonPressed:" destination="ypQ-rt-Kto" id="qT8-Tg-eyx"/>
-                                        </connections>
-                                    </barButtonItem>
+                                    <barButtonItem title="▶︎" id="GqJ-vK-2Wp"/>
                                 </items>
                                 <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xD8-hn-j2d" customClass="XTRGeneralButton" customModule="PrimaMateria">
+                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xD8-hn-j2d" customClass="XTRGeneralButton" customModule="PrimaMateria">
                                 <rect key="frame" x="354" y="579" width="60" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="61w-hT-7pi"/>
+                                    <constraint firstAttribute="height" constant="30" id="Lv9-Er-cuy"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <size key="titleShadowOffset" width="2" height="2"/>
                                 <state key="normal" title="close">
@@ -54,13 +48,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="dismiss:" destination="ypQ-rt-Kto" eventType="touchUpInside" id="DbM-Nf-Xaf"/>
-                                </connections>
                             </button>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-I3-gJA">
-                                <rect key="frame" x="0.0" y="42" width="768" height="529"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zjJ-I3-gJA">
+                                <rect key="frame" x="0.0" y="62" width="768" height="509"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -69,6 +59,17 @@
                             </wkWebView>
                         </subviews>
                         <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KzX-cX-ilA" firstAttribute="bottom" secondItem="xD8-hn-j2d" secondAttribute="bottom" constant="11" id="0zE-Nt-B75"/>
+                            <constraint firstItem="KzX-cX-ilA" firstAttribute="top" secondItem="rRe-95-yfr" secondAttribute="top" constant="2" id="1fy-s9-jTx"/>
+                            <constraint firstItem="zjJ-I3-gJA" firstAttribute="top" secondItem="KzX-cX-ilA" secondAttribute="top" constant="42" id="5wo-cA-bWZ"/>
+                            <constraint firstItem="rRe-95-yfr" firstAttribute="leading" secondItem="KzX-cX-ilA" secondAttribute="leading" id="AuU-bT-UJ8"/>
+                            <constraint firstItem="KzX-cX-ilA" firstAttribute="bottom" secondItem="zjJ-I3-gJA" secondAttribute="bottom" constant="49" id="Bwy-Nl-Jri"/>
+                            <constraint firstItem="KzX-cX-ilA" firstAttribute="trailing" secondItem="rRe-95-yfr" secondAttribute="trailing" id="CtY-Dy-kBM"/>
+                            <constraint firstItem="xD8-hn-j2d" firstAttribute="centerX" secondItem="KzX-cX-ilA" secondAttribute="centerX" id="anq-9r-SBJ"/>
+                            <constraint firstItem="KzX-cX-ilA" firstAttribute="trailing" secondItem="zjJ-I3-gJA" secondAttribute="trailing" id="cEH-rQ-Fxg"/>
+                            <constraint firstItem="zjJ-I3-gJA" firstAttribute="leading" secondItem="KzX-cX-ilA" secondAttribute="leading" id="zjV-1P-4OO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="KzX-cX-ilA"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -78,6 +79,7 @@
                     <size key="freeformSize" width="768" height="620"/>
                     <connections>
                         <outlet property="backButton" destination="Fea-lh-YWt" id="IRA-NK-QHj"/>
+                        <outlet property="dismissButton" destination="xD8-hn-j2d" id="YpB-dX-ZAm"/>
                         <outlet property="forwardButton" destination="GqJ-vK-2Wp" id="HA8-Gk-jav"/>
                         <outlet property="titleButtonItem" destination="aaQ-NN-nSW" id="Q3q-wT-XBQ"/>
                         <outlet property="webView" destination="zjJ-I3-gJA" id="h0H-Kw-A4v"/>

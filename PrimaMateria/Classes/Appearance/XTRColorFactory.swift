@@ -270,10 +270,18 @@ class XTRColorFactory: NSObject {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return UIColor.color(hexString: "dddd00")
         } else {
-            return UIColor.color(hexString: "dcdc00")
+            return UIColor.color(hexString: "add8e6")
         }
     }
     
+    class var helpButtonBorderColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return UIColor.black
+        } else {
+            return UIColor.red
+        }
+    }
+
     class var backgroundColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return UIColor.color(hexString: "404040")

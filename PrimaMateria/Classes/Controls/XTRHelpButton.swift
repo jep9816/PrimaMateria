@@ -17,6 +17,7 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupColors()
+        NotificationCenter.default.addObserver(self, selector: #selector(changeAppearance(notification:)), name: .notificationAppearanceChanged, object: nil)
     }
     
     // MARK: - Internal Methods
@@ -35,14 +36,12 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         return responder as! UIViewController
     }
     
-    func setupColors() {
-        backgroundColor = XTRColorFactory.helpBackgroundColor
-        setTitleColor(UIColor.black, for: UIControlState())
-        layer.cornerRadius = VIEW_CORNER_RADIUS
-        layer.masksToBounds = true
-        layer.borderColor = UIColor.black.cgColor
-        layer.borderWidth = 1.0
-        
+    func setupColors() {        
+        cornerRadius = VIEW_CORNER_RADIUS
+        masksToBounds = true
+        borderColor = XTRColorFactory.helpButtonBorderColor
+        borderWidth = 1.0
+
         if var titleFrame = titleLabel?.frame {
             titleFrame.size = bounds.size
             titleFrame.origin = .zero
@@ -67,6 +66,18 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         presentationController?.sourceView = self
         presentationController?.backgroundColor = XTRColorFactory.popupArrowColor
         NotificationCenter.default.post(name: .elementHelpSelectedNotification, object: label)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: .notificationAppearanceChanged, object: nil)
+    }
+    
+}
+
+extension XTRHelpButton {
+    
+    @objc func changeAppearance(notification: NSNotification) {
+        borderColor = XTRColorFactory.helpButtonBorderColor
     }
     
 }

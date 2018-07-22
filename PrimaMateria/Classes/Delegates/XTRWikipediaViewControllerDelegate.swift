@@ -15,7 +15,7 @@ class XTRWikipediaViewControllerDelegate: NSObject, WKNavigationDelegate, MBProg
     // MARK: - WebView Delegate Methods
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
-        controller?.progressHUD?.show(animated: true)
+        controller?.progressHUD.show(animated: true)
         controller?.backButton.isEnabled = false
         controller?.forwardButton.isEnabled = false
         controller?.backButton.tintColor = UIColor.black

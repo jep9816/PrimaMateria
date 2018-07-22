@@ -275,9 +275,13 @@ class XTRAppearanceManagerStandard: NSObject {
     func miscAppearance() {
         let backgroundViewAppearance = XTRBackgroundView.appearance()
         let tableHeaderButtonAppearance = XTRTableHeaderButton.appearance()
-        
+        let helpButtonAppearance = XTRHelpButton.appearance()
+
         backgroundViewAppearance.backgroundColor = XTRColorFactory.backgroundColor
         tableHeaderButtonAppearance.backgroundColor = XTRColorFactoryStandard.ghost
+
+        helpButtonAppearance.setTitleColor(UIColor.red, for: UIControlState())
+        helpButtonAppearance.backgroundColor = XTRColorFactory.helpBackgroundColor
     }
     
 }
