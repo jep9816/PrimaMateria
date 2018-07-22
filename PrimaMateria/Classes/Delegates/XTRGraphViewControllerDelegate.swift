@@ -26,14 +26,14 @@ class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDel
     // MARK: - Plot Data Source Methods
     
     func numberOfRecords(for plot: CPTPlot) -> UInt {
-        return UInt(XTRDataSource.sharedInstance().elementCount())
+        return UInt(XTRDataSource.sharedInstance.elementCount())
     }
     
     func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
         var num: NSNumber = 0
         
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
-            let element = XTRDataSource.sharedInstance().elementAtIndex(Int(idx))
+            let element = XTRDataSource.sharedInstance.element(index: Int(idx))
             
             switch fieldEnum {
             case 0:
@@ -116,7 +116,7 @@ class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDel
     }
     
     @objc func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: UInt) -> CPTFill {
-        let element = XTRDataSource.sharedInstance().elementAtIndex(Int(recordIndex))
+        let element = XTRDataSource.sharedInstance.element(index: Int(recordIndex))
         return CPTFill(color: CPTColor(cgColor: element.seriesColor.cgColor))
     }
 }

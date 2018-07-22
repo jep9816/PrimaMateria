@@ -75,7 +75,7 @@ class XTRPeriodicTableViewController: UIViewController {
     
     @IBAction func showElementInspector(_ sender: UIButton) {
         if molecularCalculatorState {
-            molecularCalculatorViewController.setElement(XTRDataSource.sharedInstance().elementAtIndex(sender.tag))
+            molecularCalculatorViewController.setElement(XTRDataSource.sharedInstance.element(index: sender.tag))
         } else {
             if XTRPropertiesStore.elementBubblesState {
                 showPopupForButton(sender)

@@ -17,7 +17,7 @@ class XTRGraphChoiceCell: UICollectionViewCell {
     }
     
     func setup(index: Int) {
-        let model = XTRDataSource.sharedInstance().graphPropertyList[index]
+        let model = XTRDataSource.sharedInstance.graphPropertyList[index]
         let titleKey = model.title
         let title = NSLocalizedString(titleKey, comment: "")
         

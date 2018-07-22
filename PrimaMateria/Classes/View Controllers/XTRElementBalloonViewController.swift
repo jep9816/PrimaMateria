@@ -31,7 +31,7 @@ class XTRElementBalloonViewController: UIViewController {
     // MARK: - Internal Methods
     
     func setupUI() {
-        let element = XTRDataSource.sharedInstance().elementAtIndex(XTRPropertiesStore.atomicNumber)
+        let element = XTRDataSource.sharedInstance.element(index: XTRPropertiesStore.atomicNumber)
         
         title = NSLocalizedString("elementBalloon", comment: "")
 

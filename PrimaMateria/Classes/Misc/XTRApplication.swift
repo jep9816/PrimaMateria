@@ -21,7 +21,7 @@ class XTRApplication: UIApplication {
             registerDefaultsFromSettingsBundle()
         }
         
-        _ = XTRDataSource.sharedInstance()
+        _ = XTRDataSource.sharedInstance
     }
     
     // MARK: Internal Methods

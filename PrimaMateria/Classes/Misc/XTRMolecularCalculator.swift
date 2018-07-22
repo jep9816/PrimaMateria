@@ -29,7 +29,7 @@ class XTRMolecularCalculator: NSObject {
                         let characters = subString.trimmingCharacters(in: CharacterSet.decimalDigits) as NSString
                         let numbers = subString.trimmingCharacters(in: CharacterSet.letters) as NSString
                         
-                        guard let element = XTRDataSource.sharedInstance().elementForSymbol(characters as String) else {
+                        guard let element = XTRDataSource.sharedInstance.element(symbol: characters as String) else {
                             return 0
                         }
                         let atomicMass = element.atomicMass

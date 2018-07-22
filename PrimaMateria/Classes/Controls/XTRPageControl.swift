@@ -49,7 +49,7 @@ class XTRPageControl: UIView {
         super.awakeFromNib()
         
         var rect = CGRect(x: 12, y: 30, width: 8, height: 8)
-        let count = XTRDataSource.sharedInstance().elementCount() - 1
+        let count = XTRDataSource.sharedInstance.elementCount() - 1
         
         for _ in 0...count {
             let label = UILabel(frame: rect)

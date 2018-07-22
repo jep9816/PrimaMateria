@@ -54,15 +54,15 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         
         pageControl.updateCurrentLabel(atomicNumber: element!.atomicNumber)
         
-        if nextAtomicNumber > XTRDataSource.sharedInstance().elementCount() {
+        if nextAtomicNumber > XTRDataSource.sharedInstance.elementCount() {
             nextAtomicNumber = 1
         }
         
-        if nextAtomicNumber - 1 < XTRDataSource.sharedInstance().elementCount() {
+        if nextAtomicNumber - 1 < XTRDataSource.sharedInstance.elementCount() {
             pageControl.updateNextLabel(atomicNumber: nextAtomicNumber)
         }
         
-        let nextElement = XTRDataSource.sharedInstance().elementAtIndex(nextAtomicNumber - 1)
+        let nextElement = XTRDataSource.sharedInstance.element(index: nextAtomicNumber - 1)
         let nextTitle = "▶︎ \(nextElement.name!)"
         
         nextButton.setTitle(nextTitle, for: UIControlState())
@@ -74,14 +74,14 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         var previousAtomicNumber = element!.atomicNumber - 1
         
         if previousAtomicNumber < 1 {
-            previousAtomicNumber = XTRDataSource.sharedInstance().elementCount()
+            previousAtomicNumber = XTRDataSource.sharedInstance.elementCount()
         }
         
         if previousAtomicNumber > 0 {
             pageControl.updatePreviousLabel(atomicNumber: previousAtomicNumber)
         }
         
-        let previousElement = XTRDataSource.sharedInstance().elementAtIndex(previousAtomicNumber - 1)
+        let previousElement = XTRDataSource.sharedInstance.element(index: previousAtomicNumber - 1)
         let previousTitle = "◀︎ \(previousElement.name!)"
         
         previousButton.setTitle(previousTitle, for: UIControlState())
@@ -166,11 +166,11 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     @IBAction func nextElement(_ sender: UIButton) {
         var atomicNumber = element!.atomicNumber + 1
         
-        if atomicNumber > XTRDataSource.sharedInstance().elementCount() {
+        if atomicNumber > XTRDataSource.sharedInstance.elementCount() {
             atomicNumber = 1
         }
         
-        element = XTRDataSource.sharedInstance().elementAtIndex(atomicNumber - 1)
+        element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
         animateForDirection("Next")
     }
     
@@ -178,10 +178,10 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         var atomicNumber = element!.atomicNumber - 1
         
         if atomicNumber < 1 {
-            atomicNumber = XTRDataSource.sharedInstance().elementCount()
+            atomicNumber = XTRDataSource.sharedInstance.elementCount()
         }
         
-        element = XTRDataSource.sharedInstance().elementAtIndex(atomicNumber - 1)
+        element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
         animateForDirection("Previous")
     }
     
@@ -216,7 +216,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         super.viewWillAppear(animated)
         
         barButtonItem.title = "◀︎ \(XTRPropertiesStore.viewTitle)"
-        element = XTRDataSource.sharedInstance().elementAtIndex(XTRPropertiesStore.atomicNumber)
+        element = XTRDataSource.sharedInstance.element(index: XTRPropertiesStore.atomicNumber)
         setupUI(element: element!)
     }
     

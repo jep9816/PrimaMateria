@@ -17,7 +17,7 @@ class XTRGraphChoiceViewControllerDelegate: NSObject, UICollectionViewDataSource
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (XTRDataSource.sharedInstance().graphPropertyList.count)
+        return (XTRDataSource.sharedInstance.graphPropertyList.count)
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

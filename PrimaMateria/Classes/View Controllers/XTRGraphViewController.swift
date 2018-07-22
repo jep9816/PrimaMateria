@@ -71,7 +71,7 @@ class XTRGraphViewController: UIViewController {
         x.majorGridLineStyle = minorTickStyle
         x.orthogonalPosition = 0
         x.title = NSLocalizedString("atomicNumber", comment: "")
-        x.titleLocation = XTRDataSource.sharedInstance().elementCount() / 2 as NSNumber?
+        x.titleLocation = XTRDataSource.sharedInstance.elementCount() / 2 as NSNumber?
         x.titleOffset = 30.0
         x.titleTextStyle = textStyle
         
@@ -130,14 +130,14 @@ class XTRGraphViewController: UIViewController {
     }
     
     func showGraphForChoiceAtIndex(_ anIndex: Int) {
-        let model = XTRDataSource.sharedInstance().graphPropertyList[anIndex]
+        let model = XTRDataSource.sharedInstance.graphPropertyList[anIndex]
         let minValue = model.minimumValue
         let maxValue = model.maximumValue
         let majorTicks = model.majorTickMarks
         let minorTicks = model.minorTickMarks
         let majorTickStyle = CPTMutableLineStyle.init()
         let minorTickStyle = CPTMutableLineStyle.init()
-        let length = XTRDataSource.sharedInstance().elementCount() + 1
+        let length = XTRDataSource.sharedInstance.elementCount() + 1
         
         creatBarChart()
         
@@ -157,7 +157,7 @@ class XTRGraphViewController: UIViewController {
         createXAxis(axisSet, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle)
         createYAxis(axisSet, minorTicks: minorTicks, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle, majorTicks: majorTicks, title: model.title, maxValue: maxValue, minValue: minValue)
         
-        barPlot.element = XTRDataSource.sharedInstance().elementAtIndex(Int(anIndex))
+        barPlot.element = XTRDataSource.sharedInstance.element(index: Int(anIndex))
         barPlot.delegate = delegate
         barPlot.barWidth = 1.0
         barPlot.baseValue = 0

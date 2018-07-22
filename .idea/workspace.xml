@@ -22,13 +22,152 @@
     <option name="TOOL_WINDOW_SELECTED_CONTENT_INDEX" value="0" />
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
+  <component name="ChangeListManager">
+    <list default="true" id="635613ea-2b61-463a-8935-a914b7d94305" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/porter-jerry.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/porter-jerry.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/porter-jerry.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRElementButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRElementButton.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRGraphChoiceCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRGraphChoiceCell.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRPageControl.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Controls/XTRPageControl.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Delegates/XTRElementListViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Delegates/XTRElementListViewControllerDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Delegates/XTRGraphChoiceViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Delegates/XTRGraphChoiceViewControllerDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Delegates/XTRGraphViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Delegates/XTRGraphViewControllerDelegate.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Misc/XTRApplication.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Misc/XTRApplication.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Misc/XTRDataSource.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Misc/XTRDataSource.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/Misc/XTRMolecularCalculator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/Misc/XTRMolecularCalculator.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRElementBalloonViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRElementBalloonViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRElementInspectorViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRElementInspectorViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRElementListViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRElementListViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRGraphViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRGraphViewController.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRPeriodicTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Classes/View Controllers/XTRPeriodicTableViewController.swift" afterDir="false" />
+    </list>
+    <ignored path="$USER_HOME$/Library/Developer/Xcode/DerivedData/PrimaMateria-gfnuzmyuhptuuefjacvjdjvsmsvr/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_13477388-8389-4E88-882B-F4E5D6338591" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="140" />
+    <option name="y" value="43" />
+    <option name="width" value="1400" />
+    <option name="height" value="987" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="PrimaMateria" type="1d218c8b:XcodeProjectNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="PrimaMateria" type="1d218c8b:XcodeProjectNode" />
+              <item name="PrimaMateria" type="fcab9f18:XcodeViewNode" />
+            </path>
+            <path>
+              <item name="" type="efc3779f:XcodeRootNode" />
+              <item name="PrimaMateria" type="1d218c8b:XcodeProjectNode" />
+              <item name="PrimaMateria" type="fcab9f18:XcodeViewNode" />
+              <item name="Classes" type="fcab9f18:XcodeViewNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="Cidr.FilesView" />
+    </panes>
+  </component>
   <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="PrimaMateria" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PrimaMateria" TARGET_NAME="PrimaMateria" CONFIG_NAME="Debug" SCHEME_NAME="PrimaMateria" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="PrimaMateria" RUN_TARGET_NAME="PrimaMateria" MAKE_ACTIVE="TRUE">
+      <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
+        <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
+      </EXTENSION>
+    </configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="635613ea-2b61-463a-8935-a914b7d94305" name="Default" comment="" />
+      <created>1532223610015</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1532223610015</updated>
+      <workItem from="1532223612845" duration="62000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="62000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="140" y="43" width="1400" height="987" extended-state="0" />
+    <layout>
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette&#9;" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Designer" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2496318" />
+      <window_info anchor="bottom" id="TeamCity" />
+      <window_info anchor="right" id="LuaJ" />
+      <window_info active="true" anchor="bottom" id="Inspection Results" visible="true" weight="0.3298731" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />

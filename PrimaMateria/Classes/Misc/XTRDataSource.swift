@@ -25,9 +25,9 @@ class XTRDataSource: NSObject {
         static var dispatchOnceToken = 0
     }
     
-    func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
+    func data(resourceName: String, type: String, directory: String) -> Data {
         let bundle = Bundle(for: classForCoder)
-        let path = bundle.path(forResource: aResourceName, ofType: type, inDirectory: directory)!
+        let path = bundle.path(forResource: resourceName, ofType: type, inDirectory: directory)!
         var data: Data = Data()
         
         do {
@@ -37,13 +37,13 @@ class XTRDataSource: NSObject {
         return data
     }
     
-    class func sharedInstance() -> XTRDataSource {
+    class var sharedInstance: XTRDataSource {
         _ = XTRDataSource.__once
         return _sharedInstance
     }
     
-    func loadElementForSymbol(_ aSymbol: String) {
-        let theData = dataForResource(aSymbol, type: FileType.plist, directory: SUPPORTING_FILES)
+    func loadElement(symbol: String) {
+        let theData = data(resourceName: symbol, type: FileType.plist, directory: SUPPORTING_FILES)
         var tempDict: [String: Any]?
         
         do {
@@ -54,12 +54,12 @@ class XTRDataSource: NSObject {
             element.elementDictionary = tempDict!
             elementList.append(element)
         } catch _ {
-            assert(nil != tempDict, "Could not read property list of element: \(aSymbol).")
+            assert(nil != tempDict, "Could not read property list of element: \(symbol).")
         }
     }
     
     func loadGraphPropertyList() {
-        let theData = dataForResource("GraphDefinitions", type: FileType.plist, directory: SUPPORTING_FILES)
+        let theData = data(resourceName: "GraphDefinitions", type: FileType.plist, directory: SUPPORTING_FILES)
         var tempList: [[String: AnyObject]]?
         
         graphPropertyList = []
@@ -76,16 +76,17 @@ class XTRDataSource: NSObject {
     }
     
     func loadElementList() {
-        let theData = dataForResource("ElementList", type: FileType.plist, directory: SUPPORTING_FILES)
+        let theData = data(resourceName: "ElementList", type: FileType.plist, directory: SUPPORTING_FILES)
         var tempList: [String]?
         
         elementList = []
-        
+        sortedElementList = NSMutableArray()
+
         do {
             try tempList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String]
             
             for (index, symbol) in (tempList?.enumerated())! {
-                loadElementForSymbol(symbol)
+                loadElement(symbol: symbol)
                 sortedElementList!.add(elementList[index])
             }
         } catch _ {
@@ -97,17 +98,15 @@ class XTRDataSource: NSObject {
     
     override init() {
         super.init()
-        
-        sortedElementList = NSMutableArray()
-        
+
         loadGraphPropertyList()
         loadElementList()
     }
     
     // MARK: - General Methods
     
-    func sortByColumnPosition(_ aColumnPosition: Int, andOrdering: Bool) {
-        let sortObject = sortColumns[Int(aColumnPosition)]
+    func sortByColumn(position: Int, andOrdering: Bool) {
+        let sortObject = sortColumns[Int(position)]
         let sortObject1 = sortColumns[0]
         let discripter1 = NSSortDescriptor(key: sortObject, ascending: andOrdering)
         
@@ -128,7 +127,7 @@ class XTRDataSource: NSObject {
     
     // MARK: - Accessor Methods
     
-    func elementForSymbol(_ symbol: String) -> XTRElementModel? {
+    func element(symbol: String) -> XTRElementModel? {
         for element in elementList where element.symbol == symbol {
             return element
         }
@@ -136,12 +135,12 @@ class XTRDataSource: NSObject {
         return nil
     }
     
-    func sortedElementAtIndex(_ anIndex: Int) -> XTRElementModel {
-        return sortedElementList!.object(at: anIndex) as! XTRElementModel
+    func sortedElement(index: Int) -> XTRElementModel {
+        return sortedElementList!.object(at: index) as! XTRElementModel
     }
     
-    func elementAtIndex(_ anIndex: Int) -> XTRElementModel {
-        return elementList[anIndex]
+    func element(index: Int) -> XTRElementModel {
+        return elementList[index]
     }
     
     func elementCount() -> Int {
