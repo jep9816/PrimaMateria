@@ -50,9 +50,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showWikipediaEntry:" destination="lMs-hR-g0H" eventType="touchUpInside" id="CQt-zB-HK8"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -205,6 +202,7 @@
                         <outlet property="discovererLabel" destination="8XP-Ip-lLQ" id="Lua-Ik-nBs"/>
                         <outlet property="discoveryLocationLabel" destination="Ydh-gT-pOs" id="KQM-eW-ZO3"/>
                         <outlet property="discoveryYearLabel" destination="4JZ-HZ-JsD" id="0xL-uW-eM8"/>
+                        <outlet property="showWikiButton" destination="Pbm-vp-c5Q" id="4xq-Tb-MLq"/>
                         <outlet property="view" destination="mFj-D5-h5x" id="8qK-vK-HX9"/>
                         <outlet property="webView" destination="QGW-7L-kwY" id="Usv-8D-Mqv"/>
                         <segue destination="10T-Ux-jH6" kind="modal" identifier="showWikipediaViewControllerFromGeneralViewController" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="x5m-p1-6D2"/>

@@ -8,19 +8,18 @@
 
 import CorePlot
 
-struct GraphAttribute {
+struct XTRGraphViewControllerConfig {
     static let name = "attributeName"
     static let title = "title"
     static let majorTickMarks = "majorTickMarks"
     static let minorTickMarks = "minorTickMarks"
     static let maximumValue = "maximumValue"
     static let minimumValue = "minimumValue"
+    static let customTickLocations = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
 }
 
 class XTRGraphViewController: UIViewController {
     
-    let customTickLocations = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
-
     @IBOutlet var barButtonItem: UIBarButtonItem!
     @IBOutlet var hostingView: CPTGraphHostingView!
     @IBOutlet var navigationBar: UINavigationBar!
@@ -79,9 +78,9 @@ class XTRGraphViewController: UIViewController {
         x.labelRotation = CGFloat.pi / 4.0
         x.labelingPolicy = CPTAxisLabelingPolicy.none
         
-        for index in 0..<customTickLocations.count {
-            let tickLocation = customTickLocations[index]
-            let labelValue = String("\(customTickLocations[index])")
+        for index in 0..<XTRGraphViewControllerConfig.customTickLocations.count {
+            let tickLocation = XTRGraphViewControllerConfig.customTickLocations[index]
+            let labelValue = String("\(XTRGraphViewControllerConfig.customTickLocations[index])")
             let newLabel = CPTAxisLabel.init(text: labelValue, textStyle: x.labelTextStyle)
             newLabel.tickLocation = NSNumber(value: tickLocation)
             newLabel.offset = x.labelOffset + x.majorTickLength

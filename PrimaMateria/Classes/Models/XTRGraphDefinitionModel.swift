@@ -28,22 +28,22 @@ class XTRGraphDefinitionModel: NSObject {
     convenience init(dictionary: [String: Any]) {
         self.init()
         
-        if let value1 = dictionary[GraphAttribute.title] as? String {
+        if let value1 = dictionary[XTRGraphViewControllerConfig.title] as? String {
             title = value1
         }
-        if let value2 = dictionary[GraphAttribute.name] as? String {
+        if let value2 = dictionary[XTRGraphViewControllerConfig.name] as? String {
             attributeName = value2
         }
-        if let value3 = dictionary[GraphAttribute.majorTickMarks] as? Float {
+        if let value3 = dictionary[XTRGraphViewControllerConfig.majorTickMarks] as? Float {
             majorTickMarks = value3
         }
-        if let value4 = dictionary[GraphAttribute.minorTickMarks] as? Float {
+        if let value4 = dictionary[XTRGraphViewControllerConfig.minorTickMarks] as? Float {
             minorTickMarks = value4
         }
-        if let value5 = dictionary[GraphAttribute.maximumValue] as? Float {
+        if let value5 = dictionary[XTRGraphViewControllerConfig.maximumValue] as? Float {
             maximumValue = value5
         }
-        if let value6 = dictionary[GraphAttribute.minimumValue] as? Float {
+        if let value6 = dictionary[XTRGraphViewControllerConfig.minimumValue] as? Float {
             minimumValue = value6
         }
      }

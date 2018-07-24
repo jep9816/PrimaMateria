@@ -26,13 +26,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaMateria/Classes/View Controllers/XTRPreferencesViewController.swift"
-            timestampString = "553989411.710467"
+            timestampString = "553999277.994725"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "51"
             endingLineNumber = "51"
-            landmarkName = "colorSelected(notification:)"
-            landmarkType = "7">
+            landmarkName = "XTRPreferencesViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaMateria/Classes/Appearance/XTRColorFactory.swift"
-            timestampString = "553989411.710534"
+            timestampString = "553999277.994791"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -113,54 +113,6 @@
             endingLineNumber = "24"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PrimaMateria/Classes/View Controllers/XTRGraphChoiceViewController.swift"
-            timestampString = "553659203.203036"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "XTRGraphChoiceViewController"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PrimaMateria.XTRGraphChoiceViewController.(delegate in _B43027E3338813F1182B0DB9DD92653E).getter : PrimaMateria.XTRGraphChoiceViewControllerDelegate"
-                  moduleName = "PrimaMateria"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Classes/View%20Controllers/XTRGraphChoiceViewController.swift"
-                  timestampString = "553656691.1310101"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "109">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PrimaMateria.XTRGraphChoiceViewController.(delegate in _B43027E3338813F1182B0DB9DD92653E).setter : PrimaMateria.XTRGraphChoiceViewControllerDelegate"
-                  moduleName = "PrimaMateria"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/porter-jerry/Developer/Source/PrimaMateria/PrimaMateria/Classes/View%20Controllers/XTRGraphChoiceViewController.swift"
-                  timestampString = "553656691.133599"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -250,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PrimaMateria/Classes/Appearance/XTRColorFactory.swift"
-            timestampString = "553989411.710718"
+            timestampString = "553999277.994975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "278"

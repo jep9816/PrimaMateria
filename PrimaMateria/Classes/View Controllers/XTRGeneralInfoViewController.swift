@@ -8,6 +8,8 @@
 
 import PDFKit
 import WebKit
+import RxSwift
+import RxCocoa
 
 class XTRGeneralInfoViewController: XTRSwapableViewController {
     
@@ -17,12 +19,19 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     @IBOutlet var abundanceCrustLabel: UILabel!
     @IBOutlet var abundanceSeaLabel: UILabel!
     @IBOutlet var webView: WKWebView!
+    @IBOutlet var showWikiButton: UIButton!
 
     private var progressHUD: MBProgressHUD?
     private var responseData: NSMutableData?
     private var request: NSMutableURLRequest?
     
     var elementName: String?
+    var disposeBag = DisposeBag()
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination: XTRWikipediaViewController = segue.destination as! XTRWikipediaViewController
+        destination.elementName = element?.name
+    }
     
     // MARK: - Initialization Methods
     
@@ -57,17 +66,14 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     }
     
     // MARK: - Action Methods
-    
-    @IBAction func showWikipediaEntry(_ sender: UIButton) {
-        performSegue(withIdentifier: SegueName.showWikipediaViewControllerFromGeneralViewController, sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destController = segue.destination as! XTRWikipediaViewController
-        destController.elementName = element!.name
-    }
-    
+        
     // MARK: - View Management Methods
+    
+    override func viewDidLoad() {
+        showWikiButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.performSegue(withIdentifier: SegueName.showWikipediaViewControllerFromGeneralViewController, sender: self)
+        }).disposed(by: disposeBag)
+    }
     
     override var shouldAutorotate: Bool {
         return false

@@ -10,12 +10,11 @@ import UIKit
 
 class XTRGraphChoiceViewController: UIViewController {
     
-    // MARK: - Initialization Methods
-    
-    //let reuseIdentifier = "Cell"
+    @IBOutlet var collectionView: UICollectionView!
+
     private var delegate: XTRGraphChoiceViewControllerDelegate = XTRGraphChoiceViewControllerDelegate()
 
-    @IBOutlet var collectionView: UICollectionView!
+    // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
