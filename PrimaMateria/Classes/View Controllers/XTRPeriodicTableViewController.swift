@@ -18,11 +18,13 @@ class XTRPeriodicTableViewController: UIViewController {
     @IBOutlet var swapView: UIView!
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var molecularCalculatorSwitch: UISwitch!
+    @IBOutlet var globeImageView: UIImageView!
     
     var molecularCalculatorState: Bool = false
     var elementBalloonViewController: XTRElementBalloonViewController!
     var molecularCalculatorViewController: XTRMolecularCalculatorViewController!
-    
+    var animationImages: [UIImage] = []
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,12 +32,6 @@ class XTRPeriodicTableViewController: UIViewController {
     }
     
     // MARK: - Internal Methods
-    
-    func showElementPanelForElementAtIndex(_ anIndex: Int) {
-        XTRPropertiesStore.viewTitle = title!
-        XTRPropertiesStore.atomicNumber = anIndex
-        performSegue(withIdentifier: SegueName.showInspectorFromPeriodicTable, sender: self)
-    }
     
     func setupPopUp() {
         elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRElementBalloonViewController.nameOfClass) as! XTRElementBalloonViewController
@@ -80,7 +76,7 @@ class XTRPeriodicTableViewController: UIViewController {
             if XTRPropertiesStore.elementBubblesState {
                 showPopupForButton(sender)
             } else {
-                showElementPanelForElementAtIndex(sender.tag)
+                showElementPanelForElementAtIndex(index: sender.tag)
             }
         }
     }
@@ -110,6 +106,22 @@ class XTRPeriodicTableViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         molecularCalculatorSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
         molecularCalculatorSwitch.cornerRadius = SWITCH_CORNER_RADIUS
+        setupImageViewAnimation()
+        startAnimating()
+    }
+    
+    func startAnimating() {
+        globeImageView.animationImages = animationImages
+        globeImageView.animationDuration = 5.0
+        globeImageView.startAnimating()
+    }
+    
+    func setupImageViewAnimation() {
+        for index in 1...72 {
+            let numValue =  String(format: "%02d", index)
+            let imageName = "Globe\(numValue).png"
+            animationImages.append(UIImage(named: imageName)!)
+        }
     }
     
     override var shouldAutorotate: Bool {

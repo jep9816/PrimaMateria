@@ -15,7 +15,7 @@ struct XTRGraphViewControllerConfig {
     static let minorTickMarks = "minorTickMarks"
     static let maximumValue = "maximumValue"
     static let minimumValue = "minimumValue"
-    static let customTickLocations = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
+    static let customTickLocations: [Int] = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
 }
 
 class XTRGraphViewController: UIViewController {
@@ -49,13 +49,12 @@ class XTRGraphViewController: UIViewController {
         barChart!.paddingRight = 0.0
         barChart!.paddingBottom = 80.0
         barChart!.delegate = delegate
-        //barChart!.delegate = self
     }
     
     func createXAxis(_ axisSet: CPTXYAxisSet, majorTickStyle: CPTLineStyle, minorTickStyle: CPTLineStyle) {
         let x = axisSet.xAxis!
         var customLabels: [CPTAxisLabel] = []
-        let textStyle = CPTMutableTextStyle.init()
+        let textStyle = CPTMutableTextStyle()
         
         textStyle.color = CPTColor.black()
         textStyle.fontName = "Verdana-Bold"
@@ -88,7 +87,7 @@ class XTRGraphViewController: UIViewController {
             customLabels.append(newLabel)
         }
         
-        let aSet = NSSet(array: customLabels as [AnyObject])
+        let aSet = NSSet(array: customLabels)
         x.axisLabels =  aSet as? Set<CPTAxisLabel>
     }
     
@@ -122,14 +121,8 @@ class XTRGraphViewController: UIViewController {
         return (aValue != nil) ? aValue!: 0
     }
     
-    func showElementPanelForElementAtIndex(_ anIndex: Int) {
-        XTRPropertiesStore.viewTitle = title!
-        XTRPropertiesStore.atomicNumber = anIndex
-        performSegue(withIdentifier: SegueName.showInspectorFromGraphView, sender: self)
-    }
-    
-    func showGraphForChoiceAtIndex(_ anIndex: Int) {
-        let model = XTRDataSource.sharedInstance.graphPropertyList[anIndex]
+    func showGraphForChoiceAtIndex(_ index: Int) {
+        let model = XTRDataSource.sharedInstance.graphPropertyList[index]
         let minValue = model.minimumValue
         let maxValue = model.maximumValue
         let majorTicks = model.majorTickMarks
@@ -156,7 +149,7 @@ class XTRGraphViewController: UIViewController {
         createXAxis(axisSet, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle)
         createYAxis(axisSet, minorTicks: minorTicks, majorTickStyle: majorTickStyle, minorTickStyle: minorTickStyle, majorTicks: majorTicks, title: model.title, maxValue: maxValue, minValue: minValue)
         
-        barPlot.element = XTRDataSource.sharedInstance.element(index: Int(anIndex))
+        barPlot.element = XTRDataSource.sharedInstance.element(index: index)
         barPlot.delegate = delegate
         barPlot.barWidth = 1.0
         barPlot.baseValue = 0

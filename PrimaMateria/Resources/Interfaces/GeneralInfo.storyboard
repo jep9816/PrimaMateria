@@ -205,20 +205,11 @@
                         <outlet property="showWikiButton" destination="Pbm-vp-c5Q" id="4xq-Tb-MLq"/>
                         <outlet property="view" destination="mFj-D5-h5x" id="8qK-vK-HX9"/>
                         <outlet property="webView" destination="QGW-7L-kwY" id="Usv-8D-Mqv"/>
-                        <segue destination="10T-Ux-jH6" kind="modal" identifier="showWikipediaViewControllerFromGeneralViewController" modalPresentationStyle="formSheet" modalTransitionStyle="crossDissolve" id="x5m-p1-6D2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tVz-Fl-NGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4833" y="2214"/>
-        </scene>
-        <!--Wikipedia View-->
-        <scene sceneID="YVc-9y-QwG">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRWikipediaViewController" storyboardName="Wikipedia" referencedIdentifier="XTRWikipediaViewController" id="10T-Ux-jH6" userLabel="Wikipedia View" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8hO-Ef-hiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4833" y="2891"/>
         </scene>
     </scenes>
 </document>

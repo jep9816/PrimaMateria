@@ -36,11 +36,11 @@ public extension NSObject { // General
         
         return unsigned
     }
-
+    
     func mapToObserver(button: UIButton) -> Observable<UIButton> {
         return button.rx.tap.map { _ in return button}
     }
-
+    
 }
 
 extension UILabel {
@@ -76,11 +76,28 @@ extension String {
     func lowercasingFirstLetter() -> String {
         return prefix(1).lowercased() + dropFirst()
     }
-
+    
     var camelCasedString: String {
         return self.components(separatedBy: " ")
             .map { return $0.lowercased().capitalizingFirstLetter() }
             .joined()
+    }
+    
+}
+
+extension UIViewController {
+    
+    func showElementPanelForElementAtIndex(index: Int) {
+        XTRPropertiesStore.viewTitle = title!
+        XTRPropertiesStore.atomicNumber = index
+        
+        let storyboard = UIStoryboard(name: ELEMENT_INSPECTOR_STORY_BOARD, bundle: nil)
+        let elementInspector: XTRElementInspectorViewController = storyboard.instantiateViewController(withIdentifier: XTRElementInspectorViewController.nameOfClass) as! XTRElementInspectorViewController
+        
+        elementInspector.modalPresentationStyle = .fullScreen
+        elementInspector.modalTransitionStyle = .crossDissolve
+        
+        present(elementInspector, animated: true, completion: nil)
     }
     
 }

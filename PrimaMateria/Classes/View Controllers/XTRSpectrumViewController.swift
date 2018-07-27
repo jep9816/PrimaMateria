@@ -9,7 +9,7 @@
 import CorePlot
 import RxSwift
 
-enum XTRSpectrumViewControllerConfig {
+enum XTRSpectrumViewProperty {
     static let kAirWavelength = "airWavelength"
     static let kIntensity = "intensity"
     static let kSpectrum = "spectrum"
@@ -20,6 +20,16 @@ enum XTRSpectrumViewControllerConfig {
     static let kVSpectrum = "V"
 }
 
+struct XTRSpectrumViewControllerConfig {
+    static let name = "attributeName"
+    static let title = "title"
+    static let majorTickMarks = "majorTickMarks"
+    static let minorTickMarks = "minorTickMarks"
+    static let maximumValue = "maximumValue"
+    static let minimumValue = "minimumValue"
+    static let customTickLocations: [Int] = [4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500]
+}
+
 class XTRSpectrumViewController: XTRSwapableViewController {
     
     @IBOutlet var hostingView: CPTGraphHostingView!
@@ -28,7 +38,6 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     var barChart: CPTXYGraph?
     var lineSpectraArray: Variable<[XTRSpectraModel]>?
     var tableView: UITableView?
-    let customTickLocations = [4000, 4500, 5000, 5500, 6000, 6500, 7000, 7500]
 
     private var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()
 
@@ -61,10 +70,10 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     func setupBarChart() {
         // Create barChart from theme
         barChart = CPTXYGraph.init(frame: CGRect.zero)
-        barChart!.apply(CPTTheme(named: CPTThemeName.slateTheme))
         hostingView.hostedGraph = barChart
-        barChart!.plotAreaFrame!.masksToBorder = false
         
+        barChart!.plotAreaFrame!.masksToBorder = false
+        barChart!.apply(CPTTheme(named: CPTThemeName.slateTheme))
         barChart!.paddingLeft = 100.0
         barChart!.paddingTop = 10.0
         barChart!.paddingRight = 5.0
@@ -77,7 +86,8 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         let x = axisSet.xAxis!
         let y = axisSet.yAxis!
         var labelLocation = 0
-        var customLabels: [AnyObject?] = [AnyObject?](repeating: nil, count: customTickLocations.count)
+        var customLabels: [CPTAxisLabel] = [CPTAxisLabel]()
+        //(repeating: nil, count: customTickLocations.count)
         
         // Add plot space for horizontal bar charts
         plotSpace.yRange = CPTPlotRange(location: 0.0, length: 1000.0)
@@ -103,17 +113,17 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         x.labelRotation = CGFloat.pi / 4.0
         x.labelingPolicy = CPTAxisLabelingPolicy.none
         
-        for index in 0..<customTickLocations.count {
+        for index in 0..<XTRSpectrumViewControllerConfig.customTickLocations.count {
             labelLocation += labelLocation
-            let newLabel = CPTAxisLabel.init(text: String("\(customTickLocations[labelLocation])"), textStyle: x.labelTextStyle)
-            let tickLocation = customTickLocations[index] as NSNumber
-            newLabel.tickLocation = tickLocation
+            let newLabel = CPTAxisLabel(text: String("\(XTRSpectrumViewControllerConfig.customTickLocations[labelLocation])"), textStyle: x.labelTextStyle)
+
+            newLabel.tickLocation = NSNumber(value: XTRSpectrumViewControllerConfig.customTickLocations[index])
             newLabel.offset = x.labelOffset + x.majorTickLength
             newLabel.rotation = CGFloat.pi / 4.0
             customLabels.append(newLabel)
         }
         
-        x.axisLabels = NSSet(array: customLabels as [AnyObject]) as? Set<CPTAxisLabel>
+        x.axisLabels = NSSet(array: customLabels) as? Set<CPTAxisLabel>
         
         y.axisLineStyle = nil
         y.minorTicksPerInterval = 3
@@ -126,20 +136,20 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         y.titleOffset = 50.0
         y.titleLocation = 500.0
         
-        var barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kISpectrum, aColor: CPTColor.red())
+        var barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewProperty.kISpectrum, aColor: CPTColor.red())
         
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kIISpectrum, aColor: CPTColor.blue())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewProperty.kIISpectrum, aColor: CPTColor.blue())
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kIIISpectrum, aColor: CPTColor.green())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewProperty.kIIISpectrum, aColor: CPTColor.green())
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kIVSpectrum, aColor: CPTColor.cyan())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewProperty.kIVSpectrum, aColor: CPTColor.cyan())
         barChart!.add(barPlot, to: plotSpace)
         
-        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewControllerConfig.kVSpectrum, aColor: CPTColor.magenta())
+        barPlot = addSpectrumPlotWithIdentifier(XTRSpectrumViewProperty.kVSpectrum, aColor: CPTColor.magenta())
         barChart!.add(barPlot, to: plotSpace)
     }
     
@@ -193,7 +203,6 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     // MARK: - Memory Management Methods
     
     deinit {
-        tableView = nil
         hostingView = nil
         swapView = nil
     }

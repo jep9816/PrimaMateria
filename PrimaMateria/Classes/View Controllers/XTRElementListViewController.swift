@@ -26,13 +26,7 @@ class XTRElementListViewController: UIViewController {
     }
     
     // MARK: - Internal Methods
-    
-    public func showElementPanelForElementAtIndex(_ anIndex: Int) {
-        XTRPropertiesStore.viewTitle = title!
-        XTRPropertiesStore.atomicNumber = anIndex
-        performSegue(withIdentifier: SegueName.showInspectorFromElementList, sender: self)
-    }
-    
+        
     private func setupTableView() {
         tableView = UITableView(frame: swapView.frame, style: .plain)
         tableView!.alwaysBounceVertical = false
@@ -77,9 +71,7 @@ class XTRElementListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         delegate?.closure = { [weak self] (index: Int) -> Void in
-            XTRPropertiesStore.viewTitle = (self?.title)!
-            XTRPropertiesStore.atomicNumber = index
-            self?.performSegue(withIdentifier: SegueName.showInspectorFromElementList, sender: self)
+            self?.showElementPanelForElementAtIndex(index: index)
         }
     }
     

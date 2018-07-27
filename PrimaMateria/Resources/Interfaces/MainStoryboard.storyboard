@@ -37,56 +37,16 @@
         <!--Splash-->
         <scene sceneID="ZCP-5O-VsF">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRSplashViewController" storyboardName="Splash" referencedIdentifier="XTRSplashViewController" id="rAF-kF-ajm" userLabel="Splash" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2o-Us-ddV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="XTRSplashViewController" storyboardName="Splash" referencedIdentifier="XTRSplashViewController" id="rAF-kF-ajm" userLabel="Splash" sceneMemberID="viewController"/>
             </objects>
-            <point key="canvasLocation" x="-72" y="354"/>
-        </scene>
-        <!--Nuclides Isotopes-->
-        <scene sceneID="eJ7-XV-aRd">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRNuclidesIsotopesViewController" storyboardName="NuclidesIsotopes" referencedIdentifier="XTRNuclidesIsotopesViewController" id="ufB-3D-Ajm" userLabel="Nuclides Isotopes" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YPE-OF-Ovp" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-38" y="208"/>
-        </scene>
-        <!--Spectrum-->
-        <scene sceneID="1tC-zQ-PH4">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRSpectrumViewController" storyboardName="Spectrum" referencedIdentifier="XTRSpectrumViewController" id="H7O-cR-OZF" userLabel="Spectrum" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gzi-He-8td" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="173" y="354"/>
-        </scene>
-        <!--Element Properties-->
-        <scene sceneID="LRR-lR-Qis">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRElementPropertiesViewController" storyboardName="ElementProperties" referencedIdentifier="XTRElementPropertiesViewController" id="aiG-zU-Z4X" userLabel="Element Properties" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hwB-Pw-f6J" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="455" y="281"/>
-        </scene>
-        <!--Atomic Structure-->
-        <scene sceneID="H9O-Mf-dcQ">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRAtomicStructureViewController" storyboardName="AtomicStructure" referencedIdentifier="XTRAtomicStructureViewController" id="Uow-s7-RZf" userLabel="Atomic Structure" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1C2-32-dfW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="195" y="281"/>
-        </scene>
-        <!--Wikipedia View-->
-        <scene sceneID="07L-Fa-nje">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRWikipediaViewController" storyboardName="GeneralInfo" referencedIdentifier="XTRWikipediaViewController" id="HbA-Fb-xAu" userLabel="Wikipedia View" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aXQ-kV-MqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6423" y="2222"/>
+            <point key="canvasLocation" x="-270" y="425"/>
         </scene>
         <!--General Info-->
         <scene sceneID="pka-pd-IiW">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRGeneralInfoViewController" storyboardName="GeneralInfo" referencedIdentifier="XTRGeneralInfoViewController" id="qsj-bt-nQY" userLabel="General Info" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wgf-sW-jtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="XTRGeneralInfoViewController" storyboardName="GeneralInfo" referencedIdentifier="XTRGeneralInfoViewController" id="qsj-bt-nQY" userLabel="General Info" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="4833" y="2214"/>
         </scene>
@@ -103,8 +63,8 @@
         <!--Element Balloon-->
         <scene sceneID="sMr-0A-lGi">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRElementBalloonViewController" storyboardName="ElementBalloon" referencedIdentifier="XTRElementBalloonViewController" id="Uja-r3-RgV" userLabel="Element Balloon" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPx-je-dlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="XTRElementBalloonViewController" storyboardName="ElementBalloon" referencedIdentifier="XTRElementBalloonViewController" id="Uja-r3-RgV" userLabel="Element Balloon" sceneMemberID="viewController"/>
             </objects>
             <point key="canvasLocation" x="-244" y="206"/>
         </scene>
@@ -121,18 +81,10 @@
         <!--Help Balloon-->
         <scene sceneID="cCH-q5-3jv">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRHelpBalloonViewController" storyboardName="HelpBalloon" referencedIdentifier="XTRHelpBalloonViewController" id="oed-Be-Owo" userLabel="Help Balloon" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7I6-Wc-fHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="XTRHelpBalloonViewController" storyboardName="HelpBalloon" referencedIdentifier="XTRHelpBalloonViewController" id="oed-Be-Owo" userLabel="Help Balloon" sceneMemberID="viewController"/>
             </objects>
-            <point key="canvasLocation" x="435" y="208"/>
-        </scene>
-        <!--Graph Choice-->
-        <scene sceneID="v8X-TB-LbM">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRGraphChoiceViewController" storyboardName="GraphChoice" referencedIdentifier="XTRGraphChoiceViewController" id="ZuJ-BJ-ZQS" userLabel="Graph Choice" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0hJ-K1-n3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="195" y="208"/>
+            <point key="canvasLocation" x="-270" y="354"/>
         </scene>
         <!--Info-->
         <scene sceneID="mng-sw-thD">
@@ -157,10 +109,10 @@
         <!--Molecular Calculator-->
         <scene sceneID="2Ds-Sv-V8H">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRMolecularCalculatorViewController" storyboardName="MolecularCalculator" referencedIdentifier="XTRMolecularCalculatorViewController" id="bmZ-bi-i3X" userLabel="Molecular Calculator" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gan-XA-HaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="XTRMolecularCalculatorViewController" storyboardName="MolecularCalculator" referencedIdentifier="XTRMolecularCalculatorViewController" id="bmZ-bi-i3X" userLabel="Molecular Calculator" sceneMemberID="viewController"/>
             </objects>
-            <point key="canvasLocation" x="-29" y="281"/>
+            <point key="canvasLocation" x="-245" y="281"/>
         </scene>
         <!--Graphs-->
         <scene sceneID="98Q-P6-JtU">

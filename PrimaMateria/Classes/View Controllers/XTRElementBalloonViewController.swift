@@ -53,15 +53,7 @@ class XTRElementBalloonViewController: UIViewController {
         wrapperView.clipsToBounds = true
 
         elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            let storyBoard = UIStoryboard(name: ELEMENT_INSPECTOR_STORY_BOARD, bundle: nil)
-            let controller = storyBoard.instantiateViewController(withIdentifier: XTRElementInspectorViewController.nameOfClass) as! XTRElementInspectorViewController
-
-            controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .crossDissolve
- 
-            XTRPropertiesStore.viewTitle = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
-            XTRPropertiesStore.atomicNumber = XTRPropertiesStore.atomicNumber
-            self?.present(controller, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+            self?.showElementPanelForElementAtIndex(index: XTRPropertiesStore.atomicNumber)
         }).disposed(by: disposeBag)
     }
     

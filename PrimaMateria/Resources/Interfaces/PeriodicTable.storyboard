@@ -2800,6 +2800,10 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Globe01.png" translatesAutoresizingMaskIntoConstraints="NO" id="yIQ-Vk-SHi">
+                                        <rect key="frame" x="960" y="-15" width="60" height="60"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                             </view>
                             <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-FO-2K4">
@@ -2816,26 +2820,19 @@
                     <tabBarItem key="tabBarItem" title="Periodic Table" image="Tab01" id="7"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="globeImageView" destination="yIQ-Vk-SHi" id="9MH-6R-Cvj"/>
                         <outlet property="molecularCalculatorSwitch" destination="x1U-oK-cCA" id="FM2-Z4-Pdv"/>
                         <outlet property="navigationBar" destination="Mhz-FO-2K4" id="XIX-PX-aDM"/>
                         <outlet property="swapView" destination="w53-Jf-msB" id="RdJ-9O-78D"/>
-                        <segue destination="VbE-uV-39X" kind="modal" identifier="showInspectorFromPeriodicTable" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Wbc-ML-l8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2162" y="-2415"/>
         </scene>
-        <!--Element Inspector-->
-        <scene sceneID="5id-Bi-APh">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRElementInspectorViewController" storyboardName="ElementInspector" referencedIdentifier="XTRElementInspectorViewController" id="VbE-uV-39X" userLabel="Element Inspector" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lgv-QS-UKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2162" y="-1610"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="Globe01.png" width="96" height="96"/>
         <image name="Tab01" width="30" height="30"/>
     </resources>
 </document>

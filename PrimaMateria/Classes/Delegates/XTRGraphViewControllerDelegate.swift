@@ -111,9 +111,9 @@ class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDel
         return num
     }
     
-    func barPlot(_ plot: CPTBarPlot, barWasSelectedAtRecord index: UInt) {
-        controller?.showElementPanelForElementAtIndex(Int(index))
-    }
+//    func barPlot(_ plot: CPTBarPlot, barWasSelectedAtRecord index: UInt) {
+//        controller?.showElementPanelForElementAtIndex(Int(index))
+//    }
     
     @objc func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: UInt) -> CPTFill {
         let element = XTRDataSource.sharedInstance.element(index: Int(recordIndex))

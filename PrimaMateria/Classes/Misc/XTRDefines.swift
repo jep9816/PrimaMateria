@@ -114,6 +114,7 @@ let PERIODIC_VIEW_TITLE = "periodicTableElements"
 let MAIN_STORY_BOARD = "MainStoryboard"
 let COLOR_PICKER_STORY_BOARD = "ColorPicker"
 let ELEMENT_INSPECTOR_STORY_BOARD = "ElementInspector"
+let WIKIPEDIA_STORY_BOARD = "Wikipedia"
 let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 let SWITCH_CORNER_RADIUS: CGFloat = 16.0
@@ -178,15 +179,3 @@ struct ColorComponent {
     static let blue = "blue"
     static let alpha = "alpha"
 }
-
-// MARK: - Storyboard
-
-struct SegueName {
-    static let showInspectorFromPeriodicTable = "showInspectorFromPeriodicTable"
-    static let showInspectorFromGraphView = "showInspectorFromGraphView"
-    static let showInspectorFromElementList = "showInspectorFromElementList"
-    static let showInspectorFromElementBalloon = "showInspectorFromElementBalloon"
-    static let showWikipediaViewControllerFromGeneralViewController = "showWikipediaViewControllerFromGeneralViewController"
-}
-
-//public typealias ClosureType = (Int) -> ()

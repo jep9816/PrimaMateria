@@ -259,20 +259,11 @@
                         <outlet property="atomicNumberButton" destination="YFv-sO-0oM" id="lwJ-eh-LYn"/>
                         <outlet property="navigationBar" destination="23" id="rSG-O1-R83"/>
                         <outlet property="swapView" destination="Avt-Ko-urF" id="yPh-Vn-ddl"/>
-                        <segue destination="VbE-uV-39X" kind="modal" identifier="showInspectorFromElementList" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="h04-uQ-Ar2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2162" y="-1470"/>
-        </scene>
-        <!--Element Inspector-->
-        <scene sceneID="5id-Bi-APh">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRElementInspectorViewController" storyboardName="ElementInspector" referencedIdentifier="XTRElementInspectorViewController" id="VbE-uV-39X" userLabel="Element Inspector" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lgv-QS-UKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2162" y="-677"/>
         </scene>
     </scenes>
     <resources>

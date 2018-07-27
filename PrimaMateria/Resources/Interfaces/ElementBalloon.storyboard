@@ -144,20 +144,11 @@
                         <outlet property="elementNameLabel" destination="vvH-SZ-kad" id="Wb2-Zo-EaO"/>
                         <outlet property="meltingPointLabel" destination="iAe-61-tWs" id="npm-H0-YqA"/>
                         <outlet property="wrapperView" destination="1Rd-Rr-nV3" id="oDt-PL-1xz"/>
-                        <segue destination="rrt-dd-p5B" kind="modal" identifier="showInspectorFromElementBalloon" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="t4z-1G-Wf6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kut-Gk-L4O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3632" y="-2414"/>
-        </scene>
-        <!--Element Inspector-->
-        <scene sceneID="Zc6-Mw-8yn">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRElementInspectorViewController" storyboardName="ElementInspector" referencedIdentifier="XTRElementInspectorViewController" id="rrt-dd-p5B" userLabel="Element Inspector" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u6I-4z-RgR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3632" y="-2058"/>
         </scene>
     </scenes>
 </document>

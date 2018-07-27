@@ -48,7 +48,6 @@
                         <outlet property="barButtonItem" destination="PFl-aJ-df6" id="hpy-2v-5D3"/>
                         <outlet property="hostingView" destination="AvU-Jp-ufm" id="dPE-b3-8Ae"/>
                         <outlet property="navigationBar" destination="R6v-Zc-Eld" id="Uyl-bt-TSI"/>
-                        <segue destination="VbE-uV-39X" kind="modal" identifier="showInspectorFromGraphView" modalPresentationStyle="fullScreen" modalTransitionStyle="crossDissolve" id="Cif-Fg-Pfi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-T4-eQV" sceneMemberID="firstResponder"/>
@@ -64,14 +63,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0hJ-K1-n3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2333" y="198"/>
-        </scene>
-        <!--Element Inspector-->
-        <scene sceneID="5id-Bi-APh">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRElementInspectorViewController" storyboardName="ElementInspector" referencedIdentifier="XTRElementInspectorViewController" id="VbE-uV-39X" userLabel="Element Inspector" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lgv-QS-UKu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1911" y="198"/>
         </scene>
     </scenes>
     <resources>

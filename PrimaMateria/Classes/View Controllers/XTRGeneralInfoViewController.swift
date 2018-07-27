@@ -22,17 +22,12 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     @IBOutlet var showWikiButton: UIButton!
 
     private var progressHUD: MBProgressHUD?
-    private var responseData: NSMutableData?
-    private var request: NSMutableURLRequest?
+//    private var responseData: NSMutableData?
+//    private var request: NSMutableURLRequest?
     
     var elementName: String?
     var disposeBag = DisposeBag()
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination: XTRWikipediaViewController = segue.destination as! XTRWikipediaViewController
-        destination.elementName = element?.name
-    }
-    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,9 +64,21 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         
     // MARK: - View Management Methods
     
+    func showWikiView() {
+        let storyboard = UIStoryboard(name: WIKIPEDIA_STORY_BOARD, bundle: nil)
+        let wikipediaViewController: XTRWikipediaViewController = storyboard.instantiateViewController(withIdentifier: XTRWikipediaViewController.nameOfClass) as! XTRWikipediaViewController
+        
+        wikipediaViewController.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
+        wikipediaViewController.modalPresentationStyle = .formSheet
+        wikipediaViewController.modalTransitionStyle = .crossDissolve
+        wikipediaViewController.elementName = element?.name
+        
+        present(wikipediaViewController, animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         showWikiButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.performSegue(withIdentifier: SegueName.showWikipediaViewControllerFromGeneralViewController, sender: self)
+            self?.showWikiView()
         }).disposed(by: disposeBag)
     }
     
@@ -92,6 +99,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         discoveryLocationLabel = nil
         discoveryYearLabel = nil
         webView = nil
+        showWikiButton = nil
     }
     
 }
