@@ -37,7 +37,7 @@ class XTRAppearanceManagerStandard: NSObject {
     
     func barButtonItemAppearance() {
         let appearance = UIBarButtonItem.appearance()
-        appearance.tintColor = XTRColorFactoryStandard.buttonBorderColor
+        appearance.tintColor = XTRColorFactoryStandard.standardRedColor
 
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
@@ -62,16 +62,23 @@ class XTRAppearanceManagerStandard: NSObject {
     
     func navigationBarAppearance() {
         let appearance = UINavigationBar.appearance()
+        let shadow = NSShadow()
+        
+        shadow.shadowColor = UIColor.black
+        shadow.shadowOffset = CGSize(width: 5, height: 5)
+        shadow.shadowBlurRadius = 5.0
+        
         let navigationBarTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.darkText,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 30)
+            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.ghost,
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedStringKey.shadow: shadow
         ]
         
+        appearance.barTintColor = XTRColorFactoryStandard.standardRedColor
         appearance.titleTextAttributes = navigationBarTextAttributes
-        appearance.tintColor = XTRColorFactoryStandard.darkText
-        appearance.backgroundColor = XTRColorFactoryStandard.navyBlue
-        appearance.barTintColor = XTRColorFactoryStandard.navyBlue
-
+        appearance.tintColor = XTRColorFactoryStandard.ghost
+        appearance.setTitleVerticalPositionAdjustment(2, for: .default)
+        
         //@property(nonatomic,assign) UIBarStyle barStyle;
         //@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;
         //@property(nonatomic, readwrite, assign) BOOL prefersLargeTitles;
@@ -151,7 +158,7 @@ class XTRAppearanceManagerStandard: NSObject {
     func sliderAppearance() {
         let appearance = UISlider.appearance()
 
-        appearance.minimumTrackTintColor = XTRColorFactoryStandard.caution
+        appearance.minimumTrackTintColor = XTRColorFactoryStandard.standardRedColor
         appearance.maximumTrackTintColor = XTRColorFactoryStandard.nobel
         appearance.thumbTintColor = XTRColorFactoryStandard.regalBlue
         appearance.setThumbImage("⦿".image(size: CGSize(width: 45, height: 45)), for: .selected)
@@ -189,7 +196,7 @@ class XTRAppearanceManagerStandard: NSObject {
         let appearance = UISwitch.appearance()
         
         appearance.onTintColor = XTRColorFactoryStandard.successGreen
-        appearance.tintColor = XTRColorFactoryStandard.regalBlue
+        appearance.tintColor = XTRColorFactoryStandard.standardRedColor
         appearance.thumbTintColor = XTRColorFactoryStandard.ghost
 
         //open var onTintColor: UIColor?
@@ -205,6 +212,9 @@ class XTRAppearanceManagerStandard: NSObject {
         appearance.tintColor = XTRColorFactory.tabBarSelectedForgroundColor
         appearance.backgroundColor = XTRColorFactoryStandard.navyBlue
         appearance.barTintColor = XTRColorFactoryStandard.darkText
+        appearance.barTintColor = XTRColorFactoryStandard.standardRedColor
+        appearance.tintColor = XTRColorFactoryStandard.ghost
+        appearance.unselectedItemTintColor = XTRColorFactoryStandard.greySuit
 
         //@property(nullable, nonatomic, strong) UIColor *barTintColor;
         //@property(nonatomic, readwrite, copy, nullable) UIColor *unselectedItemTintColor;
