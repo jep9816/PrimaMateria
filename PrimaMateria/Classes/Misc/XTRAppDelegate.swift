@@ -29,7 +29,7 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     class func storyboard() -> UIStoryboard {
-        return UIStoryboard(name: MAIN_STORY_BOARD, bundle: nil)
+        return UIStoryboard(name: StoryBoardName.Main, bundle: nil)
     }
     
     func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {

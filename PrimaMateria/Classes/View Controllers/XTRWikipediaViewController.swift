@@ -63,26 +63,26 @@ class XTRWikipediaViewController: UIViewController {
         progressHUD.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
         progressHUD.label.text = NSLocalizedString("pleaseWait", comment: "")
         progressHUD.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) \(elementName!)."
-        //progressHUD.backgroundView.blurEffectStyle = .prominent
-        //progressHUD.backgroundView.style = .blur
         progressHUD.backgroundView.backgroundColor = UIColor.clear
-        //progressHUD.animationType = .zoomIn
-        //progressHUD.areDefaultMotionEffectsEnabled = true
         webView.navigationDelegate = delegate
         view.addSubview(progressHUD)
 
+        setupRx()
+    }
+    
+    func setupRx() {
         backButton.rx.tap.subscribe(onNext: { [weak self] _ in
-           self?.progressHUD.show(animated: true)
+            self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
             self?.webView.goBack()
         }).disposed(by: disposeBag)
         
         forwardButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.progressHUD.show(animated: true)
+            self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
             self?.webView.goForward()
         }).disposed(by: disposeBag)
         
         dismissButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.dismiss(animated: true, completion: nil)
+            self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
         }).disposed(by: disposeBag)
     }
     
@@ -95,7 +95,7 @@ class XTRWikipediaViewController: UIViewController {
         forwardButton.isEnabled = false
         forwardButton.tintColor = UIColor.black
         
-        progressHUD.show(animated: true)
+        progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
         prepareRequest()
     }
     

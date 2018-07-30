@@ -36,7 +36,7 @@
                                 <rect key="frame" x="0.0" y="44" width="1024" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YFv-sO-0oM" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YFv-sO-0oM" userLabel="Atomic Number Button" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="-2" y="0.0" width="88" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -55,9 +55,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="RP8-b1-IcF"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="kVX-m2-Ph0" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="85" y="0.0" width="97" height="45"/>
@@ -75,9 +72,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="M9l-Il-ADO"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="1Hy-CR-Xjl" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="181" y="0.0" width="127" height="45"/>
@@ -95,9 +89,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="kWT-bX-rS1"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="dgz-bY-1qD" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="307" y="0.0" width="107" height="45"/>
@@ -115,9 +106,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="chy-lF-FLG"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="lUX-HY-fRg" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="413" y="0.0" width="107" height="45"/>
@@ -135,9 +123,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="KTg-lU-laX"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WNT-7d-dzS" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="519" y="0.0" width="107" height="45"/>
@@ -155,9 +140,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="a8M-DF-sUx"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="RUx-Kk-Gz9" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="625" y="0.0" width="107" height="45"/>
@@ -175,9 +157,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="QiI-Vl-6Ui"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="N09-5q-jhq" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="731" y="0.0" width="154" height="45"/>
@@ -195,9 +174,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="bjx-Xg-IRX"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Pb5-BH-2ri" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="882" y="0.0" width="77" height="45"/>
@@ -215,9 +191,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="9EQ-WG-Oe2"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="w9m-Qo-C1d" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="955" y="0.0" width="70" height="45"/>
@@ -235,9 +208,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sortTableView:" destination="3" eventType="touchUpInside" id="qvy-xy-tBv"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -256,9 +226,18 @@
                     <tabBarItem key="tabBarItem" tag="1" title="Element List" image="Tab02" id="6"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="atomicMassButton" destination="dgz-bY-1qD" id="hJZ-Uy-rK9"/>
                         <outlet property="atomicNumberButton" destination="YFv-sO-0oM" id="lwJ-eh-LYn"/>
+                        <outlet property="boilingPointButton" destination="lUX-HY-fRg" id="MHp-Y6-Smi"/>
+                        <outlet property="densityButton" destination="RUx-Kk-Gz9" id="yce-uJ-pdo"/>
+                        <outlet property="groupButton" destination="w9m-Qo-C1d" id="B2c-Tn-ZZc"/>
+                        <outlet property="meltingPointButton" destination="WNT-7d-dzS" id="G7l-Ef-rc7"/>
+                        <outlet property="nameButton" destination="1Hy-CR-Xjl" id="Yhe-ot-1d6"/>
                         <outlet property="navigationBar" destination="23" id="rSG-O1-R83"/>
+                        <outlet property="periodButton" destination="Pb5-BH-2ri" id="ziN-eM-aJV"/>
+                        <outlet property="seriesButton" destination="N09-5q-jhq" id="a1e-IW-Gn3"/>
                         <outlet property="swapView" destination="Avt-Ko-urF" id="yPh-Vn-ddl"/>
+                        <outlet property="symbolButton" destination="kVX-m2-Ph0" id="sjh-O5-jB5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>

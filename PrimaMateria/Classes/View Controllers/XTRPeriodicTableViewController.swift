@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 struct XTRPeriodicTableViewControllerConfig {
     static let buttonRect = CGRect(x: 0, y: 0, width: 52, height: 54)
@@ -19,12 +21,14 @@ class XTRPeriodicTableViewController: UIViewController {
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var molecularCalculatorSwitch: UISwitch!
     @IBOutlet var globeImageView: UIImageView!
+    @IBOutlet var elementButtonView: UIView!
     
     var molecularCalculatorState: Bool = false
     var elementBalloonViewController: XTRElementBalloonViewController!
     var molecularCalculatorViewController: XTRMolecularCalculatorViewController!
     var animationImages: [UIImage] = []
-
+    var disposeBag = DisposeBag()
+    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -37,6 +41,25 @@ class XTRPeriodicTableViewController: UIViewController {
         elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRElementBalloonViewController.nameOfClass) as! XTRElementBalloonViewController
         elementBalloonViewController.preferredContentSize = XTRPeriodicTableViewControllerConfig.popupContentSize
         elementBalloonViewController.modalPresentationStyle = .popover
+    }
+    
+    func setupRx() {
+        molecularCalculatorSwitch.rx.isOn
+            .asObservable()
+            .subscribe(onNext: { [weak self] newValue in
+                self?.toggleMolecularCalculatorState(newValue)
+            }).disposed(by: disposeBag)
+        
+        var observableArray: [Observable<UIButton>] = []
+        
+        let subViews = elementButtonView.subviews
+        
+        for view in subViews where view is XTRElementButton {
+            observableArray.append(mapToObserver(button: view as! UIButton))
+        }
+        Observable.merge(observableArray).subscribe(onNext: { [weak self] sender in
+            self?.displayElementInspector(sender)
+        }).disposed(by: disposeBag)
     }
     
     func toggleMolecularCalculatorState(_ aFlag: Bool) {
@@ -52,7 +75,7 @@ class XTRPeriodicTableViewController: UIViewController {
     
     // MARK: - Action Methods
     
-    @IBAction func showPopupForButton(_ sender: UIButton) {
+    func showPopupForButton(_ sender: UIButton) {
         guard let popoverController = elementBalloonViewController.popoverPresentationController else { return }
         
         XTRPropertiesStore.viewTitle = title!
@@ -62,14 +85,10 @@ class XTRPeriodicTableViewController: UIViewController {
         popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
         
-        present(elementBalloonViewController, animated: true, completion: nil)
+        present(elementBalloonViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
     
-    @IBAction func showMolecularCalculator(_ sender: UISwitch) {
-        toggleMolecularCalculatorState(sender.isOn)
-    }
-    
-    @IBAction func showElementInspector(_ sender: UIButton) {
+    func displayElementInspector(_ sender: UIButton) {
         if molecularCalculatorState {
             molecularCalculatorViewController.setElement(XTRDataSource.sharedInstance.element(index: sender.tag))
         } else {
@@ -84,7 +103,7 @@ class XTRPeriodicTableViewController: UIViewController {
     // MARK: mark - Notification Methods
     
     @objc func closeBubble(_ aNotification: Notification) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
     
     // MARK: - View Management Methods
@@ -100,6 +119,7 @@ class XTRPeriodicTableViewController: UIViewController {
         
         swapView.removeFromSuperview()
         setupPopUp()
+        setupRx()
         toggleMolecularCalculatorState(false)
         
         NotificationCenter.default.addObserver(self, selector: #selector(closeBubble(_:)), name: .inspectorDismissedNotification, object: nil)

@@ -116,7 +116,7 @@ class XTRColorFactoryStandard: XTRColorFactory {
     }
 
     class var standardRedColor: UIColor {
-        return UIColor(red: 222 / 255, green: 0 / 255, blue: 21 / 255, alpha:1.0)
+        return UIColor(red: 222 / 255, green: 0 / 255, blue: 21 / 255, alpha: 1.0)
     }
 
 }

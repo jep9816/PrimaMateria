@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 import RxSwift
+import RxCocoa
 
 class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
     
     @IBOutlet var headerView: UIView!
     @IBOutlet var swapView: UIView!
     
-    var nuclidesAndIsotopesArray: Variable<[XTRIsotopeModel]>?
+    var nuclidesAndIsotopesArray: BehaviorRelay<[XTRIsotopeModel]>?
     
     private var tableView: UITableView?
     private var delegate: XTRNuclidesIsotopesViewControllerDelegate? = XTRNuclidesIsotopesViewControllerDelegate()

@@ -7,15 +7,18 @@
 //
 
 import WebKit
+import RxSwift
+import RxCocoa
 
 class XTRHelpBalloonViewController: UIViewController {
     
-    @IBOutlet var backButton: UIBarButtonItem!
-    @IBOutlet var forwardButton: UIBarButtonItem!
+    @IBOutlet var backButton: UIButton!
+    @IBOutlet var forwardButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     
     var webView: WKWebView!
-    
+    var disposeBag = DisposeBag()
+
     private var delegate: XTRHelpBalloonViewControllerDelegate? = XTRHelpBalloonViewControllerDelegate()
 
     // MARK: - Initialization Methods
@@ -44,19 +47,41 @@ class XTRHelpBalloonViewController: UIViewController {
     
     // MARK: - Action Methods
     
-    @IBAction func dismiss(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func backButtonPressed(_ sender: UIButton) {
-        webView.goBack()
-    }
-    
-    @IBAction func forwardButtonPressed(_ sender: UIButton) {
-        webView.goForward()
-    }
-    
     // MARK: - View Management Methods
+    
+     func setupWebView() {
+        // Scale the page to fill the web view
+       let viewportScriptString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); meta.setAttribute('initial-scale', '1.0'); meta.setAttribute('maximum-scale', '1.0'); meta.setAttribute('minimum-scale', '1.0'); meta.setAttribute('user-scalable', 'no'); document.getElementsByTagName('head')[0].appendChild(meta);"
+        let viewportScript = WKUserScript(source: viewportScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+        let controller = WKUserContentController()
+        let config = WKWebViewConfiguration()
+        
+        controller.addUserScript(viewportScript)
+        config.userContentController = controller
+        
+        webView = WKWebView(frame: CGRect(x: 2, y: 46, width: 406, height: 286), configuration: config)
+        
+        webView.layer.cornerRadius = VIEW_CORNER_RADIUS + 8
+        webView.layer.masksToBounds = true
+        webView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        webView.navigationDelegate = delegate
+        webView.scrollView.isScrollEnabled = true             // Make sure our view is interactable
+        webView.scrollView.bounces = false                    // Things like this should be handled in web code
+        webView.allowsBackForwardNavigationGestures = false   // Disable swiping to navigate
+        webView.contentMode = .scaleToFill
+
+        view.addSubview(webView)
+    }
+    
+    func setupRx() {
+        backButton.rx.tap.subscribe { [weak self] _ in
+            self?.webView.goBack()
+            }.disposed(by: disposeBag)
+
+        forwardButton.rx.tap.subscribe { [weak self] _ in
+            self?.webView.goForward()
+            }.disposed(by: disposeBag)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,34 +89,19 @@ class XTRHelpBalloonViewController: UIViewController {
         delegate?.controller = self
         
         backButton.isEnabled = false
-        forwardButton.isEnabled = false
         backButton.tintColor = UIColor.black
+
+        forwardButton.isEnabled = false
         forwardButton.tintColor = UIColor.black
         
-        view.backgroundColor = XTRColorFactory.helpBackgroundColor
-        
-        titleLabel.layer.cornerRadius = VIEW_CORNER_RADIUS
+        titleLabel.layer.cornerRadius = VIEW_CORNER_RADIUS + 2
         titleLabel.layer.masksToBounds = true
+        titleLabel.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        let viewportScriptString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); meta.setAttribute('initial-scale', '1.0'); meta.setAttribute('maximum-scale', '1.0'); meta.setAttribute('minimum-scale', '1.0'); meta.setAttribute('user-scalable', 'no'); document.getElementsByTagName('head')[0].appendChild(meta);"
-        let viewportScript = WKUserScript(source: viewportScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        let controller = WKUserContentController()
-        let config = WKWebViewConfiguration()
+        setupWebView()
+        setupRx()
+        view.backgroundColor = XTRColorFactory.helpBackgroundColor
 
-        controller.addUserScript(viewportScript)
-        config.userContentController = controller
-        
-        webView = WKWebView(frame: CGRect(x: 5, y: 43, width: 400, height: 288), configuration: config)
-        view.addSubview(webView)
-        
-        webView.layer.cornerRadius = VIEW_CORNER_RADIUS
-        webView.layer.masksToBounds = true
-        webView.navigationDelegate = delegate
-        webView.scrollView.isScrollEnabled = true             // Make sure our view is interactable
-        webView.scrollView.bounces = false                    // Things like this should be handled in web code
-        webView.allowsBackForwardNavigationGestures = false   // Disable swiping to navigate
-        webView.contentMode = .scaleToFill                    // Scale the page to fill the web view
-        
         NotificationCenter.default.addObserver(self, selector: #selector(showElementHelp(_:)), name: .elementHelpSelectedNotification, object: nil)
     }
     

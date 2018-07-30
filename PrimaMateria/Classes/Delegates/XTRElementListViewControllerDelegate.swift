@@ -35,7 +35,7 @@ class XTRElementListViewControllerDelegate: NSObject, UITableViewDelegate, UITab
         let atomicNumber = element.atomicNumber
         
         self.indexPath = indexPath
-        aTableView.deselectRow(at: indexPath, animated: true)
+        aTableView.deselectRow(at: indexPath, animated: XTRPropertiesStore.showTransitionsState)
         self.closure(atomicNumber - 1)
     }
     

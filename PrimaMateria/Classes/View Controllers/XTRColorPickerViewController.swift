@@ -31,10 +31,10 @@ class XTRColorPickerViewController: UIViewController {
     // MARK: - Internal Methods
     
     func presetSlidersWithColor(_ aColor: UIColor) {
-        redSlider.setValue(Float(aColor.red()), animated: true)
-        greenSlider.setValue(Float(aColor.green()), animated: true)
-        blueSlider.setValue(Float(aColor.blue()), animated: true)
-        alphaSlider.setValue(Float(aColor.alpha()), animated: true)
+        redSlider.setValue(Float(aColor.red()), animated: XTRPropertiesStore.showTransitionsState)
+        greenSlider.setValue(Float(aColor.green()), animated: XTRPropertiesStore.showTransitionsState)
+        blueSlider.setValue(Float(aColor.blue()), animated: XTRPropertiesStore.showTransitionsState)
+        alphaSlider.setValue(Float(aColor.alpha()), animated: XTRPropertiesStore.showTransitionsState)
         
         previewView.backgroundColor = UIColor(red: CGFloat(redSlider.value), green: CGFloat(greenSlider.value), blue: CGFloat(blueSlider.value), alpha: CGFloat(alphaSlider.value))
     }
@@ -63,33 +63,55 @@ class XTRColorPickerViewController: UIViewController {
     func setupRx() {
         redSlider.rx.value
             .asObservable()
-            .subscribe(onNext: { newValue in
+            .subscribe(onNext: { [weak self] newValue in
+                let red = CGFloat(newValue)
+                let green = CGFloat((self?.greenSlider.value)!)
+                let blue = CGFloat((self?.blueSlider.value)!)
+                let alpha = CGFloat((self?.alphaSlider.value)!)
                 UIView.beginAnimations(nil, context: nil)
-                self.previewView.backgroundColor = UIColor(red: CGFloat(newValue), green: CGFloat(self.greenSlider.value), blue: CGFloat(self.blueSlider.value), alpha: CGFloat(self.alphaSlider.value))
+                self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         
         greenSlider.rx.value
             .asObservable()
-            .subscribe(onNext: { newValue in
+            .subscribe(onNext: { [weak self] newValue in
+                let red = CGFloat((self?.redSlider.value)!)
+                let green = CGFloat(newValue)
+                let blue = CGFloat((self?.blueSlider.value)!)
+                let alpha = CGFloat((self?.alphaSlider.value)!)
                 UIView.beginAnimations(nil, context: nil)
-                self.previewView.backgroundColor = UIColor(red: CGFloat(self.redSlider.value), green: CGFloat(newValue), blue: CGFloat(self.blueSlider.value), alpha: CGFloat(self.alphaSlider.value))
+                self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         
         blueSlider.rx.value
             .asObservable()
-            .subscribe(onNext: { newValue in
+            .subscribe(onNext: { [weak self] newValue in
+                let red = CGFloat((self?.redSlider.value)!)
+                let green = CGFloat((self?.greenSlider.value)!)
+                let blue = CGFloat(newValue)
+                let alpha = CGFloat((self?.alphaSlider.value)!)
                 UIView.beginAnimations(nil, context: nil)
-                self.previewView.backgroundColor = UIColor(red: CGFloat(self.redSlider.value), green: CGFloat(self.greenSlider.value), blue: CGFloat(newValue), alpha: CGFloat(self.alphaSlider.value))
+                self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         
         alphaSlider.rx.value
             .asObservable()
-            .subscribe(onNext: { newValue in
+            .subscribe(onNext: { [weak self] newValue in
+                let red = CGFloat((self?.redSlider.value)!)
+                let green = CGFloat((self?.greenSlider.value)!)
+                let blue = CGFloat((self?.blueSlider.value)!)
+                let alpha = CGFloat(newValue)
                 UIView.beginAnimations(nil, context: nil)
-                self.previewView.backgroundColor = UIColor(red: CGFloat(self.redSlider.value), green: CGFloat(self.greenSlider.value), blue: CGFloat(self.blueSlider.value), alpha: CGFloat(newValue))
+                self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         
-        selectColorButton.rx.tap.subscribe(onNext: { _ in
+        selectColorButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            let red = CGFloat((self?.redSlider.value)!)
+            let green = CGFloat((self?.greenSlider.value)!)
+            let blue = CGFloat((self?.blueSlider.value)!)
+            let alpha = CGFloat((self?.alphaSlider.value)!)
+            let identifier: String = self?.seriesIdentifier! ?? ""
+            
             let dict = zip(
                 [
                     ColorComponent.red,
@@ -98,18 +120,18 @@ class XTRColorPickerViewController: UIViewController {
                     ColorComponent.alpha,
                     SERIES_IDENTIFIER_KEY
                 ], [
-                    self.redSlider.value,
-                    self.greenSlider.value,
-                    self.blueSlider.value,
-                    self.alphaSlider.value,
-                    self.seriesIdentifier!
+                    red,
+                    green,
+                    blue,
+                    alpha,
+                    identifier
                 ]).reduce([String: Any]()) {
                     var prop = $0
                     prop[$1.0] = $1.1
                     return prop
             }
             
-            self.dismiss(animated: true, completion: nil)
+            self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
             NotificationCenter.default.post(name: .colorSelectedNotification, object: dict)
         }).disposed(by: disposeBag)
     }

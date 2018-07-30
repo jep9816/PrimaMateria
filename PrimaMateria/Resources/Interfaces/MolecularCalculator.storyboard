@@ -43,9 +43,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="ZrO-Gd-GaM"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="y1m-IW-Hp2">
                                 <rect key="frame" x="234" y="115" width="37" height="33"/>
@@ -61,9 +58,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="clear:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="c3h-CU-4EW"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="7" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="EsP-g5-OAm">
                                 <rect key="frame" x="234" y="6" width="37" height="33"/>
@@ -79,9 +73,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="KGH-cd-XLo"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yl6-ze-O1r">
                                 <rect key="frame" x="284" y="78" width="37" height="33"/>
@@ -97,9 +88,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="2ng-79-0qe"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="IY5-OV-qOW">
                                 <rect key="frame" x="334" y="115" width="37" height="33"/>
@@ -115,9 +103,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="calculate:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="vUQ-wg-uDi"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="GJq-gb-aif">
                                 <rect key="frame" x="334" y="78" width="37" height="33"/>
@@ -133,9 +118,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="5IF-ER-DKy"/>
-                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="molecularFormula" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="e0O-t3-gvK" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                 <rect key="frame" x="8" y="6" width="215" height="23"/>
@@ -214,9 +196,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="keq-ql-bJg"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="9" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ZHn-3q-tOJ">
                                 <rect key="frame" x="334" y="6" width="37" height="33"/>
@@ -232,9 +211,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="aCn-j1-F8B"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="SFo-cg-98K">
                                 <rect key="frame" x="284" y="42" width="37" height="33"/>
@@ -250,9 +226,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="EM0-Mc-YlE"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="W34-22-Pso">
                                 <rect key="frame" x="234" y="42" width="37" height="33"/>
@@ -268,9 +241,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="KiL-LT-cZa"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="PXg-d9-EI4">
                                 <rect key="frame" x="334" y="42" width="37" height="33"/>
@@ -286,9 +256,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="xCL-6n-6Hc"/>
-                                </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6Jh-4J-6Wg">
                                 <rect key="frame" x="234" y="78" width="37" height="33"/>
@@ -304,9 +271,6 @@
                                 <state key="highlighted">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="numberClicked:" destination="0Nd-5l-EE5" eventType="touchUpInside" id="w28-0l-7Ch"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -319,10 +283,22 @@
                     <size key="freeformSize" width="380" height="155"/>
                     <connections>
                         <outlet property="backgroundView" destination="NZd-ap-JDA" id="7CO-5p-I3H"/>
+                        <outlet property="calculateButton" destination="IY5-OV-qOW" id="XTc-go-77u"/>
+                        <outlet property="clearButton" destination="y1m-IW-Hp2" id="3MK-BX-A5N"/>
+                        <outlet property="eightButton" destination="vZg-q9-RZu" id="lLE-nG-Vsa"/>
                         <outlet property="errorLabel" destination="i9X-K9-3ds" id="bJs-rm-MNI"/>
+                        <outlet property="fiveButton" destination="SFo-cg-98K" id="8n5-Si-63J"/>
                         <outlet property="formulaLabel" destination="PIL-2R-nGC" id="D1E-DI-5F9"/>
                         <outlet property="formulaTextField" destination="1Gj-bK-pa7" id="fqO-zH-1Rz"/>
+                        <outlet property="fourButton" destination="W34-22-Pso" id="wds-58-mri"/>
+                        <outlet property="nineButton" destination="ZHn-3q-tOJ" id="BF3-hR-2WH"/>
+                        <outlet property="oneButton" destination="6Jh-4J-6Wg" id="tS3-sg-ovz"/>
                         <outlet property="resultsLabel" destination="RBL-qh-FSg" id="gsh-du-BW2"/>
+                        <outlet property="sevenButton" destination="EsP-g5-OAm" id="lzv-7v-Taf"/>
+                        <outlet property="sixButton" destination="PXg-d9-EI4" id="dbk-1W-3wi"/>
+                        <outlet property="threeButton" destination="GJq-gb-aif" id="BoP-jC-Cu4"/>
+                        <outlet property="twoButton" destination="yl6-ze-O1r" id="9Ws-Lp-uRP"/>
+                        <outlet property="zeroButton" destination="AB7-GB-OqH" id="O0S-xw-Vsg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oCq-h6-uQI" userLabel="First Responder" sceneMemberID="firstResponder"/>

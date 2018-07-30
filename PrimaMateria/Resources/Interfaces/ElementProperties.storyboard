@@ -31,9 +31,6 @@
                                             <segment title="chemicalProperties" width="175"/>
                                         </segments>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="swapViews:" destination="gxE-gv-BBu" eventType="valueChanged" id="v7l-6o-2n5"/>
-                                        </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a3r-iL-Lvc">
                                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1"/>

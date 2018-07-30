@@ -8,6 +8,7 @@
 
 import CorePlot
 import RxSwift
+import RxCocoa
 
 enum XTRSpectrumViewProperty {
     static let kAirWavelength = "airWavelength"
@@ -36,7 +37,7 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     @IBOutlet var swapView: UIView!
     
     var barChart: CPTXYGraph?
-    var lineSpectraArray: Variable<[XTRSpectraModel]>?
+    var lineSpectraArray: BehaviorRelay<[XTRSpectraModel]>?
     var tableView: UITableView?
 
     private var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()

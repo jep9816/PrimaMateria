@@ -65,7 +65,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     // MARK: - View Management Methods
     
     func showWikiView() {
-        let storyboard = UIStoryboard(name: WIKIPEDIA_STORY_BOARD, bundle: nil)
+        let storyboard = UIStoryboard(name: StoryBoardName.Wikipedia, bundle: nil)
         let wikipediaViewController: XTRWikipediaViewController = storyboard.instantiateViewController(withIdentifier: XTRWikipediaViewController.nameOfClass) as! XTRWikipediaViewController
         
         wikipediaViewController.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
@@ -73,7 +73,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         wikipediaViewController.modalTransitionStyle = .crossDissolve
         wikipediaViewController.elementName = element?.name
         
-        present(wikipediaViewController, animated: true, completion: nil)
+        present(wikipediaViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
     
     override func viewDidLoad() {

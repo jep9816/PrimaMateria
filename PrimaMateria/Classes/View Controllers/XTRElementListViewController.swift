@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class XTRElementListViewController: UIViewController {
     
     static let tableViewCellIdentifier = "XTRElementTableViewCell"
     
     @IBOutlet var atomicNumberButton: XTRTableHeaderButton!
+    @IBOutlet var symbolButton: XTRTableHeaderButton!
+    @IBOutlet var nameButton: XTRTableHeaderButton!
+    @IBOutlet var atomicMassButton: XTRTableHeaderButton!
+    @IBOutlet var boilingPointButton: XTRTableHeaderButton!
+    @IBOutlet var meltingPointButton: XTRTableHeaderButton!
+    @IBOutlet var densityButton: XTRTableHeaderButton!
+    @IBOutlet var seriesButton: XTRTableHeaderButton!
+    @IBOutlet var periodButton: XTRTableHeaderButton!
+    @IBOutlet var groupButton: XTRTableHeaderButton!
     @IBOutlet var swapView: UIView!
     @IBOutlet var navigationBar: UINavigationBar!
     
+    var disposeBag = DisposeBag()
+
     private var tableView: UITableView?
     private var delegate: XTRElementListViewControllerDelegate? = XTRElementListViewControllerDelegate()
     
@@ -41,10 +54,31 @@ class XTRElementListViewController: UIViewController {
         view.addSubview(tableView!)
     }
     
+    internal func mapToObserverHeaderButton(button: XTRTableHeaderButton) -> Observable<XTRTableHeaderButton> {
+        return button.rx.tap.map { _ in return button}
+    }
+
+    func setupRx() {
+        let array = [
+            mapToObserverHeaderButton(button: atomicNumberButton),
+            mapToObserverHeaderButton(button: symbolButton),
+            mapToObserverHeaderButton(button: nameButton),
+            mapToObserverHeaderButton(button: atomicMassButton),
+            mapToObserverHeaderButton(button: boilingPointButton),
+            mapToObserverHeaderButton(button: meltingPointButton),
+            mapToObserverHeaderButton(button: densityButton),
+            mapToObserverHeaderButton(button: seriesButton),
+            mapToObserverHeaderButton(button: periodButton),
+            mapToObserverHeaderButton(button: groupButton)
+        ]
+        Observable.merge(array).subscribe(onNext: { [weak self] sender in
+            self?.sortTableView(sender)
+        }).disposed(by: disposeBag)
+    }
+    
     // MARK: - Action Methods
     
-    @IBAction func sortTableView(_ sender: XTRTableHeaderButton) {
-        
+    func sortTableView(_ sender: XTRTableHeaderButton) {
         if tableView != nil {
             tableView!.delegate = nil
             tableView!.dataSource = nil
@@ -68,6 +102,7 @@ class XTRElementListViewController: UIViewController {
         _ = atomicNumberButton.toggleState()
         swapView.removeFromSuperview()
         setupTableView()
+        setupRx()
         navigationController?.navigationBar.prefersLargeTitles = true
         
         delegate?.closure = { [weak self] (index: Int) -> Void in
@@ -77,7 +112,7 @@ class XTRElementListViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         if delegate?.indexPath != nil {
-            tableView!.deselectRow(at: (delegate?.indexPath!)!, animated: true)
+            tableView!.deselectRow(at: (delegate?.indexPath!)!, animated: XTRPropertiesStore.showTransitionsState)
         }
         super.viewDidDisappear(animated)
     }
@@ -94,6 +129,15 @@ class XTRElementListViewController: UIViewController {
     
     deinit {
         atomicNumberButton = nil
+        symbolButton = nil
+        nameButton = nil
+        atomicMassButton = nil
+        boilingPointButton = nil
+        meltingPointButton = nil
+        densityButton = nil
+        seriesButton = nil
+        periodButton = nil
+        groupButton = nil
         swapView = nil
         navigationBar =  nil
     }

@@ -46,9 +46,6 @@
                                     <segment title="Shell Model"/>
                                 </segments>
                                 <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <action selector="swapViews:" destination="8zm-e6-q7e" eventType="valueChanged" id="lh4-Z5-rES"/>
-                                </connections>
                             </segmentedControl>
                             <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4v-au-u5z">
                                 <rect key="frame" x="0.0" y="402" width="29" height="91"/>

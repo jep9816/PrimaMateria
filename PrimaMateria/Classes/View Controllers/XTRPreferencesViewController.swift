@@ -90,7 +90,7 @@ class XTRPreferencesViewController: UIViewController {
         
         NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
         
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
     
     func loadDocument(_ name: String, inView: WKWebView) {
@@ -213,7 +213,7 @@ class XTRPreferencesViewController: UIViewController {
             self?.resetPreferences()
         }).disposed(by: disposeBag)
         
-        Observable.of(
+        let array = [
             mapToObserver(button: seriesActinideButton),
             mapToObserver(button: seriesAlkaliEarthMetalButton),
             mapToObserver(button: seriesAlkaliMetalButton),
@@ -224,20 +224,21 @@ class XTRPreferencesViewController: UIViewController {
             mapToObserver(button: seriesNonMetalButton),
             mapToObserver(button: seriesTransactinidesButton),
             mapToObserver(button: seriesTransitionMetalButton)
-            ).merge().subscribe(onNext: { [weak self] sender in
-                self?.presentColorPicker(sender)
-            }).disposed(by: disposeBag)
+        ]
+        Observable.merge(array).subscribe(onNext: { [weak self] sender in
+            self?.presentColorPicker(sender)
+        }).disposed(by: disposeBag)
     }
         
     func presentColorPicker(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: COLOR_PICKER_STORY_BOARD, bundle: nil)
+        let storyboard = UIStoryboard(name: StoryBoardName.ColorPicker, bundle: nil)
         let colorPicker: XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
         
         colorPicker.seriesIdentifier = sender.accessibilityIdentifier
         colorPicker.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
         colorPicker.modalPresentationStyle = .popover
         
-        self.present(colorPicker, animated: true, completion: nil)
+        self.present(colorPicker, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
         
         let presentationController = colorPicker.popoverPresentationController
         presentationController?.permittedArrowDirections = .left

@@ -168,7 +168,7 @@ class XTRGraphViewController: UIViewController {
     @objc func graphSelected(_ notification: Notification) {
         let object = notification.object as! NSNumber
         
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
         showGraphForChoiceAtIndex(object.intValue)
     }
     

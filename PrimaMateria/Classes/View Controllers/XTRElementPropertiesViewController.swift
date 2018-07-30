@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class XTRElementPropertiesViewController: XTRSwapableViewController {
     
@@ -67,6 +69,7 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     @IBOutlet var physicalPropertiesView: UIView!
     @IBOutlet var swapView: UIView!
     
+    var disposeBag = DisposeBag()
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -130,35 +133,38 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         ionizationPotentialThirdLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
         qualitativeSolubilityLabel.text = element.value(forKeyPath: ELEMENT_QUALITATIVE_SOLUBILITY) as? String
         valenceElectronPotentialLabel.text = element.value(forKeyPath: ELEMENT_VALENCE_ELECTRON_POTENTIAL) as? String
-    }
-    
-    // MARK: - Action Methods
-    
-    @IBAction func swapViews(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case PropertiesViewTypes.kChemicalPropertiesView:
-            chemicalPropertiesView.isHidden = false
-            physicalPropertiesView.isHidden = true
-        case PropertiesViewTypes.kPhysicalPropertiesView:
-            chemicalPropertiesView.isHidden = true
-            physicalPropertiesView.isHidden = false            
-        default:
-            break
         }
-    }
     
-    // MARK: - View Management Methods
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func setupSegmentedControlUI() {
         let rect = segmentedControl.frame
         let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
 
         segmentedControl.setTitle(NSLocalizedString("physicalProperties", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("chemicalProperties", comment: ""), forSegmentAt: 1)
         segmentedControl.frame = newRect
+        segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
+            switch selectedSegmentIndex {
+            case PropertiesViewTypes.kChemicalPropertiesView:
+                self?.chemicalPropertiesView.isHidden = false
+                self?.physicalPropertiesView.isHidden = true
+            case PropertiesViewTypes.kPhysicalPropertiesView:
+                self?.chemicalPropertiesView.isHidden = true
+                self?.physicalPropertiesView.isHidden = false
+            default:
+                break
+            }
+        }).disposed(by: disposeBag)
+    }
 
+    // MARK: - Action Methods
+    
+    // MARK: - View Management Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setupSegmentedControlUI()
+        
         chemicalPropertiesView.frame = swapView.frame
         chemicalPropertiesView.bounds = swapView.bounds
         chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 500)

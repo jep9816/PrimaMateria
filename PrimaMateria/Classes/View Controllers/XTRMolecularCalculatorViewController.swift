@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class XTRMolecularCalculatorViewController: UIViewController {
     
@@ -15,7 +17,21 @@ class XTRMolecularCalculatorViewController: UIViewController {
     @IBOutlet var resultsLabel: UILabel!
     @IBOutlet var formulaTextField: UITextField!
     @IBOutlet var backgroundView: UIView!
-    
+    @IBOutlet var calculateButton: UIButton!
+    @IBOutlet var clearButton: UIButton!
+    @IBOutlet var oneButton: UIButton!
+    @IBOutlet var twoButton: UIButton!
+    @IBOutlet var threeButton: UIButton!
+    @IBOutlet var fourButton: UIButton!
+    @IBOutlet var fiveButton: UIButton!
+    @IBOutlet var sixButton: UIButton!
+    @IBOutlet var sevenButton: UIButton!
+    @IBOutlet var eightButton: UIButton!
+    @IBOutlet var nineButton: UIButton!
+    @IBOutlet var zeroButton: UIButton!
+
+    var disposeBag = DisposeBag()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -103,9 +119,7 @@ class XTRMolecularCalculatorViewController: UIViewController {
         updateLabel(anElement.symbol!)
     }
     
-    // MARK: - Action Methods
-    
-    @IBAction func calculate(_ sender: UIButton) {
+    func calculate() {
         let result = XTRMolecularCalculator.calculateWithFormula(formulaTextField.text)
         
         if result == 0 {
@@ -115,12 +129,10 @@ class XTRMolecularCalculatorViewController: UIViewController {
             errorLabel.text =  STRING_EMPTY
         }
     }
-    
-    @IBAction func clear(_ sender: UIButton) {
-        clear()
-    }
-    
-    @IBAction func numberClicked(_ sender: UIButton) {
+
+    // MARK: - Action Methods
+        
+    func numberTapped(_ sender: UIButton) {
         let length = (formulaTextField.text?.count)!
         let tag = sender.tag
         
@@ -128,7 +140,7 @@ class XTRMolecularCalculatorViewController: UIViewController {
             let formula = formulaTextField.text!
             let index = formula.index(formula.startIndex, offsetBy: length - 1)
             let indexAlpha = formula[index...]
-
+            
             var isAlpha = false
             var isChar = false
             
@@ -149,6 +161,31 @@ class XTRMolecularCalculatorViewController: UIViewController {
             }
         }
     }
+
+    func setupRx() {
+        Observable.of(
+            mapToObserver(button: oneButton),
+            mapToObserver(button: twoButton),
+            mapToObserver(button: threeButton),
+            mapToObserver(button: fourButton),
+            mapToObserver(button: fiveButton),
+            mapToObserver(button: sixButton),
+            mapToObserver(button: sevenButton),
+            mapToObserver(button: eightButton),
+            mapToObserver(button: nineButton),
+            mapToObserver(button: zeroButton)
+            ).merge().subscribe(onNext: { [weak self] sender in
+                self?.numberTapped(sender)
+            }).disposed(by: disposeBag)
+
+        calculateButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.calculate()
+        }).disposed(by: disposeBag)
+
+        clearButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.clear()
+        }).disposed(by: disposeBag)
+    }
     
     // MARK: - View Management Methods
     
@@ -159,6 +196,7 @@ class XTRMolecularCalculatorViewController: UIViewController {
         backgroundView.layer.borderWidth = 2
         backgroundView.layer.cornerRadius = VIEW_CORNER_RADIUS
         
+        setupRx()
         clear()
     }
     
@@ -183,6 +221,18 @@ class XTRMolecularCalculatorViewController: UIViewController {
         formulaTextField = nil
         formulaLabel = nil
         resultsLabel = nil
+        calculateButton = nil
+        clearButton = nil
+        oneButton = nil
+        twoButton = nil
+        threeButton = nil
+        fourButton = nil
+        fiveButton = nil
+        sixButton = nil
+        sevenButton = nil
+        eightButton = nil
+        nineButton = nil
+        zeroButton = nil
     }
     
 }

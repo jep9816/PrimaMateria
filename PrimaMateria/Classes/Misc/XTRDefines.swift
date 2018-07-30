@@ -111,10 +111,6 @@ let STRING_EMPTY = ""
 let STRING_UNKNOWN = "Unknown"
 let SUPPORTING_FILES = "SupportingFiles"
 let PERIODIC_VIEW_TITLE = "periodicTableElements"
-let MAIN_STORY_BOARD = "MainStoryboard"
-let COLOR_PICKER_STORY_BOARD = "ColorPicker"
-let ELEMENT_INSPECTOR_STORY_BOARD = "ElementInspector"
-let WIKIPEDIA_STORY_BOARD = "Wikipedia"
 let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 let SWITCH_CORNER_RADIUS: CGFloat = 16.0
@@ -123,6 +119,18 @@ let VIEW_CORNER_RADIUS: CGFloat = 8.0
 struct XTRAppearanceType {
     static let classic = "Classic"
     static let standard = "Standard"
+}
+
+struct StoryBoardName {
+    static let Main = "MainStoryboard"
+    static let ColorPicker = "ColorPicker"
+    static let ElementInspector = "ElementInspector"
+    static let Wikipedia = "Wikipedia"
+    static let AtomicStructure = "AtomicStructure"
+    static let ElementProperties = "ElementProperties"
+    static let NuclidesIsotopes = "NuclidesIsotopes"
+    static let Spectrum = "Spectrum"
+    static let GeneralInfo = "GeneralInfo"
 }
 
 // MARK: - Notifications

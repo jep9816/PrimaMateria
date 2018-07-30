@@ -8,6 +8,8 @@
 
 import SpriteKit
 import GameplayKit
+import RxSwift
+import RxCocoa
 
 struct XTRAtomicStructureViewControllerConfig {
     
@@ -72,6 +74,8 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     @IBOutlet var shell7pLabel: UILabel!
     @IBOutlet var overlayView: UIView!
     
+    var disposeBag = DisposeBag()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -89,8 +93,7 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         let scene = element.shellModelScene
         let scnScene = element.crystalStructureScene
 
-        segmentedControl.setTitle(NSLocalizedString("crystalStructure", comment: ""), forSegmentAt: 0)
-        segmentedControl.setTitle(NSLocalizedString("shellModel", comment: ""), forSegmentAt: 1)
+        setupSegmentedControlUI()
 
         crystalStructureLabel.text = crystalStructure
         shellModelView.backgroundColor = element.seriesColor
@@ -147,20 +150,24 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         shell7pLabel.text = element.shell7p
     }
     
-    // MARK: - Action Methods
-    
-    @IBAction func swapViews(_ sender: UISegmentedControl) {
-        switch sender.selectedSegmentIndex {
-        case XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView:
-            crystalStructureView.isHidden = false
-            shellModelView.isHidden = true
-        case XTRAtomicStructureViewControllerConfig.StructureViewTypes.kShellModelView:
-            crystalStructureView.isHidden = true
-            shellModelView.isHidden = false
-        default:
-            break
-        }
+    func setupSegmentedControlUI() {
+        segmentedControl.setTitle(NSLocalizedString("crystalStructure", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("shellModel", comment: ""), forSegmentAt: 1)
+        segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
+            switch selectedSegmentIndex {
+            case XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView:
+                self?.crystalStructureView.isHidden = false
+                self?.shellModelView.isHidden = true
+            case XTRAtomicStructureViewControllerConfig.StructureViewTypes.kShellModelView:
+                self?.crystalStructureView.isHidden = true
+                self?.shellModelView.isHidden = false
+            default:
+                break
+            }
+        }).disposed(by: disposeBag)
     }
+
+    // MARK: - Action Methods
     
     // MARK: - View Management Methods
     

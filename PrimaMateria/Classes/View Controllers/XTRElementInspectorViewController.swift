@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class XTRElementInspectorViewController: XTRSwapableViewController {
     
@@ -18,13 +20,13 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     @IBOutlet var atomicSymbolLabel: UILabel!
     @IBOutlet var casRegNoLabel: UILabel!
     @IBOutlet var groupLabel: UILabel!
-    @IBOutlet var nextLabel: UILabel!
     @IBOutlet var periodLabel: UILabel!
-    @IBOutlet var previousLabel: UILabel!
     @IBOutlet var seriesLabel: UILabel!
     @IBOutlet var titleItem: UINavigationItem!
     @IBOutlet var pageControl: XTRPageControl!
     @IBOutlet var swapView: UIView!
+    
+    var disposeBag = DisposeBag()
     
     // MARK: - Initialization Methods
     
@@ -101,6 +103,13 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         view.addSubview(aViewController.view)
     }
     
+    func addChildViewController(name: String, className: String) {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: className)
+        
+        addChildViewController(viewController)
+    }
+    
     func animateForDirection(_ direction: String) {
         setupUI(element: element!)
         
@@ -108,7 +117,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             let currentView: UIView = view
             let theWindow = currentView.superview!
             let animation = CATransition()
-
+            
             currentView.removeFromSuperview()
             
             animation.duration = 1.0
@@ -127,6 +136,36 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
         
+        setupSegmentedControlUI()
+        
+        assignAtomicSymbolTextFieldProperties()
+        assignOtherLabels()
+        assignNavigationHints()
+        
+        for item in childViewControllers {
+            let controller = item as! XTRSwapableViewController
+            controller.setupUI(element: element)
+        }
+        
+        Observable.of(
+            mapToObserver(button: previousButton)
+            ).merge().subscribe(onNext: { [weak self] sender in
+                self?.previousElement(sender)
+            }).disposed(by: disposeBag)
+        
+        Observable.of(
+            mapToObserver(button: nextButton)
+            ).merge().subscribe(onNext: { [weak self] sender in
+                self?.nextElement(sender)
+            }).disposed(by: disposeBag)
+        
+        self.barButtonItem!.rx.tap.subscribe { [weak self] _ in
+            self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+            NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
+            }.disposed(by: disposeBag)
+    }
+    
+    func setupSegmentedControlUI() {
         let rect = segmentedControl.frame
         let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
         
@@ -136,34 +175,19 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: 2)
         segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: 3)
         segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: 4)
-
-        assignAtomicSymbolTextFieldProperties()
-        assignOtherLabels()
-        assignNavigationHints()
-        
-        for item in childViewControllers {
-            let controller = item as! XTRSwapableViewController
-            controller.setupUI(element: element)
-        }
+        segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
+            let viewController = self?.childViewControllers[selectedSegmentIndex]
+            
+            for controller in (self?.childViewControllers)! {
+                controller.view.isHidden = true
+                viewController?.view.isHidden = false
+            }
+        }).disposed(by: disposeBag)
     }
     
     // MARK: - Action Methods
-    
-    @IBAction func dismiss(_ sender: UIButton) {
-        dismiss(animated: true, completion: nil)
-        NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
-    }
-    
-    @IBAction func swapViews(_ sender: UISegmentedControl) {
-        let viewController = childViewControllers[sender.selectedSegmentIndex]
         
-        for controller in childViewControllers {
-            controller.view.isHidden = true
-            viewController.view.isHidden = false
-        }
-    }
-    
-    @IBAction func nextElement(_ sender: UIButton) {
+    @objc func nextElement(_ sender: UIButton) {
         var atomicNumber = element!.atomicNumber + 1
         
         if atomicNumber > XTRDataSource.sharedInstance.elementCount() {
@@ -174,7 +198,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         animateForDirection("Next")
     }
     
-    @IBAction func previousElement(_ sender: UIButton) {
+    @objc func previousElement(_ sender: UIButton) {
         var atomicNumber = element!.atomicNumber - 1
         
         if atomicNumber < 1 {
@@ -190,24 +214,23 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let storyboard = XTRAppDelegate.storyboard()
-
         nextButton.titleLabel!.textAlignment = .right
         previousButton.titleLabel!.textAlignment = .left
         swapView.removeFromSuperview()
         
-        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRAtomicStructureViewController.nameOfClass))
-        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRElementPropertiesViewController.nameOfClass))
-        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRNuclidesIsotopesViewController.nameOfClass))
-        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRSpectrumViewController.nameOfClass))
-        addChildViewController(storyboard.instantiateViewController(withIdentifier: XTRGeneralInfoViewController.nameOfClass))
+        addChildViewController(name: StoryBoardName.AtomicStructure, className: XTRAtomicStructureViewController.nameOfClass)
+        addChildViewController(name: StoryBoardName.ElementProperties, className: XTRElementPropertiesViewController.nameOfClass)
+        addChildViewController(name: StoryBoardName.NuclidesIsotopes, className: XTRNuclidesIsotopesViewController.nameOfClass)
+        addChildViewController(name: StoryBoardName.Spectrum, className: XTRSpectrumViewController.nameOfClass)
+        addChildViewController(name: StoryBoardName.GeneralInfo, className: XTRGeneralInfoViewController.nameOfClass)
+        
         childViewControllers[0].view.isHidden = false
         
-        let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(XTRElementInspectorViewController.nextElement(_:)))
+        let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(nextElement(_:)))
         swipeNextElement.direction = UISwipeGestureRecognizerDirection.right
         view.addGestureRecognizer(swipeNextElement)
         
-        let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(XTRElementInspectorViewController.previousElement(_:)))
+        let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
         swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipePreviousElement)
     }
@@ -221,7 +244,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        dismiss(animated: true, completion: nil)
+        dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
         
         super.viewWillDisappear(animated)
     }
@@ -247,8 +270,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         swapView = nil
         nextButton = nil
         previousButton = nil
-        nextLabel = nil
-        previousLabel = nil
         titleItem = nil
         pageControl = nil
     }

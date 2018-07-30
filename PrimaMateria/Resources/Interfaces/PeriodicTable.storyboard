@@ -43,9 +43,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Xvn-x9-l1D"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="57" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYu-q1-Lbl" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="216" y="528" width="52" height="54"/>
@@ -63,9 +60,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Bcu-Uw-AM3"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="56" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ljv-sJ-lHh" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="164" y="370" width="52" height="54"/>
@@ -83,9 +77,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="HOL-UX-T2q"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="111" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NQ7-Rk-x5U" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="632" y="424" width="52" height="54"/>
@@ -103,9 +94,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="fqh-ZE-b72"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="117" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eut-xS-05n" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="944" y="424" width="52" height="54"/>
@@ -123,9 +111,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="x1B-iF-c6A"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="116" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8E-zp-pAu" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="424" width="52" height="54"/>
@@ -143,9 +128,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="xjn-Fk-mbI"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="85" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ro-ec-dQS" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="944" y="370" width="52" height="54"/>
@@ -163,9 +145,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="5KL-Vs-Sxu"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="115" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ayr-Wo-3tx" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="424" width="52" height="54"/>
@@ -183,9 +162,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="hpF-UK-UN4"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="114" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f1R-eI-Mh5" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="424" width="52" height="54"/>
@@ -203,9 +179,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="y2H-gN-V7k"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="113" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whH-F1-gpH" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="424" width="52" height="54"/>
@@ -223,9 +196,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="VSb-EE-pv1"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="112" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EfA-yh-Wgh" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="424" width="52" height="54"/>
@@ -243,9 +213,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="9A7-Cd-bFb"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilm-wo-5jW" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="60" y="100" width="52" height="54"/>
@@ -264,9 +231,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Rsy-UN-cXQ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDQ-wF-1WH" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="944" y="100" width="52" height="54"/>
@@ -284,9 +248,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="hwy-vh-fHJ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="2" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubO-hR-FCq" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="60" y="154" width="52" height="54"/>
@@ -304,9 +265,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="1F6-PV-kLy"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="9" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="esJ-c1-h60" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="944" y="154" width="52" height="54"/>
@@ -324,9 +282,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="2uj-2W-fOV"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="10" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IaD-u6-6ax" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="60" y="208" width="52" height="54"/>
@@ -344,9 +299,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="mNE-0c-fsF"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="17" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s5P-AF-MzT" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="944" y="208" width="52" height="54"/>
@@ -364,9 +316,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="9HJ-LF-Bj2"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="18" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9s-I1-u5D" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="60" y="262" width="52" height="54"/>
@@ -384,9 +333,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="FjV-Nf-DAp"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="35" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oml-Nx-EMH" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="944" y="262" width="52" height="54"/>
@@ -404,9 +350,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="hSj-FH-1lZ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="36" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aq0-rT-KXo" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="60" y="316" width="52" height="54"/>
@@ -424,9 +367,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="hzg-6k-Yni"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="53" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkl-6m-D3d" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="944" y="316" width="52" height="54"/>
@@ -444,9 +384,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="pX7-Hr-y2o"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="54" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqM-EG-iGd" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="60" y="370" width="52" height="54"/>
@@ -464,9 +401,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="gjm-Jm-4RI"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="86" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoT-mw-KUr" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="60" y="424" width="52" height="54"/>
@@ -484,9 +418,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="de6-V3-pj2"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="3" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebb-qd-HH6" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="112" y="154" width="52" height="54"/>
@@ -504,9 +435,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="PJG-eb-r20"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="11" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsy-D4-Gf3" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="112" y="208" width="52" height="54"/>
@@ -524,9 +452,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="KOz-GZ-EqJ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="19" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGP-cY-WDD" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="112" y="262" width="52" height="54"/>
@@ -544,9 +469,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="rIE-oD-oBR"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="37" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VbS-Gi-vr3" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="112" y="316" width="52" height="54"/>
@@ -564,9 +486,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="mJL-df-XJm"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="55" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBp-tw-4YK" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="112" y="370" width="52" height="54"/>
@@ -584,9 +503,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="GSt-lf-Fmd"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="87" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dnM-1y-Iov" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="112" y="424" width="52" height="54"/>
@@ -604,9 +520,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="OpM-DG-4XC"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="20" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lE9-DD-bRg" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="164" y="262" width="52" height="54"/>
@@ -624,9 +537,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Vus-Bq-TIU"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="38" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tMe-wK-u1Y" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="164" y="316" width="52" height="54"/>
@@ -644,9 +554,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="nSI-hj-WUJ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="88" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qUV-by-7lv" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="164" y="424" width="52" height="54"/>
@@ -664,9 +571,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="pt2-TL-AQh"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="89" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42u-LX-WhI" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="216" y="582" width="52" height="54"/>
@@ -684,9 +588,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="SL5-XJ-6i4"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="58" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c2i-Vg-PM3" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="268" y="528" width="52" height="54"/>
@@ -704,9 +605,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Wwa-Vb-gMW"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="90" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbW-CM-m2E" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="268" y="582" width="52" height="54"/>
@@ -724,9 +622,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="8Dh-hT-b1l"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="21" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oyr-iy-cPi" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="216" y="262" width="52" height="54"/>
@@ -744,9 +639,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="i52-s0-F3l"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="39" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SHt-gJ-P23" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="216" y="316" width="52" height="54"/>
@@ -764,9 +656,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Zow-o0-xFp"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="71" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tSb-nL-TEe" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="216" y="370" width="52" height="54"/>
@@ -784,9 +673,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="wpa-y2-CKF"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="103" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0HC-WI-Y8y" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="216" y="424" width="52" height="54"/>
@@ -804,9 +690,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Uv4-on-tDl"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="23" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tLb-G4-cht" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="320" y="262" width="52" height="54"/>
@@ -824,9 +707,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Pho-EJ-tUY"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="41" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AN-ZW-YrI" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="320" y="316" width="52" height="54"/>
@@ -844,9 +724,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="TJ4-av-can"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="73" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zb9-y5-9Vh" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="320" y="370" width="52" height="54"/>
@@ -864,9 +741,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="RZe-GM-QkR"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="105" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ztu-q5-rWg" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="320" y="424" width="52" height="54"/>
@@ -884,9 +758,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="eGF-Tl-Pvt"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="25" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xag-FT-ku7" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="424" y="262" width="52" height="54"/>
@@ -904,9 +775,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="9LF-bz-upM"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="43" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-BL-qZE" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="424" y="316" width="52" height="54"/>
@@ -924,9 +792,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="2Tf-Wl-8o3"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="75" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woS-Wh-BSk" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="424" y="370" width="52" height="54"/>
@@ -944,9 +809,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="8xW-lQ-wef"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="107" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xhI-OX-HsE" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="424" y="424" width="52" height="54"/>
@@ -964,9 +826,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="3yS-wI-yhJ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="24" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tH5-NI-vVU" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="372" y="262" width="52" height="54"/>
@@ -984,9 +843,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="hn4-oJ-e1M"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="42" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BnW-6h-gW5" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="372" y="316" width="52" height="54"/>
@@ -1004,9 +860,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="wKC-dh-Ham"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="74" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DRR-mo-ooS" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="372" y="370" width="52" height="54"/>
@@ -1024,9 +877,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Ff2-F2-YLa"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="106" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YLf-h0-bkf" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="372" y="424" width="52" height="54"/>
@@ -1044,9 +894,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="sZM-O7-OkW"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="8" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0St-V5-XX0" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="154" width="52" height="54"/>
@@ -1064,9 +911,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="U8Z-Lh-YQ8"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="16" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3A-lo-XKE" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="208" width="52" height="54"/>
@@ -1084,9 +928,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="XLQ-Zh-ntp"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="34" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VU5-jw-OdE" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="262" width="52" height="54"/>
@@ -1104,9 +945,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="z7y-cO-cB4"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="52" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWX-pe-T7r" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="316" width="52" height="54"/>
@@ -1124,9 +962,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="HW9-59-cne"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="84" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XFq-uQ-iMe" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="370" width="52" height="54"/>
@@ -1144,9 +979,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="98G-ny-Hfq"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="7" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPe-3U-60e" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="154" width="52" height="54"/>
@@ -1164,9 +996,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="oPH-VE-5n2"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="15" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="npk-2G-xOi" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="208" width="52" height="54"/>
@@ -1184,9 +1013,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="h9Y-Oq-ryd"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="33" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QLc-Te-xdp" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="262" width="52" height="54"/>
@@ -1204,9 +1030,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="rLn-x4-2V7"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="51" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TWS-eI-MGH" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="316" width="52" height="54"/>
@@ -1224,9 +1047,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="VcU-k1-O9l"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="83" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bI6-8i-5UP" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="370" width="52" height="54"/>
@@ -1244,9 +1064,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="X0a-KW-xjT"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="6" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ImO-Wb-FlT" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="154" width="52" height="54"/>
@@ -1264,9 +1081,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="AgR-bN-hYL"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="14" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rQ3-xr-lHV" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="208" width="52" height="54"/>
@@ -1284,9 +1098,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="rit-5M-Dty"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="32" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xo4-DH-dYI" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="262" width="52" height="54"/>
@@ -1304,9 +1115,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="XtT-p0-oCg"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="50" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ey-na-D7Z" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="316" width="52" height="54"/>
@@ -1324,9 +1132,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="cdA-eV-SxI"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="82" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QeW-Kx-oae" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="370" width="52" height="54"/>
@@ -1344,9 +1149,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Hzf-jR-CKR"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="5" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sk4-z8-RdE" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="154" width="52" height="54"/>
@@ -1364,9 +1166,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="mjH-63-Ck9"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="13" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EnW-FO-loA" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="208" width="52" height="54"/>
@@ -1384,9 +1183,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="vew-eB-FVm"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="31" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="asZ-De-dOq" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="262" width="52" height="54"/>
@@ -1404,9 +1200,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="4Za-Sv-eEz"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="49" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k4k-iq-Qdd" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="316" width="52" height="54"/>
@@ -1424,9 +1217,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="N2q-zf-yK6"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="81" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G4k-fQ-ru4" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="370" width="52" height="54"/>
@@ -1444,9 +1234,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Rdp-A6-Gxm"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="4" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yDb-ef-RUz" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="154" width="52" height="54"/>
@@ -1464,9 +1251,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="eyp-na-IZO"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="12" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="daf-dq-UdT" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="208" width="52" height="54"/>
@@ -1484,9 +1268,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="A0t-Mb-tUd"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="30" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ezb-zt-s1Z" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="262" width="52" height="54"/>
@@ -1504,9 +1285,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="wI3-NC-nUP"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="48" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdm-L9-Iod" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="316" width="52" height="54"/>
@@ -1524,9 +1302,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Sg6-3l-s46"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="80" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ngN-j0-doZ" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="370" width="52" height="54"/>
@@ -1544,9 +1319,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="aoj-jG-qt7"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="22" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nm-1j-7mI" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="268" y="262" width="52" height="54"/>
@@ -1564,9 +1336,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="IBp-ge-XMl"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="40" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9ta-o0-Q17" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="268" y="316" width="52" height="54"/>
@@ -1584,9 +1353,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="SCf-gU-ErX"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="72" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEg-Pc-asV" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="268" y="370" width="52" height="54"/>
@@ -1604,9 +1370,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="RPg-s4-0zv"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="104" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n58-2R-O9L" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="268" y="424" width="52" height="54"/>
@@ -1624,9 +1387,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="TfB-em-QkL"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="27" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-Fg-96x" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="528" y="262" width="52" height="54"/>
@@ -1644,9 +1404,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="7V9-oq-CUS"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="45" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tP4-lm-EjM" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="528" y="316" width="52" height="54"/>
@@ -1664,9 +1421,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="u6c-NK-WyT"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="77" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5H-a7-eeS" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="528" y="370" width="52" height="54"/>
@@ -1684,9 +1438,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="l0r-aT-bYu"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="109" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IQ2-cE-0yW" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="528" y="424" width="52" height="54"/>
@@ -1704,9 +1455,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="pbq-6b-a8a"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="29" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FpQ-3K-NmA" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="632" y="262" width="52" height="54"/>
@@ -1724,9 +1472,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="lne-lI-U37"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="47" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faQ-hw-zzA" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="632" y="316" width="52" height="54"/>
@@ -1744,9 +1489,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="4MX-at-Xod"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="79" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CoD-9P-4d2" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="632" y="370" width="52" height="54"/>
@@ -1764,9 +1506,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="pkn-sT-w65"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="28" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZz-M9-Be4" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="580" y="262" width="52" height="54"/>
@@ -1784,9 +1523,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="5ew-o7-HxM"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="46" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yLU-T9-3Rk" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="580" y="316" width="52" height="54"/>
@@ -1804,9 +1540,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Yug-vL-d2Z"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="78" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6w-SX-2x4" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="580" y="370" width="52" height="54"/>
@@ -1824,9 +1557,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="2VJ-V3-zFA"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="110" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wS-pw-p8s" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="580" y="424" width="52" height="54"/>
@@ -1844,9 +1574,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="WMK-uL-prq"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="26" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MD2-4S-9XZ" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="476" y="262" width="52" height="54"/>
@@ -1864,9 +1591,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="qZA-bb-JJv"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="44" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UMr-6N-g47" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="476" y="316" width="52" height="54"/>
@@ -1884,9 +1608,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="vRP-wF-KEh"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="76" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="keZ-HZ-cRg" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="476" y="370" width="52" height="54"/>
@@ -1904,9 +1625,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="M6q-0D-uFZ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="108" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLE-61-xoY" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="476" y="424" width="52" height="54"/>
@@ -1924,9 +1642,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="49j-6q-Z0J"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="59" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3D-RY-Hmn" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="320" y="528" width="52" height="54"/>
@@ -1944,9 +1659,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="gWA-Lq-Kb8"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="91" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SNl-PV-NOv" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="320" y="582" width="52" height="54"/>
@@ -1964,9 +1676,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="2Wu-y1-QFx"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="60" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1N-Dd-rqi" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="372" y="528" width="52" height="54"/>
@@ -1984,9 +1693,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="S9Z-Hk-Xw4"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="92" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="khO-Z3-I4G" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="372" y="582" width="52" height="54"/>
@@ -2004,9 +1710,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="HlF-3j-PEp"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="61" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ULK-Tv-Y7j" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="424" y="528" width="52" height="54"/>
@@ -2024,9 +1727,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Vs9-S1-uoe"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="93" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YCc-wB-b8Y" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="424" y="582" width="52" height="54"/>
@@ -2044,9 +1744,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="j2x-MY-Kl5"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="62" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sYv-OS-7HF" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="476" y="528" width="52" height="54"/>
@@ -2064,9 +1761,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="N8F-Xr-LWs"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="94" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="znw-Bv-CYT" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="476" y="582" width="52" height="54"/>
@@ -2084,9 +1778,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="jgW-S3-YKw"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="63" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dt6-iX-13O" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="528" y="528" width="52" height="54"/>
@@ -2104,9 +1795,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="5or-hd-oNd"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="95" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rFV-xb-M0i" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="528" y="582" width="52" height="54"/>
@@ -2124,9 +1812,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="k89-5W-7if"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="96" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tpv-eh-pcD" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="580" y="582" width="52" height="54"/>
@@ -2144,9 +1829,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Ofd-9Q-xT7"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="65" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tb-U0-6cs" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="632" y="528" width="52" height="54"/>
@@ -2164,9 +1846,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="f8o-us-xBN"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="97" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ldv-4b-RMe" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="632" y="582" width="52" height="54"/>
@@ -2184,9 +1863,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="KEi-Qs-Sob"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="66" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VXh-jH-ibP" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="528" width="52" height="54"/>
@@ -2204,9 +1880,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="lZW-7N-PtT"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="98" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYl-TZ-mCh" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="684" y="582" width="52" height="54"/>
@@ -2224,9 +1897,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="BhN-f3-fhQ"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="67" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="db9-fY-w81" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="528" width="52" height="54"/>
@@ -2244,9 +1914,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="1gu-nH-mXa"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="99" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhY-Mv-Jkg" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="736" y="582" width="52" height="54"/>
@@ -2264,9 +1931,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="Zwc-c4-L9H"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="68" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ech-Dx-LVA" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="528" width="52" height="54"/>
@@ -2284,9 +1948,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="xi4-Hf-XCe"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="100" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B2R-Y4-Sd5" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="788" y="582" width="52" height="54"/>
@@ -2304,9 +1965,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="d2y-iY-fli"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="69" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mXX-TY-3rC" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="528" width="52" height="54"/>
@@ -2324,9 +1982,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="eo5-rh-8lL"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="101" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z0O-fA-17r" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="840" y="582" width="52" height="54"/>
@@ -2344,9 +1999,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="tBh-yS-4WE"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="70" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k6u-Ll-jnl" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="528" width="52" height="54"/>
@@ -2364,9 +2016,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="vZ2-6r-qAd"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="102" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G46-hs-PkC" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="892" y="582" width="52" height="54"/>
@@ -2384,9 +2033,6 @@
                                         <state key="highlighted">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
-                                        <connections>
-                                            <action selector="showElementInspector:" destination="2" eventType="touchUpInside" id="FTr-DS-u3a"/>
-                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="1" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="RdK-uO-eYD">
                                         <rect key="frame" x="60" y="46" width="52" height="23"/>
@@ -2691,9 +2337,6 @@
                                     <switch opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x1U-oK-cCA">
                                         <rect key="frame" x="874" y="113" width="51" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <connections>
-                                            <action selector="showMolecularCalculator:" destination="2" eventType="valueChanged" id="jWT-9W-VKy"/>
-                                        </connections>
                                     </switch>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="period" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="9" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="I6H-VS-Dxq" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
                                         <rect key="frame" x="20" y="100" width="10" height="378"/>
@@ -2820,6 +2463,7 @@
                     <tabBarItem key="tabBarItem" title="Periodic Table" image="Tab01" id="7"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
+                        <outlet property="elementButtonView" destination="zIH-hb-g92" id="Vjb-ff-pK5"/>
                         <outlet property="globeImageView" destination="yIQ-Vk-SHi" id="9MH-6R-Cvj"/>
                         <outlet property="molecularCalculatorSwitch" destination="x1U-oK-cCA" id="FM2-Z4-Pdv"/>
                         <outlet property="navigationBar" destination="Mhz-FO-2K4" id="XIX-PX-aDM"/>

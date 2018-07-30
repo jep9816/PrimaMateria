@@ -60,7 +60,7 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         
         content.preferredContentSize = CGSize(width: 410, height: 338)
         content.modalPresentationStyle = .popover
-        controller.present(content, animated: true, completion: nil)
+        controller.present(content, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
         let presentationController = content.popoverPresentationController
         presentationController?.sourceRect = bounds
         presentationController?.sourceView = self

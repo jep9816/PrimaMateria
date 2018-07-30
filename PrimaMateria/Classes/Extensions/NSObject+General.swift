@@ -40,7 +40,7 @@ public extension NSObject { // General
     func mapToObserver(button: UIButton) -> Observable<UIButton> {
         return button.rx.tap.map { _ in return button}
     }
-    
+
 }
 
 extension UILabel {
@@ -91,13 +91,13 @@ extension UIViewController {
         XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = index
         
-        let storyboard = UIStoryboard(name: ELEMENT_INSPECTOR_STORY_BOARD, bundle: nil)
+        let storyboard = UIStoryboard(name: StoryBoardName.ElementInspector, bundle: nil)
         let elementInspector: XTRElementInspectorViewController = storyboard.instantiateViewController(withIdentifier: XTRElementInspectorViewController.nameOfClass) as! XTRElementInspectorViewController
         
         elementInspector.modalPresentationStyle = .fullScreen
         elementInspector.modalTransitionStyle = .crossDissolve
         
-        present(elementInspector, animated: true, completion: nil)
+        present(elementInspector, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
     
 }

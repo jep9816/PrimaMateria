@@ -8,6 +8,7 @@
 
 import Foundation
 import RxSwift
+import RxCocoa
 
 class XTRElementModel: NSObject {
     
@@ -94,14 +95,17 @@ class XTRElementModel: NSObject {
         return value(forKeyPath: ELEMENT_NAME) as? String
     }
     
-    var nuclidesAndIsotopes: Variable<[XTRIsotopeModel]>? {
-        let models: Variable<[XTRIsotopeModel]> = Variable([])
+    var nuclidesAndIsotopes: BehaviorRelay<[XTRIsotopeModel]>? {
+        let models: BehaviorRelay<[XTRIsotopeModel]> = BehaviorRelay(value: [])
+        var modelsCopy: [XTRIsotopeModel] = []
         guard let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String: AnyObject]] else { return models }
 
         for item in list {
-            models.value.append(XTRIsotopeModel(dictionary: item))
+            modelsCopy.append(XTRIsotopeModel(dictionary: item))
         }
         
+        models.accept(modelsCopy)
+
         return models
     }
     
@@ -117,14 +121,16 @@ class XTRElementModel: NSObject {
         return value(forKeyPath: ELEMENT_SYMBOL) as? String
     }
     
-    var lineSpectra: Variable<[XTRSpectraModel]>? {
-        let models: Variable<[XTRSpectraModel]> = Variable([])
+    var lineSpectra: BehaviorRelay<[XTRSpectraModel]>? {
+        let models: BehaviorRelay<[XTRSpectraModel]> = BehaviorRelay(value: [])
+        var modelsCopy: [XTRSpectraModel] = []
         guard let list = value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String: AnyObject]]? else { return models }
         
         for item in list! {
-            models.value.append(XTRSpectraModel(dictionary: item))
+            modelsCopy.append(XTRSpectraModel(dictionary: item))
         }
-        
+        models.accept(modelsCopy)
+
         return models
     }
     
