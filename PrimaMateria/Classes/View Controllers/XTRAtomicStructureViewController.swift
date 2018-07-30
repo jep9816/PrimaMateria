@@ -75,6 +75,8 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     @IBOutlet var overlayView: UIView!
     
     var disposeBag = DisposeBag()
+    let shellModelContent: UIView!
+
 
     // MARK: - Initialization Methods
     
@@ -174,13 +176,38 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let crystalStructureViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(showCrystalStructureView(tapGestureRecognizer:)))
+        let shellModelViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(showShellModelView(tapGestureRecognizer:)))
+
         crystalStructureView.isHidden = false
         crystalStructureView.allowsCameraControl = true
         crystalStructureView.autoenablesDefaultLighting = true
+        crystalStructureView.isUserInteractionEnabled = true
+        crystalStructureView.addGestureRecognizer(crystalStructureViewTapGesture)
         
         shellModelView.isHidden = true
+        shellModelView.addGestureRecognizer(shellModelViewTapGesture)
     }
     
+    @objc func showCrystalStructureView(tapGestureRecognizer: UITapGestureRecognizer) {
+        let alertController = UIAlertController.init(title: "crystalStructureView", message: "Tapped", preferredStyle: .alert)
+        let okButtonAction = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
+        alertController.addAction(okButtonAction)
+        present(alertController, animated: true, completion: nil)
+    }
+
+    @objc func showShellModelView(tapGestureRecognizer: UITapGestureRecognizer) {
+//        let alertController = UIAlertController.init(title: "shellModelView", message: "Tapped", preferredStyle: .alert)
+//        let okButtonAction = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
+//        alertController.addAction(okButtonAction)
+//        present(alertController, animated: true, completion: nil)
+        
+        if shellModelContent == nil {
+            shellModelContent = UIView(frame: CGRect(x: 0, y: 0, width: 410, height: 338))
+            shellModelContent.backgroundColor = UIColor.gray
+        }
+    }
+
     override var shouldAutorotate: Bool {
         return false
     }
