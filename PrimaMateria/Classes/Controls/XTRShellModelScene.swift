@@ -12,19 +12,20 @@ import GameplayKit
 class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     
     var element: XTRElementModel?
-    var ballRadius: CGFloat!
+    var electronRadius: CGFloat!
     var maxRadius: CGFloat!
     var origX: CGFloat!
     var shellRadiusOffset: CGFloat!
     var shellTextXOffset: CGFloat!
-
+    let piConst = CGFloat.pi * 2.0
+    
     init(size: CGSize, element: XTRElementModel) {
         super.init(size: size)
         
         self.element = element
         
-        ballRadius = size.height / 64.4
-        maxRadius = (size.height / 2.0) - ballRadius - ballRadius
+        electronRadius = size.height / 60
+        maxRadius = (size.height / 2.0) - electronRadius - electronRadius
         origX = size.height / 2.0
         shellRadiusOffset = size.height / 16.1
         shellTextXOffset = size.height / 24.7
@@ -64,25 +65,70 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
         
         backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
         
-        circleOfDots(numberOfCircles: kShellElectrons, radius: maxRadius - (shellRadiusOffset * 6.0), color: SKColor.red.withAlphaComponent(1.0)) // K
-        circleOfDots(numberOfCircles: lShellElectrons, radius: maxRadius - (shellRadiusOffset * 5.0), color: SKColor.green.withAlphaComponent(1.0)) // L
-        circleOfDots(numberOfCircles: mShellElectrons, radius: maxRadius - (shellRadiusOffset * 4.0), color: SKColor.blue.withAlphaComponent(1.0)) // M
-        circleOfDots(numberOfCircles: nShellElectrons, radius: maxRadius - (shellRadiusOffset * 3.0), color: SKColor.cyan.withAlphaComponent(1.0)) // N
-        circleOfDots(numberOfCircles: oShellElectrons, radius: maxRadius - (shellRadiusOffset * 2.0), color: SKColor.magenta.withAlphaComponent(1.0)) // O
-        circleOfDots(numberOfCircles: pShellElectrons, radius: maxRadius - shellRadiusOffset, color: SKColor.yellow.withAlphaComponent(1.0)) // P
-        circleOfDots(numberOfCircles: qShellElectrons, radius: maxRadius, color: SKColor.gray) // Q
+        circleOfElectrons(number: kShellElectrons, radius: maxRadius - (shellRadiusOffset * 6.0), color: SKColor.red.withAlphaComponent(1.0)) // K
+        circleOfElectrons(number: lShellElectrons, radius: maxRadius - (shellRadiusOffset * 5.0), color: SKColor.green.withAlphaComponent(1.0)) // L
+        circleOfElectrons(number: mShellElectrons, radius: maxRadius - (shellRadiusOffset * 4.0), color: SKColor.blue.withAlphaComponent(1.0)) // M
+        circleOfElectrons(number: nShellElectrons, radius: maxRadius - (shellRadiusOffset * 3.0), color: SKColor.cyan.withAlphaComponent(1.0)) // N
+        circleOfElectrons(number: oShellElectrons, radius: maxRadius - (shellRadiusOffset * 2.0), color: SKColor.magenta.withAlphaComponent(1.0)) // O
+        circleOfElectrons(number: pShellElectrons, radius: maxRadius - shellRadiusOffset, color: SKColor.yellow.withAlphaComponent(1.0)) // P
+        circleOfElectrons(number: qShellElectrons, radius: maxRadius, color: SKColor.gray) // Q
 
         addChild(protonLabel)
         addChild(neutronLabel)
         addShellLabels()
     }
     
-    func circleOfDots(numberOfCircles: Int, radius: CGFloat, color: SKColor) {
+    func createColorEmboss() -> SKShader {
+        let uniforms: [SKUniform] = [
+            SKUniform(name: "u_strength", float: 1)
+        ]
+        
+        let attributes = [
+            SKAttribute(name: "a_size", type: .vectorFloat2)
+        ]
+        
+        return SKShader(fromFile: "SHKEmbossColor", uniforms: uniforms, attributes: attributes)
+    }
+
+    func createWater() -> SKShader {
+        let uniforms: [SKUniform] = [
+            SKUniform(name: "u_speed", float: 3),
+            SKUniform(name: "u_strength", float: 2.5),
+            SKUniform(name: "u_frequency", float: 10)
+        ]
+        
+        return SKShader(fromFile: "SHKWater", uniforms: uniforms)
+    }
+
+    func createLightGrid() -> SKShader {
+        let uniforms: [SKUniform] = [
+            SKUniform(name: "u_density", float: 8),
+            SKUniform(name: "u_speed", float: 3),
+            SKUniform(name: "u_group_size", float: 2),
+            SKUniform(name: "u_brightness", float: 3)
+            ]
+        
+        return SKShader(fromFile: "SHKLightGrid", uniforms: uniforms)
+    }
+
+    func createGrayEmboss() -> SKShader {
+        let uniforms: [SKUniform] = [
+            SKUniform(name: "u_strength", float: 1)
+        ]
+        
+        let attributes = [
+            SKAttribute(name: "a_size", type: .vectorFloat2)
+        ]
+        
+        return SKShader(fromFile: "SHKEmbossGray", uniforms: uniforms, attributes: attributes)
+    }
+
+    func circleOfElectrons(number: Int, radius: CGFloat, color: SKColor) {
         let centerPoint = CGPoint(x: origX, y: (view?.frame.height)! / 2.0)
         let circlePath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: 0.0, endAngle: CGFloat.pi * 2.0, clockwise: true)
         let shapeLayer = CAShapeLayer()
-        let duration = Double(radius / 3.5)
-        let clockwise = (numberOfCircles % 2) == 0
+        let duration: CGFloat = radius / 3.5
+        let clockwise = (number % 2) == 0
         
         shapeLayer.path = circlePath.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
@@ -92,31 +138,33 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
         
         view?.layer.addSublayer(shapeLayer)
         
-        for idx in 0...numberOfCircles {
-            let circle = SKShapeNode(circleOfRadius: ballRadius)
-            let followCirclePath: SKAction
-            let angle = 2 * Double.pi / Double(numberOfCircles) * Double(idx)
-            let circleX = radius * cos(CGFloat(angle))
-            let circleY = radius * sin(CGFloat(angle))
+        for idx in 0...number {
+            let electron = SKShapeNode(circleOfRadius: electronRadius)
+            let followCirclePathAction: SKAction
+            let angle: CGFloat = 2 * CGFloat.pi / CGFloat(number) * CGFloat(idx)
+            let circleX = radius * cos(angle)
+            let circleY = radius * sin(angle)
             let tempPath: UIBezierPath!
 
-            circle.strokeColor = SKColor.black
-            circle.fillColor = color
-            circle.lineWidth = size.height / 322.0
+            electron.strokeColor = SKColor.black
+            electron.fillColor = color
+            electron.lineWidth = size.height / 322.0
+            //electron.fillShader = createColorEmboss()
+            electron.alpha = 1.0
             
             if clockwise {
-                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat(angle), endAngle: (CGFloat.pi * 2) + CGFloat(angle), clockwise: true)
+                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: angle, endAngle: piConst + angle, clockwise: true)
             } else {
-                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: (CGFloat.pi * 2) + CGFloat(angle), endAngle: CGFloat(angle), clockwise: false)
+                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: piConst + angle, endAngle: angle, clockwise: false)
             }
             
-            followCirclePath = SKAction.follow(tempPath.cgPath, asOffset: false, orientToPath: true, duration: duration)
+            followCirclePathAction = SKAction.follow(tempPath.cgPath, asOffset: false, orientToPath: true, duration: TimeInterval(duration))
             
-            circle.name = String(format: "circle%d", idx)
-            circle.position = CGPoint(x: circleX + frame.midX, y: circleY + frame.midY)
+            electron.name = String(format: "circle%d", idx)
+            electron.position = CGPoint(x: circleX + frame.midX, y: circleY + frame.midY)
             
-            addChild(circle)
-            circle.run(SKAction.repeatForever(followCirclePath))
+            addChild(electron)
+            electron.run(SKAction.repeatForever(followCirclePathAction))
         }
     }
     

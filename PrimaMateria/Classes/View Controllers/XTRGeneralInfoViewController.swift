@@ -22,8 +22,6 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     @IBOutlet var showWikiButton: UIButton!
 
     private var progressHUD: MBProgressHUD?
-//    private var responseData: NSMutableData?
-//    private var request: NSMutableURLRequest?
     
     var elementName: String?
     var disposeBag = DisposeBag()
