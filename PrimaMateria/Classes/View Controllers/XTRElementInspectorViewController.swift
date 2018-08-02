@@ -25,6 +25,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     @IBOutlet var titleItem: UINavigationItem!
     @IBOutlet var pageControl: XTRPageControl!
     @IBOutlet var swapView: UIView!
+    var flag: Bool = true
     
     var disposeBag = DisposeBag()
     
@@ -115,7 +116,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         
         if XTRPropertiesStore.showTransitionsState {
             let currentView: UIView = view
-            let theWindow = currentView.superview!
+            let tempView = currentView.superview!
             let animation = CATransition()
             
             currentView.removeFromSuperview()
@@ -125,9 +126,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             animation.subtype = (direction == "Next") ? kCATransitionFromLeft: kCATransitionFromRight
             animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
             
-            theWindow.layer.add(animation, forKey: "SwitchInspectorView")
-            theWindow.addSubview(currentView)
-            theWindow.layer.removeAnimation(forKey: "SwitchInspectorView")
+            tempView.layer.add(animation, forKey: "SwitchInspectorView")
+            tempView.addSubview(currentView)
+            tempView.layer.removeAnimation(forKey: "SwitchInspectorView")
         }
     }
     
@@ -160,8 +161,8 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             }).disposed(by: disposeBag)
         
         self.barButtonItem!.rx.tap.subscribe { [weak self] _ in
-            self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
-            NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
+                self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+                NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
             }.disposed(by: disposeBag)
     }
     
@@ -186,7 +187,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     // MARK: - Action Methods
-        
+    
     @objc func nextElement(_ sender: UIButton) {
         var atomicNumber = element!.atomicNumber + 1
         
@@ -214,6 +215,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(nextElement(_:)))
+        let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
+
         nextButton.titleLabel!.textAlignment = .right
         previousButton.titleLabel!.textAlignment = .left
         swapView.removeFromSuperview()
@@ -226,13 +230,12 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         
         childViewControllers[0].view.isHidden = false
         
-        let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(nextElement(_:)))
         swipeNextElement.direction = UISwipeGestureRecognizerDirection.right
         view.addGestureRecognizer(swipeNextElement)
         
-        let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
         swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipePreviousElement)
+        NotificationCenter.default.addObserver(self, selector: #selector(atomicStructureZoomed(_:)), name: .notificationAtomicStructureZoomed, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -249,6 +252,17 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         super.viewWillDisappear(animated)
     }
     
+    // MARK: - Notification Methods
+    
+    @objc func atomicStructureZoomed(_ aNotification: Notification) {
+        flag = aNotification.object as! Bool
+        
+        segmentedControl.isUserInteractionEnabled = flag
+        nextButton.isUserInteractionEnabled = flag
+        previousButton.isUserInteractionEnabled = flag
+        barButtonItem.isEnabled = flag
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }
@@ -260,6 +274,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     // MARK: - Memory Management Methods
     
     deinit {
+        NotificationCenter.default.removeObserver(self, name: .notificationAtomicStructureZoomed, object: nil)
         atomicNumberLabel = nil
         atomicSymbolLabel = nil
         barButtonItem = nil

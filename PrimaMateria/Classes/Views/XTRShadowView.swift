@@ -14,29 +14,40 @@ class XTRShadowView: UIImageView {
         super.init(coder: aDecoder)!
     }
     
+    init(frame: CGRect, view: UIView) {
+        super.init(frame: frame)
+        createLayer(frame: frame, superView: view)
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        createLayer()
+        createLayer(frame: CGRect(x: frame.origin.x + 1, y: frame.origin.y + 1, width: frame.size.width - 2, height: frame.size.height - 2), superView: nil)
     }
     
     // MARK: - Internal Methods
 
-    func createLayer() {
-        let superView = superview!
+    func createLayer(frame: CGRect, superView: UIView?) {
+        var tempSuperView: UIView
         let sublayer = CALayer()
+
+        if superView == nil {
+            tempSuperView = superview!
+        } else {
+            tempSuperView = superView!
+        }
         
         sublayer.backgroundColor = UIColor.clear.cgColor
         sublayer.shadowOffset = CGSize(width: 5.0, height: 5.0)
         sublayer.shadowRadius = 10.0
         sublayer.shadowColor = UIColor.black.cgColor
         sublayer.shadowOpacity = 1.0
-        sublayer.frame = CGRect(x: frame.origin.x + 1, y: frame.origin.y + 1, width: frame.size.width - 2, height: frame.size.height - 2)
+        sublayer.frame = frame
         sublayer.borderColor = UIColor.black.cgColor
         sublayer.backgroundColor = UIColor.black.cgColor
         sublayer.borderWidth = 1.0
         sublayer.cornerRadius = VIEW_CORNER_RADIUS
         
-        superView.layer.addSublayer(sublayer)
+        tempSuperView.layer.addSublayer(sublayer)
         
         layer.masksToBounds = true
         layer.cornerRadius = VIEW_CORNER_RADIUS
@@ -44,7 +55,7 @@ class XTRShadowView: UIImageView {
         layer.borderWidth = 3.0
         isOpaque = false
         
-        superView.bringSubview(toFront: self)
+        tempSuperView.bringSubview(toFront: self)
     }
     
 }

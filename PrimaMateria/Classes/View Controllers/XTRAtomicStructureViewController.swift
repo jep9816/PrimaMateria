@@ -10,6 +10,7 @@ import SpriteKit
 import GameplayKit
 import RxSwift
 import RxCocoa
+import AVFoundation
 
 struct XTRAtomicStructureViewControllerConfig {
     
@@ -17,7 +18,7 @@ struct XTRAtomicStructureViewControllerConfig {
         static let kCrystalStructureView = 0
         static let kShellModelView = 1
     }
-
+    
 }
 
 class XTRAtomicStructureViewController: XTRSwapableViewController {
@@ -72,11 +73,21 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     @IBOutlet var shell7sLabel: UILabel!
     @IBOutlet var shell7pLabel: UILabel!
-    @IBOutlet var overlayView: UIView!
+    
+    var overlayView: XTROverlayView!
+    
+    var crystalStructureContent: XTRZoomContentView!
+    var localCrystalStructureView: SCNView!
+    
+    var shellModelContent: XTRZoomContentView!
+    var localShellModelView: SKView!
     
     var disposeBag = DisposeBag()
-    let shellModelContent: UIView!
-
+    
+    let contentRect = CGRect(x: 154, y: 10, width: 716, height: 748)
+    let localRect = CGRect(x: 0, y: 32, width: 716, height: 716)
+    let startRect = CGRect(x: 1200, y: 290, width: 322, height: 322)
+    var crystalStructure: String!
 
     // MARK: - Initialization Methods
     
@@ -89,20 +100,31 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
         
+        let crystalStructureViewButton = UIButton(frame: CGRect(x: crystalStructureView.frame.size.width - 32, y: 0, width: 32, height: 32))
+        let shellModelViewButton = UIButton(frame: CGRect(x: shellModelView.frame.size.width - 32, y: 0, width: 32, height: 32))
+        let crystalStructureScene = element.crystalStructureScene
+        let shellModelScene = element.shellModelScene
+
         title = NSLocalizedString("atomicStructure", comment: "")
-        
-        let crystalStructure = element.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
-        let scene = element.shellModelScene
-        let scnScene = element.crystalStructureScene
+        crystalStructure = element.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
 
+        crystalStructureViewButton.setTitle("⏫", for: UIControlState())
+        crystalStructureViewButton.addTarget(self, action: #selector(presentCrystalStructureContent(sender:)), for: .touchUpInside)
+        
+        shellModelViewButton.setTitle("⏫", for: UIControlState())
+        shellModelViewButton.addTarget(self, action: #selector(presentShellModelContent(sender:)), for: .touchUpInside)
+        
         setupSegmentedControlUI()
-
-        crystalStructureLabel.text = crystalStructure
-        shellModelView.backgroundColor = element.seriesColor
         
-        scene.scaleMode = .aspectFit
-        shellModelView.presentScene(scene)
-        crystalStructureView.scene = scnScene
+        crystalStructureLabel.text = crystalStructure
+        
+        crystalStructureView.scene = crystalStructureScene
+        crystalStructureView.addSubview(crystalStructureViewButton)
+        
+        shellModelScene.scaleMode = .aspectFit
+        shellModelView.presentScene(shellModelScene)
+        shellModelView.backgroundColor = element.seriesColor
+        shellModelView.addSubview(shellModelViewButton)
         
         atomicRadiusLabel.text = "\(element.atomicRadius)"
         atomicVolumeLabel.text = "\(element.atomicVolume)"
@@ -168,46 +190,147 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
             }
         }).disposed(by: disposeBag)
     }
-
+    
     // MARK: - Action Methods
     
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let crystalStructureViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(showCrystalStructureView(tapGestureRecognizer:)))
-        let shellModelViewTapGesture = UITapGestureRecognizer(target: self, action: #selector(showShellModelView(tapGestureRecognizer:)))
+        let rect = UIScreen.main.bounds
 
+        if overlayView != nil {
+            if shellModelContent != nil {
+                localShellModelView.removeFromSuperview()
+                localShellModelView = nil
+                shellModelContent.removeFromSuperview()
+                shellModelContent = nil
+            }
+            if crystalStructureContent != nil {
+                localCrystalStructureView.removeFromSuperview()
+                localCrystalStructureView = nil
+                crystalStructureContent.removeFromSuperview()
+                crystalStructureContent = nil
+            }
+            
+            overlayView.removeFromSuperview()
+            overlayView = nil
+        }
+        
         crystalStructureView.isHidden = false
         crystalStructureView.allowsCameraControl = true
         crystalStructureView.autoenablesDefaultLighting = true
-        crystalStructureView.isUserInteractionEnabled = true
-        crystalStructureView.addGestureRecognizer(crystalStructureViewTapGesture)
         
         shellModelView.isHidden = true
-        shellModelView.addGestureRecognizer(shellModelViewTapGesture)
+        overlayView = XTROverlayView(frame: CGRect(x: rect.origin.x, y: rect.origin.y - 148, width: rect.size.width, height: rect.size.height))
+
+        view.addSubview(overlayView)
+        view.sendSubview(toBack: overlayView)
     }
     
-    @objc func showCrystalStructureView(tapGestureRecognizer: UITapGestureRecognizer) {
-        let alertController = UIAlertController.init(title: "crystalStructureView", message: "Tapped", preferredStyle: .alert)
-        let okButtonAction = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
-        alertController.addAction(okButtonAction)
-        present(alertController, animated: true, completion: nil)
+    @objc func doIt(sender: Any?) {
+        print("doit  tapped")
     }
 
-    @objc func showShellModelView(tapGestureRecognizer: UITapGestureRecognizer) {
-//        let alertController = UIAlertController.init(title: "shellModelView", message: "Tapped", preferredStyle: .alert)
-//        let okButtonAction = UIAlertAction.init(title: "Ok", style: .cancel, handler: nil)
-//        alertController.addAction(okButtonAction)
-//        present(alertController, animated: true, completion: nil)
+    func createZoomView(frame: CGRect, type: Int) {
+        let rect = self.view.convert(self.shellModelView.frame, to: self.view.window)
         
-        if shellModelContent == nil {
-            shellModelContent = UIView(frame: CGRect(x: 0, y: 0, width: 410, height: 338))
-            shellModelContent.backgroundColor = UIColor.gray
+        if type == XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissCrystalStructureContent(sender:)))
+            let titleString = "\(element?.name ?? "") - \(NSLocalizedString("crystalStructure", comment: "")) - \(crystalStructure!)"
+            crystalStructureContent = XTRZoomContentView(frame: rect, title: titleString, gesture: gesture)
+
+            localCrystalStructureView = SCNView()
+            localCrystalStructureView.frame = localRect
+            localCrystalStructureView.scene = element?.crystalStructureScene
+            localCrystalStructureView.allowsCameraControl = true
+            localCrystalStructureView.autoenablesDefaultLighting = true
+            localCrystalStructureView.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
+
+            crystalStructureContent.wrapper.addSubview(localCrystalStructureView)
+        } else {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissShellModelContent(sender:)))
+            let titleString = "\(element?.name ?? "")) - \(NSLocalizedString("shellModel", comment: ""))"
+
+            shellModelContent = XTRZoomContentView(frame: rect, title: titleString, gesture: gesture)
+
+            let localShellModelScene = XTRShellModelScene(size: CGSize(width: 716, height: 716), element: element!)
+            localShellModelScene.scaleMode = .aspectFill
+
+            localShellModelView = SKView()
+            localShellModelView.frame = localRect
+            localShellModelView.presentScene(localShellModelScene)
+            localShellModelView.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
+
+            shellModelContent.wrapper.addSubview(localShellModelView)
+        }
+        
+    }
+    
+    func toggleUserInteractions(flag: Bool) {
+        segmentedControl.isUserInteractionEnabled = flag
+        NotificationCenter.default.post(name: .notificationAtomicStructureZoomed, object: flag)
+    }
+    
+    func present(content: XTRZoomContentView, localView: UIView) {
+        toggleUserInteractions(flag: false)
+        overlayView.addSubview(content)
+        overlayView.backgroundColor = UIColor.clear.withAlphaComponent(0.0)
+        overlayView.isHidden = false
+        
+        content.alpha = 0.0
+        content.isHidden = false
+        
+        view.bringSubview(toFront: self.overlayView)
+        
+        UIView.animate(withDuration: 1, animations: { [weak self] in
+            self?.overlayView.backgroundColor = UIColor.clear.withAlphaComponent(0.6)
+            content.alpha = 1.0
+            content.frame = (self?.contentRect)!
+            
+            localView.frame = (self?.localRect)!
+        }, completion: nil)
+    }
+    
+    func dismiss(content: XTRZoomContentView, localView: UIView) {
+        UIView.animate(withDuration: 1, animations: {
+            self.overlayView.backgroundColor = UIColor.clear.withAlphaComponent(0.0)
+            content.alpha = 0.0
+            content.frame = self.view.convert(localView.frame, to: self.view.window)
+        }, completion: { _ in
+            self.view.sendSubview(toBack: self.overlayView)
+            content.isHidden = true
+            self.overlayView.isHidden = true
+            content.removeFromSuperview()
+        })
+        
+        toggleUserInteractions(flag: true)
+    }
+    
+    @objc func presentCrystalStructureContent(sender: UIButton) {
+        createZoomView(frame: self.crystalStructureView.frame, type: XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView)
+        present(content: crystalStructureContent, localView: localCrystalStructureView)
+    }
+    
+    @objc func dismissCrystalStructureContent(sender: UIGestureRecognizer) {
+        if crystalStructureContent != nil {
+            dismiss(content: crystalStructureContent, localView: crystalStructureView)
+            crystalStructureContent = nil
         }
     }
-
+    
+    @objc func presentShellModelContent(sender: UIButton) {
+        createZoomView(frame: self.shellModelView.frame, type: XTRAtomicStructureViewControllerConfig.StructureViewTypes.kShellModelView)
+        present(content: shellModelContent, localView: localShellModelView)
+    }
+    
+    @objc func dismissShellModelContent(sender: UIGestureRecognizer) {
+        if shellModelContent != nil {
+            dismiss(content: shellModelContent, localView: shellModelView)
+            shellModelContent = nil
+        }
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }

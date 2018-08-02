@@ -9,17 +9,26 @@
 import SpriteKit
 import GameplayKit
 
-let ballRadius: CGFloat = 5.0
-let shellTextXOffset: CGFloat = 12.0
-
 class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     
     var element: XTRElementModel?
-    
+    var ballRadius: CGFloat!
+    var maxRadius: CGFloat!
+    var origX: CGFloat!
+    var shellRadiusOffset: CGFloat!
+    var shellTextXOffset: CGFloat!
+
     init(size: CGSize, element: XTRElementModel) {
         super.init(size: size)
+        
         self.element = element
-    }
+        
+        ballRadius = size.height / 64.4
+        maxRadius = (size.height / 2.0) - ballRadius - ballRadius
+        origX = size.height / 2.0
+        shellRadiusOffset = size.height / 16.1
+        shellTextXOffset = size.height / 24.7
+   }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -36,32 +45,31 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
         let pShellElectrons = (element?.pShellElectrons.isEmpty)! ? 0: Int((element?.pShellElectrons)!)!
         let qShellElectrons = (element?.qShellElectrons.isEmpty)! ? 0: Int((element?.qShellElectrons)!)!
         
-        let maxRadius = (view.frame.size.height / 2) - ballRadius - ballRadius
         let protonLabel = SKLabelNode(text: "\(String(describing: protons!))P")
         let neutronLabel = SKLabelNode(text: "\(String(describing: neutrons!))N")
         
-        protonLabel.position = CGPoint(x: 161, y: 161)
-        protonLabel.fontSize = 12
+        protonLabel.position = CGPoint(x: origX, y: origX + (size.height / 90))
+        protonLabel.fontSize = size.height / 28.8
         protonLabel.horizontalAlignmentMode = .center
-        protonLabel.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        protonLabel.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         protonLabel.fontName = "Verdana-Bold"
-        protonLabel.fontColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        protonLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        neutronLabel.position = CGPoint(x: 161, y: 151)
-        neutronLabel.fontSize = 12
+        neutronLabel.position = CGPoint(x: origX, y: origX - (size.height / 32))
+        neutronLabel.fontSize = size.height / 28.8
         neutronLabel.horizontalAlignmentMode = .center
-        neutronLabel.color = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        neutronLabel.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         neutronLabel.fontName = "Verdana-Bold"
-        neutronLabel.fontColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+        neutronLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
-        backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
         
-        circleOfDots(numberOfCircles: kShellElectrons, radius: maxRadius - 120, color: SKColor.red) // K
-        circleOfDots(numberOfCircles: lShellElectrons, radius: maxRadius - 100, color: SKColor.green) // L
-        circleOfDots(numberOfCircles: mShellElectrons, radius: maxRadius - 80, color: SKColor.blue) // M
-        circleOfDots(numberOfCircles: nShellElectrons, radius: maxRadius - 60, color: SKColor.cyan) // N
-        circleOfDots(numberOfCircles: oShellElectrons, radius: maxRadius - 40, color: SKColor.magenta) // O
-        circleOfDots(numberOfCircles: pShellElectrons, radius: maxRadius - 20, color: SKColor.yellow) // P
+        circleOfDots(numberOfCircles: kShellElectrons, radius: maxRadius - (shellRadiusOffset * 6.0), color: SKColor.red.withAlphaComponent(1.0)) // K
+        circleOfDots(numberOfCircles: lShellElectrons, radius: maxRadius - (shellRadiusOffset * 5.0), color: SKColor.green.withAlphaComponent(1.0)) // L
+        circleOfDots(numberOfCircles: mShellElectrons, radius: maxRadius - (shellRadiusOffset * 4.0), color: SKColor.blue.withAlphaComponent(1.0)) // M
+        circleOfDots(numberOfCircles: nShellElectrons, radius: maxRadius - (shellRadiusOffset * 3.0), color: SKColor.cyan.withAlphaComponent(1.0)) // N
+        circleOfDots(numberOfCircles: oShellElectrons, radius: maxRadius - (shellRadiusOffset * 2.0), color: SKColor.magenta.withAlphaComponent(1.0)) // O
+        circleOfDots(numberOfCircles: pShellElectrons, radius: maxRadius - shellRadiusOffset, color: SKColor.yellow.withAlphaComponent(1.0)) // P
         circleOfDots(numberOfCircles: qShellElectrons, radius: maxRadius, color: SKColor.gray) // Q
 
         addChild(protonLabel)
@@ -70,16 +78,16 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func circleOfDots(numberOfCircles: Int, radius: CGFloat, color: SKColor) {
-        let centerPoint = CGPoint(x: (view?.frame.width)! / 2, y: (view?.frame.height)! / 2)
-        let circlePath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat(0), endAngle: CGFloat(Double.pi * 2), clockwise: true)
+        let centerPoint = CGPoint(x: origX, y: (view?.frame.height)! / 2.0)
+        let circlePath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: 0.0, endAngle: CGFloat.pi * 2.0, clockwise: true)
         let shapeLayer = CAShapeLayer()
         let duration = Double(radius / 3.5)
-        let clockwise = (numberOfCircles % 2 == 0)
+        let clockwise = (numberOfCircles % 2) == 0
         
         shapeLayer.path = circlePath.cgPath
         shapeLayer.fillColor = UIColor.clear.cgColor
-        shapeLayer.strokeColor = UIColor.darkGray.cgColor
-        shapeLayer.lineWidth = 0.5
+        shapeLayer.strokeColor = UIColor.white.cgColor
+        shapeLayer.lineWidth = size.height / 322.0
         shapeLayer.lineDashPattern = [10, 10]
         
         view?.layer.addSublayer(shapeLayer)
@@ -91,15 +99,15 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
             let circleX = radius * cos(CGFloat(angle))
             let circleY = radius * sin(CGFloat(angle))
             let tempPath: UIBezierPath!
- 
+
             circle.strokeColor = SKColor.black
             circle.fillColor = color
-            circle.lineWidth = 0.5
+            circle.lineWidth = size.height / 322.0
             
             if clockwise {
-                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat(angle), endAngle: CGFloat((Double.pi * 2) + angle), clockwise: true)
+                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat(angle), endAngle: (CGFloat.pi * 2) + CGFloat(angle), clockwise: true)
             } else {
-                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: CGFloat((Double.pi * 2) + angle), endAngle: CGFloat(angle), clockwise: false)
+                tempPath = UIBezierPath(arcCenter: centerPoint, radius: radius, startAngle: (CGFloat.pi * 2) + CGFloat(angle), endAngle: CGFloat(angle), clockwise: false)
             }
             
             followCirclePath = SKAction.follow(tempPath.cgPath, asOffset: false, orientToPath: true, duration: duration)
@@ -113,23 +121,23 @@ class XTRShellModelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func addShellLabels() {
-        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 120), text: "K")
-        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 100), text: "L")
-        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 80), text: "M")
-        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 60), text: "N")
-        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 40), text: "O")
-        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset + 20), text: "P")
-        addShellLabel(atLocation: CGPoint(x: 161, y: shellTextXOffset), text: "Q")
+        addShellLabel(atLocation: CGPoint(x: origX, y: shellTextXOffset + (shellRadiusOffset * 6.0)), text: "K")
+        addShellLabel(atLocation: CGPoint(x: origX, y: shellTextXOffset + (shellRadiusOffset * 5.0)), text: "L")
+        addShellLabel(atLocation: CGPoint(x: origX, y: shellTextXOffset + (shellRadiusOffset * 4.0)), text: "M")
+        addShellLabel(atLocation: CGPoint(x: origX, y: shellTextXOffset + (shellRadiusOffset * 3.0)), text: "N")
+        addShellLabel(atLocation: CGPoint(x: origX, y: shellTextXOffset + (shellRadiusOffset * 2.0)), text: "O")
+        addShellLabel(atLocation: CGPoint(x: origX, y: shellTextXOffset + shellRadiusOffset), text: "P")
+        addShellLabel(atLocation: CGPoint(x: origX, y: shellTextXOffset), text: "Q")
     }
     
     func addShellLabel(atLocation: CGPoint, text: String) {
         let aLabel = SKLabelNode(text: text)
         aLabel.position = atLocation
-        aLabel.fontSize = 10
+        aLabel.fontSize = size.height / 32.0
         aLabel.horizontalAlignmentMode = .center
-        aLabel.color = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        aLabel.color = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         aLabel.fontName = "Verdana"
-        aLabel.fontColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
+        aLabel.fontColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         addChild(aLabel)
     }
     

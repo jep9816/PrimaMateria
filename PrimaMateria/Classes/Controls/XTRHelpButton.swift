@@ -18,6 +18,7 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         super.awakeFromNib()
         setupColors()
         NotificationCenter.default.addObserver(self, selector: #selector(changeAppearance(notification:)), name: .notificationAppearanceChanged, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(atomicStructureZoomed(_:)), name: .notificationAtomicStructureZoomed, object: nil)
     }
     
     // MARK: - Internal Methods
@@ -70,12 +71,19 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .notificationAppearanceChanged, object: nil)
+        NotificationCenter.default.removeObserver(self, name: .notificationAtomicStructureZoomed, object: nil)
     }
     
 }
 
 extension XTRHelpButton {
     
+    @objc func atomicStructureZoomed(_ aNotification: Notification) {
+        let flag = aNotification.object as! Bool
+        
+        isUserInteractionEnabled = flag
+    }
+
     @objc func changeAppearance(notification: NSNotification) {
         borderColor = XTRColorFactory.helpButtonBorderColor
     }

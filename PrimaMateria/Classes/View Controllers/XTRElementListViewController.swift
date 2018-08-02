@@ -106,7 +106,7 @@ class XTRElementListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         
         delegate?.closure = { [weak self] (index: Int) -> Void in
-            self?.showElementPanelForElementAtIndex(index: index)
+            self?.showElementPanelForElement(index: index, controller: self!)
         }
     }
     

@@ -53,7 +53,7 @@ class XTRElementBalloonViewController: UIViewController {
         wrapperView.clipsToBounds = true
 
         elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.showElementPanelForElementAtIndex(index: XTRPropertiesStore.atomicNumber)
+            self?.showElementPanelForElement(index: XTRPropertiesStore.atomicNumber, controller: self!)
         }).disposed(by: disposeBag)
     }
     

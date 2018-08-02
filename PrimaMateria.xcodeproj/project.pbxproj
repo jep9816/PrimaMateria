@@ -123,6 +123,7 @@
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
 		80773C7E20FE9840008B7B43 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 80773C7D20FE983F008B7B43 /* .swiftlint.yml */; };
+		807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3EA62112959400534B10 /* XTROverlayView.swift */; };
 		8098771C210A8B0800AB3B00 /* Globe01.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C8210A875400AB3B00 /* Globe01.png */; };
 		8098771D210A8B0800AB3B00 /* Globe02.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876BD210A875200AB3B00 /* Globe02.png */; };
 		8098771E210A8B0800AB3B00 /* Globe03.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876A0210A874A00AB3B00 /* Globe03.png */; };
@@ -195,6 +196,7 @@
 		80987761210A8B0800AB3B00 /* Globe70.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876B9210A874E00AB3B00 /* Globe70.png */; };
 		80987762210A8B0800AB3B00 /* Globe71.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876BA210A874E00AB3B00 /* Globe71.png */; };
 		80987763210A8B0800AB3B00 /* Globe72.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C2210A875300AB3B00 /* Globe72.png */; };
+		80DC21C121111DA400518784 /* XTRZoomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC21C021111DA400518784 /* XTRZoomContentView.swift */; };
 		80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */; };
 		80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */; };
 		AF8083CEBAEA2DD6400DF648 /* Pods_PrimaMateria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */; };
@@ -329,6 +331,7 @@
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		80773C7D20FE983F008B7B43 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8098768C210A874800AB3B00 /* Globe16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe16.png; sourceTree = "<group>"; };
 		8098768D210A874800AB3B00 /* Globe63.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe63.png; sourceTree = "<group>"; };
@@ -402,6 +405,7 @@
 		809876D1210A875500AB3B00 /* Globe11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe11.png; sourceTree = "<group>"; };
 		809876D2210A875500AB3B00 /* Globe05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe05.png; sourceTree = "<group>"; };
 		809876D3210A875500AB3B00 /* Globe12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe12.png; sourceTree = "<group>"; };
+		80DC21C021111DA400518784 /* XTRZoomContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRZoomContentView.swift; sourceTree = "<group>"; };
 		80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewControllerDelegate.swift; sourceTree = "<group>"; };
 		E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
@@ -608,7 +612,9 @@
 			children = (
 				8012802420F0270400ABC706 /* XTRBackgroundView.swift */,
 				8012802520F0270400ABC706 /* XTRCornerImageView.swift */,
+				807E3EA62112959400534B10 /* XTROverlayView.swift */,
 				8012802620F0270400ABC706 /* XTRShadowView.swift */,
+				80DC21C021111DA400518784 /* XTRZoomContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -643,14 +649,14 @@
 			isa = PBXGroup;
 			children = (
 				8012807920F0271F00ABC706 /* Cubic.scn */,
-				8012807A20F0271F00ABC706 /* Monoclinic.scn */,
-				8012807B20F0271F00ABC706 /* CubicFace.scn */,
 				8012807C20F0271F00ABC706 /* CubicBody.scn */,
-				8012807D20F0271F00ABC706 /* Unknown.scn */,
+				8012807B20F0271F00ABC706 /* CubicFace.scn */,
+				8012808020F0271F00ABC706 /* Hexagonal.scn */,
+				8012807A20F0271F00ABC706 /* Monoclinic.scn */,
 				8012807E20F0271F00ABC706 /* Orthorhombic.scn */,
 				8012807F20F0271F00ABC706 /* Rhombohedral.scn */,
-				8012808020F0271F00ABC706 /* Hexagonal.scn */,
 				8012808120F0271F00ABC706 /* Tetragonal.scn */,
+				8012807D20F0271F00ABC706 /* Unknown.scn */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -1039,6 +1045,7 @@
 				8012806F20F0270500ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */,
 				8012805420F0270500ABC706 /* XTRNuclidesIsotopesViewController.swift in Sources */,
 				8012803120F0270500ABC706 /* XTRApplication.swift in Sources */,
+				807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */,
 				8012807420F0270500ABC706 /* main.swift in Sources */,
 				8012804220F0270500ABC706 /* XTRGraphDefinitionModel.swift in Sources */,
 				8012805320F0270500ABC706 /* XTRGeneralButton.swift in Sources */,
@@ -1093,6 +1100,7 @@
 				8012804E20F0270500ABC706 /* XTRTableHeaderButton.swift in Sources */,
 				8012837B20F02D6100ABC706 /* XTRAppearanceManager.swift in Sources */,
 				8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */,
+				80DC21C121111DA400518784 /* XTRZoomContentView.swift in Sources */,
 				8012804020F0270500ABC706 /* XTRIsotopeModel.swift in Sources */,
 				8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */,
 				8012837F20F02D6100ABC706 /* XTRAppearanceManagerStandard.swift in Sources */,

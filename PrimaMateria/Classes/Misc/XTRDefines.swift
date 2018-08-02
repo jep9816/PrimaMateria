@@ -143,6 +143,7 @@ extension Notification.Name {
     static let inspectorDismissedNotification = Notification.Name("inspectorDismissedNotification")
     static let seriesColorChangedNotification = Notification.Name("seriesColorChangedNotification")
     static let notificationAppearanceChanged = NSNotification.Name("notificationAppearanceChanged")
+    static let notificationAtomicStructureZoomed = NSNotification.Name("notificationAtomicStructureZoomed")
 }
 
 // MARK: - Series Text

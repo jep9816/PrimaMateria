@@ -87,7 +87,7 @@ extension String {
 
 extension UIViewController {
     
-    func showElementPanelForElementAtIndex(index: Int) {
+    func showElementPanelForElement(index: Int, controller: UIViewController) {
         XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = index
         
@@ -97,7 +97,7 @@ extension UIViewController {
         elementInspector.modalPresentationStyle = .fullScreen
         elementInspector.modalTransitionStyle = .crossDissolve
         
-        present(elementInspector, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+       controller.present(elementInspector, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
     
 }

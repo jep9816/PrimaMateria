@@ -279,8 +279,33 @@ extension XTRElementModel {
     }
     
     var crystalStructureScene: SCNScene {
+        //let scene = SCNScene()
         let crystalStructure = self.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
-        return SCNScene(named: crystalStructure + ".scn")!
+        let scene = SCNScene(named: crystalStructure + ".scn")!
+        //let boxGeometry = SCNBox(width: 100.0, height: 100.0, length: 100.0, chamferRadius: 1.0)
+        //let boxNode = SCNNode(geometry: boxGeometry)
+        
+        //scene.rootNode.addChildNode(boxNode)
+
+//        let ambientLightNode = SCNNode()
+//        ambientLightNode.light = SCNLight()
+//        ambientLightNode.light!.type = .ambient
+//        ambientLightNode.light!.color = UIColor.blue.withAlphaComponent(0.5)
+//        scene.rootNode.addChildNode(ambientLightNode)
+//
+//        let omniLightNode = SCNNode()
+//        omniLightNode.light = SCNLight()
+//        omniLightNode.light!.type = .omni
+//        omniLightNode.light!.color = UIColor(white: 0.75, alpha: 1.0)
+//        omniLightNode.position = SCNVector3Make(0, 100, 100)
+//        scene.rootNode.addChildNode(omniLightNode)
+//
+//        let cameraNode = SCNNode()
+//        cameraNode.camera = SCNCamera()
+//        cameraNode.position = SCNVector3Make(0, 0, 200)
+//        scene.rootNode.addChildNode(cameraNode)
+        
+        return scene
     }
     
     var shellModelScene: XTRShellModelScene {

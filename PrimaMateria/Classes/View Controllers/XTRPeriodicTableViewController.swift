@@ -95,7 +95,7 @@ class XTRPeriodicTableViewController: UIViewController {
             if XTRPropertiesStore.elementBubblesState {
                 showPopupForButton(sender)
             } else {
-                showElementPanelForElementAtIndex(index: sender.tag)
+                showElementPanelForElement(index: sender.tag, controller: self)
             }
         }
     }
