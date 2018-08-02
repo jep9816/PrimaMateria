@@ -1,15 +1,16 @@
 html body {
     color: #000000;
-    font-family: Verdana, sans-serif, Arial, Geneva,serif;
+    font-family: Helvetica, Verdana, sans-serif, Arial, Geneva, serif;
     font-size: 12px; 
     margin: 0;
     padding: 3px;
     background-color: #dddd00;
+    width: 100%;
 }
 
 #header {
     color: #000000;
-    font-size: 18px; 
+    font-size: 20px;
     font-weight: bold;
 }
 
@@ -91,6 +92,7 @@ h3 a {
 table {
     color: #ffffff;
     background-color: #cccccc;
+    width: 100%;
 }
 
 table tr td {
