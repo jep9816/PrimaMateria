@@ -104,7 +104,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="PrimaMateria" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PrimaMateria" TARGET_NAME="PrimaMateria" CONFIG_NAME="Debug" SCHEME_NAME="PrimaMateria" IS_LOCATION_SIMULATION_ALLOWED="true" RUN_TARGET_PROJECT_NAME="PrimaMateria" RUN_TARGET_NAME="PrimaMateria" MAKE_ACTIVE="TRUE">
+    <configuration name="CorePlot" type="AppleRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Pods" TARGET_NAME="CorePlot" CONFIG_NAME="Debug" SCHEME_NAME="CorePlot" IS_LOCATION_SIMULATION_ALLOWED="true" MAKE_ACTIVE="TRUE">
       <EXTENSION ID="org.jetbrains.appcode.reveal.RevealRunConfigurationExtension">
         <REVEAL_SETTINGS autoInject="false" autoInstall="true" askToEnableAutoInstall="true" />
       </EXTENSION>

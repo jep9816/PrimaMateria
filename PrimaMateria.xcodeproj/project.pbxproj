@@ -204,6 +204,7 @@
 		80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */; };
 		80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */; };
 		AF8083CEBAEA2DD6400DF648 /* Pods_PrimaMateria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */; };
+		BE7E481F2113A4F000A9F2E1 /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = BE7E481E2113A4EF00A9F2E1 /* Shaders */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -416,6 +417,7 @@
 		80DC21C021111DA400518784 /* XTRZoomContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRZoomContentView.swift; sourceTree = "<group>"; };
 		80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewControllerDelegate.swift; sourceTree = "<group>"; };
+		BE7E481E2113A4EF00A9F2E1 /* Shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Shaders; sourceTree = "<group>"; };
 		E6F63BA1ABC479F40DD2751E /* Pods-PrimaMateria.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -648,7 +650,11 @@
 				8012838A20F032A000ABC706 /* Misc */,
 				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
 				8012807820F0271F00ABC706 /* Scenes */,
+<<<<<<< HEAD
 				801E3CFD21135D8E004DE10E /* Shaders */,
+=======
+				BE7E481E2113A4EF00A9F2E1 /* Shaders */,
+>>>>>>> 560a288a945f78f7847d6af82ace4b6f9376822e
 				8012838520F02F9B00ABC706 /* SupportingFiles */,
 			);
 			path = Resources;
@@ -907,6 +913,7 @@
 				8098774C210A8B0800AB3B00 /* Globe49.png in Resources */,
 				80987746210A8B0800AB3B00 /* Globe43.png in Resources */,
 				80987756210A8B0800AB3B00 /* Globe59.png in Resources */,
+				BE7E481F2113A4F000A9F2E1 /* Shaders in Resources */,
 				8012835920F0272000ABC706 /* GraphChoice.storyboard in Resources */,
 				8098774F210A8B0800AB3B00 /* Globe52.png in Resources */,
 				8098774E210A8B0800AB3B00 /* Globe51.png in Resources */,
