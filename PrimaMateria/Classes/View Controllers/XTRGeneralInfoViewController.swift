@@ -66,7 +66,6 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         let storyboard = UIStoryboard(name: StoryBoardName.Wikipedia, bundle: nil)
         let wikipediaViewController: XTRWikipediaViewController = storyboard.instantiateViewController(withIdentifier: XTRWikipediaViewController.nameOfClass) as! XTRWikipediaViewController
         
-        wikipediaViewController.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
         wikipediaViewController.modalPresentationStyle = .formSheet
         wikipediaViewController.modalTransitionStyle = .crossDissolve
         wikipediaViewController.elementName = element?.name

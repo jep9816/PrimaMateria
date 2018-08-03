@@ -264,7 +264,6 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
 
             shellModelContent.wrapper.addSubview(localShellModelView)
         }
-        
     }
     
     func toggleUserInteractions(flag: Bool) {
