@@ -453,6 +453,7 @@
 				80127C0F20F0253000ABC706 /* Products */,
 				199983B141A801B329B6C872 /* Pods */,
 				F7E587BE9504334DFC476A2E /* Frameworks */,
+				80DA453B2113F2AE00707AE6 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -644,18 +645,14 @@
 			isa = PBXGroup;
 			children = (
 				8012838620F02F9B00ABC706 /* ElementTipHelp */,
-				809875FB210A867400AB3B00 /* globe */,
+				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
+				8012838520F02F9B00ABC706 /* SupportingFiles */,
 				80127C2520F0268B00ABC706 /* Images.xcassets */,
+				809875FB210A867400AB3B00 /* globe */,
 				801281E020F0272000ABC706 /* Interfaces */,
 				8012838A20F032A000ABC706 /* Misc */,
-				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
 				8012807820F0271F00ABC706 /* Scenes */,
-<<<<<<< HEAD
 				801E3CFD21135D8E004DE10E /* Shaders */,
-=======
-				BE7E481E2113A4EF00A9F2E1 /* Shaders */,
->>>>>>> 560a288a945f78f7847d6af82ace4b6f9376822e
-				8012838520F02F9B00ABC706 /* SupportingFiles */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -807,6 +804,14 @@
 				809876C2210A875300AB3B00 /* Globe72.png */,
 			);
 			path = globe;
+			sourceTree = "<group>";
+		};
+		80DA453B2113F2AE00707AE6 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				BE7E481E2113A4EF00A9F2E1 /* Shaders */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		F7E587BE9504334DFC476A2E /* Frameworks */ = {
