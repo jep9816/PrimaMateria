@@ -223,15 +223,12 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         
         shellModelView.isHidden = true
         overlayView = XTROverlayView(frame: CGRect(x: rect.origin.x, y: rect.origin.y - 148, width: rect.size.width, height: rect.size.height))
-
+        overlayView.isUserInteractionEnabled = true
+        
         view.addSubview(overlayView)
         view.sendSubview(toBack: overlayView)
     }
     
-    @objc func doIt(sender: Any?) {
-        print("doit  tapped")
-    }
-
     func createZoomView(frame: CGRect, type: Int) {
         let rect = self.view.convert(self.shellModelView.frame, to: self.view.window)
         
@@ -245,9 +242,8 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
             localCrystalStructureView.scene = element?.crystalStructureScene
             localCrystalStructureView.allowsCameraControl = true
             localCrystalStructureView.autoenablesDefaultLighting = true
-            localCrystalStructureView.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
 
-            crystalStructureContent.wrapper.addSubview(localCrystalStructureView)
+            crystalStructureContent.addContent(localCrystalStructureView)
         } else {
             let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissShellModelContent(sender:)))
             let titleString = "\(element?.name ?? "")) - \(NSLocalizedString("shellModel", comment: ""))"
@@ -260,9 +256,8 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
             localShellModelView = SKView()
             localShellModelView.frame = localRect
             localShellModelView.presentScene(localShellModelScene)
-            localShellModelView.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
-
-            shellModelContent.wrapper.addSubview(localShellModelView)
+            
+            shellModelContent.addContent(localShellModelView)
         }
     }
     
@@ -273,6 +268,7 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     func present(content: XTRZoomContentView, localView: UIView) {
         toggleUserInteractions(flag: false)
+        
         overlayView.addSubview(content)
         overlayView.backgroundColor = UIColor.clear.withAlphaComponent(0.0)
         overlayView.isHidden = false

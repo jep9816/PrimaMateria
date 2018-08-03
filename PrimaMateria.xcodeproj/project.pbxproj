@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0853E20B2114D20100CA092B /* SHKEmbossColor.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E2072114D20100CA092B /* SHKEmbossColor.fsh */; };
+		0853E20C2114D20100CA092B /* SHKEmbossGray.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E2082114D20100CA092B /* SHKEmbossGray.fsh */; };
+		0853E20D2114D20100CA092B /* SHKLightGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E2092114D20100CA092B /* SHKLightGrid.fsh */; };
+		0853E20E2114D20100CA092B /* SHKWater.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E20A2114D20100CA092B /* SHKWater.fsh */; };
 		08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB996C20F8D4C800711159 /* XTRPageControl.swift */; };
 		80127C2B20F0268C00ABC706 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80127C2520F0268B00ABC706 /* Images.xcassets */; };
 		8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD620F0270400ABC706 /* MBProgressHUD.m */; };
@@ -122,10 +126,6 @@
 		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
-		801E3CFF21135D8E004DE10E /* SHKEmbossGray.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 801E3CFE21135D8E004DE10E /* SHKEmbossGray.fsh */; };
-		801E3D0121136260004DE10E /* SHKLightGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 801E3D0021136260004DE10E /* SHKLightGrid.fsh */; };
-		801E3D0321136370004DE10E /* SHKWater.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 801E3D0221136370004DE10E /* SHKWater.fsh */; };
-		801E3D05211364D5004DE10E /* SHKEmbossColor.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 801E3D04211364D5004DE10E /* SHKEmbossColor.fsh */; };
 		80773C7E20FE9840008B7B43 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 80773C7D20FE983F008B7B43 /* .swiftlint.yml */; };
 		807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3EA62112959400534B10 /* XTROverlayView.swift */; };
 		8098771C210A8B0800AB3B00 /* Globe01.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C8210A875400AB3B00 /* Globe01.png */; };
@@ -204,10 +204,13 @@
 		80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */; };
 		80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */; };
 		AF8083CEBAEA2DD6400DF648 /* Pods_PrimaMateria.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */; };
-		BE7E481F2113A4F000A9F2E1 /* Shaders in Resources */ = {isa = PBXBuildFile; fileRef = BE7E481E2113A4EF00A9F2E1 /* Shaders */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0853E2072114D20100CA092B /* SHKEmbossColor.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKEmbossColor.fsh; sourceTree = "<group>"; };
+		0853E2082114D20100CA092B /* SHKEmbossGray.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKEmbossGray.fsh; sourceTree = "<group>"; };
+		0853E2092114D20100CA092B /* SHKLightGrid.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKLightGrid.fsh; sourceTree = "<group>"; };
+		0853E20A2114D20100CA092B /* SHKWater.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKWater.fsh; sourceTree = "<group>"; };
 		08AB996C20F8D4C800711159 /* XTRPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPageControl.swift; sourceTree = "<group>"; };
 		1732C3DCFE44437A23AA8F9D /* Pods-PrimaMateria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.release.xcconfig"; sourceTree = "<group>"; };
 		46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -334,10 +337,6 @@
 		8012838420F02F9B00ABC706 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
-		801E3CFE21135D8E004DE10E /* SHKEmbossGray.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKEmbossGray.fsh; sourceTree = "<group>"; };
-		801E3D0021136260004DE10E /* SHKLightGrid.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKLightGrid.fsh; sourceTree = "<group>"; };
-		801E3D0221136370004DE10E /* SHKWater.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKWater.fsh; sourceTree = "<group>"; };
-		801E3D04211364D5004DE10E /* SHKEmbossColor.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKEmbossColor.fsh; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		80773C7D20FE983F008B7B43 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
@@ -436,6 +435,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0853E2062114D20100CA092B /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				0853E2072114D20100CA092B /* SHKEmbossColor.fsh */,
+				0853E2082114D20100CA092B /* SHKEmbossGray.fsh */,
+				0853E2092114D20100CA092B /* SHKLightGrid.fsh */,
+				0853E20A2114D20100CA092B /* SHKWater.fsh */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		199983B141A801B329B6C872 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -644,6 +654,7 @@
 		8012807520F0271F00ABC706 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0853E2062114D20100CA092B /* Shaders */,
 				8012838620F02F9B00ABC706 /* ElementTipHelp */,
 				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
 				8012838520F02F9B00ABC706 /* SupportingFiles */,
@@ -652,7 +663,6 @@
 				801281E020F0272000ABC706 /* Interfaces */,
 				8012838A20F032A000ABC706 /* Misc */,
 				8012807820F0271F00ABC706 /* Scenes */,
-				801E3CFD21135D8E004DE10E /* Shaders */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -714,17 +724,6 @@
 				8012808C20F0271F00ABC706 /* Settings.bundle */,
 			);
 			name = Misc;
-			sourceTree = "<group>";
-		};
-		801E3CFD21135D8E004DE10E /* Shaders */ = {
-			isa = PBXGroup;
-			children = (
-				801E3D04211364D5004DE10E /* SHKEmbossColor.fsh */,
-				801E3CFE21135D8E004DE10E /* SHKEmbossGray.fsh */,
-				801E3D0021136260004DE10E /* SHKLightGrid.fsh */,
-				801E3D0221136370004DE10E /* SHKWater.fsh */,
-			);
-			path = Shaders;
 			sourceTree = "<group>";
 		};
 		809875FB210A867400AB3B00 /* globe */ = {
@@ -908,7 +907,6 @@
 				80127C2B20F0268C00ABC706 /* Images.xcassets in Resources */,
 				80987762210A8B0800AB3B00 /* Globe71.png in Resources */,
 				80987724210A8B0800AB3B00 /* Globe09.png in Resources */,
-				801E3D0121136260004DE10E /* SHKLightGrid.fsh in Resources */,
 				8098772E210A8B0800AB3B00 /* Globe19.png in Resources */,
 				8012836C20F0272000ABC706 /* MainStoryboard.storyboard in Resources */,
 				80987732210A8B0800AB3B00 /* Globe23.png in Resources */,
@@ -918,7 +916,6 @@
 				8098774C210A8B0800AB3B00 /* Globe49.png in Resources */,
 				80987746210A8B0800AB3B00 /* Globe43.png in Resources */,
 				80987756210A8B0800AB3B00 /* Globe59.png in Resources */,
-				BE7E481F2113A4F000A9F2E1 /* Shaders in Resources */,
 				8012835920F0272000ABC706 /* GraphChoice.storyboard in Resources */,
 				8098774F210A8B0800AB3B00 /* Globe52.png in Resources */,
 				8098774E210A8B0800AB3B00 /* Globe51.png in Resources */,
@@ -927,7 +924,6 @@
 				8098773C210A8B0800AB3B00 /* Globe33.png in Resources */,
 				80987729210A8B0800AB3B00 /* Globe14.png in Resources */,
 				8012835B20F0272000ABC706 /* Info.storyboard in Resources */,
-				801E3D05211364D5004DE10E /* SHKEmbossColor.fsh in Resources */,
 				801281FC20F0272000ABC706 /* Orthorhombic.scn in Resources */,
 				80987739210A8B0800AB3B00 /* Globe30.png in Resources */,
 				8098773B210A8B0800AB3B00 /* Globe32.png in Resources */,
@@ -938,6 +934,7 @@
 				801281F820F0272000ABC706 /* Monoclinic.scn in Resources */,
 				80987748210A8B0800AB3B00 /* Globe45.png in Resources */,
 				8098772D210A8B0800AB3B00 /* Globe18.png in Resources */,
+				0853E20B2114D20100CA092B /* SHKEmbossColor.fsh in Resources */,
 				8098775A210A8B0800AB3B00 /* Globe63.png in Resources */,
 				8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */,
 				80987735210A8B0800AB3B00 /* Globe26.png in Resources */,
@@ -964,13 +961,13 @@
 				8012836520F0272000ABC706 /* ColorPicker.storyboard in Resources */,
 				8012820720F0272000ABC706 /* PrimaMateria.scnassets in Resources */,
 				8012838820F02F9B00ABC706 /* SupportingFiles in Resources */,
-				801E3D0321136370004DE10E /* SHKWater.fsh in Resources */,
 				8012836320F0272000ABC706 /* AtomicStructure.storyboard in Resources */,
 				801281FD20F0272000ABC706 /* Rhombohedral.scn in Resources */,
 				8012836820F0272000ABC706 /* PeriodicTable.storyboard in Resources */,
 				80987727210A8B0800AB3B00 /* Globe12.png in Resources */,
 				80987759210A8B0800AB3B00 /* Globe62.png in Resources */,
 				80987760210A8B0800AB3B00 /* Globe69.png in Resources */,
+				0853E20C2114D20100CA092B /* SHKEmbossGray.fsh in Resources */,
 				80987722210A8B0800AB3B00 /* Globe07.png in Resources */,
 				8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */,
 				8098772F210A8B0800AB3B00 /* Globe20.png in Resources */,
@@ -978,12 +975,12 @@
 				80987721210A8B0800AB3B00 /* Globe06.png in Resources */,
 				80987734210A8B0800AB3B00 /* Globe25.png in Resources */,
 				8098774D210A8B0800AB3B00 /* Globe50.png in Resources */,
-				801E3CFF21135D8E004DE10E /* SHKEmbossGray.fsh in Resources */,
 				8012820820F0272000ABC706 /* Settings.bundle in Resources */,
 				80987730210A8B0800AB3B00 /* Globe21.png in Resources */,
 				8012835820F0272000ABC706 /* MainStyle.css in Resources */,
 				80987749210A8B0800AB3B00 /* Globe46.png in Resources */,
 				8098775F210A8B0800AB3B00 /* Globe68.png in Resources */,
+				0853E20D2114D20100CA092B /* SHKLightGrid.fsh in Resources */,
 				8012826820F0272000ABC706 /* LoadFailure.html in Resources */,
 				80987725210A8B0800AB3B00 /* Globe10.png in Resources */,
 				80987745210A8B0800AB3B00 /* Globe42.png in Resources */,
@@ -998,6 +995,7 @@
 				8012836420F0272000ABC706 /* ElementInspector.storyboard in Resources */,
 				80987737210A8B0800AB3B00 /* Globe28.png in Resources */,
 				80987736210A8B0800AB3B00 /* Globe27.png in Resources */,
+				0853E20E2114D20100CA092B /* SHKWater.fsh in Resources */,
 				80987738210A8B0800AB3B00 /* Globe29.png in Resources */,
 				8098771C210A8B0800AB3B00 /* Globe01.png in Resources */,
 				80987720210A8B0800AB3B00 /* Globe05.png in Resources */,

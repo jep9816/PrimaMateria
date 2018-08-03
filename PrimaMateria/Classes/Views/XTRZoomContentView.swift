@@ -16,13 +16,18 @@ struct XTRZoomContentViewConfig {
 class XTRZoomContentView: UIView {
     var label: UILabel!
     var wrapper: UIView!
+    var content: UIView!
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
 
     init(frame: CGRect, title: String, gesture: UITapGestureRecognizer?) {
         super.init(frame: frame)
-
+        
         wrapper = UIView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height))
         label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: XTRZoomContentViewConfig.viewWidth, height: 32.0))
-        addGestureRecognizer(gesture!)
+        //addGestureRecognizer(gesture!)
         
         backgroundColor = UIColor.clear.withAlphaComponent(0.0)
         layer.shadowOffset = CGSize(width: 8.0, height: 8.0)
@@ -30,6 +35,7 @@ class XTRZoomContentView: UIView {
         layer.shadowRadius = 8.0
         layer.shadowOpacity = 0.5
         layer.masksToBounds = false
+        isUserInteractionEnabled = true
 
         wrapper.borderColor = UIColor.white
         wrapper.borderWidth = 3.0
@@ -38,6 +44,7 @@ class XTRZoomContentView: UIView {
         wrapper.backgroundColor = UIColor.clear.withAlphaComponent(0.0)
         wrapper.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         wrapper.translatesAutoresizingMaskIntoConstraints = true
+        wrapper.isUserInteractionEnabled = true
 
         label.text = title
         label.textColor = XTRColorFactoryClassic.white
@@ -59,8 +66,19 @@ class XTRZoomContentView: UIView {
         wrapper.addSubview(label)
     }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+    func addContent(_ view: UIView) {
+        wrapper.addSubview(view)
+        view.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
+        view.isUserInteractionEnabled = true
+
+//        let button = UIButton(type: .infoLight)
+//        button.addTarget(self, action: #selector(doIt(sender:)), for: .touchUpInside)
+//        button.frame = CGRect(x: 5, y: 5, width: 48, height: 48)
+//        view.addSubview(button)
     }
     
+    @objc func doIt(sender: Any?) {
+        print("doit tapped")
+    }
+
 }
