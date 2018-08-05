@@ -80,9 +80,28 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     
     // MARK: - Miscellaneous Methods
     
+    override func setupUIForAnimation(element: XTRElementModel) {
+        super.setupUIForAnimation(element: element)
+        
+        setupLabels(element: element)
+    }
+    
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
         
+        setupSegmentedControlUI()
+        setupLabels(element: element)
+    }
+    
+    func setupSegmentedControlUI() {
+        segmentedControl.cornerRadius = VIEW_CORNER_RADIUS
+        segmentedControl.masksToBounds = true
+        segmentedControl.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        segmentedControl.setTitle(NSLocalizedString("physicalProperties", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("chemicalProperties", comment: ""), forSegmentAt: 1)
+    }
+
+    func setupLabels(element: XTRElementModel) {
         let vaporPressure = element.vaporPressure!
         
         atomicMassLabel.text = element.atomicMassAggregate
@@ -133,15 +152,9 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         ionizationPotentialThirdLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
         qualitativeSolubilityLabel.text = element.value(forKeyPath: ELEMENT_QUALITATIVE_SOLUBILITY) as? String
         valenceElectronPotentialLabel.text = element.value(forKeyPath: ELEMENT_VALENCE_ELECTRON_POTENTIAL) as? String
-        }
+    }
     
-    func setupSegmentedControlUI() {
-        let rect = segmentedControl.frame
-        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
-
-        segmentedControl.setTitle(NSLocalizedString("physicalProperties", comment: ""), forSegmentAt: 0)
-        segmentedControl.setTitle(NSLocalizedString("chemicalProperties", comment: ""), forSegmentAt: 1)
-        segmentedControl.frame = newRect
+    func setupRx() {
         segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
             switch selectedSegmentIndex {
             case PropertiesViewTypes.kChemicalPropertiesView:
@@ -155,7 +168,7 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
             }
         }).disposed(by: disposeBag)
     }
-
+    
     // MARK: - Action Methods
     
     // MARK: - View Management Methods
@@ -163,8 +176,7 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSegmentedControlUI()
-        
+        setupRx()
         chemicalPropertiesView.frame = swapView.frame
         chemicalPropertiesView.bounds = swapView.bounds
         chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 500)

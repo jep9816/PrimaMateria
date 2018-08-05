@@ -321,7 +321,7 @@
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ZmD-U7-NsZ">
-                                                <rect key="frame" x="79" y="177" width="141" height="29"/>
+                                                <rect key="frame" x="69" y="177" width="151" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <segments>
                                                     <segment title="Classic"/>
@@ -379,6 +379,7 @@
                         <outlet property="elementBubbleSwitch" destination="OMO-Jc-daF" id="SBV-2P-eHd"/>
                         <outlet property="navigationBar" destination="V6t-5c-gtg" id="NRV-QH-Tsu"/>
                         <outlet property="resetPreferencesButton" destination="gtd-nd-r9v" id="TjH-fP-Clh"/>
+                        <outlet property="segmentedControl" destination="ZmD-U7-NsZ" id="Oqf-Wy-Dvs"/>
                         <outlet property="seriesActinideButton" destination="Mqf-4w-AYh" id="Ngb-9V-lY1"/>
                         <outlet property="seriesAlkaliEarthMetalButton" destination="zSr-Gs-i0a" id="dw5-RW-mCc"/>
                         <outlet property="seriesAlkaliMetalButton" destination="Mww-aS-dwa" id="oNh-mI-swh"/>
@@ -391,7 +392,6 @@
                         <outlet property="seriesTransitionMetalButton" destination="H7H-ue-WGL" id="hu1-2F-bUD"/>
                         <outlet property="showTransitionsBubbleSwitch" destination="Whp-l8-Va7" id="LYr-W6-ERn"/>
                         <outlet property="splashScreenSwitch" destination="qG9-qk-aot" id="AEL-Qm-6Ku"/>
-                        <outlet property="styleControl" destination="ZmD-U7-NsZ" id="Oqf-Wy-Dvs"/>
                         <outlet property="versionLabel" destination="5UU-Kf-jb0" id="jnb-dt-14b"/>
                         <outlet property="view" destination="4Of-Im-h85" id="1IY-7O-A5B"/>
                         <outlet property="webView" destination="MrN-ac-K4n" id="ttB-J4-C0X"/>

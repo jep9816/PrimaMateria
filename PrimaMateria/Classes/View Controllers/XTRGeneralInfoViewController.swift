@@ -34,28 +34,45 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     
     // MARK: - Internal Methods
     
-    func assignGeneralInfo() {
-        let path = element!.pathForGeneralInfoDoc()
-        
-        if !path.isEmpty {
-            let url = URL(fileURLWithPath: path)
-            let request = URLRequest(url: url)
-
-            webView.load(request)
-        }
-    }
-    
     // MARK: - Miscellaneous Methods
     
+    override func setupUIForAnimation(element: XTRElementModel) {
+        super.setupUIForAnimation(element: element)
+        
+        setupLabels(element: element)
+        setupGeneralInfo(element: element)
+    }
+
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
         
+        setupLabels(element: element)
+        setupGeneralInfo(element: element)
+    }
+    
+    func setupLabels(element: XTRElementModel) {
         discovererLabel.text = element.value(forKeyPath: ELEMENT_DISCOVERER) as? String
         discoveryLocationLabel.text = element.value(forKeyPath: ELEMENT_DISCOVERY_LOCATION) as? String
         discoveryYearLabel.text = element.value(forKeyPath: ELEMENT_DISCOVERY_YEAR) as? String
         abundanceCrustLabel.text = "\(element.value(forKeyPath: ELEMENT_ABUNDANCE_CRUST)!)"
         abundanceSeaLabel.text = "\(element.value(forKeyPath: ELEMENT_ABUNDANCE_SEA)!)"
-        assignGeneralInfo()
+    }
+    
+    func setupGeneralInfo(element: XTRElementModel) {
+        let path = element.pathForGeneralInfoDoc()
+        
+        if !path.isEmpty {
+            let url = URL(fileURLWithPath: path)
+            let request = URLRequest(url: url)
+            
+            webView.load(request)
+        }
+    }
+
+    func setupRx() {
+        showWikiButton.rx.tap.subscribe(onNext: { [weak self] _ in
+            self?.showWikiView()
+        }).disposed(by: disposeBag)
     }
     
     // MARK: - Action Methods
@@ -74,9 +91,9 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     }
     
     override func viewDidLoad() {
-        showWikiButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.showWikiView()
-        }).disposed(by: disposeBag)
+        super.viewDidLoad()
+        
+        setupRx()
     }
     
     override var shouldAutorotate: Bool {

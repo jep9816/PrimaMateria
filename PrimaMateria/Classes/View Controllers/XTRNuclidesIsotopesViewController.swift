@@ -29,9 +29,19 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
         
     // MARK: - Misc Methods
     
+    override func setupUIForAnimation(element: XTRElementModel) {
+        super.setupUIForAnimation(element: element)
+        
+        setupTableView(element: element)
+    }
+    
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
         
+        setupTableView(element: element)
+    }
+    
+    func setupTableView(element: XTRElementModel) {
         if tableView != nil {
             tableView!.removeFromSuperview()
             tableView = nil
@@ -39,7 +49,7 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
         
         nuclidesAndIsotopesArray = element.nuclidesAndIsotopes
         tableView = UITableView(frame: swapView.frame, style: .plain)
-
+        
         tableView!.alwaysBounceVertical = false
         tableView!.alwaysBounceHorizontal = false
         tableView!.dataSource = delegate

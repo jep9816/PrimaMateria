@@ -14,28 +14,24 @@ struct XTRZoomContentViewConfig {
 }
 
 class XTRZoomContentView: UIView {
-    var label: UILabel!
-    var wrapper: UIView!
-    var content: UIView!
+    @IBOutlet var label: UILabel!
+    @IBOutlet var wrapper: UIView!
+    @IBOutlet var content: UIView!
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
 
-    init(frame: CGRect, title: String, gesture: UITapGestureRecognizer?) {
-        super.init(frame: frame)
-        
-        wrapper = UIView(frame: CGRect(x: 0.0, y: 0.0, width: frame.size.width, height: frame.size.height))
-        label = UILabel(frame: CGRect(x: 0.0, y: 0.0, width: XTRZoomContentViewConfig.viewWidth, height: 32.0))
-        //addGestureRecognizer(gesture!)
+    override func awakeFromNib() {
+        super.awakeFromNib()
         
         backgroundColor = UIColor.clear.withAlphaComponent(0.0)
+        
         layer.shadowOffset = CGSize(width: 8.0, height: 8.0)
         layer.shadowColor = UIColor.black.cgColor
         layer.shadowRadius = 8.0
         layer.shadowOpacity = 0.5
         layer.masksToBounds = false
-        isUserInteractionEnabled = true
 
         wrapper.borderColor = UIColor.white
         wrapper.borderWidth = 3.0
@@ -44,41 +40,39 @@ class XTRZoomContentView: UIView {
         wrapper.backgroundColor = UIColor.clear.withAlphaComponent(0.0)
         wrapper.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         wrapper.translatesAutoresizingMaskIntoConstraints = true
-        wrapper.isUserInteractionEnabled = true
 
-        label.text = title
-        label.textColor = XTRColorFactoryClassic.white
-        label.backgroundColor = XTRColorFactoryClassic.inkwell
-        label.tintColor = XTRColorFactoryClassic.galleryColor
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20.0)
-        label.isEnabled = false
-        label.shadowOffset = CGSize(width: 5.0, height: 5.0)
-        label.shadowColor = UIColor.lightGray
-        label.shadowRadius = 5.0
-        label.shadowOpacity = 0.5
+        
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            label.textColor = XTRColorFactoryClassic.white
+            label.backgroundColor = XTRColorFactoryClassic.inkwell
+        } else {
+            label.textColor = XTRColorFactoryStandard.ghost
+            label.backgroundColor = XTRColorFactoryStandard.standardRedColor
+            label.layer.shadowColor = XTRColorFactoryStandard.darkText.cgColor
+            label.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
+            label.layer.shadowRadius = 3.0
+            label.layer.shadowOpacity = 1.0
+            label.layer.masksToBounds = false
+        }
+        
         label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         label.translatesAutoresizingMaskIntoConstraints = true
-        label.borderColor = UIColor.white
+        label.borderColor = XTRAppearanceManager.manager.isClassicAppearance() ? XTRColorFactoryClassic.white : XTRColorFactoryStandard.ghost
         label.borderWidth = 2.0
-
-        addSubview(wrapper)
-        wrapper.addSubview(label)
     }
     
     func addContent(_ view: UIView) {
         wrapper.addSubview(view)
+        
         view.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
         view.isUserInteractionEnabled = true
-
-//        let button = UIButton(type: .infoLight)
-//        button.addTarget(self, action: #selector(doIt(sender:)), for: .touchUpInside)
-//        button.frame = CGRect(x: 5, y: 5, width: 48, height: 48)
-//        view.addSubview(button)
     }
     
-    @objc func doIt(sender: Any?) {
-        print("doit tapped")
+    var title: String {
+        get { return label.text! }
+        set { label.text = newValue }
     }
-
+    
 }

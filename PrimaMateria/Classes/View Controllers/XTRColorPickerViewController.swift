@@ -153,6 +153,7 @@ class XTRColorPickerViewController: UIViewController {
         alphaSlider = nil
         previewView = nil
         colorTitle = nil
+        selectColorButton = nil
     }
     
 }

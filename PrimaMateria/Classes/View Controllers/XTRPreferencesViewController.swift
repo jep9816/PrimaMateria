@@ -34,7 +34,7 @@ class XTRPreferencesViewController: UIViewController {
     @IBOutlet var showTransitionsBubbleSwitch: UISwitch!
     @IBOutlet var splashScreenSwitch: UISwitch!
     @IBOutlet var webView: WKWebView!
-    @IBOutlet var styleControl: UISegmentedControl!
+    @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var navigationBar: UINavigationBar!
     
     var disposeBag = DisposeBag()
@@ -152,32 +152,8 @@ class XTRPreferencesViewController: UIViewController {
         NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
     }
     
-    // MARK: - View Management Methods
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        title = NSLocalizedString("preferences", comment: "")
-        navigationBar.topItem?.title = title
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
-        
-        loadDocument("Credits.rtf", inView: webView)
-        loadUserDefaults()
-        populateSeriesColors()
-        
-        appNameLabel.text = Bundle.main.appNameString
-        versionLabel.text = Bundle.main.appVersionString
-        cpyRightLabel.text = Bundle.main.copywriteString
-        
-        styleControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0: 1
-        
-        navigationController?.navigationBar.prefersLargeTitles = true
-        setupRx()
-    }
-    
-    func setupRx() {
-        styleControl.rx.value
+     func setupRx() {
+        segmentedControl.rx.value
             .asObservable()
             .subscribe(onNext: { newValue in
                 let appearanceName = (newValue == 0) ? XTRAppearanceType.classic: XTRAppearanceType.standard
@@ -246,6 +222,32 @@ class XTRPreferencesViewController: UIViewController {
         presentationController?.sourceRect = sender.frame
     }
     
+    // MARK: - View Management Methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        title = NSLocalizedString("preferences", comment: "")
+        navigationBar.topItem?.title = title
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
+        
+        loadDocument("Credits.rtf", inView: webView)
+        loadUserDefaults()
+        populateSeriesColors()
+        
+        appNameLabel.text = Bundle.main.appNameString
+        versionLabel.text = Bundle.main.appVersionString
+        cpyRightLabel.text = Bundle.main.copywriteString
+        
+        segmentedControl.cornerRadius = VIEW_CORNER_RADIUS - 4.0
+        segmentedControl.masksToBounds = true
+        segmentedControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0: 1
+        
+        navigationController?.navigationBar.prefersLargeTitles = true
+        setupRx()
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }
@@ -277,7 +279,7 @@ class XTRPreferencesViewController: UIViewController {
         showTransitionsBubbleSwitch = nil
         splashScreenSwitch = nil
         webView = nil
-        styleControl = nil
+        segmentedControl = nil
         navigationBar = nil
     }
     

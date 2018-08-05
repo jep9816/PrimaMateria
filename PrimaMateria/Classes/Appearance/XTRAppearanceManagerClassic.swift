@@ -69,9 +69,9 @@ class XTRAppearanceManagerClassic: NSObject {
 
         appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
         appearance.titleTextAttributes = navigationBarTextAttributes
+        appearance.barTintColor = XTRColorFactoryClassic.inkwell
         appearance.tintColor = XTRColorFactoryClassic.galleryColor
         appearance.backgroundColor = XTRColorFactoryClassic.inkwell
-        appearance.barTintColor = XTRColorFactoryClassic.inkwell
 
         //@property(nonatomic,assign) UIBarStyle barStyle;
         //@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;
@@ -131,13 +131,27 @@ class XTRAppearanceManagerClassic: NSObject {
     
     func segmentedControlAppearance() {
         let appearance = UISegmentedControl.appearance()
-        let segmentedControlTextAttributes = [
+        let selectedSegmentedControlTextAttributes = [
             NSAttributedStringKey.foregroundColor: XTRColorFactoryClassic.dodgerBlueColor,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
         ]
         
-        appearance.setTitleTextAttributes(segmentedControlTextAttributes, for: .selected)
+        appearance.setTitleTextAttributes(selectedSegmentedControlTextAttributes, for: .selected)
+
+        let normalSegmentedControlTextAttributes = [
+            NSAttributedStringKey.foregroundColor: XTRColorFactoryClassic.grayColor,
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
+        ]
+        
+        appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .normal)
+        appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .highlighted)
+
         appearance.tintColor = XTRColorFactoryClassic.smoke
+        appearance.backgroundColor = UIColor.clear
+
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryClassic.graphite, andSize: CGSize(width: 32, height: 32)), for: UIControlState.selected, barMetrics: .default)
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryClassic.timberwolf, andSize: CGSize(width: 32, height: 32)), for: UIControlState.highlighted, barMetrics: .default)
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryClassic.timberwolf, andSize: CGSize(width: 32, height: 32)), for: UIControlState.normal, barMetrics: .default)
 
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;

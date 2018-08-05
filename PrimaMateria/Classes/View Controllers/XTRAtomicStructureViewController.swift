@@ -14,6 +14,9 @@ import AVFoundation
 
 struct XTRAtomicStructureViewControllerConfig {
     
+    static let expandButtonSize = CGSize(width: 44, height: 44)
+    static let expandButtonImage = "⏫".image(size: expandButtonSize)
+
     enum StructureViewTypes {
         static let kCrystalStructureView = 0
         static let kShellModelView = 1
@@ -73,21 +76,18 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     @IBOutlet var shell7sLabel: UILabel!
     @IBOutlet var shell7pLabel: UILabel!
-    
+    @IBOutlet var crystalStructureExpandButton: UIButton!
+    @IBOutlet var shellModelExpandButton: UIButton!
+
     var overlayView: XTROverlayView!
-    
     var crystalStructureContent: XTRZoomContentView!
-    var localCrystalStructureView: SCNView!
-    
     var shellModelContent: XTRZoomContentView!
-    var localShellModelView: SKView!
-    
     var disposeBag = DisposeBag()
-    
+    var crystalStructureString: String!
+
     let contentRect = CGRect(x: 154, y: 10, width: 716, height: 748)
     let localRect = CGRect(x: 0, y: 32, width: 716, height: 716)
     let startRect = CGRect(x: 1200, y: 290, width: 322, height: 322)
-    var crystalStructure: String!
 
     // MARK: - Initialization Methods
     
@@ -97,35 +97,42 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     // MARK: - Internal Methods
     
+    override func setupUIForAnimation(element: XTRElementModel) {
+        super.setupUIForAnimation(element: element)
+        
+        setupAtomicStructureUI(element: element)
+        setupLabels(element: element)
+    }
+    
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
         
-        let crystalStructureViewButton = UIButton(frame: CGRect(x: crystalStructureView.frame.size.width - 32, y: 0, width: 32, height: 32))
-        let shellModelViewButton = UIButton(frame: CGRect(x: shellModelView.frame.size.width - 32, y: 0, width: 32, height: 32))
+        setupAtomicStructureUI(element: element)
+        setupLabels(element: element)
+    }
+    
+    func setupAtomicStructureUI(element: XTRElementModel) {
         let crystalStructureScene = element.crystalStructureScene
         let shellModelScene = element.shellModelScene
-
-        title = NSLocalizedString("atomicStructure", comment: "")
-        crystalStructure = element.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
-
-        crystalStructureViewButton.setTitle("⏫", for: UIControlState())
-        crystalStructureViewButton.addTarget(self, action: #selector(presentCrystalStructureContent(sender:)), for: .touchUpInside)
         
-        shellModelViewButton.setTitle("⏫", for: UIControlState())
-        shellModelViewButton.addTarget(self, action: #selector(presentShellModelContent(sender:)), for: .touchUpInside)
-        
-        setupSegmentedControlUI()
-        
-        crystalStructureLabel.text = crystalStructure
-        
+        crystalStructureString = element.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
+        crystalStructureLabel.text = crystalStructureString
         crystalStructureView.scene = crystalStructureScene
-        crystalStructureView.addSubview(crystalStructureViewButton)
         
         shellModelScene.scaleMode = .aspectFit
         shellModelView.presentScene(shellModelScene)
         shellModelView.backgroundColor = element.seriesColor
-        shellModelView.addSubview(shellModelViewButton)
-        
+    }
+
+    func setupSegmentedControlUI() {
+        segmentedControl.cornerRadius = VIEW_CORNER_RADIUS
+        segmentedControl.masksToBounds = true
+        segmentedControl.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        segmentedControl.setTitle(NSLocalizedString("crystalStructure", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("shellModel", comment: ""), forSegmentAt: 1)
+    }
+    
+    func setupLabels(element: XTRElementModel) {
         atomicRadiusLabel.text = "\(element.atomicRadius)"
         atomicVolumeLabel.text = "\(element.atomicVolume)"
         covalentRadiusLabel.text = "\(element.covalentRadius)"
@@ -174,9 +181,15 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         shell7pLabel.text = element.shell7p
     }
     
-    func setupSegmentedControlUI() {
-        segmentedControl.setTitle(NSLocalizedString("crystalStructure", comment: ""), forSegmentAt: 0)
-        segmentedControl.setTitle(NSLocalizedString("shellModel", comment: ""), forSegmentAt: 1)
+    func setupRx() {
+        Observable.merge([mapToObserver(button: crystalStructureExpandButton)]).subscribe(onNext: { [weak self] sender in
+            self?.presentCrystalStructureContent(sender: sender)
+        }).disposed(by: disposeBag)
+        
+        Observable.merge([mapToObserver(button: shellModelExpandButton)]).subscribe(onNext: { [weak self] sender in
+            self?.presentShellModelContent(sender: sender)
+        }).disposed(by: disposeBag)
+        
         segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
             switch selectedSegmentIndex {
             case XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView:
@@ -198,17 +211,26 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let rect = UIScreen.main.bounds
+        title = NSLocalizedString("atomicStructure", comment: "")
 
+        setupSegmentedControlUI()
+
+        crystalStructureExpandButton.cornerRadius = VIEW_CORNER_RADIUS
+        crystalStructureExpandButton.masksToBounds = true
+        crystalStructureExpandButton.borderColor = XTRColorFactory.helpButtonBorderColor
+        crystalStructureExpandButton.borderWidth = 2.0
+        
+        shellModelExpandButton.cornerRadius = VIEW_CORNER_RADIUS
+        shellModelExpandButton.masksToBounds = true
+        shellModelExpandButton.borderColor = XTRColorFactory.helpButtonBorderColor
+        shellModelExpandButton.borderWidth = 2.0
+        
         if overlayView != nil {
             if shellModelContent != nil {
-                localShellModelView.removeFromSuperview()
-                localShellModelView = nil
                 shellModelContent.removeFromSuperview()
                 shellModelContent = nil
             }
             if crystalStructureContent != nil {
-                localCrystalStructureView.removeFromSuperview()
-                localCrystalStructureView = nil
                 crystalStructureContent.removeFromSuperview()
                 crystalStructureContent = nil
             }
@@ -222,9 +244,12 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         crystalStructureView.autoenablesDefaultLighting = true
         
         shellModelView.isHidden = true
+        
         overlayView = XTROverlayView(frame: CGRect(x: rect.origin.x, y: rect.origin.y - 148, width: rect.size.width, height: rect.size.height))
         overlayView.isUserInteractionEnabled = true
         
+        setupRx()
+
         view.addSubview(overlayView)
         view.sendSubview(toBack: overlayView)
     }
@@ -234,29 +259,35 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         
         if type == XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView {
             let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissCrystalStructureContent(sender:)))
-            let titleString = "\(element?.name ?? "") - \(NSLocalizedString("crystalStructure", comment: "")) - \(crystalStructure!)"
-            crystalStructureContent = XTRZoomContentView(frame: rect, title: titleString, gesture: gesture)
+            let titleString = "\(element?.name ?? "") - \(NSLocalizedString("crystalStructure", comment: "")) - \(crystalStructureString!)"
+            crystalStructureContent = XTRZoomContentView.instantiateFromXib()
+            crystalStructureContent.title = titleString
+            crystalStructureContent.frame = rect
 
-            localCrystalStructureView = SCNView()
+            let localCrystalStructureView = SCNView()
             localCrystalStructureView.frame = localRect
             localCrystalStructureView.scene = element?.crystalStructureScene
             localCrystalStructureView.allowsCameraControl = true
             localCrystalStructureView.autoenablesDefaultLighting = true
+            overlayView.addGestureRecognizer(gesture)
 
             crystalStructureContent.addContent(localCrystalStructureView)
         } else {
             let gesture = UITapGestureRecognizer(target: self, action: #selector(dismissShellModelContent(sender:)))
             let titleString = "\(element?.name ?? "")) - \(NSLocalizedString("shellModel", comment: ""))"
 
-            shellModelContent = XTRZoomContentView(frame: rect, title: titleString, gesture: gesture)
+            shellModelContent = XTRZoomContentView.instantiateFromXib()
+            shellModelContent.title = titleString
+            shellModelContent.frame = rect
 
             let localShellModelScene = XTRShellModelScene(size: CGSize(width: 716, height: 716), element: element!)
             localShellModelScene.scaleMode = .aspectFill
 
-            localShellModelView = SKView()
+            let localShellModelView = SKView()
             localShellModelView.frame = localRect
             localShellModelView.presentScene(localShellModelScene)
-            
+            overlayView.addGestureRecognizer(gesture)
+
             shellModelContent.addContent(localShellModelView)
         }
     }
@@ -266,7 +297,7 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         NotificationCenter.default.post(name: .notificationAtomicStructureZoomed, object: flag)
     }
     
-    func present(content: XTRZoomContentView, localView: UIView) {
+    func present(content: XTRZoomContentView) {
         toggleUserInteractions(flag: false)
         
         overlayView.addSubview(content)
@@ -282,8 +313,6 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
             self?.overlayView.backgroundColor = UIColor.clear.withAlphaComponent(0.6)
             content.alpha = 1.0
             content.frame = (self?.contentRect)!
-            
-            localView.frame = (self?.localRect)!
         }, completion: nil)
     }
     
@@ -304,24 +333,28 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     @objc func presentCrystalStructureContent(sender: UIButton) {
         createZoomView(frame: self.crystalStructureView.frame, type: XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView)
-        present(content: crystalStructureContent, localView: localCrystalStructureView)
+        crystalStructureExpandButton.setImage(#imageLiteral(resourceName: "CompressButton"), for: UIControlState())
+        present(content: crystalStructureContent)
     }
     
     @objc func dismissCrystalStructureContent(sender: UIGestureRecognizer) {
         if crystalStructureContent != nil {
             dismiss(content: crystalStructureContent, localView: crystalStructureView)
+            crystalStructureExpandButton.setImage(#imageLiteral(resourceName: "ExpandButton"), for: UIControlState())
             crystalStructureContent = nil
         }
     }
     
     @objc func presentShellModelContent(sender: UIButton) {
         createZoomView(frame: self.shellModelView.frame, type: XTRAtomicStructureViewControllerConfig.StructureViewTypes.kShellModelView)
-        present(content: shellModelContent, localView: localShellModelView)
+        shellModelExpandButton.setImage(#imageLiteral(resourceName: "CompressButton"), for: UIControlState())
+        present(content: shellModelContent)
     }
     
     @objc func dismissShellModelContent(sender: UIGestureRecognizer) {
         if shellModelContent != nil {
             dismiss(content: shellModelContent, localView: shellModelView)
+            shellModelExpandButton.setImage(#imageLiteral(resourceName: "ExpandButton"), for: UIControlState())
             shellModelContent = nil
         }
     }
@@ -339,7 +372,9 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     deinit {
         crystalStructureView = nil
         crystalStructureLabel = nil
+        crystalStructureExpandButton = nil
         shellModelView = nil
+        shellModelExpandButton = nil
         atomicRadiusLabel = nil
         atomicVolumeLabel = nil
         covalentRadiusLabel = nil

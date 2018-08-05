@@ -20,6 +20,7 @@ class XTROverlayView: UIView {
         //overlayView.borderWidth = 2
         //overlayView.borderColor = UIColor.red
         isHidden = true
+        isUserInteractionEnabled = true
 
     }
     

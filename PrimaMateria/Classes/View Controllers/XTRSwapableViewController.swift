@@ -10,6 +10,7 @@ import UIKit
 
 protocol XTRSwapable {
     func setupUI(element: XTRElementModel)
+    func setupUIForAnimation(element: XTRElementModel)
 }
 
 class XTRSwapableViewController: UIViewController, XTRSwapable {
@@ -23,6 +24,10 @@ class XTRSwapableViewController: UIViewController, XTRSwapable {
     }
 
     func setupUI(element: XTRElementModel) {
+        self.element = element
+    }
+    
+    func setupUIForAnimation(element: XTRElementModel) {
         self.element = element
     }
     

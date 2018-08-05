@@ -37,11 +37,12 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         return responder as! UIViewController
     }
     
-    func setupColors() {        
+    func setupColors() {
         cornerRadius = VIEW_CORNER_RADIUS
         masksToBounds = true
         borderColor = XTRColorFactory.helpButtonBorderColor
-        borderWidth = 1.0
+        borderWidth = 2.0
+        setTitleShadowColor(UIColor.clear, for: UIControlState())
 
         if var titleFrame = titleLabel?.frame {
             titleFrame.size = bounds.size

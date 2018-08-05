@@ -37,7 +37,7 @@ class XTRAppearanceManagerStandard: NSObject {
     
     func barButtonItemAppearance() {
         let appearance = UIBarButtonItem.appearance()
-        appearance.tintColor = XTRColorFactoryStandard.standardRedColor
+        appearance.tintColor = XTRColorFactoryStandard.lightGray
 
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
@@ -74,11 +74,12 @@ class XTRAppearanceManagerStandard: NSObject {
             NSAttributedStringKey.shadow: shadow
         ]
         
-        appearance.barTintColor = XTRColorFactoryStandard.standardRedColor
+        appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
         appearance.titleTextAttributes = navigationBarTextAttributes
+        appearance.barTintColor = XTRColorFactoryStandard.standardRedColor
         appearance.tintColor = XTRColorFactoryStandard.ghost
-        appearance.setTitleVerticalPositionAdjustment(2, for: .default)
-        
+        appearance.backgroundColor = XTRColorFactoryStandard.standardRedColor
+
         //@property(nonatomic,assign) UIBarStyle barStyle;
         //@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;
         //@property(nonatomic, readwrite, assign) BOOL prefersLargeTitles;
@@ -137,13 +138,27 @@ class XTRAppearanceManagerStandard: NSObject {
     
     func segmentedControlAppearance() {
         let appearance = UISegmentedControl.appearance()
-        let segmentedControlTextAttributes = [
+        let selectedSegmentedControlTextAttributes = [
             NSAttributedStringKey.foregroundColor: XTRColorFactory.segmentedControlForgroundColor,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
         ]
         
-        appearance.setTitleTextAttributes(segmentedControlTextAttributes, for: .selected)
+        appearance.setTitleTextAttributes(selectedSegmentedControlTextAttributes, for: .selected)
+        
+        let normalSegmentedControlTextAttributes = [
+            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.greySuit,
+            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
+        ]
+        
+        appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .normal)
+        appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .highlighted)
+        
         appearance.tintColor = XTRColorFactoryStandard.whiteSmoke
+        appearance.backgroundColor = UIColor.clear
+        
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.darkText, andSize: CGSize(width: 32, height: 32)), for: UIControlState.selected, barMetrics: .default)
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.lightGray, andSize: CGSize(width: 32, height: 32)), for: UIControlState.highlighted, barMetrics: .default)
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.lightGray, andSize: CGSize(width: 32, height: 32)), for: UIControlState.normal, barMetrics: .default)
 
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
@@ -212,7 +227,6 @@ class XTRAppearanceManagerStandard: NSObject {
         appearance.tintColor = XTRColorFactory.tabBarSelectedForgroundColor
         appearance.backgroundColor = XTRColorFactoryStandard.navyBlue
         appearance.barTintColor = XTRColorFactoryStandard.darkText
-        appearance.barTintColor = XTRColorFactoryStandard.standardRedColor
         appearance.tintColor = XTRColorFactoryStandard.ghost
         appearance.unselectedItemTintColor = XTRColorFactoryStandard.greySuit
 

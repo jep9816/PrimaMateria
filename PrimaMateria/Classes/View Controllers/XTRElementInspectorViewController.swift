@@ -111,9 +111,16 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         addChildViewController(viewController)
     }
     
-    func animateForDirection(_ direction: String) {
-        setupUI(element: element!)
-        
+    func animateForDirection(_ direction: String) {        
+        assignAtomicSymbolTextFieldProperties()
+        assignOtherLabels()
+        assignNavigationHints()
+
+        for item in childViewControllers {
+            let controller = item as! XTRSwapableViewController
+            controller.setupUIForAnimation(element: element!)
+        }
+
         if XTRPropertiesStore.showTransitionsState {
             let currentView: UIView = view
             let tempView = currentView.superview!
@@ -147,30 +154,15 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             let controller = item as! XTRSwapableViewController
             controller.setupUI(element: element)
         }
-        
-        Observable.of(
-            mapToObserver(button: previousButton)
-            ).merge().subscribe(onNext: { [weak self] sender in
-                self?.previousElement(sender)
-            }).disposed(by: disposeBag)
-        
-        Observable.of(
-            mapToObserver(button: nextButton)
-            ).merge().subscribe(onNext: { [weak self] sender in
-                self?.nextElement(sender)
-            }).disposed(by: disposeBag)
-        
-        self.barButtonItem!.rx.tap.subscribe { [weak self] _ in
-                self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
-                NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
-            }.disposed(by: disposeBag)
     }
     
     func setupSegmentedControlUI() {
         let rect = segmentedControl.frame
-        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34.0)
-        
+        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34)
         segmentedControl.frame = newRect
+        segmentedControl.cornerRadius = VIEW_CORNER_RADIUS
+        segmentedControl.masksToBounds = true
+        segmentedControl.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         segmentedControl.setTitle(NSLocalizedString("atomicStructure", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("elementProperties", comment: ""), forSegmentAt: 1)
         segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: 2)
@@ -186,6 +178,25 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         }).disposed(by: disposeBag)
     }
     
+    func setupRx() {
+        Observable.of(
+            mapToObserver(button: previousButton)
+            ).merge().subscribe(onNext: { [weak self] sender in
+                self?.previousElement(sender)
+            }).disposed(by: disposeBag)
+        
+        Observable.of(
+            mapToObserver(button: nextButton)
+            ).merge().subscribe(onNext: { [weak self] sender in
+                self?.nextElement(sender)
+            }).disposed(by: disposeBag)
+        
+        barButtonItem!.rx.tap.subscribe { [weak self] _ in
+            self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+            NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
+            }.disposed(by: disposeBag)
+    }
+    
     // MARK: - Action Methods
     
     @objc func nextElement(_ sender: UIButton) {
@@ -195,6 +206,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             atomicNumber = 1
         }
         
+        print("Next: \(atomicNumber)")
         element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
         animateForDirection("Next")
     }
@@ -206,6 +218,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             atomicNumber = XTRDataSource.sharedInstance.elementCount()
         }
         
+        print("Previous: \(atomicNumber)")
         element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
         animateForDirection("Previous")
     }
@@ -218,8 +231,11 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(nextElement(_:)))
         let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
 
+        setupRx()
+
         nextButton.titleLabel!.textAlignment = .right
         previousButton.titleLabel!.textAlignment = .left
+        
         swapView.removeFromSuperview()
         
         addChildViewController(name: StoryBoardName.AtomicStructure, className: XTRAtomicStructureViewController.nameOfClass)

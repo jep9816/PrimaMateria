@@ -69,7 +69,6 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     }
     
     func setupBarChart() {
-        // Create barChart from theme
         barChart = CPTXYGraph.init(frame: CGRect.zero)
         hostingView.hostedGraph = barChart
         
@@ -88,9 +87,7 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         let y = axisSet.yAxis!
         var labelLocation = 0
         var customLabels: [CPTAxisLabel] = [CPTAxisLabel]()
-        //(repeating: nil, count: customTickLocations.count)
         
-        // Add plot space for horizontal bar charts
         plotSpace.yRange = CPTPlotRange(location: 0.0, length: 1000.0)
         plotSpace.xRange = CPTPlotRange(location: 4000.0, length: 3500.0)
         
@@ -110,7 +107,6 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         x.titleLocation = 5750.0
         x.titleOffset = 30.0
         
-        // Define some custom labels for the data elements
         x.labelRotation = CGFloat.pi / 4.0
         x.labelingPolicy = CPTAxisLabelingPolicy.none
         
@@ -156,11 +152,24 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     
     // MARK: - Action Methods
     
+    override func setupUIForAnimation(element: XTRElementModel) {
+        super.setupUIForAnimation(element: element)
+        
+        setupTableView(element: element)
+        setupBarChart()
+    }
+    
     override func setupUI(element: XTRElementModel) {
         super .setupUI(element: element)
         
+        setupTableView(element: element)
+        setupBarChart()
+    }
+    
+    func setupTableView(element: XTRElementModel) {
         title = NSLocalizedString("spectrum", comment: "")
         
+        lineSpectraArray = element.lineSpectra
         if tableView != nil {
             tableView!.removeFromSuperview()
             tableView = nil
@@ -179,9 +188,7 @@ class XTRSpectrumViewController: XTRSwapableViewController {
         tableView!.rowHeight = 34.0
         tableView!.allowsSelection = false
         view.addSubview(tableView!)
-        lineSpectraArray = element.lineSpectra
         tableView!.reloadData()
-        setupBarChart()
     }
     
     // MARK: - View Management Methods
