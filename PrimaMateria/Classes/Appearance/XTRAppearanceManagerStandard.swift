@@ -76,9 +76,9 @@ class XTRAppearanceManagerStandard: NSObject {
         
         appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
         appearance.titleTextAttributes = navigationBarTextAttributes
-        appearance.barTintColor = XTRColorFactoryStandard.standardRedColor
+        appearance.barTintColor = UIColor(patternImage: UIImage(named: "dark-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
         appearance.tintColor = XTRColorFactoryStandard.ghost
-        appearance.backgroundColor = XTRColorFactoryStandard.standardRedColor
+        appearance.backgroundColor = UIColor(patternImage: UIImage(named: "dark-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
 
         //@property(nonatomic,assign) UIBarStyle barStyle;
         //@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;
@@ -225,8 +225,8 @@ class XTRAppearanceManagerStandard: NSObject {
         let appearance = UITabBar.appearance()
         
         appearance.tintColor = XTRColorFactory.tabBarSelectedForgroundColor
-        appearance.backgroundColor = XTRColorFactoryStandard.navyBlue
-        appearance.barTintColor = XTRColorFactoryStandard.darkText
+        appearance.backgroundColor = UIColor(patternImage: UIImage(named: "brushed-dark-steel")!) //XTRColorFactoryStandard.navyBlue
+        appearance.barTintColor = UIColor(patternImage: UIImage(named: "brushed-dark-steel")!) // XTRColorFactoryStandard.darkText
         appearance.tintColor = XTRColorFactoryStandard.ghost
         appearance.unselectedItemTintColor = XTRColorFactoryStandard.greySuit
 
@@ -249,7 +249,7 @@ class XTRAppearanceManagerStandard: NSObject {
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         let selectedItemTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.suvaGrey,
+            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.whiteSmoke,
             NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         

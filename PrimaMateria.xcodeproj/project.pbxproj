@@ -127,6 +127,9 @@
 		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
+		806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
+		806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
+		806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
 		80773C7E20FE9840008B7B43 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 80773C7D20FE983F008B7B43 /* .swiftlint.yml */; };
 		807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3EA62112959400534B10 /* XTROverlayView.swift */; };
 		8098771C210A8B0800AB3B00 /* Globe01.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C8210A875400AB3B00 /* Globe01.png */; };
@@ -340,6 +343,9 @@
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
+		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
+		806A39672117B3850074ED28 /* brushed-dark-steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-dark-steel.png"; sourceTree = "<group>"; };
 		80773C7D20FE983F008B7B43 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -656,6 +662,9 @@
 		8012807520F0271F00ABC706 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				806A39672117B3850074ED28 /* brushed-dark-steel.png */,
+				806A39652117B2B10074ED28 /* seamless-metal-texture.png */,
+				806A395F2117AEE60074ED28 /* dark-metal-texture.png */,
 				0853E2062114D20100CA092B /* Shaders */,
 				8012838620F02F9B00ABC706 /* ElementTipHelp */,
 				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
@@ -959,6 +968,7 @@
 				80987741210A8B0800AB3B00 /* Globe38.png in Resources */,
 				80987723210A8B0800AB3B00 /* Globe08.png in Resources */,
 				8012835C20F0272000ABC706 /* LaunchScreen.storyboard in Resources */,
+				806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */,
 				8012836720F0272000ABC706 /* Splash.storyboard in Resources */,
 				8098774A210A8B0800AB3B00 /* Globe47.png in Resources */,
 				8012836520F0272000ABC706 /* ColorPicker.storyboard in Resources */,
@@ -1003,8 +1013,10 @@
 				8098771C210A8B0800AB3B00 /* Globe01.png in Resources */,
 				80987720210A8B0800AB3B00 /* Globe05.png in Resources */,
 				800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */,
+				806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */,
 				8012836920F0272000ABC706 /* Graph.storyboard in Resources */,
 				8012835F20F0272000ABC706 /* GeneralInfo.storyboard in Resources */,
+				806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */,
 				80987753210A8B0800AB3B00 /* Globe56.png in Resources */,
 				8012835D20F0272000ABC706 /* HelpBalloon.storyboard in Resources */,
 				80987761210A8B0800AB3B00 /* Globe70.png in Resources */,

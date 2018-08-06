@@ -281,12 +281,12 @@ class XTRColorFactory: NSObject {
             return UIColor.red
         }
     }
-
+    
     class var backgroundColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return UIColor.color(hexString: "404040")
         } else {
-            return XTRColorFactoryStandard.regalBlue
+            return XTRColorFactoryStandard.seamlessMetalTextureColor
         }
     }
     

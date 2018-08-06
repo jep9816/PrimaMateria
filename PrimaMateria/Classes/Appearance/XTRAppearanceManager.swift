@@ -43,6 +43,7 @@ class XTRAppearanceManager: NSObject {
         let switchAppearance = UISwitch.appearance()
         switchAppearance.onTintColor = XTRColorFactory.successGreen
         statusBarStyle()
+        viewControllerBackgroundAppearance()
     }
     
     @objc func changeAppearance(notification: NSNotification) {
@@ -93,18 +94,12 @@ class XTRAppearanceManager: NSObject {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             UIApplication.shared.statusBarStyle = .default
         } else {
-            UIApplication.shared.statusBarStyle = .default
+            UIApplication.shared.statusBarStyle = .lightContent
         }
     }
     
-    func setupDefaultCellAppearance(cell: UITableViewCell) {
-        if XTRAppearanceManager.manager.isClassicAppearance() {
-            cell.textLabel?.textColor = XTRColorFactoryClassic.inkwell
-            cell.detailTextLabel?.textColor = XTRColorFactoryClassic.inkwell
-        } else {
-            cell.textLabel?.textColor = XTRColorFactoryStandard.darkText
-            cell.detailTextLabel?.textColor = XTRColorFactoryStandard.greySuit
-        }
+    func viewControllerBackgroundAppearance() {
+        XTRBackgroundView.appearance().backgroundColor = XTRColorFactory.backgroundColor
     }
     
     deinit {

@@ -39,7 +39,8 @@ class XTRGraphViewController: UIViewController {
     
     func creatBarChart() {
         barChart = CPTXYGraph(frame: CGRect.zero)
-        barChart!.apply(CPTTheme(named: CPTThemeName.slateTheme))
+        //barChart!.apply(CPTTheme(named: CPTThemeName.slateTheme))
+        barChart?.backgroundColor = XTRAppearanceManager.manager.isClassicAppearance() ? XTRColorFactoryClassic.cotton.cgColor : XTRColorFactoryStandard.seamlessMetalTextureColor.cgColor
         
         hostingView.hostedGraph = barChart
         

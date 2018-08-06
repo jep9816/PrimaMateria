@@ -25,12 +25,12 @@
                                     <navigationItem title="preferences" id="KEo-Mu-3ao"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fC-R3-8Od">
-                                <rect key="frame" x="0.0" y="45" width="1024" height="768"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fC-R3-8Od" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MOz-5N-HKy" customClass="XTRDividerLabel" customModule="PrimaMateria">
-                                        <rect key="frame" x="241" y="60" width="777" height="37"/>
+                                        <rect key="frame" x="241" y="60" width="778" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -40,7 +40,7 @@
                                         <size key="shadowOffset" width="2" height="2"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="credits" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DYd-sB-Z1a" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
-                                        <rect key="frame" x="241" y="62" width="775" height="31"/>
+                                        <rect key="frame" x="241" y="62" width="776" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
@@ -49,7 +49,7 @@
                                         <size key="shadowOffset" width="2" height="2"/>
                                     </label>
                                     <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orc-ko-L7E">
-                                        <rect key="frame" x="241" y="5" width="777" height="53"/>
+                                        <rect key="frame" x="241" y="5" width="778" height="53"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="XXX" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="5UU-Kf-jb0">
@@ -109,18 +109,18 @@
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GgZ-dO-w4d">
-                                        <rect key="frame" x="5" y="230" width="230" height="399"/>
+                                        <rect key="frame" x="5" y="230" width="230" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="seriesColors" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pWZ-ZB-EjQ" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="230" height="25"/>
+                                                <rect key="frame" x="0.0" y="1" width="230" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-4w-AYh" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="29" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="30" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="actinide"/>
@@ -132,7 +132,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-Gs-i0a" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="66" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="67" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="alkaliEarthMetal"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -146,7 +146,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mww-aS-dwa" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="103" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="104" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="alkaliMetal"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -160,7 +160,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7C-Hl-V2V" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="140" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="141" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="halogen"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -174,7 +174,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcA-Tb-wrH" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="177" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="178" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="lanthanide"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -188,7 +188,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDV-8u-hkI" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="214" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="215" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="metal"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -202,7 +202,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JV-Qz-rew" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="251" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="252" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="nobleGas"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -216,7 +216,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vij-uz-T4X" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="288" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="289" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="nonMetal"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -230,7 +230,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-ww-pLO" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="325" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="326" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="transactinide"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -244,7 +244,7 @@
                                                 </state>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7H-ue-WGL" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
-                                                <rect key="frame" x="5" y="360" width="220" height="32"/>
+                                                <rect key="frame" x="5" y="361" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="transitionMetal"/>
@@ -343,7 +343,7 @@
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtd-nd-r9v" customClass="XTRGeneralButton" customModule="PrimaMateria">
-                                        <rect key="frame" x="5" y="634" width="230" height="34"/>
+                                        <rect key="frame" x="5" y="635" width="230" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
@@ -356,7 +356,7 @@
                                         </state>
                                     </button>
                                     <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MrN-ac-K4n">
-                                        <rect key="frame" x="241" y="98" width="777" height="570"/>
+                                        <rect key="frame" x="241" y="98" width="778" height="571"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <wkWebViewConfiguration key="configuration">

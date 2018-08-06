@@ -126,6 +126,7 @@ class XTRPeriodicTableViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
         molecularCalculatorSwitch.backgroundColor = XTRColorFactory.switchBackgroundColor
         molecularCalculatorSwitch.cornerRadius = SWITCH_CORNER_RADIUS
+        
         setupImageViewAnimation()
         startAnimating()
     }
