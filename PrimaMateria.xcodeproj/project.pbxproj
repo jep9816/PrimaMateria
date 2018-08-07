@@ -346,6 +346,7 @@
 		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
 		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
 		806A39672117B3850074ED28 /* brushed-dark-steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-dark-steel.png"; sourceTree = "<group>"; };
+		806A396C211905CF0074ED28 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		80773C7D20FE983F008B7B43 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -644,6 +645,7 @@
 				807E3EA62112959400534B10 /* XTROverlayView.swift */,
 				8012802620F0270400ABC706 /* XTRShadowView.swift */,
 				80DC21C021111DA400518784 /* XTRZoomContentView.swift */,
+				800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -662,18 +664,16 @@
 		8012807520F0271F00ABC706 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				806A39672117B3850074ED28 /* brushed-dark-steel.png */,
-				806A39652117B2B10074ED28 /* seamless-metal-texture.png */,
-				806A395F2117AEE60074ED28 /* dark-metal-texture.png */,
-				0853E2062114D20100CA092B /* Shaders */,
 				8012838620F02F9B00ABC706 /* ElementTipHelp */,
 				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
 				8012838520F02F9B00ABC706 /* SupportingFiles */,
 				80127C2520F0268B00ABC706 /* Images.xcassets */,
 				809875FB210A867400AB3B00 /* globe */,
+				806A3969211902590074ED28 /* Images */,
 				801281E020F0272000ABC706 /* Interfaces */,
 				8012838A20F032A000ABC706 /* Misc */,
 				8012807820F0271F00ABC706 /* Scenes */,
+				0853E2062114D20100CA092B /* Shaders */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -717,7 +717,6 @@
 				801281E920F0272000ABC706 /* Spectrum.storyboard */,
 				801281EF20F0272000ABC706 /* Splash.storyboard */,
 				801281F520F0272000ABC706 /* Wikipedia.storyboard */,
-				800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -729,6 +728,7 @@
 				801280EE20F0272000ABC706 /* LoadFailure.html */,
 				8012807620F0271F00ABC706 /* Localizable.strings */,
 				801281DF20F0272000ABC706 /* MainStyle.css */,
+				806A396C211905CF0074ED28 /* Podfile */,
 				80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */,
 				80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */,
 				801281DE20F0272000ABC706 /* PrimaMateria.plist */,
@@ -736,6 +736,16 @@
 				8012808C20F0271F00ABC706 /* Settings.bundle */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		806A3969211902590074ED28 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				806A39672117B3850074ED28 /* brushed-dark-steel.png */,
+				806A39652117B2B10074ED28 /* seamless-metal-texture.png */,
+				806A395F2117AEE60074ED28 /* dark-metal-texture.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		809875FB210A867400AB3B00 /* globe */ = {
