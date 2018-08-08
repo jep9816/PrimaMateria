@@ -78,8 +78,9 @@ class XTRElementModel: NSObject {
         return value(forKeyPath: ELEMENT_DESCR) as? String
     }
     
-    var electronConfiguration: [String: AnyObject]? {
-        return value(forKeyPath: ELEMENT_ELECTRON_CONFIGURATION) as? [String: AnyObject]
+    var electronConfiguration: XTYRElectronConfigurationModel? {
+        let dict = value(forKeyPath: ELEMENT_ELECTRON_CONFIGURATION) as? [String: AnyObject]
+        return XTYRElectronConfigurationModel(dictionary: dict!)
     }
     
     var group: Int? {
@@ -134,8 +135,9 @@ class XTRElementModel: NSObject {
         return models
     }
     
-    var vaporPressure: [String: AnyObject]? {
-        return value(forKeyPath: ELEMENT_VAPOR_PRESSURE) as? [String: AnyObject]
+    var vaporPressure: XTRVaporPressurenModel? {
+        let dict = value(forKeyPath: ELEMENT_VAPOR_PRESSURE) as? [String: AnyObject]
+        return XTRVaporPressurenModel(dictionary: dict!)
     }
     
     var elasticModulusBulk: Double {

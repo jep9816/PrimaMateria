@@ -154,31 +154,31 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         pShellElectronsLabel.text = element.pShellElectrons
         qShellElectronsLabel.text = element.qShellElectrons
         
-        shell1sLabel.text = element.shell1s
+        shell1sLabel.text = element.electronConfiguration?.shell1s
         
-        shell2sLabel.text = element.shell2s
-        shell2pLabel.text = element.shell2p
+        shell2sLabel.text = element.electronConfiguration?.shell2s
+        shell2pLabel.text = element.electronConfiguration?.shell2p
         
-        shell3sLabel.text = element.shell3s
-        shell3pLabel.text = element.shell3p
-        shell3dLabel.text = element.shell3d
+        shell3sLabel.text = element.electronConfiguration?.shell3s
+        shell3pLabel.text = element.electronConfiguration?.shell3p
+        shell3dLabel.text = element.electronConfiguration?.shell3d
         
-        shell4sLabel.text = element.shell4s
-        shell4pLabel.text = element.shell4p
-        shell4dLabel.text = element.shell4d
-        shell4fLabel.text = element.shell4f
+        shell4sLabel.text = element.electronConfiguration?.shell4s
+        shell4pLabel.text = element.electronConfiguration?.shell4p
+        shell4dLabel.text = element.electronConfiguration?.shell4d
+        shell4fLabel.text = element.electronConfiguration?.shell4f
         
-        shell5sLabel.text = element.shell5s
-        shell5pLabel.text = element.shell5p
-        shell5dLabel.text = element.shell5d
-        shell5fLabel.text = element.shell5f
+        shell5sLabel.text = element.electronConfiguration?.shell5s
+        shell5pLabel.text = element.electronConfiguration?.shell5p
+        shell5dLabel.text = element.electronConfiguration?.shell5d
+        shell5fLabel.text = element.electronConfiguration?.shell5f
         
-        shell6sLabel.text = element.shell6s
-        shell6pLabel.text = element.shell6p
-        shell6dLabel.text = element.shell6d
+        shell6sLabel.text = element.electronConfiguration?.shell6s
+        shell6pLabel.text = element.electronConfiguration?.shell6p
+        shell6dLabel.text = element.electronConfiguration?.shell6d
         
-        shell7sLabel.text = element.shell7s
-        shell7pLabel.text = element.shell7p
+        shell7sLabel.text = element.electronConfiguration?.shell7s
+        shell7pLabel.text = element.electronConfiguration?.shell7p
     }
     
     func setupRx() {

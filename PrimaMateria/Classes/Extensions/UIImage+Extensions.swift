@@ -1,5 +1,5 @@
 //
-//  UIImage-Extensions.swift
+//  UIImage+Extensions.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/22/16.

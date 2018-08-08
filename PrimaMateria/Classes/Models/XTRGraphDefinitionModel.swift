@@ -46,5 +46,5 @@ class XTRGraphDefinitionModel: NSObject {
         if let value6 = dictionary[XTRGraphViewControllerConfig.minimumValue] as? Float {
             minimumValue = value6
         }
-     }
+    }
 }

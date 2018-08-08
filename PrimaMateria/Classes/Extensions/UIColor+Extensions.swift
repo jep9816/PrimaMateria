@@ -1,5 +1,5 @@
 //
-//  UIColor-Extensions.swift
+//  UIColor+Extensions.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 10/24/16.

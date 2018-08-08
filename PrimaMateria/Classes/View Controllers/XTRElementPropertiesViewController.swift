@@ -121,12 +121,12 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         opticalRefractiveIndexLabel.text = element.value(forKeyPath: ELEMENT_OPTICAL_REFRACTIVE_INDEX) as? String
         relativeGasDensityLabel.text = element.value(forKeyPath: ELEMENT_RELATIVE_GAS_DENSITY) as? String
         
-        vaporPressure1PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1"] as! String, vaporPressure["pa1Footnote"] as! String])
-        vaporPressure10PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10"] as! String, vaporPressure["pa10Footnote"] as! String])
-        vaporPressure100PaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100"] as! String, vaporPressure["pa100Footnote"] as! String])
-        vaporPressure1kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa1k"] as! String, vaporPressure["pa1kFootnote"] as! String])
-        vaporPressure10kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa10k"] as! String, vaporPressure["pa10kFootnote"] as! String])
-        vaporPressure100kPaLabel.text = String(format: "%@ %@", arguments: [vaporPressure["pa100k"] as! String, vaporPressure["pa100kFootnote"] as! String])
+        vaporPressure1PaLabel.text = vaporPressure.pa1
+        vaporPressure10PaLabel.text = vaporPressure.pa10
+        vaporPressure100PaLabel.text = vaporPressure.pa100
+        vaporPressure1kPaLabel.text = vaporPressure.pa1k
+        vaporPressure10kPaLabel.text = vaporPressure.pa10k
+        vaporPressure100kPaLabel.text = vaporPressure.pa100k
         
         conductivityThermalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_THERMAL) as? String
         conductivityElectricalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_ELECTRICAL) as? String

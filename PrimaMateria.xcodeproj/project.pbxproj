@@ -12,6 +12,8 @@
 		0853E20D2114D20100CA092B /* SHKLightGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E2092114D20100CA092B /* SHKLightGrid.fsh */; };
 		0853E20E2114D20100CA092B /* SHKWater.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E20A2114D20100CA092B /* SHKWater.fsh */; };
 		08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB996C20F8D4C800711159 /* XTRPageControl.swift */; };
+		8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */; };
+		8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */; };
 		800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */; };
 		80127C2B20F0268C00ABC706 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80127C2520F0268B00ABC706 /* Images.xcassets */; };
 		8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD620F0270400ABC706 /* MBProgressHUD.m */; };
@@ -23,13 +25,13 @@
 		8012803220F0270500ABC706 /* XTRPopoutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */; };
 		8012803320F0270500ABC706 /* XTRDefines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDF20F0270400ABC706 /* XTRDefines.swift */; };
 		8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FE020F0270400ABC706 /* XTRDataSource.swift */; };
-		8012803520F0270500ABC706 /* XTRElement-Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FE120F0270400ABC706 /* XTRElement-Presentation.swift */; };
+		8012803520F0270500ABC706 /* XTRElement+Presentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FE120F0270400ABC706 /* XTRElement+Presentation.swift */; };
 		8012803F20F0270500ABC706 /* XTRElementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FED20F0270400ABC706 /* XTRElementModel.swift */; };
 		8012804020F0270500ABC706 /* XTRIsotopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */; };
 		8012804120F0270500ABC706 /* XTRSpectraModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */; };
 		8012804220F0270500ABC706 /* XTRGraphDefinitionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF020F0270400ABC706 /* XTRGraphDefinitionModel.swift */; };
-		8012804320F0270500ABC706 /* UIColor-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF220F0270400ABC706 /* UIColor-Extensions.swift */; };
-		8012804420F0270500ABC706 /* UIImage-Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF320F0270400ABC706 /* UIImage-Extensions.swift */; };
+		8012804320F0270500ABC706 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF220F0270400ABC706 /* UIColor+Extensions.swift */; };
+		8012804420F0270500ABC706 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF320F0270400ABC706 /* UIImage+Extensions.swift */; };
 		8012804520F0270500ABC706 /* NSObject+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF420F0270400ABC706 /* NSObject+General.swift */; };
 		8012804620F0270500ABC706 /* UIView+LayerFlattening.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */; };
 		8012804720F0270500ABC706 /* Bundle+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF620F0270400ABC706 /* Bundle+Extensions.swift */; };
@@ -218,6 +220,8 @@
 		08AB996C20F8D4C800711159 /* XTRPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPageControl.swift; sourceTree = "<group>"; };
 		1732C3DCFE44437A23AA8F9D /* Pods-PrimaMateria.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PrimaMateria.release.xcconfig"; path = "Pods/Target Support Files/Pods-PrimaMateria/Pods-PrimaMateria.release.xcconfig"; sourceTree = "<group>"; };
 		46E85B76446F3031EF93040A /* Pods_PrimaMateria.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PrimaMateria.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTYRElectronConfigurationModel.swift; sourceTree = "<group>"; };
+		8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRVaporPressurenModel.swift; sourceTree = "<group>"; };
 		800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRZoomContentView.xib; sourceTree = "<group>"; };
 		80127C0E20F0253000ABC706 /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80127C2520F0268B00ABC706 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -233,13 +237,13 @@
 		80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPopoutAnimationController.swift; sourceTree = "<group>"; };
 		80127FDF20F0270400ABC706 /* XTRDefines.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRDefines.swift; sourceTree = "<group>"; };
 		80127FE020F0270400ABC706 /* XTRDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRDataSource.swift; sourceTree = "<group>"; };
-		80127FE120F0270400ABC706 /* XTRElement-Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XTRElement-Presentation.swift"; sourceTree = "<group>"; };
+		80127FE120F0270400ABC706 /* XTRElement+Presentation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XTRElement+Presentation.swift"; sourceTree = "<group>"; };
 		80127FED20F0270400ABC706 /* XTRElementModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementModel.swift; sourceTree = "<group>"; };
 		80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRIsotopeModel.swift; sourceTree = "<group>"; };
 		80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectraModel.swift; sourceTree = "<group>"; };
 		80127FF020F0270400ABC706 /* XTRGraphDefinitionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphDefinitionModel.swift; sourceTree = "<group>"; };
-		80127FF220F0270400ABC706 /* UIColor-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor-Extensions.swift"; sourceTree = "<group>"; };
-		80127FF320F0270400ABC706 /* UIImage-Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage-Extensions.swift"; sourceTree = "<group>"; };
+		80127FF220F0270400ABC706 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		80127FF320F0270400ABC706 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		80127FF420F0270400ABC706 /* NSObject+General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+General.swift"; sourceTree = "<group>"; };
 		80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+LayerFlattening.swift"; sourceTree = "<group>"; };
 		80127FF620F0270400ABC706 /* Bundle+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extensions.swift"; sourceTree = "<group>"; };
@@ -526,7 +530,6 @@
 				80127FDD20F0270400ABC706 /* XTRApplication.swift */,
 				80127FE020F0270400ABC706 /* XTRDataSource.swift */,
 				80127FDF20F0270400ABC706 /* XTRDefines.swift */,
-				80127FE120F0270400ABC706 /* XTRElement-Presentation.swift */,
 				80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */,
 				80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */,
 				80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */,
@@ -557,6 +560,8 @@
 				80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */,
 				80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */,
 				80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */,
+				8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */,
+				8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -566,9 +571,10 @@
 			children = (
 				80127FF620F0270400ABC706 /* Bundle+Extensions.swift */,
 				80127FF420F0270400ABC706 /* NSObject+General.swift */,
-				80127FF220F0270400ABC706 /* UIColor-Extensions.swift */,
-				80127FF320F0270400ABC706 /* UIImage-Extensions.swift */,
+				80127FF220F0270400ABC706 /* UIColor+Extensions.swift */,
+				80127FF320F0270400ABC706 /* UIImage+Extensions.swift */,
 				80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */,
+				80127FE120F0270400ABC706 /* XTRElement+Presentation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1123,6 +1129,7 @@
 				8012804520F0270500ABC706 /* NSObject+General.swift in Sources */,
 				8012805720F0270500ABC706 /* XTRGeneralInfoViewController.swift in Sources */,
 				8012807120F0270500ABC706 /* XTRBackgroundView.swift in Sources */,
+				8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */,
 				8012806020F0270500ABC706 /* XTRSplashViewController.swift in Sources */,
 				8012806520F0270500ABC706 /* XTRPreferencesViewController.swift in Sources */,
 				8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */,
@@ -1131,6 +1138,7 @@
 				8012804F20F0270500ABC706 /* XTRGraphChoiceCell.swift in Sources */,
 				8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */,
 				8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */,
+				8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */,
 				8012805C20F0270500ABC706 /* XTRMainViewController.swift in Sources */,
 				8012806820F0270500ABC706 /* XTRHelpBalloonViewController.swift in Sources */,
 				8012806E20F0270500ABC706 /* XTRElementListViewControllerDelegate.swift in Sources */,
@@ -1138,7 +1146,7 @@
 				8012803320F0270500ABC706 /* XTRDefines.swift in Sources */,
 				8012804120F0270500ABC706 /* XTRSpectraModel.swift in Sources */,
 				8012805520F0270500ABC706 /* XTRColorPickerViewController.swift in Sources */,
-				8012804320F0270500ABC706 /* UIColor-Extensions.swift in Sources */,
+				8012804320F0270500ABC706 /* UIColor+Extensions.swift in Sources */,
 				8012806120F0270500ABC706 /* XTRInfoViewController.swift in Sources */,
 				8012805B20F0270500ABC706 /* XTRPeriodicTableViewController.swift in Sources */,
 				8012806B20F0270500ABC706 /* XTRInfoViewControllerDelegate.swift in Sources */,
@@ -1154,7 +1162,7 @@
 				8012807320F0270500ABC706 /* XTRShadowView.swift in Sources */,
 				08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */,
 				8012805120F0270500ABC706 /* XTRShellModelScene.swift in Sources */,
-				8012803520F0270500ABC706 /* XTRElement-Presentation.swift in Sources */,
+				8012803520F0270500ABC706 /* XTRElement+Presentation.swift in Sources */,
 				8012807220F0270500ABC706 /* XTRCornerImageView.swift in Sources */,
 				8012803F20F0270500ABC706 /* XTRElementModel.swift in Sources */,
 				8012804E20F0270500ABC706 /* XTRTableHeaderButton.swift in Sources */,
@@ -1164,7 +1172,7 @@
 				8012804020F0270500ABC706 /* XTRIsotopeModel.swift in Sources */,
 				8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */,
 				8012837F20F02D6100ABC706 /* XTRAppearanceManagerStandard.swift in Sources */,
-				8012804420F0270500ABC706 /* UIImage-Extensions.swift in Sources */,
+				8012804420F0270500ABC706 /* UIImage+Extensions.swift in Sources */,
 				8012806D20F0270500ABC706 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */,
 				8012804A20F0270500ABC706 /* XTRBarPlot.swift in Sources */,
 				8012803220F0270500ABC706 /* XTRPopoutAnimationController.swift in Sources */,
