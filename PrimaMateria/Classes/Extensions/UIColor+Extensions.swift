@@ -130,9 +130,7 @@ extension UIColor { // Expanded
             let newRange  = indexFrom..<indexTo
             
             if !newRange.isEmpty {
-                let foundString = colorNameDB[indexFrom..<indexTo]
-
-                result =  UIColor.color(hexString: String(foundString))
+                result =  UIColor.color(hexString: String(colorNameDB[indexFrom..<indexTo]))
             }
         }
         

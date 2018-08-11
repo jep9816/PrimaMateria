@@ -8,6 +8,18 @@
 
 import UIKit
 
+class XTRProgressView: UIProgressView {
+    
+    var height: CGFloat = 14.0
+    
+    override func sizeThatFits(_ size: CGSize) -> CGSize {
+        let size: CGSize = CGSize(width: self.frame.size.width, height: height)
+        
+        return size
+    }
+    
+}
+
 class XTRPageControl: UIView {
     
     var nextLabel: UILabel!
@@ -28,19 +40,19 @@ class XTRPageControl: UIView {
     }
     
     func updatePreviousLabel(atomicNumber: Int) {
-        let label = subviews[atomicNumber + 1] as! UILabel
+        let label = subviews[atomicNumber - 1] as! UILabel
         label.font = UIFont.systemFont(ofSize: 10.0)
         label.textColor = XTRColorFactory.pageIndicatorTintColor
     }
     
     func updateNextLabel(atomicNumber: Int) {
-        let label = subviews[atomicNumber + 1] as! UILabel
+        let label = subviews[atomicNumber - 1] as! UILabel
         label.font = UIFont.systemFont(ofSize: 10.0)
         label.textColor = XTRColorFactory.pageIndicatorTintColor
     }
     
     func updateCurrentLabel(atomicNumber: Int) {
-        let currentLabel = subviews[atomicNumber + 1] as! UILabel
+        let currentLabel = subviews[atomicNumber - 1] as! UILabel
         currentLabel.font = UIFont.systemFont(ofSize: 10.0)
         currentLabel.textColor = XTRColorFactory.currentPageIndicatorTintColor
     }
