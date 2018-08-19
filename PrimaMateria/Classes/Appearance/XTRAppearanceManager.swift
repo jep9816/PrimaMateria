@@ -42,7 +42,6 @@ class XTRAppearanceManager: NSObject {
     func commonAppearance() {
         let switchAppearance = UISwitch.appearance()
         switchAppearance.onTintColor = XTRColorFactory.successGreen
-        statusBarStyle()
         viewControllerBackgroundAppearance()
     }
     
@@ -90,20 +89,24 @@ class XTRAppearanceManager: NSObject {
         return XTRPropertiesStore.appearanceName == XTRAppearanceType.standard
     }
     
-    func statusBarStyle() {
-        if XTRAppearanceManager.manager.isClassicAppearance() {
-            UIApplication.shared.statusBarStyle = .default
-        } else {
-            UIApplication.shared.statusBarStyle = .lightContent
-        }
-    }
-    
     func viewControllerBackgroundAppearance() {
         XTRBackgroundView.appearance().backgroundColor = XTRColorFactory.backgroundColor
     }
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .notificationAppearanceChanged, object: nil)
+    }
+    
+}
+
+extension UIViewController {
+    
+    func preferredStatusBarStyle() -> UIStatusBarStyle {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return .default
+        } else {
+            return .lightContent
+        }
     }
     
 }

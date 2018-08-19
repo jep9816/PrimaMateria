@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
@@ -14,7 +14,7 @@
         <scene sceneID="11">
             <objects>
                 <viewController storyboardIdentifier="XTRPeriodicTableViewController" title="Periodic Table of the Elements" id="2" customClass="XTRPeriodicTableViewController" customModule="PrimaMateria" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="17" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="17" customClass="XTRBackgroundView" customModule="PrimaMateria">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -2346,8 +2346,8 @@
                                         <color key="highlightedColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="molecularCalculator" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k9C-rM-k21" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
-                                        <rect key="frame" x="700" y="117" width="162" height="23"/>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="molecularCalculator" textAlignment="right" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="k9C-rM-k21" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                        <rect key="frame" x="684" y="117" width="184" height="23"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2471,7 +2471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2162" y="-2415"/>
+            <point key="canvasLocation" x="1689.0625" y="-1415.0390625"/>
         </scene>
     </scenes>
     <resources>

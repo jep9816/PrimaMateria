@@ -47,7 +47,7 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
             tableView = nil
         }
         
-        nuclidesAndIsotopesArray = element.nuclidesAndIsotopes
+        nuclidesAndIsotopesArray = element.nuclidesAndIsotopesModels
         tableView = UITableView(frame: swapView.frame, style: .plain)
         
         tableView!.alwaysBounceVertical = false

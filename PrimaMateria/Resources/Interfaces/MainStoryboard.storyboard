@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Main-->
         <scene sceneID="15">
             <objects>
-                <tabBarController storyboardIdentifier="XTRMainViewController" title="Main" wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" hidesBottomBarWhenPushed="YES" id="4" customClass="XTRMainViewController" customModule="PrimaMateria" sceneMemberID="viewController">
+                <tabBarController title="Main" wantsFullScreenLayout="YES" modalTransitionStyle="crossDissolve" hidesBottomBarWhenPushed="YES" id="4" customClass="XTRMainViewController" customModule="PrimaMateria" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -32,41 +32,41 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="201" y="-533"/>
+            <point key="canvasLocation" x="157.03125" y="-312.3046875"/>
         </scene>
         <!--Splash-->
         <scene sceneID="ZCP-5O-VsF">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="c2o-Us-ddV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="XTRSplashViewController" storyboardName="Splash" referencedIdentifier="XTRSplashViewController" id="rAF-kF-ajm" userLabel="Splash" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2o-Us-ddV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="425"/>
+            <point key="canvasLocation" x="-210.9375" y="249.02343749999997"/>
         </scene>
         <!--General Info-->
         <scene sceneID="pka-pd-IiW">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wgf-sW-jtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="XTRGeneralInfoViewController" storyboardName="GeneralInfo" referencedIdentifier="XTRGeneralInfoViewController" id="qsj-bt-nQY" userLabel="General Info" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wgf-sW-jtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4833" y="2214"/>
+            <point key="canvasLocation" x="3775.78125" y="1297.265625"/>
         </scene>
         <!--Periodic Table-->
         <scene sceneID="Ddh-Zs-rfg">
             <objects>
-                <viewControllerPlaceholder storyboardName="PeriodicTable" id="pJc-eN-mX0" userLabel="Periodic Table" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="PeriodicTable" referencedIdentifier="XTRPeriodicTableViewController" id="pJc-eN-mX0" userLabel="Periodic Table" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Periodic Table" image="Tab01" id="A6g-dD-8vw"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tRV-oJ-2NR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-199" y="114"/>
+            <point key="canvasLocation" x="-155.46875" y="66.796875"/>
         </scene>
         <!--Element Balloon-->
         <scene sceneID="sMr-0A-lGi">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pPx-je-dlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="XTRElementBalloonViewController" storyboardName="ElementBalloon" referencedIdentifier="XTRElementBalloonViewController" id="Uja-r3-RgV" userLabel="Element Balloon" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPx-je-dlC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-244" y="206"/>
+            <point key="canvasLocation" x="-190.625" y="120.70312499999999"/>
         </scene>
         <!--Element List-->
         <scene sceneID="ibF-KP-5QK">
@@ -76,15 +76,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XrR-aY-ZV3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-28" y="114"/>
+            <point key="canvasLocation" x="-21.875" y="66.796875"/>
         </scene>
         <!--Help Balloon-->
         <scene sceneID="cCH-q5-3jv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7I6-Wc-fHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="XTRHelpBalloonViewController" storyboardName="HelpBalloon" referencedIdentifier="XTRHelpBalloonViewController" id="oed-Be-Owo" userLabel="Help Balloon" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7I6-Wc-fHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-270" y="354"/>
+            <point key="canvasLocation" x="-210.9375" y="207.421875"/>
         </scene>
         <!--Info-->
         <scene sceneID="mng-sw-thD">
@@ -94,7 +94,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5mb-jT-RiU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="628" y="106"/>
+            <point key="canvasLocation" x="490.625" y="62.109374999999993"/>
         </scene>
         <!--Preferences-->
         <scene sceneID="i55-6C-cGJ">
@@ -104,15 +104,15 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9MA-Q5-tY1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="371" y="106"/>
+            <point key="canvasLocation" x="289.84375" y="62.109374999999993"/>
         </scene>
         <!--Molecular Calculator-->
         <scene sceneID="2Ds-Sv-V8H">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gan-XA-HaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewControllerPlaceholder storyboardIdentifier="XTRMolecularCalculatorViewController" storyboardName="MolecularCalculator" referencedIdentifier="XTRMolecularCalculatorViewController" id="bmZ-bi-i3X" userLabel="Molecular Calculator" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gan-XA-HaH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-245" y="281"/>
+            <point key="canvasLocation" x="-191.40625" y="164.6484375"/>
         </scene>
         <!--Graphs-->
         <scene sceneID="98Q-P6-JtU">
@@ -122,7 +122,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rvC-mq-5cc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="106"/>
+            <point key="canvasLocation" x="111.71875" y="62.109374999999993"/>
         </scene>
     </scenes>
     <resources>

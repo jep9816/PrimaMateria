@@ -9,6 +9,8 @@
 import UIKit
 import SpriteKit
 import GameplayKit
+import RxSwift
+import RxCocoa
 
 enum SuperScriptType {
     static let k0Superscript = 48
@@ -34,7 +36,7 @@ extension XTRElementModel {
     }
     
     var atomicMassAggregate: String {
-        let atomicMassKnownAccurately = value(forKeyPath: ELEMENT_ATOMIC_MASS_KNOWN_ACCURATELY) as! Bool
+        guard let atomicMassKnownAccurately = value(forKeyPath: ELEMENT_ATOMIC_MASS_KNOWN_ACCURATELY) as? Bool else { return STRING_EMPTY }
         
         if !atomicMassKnownAccurately {
             return String(format: "[%d]", atomicMass)
@@ -51,21 +53,54 @@ extension XTRElementModel {
     }
     
     var atomicMassFootnote: String {
-        let footnote: String? =  value(forKeyPath: ELEMENT_ATOMIC_MASS_FOOTNOTE) as? String
+        guard let footnote = value(forKeyPath: ELEMENT_ATOMIC_MASS_FOOTNOTE) as? String else { return STRING_EMPTY }
         
-        return (footnote == nil) ? STRING_EMPTY: footnote!
+        return footnote
     }
     
+    var electronConfigurationModel: XTYRElectronConfigurationModel? {
+        let dict = self.electronConfiguration
+        return XTYRElectronConfigurationModel(dictionary: dict)
+    }
+
+    var nuclidesAndIsotopesModels: BehaviorRelay<[XTRIsotopeModel]>? {
+        let models: BehaviorRelay<[XTRIsotopeModel]> = BehaviorRelay(value: [])
+        var modelsCopy: [XTRIsotopeModel] = []
+        guard let list = self.nuclidesAndIsotopes else { return models }
+        
+        list.forEach {
+            modelsCopy.append(XTRIsotopeModel(dictionary: $0))
+        }
+        
+        models.accept(modelsCopy)
+        
+        return models
+    }
+
+    var lineSpectraModels: BehaviorRelay<[XTRSpectraModel]>? {
+        let models: BehaviorRelay<[XTRSpectraModel]> = BehaviorRelay(value: [])
+        var modelsCopy: [XTRSpectraModel] = []
+        guard let list = self.lineSpectra else { return models }
+        
+        list.forEach {
+            modelsCopy.append(XTRSpectraModel(dictionary: $0))
+        }
+        
+        models.accept(modelsCopy)
+        
+        return models
+    }
+
     var kShellElectrons: String {
-        let s1String = electronConfiguration?.shell1s
+        let s1String = electronConfigurationModel?.shell1s
         let tot = (s1String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(s1String!)!)
         
         return (tot == 0) ? STRING_EMPTY: String(format: "%@", tot)
     }
     
     var lShellElectrons: String {
-        let s2String = electronConfiguration?.shell2s
-        let p2String = electronConfiguration?.shell2p
+        let s2String = electronConfigurationModel?.shell2s
+        let p2String = electronConfigurationModel?.shell2p
         let s2Value = (s2String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(s2String!)!)
         let p2Value = (p2String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(p2String!)!)
         let tot = NSNumber(value: Int(s2Value.intValue + p2Value.intValue))
@@ -74,9 +109,9 @@ extension XTRElementModel {
     }
     
     var mShellElectrons: String {
-        let s3String = electronConfiguration?.shell3s
-        let p3String = electronConfiguration?.shell3p
-        let d3String = electronConfiguration?.shell3d
+        let s3String = electronConfigurationModel?.shell3s
+        let p3String = electronConfigurationModel?.shell3p
+        let d3String = electronConfigurationModel?.shell3d
         let s3Value = (s3String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(s3String!)!)
         let p3Value = (p3String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(p3String!)!)
         let d3Value = (d3String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(d3String!)!)
@@ -86,10 +121,10 @@ extension XTRElementModel {
     }
     
     var nShellElectrons: String {
-        let s4String = electronConfiguration?.shell4s
-        let p4String = electronConfiguration?.shell4p
-        let d4String = electronConfiguration?.shell4d
-        let f4String = electronConfiguration?.shell4f
+        let s4String = electronConfigurationModel?.shell4s
+        let p4String = electronConfigurationModel?.shell4p
+        let d4String = electronConfigurationModel?.shell4d
+        let f4String = electronConfigurationModel?.shell4f
         let s4Value = (s4String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(s4String!)!)
         let p4Value = (p4String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(p4String!)!)
         let d4Value = (d4String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(d4String!)!)
@@ -100,10 +135,10 @@ extension XTRElementModel {
     }
     
     var oShellElectrons: String {
-        let s5String = electronConfiguration?.shell5s
-        let p5String = electronConfiguration?.shell5p
-        let d5String = electronConfiguration?.shell5d
-        let f5String = electronConfiguration?.shell5f
+        let s5String = electronConfigurationModel?.shell5s
+        let p5String = electronConfigurationModel?.shell5p
+        let d5String = electronConfigurationModel?.shell5d
+        let f5String = electronConfigurationModel?.shell5f
         let s5Value = (s5String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(s5String!)!)
         let p5Value = (p5String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(p5String!)!)
         let d5Value = (d5String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(d5String!)!)
@@ -114,9 +149,9 @@ extension XTRElementModel {
     }
     
     var pShellElectrons: String {
-        let s6String = electronConfiguration?.shell6s
-        let p6String = electronConfiguration?.shell6p
-        let d6String = electronConfiguration?.shell6d
+        let s6String = electronConfigurationModel?.shell6s
+        let p6String = electronConfigurationModel?.shell6p
+        let d6String = electronConfigurationModel?.shell6d
         let s6Value = (s6String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(s6String!)!)
         let p6Value = (p6String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(p6String!)!)
         let d6Value = (d6String == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(d6String!)!)
@@ -126,8 +161,8 @@ extension XTRElementModel {
     }
     
     var qShellElectrons: String {
-        let s7String = electronConfiguration?.shell7s
-        let p7String = electronConfiguration?.shell7p
+        let s7String = electronConfigurationModel?.shell7s
+        let p7String = electronConfigurationModel?.shell7p
         let s7Value = (s7String! == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(s7String!)!)
         let p7Value = (p7String! == STRING_EMPTY) ? NSNumber(value: 0): NSNumber(value: Int(p7String!)!)
         let tot = NSNumber(value: Int(s7Value.intValue + p7Value.intValue))
@@ -204,8 +239,12 @@ extension XTRElementModel {
         return _attributedStringForArray(aValue)!
     }
     
+    var vaporPressureModel: XTRVaporPressurenModel? {
+        return XTRVaporPressurenModel(dictionary: self.vaporPressure!)
+    }
+
     func nameString() -> String {
-        return "\(NSLocalizedString("elementInspectorFor", comment: "")) \( name!)"
+        return " \(NSLocalizedString("elementInspectorFor", comment: "")) \( name!)"
     }
     
     var groupString: String {

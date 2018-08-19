@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="REJ-gs-Mp7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.13.2" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="REJ-gs-Mp7">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.9"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +14,7 @@
         <scene sceneID="6Ii-fp-jCz">
             <objects>
                 <viewController storyboardIdentifier="XTRPreferencesViewController" title="Preferences" id="REJ-gs-Mp7" customClass="XTRPreferencesViewController" customModule="PrimaMateria" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="4Of-Im-h85" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="4Of-Im-h85" customClass="XTRBackgroundView" customModule="PrimaMateria">
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -25,7 +25,7 @@
                                     <navigationItem title="preferences" id="KEo-Mu-3ao"/>
                                 </items>
                             </navigationBar>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fC-R3-8Od" customClass="XTRBackgroundView" customModule="PrimaMateria" customModuleProvider="target">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0fC-R3-8Od" customClass="XTRBackgroundView" customModule="PrimaMateria">
                                 <rect key="frame" x="0.0" y="44" width="1024" height="768"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -39,7 +39,7 @@
                                         <color key="shadowColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <size key="shadowOffset" width="2" height="2"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="credits" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DYd-sB-Z1a" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" text="credits" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="DYd-sB-Z1a" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                         <rect key="frame" x="241" y="62" width="776" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -61,7 +61,7 @@
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="version" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-NG-C73" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="version" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EHk-NG-C73" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="513" y="3" width="195" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,7 +78,7 @@
                                                 <nil key="highlightedColor"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="copyright" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="paP-c6-pi2" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="copyright" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="paP-c6-pi2" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="513" y="28" width="195" height="24"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
@@ -112,14 +112,14 @@
                                         <rect key="frame" x="5" y="230" width="230" height="400"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="seriesColors" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pWZ-ZB-EjQ" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="seriesColors" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="pWZ-ZB-EjQ" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1" width="230" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-4w-AYh" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mqf-4w-AYh" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="30" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -131,7 +131,7 @@
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-Gs-i0a" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zSr-Gs-i0a" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="67" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="alkaliEarthMetal"/>
@@ -145,7 +145,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mww-aS-dwa" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mww-aS-dwa" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="104" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="alkaliMetal"/>
@@ -159,7 +159,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7C-Hl-V2V" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7C-Hl-V2V" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="141" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="halogen"/>
@@ -173,7 +173,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcA-Tb-wrH" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EcA-Tb-wrH" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="178" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="lanthanide"/>
@@ -187,7 +187,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDV-8u-hkI" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SDV-8u-hkI" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="215" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="metal"/>
@@ -201,7 +201,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JV-Qz-rew" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5JV-Qz-rew" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="252" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="nobleGas"/>
@@ -215,7 +215,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vij-uz-T4X" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vij-uz-T4X" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="289" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="nonMetal"/>
@@ -229,7 +229,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-ww-pLO" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pMi-ww-pLO" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="326" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <accessibility key="accessibilityConfiguration" identifier="transactinide"/>
@@ -243,7 +243,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7H-ue-WGL" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H7H-ue-WGL" customClass="XTRGeneralButton" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="5" y="361" width="220" height="32"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -265,14 +265,14 @@
                                         <rect key="frame" x="5" y="5" width="230" height="220"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="settings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jqe-d7-TwM" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="settings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="jqe-d7-TwM" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="1" width="210" height="25"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="elementHelpBubbles" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNy-LB-20f" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="elementHelpBubbles" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eNy-LB-20f" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="23" width="155" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -288,7 +288,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showSplashScreen" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-Rr-VIY" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showSplashScreen" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGf-Rr-VIY" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="73" width="155" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -304,7 +304,7 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                             </switch>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showViewTransitions" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLK-J6-L7m" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showViewTransitions" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LLK-J6-L7m" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="123" width="155" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -328,7 +328,7 @@
                                                     <segment title="Standard"/>
                                                 </segments>
                                             </segmentedControl>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="style" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRR-g7-jPb" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="style" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CRR-g7-jPb" customClass="XTRLocalizedLabel" customModule="PrimaMateria_DEV" customModuleProvider="target">
                                                 <rect key="frame" x="10" y="177" width="60" height="29"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -399,7 +399,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="50a-Pv-ksh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2277" y="467"/>
+            <point key="canvasLocation" x="1778.90625" y="273.6328125"/>
         </scene>
     </scenes>
     <resources>

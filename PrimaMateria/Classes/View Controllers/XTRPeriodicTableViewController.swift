@@ -38,7 +38,7 @@ class XTRPeriodicTableViewController: UIViewController {
     // MARK: - Internal Methods
     
     func setupPopUp() {
-        elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRElementBalloonViewController.nameOfClass) as! XTRElementBalloonViewController
+        elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRElementBalloonViewController.nameOfClass) as? XTRElementBalloonViewController
         elementBalloonViewController.preferredContentSize = XTRPeriodicTableViewControllerConfig.popupContentSize
         elementBalloonViewController.modalPresentationStyle = .popover
     }
@@ -114,7 +114,7 @@ class XTRPeriodicTableViewController: UIViewController {
         title = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
         navigationBar.topItem?.title = title
         
-        molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMolecularCalculatorViewController.nameOfClass) as! XTRMolecularCalculatorViewController
+        molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMolecularCalculatorViewController.nameOfClass) as? XTRMolecularCalculatorViewController
         molecularCalculatorViewController.view.frame = swapView.frame
         
         swapView.removeFromSuperview()

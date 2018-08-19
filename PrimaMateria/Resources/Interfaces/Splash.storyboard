@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GM5-aW-c95">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GM5-aW-c95">
     <device id="ipad9_7" orientation="landscape">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,13 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LaunchImage" highlightedImage="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-tb-fRb">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" highlightedImage="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-tb-fRb">
+                                <rect key="frame" x="-4" y="0.0" width="1032" height="768"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Kj7-tb-fRb" secondAttribute="height" multiplier="1264:1037" constant="95.439999999999998" id="z5z-Ie-bOA"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhD-Pg-K1v" customClass="XTRShadowView" customModule="PrimaMateria">
-                                <rect key="frame" x="212" y="284" width="600" height="200"/>
+                                <rect key="frame" x="230" y="284" width="600" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-qb-mMD">
@@ -97,6 +100,12 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Kj7-tb-fRb" firstAttribute="top" secondItem="h94-4r-5Kn" secondAttribute="top" id="8u9-Ey-QA4"/>
+                            <constraint firstItem="Kj7-tb-fRb" firstAttribute="centerX" secondItem="h94-4r-5Kn" secondAttribute="centerX" id="Hu7-sW-6Rj"/>
+                            <constraint firstItem="Kj7-tb-fRb" firstAttribute="bottom" secondItem="fX5-cL-NpV" secondAttribute="bottom" id="Vd0-tz-dPZ"/>
+                            <constraint firstItem="Kj7-tb-fRb" firstAttribute="centerY" secondItem="h94-4r-5Kn" secondAttribute="centerY" id="dpI-z7-gzy"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fX5-cL-NpV"/>
                     </view>
                     <navigationItem key="navigationItem" id="E0M-qq-9bC"/>
@@ -112,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGS-xb-xp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5180" y="1382"/>
+            <point key="canvasLocation" x="2371.2158203125" y="632.62939453125"/>
         </scene>
     </scenes>
     <resources>

@@ -115,7 +115,7 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         let crystalStructureScene = element.crystalStructureScene
         let shellModelScene = element.shellModelScene
         
-        crystalStructureString = element.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as! String
+        crystalStructureString = element.value(forKeyPath: ELEMENT_CRYSTAL_STRUCTURE) as? String
         crystalStructureLabel.text = crystalStructureString
         crystalStructureView.scene = crystalStructureScene
         
@@ -154,31 +154,31 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         pShellElectronsLabel.text = element.pShellElectrons
         qShellElectronsLabel.text = element.qShellElectrons
         
-        shell1sLabel.text = element.electronConfiguration?.shell1s
+        shell1sLabel.text = element.electronConfigurationModel?.shell1s
         
-        shell2sLabel.text = element.electronConfiguration?.shell2s
-        shell2pLabel.text = element.electronConfiguration?.shell2p
+        shell2sLabel.text = element.electronConfigurationModel?.shell2s
+        shell2pLabel.text = element.electronConfigurationModel?.shell2p
         
-        shell3sLabel.text = element.electronConfiguration?.shell3s
-        shell3pLabel.text = element.electronConfiguration?.shell3p
-        shell3dLabel.text = element.electronConfiguration?.shell3d
+        shell3sLabel.text = element.electronConfigurationModel?.shell3s
+        shell3pLabel.text = element.electronConfigurationModel?.shell3p
+        shell3dLabel.text = element.electronConfigurationModel?.shell3d
         
-        shell4sLabel.text = element.electronConfiguration?.shell4s
-        shell4pLabel.text = element.electronConfiguration?.shell4p
-        shell4dLabel.text = element.electronConfiguration?.shell4d
-        shell4fLabel.text = element.electronConfiguration?.shell4f
+        shell4sLabel.text = element.electronConfigurationModel?.shell4s
+        shell4pLabel.text = element.electronConfigurationModel?.shell4p
+        shell4dLabel.text = element.electronConfigurationModel?.shell4d
+        shell4fLabel.text = element.electronConfigurationModel?.shell4f
         
-        shell5sLabel.text = element.electronConfiguration?.shell5s
-        shell5pLabel.text = element.electronConfiguration?.shell5p
-        shell5dLabel.text = element.electronConfiguration?.shell5d
-        shell5fLabel.text = element.electronConfiguration?.shell5f
+        shell5sLabel.text = element.electronConfigurationModel?.shell5s
+        shell5pLabel.text = element.electronConfigurationModel?.shell5p
+        shell5dLabel.text = element.electronConfigurationModel?.shell5d
+        shell5fLabel.text = element.electronConfigurationModel?.shell5f
         
-        shell6sLabel.text = element.electronConfiguration?.shell6s
-        shell6pLabel.text = element.electronConfiguration?.shell6p
-        shell6dLabel.text = element.electronConfiguration?.shell6d
+        shell6sLabel.text = element.electronConfigurationModel?.shell6s
+        shell6pLabel.text = element.electronConfigurationModel?.shell6p
+        shell6dLabel.text = element.electronConfigurationModel?.shell6d
         
-        shell7sLabel.text = element.electronConfiguration?.shell7s
-        shell7pLabel.text = element.electronConfiguration?.shell7p
+        shell7sLabel.text = element.electronConfigurationModel?.shell7s
+        shell7pLabel.text = element.electronConfigurationModel?.shell7p
     }
     
     func setupRx() {

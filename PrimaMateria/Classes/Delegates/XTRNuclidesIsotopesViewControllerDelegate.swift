@@ -48,7 +48,7 @@ class XTRNuclidesIsotopesViewControllerDelegate: NSObject, UITableViewDelegate, 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (controller?.element!.nuclidesAndIsotopes!.value)!.count
+        return (controller?.element!.nuclidesAndIsotopesModels!.value)!.count
     }
     
     func tableView(_ aTableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

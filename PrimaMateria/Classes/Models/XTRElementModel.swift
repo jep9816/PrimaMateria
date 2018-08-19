@@ -12,7 +12,11 @@ import RxCocoa
 
 class XTRElementModel: NSObject {
     
-    var elementDictionary: [String: Any] = [:]
+    var elementDictionary: [String: Any]!
+    
+    init(dict: [String: Any]) {
+        elementDictionary = dict
+    }
     
     override func value(forKeyPath keyPath: String) -> Any? {
         switch keyPath {
@@ -78,9 +82,8 @@ class XTRElementModel: NSObject {
         return value(forKeyPath: ELEMENT_DESCR) as? String
     }
     
-    var electronConfiguration: XTYRElectronConfigurationModel? {
-        let dict = value(forKeyPath: ELEMENT_ELECTRON_CONFIGURATION) as? [String: AnyObject]
-        return XTYRElectronConfigurationModel(dictionary: dict!)
+    var electronConfiguration: [String: AnyObject] {
+        return (value(forKeyPath: ELEMENT_ELECTRON_CONFIGURATION) as? [String: AnyObject])!
     }
     
     var group: Int? {
@@ -96,18 +99,8 @@ class XTRElementModel: NSObject {
         return value(forKeyPath: ELEMENT_NAME) as? String
     }
     
-    var nuclidesAndIsotopes: BehaviorRelay<[XTRIsotopeModel]>? {
-        let models: BehaviorRelay<[XTRIsotopeModel]> = BehaviorRelay(value: [])
-        var modelsCopy: [XTRIsotopeModel] = []
-        guard let list = value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String: AnyObject]] else { return models }
-
-        for item in list {
-            modelsCopy.append(XTRIsotopeModel(dictionary: item))
-        }
-        
-        models.accept(modelsCopy)
-
-        return models
+    var nuclidesAndIsotopes: [[String: AnyObject]]? {
+        return value(forKeyPath: ELEMENT_NUCLIDES_AND_ISOTOPES) as? [[String: AnyObject]]
     }
     
     var period: String? {
@@ -122,22 +115,12 @@ class XTRElementModel: NSObject {
         return value(forKeyPath: ELEMENT_SYMBOL) as? String
     }
     
-    var lineSpectra: BehaviorRelay<[XTRSpectraModel]>? {
-        let models: BehaviorRelay<[XTRSpectraModel]> = BehaviorRelay(value: [])
-        var modelsCopy: [XTRSpectraModel] = []
-        guard let list = value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String: AnyObject]]? else { return models }
-        
-        for item in list! {
-            modelsCopy.append(XTRSpectraModel(dictionary: item))
-        }
-        models.accept(modelsCopy)
-
-        return models
+    var lineSpectra: [[String: AnyObject]]? {
+        return (value(forKeyPath: ELEMENT_LINE_SPECTRA) as? [[String: AnyObject]]?)!
     }
     
-    var vaporPressure: XTRVaporPressurenModel? {
-        let dict = value(forKeyPath: ELEMENT_VAPOR_PRESSURE) as? [String: AnyObject]
-        return XTRVaporPressurenModel(dictionary: dict!)
+    var vaporPressure: [String: AnyObject]? {
+        return value(forKeyPath: ELEMENT_VAPOR_PRESSURE) as? [String: AnyObject]
     }
     
     var elasticModulusBulk: Double {

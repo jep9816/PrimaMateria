@@ -47,12 +47,9 @@ class XTRDataSource: NSObject {
         var tempDict: [String: Any]?
         
         do {
-            let element = XTRElementModel()
-            
             try tempDict = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String: Any]
             
-            element.elementDictionary = tempDict!
-            elementList.append(element)
+            elementList.append(XTRElementModel(dict: tempDict!))
         } catch _ {
             assert(nil != tempDict, "Could not read property list of element: \(symbol).")
         }

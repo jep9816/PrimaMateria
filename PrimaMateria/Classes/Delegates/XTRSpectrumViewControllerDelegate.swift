@@ -80,7 +80,7 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controller!.element!.lineSpectra!.value.count
+        return controller!.element!.lineSpectraModels!.value.count
     }
     
     func createTableCellLabel(model: XTRTableViewCellViewModel) {

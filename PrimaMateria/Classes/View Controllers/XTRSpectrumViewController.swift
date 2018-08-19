@@ -169,7 +169,7 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     func setupTableView(element: XTRElementModel) {
         title = NSLocalizedString("spectrum", comment: "")
         
-        lineSpectraArray = element.lineSpectra
+        lineSpectraArray = element.lineSpectraModels
         if tableView != nil {
             tableView!.removeFromSuperview()
             tableView = nil

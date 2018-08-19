@@ -102,7 +102,7 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     }
 
     func setupLabels(element: XTRElementModel) {
-        let vaporPressure = element.vaporPressure!
+        let vaporPressureModel = element.vaporPressureModel!
         
         atomicMassLabel.text = element.atomicMassAggregate
         atomicMassFootnoteLabel.text = element.atomicMassFootnote
@@ -121,12 +121,12 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         opticalRefractiveIndexLabel.text = element.value(forKeyPath: ELEMENT_OPTICAL_REFRACTIVE_INDEX) as? String
         relativeGasDensityLabel.text = element.value(forKeyPath: ELEMENT_RELATIVE_GAS_DENSITY) as? String
         
-        vaporPressure1PaLabel.text = vaporPressure.pa1
-        vaporPressure10PaLabel.text = vaporPressure.pa10
-        vaporPressure100PaLabel.text = vaporPressure.pa100
-        vaporPressure1kPaLabel.text = vaporPressure.pa1k
-        vaporPressure10kPaLabel.text = vaporPressure.pa10k
-        vaporPressure100kPaLabel.text = vaporPressure.pa100k
+        vaporPressure1PaLabel.text = vaporPressureModel.pa1
+        vaporPressure10PaLabel.text = vaporPressureModel.pa10
+        vaporPressure100PaLabel.text = vaporPressureModel.pa100
+        vaporPressure1kPaLabel.text = vaporPressureModel.pa1k
+        vaporPressure10kPaLabel.text = vaporPressureModel.pa10k
+        vaporPressure100kPaLabel.text = vaporPressureModel.pa100k
         
         conductivityThermalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_THERMAL) as? String
         conductivityElectricalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_ELECTRICAL) as? String

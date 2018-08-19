@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-UIApplicationMain(
+_ = UIApplicationMain(
     CommandLine.argc,
     UnsafeMutableRawPointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc)),
     NSStringFromClass(XTRApplication.self),
