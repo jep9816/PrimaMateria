@@ -36,7 +36,7 @@ class XTRElementListViewControllerDelegate: NSObject, UITableViewDelegate, UITab
         
         self.indexPath = indexPath
         aTableView.deselectRow(at: indexPath, animated: XTRPropertiesStore.showTransitionsState)
-        self.closure(atomicNumber - 1)
+        self.closure(atomicNumber.value - 1)
     }
     
     func tableView(_ aTableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

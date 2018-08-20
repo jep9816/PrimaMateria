@@ -55,7 +55,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     func assignOtherLabels() {
-        atomicNumberLabel.text = String(element!.atomicNumber)
+        atomicNumberLabel.text = String(element!.atomicNumber.value)
         titleItem.title = element!.nameString()
         periodLabel.text = element!.period
         groupLabel.text = element!.groupString
@@ -64,9 +64,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     func assignNavigationHints() {
-        var nextAtomicNumber = element!.atomicNumber + 1
+        var nextAtomicNumber = element!.atomicNumber.value + 1
         
-        pageControl.updateCurrentLabel(atomicNumber: element!.atomicNumber)
+        pageControl.updateCurrentLabel(atomicNumber: element!.atomicNumber.value)
         
         if nextAtomicNumber > XTRDataSource.sharedInstance.elementCount() {
             nextAtomicNumber = 1
@@ -85,7 +85,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         
         pageControl.populateRightLabel(name: nextElement.name!)
         
-        var previousAtomicNumber = element!.atomicNumber - 1
+        var previousAtomicNumber = element!.atomicNumber.value - 1
         
         if previousAtomicNumber < 1 {
             previousAtomicNumber = XTRDataSource.sharedInstance.elementCount()
@@ -161,7 +161,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         assignOtherLabels()
         assignNavigationHints()
 
-        let atomicNumberToFloat = Float(element.atomicNumber)
+        let atomicNumberToFloat = Float(element.atomicNumber.value)
         progressBar.setProgress(atomicNumberToFloat / Float(118), animated: true)
         for item in childViewControllers {
             let controller = item as! XTRSwapableViewController
@@ -213,13 +213,13 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     // MARK: - Action Methods
     
     @objc func nextElement(_ sender: UIButton) {
-        var atomicNumber = element!.atomicNumber + 1
+        var atomicNumber = element!.atomicNumber.value + 1
         
         if atomicNumber > XTRDataSource.sharedInstance.elementCount() {
             atomicNumber = 1
         }
         
-        let atomicNumberToFloat = Float((element?.atomicNumber)!)
+        let atomicNumberToFloat = Float((element?.atomicNumber.value)!)
         progressBar.setProgress(atomicNumberToFloat / Float(118), animated: true)
 
         element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
@@ -227,13 +227,13 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     @objc func previousElement(_ sender: UIButton) {
-        var atomicNumber = element!.atomicNumber - 1
+        var atomicNumber = element!.atomicNumber.value - 1
         
         if atomicNumber < 1 {
             atomicNumber = XTRDataSource.sharedInstance.elementCount()
         }
         
-        let atomicNumberToFloat = Float((element?.atomicNumber)!)
+        let atomicNumberToFloat = Float((element?.atomicNumber.value)!)
         progressBar.setProgress(atomicNumberToFloat / Float(118), animated: true)
 
         element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
