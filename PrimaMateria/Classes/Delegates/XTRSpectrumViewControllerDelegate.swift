@@ -9,7 +9,7 @@
 import UIKit
 import CorePlot
 
-class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource, CPTPlotDataSource {
+class XTRSpectrumViewControllerDelegate: NSObject, CPTPlotDataSource {
     
     weak var controller: XTRSpectrumViewController?
         
@@ -51,38 +51,7 @@ class XTRSpectrumViewControllerDelegate: NSObject, UITableViewDelegate, UITableV
     func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: NSInteger) -> CPTFill? {
         return nil
     }
-    
-    func tableView(_ aTableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let row = indexPath.row
-        let MyIdentifier = "Column \(row)"
         
-        var cell: XTRTableCell? = aTableView.dequeueReusableCell(withIdentifier: MyIdentifier) as? XTRTableCell
-        
-        if cell == nil {
-            let modulus = row % 2
-            let model = controller?.lineSpectraArray!.value[row]
-            let airWavelength = model?.airWavelength
-            let intensity = model?.intensity
-            let spectrum = model?.spectrum
-            
-            cell = XTRTableCell(style: .default, reuseIdentifier: MyIdentifier)
-
-            createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 0, yPos: 0, width: 124, height: 32, property: airWavelength!, columnPosition: 1, modulus: modulus, cell: cell!))
-            createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 125, yPos: 0, width: 115, height: 32, property: intensity!, columnPosition: 2, modulus: modulus, cell: cell!))
-            createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 241, yPos: 0, width: 117, height: 32, property: spectrum!, columnPosition: 3, modulus: modulus, cell: cell!))
-        }
-        
-        return cell!
-    }
-    
-    func numberOfSections(in aTableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return controller!.element!.lineSpectraModels!.value.count
-    }
-    
     func createTableCellLabel(model: XTRTableViewCellViewModel) {
         let label = UILabel(frame: CGRect(x: model.xPos, y: model.yPos, width: model.width, height: model.height))
         

@@ -24,9 +24,8 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     @IBOutlet var seriesLabel: UILabel!
     @IBOutlet var titleItem: UINavigationItem!
     @IBOutlet var pageControl: XTRPageControl!
-    @IBOutlet var progressBar: XTRProgressView!
-    
     @IBOutlet var swapView: UIView!
+    
     var flag: Bool = true
     
     var disposeBag = DisposeBag()
@@ -39,13 +38,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     
     // MARK: - Action Methods
     
-    @IBAction func showAlert(_ sender: Any) {
-        let alertController = UIAlertController(title: "Alert!", message: "Tapped Progress Bar for element: \(element?.name ?? "")", preferredStyle: .alert)
-        let action = UIAlertAction(title: "OK", style: .cancel, handler: nil)
-        alertController.addAction(action)
-        present(alertController, animated: true, completion: nil)
-    }
-    
     // MARK: - Internal Methods
     
     func assignAtomicSymbolTextFieldProperties() {
@@ -55,7 +47,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     func assignOtherLabels() {
-        atomicNumberLabel.text = String(element!.atomicNumber.value)
+        atomicNumberLabel.text = String(element!.atomicNumber)
         titleItem.title = element!.nameString()
         periodLabel.text = element!.period
         groupLabel.text = element!.groupString
@@ -64,9 +56,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     func assignNavigationHints() {
-        var nextAtomicNumber = element!.atomicNumber.value + 1
+        var nextAtomicNumber = element!.atomicNumber + 1
         
-        pageControl.updateCurrentLabel(atomicNumber: element!.atomicNumber.value)
+        pageControl.updateCurrentLabel(atomicNumber: element!.atomicNumber)
         
         if nextAtomicNumber > XTRDataSource.sharedInstance.elementCount() {
             nextAtomicNumber = 1
@@ -77,15 +69,13 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         }
         
         let nextElement = XTRDataSource.sharedInstance.element(index: nextAtomicNumber - 1)
-        let nextTitle = "▶︎ \(nextElement.name!)"
+        let nextTitle = "\(nextElement.name!) ▶️"
         
         nextButton.setTitle(nextTitle, for: UIControlState())
-        nextButton.setTitle(nextTitle, for: .highlighted)
-        nextButton.setTitle(nextTitle, for: .selected)
         
         pageControl.populateRightLabel(name: nextElement.name!)
         
-        var previousAtomicNumber = element!.atomicNumber.value - 1
+        var previousAtomicNumber = element!.atomicNumber - 1
         
         if previousAtomicNumber < 1 {
             previousAtomicNumber = XTRDataSource.sharedInstance.elementCount()
@@ -96,11 +86,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         }
         
         let previousElement = XTRDataSource.sharedInstance.element(index: previousAtomicNumber - 1)
-        let previousTitle = "◀︎ \(previousElement.name!)"
+        let previousTitle = "◀️ \(previousElement.name!)"
         
         previousButton.setTitle(previousTitle, for: UIControlState())
-        previousButton.setTitle(previousTitle, for: .highlighted)
-        previousButton.setTitle(previousTitle, for: .selected)
         
         pageControl.populateLeftLabel(name: previousElement.name!)
     }
@@ -161,8 +149,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         assignOtherLabels()
         assignNavigationHints()
 
-        let atomicNumberToFloat = Float(element.atomicNumber.value)
-        progressBar.setProgress(atomicNumberToFloat / Float(118), animated: true)
         for item in childViewControllers {
             let controller = item as! XTRSwapableViewController
             controller.setupUI(element: element)
@@ -213,29 +199,23 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     // MARK: - Action Methods
     
     @objc func nextElement(_ sender: UIButton) {
-        var atomicNumber = element!.atomicNumber.value + 1
+        var atomicNumber = element!.atomicNumber + 1
         
         if atomicNumber > XTRDataSource.sharedInstance.elementCount() {
             atomicNumber = 1
         }
         
-        let atomicNumberToFloat = Float((element?.atomicNumber.value)!)
-        progressBar.setProgress(atomicNumberToFloat / Float(118), animated: true)
-
         element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
         animateForDirection("Next")
     }
     
     @objc func previousElement(_ sender: UIButton) {
-        var atomicNumber = element!.atomicNumber.value - 1
+        var atomicNumber = element!.atomicNumber - 1
         
         if atomicNumber < 1 {
             atomicNumber = XTRDataSource.sharedInstance.elementCount()
         }
         
-        let atomicNumberToFloat = Float((element?.atomicNumber.value)!)
-        progressBar.setProgress(atomicNumberToFloat / Float(118), animated: true)
-
         element = XTRDataSource.sharedInstance.element(index: atomicNumber - 1)
         animateForDirection("Previous")
     }
@@ -269,10 +249,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
         view.addGestureRecognizer(swipePreviousElement)
         NotificationCenter.default.addObserver(self, selector: #selector(atomicStructureZoomed(_:)), name: .notificationAtomicStructureZoomed, object: nil)
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(showAlert(_:)))
-        //progressBar.addGestureRecognizer(gesture)
-        progressBar.isUserInteractionEnabled = false
-        pageControl.addGestureRecognizer(gesture)
     }
     
     override func viewWillAppear(_ animated: Bool) {

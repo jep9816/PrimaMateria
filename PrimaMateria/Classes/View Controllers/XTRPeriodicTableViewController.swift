@@ -110,7 +110,7 @@ class XTRPeriodicTableViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         title = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
         navigationBar.topItem?.title = title
         

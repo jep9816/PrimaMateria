@@ -46,8 +46,8 @@ class XTRElementModel: NSObject {
         elementDictionary[keyPath] = value
     }
     
-    var atomicNumber: BehaviorRelay<Int> {
-        return value(forKeyPath: ELEMENT_ATOMIC_NUMBER) as! BehaviorRelay<Int>
+    var atomicNumber: Int {
+        return value(forKeyPath: ELEMENT_ATOMIC_NUMBER) as! Int
     }
     
     var atomicRadius: Double {

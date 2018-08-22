@@ -115,6 +115,7 @@ let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 let SWITCH_CORNER_RADIUS: CGFloat = 16.0
 let VIEW_CORNER_RADIUS: CGFloat = 8.0
+let XTR_TABLE_CELL_IDENTIFIER = "XTRTableCell"
 
 struct XTRAppearanceType {
     static let classic = "Classic"

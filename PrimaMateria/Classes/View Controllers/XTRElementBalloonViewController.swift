@@ -39,7 +39,7 @@ class XTRElementBalloonViewController: UIViewController {
         elementNameLabel.backgroundColor = element.seriesColor
         elementNameLabel.text = " \(element.name!)"
         
-        atomicNumberLabel.text = " \(String(element.atomicNumber.value))"
+        atomicNumberLabel.text = " \(String(element.atomicNumber))"
         atomicMassLabel.text = " \(element.atomicMassAggregate)"
         boilingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_BOILING_POINT)!)"
         meltingPointLabel.text = " \(element.value(forKeyPath: ELEMENT_MELTING_POINT)!)"

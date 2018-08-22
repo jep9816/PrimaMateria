@@ -34,12 +34,12 @@ struct XTRSpectrumViewControllerConfig {
 class XTRSpectrumViewController: XTRSwapableViewController {
     
     @IBOutlet var hostingView: CPTGraphHostingView!
-    @IBOutlet var swapView: UIView!
-    
+    @IBOutlet var tableView: UITableView!
+
     var barChart: CPTXYGraph?
     var lineSpectraArray: BehaviorRelay<[XTRSpectraModel]>?
-    var tableView: UITableView?
-
+    var disposeBag: DisposeBag = DisposeBag()
+    
     private var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()
 
     // MARK: - Initialization Methods
@@ -167,28 +167,20 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     }
     
     func setupTableView(element: XTRElementModel) {
-        title = NSLocalizedString("spectrum", comment: "")
-        
         lineSpectraArray = element.lineSpectraModels
-        if tableView != nil {
-            tableView!.removeFromSuperview()
-            tableView = nil
-        }
         
-        tableView = UITableView(frame: swapView.frame, style: .plain)
-        tableView!.alwaysBounceVertical = false
-        tableView!.alwaysBounceHorizontal = false
-        tableView!.dataSource = delegate
-        tableView!.delegate = delegate
-        tableView!.separatorStyle = .none
-        tableView!.backgroundColor = UIColor.black
-        tableView!.backgroundView = UIView(frame: swapView.frame)
-        tableView!.backgroundView!.backgroundColor = UIColor.black
-        tableView!.isOpaque = false
-        tableView!.rowHeight = 34.0
-        tableView!.allowsSelection = false
-        view.addSubview(tableView!)
-        tableView!.reloadData()
+        setupRx()
+    }
+    
+    func setupRx() {
+        lineSpectraArray?.bind(to: (tableView?.rx.items(cellIdentifier: XTR_TABLE_CELL_IDENTIFIER, cellType: XTRTableCell.self))!) { [weak self] (row, element, cell) in
+            let modulus = row % 2
+            
+            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 0, yPos: 0, width: 124, height: 32, property: element.airWavelength, columnPosition: 1, modulus: modulus, cell: cell))
+            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 125, yPos: 0, width: 115, height: 32, property: element.intensity, columnPosition: 2, modulus: modulus, cell: cell))
+            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 241, yPos: 0, width: 117, height: 32, property: element.spectrum, columnPosition: 3, modulus: modulus, cell: cell))
+            }
+            .disposed(by: disposeBag)
     }
     
     // MARK: - View Management Methods
@@ -196,9 +188,17 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.alwaysBounceVertical = false
+        tableView.alwaysBounceHorizontal = false
+        tableView.separatorStyle = .none
+        tableView.backgroundColor = UIColor.black
+        tableView.isOpaque = false
+        tableView.rowHeight = 34.0
+        tableView.allowsSelection = false
+        tableView.register(XTRTableCell.self, forCellReuseIdentifier: XTR_TABLE_CELL_IDENTIFIER)
+        
         delegate?.controller = self
-        swapView.removeFromSuperview()
-    }
+     }
     
     override var shouldAutorotate: Bool {
         return false
@@ -212,7 +212,7 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     
     deinit {
         hostingView = nil
-        swapView = nil
+        tableView = nil
     }
     
 }
