@@ -25,7 +25,7 @@ class XTRElementListViewControllerDelegate: NSObject, UITableViewDelegate, UITab
     }
     
     func tableView(_ aTableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return XTRDataSource.sharedInstance.sortedElementList!.count
+        return XTRDataSource.sharedInstance.sortedElementList.count
     }
     
     // MARK: - UITableView Delegate Methods

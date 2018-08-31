@@ -86,7 +86,7 @@ class XTRElementListViewController: UIViewController {
             tableView = nil
         }
         
-        XTRDataSource.sharedInstance.sortByColumn(position: sender.tag, andOrdering: sender.toggleState())
+        XTRDataSource.sharedInstance.sortByColumn(position: sender.tag, ascending: sender.toggleState())
         setupTableView()
         tableView!.reloadData()
     }

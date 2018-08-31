@@ -179,6 +179,7 @@ struct FileType {
     static let png = "png"
     static let rtf = "rtf"
     static let plist = "plist"
+    static let json = "json"
 }
 
 // MARK: - Color Constants

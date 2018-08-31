@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import RxSwift
 
 let sortColumns = [ELEMENT_ATOMIC_NUMBER, ELEMENT_SYMBOL, ELEMENT_NAME, ELEMENT_ATOMIC_MASS, ELEMENT_BOILING_POINT, ELEMENT_MELTING_POINT, ELEMENT_DENSITY, ELEMENT_SERIES, ELEMENT_PERIOD, ELEMENT_GROUP]
 
@@ -16,8 +15,8 @@ class XTRDataSource: NSObject {
     private static var __once: () = { _sharedInstance = XTRDataSource() }()
     static var _sharedInstance: XTRDataSource!
     
-    var elementList: [XTRElementModel]!
-    var sortedElementList: NSMutableArray?
+    var elementList: [XTRElementModel] = []
+    var sortedElementList: NSMutableArray = NSMutableArray()
     var graphPropertyList: [XTRGraphDefinitionModel] = []
     var columnSortSelector: Selector?
     
@@ -34,60 +33,73 @@ class XTRDataSource: NSObject {
             data = try Data(contentsOf: URL(fileURLWithPath: path))
         } catch {
         }
+        
         return data
     }
     
     class var sharedInstance: XTRDataSource {
         _ = XTRDataSource.__once
+        
         return _sharedInstance
     }
     
-    func loadElement(symbol: String) {
-        let theData = data(resourceName: symbol, type: FileType.plist, directory: SUPPORTING_FILES)
-        var tempDict: [String: Any]?
+    func loadElement(symbol: String) -> XTRElementModel? {
+        let theData = data(resourceName: symbol, type: FileType.json, directory: SUPPORTING_FILES)
+        var element: XTRElementModel?
         
         do {
-            try tempDict = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String: Any]
+            let jsonResponse = try JSONSerialization.jsonObject(with: theData, options: [.mutableContainers, .allowFragments])
             
-            elementList.append(XTRElementModel(dict: tempDict!))
+            guard let tempDict = jsonResponse as? [String: Any] else {
+                return nil
+            }
+            
+            element = XTRElementModel(dict: tempDict)
         } catch _ {
-            assert(nil != tempDict, "Could not read property list of element: \(symbol).")
+            print("Could not read property list of element: \(symbol).")
         }
+        
+        return element
     }
     
     func loadGraphPropertyList() {
-        let theData = data(resourceName: "GraphDefinitions", type: FileType.plist, directory: SUPPORTING_FILES)
-        var tempList: [[String: AnyObject]]?
-        
-        graphPropertyList = []
+        let theData = data(resourceName: "GraphDefinitions", type: FileType.json, directory: SUPPORTING_FILES)
         
         do {
-            tempList = try PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [[String: AnyObject]]
-            for item in tempList! {
+            let jsonResponse = try JSONSerialization.jsonObject(with: theData, options: [.mutableContainers, .allowFragments])
+            
+            guard let tempList = jsonResponse as? [[String: AnyObject]] else {
+                return
+            }
+
+            for item in tempList {
                 let model = XTRGraphDefinitionModel(dictionary: item)
+                
                 graphPropertyList.append(model)
             }
         } catch _ {
-            assert(nil != tempList, "Could not read graph property list.")
+            print("Could not read graph property list.")
         }
     }
     
     func loadElementList() {
-        let theData = data(resourceName: "ElementList", type: FileType.plist, directory: SUPPORTING_FILES)
-        var tempList: [String]?
-        
-        elementList = []
-        sortedElementList = NSMutableArray()
-
+        let theData = data(resourceName: "ElementList", type: FileType.json, directory: SUPPORTING_FILES)
+ 
         do {
-            try tempList = PropertyListSerialization.propertyList(from: theData, options: PropertyListSerialization.MutabilityOptions.mutableContainers, format: nil) as? [String]
+            let jsonResponse = try JSONSerialization.jsonObject(with: theData, options: [.mutableContainers, .allowFragments])
             
-            for (index, symbol) in (tempList?.enumerated())! {
-                loadElement(symbol: symbol)
-                sortedElementList!.add(elementList[index])
+            guard let tempList = jsonResponse as? [String] else {
+                return
+            }
+            
+            for symbol in tempList {
+                let element = loadElement(symbol: symbol)
+                
+                elementList.append(element!)
+                sortedElementList.add(element! as XTRElementModel)
             }
         } catch _ {
-            assert(nil != tempList, "Could not read property list of elements.")
+            print("Could not read property list of elements.")
         }
     }
     
@@ -102,38 +114,28 @@ class XTRDataSource: NSObject {
     
     // MARK: - General Methods
     
-    func sortByColumn(position: Int, andOrdering: Bool) {
-        let sortObject = sortColumns[Int(position)]
+    func sortByColumn(position: Int, ascending: Bool) {
+        let sortObject = sortColumns[position]
         let sortObject1 = sortColumns[0]
-        let discripter1 = NSSortDescriptor(key: sortObject, ascending: andOrdering)
+        let discripter1 = NSSortDescriptor(key: sortObject, ascending: ascending)
         
         if sortObject == sortObject1 {
-            let discripter2 = NSSortDescriptor(key: sortObject1, ascending: andOrdering)
+            let discripter2 = NSSortDescriptor(key: sortObject1, ascending: ascending)
             
-            sortedElementList!.sort(using: [discripter2, discripter1])
+            sortedElementList.sort(using: [discripter2, discripter1])
         } else {
-            sortedElementList!.sort(using: [discripter1])
+            sortedElementList.sort(using: [discripter1])
         }
-    }
-    
-    func resetElementList() {
-        let sortObject = sortColumns[0]
-        let sortDesc = NSSortDescriptor(key: sortObject, ascending: true)
-        sortedElementList!.sort(using: [sortDesc])
     }
     
     // MARK: - Accessor Methods
     
     func element(symbol: String) -> XTRElementModel? {
-        for element in elementList where element.symbol == symbol {
-            return element
-        }
-        
-        return nil
+        return elementList.filter { $0.symbol == symbol }[0]
     }
     
     func sortedElement(index: Int) -> XTRElementModel {
-        return sortedElementList!.object(at: index) as! XTRElementModel
+        return sortedElementList.object(at: index) as! XTRElementModel
     }
     
     func element(index: Int) -> XTRElementModel {
@@ -141,7 +143,7 @@ class XTRDataSource: NSObject {
     }
     
     func elementCount() -> Int {
-        return sortedElementList!.count
+        return sortedElementList.count
     }
     
 }
