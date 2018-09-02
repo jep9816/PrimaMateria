@@ -16,7 +16,7 @@ class XTRDataSource: NSObject {
     static var _sharedInstance: XTRDataSource!
     
     var elementList: [XTRElementModel] = []
-    var sortedElementList: NSMutableArray = NSMutableArray()
+    var sortedElementList: [XTRElementModel] = [] //NSMutableArray = NSMutableArray()
     var graphPropertyList: [XTRGraphDefinitionModel] = []
     var columnSortSelector: Selector?
     
@@ -71,11 +71,9 @@ class XTRDataSource: NSObject {
             guard let tempList = jsonResponse as? [[String: AnyObject]] else {
                 return
             }
-
+            
             for item in tempList {
-                let model = XTRGraphDefinitionModel(dictionary: item)
-                
-                graphPropertyList.append(model)
+                graphPropertyList.append(XTRGraphDefinitionModel(dictionary: item))
             }
         } catch _ {
             print("Could not read graph property list.")
@@ -84,7 +82,7 @@ class XTRDataSource: NSObject {
     
     func loadElementList() {
         let theData = data(resourceName: "ElementList", type: FileType.json, directory: SUPPORTING_FILES)
- 
+        
         do {
             let jsonResponse = try JSONSerialization.jsonObject(with: theData, options: [.mutableContainers, .allowFragments])
             
@@ -96,7 +94,7 @@ class XTRDataSource: NSObject {
                 let element = loadElement(symbol: symbol)
                 
                 elementList.append(element!)
-                sortedElementList.add(element! as XTRElementModel)
+                sortedElementList.append(element!)
             }
         } catch _ {
             print("Could not read property list of elements.")
@@ -107,7 +105,7 @@ class XTRDataSource: NSObject {
     
     override init() {
         super.init()
-
+        
         loadGraphPropertyList()
         loadElementList()
     }
@@ -115,16 +113,49 @@ class XTRDataSource: NSObject {
     // MARK: - General Methods
     
     func sortByColumn(position: Int, ascending: Bool) {
-        let sortObject = sortColumns[position]
-        let sortObject1 = sortColumns[0]
-        let discripter1 = NSSortDescriptor(key: sortObject, ascending: ascending)
-        
-        if sortObject == sortObject1 {
-            let discripter2 = NSSortDescriptor(key: sortObject1, ascending: ascending)
-            
-            sortedElementList.sort(using: [discripter2, discripter1])
-        } else {
-            sortedElementList.sort(using: [discripter1])
+        switch sortColumns[position] {
+        case ELEMENT_ATOMIC_NUMBER:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.atomicNumber < rhsTemp.atomicNumber) : (lhsTemp.atomicNumber > rhsTemp.atomicNumber)
+            })
+        case ELEMENT_SYMBOL:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.symbol! < rhsTemp.symbol!) : (lhsTemp.symbol! > rhsTemp.symbol!)
+            })
+        case ELEMENT_NAME:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.name! < rhsTemp.name!) : (lhsTemp.name! > rhsTemp.name!)
+            })
+        case ELEMENT_ATOMIC_MASS:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.atomicMass < rhsTemp.atomicMass) : (lhsTemp.atomicMass > rhsTemp.atomicMass)
+            })
+        case ELEMENT_BOILING_POINT:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.boilingPoint < rhsTemp.boilingPoint) : (lhsTemp.boilingPoint > rhsTemp.boilingPoint)
+            })
+        case ELEMENT_MELTING_POINT:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.meltingPoint < rhsTemp.meltingPoint) : (lhsTemp.meltingPoint > rhsTemp.meltingPoint)
+            })
+        case ELEMENT_DENSITY:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.density < rhsTemp.density) : (lhsTemp.density > rhsTemp.density)
+            })
+        case ELEMENT_SERIES:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.series! < rhsTemp.series!) : (lhsTemp.series! > rhsTemp.series!)
+            })
+        case ELEMENT_PERIOD:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.period! < rhsTemp.period!) : (lhsTemp.period! > rhsTemp.period!)
+            })
+        case ELEMENT_GROUP:
+            sortedElementList = sortedElementList.sorted(by: { (lhsTemp: XTRElementModel, rhsTemp: XTRElementModel) -> Bool in
+                return ascending ? (lhsTemp.group! < rhsTemp.group!) : (lhsTemp.group! > rhsTemp.group!)
+            })
+        default:
+            return
         }
     }
     
@@ -135,7 +166,7 @@ class XTRDataSource: NSObject {
     }
     
     func sortedElement(index: Int) -> XTRElementModel {
-        return sortedElementList.object(at: index) as! XTRElementModel
+        return sortedElementList[index]
     }
     
     func element(index: Int) -> XTRElementModel {
