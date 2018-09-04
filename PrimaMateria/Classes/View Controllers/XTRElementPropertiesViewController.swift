@@ -94,6 +94,9 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     }
     
     func setupSegmentedControlUI() {
+        let rect = segmentedControl.frame
+        let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34)
+        segmentedControl.frame = newRect
         segmentedControl.cornerRadius = VIEW_CORNER_RADIUS
         segmentedControl.masksToBounds = true
         segmentedControl.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
@@ -179,13 +182,13 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         setupRx()
         chemicalPropertiesView.frame = swapView.frame
         chemicalPropertiesView.bounds = swapView.bounds
-        chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 500)
+        chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 574)
         chemicalPropertiesView.isHidden = true
         view.addSubview(chemicalPropertiesView)
         
         physicalPropertiesView.frame = swapView.frame
         physicalPropertiesView.bounds = swapView.bounds
-        physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1670)
+        physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1128)
         physicalPropertiesView.isHidden = false
         view.addSubview(physicalPropertiesView)
         

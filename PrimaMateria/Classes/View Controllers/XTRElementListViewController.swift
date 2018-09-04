@@ -24,12 +24,11 @@ class XTRElementListViewController: UIViewController {
     @IBOutlet var seriesButton: XTRTableHeaderButton!
     @IBOutlet var periodButton: XTRTableHeaderButton!
     @IBOutlet var groupButton: XTRTableHeaderButton!
-    @IBOutlet var swapView: UIView!
+    @IBOutlet var tableView: UITableView!
     @IBOutlet var navigationBar: UINavigationBar!
     
     var disposeBag = DisposeBag()
 
-    private var tableView: UITableView?
     private var delegate: XTRElementListViewControllerDelegate? = XTRElementListViewControllerDelegate()
     
     // MARK: - Initialization Methods
@@ -41,7 +40,6 @@ class XTRElementListViewController: UIViewController {
     // MARK: - Internal Methods
         
     private func setupTableView() {
-        tableView = UITableView(frame: swapView.frame, style: .plain)
         tableView!.alwaysBounceVertical = false
         tableView!.alwaysBounceHorizontal = false
         tableView!.delegate = delegate
@@ -71,6 +69,7 @@ class XTRElementListViewController: UIViewController {
             mapToObserverHeaderButton(button: periodButton),
             mapToObserverHeaderButton(button: groupButton)
         ]
+        
         Observable.merge(array).subscribe(onNext: { [weak self] sender in
             self?.sortTableView(sender)
         }).disposed(by: disposeBag)
@@ -79,15 +78,7 @@ class XTRElementListViewController: UIViewController {
     // MARK: - Action Methods
     
     func sortTableView(_ sender: XTRTableHeaderButton) {
-        if tableView != nil {
-            tableView!.delegate = nil
-            tableView!.dataSource = nil
-            tableView!.removeFromSuperview()
-            tableView = nil
-        }
-        
         XTRDataSource.sharedInstance.sortByColumn(position: sender.tag, ascending: sender.toggleState())
-        setupTableView()
         tableView!.reloadData()
     }
     
@@ -100,7 +91,6 @@ class XTRElementListViewController: UIViewController {
         navigationBar.topItem?.title = title
 
         _ = atomicNumberButton.toggleState()
-        swapView.removeFromSuperview()
         setupTableView()
         setupRx()
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -138,8 +128,8 @@ class XTRElementListViewController: UIViewController {
         seriesButton = nil
         periodButton = nil
         groupButton = nil
-        swapView = nil
         navigationBar =  nil
+        tableView = nil
     }
     
 }

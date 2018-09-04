@@ -17,7 +17,6 @@ struct XTRPeriodicTableViewControllerConfig {
 
 class XTRPeriodicTableViewController: UIViewController {
     
-    @IBOutlet var swapView: UIView!
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var molecularCalculatorSwitch: UISwitch!
     @IBOutlet var globeImageView: UIImageView!
@@ -115,9 +114,8 @@ class XTRPeriodicTableViewController: UIViewController {
         navigationBar.topItem?.title = title
         
         molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMolecularCalculatorViewController.nameOfClass) as? XTRMolecularCalculatorViewController
-        molecularCalculatorViewController.view.frame = swapView.frame
+        molecularCalculatorViewController.view.frame = CGRect(x: 235, y: 160, width: 380, height: 155)
         
-        swapView.removeFromSuperview()
         setupPopUp()
         setupRx()
         toggleMolecularCalculatorState(false)
@@ -157,7 +155,6 @@ class XTRPeriodicTableViewController: UIViewController {
     
     deinit {
         NotificationCenter.default.removeObserver(self, name: .inspectorDismissedNotification, object: nil)
-        swapView = nil
         molecularCalculatorSwitch = nil
         navigationBar = nil
     }

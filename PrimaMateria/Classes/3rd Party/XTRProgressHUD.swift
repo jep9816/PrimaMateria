@@ -10,7 +10,6 @@
     
 }
 
-
 //#define MBMainThreadAssert() NSAssert([NSThread isMainThread], @"MBProgressHUD needs to be accessed on the main thread.");
 //typedef void (^MBProgressHUDCompletionBlock)(void);
 
@@ -21,7 +20,7 @@ let MBDefaultPadding: Float = 4.0
 let MBDefaultLabelFontSize: Float = 16.0
 let MBDefaultDetailsLabelFontSize: Float = 12.0
 
-enum MBProgressHUDMode : Int {
+enum MBProgressHUDMode: Int {
     case indeterminate
     /// A round, pie-chart like, progress view.
     case determinate
@@ -35,7 +34,7 @@ enum MBProgressHUDMode : Int {
     case text
 }
 
-enum MBProgressHUDAnimation : Int {
+enum MBProgressHUDAnimation: Int {
     /// Opacity animation
     case fade
     /// Opacity + scale animation (zoom in when appearing zoom out when disappearing)
@@ -46,7 +45,7 @@ enum MBProgressHUDAnimation : Int {
     case zoomIn
 }
 
-enum MBProgressHUDBackgroundStyle : Int {
+enum MBProgressHUDBackgroundStyle: Int {
     /// Solid color background
     case solidColor
     /// UIVisualEffectView or UIToolbar.layer background view

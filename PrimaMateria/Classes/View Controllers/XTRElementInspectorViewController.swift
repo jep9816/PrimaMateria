@@ -24,7 +24,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     @IBOutlet var seriesLabel: UILabel!
     @IBOutlet var titleItem: UINavigationItem!
     @IBOutlet var pageControl: XTRPageControl!
-    @IBOutlet var swapView: UIView!
     
     var flag: Bool = true
     
@@ -96,8 +95,8 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     override func addChildViewController(_ aViewController: UIViewController) {
         super.addChildViewController(aViewController)
         
-        aViewController.view.frame = swapView.frame
-        aViewController.view.bounds = swapView.bounds
+        aViewController.view.frame = CGRect(x: 0, y: 149, width: 1024, height: 574)
+        aViewController.view.bounds = CGRect(x: 0, y: 0, width: 1024, height: 574)
         aViewController.view.isHidden = true
         
         view.addSubview(aViewController.view)
@@ -174,6 +173,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
                 controller.view.isHidden = true
                 viewController?.view.isHidden = false
             }
+            self?.view.bringSubview(toFront: (self?.pageControl)!)
         }).disposed(by: disposeBag)
     }
     
@@ -232,8 +232,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
 
         nextButton.titleLabel!.textAlignment = .right
         previousButton.titleLabel!.textAlignment = .left
-        
-        swapView.removeFromSuperview()
         
         addChildViewController(name: StoryBoardName.AtomicStructure, className: XTRAtomicStructureViewController.nameOfClass)
         addChildViewController(name: StoryBoardName.ElementProperties, className: XTRElementPropertiesViewController.nameOfClass)
@@ -295,7 +293,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         groupLabel = nil
         seriesLabel = nil
         casRegNoLabel = nil
-        swapView = nil
         nextButton = nil
         previousButton = nil
         titleItem = nil
