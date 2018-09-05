@@ -56,6 +56,7 @@ class XTRElementListViewController: UIViewController {
         return button.rx.tap.map { _ in return button}
     }
 
+    // TODO: setup table to use rx for population and row selection
     func setupRx() {
         let array = [
             mapToObserverHeaderButton(button: atomicNumberButton),
