@@ -80,6 +80,8 @@ class XTRPageControl: UIView {
         previousLabel.backgroundColor = XTRColorFactory.transparentColor
         previousLabel.textColor = XTRColorFactory.pageControlLabelColor
         previousLabel.textAlignment = .left
+        previousLabel.isUserInteractionEnabled = true
+        
         addSubview(previousLabel)
         
         nextLabel = UILabel(frame: CGRect(x: 615, y: 6, width: 400, height: 25))
@@ -87,6 +89,10 @@ class XTRPageControl: UIView {
         nextLabel.backgroundColor = XTRColorFactory.transparentColor
         nextLabel.textColor = XTRColorFactory.pageControlLabelColor
         nextLabel.textAlignment = .right
+        nextLabel.isUserInteractionEnabled = true
+        
         addSubview(nextLabel)
+        
+        UIImageView.gradientView(frame: bounds, destinationView: self)
     }
 }

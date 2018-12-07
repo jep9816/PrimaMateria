@@ -11,9 +11,9 @@ import RxSwift
 import RxCocoa
 
 enum XTRSpectrumViewProperty {
-    static let kAirWavelength = "airWavelength"
-    static let kIntensity = "intensity"
-    static let kSpectrum = "spectrum"
+    //static let kAirWavelength = "airWavelength"
+    //static let kIntensity = "intensity"
+    //static let kSpectrum = "spectrum"
     static let kISpectrum = "I"
     static let kIISpectrum = "II"
     static let kIIISpectrum = "III"

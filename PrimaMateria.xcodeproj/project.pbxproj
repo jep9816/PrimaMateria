@@ -1800,11 +1800,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MODULE_NAME = $inherited;
+				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
-				PRODUCT_MODULE_NAME = $inherited;
+				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1833,11 +1833,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MODULE_NAME = $inherited;
+				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
-				PRODUCT_MODULE_NAME = $inherited;
+				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1865,7 +1865,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MODULE_NAME = $inherited;
+				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
@@ -1899,7 +1899,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MODULE_NAME = $inherited;
+				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;

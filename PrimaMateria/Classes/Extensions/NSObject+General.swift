@@ -205,3 +205,20 @@ extension XibDesignable where Self: UIView {
 }
 
 extension UIView: XibDesignable {}
+
+extension UIImageView {
+    
+    class func gradientView(frame: CGRect, destinationView: UIView) {
+        let imageView = UIImageView(frame: destinationView.bounds)
+        imageView.image = #imageLiteral(resourceName: "gradient")
+        destinationView.addSubview(imageView)
+        destinationView.sendSubview(toBack: imageView)
+        destinationView.layer.masksToBounds = false
+        destinationView.layer.shadowOffset = CGSize(width: 0, height: -5)
+        destinationView.layer.shadowRadius = 5
+        destinationView.layer.shadowOpacity = 1
+        destinationView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.53).cgColor
+        destinationView.addSubview(imageView)
+        destinationView.sendSubview(toBack: imageView)
+    }
+}

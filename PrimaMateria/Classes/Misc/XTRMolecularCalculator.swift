@@ -15,7 +15,7 @@ class XTRMolecularCalculator: NSObject {
         
         if let localFormula = formula.map({ $0 as NSString }) {
             if localFormula.length > 0 {
-                var regex: NSRegularExpression? = nil
+                var regex: NSRegularExpression?
                 
                 do {
                     try regex = NSRegularExpression(pattern: "[A-Z][a-z]*\\d*|\\([^)]+\\)\\d*", options: NSRegularExpression.Options.caseInsensitive)

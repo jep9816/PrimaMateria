@@ -21,7 +21,7 @@ class XTRPeriodicTableViewController: UIViewController {
     @IBOutlet var molecularCalculatorSwitch: UISwitch!
     @IBOutlet var globeImageView: UIImageView!
     @IBOutlet var elementButtonView: UIView!
-    
+
     var molecularCalculatorState: Bool = false
     var elementBalloonViewController: XTRElementBalloonViewController!
     var molecularCalculatorViewController: XTRMolecularCalculatorViewController!

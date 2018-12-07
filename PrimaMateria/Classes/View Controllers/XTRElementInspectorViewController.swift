@@ -74,6 +74,11 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         
         pageControl.populateRightLabel(name: nextElement.name!)
         
+        let nextGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(nextElement(_:)))
+        let previousGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(previousElement(_:)))
+        pageControl.nextLabel.addGestureRecognizer(nextGestureRecognizer)
+        pageControl.previousLabel.addGestureRecognizer(previousGestureRecognizer)
+
         var previousAtomicNumber = element!.atomicNumber - 1
         
         if previousAtomicNumber < 1 {

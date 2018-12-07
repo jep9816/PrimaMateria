@@ -8,11 +8,6 @@
 
 import UIKit
 
-struct XTRZoomContentViewConfig {
-    static let viewHeight = 716.0
-    static let viewWidth = 716.0
-}
-
 class XTRZoomContentView: UIView {
     @IBOutlet var label: UILabel!
     @IBOutlet var wrapper: UIView!

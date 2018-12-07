@@ -25,7 +25,6 @@ class XTRGraphViewController: UIViewController {
     @IBOutlet var navigationBar: UINavigationBar!
 
     var barChart: CPTXYGraph?
-    var errorString: String?
     
     var delegate: XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
     
@@ -117,10 +116,10 @@ class XTRGraphViewController: UIViewController {
         y.titleTextStyle = textStyle
     }
     
-    func element(_ anElement: XTRElementModel, anIdentifier: String) -> NSNumber {
-        let aValue: NSNumber? = anElement.value(forKeyPath: anIdentifier) as? NSNumber
-        return (aValue != nil) ? aValue!: 0
-    }
+//    func element(_ anElement: XTRElementModel, anIdentifier: String) -> NSNumber {
+//        let aValue: NSNumber? = anElement.value(forKeyPath: anIdentifier) as? NSNumber
+//        return (aValue != nil) ? aValue!: 0
+//    }
     
     func showGraphForChoiceAtIndex(_ index: Int) {
         let model = XTRDataSource.sharedInstance.graphPropertyList[index]

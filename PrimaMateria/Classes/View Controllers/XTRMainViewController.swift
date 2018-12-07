@@ -42,6 +42,7 @@ class XTRMainViewController: UITabBarController {
         viewControllers![4].title = NSLocalizedString("info", comment: "")
 
         delegate = controllerDelegate
+        UIImageView.gradientView(frame: tabBar.bounds, destinationView: tabBar)
     }
     
     override var shouldAutorotate: Bool {

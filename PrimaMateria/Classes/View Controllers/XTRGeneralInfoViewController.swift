@@ -20,10 +20,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     @IBOutlet var abundanceSeaLabel: UILabel!
     @IBOutlet var webView: WKWebView!
     @IBOutlet var showWikiButton: UIButton!
-
-    private var progressHUD: MBProgressHUD?
     
-    var elementName: String?
     var disposeBag = DisposeBag()
 
     // MARK: - Initialization Methods

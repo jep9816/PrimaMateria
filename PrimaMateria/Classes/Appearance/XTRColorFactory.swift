@@ -344,7 +344,7 @@ class XTRColorFactory: NSObject {
     
     class var pageControlLabelColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
-            return XTRColorFactoryClassic.denim
+            return XTRColorFactoryClassic.cotton
         } else {
             return XTRColorFactoryStandard.ghost
         }

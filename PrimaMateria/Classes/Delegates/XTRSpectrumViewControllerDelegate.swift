@@ -48,10 +48,6 @@ class XTRSpectrumViewControllerDelegate: NSObject, CPTPlotDataSource {
         return num
     }
     
-    func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: NSInteger) -> CPTFill? {
-        return nil
-    }
-        
     func createTableCellLabel(model: XTRTableViewCellViewModel) {
         let label = UILabel(frame: CGRect(x: model.xPos, y: model.yPos, width: model.width, height: model.height))
         
