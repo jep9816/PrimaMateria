@@ -253,44 +253,16 @@
                                 <rect key="frame" x="0.0" y="112" width="1024" height="38"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" tag="1" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="2Xk-Wh-yyy" customClass="XTRGeneralButton" customModule="PrimaMateria">
-                                        <rect key="frame" x="5" y="2" width="130" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="I">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="bK2-KM-4IZ" customClass="XTRGeneralButton" customModule="PrimaMateria">
-                                        <rect key="frame" x="888" y="2" width="130" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="Next Element ▶️">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                    </button>
-                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3dK-f5-lJ7">
-                                        <rect key="frame" x="141" y="3" width="741" height="29"/>
+                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" fixedFrame="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3dK-f5-lJ7">
+                                        <rect key="frame" x="5" y="3" width="1014" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <segments>
                                             <segment title="atomicStructure"/>
-                                            <segment title="elementProperties" width="145"/>
-                                            <segment title="nuclidesIsotopes" width="145"/>
-                                            <segment title="spectrum" width="145"/>
-                                            <segment title="generalInfo" width="145"/>
+                                            <segment title="elementProperties"/>
+                                            <segment title="nuclidesIsotopes"/>
+                                            <segment title="spectrum"/>
+                                            <segment title="generalInfo"/>
                                         </segments>
                                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </segmentedControl>
@@ -320,10 +292,8 @@
                         <outlet property="barButtonItem" destination="eVs-YQ-rFr" id="NiP-Dn-xQI"/>
                         <outlet property="casRegNoLabel" destination="MzH-dW-fzN" id="szx-kY-IYk"/>
                         <outlet property="groupLabel" destination="Kfc-TK-tPD" id="mpd-h2-F5x"/>
-                        <outlet property="nextButton" destination="bK2-KM-4IZ" id="NCZ-9t-wkC"/>
                         <outlet property="pageControl" destination="jLw-TN-p4j" id="L7d-Oh-3DX"/>
                         <outlet property="periodLabel" destination="tOH-U6-Rju" id="1t4-Fa-sSr"/>
-                        <outlet property="previousButton" destination="2Xk-Wh-yyy" id="uau-K2-Q4M"/>
                         <outlet property="segmentedControl" destination="3dK-f5-lJ7" id="Vih-Bq-qwa"/>
                         <outlet property="seriesLabel" destination="T6L-6w-yvA" id="VpO-7h-HFU"/>
                         <outlet property="titleItem" destination="7ps-7A-YCp" id="1XA-J4-bb3"/>

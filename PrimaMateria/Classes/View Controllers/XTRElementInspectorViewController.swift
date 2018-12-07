@@ -14,8 +14,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var barButtonItem: UIBarButtonItem!
-    @IBOutlet var nextButton: UIButton!
-    @IBOutlet var previousButton: UIButton!
     @IBOutlet var atomicNumberLabel: UILabel!
     @IBOutlet var atomicSymbolLabel: UILabel!
     @IBOutlet var casRegNoLabel: UILabel!
@@ -68,9 +66,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         }
         
         let nextElement = XTRDataSource.sharedInstance.element(index: nextAtomicNumber - 1)
-        let nextTitle = "\(nextElement.name!) ▶️"
-        
-        nextButton.setTitle(nextTitle, for: UIControlState())
         
         pageControl.populateRightLabel(name: nextElement.name!)
         
@@ -90,9 +85,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         }
         
         let previousElement = XTRDataSource.sharedInstance.element(index: previousAtomicNumber - 1)
-        let previousTitle = "◀️ \(previousElement.name!)"
-        
-        previousButton.setTitle(previousTitle, for: UIControlState())
         
         pageControl.populateLeftLabel(name: previousElement.name!)
     }
@@ -183,18 +175,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
     
     func setupRx() {
-        Observable.of(
-            mapToObserver(button: previousButton)
-            ).merge().subscribe(onNext: { [weak self] sender in
-                self?.previousElement(sender)
-            }).disposed(by: disposeBag)
-        
-        Observable.of(
-            mapToObserver(button: nextButton)
-            ).merge().subscribe(onNext: { [weak self] sender in
-                self?.nextElement(sender)
-            }).disposed(by: disposeBag)
-        
         barButtonItem!.rx.tap.subscribe { [weak self] _ in
             self?.dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
             NotificationCenter.default.post(name: .inspectorDismissedNotification, object: nil)
@@ -234,9 +214,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
 
         setupRx()
-
-        nextButton.titleLabel!.textAlignment = .right
-        previousButton.titleLabel!.textAlignment = .left
         
         addChildViewController(name: StoryBoardName.AtomicStructure, className: XTRAtomicStructureViewController.nameOfClass)
         addChildViewController(name: StoryBoardName.ElementProperties, className: XTRElementPropertiesViewController.nameOfClass)
@@ -274,8 +251,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         flag = aNotification.object as! Bool
         
         segmentedControl.isUserInteractionEnabled = flag
-        nextButton.isUserInteractionEnabled = flag
-        previousButton.isUserInteractionEnabled = flag
         barButtonItem.isEnabled = flag
     }
     
@@ -298,8 +273,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         groupLabel = nil
         seriesLabel = nil
         casRegNoLabel = nil
-        nextButton = nil
-        previousButton = nil
         titleItem = nil
         pageControl = nil
     }
