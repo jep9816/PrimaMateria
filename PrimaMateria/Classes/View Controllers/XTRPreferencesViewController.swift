@@ -107,7 +107,7 @@ class XTRPreferencesViewController: UIViewController {
     
     func updateSeriesProperties(_ button: UIButton, color: UIColor) {
         button.backgroundColor = color
-        button.setTitleColor(color.inverseColor(), for: UIControlState())
+        button.setTitleColor(color.inverseColor(), for: UIControl.State())
     }
     
     func populateSeriesColors() {

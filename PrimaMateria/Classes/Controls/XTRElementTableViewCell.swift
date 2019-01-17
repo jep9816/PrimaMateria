@@ -24,7 +24,7 @@ class XTRElementTableViewCell: UITableViewCell {
     
     // MARK: - Initialization Methods
     
-    required override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+    required override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
     
@@ -84,7 +84,7 @@ class XTRElementTableViewCell: UITableViewCell {
         label.font = UIFont.systemFont(ofSize: 16.0)
         label.textColor = withStandardConditionColor
         label.backgroundColor = seriesColor
-        label.autoresizingMask = [UIViewAutoresizing.flexibleRightMargin, UIViewAutoresizing.flexibleHeight]
+        label.autoresizingMask = [UIView.AutoresizingMask.flexibleRightMargin, UIView.AutoresizingMask.flexibleHeight]
     }
     
     func modifyCellProperties() {

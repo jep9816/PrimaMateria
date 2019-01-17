@@ -12,7 +12,7 @@ class XTRLocalizedButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        for state in [UIControlState.normal, UIControlState.highlighted, UIControlState.selected, UIControlState.disabled] {
+        for state in [UIControl.State.normal, UIControl.State.highlighted, UIControl.State.selected, UIControl.State.disabled] {
             if let title = title(for: state) {
                 setTitle(NSLocalizedString(title, comment: ""), for: state)
             }
@@ -39,7 +39,7 @@ class XTRGeneralButton: XTRLocalizedButton {
         
         titleLabel!.textAlignment = NSTextAlignment.center
         backgroundColor = XTRColorFactoryClassic.silverColor
-        setTitleColor(UIColor.white, for: UIControlState())
+        setTitleColor(UIColor.white, for: UIControl.State())
         createLayer()
     }
     

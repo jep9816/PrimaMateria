@@ -251,7 +251,7 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         setupRx()
 
         view.addSubview(overlayView)
-        view.sendSubview(toBack: overlayView)
+        view.sendSubviewToBack(overlayView)
     }
     
     func createZoomView(frame: CGRect, type: Int) {
@@ -307,7 +307,7 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
         content.alpha = 0.0
         content.isHidden = false
         
-        view.bringSubview(toFront: self.overlayView)
+        view.bringSubviewToFront(self.overlayView)
         
         UIView.animate(withDuration: 1, animations: { [weak self] in
             self?.overlayView.backgroundColor = UIColor.clear.withAlphaComponent(0.6)
@@ -322,7 +322,7 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
             content.alpha = 0.0
             content.frame = self.view.convert(localView.frame, to: self.view.window)
         }, completion: { _ in
-            self.view.sendSubview(toBack: self.overlayView)
+            self.view.sendSubviewToBack(self.overlayView)
             content.isHidden = true
             self.overlayView.isHidden = true
             content.removeFromSuperview()
@@ -333,28 +333,28 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     
     @objc func presentCrystalStructureContent(sender: UIButton) {
         createZoomView(frame: self.crystalStructureView.frame, type: XTRAtomicStructureViewControllerConfig.StructureViewTypes.kCrystalStructureView)
-        crystalStructureExpandButton.setImage(#imageLiteral(resourceName: "CompressButton"), for: UIControlState())
+        crystalStructureExpandButton.setImage(#imageLiteral(resourceName: "CompressButton"), for: UIControl.State())
         present(content: crystalStructureContent)
     }
     
     @objc func dismissCrystalStructureContent(sender: UIGestureRecognizer) {
         if crystalStructureContent != nil {
             dismiss(content: crystalStructureContent, localView: crystalStructureView)
-            crystalStructureExpandButton.setImage(#imageLiteral(resourceName: "ExpandButton"), for: UIControlState())
+            crystalStructureExpandButton.setImage(#imageLiteral(resourceName: "ExpandButton"), for: UIControl.State())
             crystalStructureContent = nil
         }
     }
     
     @objc func presentShellModelContent(sender: UIButton) {
         createZoomView(frame: self.shellModelView.frame, type: XTRAtomicStructureViewControllerConfig.StructureViewTypes.kShellModelView)
-        shellModelExpandButton.setImage(#imageLiteral(resourceName: "CompressButton"), for: UIControlState())
+        shellModelExpandButton.setImage(#imageLiteral(resourceName: "CompressButton"), for: UIControl.State())
         present(content: shellModelContent)
     }
     
     @objc func dismissShellModelContent(sender: UIGestureRecognizer) {
         if shellModelContent != nil {
             dismiss(content: shellModelContent, localView: shellModelView)
-            shellModelExpandButton.setImage(#imageLiteral(resourceName: "ExpandButton"), for: UIControlState())
+            shellModelExpandButton.setImage(#imageLiteral(resourceName: "ExpandButton"), for: UIControl.State())
             shellModelContent = nil
         }
     }

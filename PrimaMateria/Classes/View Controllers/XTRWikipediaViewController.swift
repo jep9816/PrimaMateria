@@ -49,12 +49,12 @@ class XTRWikipediaViewController: UIViewController {
         
         delegate?.controller = self
         
-        let textAttributes: [NSAttributedStringKey: AnyObject]? = [
-            NSAttributedStringKey.foregroundColor: UIColor.white,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 20)
+        let textAttributes: [NSAttributedString.Key: AnyObject]? = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
         ]
         
-        titleButtonItem.setTitleTextAttributes(textAttributes, for: UIControlState())
+        titleButtonItem.setTitleTextAttributes(textAttributes, for: UIControl.State())
         
         preferredContentSize = CGSize(width: 768, height: 620)
         

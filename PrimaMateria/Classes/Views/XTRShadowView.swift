@@ -55,7 +55,7 @@ class XTRShadowView: UIImageView {
         layer.borderWidth = 3.0
         isOpaque = false
         
-        tempSuperView.bringSubview(toFront: self)
+        tempSuperView.bringSubviewToFront(self)
     }
     
 }

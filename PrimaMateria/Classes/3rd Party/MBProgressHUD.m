@@ -348,7 +348,7 @@ static const CGFloat MBDefaultDetailsLabelFontSize = 12.f;
     UIButton *button = [MBProgressHUDRoundedButton buttonWithType:UIButtonTypeCustom];
     button.titleLabel.textAlignment = NSTextAlignmentCenter;
     button.titleLabel.font = [UIFont boldSystemFontOfSize:MBDefaultDetailsLabelFontSize];
-    [button setTitleColor:defaultColor forState:UIControlStateNormal];
+    [button setTitleColor:defaultColor forState: UIControlStateNormal];
     _button = button;
     
     for (UIView *view in @[label, detailsLabel, button]) {

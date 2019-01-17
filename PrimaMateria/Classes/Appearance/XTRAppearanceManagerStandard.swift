@@ -39,16 +39,16 @@ class XTRAppearanceManagerStandard: NSObject {
         let appearance = UIBarButtonItem.appearance()
         appearance.tintColor = XTRColorFactoryStandard.lightGray
 
-        //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
-        //- (nullable UIImage *)backgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
-        //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics;
-        //- (nullable UIImage *)backgroundImageForState:(UIControlState)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics;
+        //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
+        //- (nullable UIImage *)backgroundImageForState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
+        //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics;
+        //- (nullable UIImage *)backgroundImageForState:(UIControl.State)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics;
         //- (void)setBackgroundVerticalPositionAdjustment:(CGFloat)adjustment forBarMetrics:(UIBarMetrics)barMetrics;
         //- (CGFloat)backgroundVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics;
         //- (void)setTitlePositionAdjustment:(UIOffset)adjustment forBarMetrics:(UIBarMetrics)barMetrics;
         //- (UIOffset)titlePositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics;
-        //- (void)setBackButtonBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
-        //- (nullable UIImage *)backButtonBackgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
+        //- (void)setBackButtonBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
+        //- (nullable UIImage *)backButtonBackgroundImageForState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
         //- (void)setBackButtonTitlePositionAdjustment:(UIOffset)adjustment forBarMetrics:(UIBarMetrics)barMetrics;
         //- (UIOffset)backButtonTitlePositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics;
         //- (void)setBackButtonBackgroundVerticalPositionAdjustment:(CGFloat)adjustment forBarMetrics:(UIBarMetrics)barMetrics;
@@ -56,8 +56,8 @@ class XTRAppearanceManagerStandard: NSObject {
     }
     
     func barItemAppearance() {
-        //- (void)setTitleTextAttributes:(nullable NSDictionary<NSAttributedStringKey,id> *)attributes forState:(UIControlState)state;
-        //- (nullable NSDictionary<NSString *,id> *)titleTextAttributesForState:(UIControlState)state;
+        //- (void)setTitleTextAttributes:(nullable NSDictionary<NSAttributedString.Key,id> *)attributes forState:(UIControl.State)state;
+        //- (nullable NSDictionary<NSString *,id> *)titleTextAttributesForState:(UIControl.State)state;
     }
     
     func navigationBarAppearance() {
@@ -69,9 +69,9 @@ class XTRAppearanceManagerStandard: NSObject {
         shadow.shadowBlurRadius = 5.0
         
         let navigationBarTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.ghost,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 30),
-            NSAttributedStringKey.shadow: shadow
+            NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.ghost,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.shadow: shadow
         ]
         
         appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
@@ -89,8 +89,8 @@ class XTRAppearanceManagerStandard: NSObject {
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forBarMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForBarMetrics:(UIBarMetrics)barMetrics;
         //@property(nullable, nonatomic,strong) UIImage *shadowImage;
-        //@property(nullable,nonatomic,copy) NSDictionary<NSAttributedStringKey, id> *titleTextAttributes;
-        //@property(nullable, nonatomic, copy) NSDictionary<NSAttributedStringKey, id> *largeTitleTextAttributes;
+        //@property(nullable,nonatomic,copy) NSDictionary<NSAttributedString.Key, id> *titleTextAttributes;
+        //@property(nullable, nonatomic, copy) NSDictionary<NSAttributedString.Key, id> *largeTitleTextAttributes;
         //- (void)setTitleVerticalPositionAdjustment:(CGFloat)adjustment forBarMetrics:(UIBarMetrics)barMetrics;
         //- (CGFloat)titleVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics;
         //@property(nullable,nonatomic,strong) UIImage *backIndicatorImage;
@@ -120,16 +120,16 @@ class XTRAppearanceManagerStandard: NSObject {
         //@property(nullable, nonatomic,strong) UIImage *scopeBarBackgroundImage;
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForBarPosition:(UIBarPosition)barPosition barMetrics:(UIBarMetrics)barMetrics;
-        //- (void)setSearchFieldBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state;
-        //- (nullable UIImage *)searchFieldBackgroundImageForState:(UIControlState)state;
-        //- (void)setImage:(nullable UIImage *)iconImage forSearchBarIcon:(UISearchBarIcon)icon state:(UIControlState)state;
-        //- (nullable UIImage *)imageForSearchBarIcon:(UISearchBarIcon)icon state:(UIControlState)state;
-        //- (void)setScopeBarButtonBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state;
-        //- (nullable UIImage *)scopeBarButtonBackgroundImageForState:(UIControlState)state;
-        //- (void)setScopeBarButtonDividerImage:(nullable UIImage *)dividerImage forLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState;
-        //- (nullable UIImage *)scopeBarButtonDividerImageForLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState;
-        //- (void)setScopeBarButtonTitleTextAttributes:(nullable NSDictionary<NSString *, id> *)attributes forState:(UIControlState)state;
-        //- (nullable NSDictionary<NSString *, id> *)scopeBarButtonTitleTextAttributesForState:(UIControlState)state;
+        //- (void)setSearchFieldBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state;
+        //- (nullable UIImage *)searchFieldBackgroundImageForState:(UIControl.State)state;
+        //- (void)setImage:(nullable UIImage *)iconImage forSearchBarIcon:(UISearchBarIcon)icon state:(UIControl.State)state;
+        //- (nullable UIImage *)imageForSearchBarIcon:(UISearchBarIcon)icon state:(UIControl.State)state;
+        //- (void)setScopeBarButtonBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state;
+        //- (nullable UIImage *)scopeBarButtonBackgroundImageForState:(UIControl.State)state;
+        //- (void)setScopeBarButtonDividerImage:(nullable UIImage *)dividerImage forLeftSegmentState:(UIControl.State)leftState rightSegmentState:(UIControl.State)rightState;
+        //- (nullable UIImage *)scopeBarButtonDividerImageForLeftSegmentState:(UIControl.State)leftState rightSegmentState:(UIControl.State)rightState;
+        //- (void)setScopeBarButtonTitleTextAttributes:(nullable NSDictionary<NSString *, id> *)attributes forState:(UIControl.State)state;
+        //- (nullable NSDictionary<NSString *, id> *)scopeBarButtonTitleTextAttributesForState:(UIControl.State)state;
         //@property(nonatomic) UIOffset searchFieldBackgroundPositionAdjustment;
         //@property(nonatomic) UIOffset searchTextPositionAdjustment;
         //- (void)setPositionAdjustment:(UIOffset)adjustment forSearchBarIcon:(UISearchBarIcon)icon;
@@ -139,15 +139,15 @@ class XTRAppearanceManagerStandard: NSObject {
     func segmentedControlAppearance() {
         let appearance = UISegmentedControl.appearance()
         let selectedSegmentedControlTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactory.segmentedControlForgroundColor,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
+            NSAttributedString.Key.foregroundColor: XTRColorFactory.segmentedControlForgroundColor,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
         ]
         
         appearance.setTitleTextAttributes(selectedSegmentedControlTextAttributes, for: .selected)
         
         let normalSegmentedControlTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.greySuit,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 12)
+            NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.greySuit,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
         ]
         
         appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .normal)
@@ -156,16 +156,16 @@ class XTRAppearanceManagerStandard: NSObject {
         appearance.tintColor = XTRColorFactoryStandard.whiteSmoke
         appearance.backgroundColor = UIColor.clear
         
-        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.darkText, andSize: CGSize(width: 32, height: 32)), for: UIControlState.selected, barMetrics: .default)
-        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.lightGray, andSize: CGSize(width: 32, height: 32)), for: UIControlState.highlighted, barMetrics: .default)
-        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.lightGray, andSize: CGSize(width: 32, height: 32)), for: UIControlState.normal, barMetrics: .default)
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.darkText, andSize: CGSize(width: 32, height: 32)), for: UIControl.State.selected, barMetrics: .default)
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.lightGray, andSize: CGSize(width: 32, height: 32)), for: UIControl.State.highlighted, barMetrics: .default)
+        appearance.setBackgroundImage(UIImage.imageFromColor(XTRColorFactoryStandard.lightGray, andSize: CGSize(width: 32, height: 32)), for: UIControl.State.normal, barMetrics: .default)
 
-        //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
-        //- (nullable UIImage *)backgroundImageForState:(UIControlState)state barMetrics:(UIBarMetrics)barMetrics;
-        //- (void)setDividerImage:(nullable UIImage *)dividerImage forLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState barMetrics:(UIBarMetrics)barMetrics;
-        //- (nullable UIImage *)dividerImageForLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState barMetrics:(UIBarMetrics)barMetrics;
-        //- (void)setTitleTextAttributes:(nullable NSDictionary *)attributes forState:(UIControlState)state;
-        //- (nullable NSDictionary *)titleTextAttributesForState:(UIControlState)state;
+        //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
+        //- (nullable UIImage *)backgroundImageForState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
+        //- (void)setDividerImage:(nullable UIImage *)dividerImage forLeftSegmentState:(UIControl.State)leftState rightSegmentState:(UIControl.State)rightState barMetrics:(UIBarMetrics)barMetrics;
+        //- (nullable UIImage *)dividerImageForLeftSegmentState:(UIControl.State)leftState rightSegmentState:(UIControl.State)rightState barMetrics:(UIBarMetrics)barMetrics;
+        //- (void)setTitleTextAttributes:(nullable NSDictionary *)attributes forState:(UIControl.State)state;
+        //- (nullable NSDictionary *)titleTextAttributesForState:(UIControl.State)state;
         //- (void)setContentPositionAdjustment:(UIOffset)adjustment forSegmentType:(UISegmentedControlSegment)leftCenterRightOrAlone barMetrics:(UIBarMetrics)barMetrics;
         //- (UIOffset)contentPositionAdjustmentForSegmentType:(UISegmentedControlSegment)leftCenterRightOrAlone barMetrics:(UIBarMetrics)barMetrics;
     }
@@ -183,12 +183,12 @@ class XTRAppearanceManagerStandard: NSObject {
         //open var minimumTrackTintColor: UIColor?
         //open var maximumTrackTintColor: UIColor?
         //open var thumbTintColor: UIColor?
-        //open func setThumbImage(_ image: UIImage?, for state: UIControlState)
-        //open func setMinimumTrackImage(_ image: UIImage?, for state: UIControlState)
-        //open func setMaximumTrackImage(_ image: UIImage?, for state: UIControlState)
-        //open func thumbImage(for state: UIControlState) -> UIImage?
-        //open func minimumTrackImage(for state: UIControlState) -> UIImage?
-        //open func maximumTrackImage(for state: UIControlState) -> UIImage?
+        //open func setThumbImage(_ image: UIImage?, for state: UIControl.State)
+        //open func setMinimumTrackImage(_ image: UIImage?, for state: UIControl.State)
+        //open func setMaximumTrackImage(_ image: UIImage?, for state: UIControl.State)
+        //open func thumbImage(for state: UIControl.State) -> UIImage?
+        //open func minimumTrackImage(for state: UIControl.State) -> UIImage?
+        //open func maximumTrackImage(for state: UIControl.State) -> UIImage?
    }
 
     func stepperAppearance() {
@@ -197,14 +197,14 @@ class XTRAppearanceManagerStandard: NSObject {
         appearance.tintColor = XTRColorFactoryStandard.lavender
         
         //open var tintColor: UIColor!
-        //- (void)setBackgroundImage:(nullable UIImage*)image forState:(UIControlState)state;
-        //- (nullable UIImage*)backgroundImageForState:(UIControlState)state;
-        //- (void)setDividerImage:(nullable UIImage*)image forLeftSegmentState:(UIControlState)leftState rightSegmentState:(UIControlState)rightState;
-        //- (nullable UIImage*)dividerImageForLeftSegmentState:(UIControlState)state rightSegmentState:(UIControlState)state;
-        //- (void)setIncrementImage:(nullable UIImage *)image forState:(UIControlState)state;
-        //- (nullable UIImage *)incrementImageForState:(UIControlState)state;
-        //- (void)setDecrementImage:(nullable UIImage *)image forState:(UIControlState)state;
-        //- (nullable UIImage *)decrementImageForState:(UIControlState)state;
+        //- (void)setBackgroundImage:(nullable UIImage*)image forState:(UIControl.State)state;
+        //- (nullable UIImage*)backgroundImageForState:(UIControl.State)state;
+        //- (void)setDividerImage:(nullable UIImage*)image forLeftSegmentState:(UIControl.State)leftState rightSegmentState:(UIControl.State)rightState;
+        //- (nullable UIImage*)dividerImageForLeftSegmentState:(UIControl.State)state rightSegmentState:(UIControl.State)state;
+        //- (void)setIncrementImage:(nullable UIImage *)image forState:(UIControl.State)state;
+        //- (nullable UIImage *)incrementImageForState:(UIControl.State)state;
+        //- (void)setDecrementImage:(nullable UIImage *)image forState:(UIControl.State)state;
+        //- (nullable UIImage *)decrementImageForState:(UIControl.State)state;
     }
     
     func switchAppearance() {
@@ -245,21 +245,21 @@ class XTRAppearanceManagerStandard: NSObject {
     func tabBarItemAppearance() {
         let appearance = UITabBarItem.appearance()
         let normalItemTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.lightGray,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+            NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.lightGray,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         let selectedItemTextAttributes = [
-            NSAttributedStringKey.foregroundColor: XTRColorFactoryStandard.whiteSmoke,
-            NSAttributedStringKey.font: UIFont.boldSystemFont(ofSize: 14)
+            NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.whiteSmoke,
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)
         ]
         
-        appearance.setTitleTextAttributes(normalItemTextAttributes, for: UIControlState())
+        appearance.setTitleTextAttributes(normalItemTextAttributes, for: UIControl.State())
         appearance.setTitleTextAttributes(selectedItemTextAttributes, for: .selected)
         
         //@property(nonatomic, readwrite, assign) UIOffset titlePositionAdjustment;
         //@property(nonatomic, readwrite, copy, nullable) UIColor *badgeColor;
-        //- (void)setBadgeTextAttributes:(nullable NSDictionary<NSString *,id> *)textAttributes forState:(UIControlState)state;
-        //- (nullable NSDictionary<NSString *,id> *)badgeTextAttributesForState:(UIControlState)state;
+        //- (void)setBadgeTextAttributes:(nullable NSDictionary<NSString *,id> *)textAttributes forState:(UIControl.State)state;
+        //- (nullable NSDictionary<NSString *,id> *)badgeTextAttributesForState:(UIControl.State)state;
     }
     
     func tableViewAppearance() {
@@ -304,7 +304,7 @@ class XTRAppearanceManagerStandard: NSObject {
         backgroundViewAppearance.backgroundColor = XTRColorFactory.backgroundColor
         tableHeaderButtonAppearance.backgroundColor = XTRColorFactoryStandard.ghost
 
-        helpButtonAppearance.setTitleColor(UIColor.red, for: UIControlState())
+        helpButtonAppearance.setTitleColor(UIColor.red, for: UIControl.State())
         helpButtonAppearance.backgroundColor = XTRColorFactory.helpBackgroundColor
     }
     

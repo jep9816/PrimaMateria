@@ -26,7 +26,7 @@ class XTRTableLabel: UILabel {
     // MARK: - View Management Methods
 
     override func draw(_ rect: CGRect) {
-        super.drawText(in: UIEdgeInsetsInsetRect(rect, edgeInsets))
+        super.drawText(in: rect.inset(by: edgeInsets))
     }
     
 }

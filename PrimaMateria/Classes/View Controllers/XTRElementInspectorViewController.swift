@@ -89,8 +89,8 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         pageControl.populateLeftLabel(name: previousElement.name!)
     }
     
-    override func addChildViewController(_ aViewController: UIViewController) {
-        super.addChildViewController(aViewController)
+    override func addChild(_ aViewController: UIViewController) {
+        super.addChild(aViewController)
         
         aViewController.view.frame = CGRect(x: 0, y: 149, width: 1024, height: 574)
         aViewController.view.bounds = CGRect(x: 0, y: 0, width: 1024, height: 574)
@@ -103,7 +103,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         let storyboard = UIStoryboard(name: name, bundle: nil)
         let viewController = storyboard.instantiateViewController(withIdentifier: className)
         
-        addChildViewController(viewController)
+        addChild(viewController)
     }
     
     func animateForDirection(_ direction: String) {        
@@ -111,7 +111,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         assignOtherLabels()
         assignNavigationHints()
 
-        for item in childViewControllers {
+        for item in children {
             let controller = item as! XTRSwapableViewController
             controller.setupUIForAnimation(element: element!)
         }
@@ -124,9 +124,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
             currentView.removeFromSuperview()
             
             animation.duration = 1.0
-            animation.type = kCATransitionReveal
-            animation.subtype = (direction == "Next") ? kCATransitionFromLeft: kCATransitionFromRight
-            animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+            animation.type = CATransitionType.reveal
+            animation.subtype = (direction == "Next") ? CATransitionSubtype.fromLeft: CATransitionSubtype.fromRight
+            animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
             
             tempView.layer.add(animation, forKey: "SwitchInspectorView")
             tempView.addSubview(currentView)
@@ -145,7 +145,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         assignOtherLabels()
         assignNavigationHints()
 
-        for item in childViewControllers {
+        for item in children {
             let controller = item as! XTRSwapableViewController
             controller.setupUI(element: element)
         }
@@ -164,13 +164,13 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: 3)
         segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: 4)
         segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
-            let viewController = self?.childViewControllers[selectedSegmentIndex]
+            let viewController = self?.children[selectedSegmentIndex]
             
-            for controller in (self?.childViewControllers)! {
+            for controller in (self?.children)! {
                 controller.view.isHidden = true
                 viewController?.view.isHidden = false
             }
-            self?.view.bringSubview(toFront: (self?.pageControl)!)
+            self?.view.bringSubviewToFront((self?.pageControl)!)
         }).disposed(by: disposeBag)
     }
     
@@ -221,12 +221,12 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         addChildViewController(name: StoryBoardName.Spectrum, className: XTRSpectrumViewController.nameOfClass)
         addChildViewController(name: StoryBoardName.GeneralInfo, className: XTRGeneralInfoViewController.nameOfClass)
         
-        childViewControllers[0].view.isHidden = false
+        children[0].view.isHidden = false
         
-        swipeNextElement.direction = UISwipeGestureRecognizerDirection.right
+        swipeNextElement.direction = UISwipeGestureRecognizer.Direction.right
         view.addGestureRecognizer(swipeNextElement)
         
-        swipePreviousElement.direction = UISwipeGestureRecognizerDirection.left
+        swipePreviousElement.direction = UISwipeGestureRecognizer.Direction.left
         view.addGestureRecognizer(swipePreviousElement)
         NotificationCenter.default.addObserver(self, selector: #selector(atomicStructureZoomed(_:)), name: .notificationAtomicStructureZoomed, object: nil)
     }

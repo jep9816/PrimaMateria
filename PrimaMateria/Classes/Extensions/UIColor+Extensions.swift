@@ -171,8 +171,8 @@ extension UIColor { // Expanded
             return "Indexed"
         case .pattern:
             return "Pattern"
-//        default:
-//            return STRING_EMPTY
+        default:
+            return STRING_EMPTY
         }
     }
     

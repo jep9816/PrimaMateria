@@ -13,7 +13,7 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     private var appearanceManager: XTRAppearanceManager!
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         let notification = Notification(name: .notificationAppearanceChanged, object: XTRPropertiesStore.appearanceName, userInfo: nil)
         appearanceManager = XTRAppearanceManager.init(window: window!)
         appearanceManager.changeAppearance(notification: notification as NSNotification)

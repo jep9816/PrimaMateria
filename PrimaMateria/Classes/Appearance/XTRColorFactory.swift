@@ -18,7 +18,10 @@ class XTRColorFactory: NSObject {
         var aColor: UIColor?
         
         if colorData != nil {
-            aColor = NSKeyedUnarchiver.unarchiveObject(with: colorData!) as? UIColor
+            do {
+                aColor = try NSKeyedUnarchiver.unarchivedObject(ofClasses: [UIColor.self], from: colorData!) as? UIColor
+            } catch {
+            }
         }
         
         return aColor
