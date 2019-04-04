@@ -27,7 +27,7 @@ class XTRElementListViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     @IBOutlet var navigationBar: UINavigationBar!
     
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
 
     private var delegate: XTRElementListViewControllerDelegate? = XTRElementListViewControllerDelegate()
     

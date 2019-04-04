@@ -11,7 +11,7 @@ import UIKit
 @IBDesignable
 class XTRLocalizedLabel: UILabel {
     
-    private var _isTitleLabel = false
+    private var _isTitleLabel: Bool = false
     
     @IBInspectable var isTitleLabel: Bool {
         set {

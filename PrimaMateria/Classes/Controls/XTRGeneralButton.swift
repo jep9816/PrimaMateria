@@ -22,8 +22,8 @@ class XTRLocalizedButton: UIButton {
 
 class XTRGeneralButton: XTRLocalizedButton {
     
-    private var highColor = UIColor.white
-    private var lowColor = UIColor.white
+    private var highColor: UIColor = UIColor.white
+    private var lowColor: UIColor = UIColor.white
     
     // MARK: - Initialization Methods
     

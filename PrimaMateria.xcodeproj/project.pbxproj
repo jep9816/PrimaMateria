@@ -128,6 +128,7 @@
 		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
+		8032C8652256795000CFE226 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 8032C8642256795000CFE226 /* Cartfile.resolved */; };
 		806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
 		806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
 		806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
@@ -550,13 +551,13 @@
 		8012838420F02F9B00ABC706 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
+		8032C8642256795000CFE226 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
 		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
 		806A39672117B3850074ED28 /* brushed-dark-steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-dark-steel.png"; sourceTree = "<group>"; };
-		806A396C211905CF0074ED28 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
 		806B17AB212CF1AE0027E8DF /* XTRProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRProgressHUD.swift; sourceTree = "<group>"; };
-		8075E4C721F122E700FB9B88 /* Test.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Test.sh; sourceTree = "<group>"; };
+		8075E4C921F13CEF00FB9B88 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8098768C210A874800AB3B00 /* Globe16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe16.png; sourceTree = "<group>"; };
@@ -686,7 +687,6 @@
 		80127C0520F0253000ABC706 = {
 			isa = PBXGroup;
 			children = (
-				8075E4C721F122E700FB9B88 /* Test.sh */,
 				80127C1020F0253000ABC706 /* PrimaMateria */,
 				80127C0F20F0253000ABC706 /* Products */,
 				F7E587BE9504334DFC476A2E /* Frameworks */,
@@ -705,6 +705,7 @@
 		80127C1020F0253000ABC706 /* PrimaMateria */ = {
 			isa = PBXGroup;
 			children = (
+				8032C8632256791C00CFE226 /* Config */,
 				80127FD420F0270400ABC706 /* Classes */,
 				8012807520F0271F00ABC706 /* Resources */,
 			);
@@ -735,7 +736,8 @@
 				80127FD720F0270400ABC706 /* MBProgressHUD.h */,
 				806B17AB212CF1AE0027E8DF /* XTRProgressHUD.swift */,
 			);
-			path = "3rd Party";
+			name = "3rd Party";
+			path = 3rdParty;
 			sourceTree = "<group>";
 		};
 		80127FD820F0270400ABC706 /* Misc */ = {
@@ -839,7 +841,8 @@
 				8012801420F0270400ABC706 /* XTRSwapableViewController.swift */,
 				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
 			);
-			path = "View Controllers";
+			name = "View Controllers";
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		8012801A20F0270400ABC706 /* Delegates */ = {
@@ -879,7 +882,8 @@
 				8012802820F0270400ABC706 /* PrimaMateria-Prefix.pch */,
 				8012802B20F0270400ABC706 /* main.swift */,
 			);
-			path = "Other Sources";
+			name = "Other Sources";
+			path = OtherSources;
 			sourceTree = "<group>";
 		};
 		8012807520F0271F00ABC706 /* Resources */ = {
@@ -945,12 +949,10 @@
 		8012838A20F032A000ABC706 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				80D53584212A271F00077340 /* .swiftlint.yml */,
 				8012808D20F0271F00ABC706 /* Credits.rtf */,
 				801280EE20F0272000ABC706 /* LoadFailure.html */,
 				8012807620F0271F00ABC706 /* Localizable.strings */,
 				801281DF20F0272000ABC706 /* MainStyle.css */,
-				806A396C211905CF0074ED28 /* Podfile */,
 				80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */,
 				80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */,
 				801281DE20F0272000ABC706 /* PrimaMateria.plist */,
@@ -958,6 +960,16 @@
 				8012808C20F0271F00ABC706 /* Settings.bundle */,
 			);
 			name = Misc;
+			sourceTree = "<group>";
+		};
+		8032C8632256791C00CFE226 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				80D53584212A271F00077340 /* .swiftlint.yml */,
+				8075E4C921F13CEF00FB9B88 /* Cartfile */,
+				8032C8642256795000CFE226 /* Cartfile.resolved */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 		806A3969211902590074ED28 /* Images */ = {
@@ -1074,7 +1086,6 @@
 				80127C0B20F0253000ABC706 /* Frameworks */,
 				80127C0C20F0253000ABC706 /* Resources */,
 				80D535762129DC5400077340 /* Copy Frameworks (Carthage) */,
-				8075E4C621F122B300FB9B88 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1131,6 +1142,7 @@
 				es,
 				ru,
 				fr,
+				English,
 			);
 			mainGroup = 80127C0520F0253000ABC706;
 			productRefGroup = 80127C0F20F0253000ABC706 /* Products */;
@@ -1345,6 +1357,7 @@
 				80AB2A8B2128CEAD00B58AB3 /* Splash.storyboard in Resources */,
 				80AB2A8C2128CEAD00B58AB3 /* Globe47.png in Resources */,
 				80AB2A8D2128CEAD00B58AB3 /* ColorPicker.storyboard in Resources */,
+				8032C8652256795000CFE226 /* Cartfile.resolved in Resources */,
 				80AB2A8E2128CEAD00B58AB3 /* PrimaMateria.scnassets in Resources */,
 				80AB2A8F2128CEAD00B58AB3 /* SupportingFiles in Resources */,
 				80AB2A902128CEAD00B58AB3 /* AtomicStructure.storyboard in Resources */,
@@ -1401,23 +1414,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8075E4C621F122B300FB9B88 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SOURCE_ROOT}/Test.sh\n\n";
-		};
 		80773C7F20FE9859008B7B43 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1478,7 +1474,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1736,6 +1732,7 @@
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/OtherSources/PrimaMateria-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1796,6 +1793,7 @@
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/OtherSources/PrimaMateria-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1826,7 +1824,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.2;
@@ -1859,7 +1857,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1891,7 +1889,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.2;
@@ -1925,7 +1923,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/Other Sources/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 2;

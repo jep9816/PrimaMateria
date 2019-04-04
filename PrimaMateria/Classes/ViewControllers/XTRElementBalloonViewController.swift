@@ -20,7 +20,7 @@ class XTRElementBalloonViewController: UIViewController {
     @IBOutlet var wrapperView: UIView!
     @IBOutlet var elementDetailsButton: XTRGeneralButton!
     
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
     

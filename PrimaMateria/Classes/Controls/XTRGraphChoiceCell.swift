@@ -14,7 +14,7 @@ class XTRGraphChoiceCell: UICollectionViewCell {
     
     @IBOutlet var button: XTRGeneralButton!
     
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     
     func setup(index: Int) {
         let model = XTRDataSource.sharedInstance.graphPropertyList[index]

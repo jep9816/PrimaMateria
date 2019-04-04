@@ -69,7 +69,7 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     @IBOutlet var physicalPropertiesView: UIView!
     @IBOutlet var swapView: UIView!
     
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {

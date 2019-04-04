@@ -23,7 +23,7 @@ class XTRWikipediaViewController: UIViewController {
     private var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
     
     var elementName: String?
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
     

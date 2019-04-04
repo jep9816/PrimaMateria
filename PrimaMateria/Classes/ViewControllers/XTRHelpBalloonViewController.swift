@@ -17,7 +17,7 @@ class XTRHelpBalloonViewController: UIViewController {
     @IBOutlet var titleLabel: UILabel!
     
     var webView: WKWebView!
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
 
     private var delegate: XTRHelpBalloonViewControllerDelegate? = XTRHelpBalloonViewControllerDelegate()
 

@@ -20,7 +20,7 @@ class XTRColorPickerViewController: UIViewController {
     @IBOutlet var selectColorButton: XTRLocalizedButton!
     
     var seriesIdentifier: String?
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Initialization Methods
     

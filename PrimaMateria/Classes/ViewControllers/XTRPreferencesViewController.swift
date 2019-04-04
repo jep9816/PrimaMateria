@@ -37,7 +37,7 @@ class XTRPreferencesViewController: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var navigationBar: UINavigationBar!
     
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Initialization Methods
     

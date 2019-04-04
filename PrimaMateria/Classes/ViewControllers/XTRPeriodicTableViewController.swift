@@ -26,7 +26,7 @@ class XTRPeriodicTableViewController: UIViewController {
     var elementBalloonViewController: XTRElementBalloonViewController!
     var molecularCalculatorViewController: XTRMolecularCalculatorViewController!
     var animationImages: [UIImage] = []
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Initialization Methods
     

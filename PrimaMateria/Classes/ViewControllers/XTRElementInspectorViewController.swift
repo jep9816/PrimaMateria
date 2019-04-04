@@ -25,7 +25,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     
     var flag: Bool = true
     
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
     
     // MARK: - Initialization Methods
     

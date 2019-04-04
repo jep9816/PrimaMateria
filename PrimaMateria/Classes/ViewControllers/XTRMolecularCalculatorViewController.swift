@@ -30,7 +30,7 @@ class XTRMolecularCalculatorViewController: UIViewController {
     @IBOutlet var nineButton: UIButton!
     @IBOutlet var zeroButton: UIButton!
 
-    var disposeBag = DisposeBag()
+    var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
     
