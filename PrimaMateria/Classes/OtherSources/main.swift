@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/20/16.
-//  Copyright © 2018 xTrensa. All rights reserved.
+//  Copyright © 2019 xTrensa. All rights reserved.
 //
 
 import UIKit
@@ -11,13 +11,13 @@ import UIKit
 _ = UIApplicationMain(
     CommandLine.argc,
     UnsafeMutablePointer(CommandLine.unsafeArgv),
-    NSStringFromClass(XTRAppDelegate.self),
+    NSStringFromClass(XTRApplication.self),
     NSStringFromClass(XTRAppDelegate.self)
 )
 //_ = UIApplicationMain(
 //    CommandLine.argc,
 //    UnsafeMutablePointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc)),
-//    NSStringFromClass(XTRAppDelegate.self),
+//    NSStringFromClass(XTRApplication.self),
 //    NSStringFromClass(XTRAppDelegate.self)
 //)
 

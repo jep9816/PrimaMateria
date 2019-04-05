@@ -3,7 +3,7 @@
 //  PrimaMateria PRD
 //
 //  Created by Jerry Porter on 8/21/18.
-//  Copyright © 2018 Jerry Porter. All rights reserved.
+//  Copyright © 2019 xTrensa. All rights reserved.
 //
 
 @objc protocol XTRProgressHUDDelegate: MBProgressHUDDelegate {

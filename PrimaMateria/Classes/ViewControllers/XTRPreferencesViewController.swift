@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/22/16.
-//  Copyright © 2018 xTrensa. All rights reserved.
+//  Copyright © 2019 xTrensa. All rights reserved.
 //
 
 import WebKit
@@ -50,18 +50,14 @@ class XTRPreferencesViewController: UIViewController {
     @objc func colorSelected(notification: Notification) {
         guard let anObject: [String: AnyObject] = notification.object as! [String: AnyObject]? else { return }
         
-        let redComponent = anObject[ColorComponent.red] as! NSNumber
-        let greenComponent = anObject[ColorComponent.green] as! NSNumber
-        let blueComponent = anObject[ColorComponent.blue] as! NSNumber
-        let alphaComponent = anObject[ColorComponent.alpha] as! NSNumber
+        let redComponent = anObject[ColorComponent.red] as! CGFloat
+        let greenComponent = anObject[ColorComponent.green] as! CGFloat
+        let blueComponent = anObject[ColorComponent.blue] as! CGFloat
+        let alphaComponent = anObject[ColorComponent.alpha] as! CGFloat
         
         let seriesIdentifier = anObject[SERIES_IDENTIFIER_KEY] as! String
-        let color = UIColor(
-            red: CGFloat(redComponent.floatValue),
-            green: CGFloat(greenComponent.floatValue),
-            blue: CGFloat(blueComponent.floatValue),
-            alpha: CGFloat(alphaComponent.floatValue))
-        let colorData = NSKeyedArchiver.archivedData(withRootObject: color)
+        let color = UIColor(red: redComponent, green: greenComponent, blue: blueComponent, alpha: alphaComponent)
+        let colorData = try? NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false)
         
         XTRPropertiesStore.setColorData(colorData, key: seriesIdentifier)
         

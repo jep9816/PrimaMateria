@@ -12,6 +12,13 @@
 		0853E20D2114D20100CA092B /* SHKLightGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E2092114D20100CA092B /* SHKLightGrid.fsh */; };
 		0853E20E2114D20100CA092B /* SHKWater.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E20A2114D20100CA092B /* SHKWater.fsh */; };
 		08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB996C20F8D4C800711159 /* XTRPageControl.swift */; };
+		08B6A57D2257E9EC001885BB /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 08B6A57C2257E9EC001885BB /* Cartfile.resolved */; };
+		08B6A5812257EA50001885BB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A57E2257EA50001885BB /* RxSwift.framework */; };
+		08B6A5822257EA50001885BB /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A57F2257EA50001885BB /* CorePlot.framework */; };
+		08B6A5832257EA50001885BB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A5802257EA50001885BB /* RxCocoa.framework */; };
+		08B6A5842257EA73001885BB /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A57F2257EA50001885BB /* CorePlot.framework */; };
+		08B6A5852257EA73001885BB /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A5802257EA50001885BB /* RxCocoa.framework */; };
+		08B6A5862257EA73001885BB /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A57E2257EA50001885BB /* RxSwift.framework */; };
 		8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */; };
 		8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */; };
 		800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */; };
@@ -124,11 +131,9 @@
 		8012837F20F02D6100ABC706 /* XTRAppearanceManagerStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837720F02D6100ABC706 /* XTRAppearanceManagerStandard.swift */; };
 		8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837820F02D6100ABC706 /* XTRColorFactoryClassic.swift */; };
 		8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837920F02D6100ABC706 /* XTRColorFactory.swift */; };
-		8012838320F02DFE00ABC706 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012838220F02DFE00ABC706 /* CorePlot.framework */; };
 		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
-		8032C8652256795000CFE226 /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 8032C8642256795000CFE226 /* Cartfile.resolved */; };
 		806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
 		806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
 		806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
@@ -286,7 +291,6 @@
 		80AB2A3F2128CEAD00B58AB3 /* XTRMolecularCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */; };
 		80AB2A402128CEAD00B58AB3 /* XTRSpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */; };
 		80AB2A412128CEAD00B58AB3 /* XTRSwapableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801420F0270400ABC706 /* XTRSwapableViewController.swift */; };
-		80AB2A432128CEAD00B58AB3 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012838220F02DFE00ABC706 /* CorePlot.framework */; };
 		80AB2A442128CEAD00B58AB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012837020F02B6D00ABC706 /* Foundation.framework */; };
 		80AB2A452128CEAD00B58AB3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8012836E20F02B6500ABC706 /* UIKit.framework */; };
 		80AB2A482128CEAD00B58AB3 /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 801281DE20F0272000ABC706 /* PrimaMateria.plist */; };
@@ -409,12 +413,6 @@
 		80AB2ABE2128CEAD00B58AB3 /* Globe70.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876B9210A874E00AB3B00 /* Globe70.png */; };
 		80AB2ABF2128CEAD00B58AB3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8012808D20F0271F00ABC706 /* Credits.rtf */; };
 		80AB2AC02128CEAD00B58AB3 /* CubicBody.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807C20F0271F00ABC706 /* CubicBody.scn */; };
-		80D5357B2129DDC100077340 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D535782129DDC100077340 /* RxSwift.framework */; };
-		80D5357C2129DDC100077340 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D535792129DDC100077340 /* CorePlot.framework */; };
-		80D5357D2129DDC100077340 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D5357A2129DDC100077340 /* RxCocoa.framework */; };
-		80D5357E2129DDE000077340 /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D535792129DDC100077340 /* CorePlot.framework */; };
-		80D5357F2129DDE000077340 /* RxCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D5357A2129DDC100077340 /* RxCocoa.framework */; };
-		80D535802129DDE000077340 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80D535782129DDC100077340 /* RxSwift.framework */; };
 		80DC21C121111DA400518784 /* XTRZoomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC21C021111DA400518784 /* XTRZoomContentView.swift */; };
 		80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */; };
 		80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */; };
@@ -426,6 +424,10 @@
 		0853E2092114D20100CA092B /* SHKLightGrid.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKLightGrid.fsh; sourceTree = "<group>"; };
 		0853E20A2114D20100CA092B /* SHKWater.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKWater.fsh; sourceTree = "<group>"; };
 		08AB996C20F8D4C800711159 /* XTRPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPageControl.swift; sourceTree = "<group>"; };
+		08B6A57C2257E9EC001885BB /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
+		08B6A57E2257EA50001885BB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = PrimaMateria/Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		08B6A57F2257EA50001885BB /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = PrimaMateria/Carthage/Build/iOS/CorePlot.framework; sourceTree = "<group>"; };
+		08B6A5802257EA50001885BB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = PrimaMateria/Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
 		8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTYRElectronConfigurationModel.swift; sourceTree = "<group>"; };
 		8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRVaporPressurenModel.swift; sourceTree = "<group>"; };
 		800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRZoomContentView.xib; sourceTree = "<group>"; };
@@ -551,7 +553,6 @@
 		8012838420F02F9B00ABC706 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
-		8032C8642256795000CFE226 /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = SOURCE_ROOT; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
 		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
@@ -648,10 +649,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80D5357E2129DDE000077340 /* CorePlot.framework in Frameworks */,
-				80D5357F2129DDE000077340 /* RxCocoa.framework in Frameworks */,
-				80D535802129DDE000077340 /* RxSwift.framework in Frameworks */,
-				8012838320F02DFE00ABC706 /* CorePlot.framework in Frameworks */,
+				08B6A5842257EA73001885BB /* CorePlot.framework in Frameworks */,
+				08B6A5852257EA73001885BB /* RxCocoa.framework in Frameworks */,
+				08B6A5862257EA73001885BB /* RxSwift.framework in Frameworks */,
 				8012837120F02B6D00ABC706 /* Foundation.framework in Frameworks */,
 				8012836F20F02B6500ABC706 /* UIKit.framework in Frameworks */,
 			);
@@ -661,10 +661,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80D5357B2129DDC100077340 /* RxSwift.framework in Frameworks */,
-				80D5357C2129DDC100077340 /* CorePlot.framework in Frameworks */,
-				80D5357D2129DDC100077340 /* RxCocoa.framework in Frameworks */,
-				80AB2A432128CEAD00B58AB3 /* CorePlot.framework in Frameworks */,
+				08B6A5812257EA50001885BB /* RxSwift.framework in Frameworks */,
+				08B6A5822257EA50001885BB /* CorePlot.framework in Frameworks */,
+				08B6A5832257EA50001885BB /* RxCocoa.framework in Frameworks */,
 				80AB2A442128CEAD00B58AB3 /* Foundation.framework in Frameworks */,
 				80AB2A452128CEAD00B58AB3 /* UIKit.framework in Frameworks */,
 			);
@@ -967,7 +966,7 @@
 			children = (
 				80D53584212A271F00077340 /* .swiftlint.yml */,
 				8075E4C921F13CEF00FB9B88 /* Cartfile */,
-				8032C8642256795000CFE226 /* Cartfile.resolved */,
+				08B6A57C2257E9EC001885BB /* Cartfile.resolved */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -1067,7 +1066,10 @@
 				8012838220F02DFE00ABC706 /* CorePlot.framework */,
 				80D535792129DDC100077340 /* CorePlot.framework */,
 				80D5357A2129DDC100077340 /* RxCocoa.framework */,
+				08B6A57F2257EA50001885BB /* CorePlot.framework */,
+				08B6A5802257EA50001885BB /* RxCocoa.framework */,
 				80D535782129DDC100077340 /* RxSwift.framework */,
+				08B6A57E2257EA50001885BB /* RxSwift.framework */,
 				8012837020F02B6D00ABC706 /* Foundation.framework */,
 				8012836E20F02B6500ABC706 /* UIKit.framework */,
 			);
@@ -1357,7 +1359,7 @@
 				80AB2A8B2128CEAD00B58AB3 /* Splash.storyboard in Resources */,
 				80AB2A8C2128CEAD00B58AB3 /* Globe47.png in Resources */,
 				80AB2A8D2128CEAD00B58AB3 /* ColorPicker.storyboard in Resources */,
-				8032C8652256795000CFE226 /* Cartfile.resolved in Resources */,
+				08B6A57D2257E9EC001885BB /* Cartfile.resolved in Resources */,
 				80AB2A8E2128CEAD00B58AB3 /* PrimaMateria.scnassets in Resources */,
 				80AB2A8F2128CEAD00B58AB3 /* SupportingFiles in Resources */,
 				80AB2A902128CEAD00B58AB3 /* AtomicStructure.storyboard in Resources */,
@@ -1448,16 +1450,16 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CorePlot.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxCocoa.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/CorePlot.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxCocoa.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
 		};
 		80D535772129DD0F00077340 /* Copy Frameworks (Carthage) */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1465,9 +1467,9 @@
 			files = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/CorePlot.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-				"$(SRCROOT)/Carthage/Build/iOSRxxCocoa.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/CorePlot.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxSwift.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOSRxCocoa.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
@@ -1708,6 +1710,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/PrimaMateria/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1725,7 +1728,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IBC_MODULE = PrimaMateria;
 				IBSC_MODULE = PrimaMateria;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MODULE_NAME = PrimaMateria;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1776,6 +1779,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/PrimaMateria/Carthage/Build/iOS";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1787,7 +1791,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IBC_MODULE = PrimaMateria;
 				IBSC_MODULE = PrimaMateria;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MODULE_NAME = PrimaMateria;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_MODULE_NAME = PrimaMateria;
@@ -1805,15 +1809,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1838,15 +1840,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1870,15 +1870,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1904,15 +1902,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				CODE_SIGN_STYLE = Automatic;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

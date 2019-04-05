@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright © 2018 xTrensa. All rights reserved.
+//  Copyright © 2019 xTrensa. All rights reserved.
 //
 
 import UIKit
@@ -52,7 +52,7 @@ class XTRElementListViewController: UIViewController {
         view.addSubview(tableView!)
     }
     
-    internal func mapToObserverHeaderButton(button: XTRTableHeaderButton) -> Observable<XTRTableHeaderButton> {
+    private func mapToObserverHeaderButton(button: XTRTableHeaderButton) -> Observable<XTRTableHeaderButton> {
         return button.rx.tap.map { _ in return button}
     }
 
