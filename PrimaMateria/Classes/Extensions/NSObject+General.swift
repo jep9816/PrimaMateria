@@ -15,11 +15,11 @@ import GameplayKit
 
 public extension NSObject { // General
     
-    public class var nameOfClass: String {
+    class var nameOfClass: String {
         return String(describing: self)
     }
     
-    public func double(_ key: String?) -> Double {
+    func double(_ key: String?) -> Double {
         var doubleValue = 0.0
         
         if let doubleString = value(forKeyPath: key!) as! String? {
@@ -31,7 +31,7 @@ public extension NSObject { // General
         return doubleValue
     }
     
-    public class func toUint(signed: Int) -> UInt {
+    class func toUint(signed: Int) -> UInt {
         
         let unsigned = signed >= 0 ?
             UInt(signed) :
