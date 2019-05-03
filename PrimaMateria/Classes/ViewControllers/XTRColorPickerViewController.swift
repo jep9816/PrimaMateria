@@ -49,11 +49,11 @@ class XTRColorPickerViewController: UIViewController {
         colorTitle.text =  NSLocalizedString(seriesIdentifier!, comment: "")
         
         previewView.backgroundColor = aColor
-        previewView.layer.cornerRadius = VIEW_CORNER_RADIUS + 2.0
+        previewView.cornerRadius = VIEW_CORNER_RADIUS + 2.0
         
-        selectColorButton.layer.cornerRadius = VIEW_CORNER_RADIUS
-        selectColorButton.layer.borderColor = XTRColorFactory.buttonBorderColor.cgColor
-        selectColorButton.layer.borderWidth = 1
+        selectColorButton.cornerRadius = VIEW_CORNER_RADIUS
+        selectColorButton.borderColor = XTRColorFactory.buttonBorderColor
+        selectColorButton.borderWidth = 1
         
         presetSlidersWithColor(aColor)
 

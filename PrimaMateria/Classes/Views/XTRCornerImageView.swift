@@ -28,8 +28,8 @@ class XTRCornerImageView: UIImageView {
         gradientLayer.bounds = bounds
         gradientLayer.position = CGPoint(x: bounds.size.width / 2, y: bounds.size.height / 2)
         layer.insertSublayer(gradientLayer, at: 0)
-        layer.cornerRadius = VIEW_CORNER_RADIUS
-        layer.masksToBounds = true
+        cornerRadius = VIEW_CORNER_RADIUS
+        masksToBounds = true
     }
     
 }

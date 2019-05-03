@@ -192,9 +192,9 @@ class XTRMolecularCalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        backgroundView.layer.borderColor = UIColor.black.cgColor
-        backgroundView.layer.borderWidth = 2
-        backgroundView.layer.cornerRadius = VIEW_CORNER_RADIUS
+        backgroundView.borderColor = UIColor.black
+        backgroundView.borderWidth = 2
+        backgroundView.cornerRadius = VIEW_CORNER_RADIUS
         
         setupRx()
         clear()

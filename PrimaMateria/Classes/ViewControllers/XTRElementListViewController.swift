@@ -28,7 +28,7 @@ class XTRElementListViewController: UIViewController {
     @IBOutlet var navigationBar: UINavigationBar!
     
     var disposeBag: DisposeBag = DisposeBag()
-
+    
     private var delegate: XTRElementListViewControllerDelegate? = XTRElementListViewControllerDelegate()
     
     // MARK: - Initialization Methods
@@ -38,24 +38,27 @@ class XTRElementListViewController: UIViewController {
     }
     
     // MARK: - Internal Methods
-        
+    
     private func setupTableView() {
-        tableView!.alwaysBounceVertical = false
-        tableView!.alwaysBounceHorizontal = false
-        tableView!.delegate = delegate
-        tableView!.dataSource = delegate
-        tableView!.separatorStyle = .none
-        tableView!.backgroundColor = UIColor.black
-        tableView!.allowsSelection = true
-        tableView!.allowsMultipleSelection = false
-        tableView!.register(XTRElementTableViewCell.classForCoder(), forCellReuseIdentifier: XTRElementListViewController.tableViewCellIdentifier)
-        view.addSubview(tableView!)
+        if let localTableView = tableView {
+            localTableView.alwaysBounceVertical = false
+            localTableView.alwaysBounceHorizontal = false
+            localTableView.delegate = delegate
+            localTableView.dataSource = delegate
+            localTableView.separatorStyle = .none
+            localTableView.backgroundColor = UIColor.black
+            localTableView.allowsSelection = true
+            localTableView.allowsMultipleSelection = false
+            localTableView.register(XTRElementTableViewCell.classForCoder(), forCellReuseIdentifier: XTRElementListViewController.tableViewCellIdentifier)
+            
+            view.addSubview(tableView!)
+        }
     }
     
     private func mapToObserverHeaderButton(button: XTRTableHeaderButton) -> Observable<XTRTableHeaderButton> {
         return button.rx.tap.map { _ in return button}
     }
-
+    
     // TODO: setup table to use rx for population and row selection
     func setupRx() {
         let array = [
@@ -90,7 +93,7 @@ class XTRElementListViewController: UIViewController {
         
         title = NSLocalizedString("elementList", comment: "")
         navigationBar.topItem?.title = title
-
+        
         _ = atomicNumberButton.toggleState()
         setupTableView()
         setupRx()
@@ -105,6 +108,7 @@ class XTRElementListViewController: UIViewController {
         if delegate?.indexPath != nil {
             tableView!.deselectRow(at: (delegate?.indexPath!)!, animated: XTRPropertiesStore.showTransitionsState)
         }
+        
         super.viewDidDisappear(animated)
     }
     
@@ -131,6 +135,7 @@ class XTRElementListViewController: UIViewController {
         groupButton = nil
         navigationBar =  nil
         tableView = nil
+        tableView.delegate = nil
     }
     
 }

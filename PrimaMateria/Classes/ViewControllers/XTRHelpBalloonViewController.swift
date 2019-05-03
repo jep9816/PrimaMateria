@@ -61,9 +61,9 @@ class XTRHelpBalloonViewController: UIViewController {
         
         webView = WKWebView(frame: CGRect(x: 2, y: 46, width: 406, height: 286), configuration: config)
         
-        webView.layer.cornerRadius = VIEW_CORNER_RADIUS + 8
-        webView.layer.masksToBounds = true
-        webView.layer.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
+        webView.cornerRadius = VIEW_CORNER_RADIUS + 8
+        webView.masksToBounds = true
+        webView.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         webView.navigationDelegate = delegate
         webView.scrollView.isScrollEnabled = true             // Make sure our view is interactable
         webView.scrollView.bounces = false                    // Things like this should be handled in web code
@@ -94,9 +94,9 @@ class XTRHelpBalloonViewController: UIViewController {
         forwardButton.isEnabled = false
         forwardButton.tintColor = UIColor.black
         
-        titleLabel.layer.cornerRadius = VIEW_CORNER_RADIUS + 2
-        titleLabel.layer.masksToBounds = true
-        titleLabel.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        titleLabel.cornerRadius = VIEW_CORNER_RADIUS + 2
+        titleLabel.masksToBounds = true
+        titleLabel.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
         setupWebView()
         setupRx()

@@ -49,10 +49,10 @@ class XTRShadowView: UIImageView {
         
         tempSuperView.layer.addSublayer(sublayer)
         
-        layer.masksToBounds = true
-        layer.cornerRadius = VIEW_CORNER_RADIUS
-        layer.borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5).cgColor
-        layer.borderWidth = 3.0
+        masksToBounds = true
+        cornerRadius = VIEW_CORNER_RADIUS
+        borderColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.5)
+        borderWidth = 3.0
         isOpaque = false
         
         tempSuperView.bringSubviewToFront(self)

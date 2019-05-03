@@ -22,11 +22,11 @@ class XTRZoomContentView: UIView {
         
         backgroundColor = UIColor.clear.withAlphaComponent(0.0)
         
-        layer.shadowOffset = CGSize(width: 8.0, height: 8.0)
-        layer.shadowColor = UIColor.black.cgColor
-        layer.shadowRadius = 8.0
-        layer.shadowOpacity = 0.5
-        layer.masksToBounds = false
+        shadowOffset = CGSize(width: 8.0, height: 8.0)
+        shadowColor = UIColor.black
+        shadowRadius = 8.0
+        shadowOpacity = 0.5
+        masksToBounds = false
 
         wrapper.borderColor = UIColor.white
         wrapper.borderWidth = 3.0
@@ -45,11 +45,11 @@ class XTRZoomContentView: UIView {
         } else {
             label.textColor = XTRColorFactoryStandard.ghost
             label.backgroundColor = XTRColorFactoryStandard.standardRedColor
-            label.layer.shadowColor = XTRColorFactoryStandard.darkText.cgColor
+            label.shadowColor = XTRColorFactoryStandard.darkText
             label.layer.shadowOffset = CGSize(width: 3.0, height: 3.0)
-            label.layer.shadowRadius = 3.0
-            label.layer.shadowOpacity = 1.0
-            label.layer.masksToBounds = false
+            label.shadowRadius = 3.0
+            label.shadowOpacity = 1.0
+            label.masksToBounds = false
         }
         
         label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]

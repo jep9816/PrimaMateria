@@ -99,7 +99,7 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         segmentedControl.frame = newRect
         segmentedControl.cornerRadius = VIEW_CORNER_RADIUS
         segmentedControl.masksToBounds = true
-        segmentedControl.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        segmentedControl.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         segmentedControl.setTitle(NSLocalizedString("physicalProperties", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("chemicalProperties", comment: ""), forSegmentAt: 1)
     }

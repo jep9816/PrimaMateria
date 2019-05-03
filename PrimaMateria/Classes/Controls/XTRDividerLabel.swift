@@ -29,7 +29,7 @@ class XTRDividerLabel: UILabel {
     // MARK: - Internal Methods
     
     func createLayer() {
-        layer.masksToBounds = true
+        masksToBounds = true
         setupColors()
     }
     

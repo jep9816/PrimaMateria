@@ -210,15 +210,24 @@ extension UIImageView {
     
     class func gradientView(frame: CGRect, destinationView: UIView) {
         let imageView = UIImageView(frame: destinationView.bounds)
-        imageView.image = #imageLiteral(resourceName: "gradient")
+        imageView.image = UIImage.imageNamed(name: "gradient")
         destinationView.addSubview(imageView)
         destinationView.sendSubviewToBack(imageView)
-        destinationView.layer.masksToBounds = false
-        destinationView.layer.shadowOffset = CGSize(width: 0, height: -5)
-        destinationView.layer.shadowRadius = 5
-        destinationView.layer.shadowOpacity = 1
-        destinationView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.53).cgColor
+        destinationView.masksToBounds = false
+        destinationView.shadowOffset = CGSize(width: 0, height: -5)
+        destinationView.shadowRadius = 5
+        destinationView.shadowOpacity = 1
+        destinationView.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.53)
         destinationView.addSubview(imageView)
         destinationView.sendSubviewToBack(imageView)
     }
+}
+
+extension UIImage {
+    
+    class func imageNamed(name: String) -> UIImage {
+        guard let image = UIImage(named: name) else { return UIImage() }
+        return image
+    }
+    
 }

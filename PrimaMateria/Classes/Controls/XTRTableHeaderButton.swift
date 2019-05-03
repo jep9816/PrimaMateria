@@ -45,8 +45,9 @@ class XTRTableHeaderButton: XTRGeneralButton {
         NotificationCenter.default.post(name: .tableHeaderCellSelectedNotification, object: nil)
         CATransaction.begin()
         CATransaction.setAnimationDuration(0.0)
-        imageLayer.frame = (aFlag) ? CGRect(x: (frame.size.width / 2) - 6, y: 2, width: 12, height: 12): CGRect(x: (frame.size.width / 2) - 6, y: 30, width: 12, height: 12)
-        imageLayer.contents = (aFlag) ? ascendingImage.cgImage: descendingImage.cgImage
+        let origin = (aFlag) ? CGPoint(x: (frame.size.width / 2) - 6, y: 4) : CGPoint(x: (frame.size.width / 2) - 6, y: 30)
+        imageLayer.frame = CGRect(origin: origin, size: CGSize(width: 12, height: 12))
+        imageLayer.contents = (aFlag) ? ascendingImage.cgImage : descendingImage.cgImage
         CATransaction.commit()
         toggle = aFlag
     }
@@ -57,8 +58,8 @@ class XTRTableHeaderButton: XTRGeneralButton {
     }
     
     override func createLayer() {
-        layer.masksToBounds = true
-        layer.borderWidth = 1.0
+        masksToBounds = true
+        borderWidth = 1.0
     }
     
     deinit {

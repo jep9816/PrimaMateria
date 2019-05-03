@@ -157,7 +157,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         segmentedControl.frame = newRect
         segmentedControl.cornerRadius = VIEW_CORNER_RADIUS
         segmentedControl.masksToBounds = true
-        segmentedControl.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+        segmentedControl.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         segmentedControl.setTitle(NSLocalizedString("atomicStructure", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("elementProperties", comment: ""), forSegmentAt: 1)
         segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: 2)

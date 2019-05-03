@@ -82,4 +82,13 @@ extension UIView { // Layer Flattening
         }
     }
     
+    var maskedCorners: CACornerMask {
+        get {
+            return layer.maskedCorners
+        }
+        set(aValue) {
+            layer.maskedCorners = aValue
+        }
+    }
+
 }
