@@ -8,12 +8,12 @@
 
 import CorePlot
 
-class XTRBarPlot: CPTBarPlot {
+final class XTRBarPlot: CPTBarPlot {
     
     var element: XTRElementModel!
     
     // MARK: - Initialization Methods
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
