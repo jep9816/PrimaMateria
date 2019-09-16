@@ -37,4 +37,18 @@ class XTRHelpBalloonViewControllerDelegate: NSObject, WKUIDelegate, WKNavigation
         }
     }
     
+    func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
+
+        // Scale the page to fill the web view
+        let viewportScriptString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); meta.setAttribute('initial-scale', '1.0'); meta.setAttribute('maximum-scale', '1.0'); meta.setAttribute('minimum-scale', '1.0'); meta.setAttribute('user-scalable', 'no'); document.getElementsByTagName('head')[0].appendChild(meta);"
+         let viewportScript = WKUserScript(source: viewportScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
+         let controller = WKUserContentController()
+         let config = WKWebViewConfiguration()
+         
+         controller.addUserScript(viewportScript)
+         config.userContentController = controller
+
+        return WKWebView(frame: webView.frame, configuration: config)
+    }
+
 }

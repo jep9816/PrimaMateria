@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,7 +22,6 @@
 		8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */; };
 		8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */; };
 		800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */; };
-		8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD620F0270400ABC706 /* MBProgressHUD.m */; };
 		8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */; };
 		8012802E20F0270500ABC706 /* XTRPropertiesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */; };
 		8012802F20F0270500ABC706 /* XTRMolecularCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */; };
@@ -134,11 +133,11 @@
 		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
+		803518C123302BF50070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
+		803518C223302FCD0070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
 		806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
 		806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
 		806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
-		806B17AC212CF1AE0027E8DF /* XTRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B17AB212CF1AE0027E8DF /* XTRProgressHUD.swift */; };
-		806B17AD212CF2300027E8DF /* XTRProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806B17AB212CF1AE0027E8DF /* XTRProgressHUD.swift */; };
 		807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3EA62112959400534B10 /* XTROverlayView.swift */; };
 		8098771C210A8B0800AB3B00 /* Globe01.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C8210A875400AB3B00 /* Globe01.png */; };
 		8098771D210A8B0800AB3B00 /* Globe02.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876BD210A875200AB3B00 /* Globe02.png */; };
@@ -278,7 +277,6 @@
 		80AB2A322128CEAD00B58AB3 /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */; };
 		80AB2A332128CEAD00B58AB3 /* XTRZoomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC21C021111DA400518784 /* XTRZoomContentView.swift */; };
 		80AB2A342128CEAD00B58AB3 /* XTRIsotopeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */; };
-		80AB2A352128CEAD00B58AB3 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD620F0270400ABC706 /* MBProgressHUD.m */; };
 		80AB2A362128CEAD00B58AB3 /* XTRAppearanceManagerStandard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012837720F02D6100ABC706 /* XTRAppearanceManagerStandard.swift */; };
 		80AB2A372128CEAD00B58AB3 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF320F0270400ABC706 /* UIImage+Extensions.swift */; };
 		80AB2A382128CEAD00B58AB3 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */; };
@@ -436,8 +434,6 @@
 		80127C0E20F0253000ABC706 /* PrimaMateria DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PrimaMateria DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PrimaMateria-Info.plist"; sourceTree = "<group>"; };
 		80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PrimaMateria.entitlements; sourceTree = "<group>"; };
-		80127FD620F0270400ABC706 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
-		80127FD720F0270400ABC706 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSimpleTransitionController.swift; sourceTree = "<group>"; };
 		80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPropertiesStore.swift; sourceTree = "<group>"; };
 		80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMolecularCalculator.swift; sourceTree = "<group>"; };
@@ -555,11 +551,11 @@
 		8012838420F02F9B00ABC706 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
+		803518C023302BF50070B1DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
 		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
 		806A39672117B3850074ED28 /* brushed-dark-steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-dark-steel.png"; sourceTree = "<group>"; };
-		806B17AB212CF1AE0027E8DF /* XTRProgressHUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRProgressHUD.swift; sourceTree = "<group>"; };
 		8075E4C921F13CEF00FB9B88 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -652,6 +648,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				803518C223302FCD0070B1DE /* SVProgressHUD.framework in Frameworks */,
 				80E20C93228A89B600CCEB17 /* RxRelay.framework in Frameworks */,
 				08B6A5842257EA73001885BB /* CorePlot.framework in Frameworks */,
 				08B6A5852257EA73001885BB /* RxCocoa.framework in Frameworks */,
@@ -665,6 +662,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				803518C123302BF50070B1DE /* SVProgressHUD.framework in Frameworks */,
 				80E20C92228A89A200CCEB17 /* RxRelay.framework in Frameworks */,
 				08B6A5812257EA50001885BB /* RxSwift.framework in Frameworks */,
 				08B6A5822257EA50001885BB /* CorePlot.framework in Frameworks */,
@@ -736,9 +734,6 @@
 		80127FD520F0270400ABC706 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
-				80127FD620F0270400ABC706 /* MBProgressHUD.m */,
-				80127FD720F0270400ABC706 /* MBProgressHUD.h */,
-				806B17AB212CF1AE0027E8DF /* XTRProgressHUD.swift */,
 			);
 			name = "3rd Party";
 			path = 3rdParty;
@@ -1068,6 +1063,7 @@
 		F7E587BE9504334DFC476A2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				803518C023302BF50070B1DE /* SVProgressHUD.framework */,
 				80E20C91228A89A200CCEB17 /* RxRelay.framework */,
 				8012838220F02DFE00ABC706 /* CorePlot.framework */,
 				80D535792129DDC100077340 /* CorePlot.framework */,
@@ -1141,7 +1137,7 @@
 				};
 			};
 			buildConfigurationList = 80127C0920F0253000ABC706 /* Build configuration list for PBXProject "PrimaMateria" */;
-			compatibilityVersion = "Xcode 10.0";
+			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1459,6 +1455,7 @@
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
@@ -1477,6 +1474,7 @@
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOSRxCocoa.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxRelay.framework",
+				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
@@ -1543,7 +1541,6 @@
 				8012805F20F0270500ABC706 /* XTRElementListViewController.swift in Sources */,
 				8012805D20F0270500ABC706 /* XTRElementPropertiesViewController.swift in Sources */,
 				8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
-				806B17AD212CF2300027E8DF /* XTRProgressHUD.swift in Sources */,
 				8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */,
 				8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */,
@@ -1558,7 +1555,6 @@
 				8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */,
 				80DC21C121111DA400518784 /* XTRZoomContentView.swift in Sources */,
 				8012804020F0270500ABC706 /* XTRIsotopeModel.swift in Sources */,
-				8012802C20F0270500ABC706 /* MBProgressHUD.m in Sources */,
 				8012837F20F02D6100ABC706 /* XTRAppearanceManagerStandard.swift in Sources */,
 				8012804420F0270500ABC706 /* UIImage+Extensions.swift in Sources */,
 				8012806D20F0270500ABC706 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */,
@@ -1629,7 +1625,6 @@
 				80AB2A242128CEAD00B58AB3 /* XTRElementListViewController.swift in Sources */,
 				80AB2A252128CEAD00B58AB3 /* XTRElementPropertiesViewController.swift in Sources */,
 				80AB2A262128CEAD00B58AB3 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
-				806B17AC212CF1AE0027E8DF /* XTRProgressHUD.swift in Sources */,
 				80AB2A272128CEAD00B58AB3 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				80AB2A282128CEAD00B58AB3 /* XTRElementButton.swift in Sources */,
 				80AB2A292128CEAD00B58AB3 /* XTRColorFactoryStandard.swift in Sources */,
@@ -1644,7 +1639,6 @@
 				80AB2A322128CEAD00B58AB3 /* XTRSimpleTransitionController.swift in Sources */,
 				80AB2A332128CEAD00B58AB3 /* XTRZoomContentView.swift in Sources */,
 				80AB2A342128CEAD00B58AB3 /* XTRIsotopeModel.swift in Sources */,
-				80AB2A352128CEAD00B58AB3 /* MBProgressHUD.m in Sources */,
 				80AB2A362128CEAD00B58AB3 /* XTRAppearanceManagerStandard.swift in Sources */,
 				80AB2A372128CEAD00B58AB3 /* UIImage+Extensions.swift in Sources */,
 				80AB2A382128CEAD00B58AB3 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */,
@@ -1735,7 +1729,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IBC_MODULE = PrimaMateria;
 				IBSC_MODULE = PrimaMateria;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MODULE_NAME = PrimaMateria;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1799,7 +1793,7 @@
 				HEADER_SEARCH_PATHS = "";
 				IBC_MODULE = PrimaMateria;
 				IBSC_MODULE = PrimaMateria;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MODULE_NAME = PrimaMateria;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_MODULE_NAME = PrimaMateria;
@@ -1824,7 +1818,7 @@
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1855,7 +1849,7 @@
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1885,7 +1879,7 @@
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1917,7 +1911,7 @@
 				IBC_MODULE = $inherited;
 				IBSC_MODULE = $inherited;
 				INFOPLIST_FILE = "$(SRCROOT)/PrimaMateria/Resources/PrimaMateria-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

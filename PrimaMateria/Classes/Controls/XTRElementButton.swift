@@ -6,6 +6,8 @@
 //  Copyright © 2019 xTrensa. All rights reserved.
 //
 
+import UIKit
+
 class XTRElementButton: XTRGeneralButton {
     
     // MARK: - Initialization Methods

@@ -6,7 +6,7 @@
 //  Copyright © 2019 xTrensa. All rights reserved.
 //
 
-// MARK: - UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout
+import UIKit
 
 class XTRGraphChoiceViewControllerDelegate: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

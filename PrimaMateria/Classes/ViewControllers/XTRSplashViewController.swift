@@ -6,6 +6,8 @@
 //  Copyright © 2019 xTrensa. All rights reserved.
 //
 
+import UIKit
+
 class XTRSplashViewController: UIViewController {
     
     @IBOutlet var appNameLabel: UILabel!

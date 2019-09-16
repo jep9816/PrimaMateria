@@ -6,6 +6,9 @@
 //  Copyright © 2019 xTrensa. All rights reserved.
 //
 
+import Foundation
+import UIKit
+
 class XTRShadowView: UIImageView {
     
     // MARK: - Initialization Methods

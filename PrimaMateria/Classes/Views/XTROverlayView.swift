@@ -6,6 +6,8 @@
 //  Copyright © 2019 xTrensa. All rights reserved.
 //
 
+import UIKit
+
 class XTROverlayView: UIView {
     
     // MARK: - Initialization Methods

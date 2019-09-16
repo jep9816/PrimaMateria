@@ -16,7 +16,7 @@ class XTRHelpBalloonViewController: UIViewController {
     @IBOutlet var forwardButton: UIButton!
     @IBOutlet var titleLabel: UILabel!
     
-    var webView: WKWebView!
+    @IBOutlet var webView: WKWebView!
     var disposeBag: DisposeBag = DisposeBag()
 
     private var delegate: XTRHelpBalloonViewControllerDelegate? = XTRHelpBalloonViewControllerDelegate()
@@ -50,18 +50,7 @@ class XTRHelpBalloonViewController: UIViewController {
     // MARK: - View Management Methods
     
      func setupWebView() {
-        // Scale the page to fill the web view
-       let viewportScriptString = "var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); meta.setAttribute('initial-scale', '1.0'); meta.setAttribute('maximum-scale', '1.0'); meta.setAttribute('minimum-scale', '1.0'); meta.setAttribute('user-scalable', 'no'); document.getElementsByTagName('head')[0].appendChild(meta);"
-        let viewportScript = WKUserScript(source: viewportScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
-        let controller = WKUserContentController()
-        let config = WKWebViewConfiguration()
-        
-        controller.addUserScript(viewportScript)
-        config.userContentController = controller
-        
-        webView = WKWebView(frame: CGRect(x: 2, y: 46, width: 406, height: 286), configuration: config)
-        
-        webView.cornerRadius = VIEW_CORNER_RADIUS + 8
+        webView.layer.cornerRadius = VIEW_CORNER_RADIUS + 8
         webView.masksToBounds = true
         webView.maskedCorners = [.layerMinXMaxYCorner, .layerMaxXMaxYCorner]
         webView.navigationDelegate = delegate
@@ -69,8 +58,6 @@ class XTRHelpBalloonViewController: UIViewController {
         webView.scrollView.bounces = false                    // Things like this should be handled in web code
         webView.allowsBackForwardNavigationGestures = false   // Disable swiping to navigate
         webView.contentMode = .scaleToFill
-
-        view.addSubview(webView)
     }
     
     func setupRx() {

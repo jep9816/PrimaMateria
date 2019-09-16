@@ -6,6 +6,7 @@
 //  Copyright © 2019 xTrensa. All rights reserved.
 //
 
+import UIKit
 import RxSwift
 import RxCocoa
 
@@ -68,7 +69,6 @@ class XTRColorPickerViewController: UIViewController {
                 let green = CGFloat((self?.greenSlider.value)!)
                 let blue = CGFloat((self?.blueSlider.value)!)
                 let alpha = CGFloat((self?.alphaSlider.value)!)
-                UIView.beginAnimations(nil, context: nil)
                 self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         
@@ -79,7 +79,6 @@ class XTRColorPickerViewController: UIViewController {
                 let green = CGFloat(newValue)
                 let blue = CGFloat((self?.blueSlider.value)!)
                 let alpha = CGFloat((self?.alphaSlider.value)!)
-                UIView.beginAnimations(nil, context: nil)
                 self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         
@@ -90,7 +89,6 @@ class XTRColorPickerViewController: UIViewController {
                 let green = CGFloat((self?.greenSlider.value)!)
                 let blue = CGFloat(newValue)
                 let alpha = CGFloat((self?.alphaSlider.value)!)
-                UIView.beginAnimations(nil, context: nil)
                 self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         
@@ -101,7 +99,6 @@ class XTRColorPickerViewController: UIViewController {
                 let green = CGFloat((self?.greenSlider.value)!)
                 let blue = CGFloat((self?.blueSlider.value)!)
                 let alpha = CGFloat(newValue)
-                UIView.beginAnimations(nil, context: nil)
                 self?.previewView.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: alpha)
             }).disposed(by: disposeBag)
         

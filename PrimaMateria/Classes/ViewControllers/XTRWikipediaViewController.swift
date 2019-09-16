@@ -9,6 +9,7 @@
 import WebKit
 import RxSwift
 import RxCocoa
+import SVProgressHUD
 
 class XTRWikipediaViewController: UIViewController {
     
@@ -18,7 +19,7 @@ class XTRWikipediaViewController: UIViewController {
     @IBOutlet var dismissButton: UIButton!
     @IBOutlet var webView: WKWebView!
     
-    public var progressHUD: MBProgressHUD!
+    //public var progressHUD: MBProgressHUD!
     
     private var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
     
@@ -58,26 +59,28 @@ class XTRWikipediaViewController: UIViewController {
         
         preferredContentSize = CGSize(width: 768, height: 620)
         
-        progressHUD = MBProgressHUD(view: view)
-        progressHUD.label.font = UIFont.boldSystemFont(ofSize: 26)
-        progressHUD.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
-        progressHUD.label.text = NSLocalizedString("pleaseWait", comment: "")
-        progressHUD.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) \(elementName!)."
-        progressHUD.backgroundView.backgroundColor = UIColor.clear
+//        progressHUD = MBProgressHUD(view: view)
+//        progressHUD.label.font = UIFont.boldSystemFont(ofSize: 26)
+//        progressHUD.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
+//        progressHUD.label.text = NSLocalizedString("pleaseWait", comment: "")
+//        progressHUD.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) //\(elementName!)."
+//        progressHUD.backgroundView.backgroundColor = UIColor.clear
         webView.navigationDelegate = delegate
-        view.addSubview(progressHUD)
+//        view.addSubview(progressHUD)
 
         setupRx()
     }
     
     func setupRx() {
         backButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
+            SVProgressHUD.show()
+            //self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
             self?.webView.goBack()
         }).disposed(by: disposeBag)
         
         forwardButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
+            SVProgressHUD.show()
+            //self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
             self?.webView.goForward()
         }).disposed(by: disposeBag)
         
@@ -95,7 +98,9 @@ class XTRWikipediaViewController: UIViewController {
         forwardButton.isEnabled = false
         forwardButton.tintColor = UIColor.black
         
-        progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
+        SVProgressHUD.show()
+
+        //progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
         prepareRequest()
     }
     

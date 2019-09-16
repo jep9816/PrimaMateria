@@ -92,8 +92,8 @@ extension UIColor { // Expanded
         return cgColor.alpha
     }
     
-    class func color(rgbHex hex: UnsafeMutablePointer<UInt32>) -> UIColor {
-        let hexValue = UnsafeMutablePointer<UInt32>(hex).pointee
+    class func color(rgbHex hex: UnsafeMutablePointer<UInt64>) -> UIColor {
+        let hexValue = UnsafeMutablePointer<UInt64>(hex).pointee
         let r = (hexValue >> 16) & 0xFF
         let g = (hexValue >> 8) & 0xFF
         let b = (hexValue) & 0xFF
@@ -103,9 +103,9 @@ extension UIColor { // Expanded
     
     class func color(hexString: String) -> UIColor {
         let scanner = Scanner(string: hexString)
-        let hexNum: UnsafeMutablePointer<UInt32> = UnsafeMutablePointer<UInt32>.allocate(capacity: 1)
+        let hexNum: UnsafeMutablePointer<UInt64> = UnsafeMutablePointer<UInt64>.allocate(capacity: 1)
         
-        if !scanner.scanHexInt32(hexNum) {
+        if !scanner.scanHexInt64(hexNum) {
             return UIColor.white
         }
         

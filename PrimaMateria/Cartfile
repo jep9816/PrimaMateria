@@ -1,2 +1,3 @@
 github "core-plot/core-plot" "release-2.3"
 github "ReactiveX/RxSwift"
+github "SVProgressHUD/SVProgressHUD"

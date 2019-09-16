@@ -14,11 +14,3 @@ _ = UIApplicationMain(
     NSStringFromClass(XTRApplication.self),
     NSStringFromClass(XTRAppDelegate.self)
 )
-//_ = UIApplicationMain(
-//    CommandLine.argc,
-//    UnsafeMutablePointer(CommandLine.unsafeArgv).bindMemory(to: UnsafeMutablePointer<Int8>.self, capacity: Int(CommandLine.argc)),
-//    NSStringFromClass(XTRApplication.self),
-//    NSStringFromClass(XTRAppDelegate.self)
-//)
-
-//UIApplicationMain' is deprecated: Use the overload of UIApplicationMain where the type of the second parameter is UnsafeMutablePointer<UnsafeMutablePointer<Int8>?>, which is the same as the type of CommandLine.unsafeArgv.

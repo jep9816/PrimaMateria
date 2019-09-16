@@ -6,6 +6,8 @@
 //  Copyright © 2019 xTrensa. All rights reserved.
 //
 
+import Foundation
+
 class XTRTableViewCellViewModel: NSObject {
     let xPos: Int
     let yPos: Int
