@@ -135,6 +135,10 @@
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
 		803518C123302BF50070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
 		803518C223302FCD0070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
+		804F2B9B2360BF23009C8F3C /* LocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocalManager.swift */; };
+		804F2B9C2360BF23009C8F3C /* LocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocalManager.swift */; };
+		804F2B9E2360CE6C009C8F3C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */; };
+		804F2B9F2360CE6C009C8F3C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */; };
 		806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
 		806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
 		806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
@@ -431,7 +435,7 @@
 		8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTYRElectronConfigurationModel.swift; sourceTree = "<group>"; };
 		8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRVaporPressurenModel.swift; sourceTree = "<group>"; };
 		800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRZoomContentView.xib; sourceTree = "<group>"; };
-		80127C0E20F0253000ABC706 /* PrimaMateria DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PrimaMateria DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80127C0E20F0253000ABC706 /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80127C2720F0268B00ABC706 /* PrimaMateria-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PrimaMateria-Info.plist"; sourceTree = "<group>"; };
 		80127C2920F0268B00ABC706 /* PrimaMateria.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = PrimaMateria.entitlements; sourceTree = "<group>"; };
 		80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSimpleTransitionController.swift; sourceTree = "<group>"; };
@@ -552,6 +556,8 @@
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
 		803518C023302BF50070B1DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
+		804F2B9A2360BF23009C8F3C /* LocalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalManager.swift; sourceTree = "<group>"; };
+		804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
 		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
@@ -632,7 +638,7 @@
 		809876D2210A875500AB3B00 /* Globe05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe05.png; sourceTree = "<group>"; };
 		809876D3210A875500AB3B00 /* Globe12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe12.png; sourceTree = "<group>"; };
 		80AB29EE2128CE0B00B58AB3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		80AB2AC52128CEAD00B58AB3 /* PrimaMateria PRD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PrimaMateria PRD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		80AB2AC52128CEAD00B58AB3 /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80D535782129DDC100077340 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		80D535792129DDC100077340 /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = Carthage/Build/iOS/CorePlot.framework; sourceTree = "<group>"; };
 		80D5357A2129DDC100077340 /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -698,8 +704,8 @@
 		80127C0F20F0253000ABC706 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				80127C0E20F0253000ABC706 /* PrimaMateria DEV.app */,
-				80AB2AC52128CEAD00B58AB3 /* PrimaMateria PRD.app */,
+				80127C0E20F0253000ABC706 /* PrimaMateria.app */,
+				80AB2AC52128CEAD00B58AB3 /* PrimaMateria.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -764,6 +770,7 @@
 				8012837820F02D6100ABC706 /* XTRColorFactoryClassic.swift */,
 				8012837220F02D6000ABC706 /* XTRColorFactoryStandard.swift */,
 				8012837520F02D6100ABC706 /* XTRImageFactory.swift */,
+				804F2B9A2360BF23009C8F3C /* LocalManager.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -791,6 +798,7 @@
 				80127FF320F0270400ABC706 /* UIImage+Extensions.swift */,
 				80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */,
 				80127FE120F0270400ABC706 /* XTRElement+Presentation.swift */,
+				804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1097,7 +1105,7 @@
 			);
 			name = "PrimaMateria DEV";
 			productName = PrimaMateria;
-			productReference = 80127C0E20F0253000ABC706 /* PrimaMateria DEV.app */;
+			productReference = 80127C0E20F0253000ABC706 /* PrimaMateria.app */;
 			productType = "com.apple.product-type.application";
 		};
 		80AB29F02128CEAD00B58AB3 /* PrimaMateria PRD */ = {
@@ -1116,7 +1124,7 @@
 			);
 			name = "PrimaMateria PRD";
 			productName = PrimaMateria;
-			productReference = 80AB2AC52128CEAD00B58AB3 /* PrimaMateria PRD.app */;
+			productReference = 80AB2AC52128CEAD00B58AB3 /* PrimaMateria.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1516,6 +1524,7 @@
 				8012807120F0270500ABC706 /* XTRBackgroundView.swift in Sources */,
 				8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */,
 				8012806020F0270500ABC706 /* XTRSplashViewController.swift in Sources */,
+				804F2B9F2360CE6C009C8F3C /* String+Extensions.swift in Sources */,
 				8012806520F0270500ABC706 /* XTRPreferencesViewController.swift in Sources */,
 				8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */,
 				8012805020F0270500ABC706 /* XTRTableLabel.swift in Sources */,
@@ -1543,6 +1552,7 @@
 				8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
 				8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */,
+				804F2B9C2360BF23009C8F3C /* LocalManager.swift in Sources */,
 				8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */,
 				8012807320F0270500ABC706 /* XTRShadowView.swift in Sources */,
 				08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */,
@@ -1600,6 +1610,7 @@
 				80AB2A0B2128CEAD00B58AB3 /* XTRBackgroundView.swift in Sources */,
 				80AB2A0C2128CEAD00B58AB3 /* XTYRElectronConfigurationModel.swift in Sources */,
 				80AB2A0D2128CEAD00B58AB3 /* XTRSplashViewController.swift in Sources */,
+				804F2B9E2360CE6C009C8F3C /* String+Extensions.swift in Sources */,
 				80AB2A0E2128CEAD00B58AB3 /* XTRPreferencesViewController.swift in Sources */,
 				80AB2A0F2128CEAD00B58AB3 /* XTRDataSource.swift in Sources */,
 				80AB2A102128CEAD00B58AB3 /* XTRTableLabel.swift in Sources */,
@@ -1627,6 +1638,7 @@
 				80AB2A262128CEAD00B58AB3 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
 				80AB2A272128CEAD00B58AB3 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				80AB2A282128CEAD00B58AB3 /* XTRElementButton.swift in Sources */,
+				804F2B9B2360BF23009C8F3C /* LocalManager.swift in Sources */,
 				80AB2A292128CEAD00B58AB3 /* XTRColorFactoryStandard.swift in Sources */,
 				80AB2A2A2128CEAD00B58AB3 /* XTRShadowView.swift in Sources */,
 				80AB2A2B2128CEAD00B58AB3 /* XTRPageControl.swift in Sources */,
@@ -1812,6 +1824,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.3.1;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1823,12 +1836,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.1;
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PrimaMateria;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1843,6 +1857,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.3.1;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1854,12 +1869,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.1;
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PrimaMateria;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
@@ -1873,6 +1889,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.3.1;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1884,12 +1901,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.1;
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PrimaMateria;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1905,6 +1923,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2.3.1;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1916,12 +1935,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 2.3.1;
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = PrimaMateria;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;

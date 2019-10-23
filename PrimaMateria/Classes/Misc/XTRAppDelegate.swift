@@ -17,15 +17,28 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
         let notification = Notification(name: .notificationAppearanceChanged, object: XTRPropertiesStore.appearanceName, userInfo: nil)
         appearanceManager = XTRAppearanceManager.init(window: window!)
         appearanceManager.changeAppearance(notification: notification as NSNotification)
-        // JEP: Hack remove this
-        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
         
+        UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+
+        LocaleManager.setup()
+        
+        if let language = UserDefaults.standard.string(forKey: "AppleLanguage") {
+            LocaleManager.apply(locale: Locale(identifier: language))
+        } else {
+            UserDefaults.standard.set("en", forKey: "AppleLanguage")
+            LocaleManager.apply(locale: Locale(identifier: "en"))
+        }
+
+        let languages = LocaleManager.availableLocalizations
+        print("\(languages)")
+
+        // JEP: Hack remove this
         //        let fontFamiles: [Any] = UIFont.familyNames()
         //        print("%@", fontFamiles)
         //        let fontNames: [Any] = UIFont.fontNamesForFamilyName("Verdana")
         //        print("%@", fonßtNames)
         
-         return true
+        return true
     }
     
     class func storyboard() -> UIStoryboard {

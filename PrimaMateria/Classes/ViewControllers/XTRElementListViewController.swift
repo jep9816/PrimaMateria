@@ -134,7 +134,7 @@ class XTRElementListViewController: UIViewController {
         groupButton = nil
         navigationBar =  nil
         tableView = nil
-        tableView.delegate = nil
+        //tableView.delegate = nil
     }
     
 }

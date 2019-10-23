@@ -36,15 +36,17 @@ class XTRPreferencesViewController: UIViewController {
     @IBOutlet var webView: WKWebView!
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var navigationBar: UINavigationBar!
-    
+    @IBOutlet var globeImageView: UIImageView!
+
     var disposeBag: DisposeBag = DisposeBag()
-    
+    var animationImages: [UIImage] = []
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-    
+        
     // MARK: - Internal Methods
     
     @objc func colorSelected(notification: Notification) {
@@ -87,6 +89,20 @@ class XTRPreferencesViewController: UIViewController {
         NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
         
         dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+    }
+    
+    func setupImageViewAnimation() {
+        for index in 1...72 {
+            let numValue =  String(format: "%02d", index)
+            let imageName = "Globe\(numValue).png"
+            animationImages.append(UIImage(named: imageName)!)
+        }
+    }
+    
+    func startAnimating() {
+        globeImageView.animationImages = animationImages
+        globeImageView.animationDuration = 5.0
+        globeImageView.startAnimating()
     }
     
     func loadDocument(_ name: String, inView: WKWebView) {
@@ -242,6 +258,15 @@ class XTRPreferencesViewController: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         setupRx()
+        
+        globeImageView.layer.cornerRadius = VIEW_CORNER_RADIUS + 10.0
+        globeImageView.layer.backgroundColor = UIColor.clear.cgColor
+        globeImageView.backgroundColor = UIColor.clear
+        
+        setupImageViewAnimation()
+        startAnimating()
+
+        globeImageView.addInteraction(UIContextMenuInteraction(delegate: self))
     }
     
     override var shouldAutorotate: Bool {
@@ -279,4 +304,40 @@ class XTRPreferencesViewController: UIViewController {
         navigationBar = nil
     }
     
+    private func applyLanguage(code: String) {
+        UserDefaults.standard.set(code, forKey: "AppleLanguage")
+        LocaleManager.apply(locale: Locale(identifier: code))
+    }
+    
+    func makeContextMenu() -> UIMenu {
+        let english = UIAction(title: NSLocalizedString("english", comment: ""), image: "🇺🇸".image()) { _ in
+            self.applyLanguage(code: "en")
+        }
+        
+        let spanish = UIAction(title: NSLocalizedString("spanish", comment: ""), image: "🇪🇸".image()) { _ in
+            self.applyLanguage(code: "es")
+        }
+
+        let russian = UIAction(title: NSLocalizedString("russian", comment: ""), image: "🇷🇺".image()) { _ in
+            self.applyLanguage(code: "ru")
+        }
+        let french = UIAction(title: NSLocalizedString("french", comment: ""), image: "🇫🇷".image()) { _ in
+            self.applyLanguage(code: "fr")
+        }
+        
+        return UIMenu(title: NSLocalizedString("chooseLanguage", comment: ""), children: [english, spanish, russian, french])
+    }
+    
+}
+
+extension XTRPreferencesViewController: UIContextMenuInteractionDelegate {
+    
+     func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+
+        return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
+
+            return self.makeContextMenu()
+        })
+    }
+        
 }
