@@ -201,3 +201,6 @@
 "wavelengthAir"="Air de longueur d’onde (Å)";
 "wikipediaEntry"="Entrée de Wikipedia pour élément";
 "wikipediaEntryButton"="Entrée de wikipedia";
+"resetPreferencesDefault"="Voulez-vous rétablir les préférences par défaut?";
+"yes"="Oui";
+"no"="Non";

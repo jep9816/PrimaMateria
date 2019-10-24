@@ -37,16 +37,16 @@ class XTRPreferencesViewController: UIViewController {
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var globeImageView: UIImageView!
-
+    
     var disposeBag: DisposeBag = DisposeBag()
     var animationImages: [UIImage] = []
-
+    
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-        
+    
     // MARK: - Internal Methods
     
     @objc func colorSelected(notification: Notification) {
@@ -155,21 +155,31 @@ class XTRPreferencesViewController: UIViewController {
     // MARK: - Action Methods
     
     func resetPreferences() {
-        XTRPropertiesStore.resetPreferences()
+        let alertController = UIAlertController(title: NSLocalizedString("resetPreferences", comment: ""), message: NSLocalizedString("resetPreferencesDefault", comment: ""), preferredStyle: .alert)
+        let yesAction = UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: .cancel) {[weak self] _ in
+            XTRPropertiesStore.resetPreferences()
+            
+            self?.populateSeriesColors()
+            self?.populateElementBubbleState(true)
+            self?.populateShowTransitionsState(true)
+            self?.populateSplashScreenState(true)
+            
+            self?.elementBubbleSwitch.isOn = true
+            self?.showTransitionsBubbleSwitch.isOn = true
+            self?.splashScreenSwitch.isOn = true
+            
+            self?.applyLanguage(code: "en")
+            
+            NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
+        }
         
-        populateSeriesColors()
-        populateElementBubbleState(true)
-        populateShowTransitionsState(true)
-        populateSplashScreenState(true)
-        
-        elementBubbleSwitch.isOn = true
-        showTransitionsBubbleSwitch.isOn = true
-        splashScreenSwitch.isOn = true
-        
-        NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
+        let noAction = UIAlertAction(title: NSLocalizedString("no", comment: ""), style: .destructive)
+        alertController.addAction(noAction)
+        alertController.addAction(yesAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
-     func setupRx() {
+    func setupRx() {
         segmentedControl.rx.value
             .asObservable()
             .subscribe(onNext: { newValue in
@@ -222,7 +232,7 @@ class XTRPreferencesViewController: UIViewController {
             self?.presentColorPicker(sender)
         }).disposed(by: disposeBag)
     }
-        
+    
     func presentColorPicker(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: StoryBoardName.ColorPicker, bundle: nil)
         let colorPicker: XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
@@ -240,29 +250,32 @@ class XTRPreferencesViewController: UIViewController {
     }
     
     private func applyLanguage(code: String) {
-        UserDefaults.standard.set(code, forKey: "AppleLanguage")
+        XTRPropertiesStore.currentLanguageCode = code
         LocaleManager.apply(locale: Locale(identifier: code))
     }
     
-    func makeContextMenu() -> UIMenu {
-        let english = UIAction(title: NSLocalizedString("english", comment: ""), image: "🇺🇸".image()) { _ in
-            self.applyLanguage(code: "en")
+    private func createAction(code: String, titleKey: String, flagImage: UIImage) -> UIAction {
+        let currentLanguageCode = XTRPropertiesStore.currentLanguageCode
+        
+        let action = UIAction(title: NSLocalizedString(titleKey, comment: ""), image: flagImage, state: currentLanguageCode == code ? .on : .off) { _ in
+            self.applyLanguage(code: code)
+        }
+        if currentLanguageCode == code {
+            action.attributes = [.disabled]
         }
         
-        let spanish = UIAction(title: NSLocalizedString("spanish", comment: ""), image: "🇪🇸".image()) { _ in
-            self.applyLanguage(code: "es")
-        }
-
-        let russian = UIAction(title: NSLocalizedString("russian", comment: ""), image: "🇷🇺".image()) { _ in
-            self.applyLanguage(code: "ru")
-        }
-        let french = UIAction(title: NSLocalizedString("french", comment: ""), image: "🇫🇷".image()) { _ in
-            self.applyLanguage(code: "fr")
-        }
-        
-        return UIMenu(title: NSLocalizedString("chooseLanguage", comment: ""), children: [english, spanish, russian, french])
+        return action
     }
-
+    
+    func makeContextMenu() -> UIMenu {
+        return UIMenu(title: NSLocalizedString("chooseLanguage", comment: ""), children: [
+            createAction(code: "en", titleKey: "english", flagImage: "🇺🇸".image()!),
+            createAction(code: "es", titleKey: "spanish", flagImage: "🇪🇸".image()!),
+            createAction(code: "ru", titleKey: "russian", flagImage: "🇷🇺".image()!),
+            createAction(code: "fr", titleKey: "french", flagImage: "🇫🇷".image()!)
+        ])
+    }
+    
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
@@ -286,7 +299,7 @@ class XTRPreferencesViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0: 1
         segmentedControl.setTitle(NSLocalizedString("classic", comment: ""), forSegmentAt: 0)
         segmentedControl.setTitle(NSLocalizedString("standard", comment: ""), forSegmentAt: 1)
-
+        
         navigationController?.navigationBar.prefersLargeTitles = true
         setupRx()
         setupGlobalImageView()
@@ -327,15 +340,15 @@ class XTRPreferencesViewController: UIViewController {
         segmentedControl = nil
         navigationBar = nil
     }
-        
+    
 }
 
 extension XTRPreferencesViewController: UIContextMenuInteractionDelegate {
     
-     func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
+    func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
             return self.makeContextMenu()
         })
     }
-        
+    
 }

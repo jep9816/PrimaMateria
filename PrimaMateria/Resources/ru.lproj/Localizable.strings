@@ -201,3 +201,6 @@
 "wavelengthAir"="длина волны воздуха (Å)";
 "wikipediaEntry"="Википедия Запись для элемента";
 "wikipediaEntryButton"="Запись в Википедии";
+"resetPreferencesDefault"="Хотите сбросить настройки по умолчанию?";
+"yes"="Да";
+"no"="Нет";

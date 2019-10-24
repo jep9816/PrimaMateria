@@ -19,6 +19,27 @@ struct XTRPropertiesStoreConfig {
 
 class XTRPropertiesStore: NSObject {
     
+    class var currentLanguageCode: String {
+        get {
+            let userDefaults = UserDefaults.standard
+            guard let defaultValue = userDefaults.value(forKeyPath: "AppleLanguage") as? String else {
+                XTRPropertiesStore.atomicNumber = 1
+                userDefaults.set("en", forKey: "AppleLanguage")
+                userDefaults.synchronize()
+
+                return "en"
+            }
+
+            return defaultValue
+        }
+        
+        set {
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(newValue, forKey: "AppleLanguage")
+            userDefaults.synchronize()
+        }
+    }
+
     class var atomicNumber: Int {
         get {
             let userDefaults = UserDefaults.standard

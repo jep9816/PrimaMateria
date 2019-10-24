@@ -18,9 +18,7 @@ class XTRWikipediaViewController: UIViewController {
     @IBOutlet var titleButtonItem: UIBarButtonItem!
     @IBOutlet var dismissButton: UIButton!
     @IBOutlet var webView: WKWebView!
-    
-    //public var progressHUD: MBProgressHUD!
-    
+        
     private var delegate: XTRWikipediaViewControllerDelegate? = XTRWikipediaViewControllerDelegate()
     
     var elementName: String?
@@ -35,7 +33,7 @@ class XTRWikipediaViewController: UIViewController {
     // MARK: - Internal Methods
     
     func prepareRequest() {
-        let url = URL(string: "https://en.wikipedia.org/wiki/\(elementName!)")!
+        let url = URL(string: "https://\(XTRPropertiesStore.currentLanguageCode).wikipedia.org/wiki/\(elementName!)")!
         let request = URLRequest(url: url)
         
         webView.load(request)
@@ -59,14 +57,7 @@ class XTRWikipediaViewController: UIViewController {
         
         preferredContentSize = CGSize(width: 768, height: 620)
         
-//        progressHUD = MBProgressHUD(view: view)
-//        progressHUD.label.font = UIFont.boldSystemFont(ofSize: 26)
-//        progressHUD.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
-//        progressHUD.label.text = NSLocalizedString("pleaseWait", comment: "")
-//        progressHUD.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) //\(elementName!)."
-//        progressHUD.backgroundView.backgroundColor = UIColor.clear
         webView.navigationDelegate = delegate
-//        view.addSubview(progressHUD)
 
         setupRx()
     }
@@ -74,13 +65,11 @@ class XTRWikipediaViewController: UIViewController {
     func setupRx() {
         backButton.rx.tap.subscribe(onNext: { [weak self] _ in
             SVProgressHUD.show()
-            //self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
             self?.webView.goBack()
         }).disposed(by: disposeBag)
         
         forwardButton.rx.tap.subscribe(onNext: { [weak self] _ in
             SVProgressHUD.show()
-            //self?.progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
             self?.webView.goForward()
         }).disposed(by: disposeBag)
         
@@ -100,7 +89,6 @@ class XTRWikipediaViewController: UIViewController {
         
         SVProgressHUD.show()
 
-        //progressHUD.show(animated: XTRPropertiesStore.showTransitionsState)
         prepareRequest()
     }
     

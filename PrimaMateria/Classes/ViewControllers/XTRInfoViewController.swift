@@ -24,8 +24,7 @@ class XTRInfoViewController: UIViewController {
     // MARK: - Internal Methods
     
     func loadDocument(_ documentName: String) {
-        guard let language = UserDefaults.standard.string(forKey: "AppleLanguage") else { return }
-        guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "PrimaMateriaHelp/\(language)") else { return }
+        guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "PrimaMateriaHelp/\(XTRPropertiesStore.currentLanguageCode)") else { return }
         
         if !path.isEmpty {
             let url = URL(fileURLWithPath: path)

@@ -201,3 +201,6 @@
 "wavelengthAir"="Wavelength Air (Å)";
 "wikipediaEntry"="Wikipedia Entry for element";
 "wikipediaEntryButton"="Wikipedia Entry";
+"resetPreferencesDefault"="Do you want to reset preferences to default?";
+"yes"="Yes";
+"no"="No";

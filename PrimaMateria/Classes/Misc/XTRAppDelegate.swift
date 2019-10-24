@@ -21,16 +21,10 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
 
         LocaleManager.setup()
+        LocaleManager.apply(locale: Locale(identifier: XTRPropertiesStore.currentLanguageCode))
         
-        if let language = UserDefaults.standard.string(forKey: "AppleLanguage") {
-            LocaleManager.apply(locale: Locale(identifier: language))
-        } else {
-            UserDefaults.standard.set("en", forKey: "AppleLanguage")
-            LocaleManager.apply(locale: Locale(identifier: "en"))
-        }
-
-        let languages = LocaleManager.availableLocalizations
-        print("\(languages)")
+        //let languages = LocaleManager.availableLocalizations
+        //print("\(languages)")
 
         // JEP: Hack remove this
         //        let fontFamiles: [Any] = UIFont.familyNames()
