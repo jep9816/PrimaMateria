@@ -91,7 +91,12 @@ class XTRPreferencesViewController: UIViewController {
         dismiss(animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
     
-    func setupImageViewAnimation() {
+    func setupGlobalImageView() {
+        globeImageView.layer.cornerRadius = VIEW_CORNER_RADIUS + 10.0
+        globeImageView.layer.backgroundColor = UIColor.clear.cgColor
+        globeImageView.backgroundColor = UIColor.clear
+        globeImageView.addInteraction(UIContextMenuInteraction(delegate: self))
+        
         for index in 1...72 {
             let numValue =  String(format: "%02d", index)
             let imageName = "Globe\(numValue).png"
@@ -234,6 +239,30 @@ class XTRPreferencesViewController: UIViewController {
         presentationController?.sourceRect = sender.frame
     }
     
+    private func applyLanguage(code: String) {
+        UserDefaults.standard.set(code, forKey: "AppleLanguage")
+        LocaleManager.apply(locale: Locale(identifier: code))
+    }
+    
+    func makeContextMenu() -> UIMenu {
+        let english = UIAction(title: NSLocalizedString("english", comment: ""), image: "🇺🇸".image()) { _ in
+            self.applyLanguage(code: "en")
+        }
+        
+        let spanish = UIAction(title: NSLocalizedString("spanish", comment: ""), image: "🇪🇸".image()) { _ in
+            self.applyLanguage(code: "es")
+        }
+
+        let russian = UIAction(title: NSLocalizedString("russian", comment: ""), image: "🇷🇺".image()) { _ in
+            self.applyLanguage(code: "ru")
+        }
+        let french = UIAction(title: NSLocalizedString("french", comment: ""), image: "🇫🇷".image()) { _ in
+            self.applyLanguage(code: "fr")
+        }
+        
+        return UIMenu(title: NSLocalizedString("chooseLanguage", comment: ""), children: [english, spanish, russian, french])
+    }
+
     // MARK: - View Management Methods
     
     override func viewDidLoad() {
@@ -255,18 +284,13 @@ class XTRPreferencesViewController: UIViewController {
         segmentedControl.cornerRadius = VIEW_CORNER_RADIUS - 4.0
         segmentedControl.masksToBounds = true
         segmentedControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0: 1
-        
+        segmentedControl.setTitle(NSLocalizedString("classic", comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString("standard", comment: ""), forSegmentAt: 1)
+
         navigationController?.navigationBar.prefersLargeTitles = true
         setupRx()
-        
-        globeImageView.layer.cornerRadius = VIEW_CORNER_RADIUS + 10.0
-        globeImageView.layer.backgroundColor = UIColor.clear.cgColor
-        globeImageView.backgroundColor = UIColor.clear
-        
-        setupImageViewAnimation()
+        setupGlobalImageView()
         startAnimating()
-
-        globeImageView.addInteraction(UIContextMenuInteraction(delegate: self))
     }
     
     override var shouldAutorotate: Bool {
@@ -303,39 +327,13 @@ class XTRPreferencesViewController: UIViewController {
         segmentedControl = nil
         navigationBar = nil
     }
-    
-    private func applyLanguage(code: String) {
-        UserDefaults.standard.set(code, forKey: "AppleLanguage")
-        LocaleManager.apply(locale: Locale(identifier: code))
-    }
-    
-    func makeContextMenu() -> UIMenu {
-        let english = UIAction(title: NSLocalizedString("english", comment: ""), image: "🇺🇸".image()) { _ in
-            self.applyLanguage(code: "en")
-        }
         
-        let spanish = UIAction(title: NSLocalizedString("spanish", comment: ""), image: "🇪🇸".image()) { _ in
-            self.applyLanguage(code: "es")
-        }
-
-        let russian = UIAction(title: NSLocalizedString("russian", comment: ""), image: "🇷🇺".image()) { _ in
-            self.applyLanguage(code: "ru")
-        }
-        let french = UIAction(title: NSLocalizedString("french", comment: ""), image: "🇫🇷".image()) { _ in
-            self.applyLanguage(code: "fr")
-        }
-        
-        return UIMenu(title: NSLocalizedString("chooseLanguage", comment: ""), children: [english, spanish, russian, french])
-    }
-    
 }
 
 extension XTRPreferencesViewController: UIContextMenuInteractionDelegate {
     
      func contextMenuInteraction(_ interaction: UIContextMenuInteraction, configurationForMenuAtLocation location: CGPoint) -> UIContextMenuConfiguration? {
-
         return UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { _ in
-
             return self.makeContextMenu()
         })
     }

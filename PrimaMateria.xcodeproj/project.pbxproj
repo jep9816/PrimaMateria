@@ -135,10 +135,10 @@
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
 		803518C123302BF50070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
 		803518C223302FCD0070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
-		804F2B9B2360BF23009C8F3C /* LocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocalManager.swift */; };
-		804F2B9C2360BF23009C8F3C /* LocalManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocalManager.swift */; };
 		804F2B9E2360CE6C009C8F3C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */; };
 		804F2B9F2360CE6C009C8F3C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */; };
+		804F2BA023614D9E009C8F3C /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocaleManager.swift */; };
+		804F2BA123614DA0009C8F3C /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocaleManager.swift */; };
 		806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
 		806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
 		806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
@@ -556,7 +556,7 @@
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
 		803518C023302BF50070B1DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
-		804F2B9A2360BF23009C8F3C /* LocalManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalManager.swift; sourceTree = "<group>"; };
+		804F2B9A2360BF23009C8F3C /* LocaleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
 		804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
@@ -740,6 +740,7 @@
 		80127FD520F0270400ABC706 /* 3rd Party */ = {
 			isa = PBXGroup;
 			children = (
+				804F2B9A2360BF23009C8F3C /* LocaleManager.swift */,
 			);
 			name = "3rd Party";
 			path = 3rdParty;
@@ -770,7 +771,6 @@
 				8012837820F02D6100ABC706 /* XTRColorFactoryClassic.swift */,
 				8012837220F02D6000ABC706 /* XTRColorFactoryStandard.swift */,
 				8012837520F02D6100ABC706 /* XTRImageFactory.swift */,
-				804F2B9A2360BF23009C8F3C /* LocalManager.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -1529,6 +1529,7 @@
 				8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */,
 				8012805020F0270500ABC706 /* XTRTableLabel.swift in Sources */,
 				8012805220F0270500ABC706 /* XTRHelpButton.swift in Sources */,
+				804F2BA123614DA0009C8F3C /* LocaleManager.swift in Sources */,
 				8012804F20F0270500ABC706 /* XTRGraphChoiceCell.swift in Sources */,
 				8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */,
 				8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */,
@@ -1552,7 +1553,6 @@
 				8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
 				8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */,
-				804F2B9C2360BF23009C8F3C /* LocalManager.swift in Sources */,
 				8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */,
 				8012807320F0270500ABC706 /* XTRShadowView.swift in Sources */,
 				08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */,
@@ -1615,6 +1615,7 @@
 				80AB2A0F2128CEAD00B58AB3 /* XTRDataSource.swift in Sources */,
 				80AB2A102128CEAD00B58AB3 /* XTRTableLabel.swift in Sources */,
 				80AB2A112128CEAD00B58AB3 /* XTRHelpButton.swift in Sources */,
+				804F2BA023614D9E009C8F3C /* LocaleManager.swift in Sources */,
 				80AB2A122128CEAD00B58AB3 /* XTRGraphChoiceCell.swift in Sources */,
 				80AB2A132128CEAD00B58AB3 /* XTRColorFactory.swift in Sources */,
 				80AB2A142128CEAD00B58AB3 /* XTRColorFactoryClassic.swift in Sources */,
@@ -1638,7 +1639,6 @@
 				80AB2A262128CEAD00B58AB3 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
 				80AB2A272128CEAD00B58AB3 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				80AB2A282128CEAD00B58AB3 /* XTRElementButton.swift in Sources */,
-				804F2B9B2360BF23009C8F3C /* LocalManager.swift in Sources */,
 				80AB2A292128CEAD00B58AB3 /* XTRColorFactoryStandard.swift in Sources */,
 				80AB2A2A2128CEAD00B58AB3 /* XTRShadowView.swift in Sources */,
 				80AB2A2B2128CEAD00B58AB3 /* XTRPageControl.swift in Sources */,
