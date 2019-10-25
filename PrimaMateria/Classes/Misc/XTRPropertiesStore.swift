@@ -9,6 +9,7 @@
 import UIKit
 
 struct XTRPropertiesStoreConfig {
+    static let appearanceName = "appearanceName"
     static let elementBubble = "elementBubbleState"
     static let showTransitions = "showViewTransitionsState"
     static let splashScreen = "splashScreenState"
@@ -153,7 +154,7 @@ class XTRPropertiesStore: NSObject {
     
     class var appearanceName: String {
         get {
-            guard let objectValue = UserDefaults.standard.value(forKey: APPEARANCE_NAME_KEY) as? String else {
+            guard let objectValue = UserDefaults.standard.value(forKey: XTRPropertiesStoreConfig.appearanceName) as? String else {
                 XTRPropertiesStore.appearanceName = XTRAppearanceType.classic
                 return XTRAppearanceType.classic
             }
@@ -163,7 +164,7 @@ class XTRPropertiesStore: NSObject {
         
         set(aValue) {
             let defaults = UserDefaults.standard
-            defaults.set(aValue, forKey: APPEARANCE_NAME_KEY)
+            defaults.set(aValue, forKey: XTRPropertiesStoreConfig.appearanceName)
             defaults.synchronize()
         }
     }
@@ -174,7 +175,9 @@ class XTRPropertiesStore: NSObject {
         userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.elementBubble)
         userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.showTransitions)
         userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.splashScreen)
-        
+        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.splashScreen)
+        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.appearanceName)
+
         userDefaults.removeObject(forKey: ElementSeries.actinide)
         userDefaults.removeObject(forKey: ElementSeries.alkaliEarthMetal)
         userDefaults.removeObject(forKey: ElementSeries.alkaliMetal)

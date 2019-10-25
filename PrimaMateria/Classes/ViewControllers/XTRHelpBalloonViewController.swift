@@ -30,7 +30,7 @@ class XTRHelpBalloonViewController: UIViewController {
     // MARK: - Internal Methods
     
     func loadDocument(_ documentName: String) {
-        guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "ElementTipHelp") else { return }
+        guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "ElementTipHelp/\(XTRPropertiesStore.currentLanguageCode)") else { return }
         
         if !path.isEmpty {
             let url = URL(fileURLWithPath: path)

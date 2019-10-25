@@ -111,7 +111,6 @@ let STRING_EMPTY = ""
 let STRING_UNKNOWN = "Unknown"
 let SUPPORTING_FILES = "SupportingFiles"
 let PERIODIC_VIEW_TITLE = "periodicTableElements"
-let APPEARANCE_NAME_KEY = "appearanceName"
 let SERIES_IDENTIFIER_KEY = "seriesIdentifier"
 let SWITCH_CORNER_RADIUS: CGFloat = 16.0
 let VIEW_CORNER_RADIUS: CGFloat = 8.0

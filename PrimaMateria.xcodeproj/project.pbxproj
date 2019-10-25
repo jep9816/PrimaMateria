@@ -132,6 +132,8 @@
 		8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838420F02F9B00ABC706 /* PrimaMateriaHelp */; };
 		8012838820F02F9B00ABC706 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
+		801EB6532363721500FE10C6 /* XTRSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */; };
+		801EB654236373E900FE10C6 /* XTRSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */; };
 		803518C123302BF50070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
 		803518C223302FCD0070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
 		804F2B9E2360CE6C009C8F3C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */; };
@@ -554,6 +556,7 @@
 		8012838420F02F9B00ABC706 /* PrimaMateriaHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = PrimaMateriaHelp; sourceTree = "<group>"; };
 		8012838520F02F9B00ABC706 /* SupportingFiles */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SupportingFiles; sourceTree = "<group>"; };
 		8012838620F02F9B00ABC706 /* ElementTipHelp */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ElementTipHelp; sourceTree = "<group>"; };
+		801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRSceneDelegate.swift; sourceTree = "<group>"; };
 		803518C023302BF50070B1DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		804F2B9A2360BF23009C8F3C /* LocaleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
 		804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
@@ -760,6 +763,7 @@
 				80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */,
 				80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */,
 				80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */,
+				801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */,
 				80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */,
 			);
 			path = Misc;
@@ -798,11 +802,11 @@
 			children = (
 				80127FF620F0270400ABC706 /* Bundle+Extensions.swift */,
 				80127FF420F0270400ABC706 /* NSObject+General.swift */,
+				804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */,
 				80127FF220F0270400ABC706 /* UIColor+Extensions.swift */,
 				80127FF320F0270400ABC706 /* UIImage+Extensions.swift */,
 				80127FF520F0270400ABC706 /* UIView+LayerFlattening.swift */,
 				80127FE120F0270400ABC706 /* XTRElement+Presentation.swift */,
-				804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1510,6 +1514,7 @@
 				8012803120F0270500ABC706 /* XTRApplication.swift in Sources */,
 				807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */,
 				8012807420F0270500ABC706 /* main.swift in Sources */,
+				801EB654236373E900FE10C6 /* XTRSceneDelegate.swift in Sources */,
 				8012804220F0270500ABC706 /* XTRGraphDefinitionModel.swift in Sources */,
 				8012805320F0270500ABC706 /* XTRGeneralButton.swift in Sources */,
 				8012802F20F0270500ABC706 /* XTRMolecularCalculator.swift in Sources */,
@@ -1596,6 +1601,7 @@
 				80AB29F92128CEAD00B58AB3 /* XTRApplication.swift in Sources */,
 				80AB29FA2128CEAD00B58AB3 /* XTROverlayView.swift in Sources */,
 				80AB29FB2128CEAD00B58AB3 /* main.swift in Sources */,
+				801EB6532363721500FE10C6 /* XTRSceneDelegate.swift in Sources */,
 				80AB29FC2128CEAD00B58AB3 /* XTRGraphDefinitionModel.swift in Sources */,
 				80AB29FD2128CEAD00B58AB3 /* XTRGeneralButton.swift in Sources */,
 				80AB29FE2128CEAD00B58AB3 /* XTRMolecularCalculator.swift in Sources */,

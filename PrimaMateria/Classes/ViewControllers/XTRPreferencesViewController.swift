@@ -167,6 +167,7 @@ class XTRPreferencesViewController: UIViewController {
             self?.elementBubbleSwitch.isOn = true
             self?.showTransitionsBubbleSwitch.isOn = true
             self?.splashScreenSwitch.isOn = true
+            self?.segmentedControl.selectedSegmentIndex = 0
             
             self?.applyLanguage(code: "en")
             
