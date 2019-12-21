@@ -1079,16 +1079,16 @@
 		F7E587BE9504334DFC476A2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				803518C023302BF50070B1DE /* SVProgressHUD.framework */,
-				80E20C91228A89A200CCEB17 /* RxRelay.framework */,
 				8012838220F02DFE00ABC706 /* CorePlot.framework */,
 				80D535792129DDC100077340 /* CorePlot.framework */,
-				80D5357A2129DDC100077340 /* RxCocoa.framework */,
 				08B6A57F2257EA50001885BB /* CorePlot.framework */,
+				8012837020F02B6D00ABC706 /* Foundation.framework */,
+				80D5357A2129DDC100077340 /* RxCocoa.framework */,
 				08B6A5802257EA50001885BB /* RxCocoa.framework */,
+				80E20C91228A89A200CCEB17 /* RxRelay.framework */,
 				80D535782129DDC100077340 /* RxSwift.framework */,
 				08B6A57E2257EA50001885BB /* RxSwift.framework */,
-				8012837020F02B6D00ABC706 /* Foundation.framework */,
+				803518C023302BF50070B1DE /* SVProgressHUD.framework */,
 				8012836E20F02B6500ABC706 /* UIKit.framework */,
 			);
 			name = Frameworks;
