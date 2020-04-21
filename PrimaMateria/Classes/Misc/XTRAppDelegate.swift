@@ -10,6 +10,8 @@ import UIKit
 
 class XTRAppDelegate: UIResponder, UIApplicationDelegate {
     
+    var window: UIWindow?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
 
@@ -24,6 +26,8 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
+        self.window = keyWindow
+        
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
@@ -37,4 +41,8 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
         return UIStoryboard(name: StoryBoardName.Main, bundle: nil)
     }
         
+    var keyWindow: UIWindow? {
+         return UIApplication.shared.windows.filter {$0.isKeyWindow}.first!
+    }
+    
 }

@@ -134,8 +134,6 @@
 		8012838920F02F9B00ABC706 /* ElementTipHelp in Resources */ = {isa = PBXBuildFile; fileRef = 8012838620F02F9B00ABC706 /* ElementTipHelp */; };
 		801EB6532363721500FE10C6 /* XTRSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */; };
 		801EB654236373E900FE10C6 /* XTRSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */; };
-		803518C123302BF50070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
-		803518C223302FCD0070B1DE /* SVProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 803518C023302BF50070B1DE /* SVProgressHUD.framework */; };
 		804F2B9E2360CE6C009C8F3C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */; };
 		804F2B9F2360CE6C009C8F3C /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */; };
 		804F2BA023614D9E009C8F3C /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocaleManager.swift */; };
@@ -422,6 +420,8 @@
 		80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */; };
 		80E20C92228A89A200CCEB17 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E20C91228A89A200CCEB17 /* RxRelay.framework */; };
 		80E20C93228A89B600CCEB17 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E20C91228A89A200CCEB17 /* RxRelay.framework */; };
+		9B244B5E243FDFF500BD6ACE /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9B244B5D243FDFF500BD6ACE /* MBProgressHUD */; };
+		9B244B60243FE04900BD6ACE /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9B244B5F243FE04900BD6ACE /* MBProgressHUD */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -654,6 +654,7 @@
 		80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80E20C91228A89A200CCEB17 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = PrimaMateria/Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
+		9B244B59243FDBBC00BD6ACE /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -661,12 +662,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803518C223302FCD0070B1DE /* SVProgressHUD.framework in Frameworks */,
-				80E20C93228A89B600CCEB17 /* RxRelay.framework in Frameworks */,
+				9B244B60243FE04900BD6ACE /* MBProgressHUD in Frameworks */,
 				08B6A5842257EA73001885BB /* CorePlot.framework in Frameworks */,
-				08B6A5852257EA73001885BB /* RxCocoa.framework in Frameworks */,
-				08B6A5862257EA73001885BB /* RxSwift.framework in Frameworks */,
 				8012837120F02B6D00ABC706 /* Foundation.framework in Frameworks */,
+				08B6A5852257EA73001885BB /* RxCocoa.framework in Frameworks */,
+				80E20C93228A89B600CCEB17 /* RxRelay.framework in Frameworks */,
+				08B6A5862257EA73001885BB /* RxSwift.framework in Frameworks */,
 				8012836F20F02B6500ABC706 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -675,12 +676,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				803518C123302BF50070B1DE /* SVProgressHUD.framework in Frameworks */,
+				9B244B5E243FDFF500BD6ACE /* MBProgressHUD in Frameworks */,
+				08B6A5822257EA50001885BB /* CorePlot.framework in Frameworks */,
+				80AB2A442128CEAD00B58AB3 /* Foundation.framework in Frameworks */,
+				08B6A5832257EA50001885BB /* RxCocoa.framework in Frameworks */,
 				80E20C92228A89A200CCEB17 /* RxRelay.framework in Frameworks */,
 				08B6A5812257EA50001885BB /* RxSwift.framework in Frameworks */,
-				08B6A5822257EA50001885BB /* CorePlot.framework in Frameworks */,
-				08B6A5832257EA50001885BB /* RxCocoa.framework in Frameworks */,
-				80AB2A442128CEAD00B58AB3 /* Foundation.framework in Frameworks */,
 				80AB2A452128CEAD00B58AB3 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1079,6 +1080,7 @@
 		F7E587BE9504334DFC476A2E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9B244B59243FDBBC00BD6ACE /* MBProgressHUD.framework */,
 				8012838220F02DFE00ABC706 /* CorePlot.framework */,
 				80D535792129DDC100077340 /* CorePlot.framework */,
 				08B6A57F2257EA50001885BB /* CorePlot.framework */,
@@ -1112,6 +1114,9 @@
 			dependencies = (
 			);
 			name = "PrimaMateria DEV";
+			packageProductDependencies = (
+				9B244B5F243FE04900BD6ACE /* MBProgressHUD */,
+			);
 			productName = PrimaMateria;
 			productReference = 80127C0E20F0253000ABC706 /* PrimaMateria.app */;
 			productType = "com.apple.product-type.application";
@@ -1131,6 +1136,9 @@
 			dependencies = (
 			);
 			name = "PrimaMateria PRD";
+			packageProductDependencies = (
+				9B244B5D243FDFF500BD6ACE /* MBProgressHUD */,
+			);
 			productName = PrimaMateria;
 			productReference = 80AB2AC52128CEAD00B58AB3 /* PrimaMateria.app */;
 			productType = "com.apple.product-type.application";
@@ -1164,6 +1172,9 @@
 				fr,
 			);
 			mainGroup = 80127C0520F0253000ABC706;
+			packageReferences = (
+				9B244B5C243FDFF500BD6ACE /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
+			);
 			productRefGroup = 80127C0F20F0253000ABC706 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1471,7 +1482,6 @@
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxCocoa.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
@@ -1490,7 +1500,6 @@
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxSwift.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOSRxCocoa.framework",
 				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/RxRelay.framework",
-				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework",
 			);
 			name = "Copy Frameworks (Carthage)";
 			outputPaths = (
@@ -2002,6 +2011,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9B244B5C243FDFF500BD6ACE /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jdg/MBProgressHUD.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9B244B5D243FDFF500BD6ACE /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B244B5C243FDFF500BD6ACE /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+		9B244B5F243FE04900BD6ACE /* MBProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9B244B5C243FDFF500BD6ACE /* XCRemoteSwiftPackageReference "MBProgressHUD" */;
+			productName = MBProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 80127C0620F0253000ABC706 /* Project object */;
 }
