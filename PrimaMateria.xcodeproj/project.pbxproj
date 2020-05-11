@@ -422,6 +422,7 @@
 		80E20C93228A89B600CCEB17 /* RxRelay.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80E20C91228A89A200CCEB17 /* RxRelay.framework */; };
 		9B244B5E243FDFF500BD6ACE /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9B244B5D243FDFF500BD6ACE /* MBProgressHUD */; };
 		9B244B60243FE04900BD6ACE /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9B244B5F243FE04900BD6ACE /* MBProgressHUD */; };
+		9B5338EF2469F33A00CDE87B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9B5338EE2469F33A00CDE87B /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -655,6 +656,7 @@
 		80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80E20C91228A89A200CCEB17 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = PrimaMateria/Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		9B244B59243FDBBC00BD6ACE /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
+		9B5338EE2469F33A00CDE87B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,6 +723,7 @@
 		80127C1020F0253000ABC706 /* PrimaMateria */ = {
 			isa = PBXGroup;
 			children = (
+				9B5338EE2469F33A00CDE87B /* README.md */,
 				8032C8632256791C00CFE226 /* Config */,
 				80127FD420F0270400ABC706 /* Classes */,
 				8012807520F0271F00ABC706 /* Resources */,
@@ -1339,6 +1342,7 @@
 				80AB2A5B2128CEAD00B58AB3 /* Globe23.png in Resources */,
 				80AB2A5C2128CEAD00B58AB3 /* Globe13.png in Resources */,
 				80AB2A5D2128CEAD00B58AB3 /* Globe34.png in Resources */,
+				9B5338EF2469F33A00CDE87B /* README.md in Resources */,
 				80AB2A5E2128CEAD00B58AB3 /* Cubic.scn in Resources */,
 				80AB2A5F2128CEAD00B58AB3 /* Globe49.png in Resources */,
 				80AB2A602128CEAD00B58AB3 /* Globe43.png in Resources */,
