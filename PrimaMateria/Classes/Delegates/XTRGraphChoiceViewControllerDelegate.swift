@@ -13,7 +13,7 @@ class XTRGraphChoiceViewControllerDelegate: NSObject, UICollectionViewDataSource
     let reuseIdentifier = "Cell"
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 2
+        return 1
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -28,7 +28,7 @@ class XTRGraphChoiceViewControllerDelegate: NSObject, UICollectionViewDataSource
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 220.0, height: 44.0)
+        return CGSize(width: 218.0, height: 44.0)
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

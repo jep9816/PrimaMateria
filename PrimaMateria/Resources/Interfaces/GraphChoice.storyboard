@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YfB-uN-Lyj">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YfB-uN-Lyj">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4iA-l1-8gD">
-                                <rect key="frame" x="5" y="5" width="420" height="758"/>
+                                <rect key="frame" x="6" y="5" width="419" height="758"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="j4q-k7-c6f">
                                     <size key="itemSize" width="220" height="44"/>
@@ -29,13 +26,13 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="SbI-Xc-BEw" customClass="XTRGraphChoiceCell" customModule="PrimaMateria" customModuleProvider="target">
-                                        <rect key="frame" x="100" y="0.0" width="220" height="44"/>
+                                        <rect key="frame" x="99.5" y="0.0" width="220" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="220" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epC-co-b2Q" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="epC-co-b2Q" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="220" height="44"/>
                                                     <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -65,14 +62,14 @@
                                 </cells>
                             </collectionView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="d8t-Bz-czw"/>
                         <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="4iA-l1-8gD" firstAttribute="centerY" secondItem="1nB-C9-piU" secondAttribute="centerY" id="D8e-qk-cYF"/>
-                            <constraint firstItem="d8t-Bz-czw" firstAttribute="bottom" secondItem="4iA-l1-8gD" secondAttribute="bottom" constant="5" id="WU8-7S-lyU"/>
-                            <constraint firstItem="4iA-l1-8gD" firstAttribute="centerX" secondItem="1nB-C9-piU" secondAttribute="centerX" id="YgC-48-dT4"/>
-                            <constraint firstItem="4iA-l1-8gD" firstAttribute="leading" secondItem="d8t-Bz-czw" secondAttribute="leading" constant="5" id="cNZ-vB-kmm"/>
+                            <constraint firstItem="4iA-l1-8gD" firstAttribute="top" secondItem="d8t-Bz-czw" secondAttribute="top" constant="5" id="5po-bf-AwA"/>
+                            <constraint firstItem="4iA-l1-8gD" firstAttribute="leading" secondItem="d8t-Bz-czw" secondAttribute="leading" constant="6" id="73o-iB-s1Y"/>
+                            <constraint firstItem="d8t-Bz-czw" firstAttribute="bottom" secondItem="4iA-l1-8gD" secondAttribute="bottom" constant="5" id="Ho1-eK-jvo"/>
+                            <constraint firstItem="d8t-Bz-czw" firstAttribute="trailing" secondItem="4iA-l1-8gD" secondAttribute="trailing" constant="5" id="wej-Xw-BIo"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="d8t-Bz-czw"/>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
