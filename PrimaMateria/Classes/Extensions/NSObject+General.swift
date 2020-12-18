@@ -3,7 +3,7 @@
 //  PlaneBalance
 //
 //  Created by Jerry Porter on 12/6/16.
-//  Copyright © 2019 xTrensa. All rights reserved.
+//  Copyright ©2020 xTrensa. All rights reserved.
 //
 
 import UIKit

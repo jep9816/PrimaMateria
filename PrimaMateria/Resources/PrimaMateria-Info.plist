@@ -5,7 +5,7 @@
 	<key>CFBuildNumber</key>
 	<string>1</string>
 	<key>CFBuildVersion</key>
-	<string>2.3.1</string>
+	<string>2.4.0</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -13,7 +13,7 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleGetInfoString</key>
-	<string>© 2019</string>
+	<string>© 2020</string>
 	<key>CFBundleIconFiles</key>
 	<array>
 		<string>Default.png</string>
