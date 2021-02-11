@@ -729,13 +729,13 @@
 			children = (
 				9B5338EE2469F33A00CDE87B /* README.md */,
 				8032C8632256791C00CFE226 /* Config */,
-				80127FD420F0270400ABC706 /* Classes */,
+				80127FD420F0270400ABC706 /* Source */,
 				8012807520F0271F00ABC706 /* Resources */,
 			);
 			path = PrimaMateria;
 			sourceTree = "<group>";
 		};
-		80127FD420F0270400ABC706 /* Classes */ = {
+		80127FD420F0270400ABC706 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				80127FD520F0270400ABC706 /* 3rd Party */,
@@ -749,7 +749,7 @@
 				8012800420F0270400ABC706 /* View Controllers */,
 				8012802320F0270400ABC706 /* Views */,
 			);
-			path = Classes;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		80127FD520F0270400ABC706 /* 3rd Party */ = {
