@@ -3,7 +3,7 @@
 //  spritetest
 //
 //  Created by Jerry Porter on 6/8/17.
-//  Copyright ©2020 xTrensa. All rights reserved.
+//  Copyright ©2021 xTrensa. All rights reserved.
 //
 
 import SpriteKit

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/21/18.
-//  Copyright ©2020 xTrensa. All rights reserved.
+//  Copyright ©2021 xTrensa. All rights reserved.
 //
 
 import CorePlot
