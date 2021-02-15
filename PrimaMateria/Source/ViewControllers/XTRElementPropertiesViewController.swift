@@ -11,12 +11,12 @@ import RxSwift
 import RxCocoa
 
 class XTRElementPropertiesViewController: XTRSwapableViewController {
-    
+
     enum PropertiesViewTypes {
         static let kPhysicalPropertiesView = 0
         static let kChemicalPropertiesView = 1
     }
-    
+
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet var atomicMassFootnoteLabel: UILabel!
     @IBOutlet var atomicMassLabel: UILabel!
@@ -68,31 +68,31 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
     @IBOutlet var chemicalPropertiesView: UIView!
     @IBOutlet var physicalPropertiesView: UIView!
     @IBOutlet var swapView: UIView!
-    
+
     var disposeBag: DisposeBag = DisposeBag()
     // MARK: - Initialization Methods
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-    
+
     // MARK: - Internal Methods
-    
+
     // MARK: - Miscellaneous Methods
-    
+
     override func setupUIForAnimation(element: XTRElementModel) {
         super.setupUIForAnimation(element: element)
-        
+
         setupLabels(element: element)
     }
-    
+
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
-        
+
         setupSegmentedControlUI()
         setupLabels(element: element)
     }
-    
+
     func setupSegmentedControlUI() {
         let rect = segmentedControl.frame
         let newRect = CGRect(x: rect.origin.x, y: rect.origin.y, width: rect.size.width, height: 34)
@@ -104,9 +104,24 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         segmentedControl.setTitle(NSLocalizedString("chemicalProperties", comment: ""), forSegmentAt: 1)
     }
 
+    func setupVaporPressureLabels(_ vaporPressureModel: XTRVaporPressurenModel) {
+        vaporPressure1PaLabel.text = vaporPressureModel.pa1
+        vaporPressure10PaLabel.text = vaporPressureModel.pa10
+        vaporPressure100PaLabel.text = vaporPressureModel.pa100
+        vaporPressure1kPaLabel.text = vaporPressureModel.pa1k
+        vaporPressure10kPaLabel.text = vaporPressureModel.pa10k
+        vaporPressure100kPaLabel.text = vaporPressureModel.pa100k
+    }
+
+    func setupIonizationLabels(_ element: XTRElementModel) {
+        ionizationPotentialFirstLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_FIRST) as? String
+        ionizationPotentialSecondLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_SECOND) as? String
+        ionizationPotentialThirdLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
+    }
+
     func setupLabels(element: XTRElementModel) {
         let vaporPressureModel = element.vaporPressureModel!
-        
+
         atomicMassLabel.text = element.atomicMassAggregate
         atomicMassFootnoteLabel.text = element.atomicMassFootnote
         boilingPointLabel.text = element.value(forKeyPath: ELEMENT_BOILING_POINT) as? String
@@ -123,14 +138,9 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         opticalReflectivityLabel.text = element.value(forKeyPath: ELEMENT_OPTICAL_REFLECTIVITY) as? String
         opticalRefractiveIndexLabel.text = element.value(forKeyPath: ELEMENT_OPTICAL_REFRACTIVE_INDEX) as? String
         relativeGasDensityLabel.text = element.value(forKeyPath: ELEMENT_RELATIVE_GAS_DENSITY) as? String
-        
-        vaporPressure1PaLabel.text = vaporPressureModel.pa1
-        vaporPressure10PaLabel.text = vaporPressureModel.pa10
-        vaporPressure100PaLabel.text = vaporPressureModel.pa100
-        vaporPressure1kPaLabel.text = vaporPressureModel.pa1k
-        vaporPressure10kPaLabel.text = vaporPressureModel.pa10k
-        vaporPressure100kPaLabel.text = vaporPressureModel.pa100k
-        
+
+        setupVaporPressureLabels(vaporPressureModel)
+
         conductivityThermalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_THERMAL) as? String
         conductivityElectricalLabel.text = element.value(forKeyPath: ELEMENT_CONDUCTIVITY_ELECTRICAL) as? String
         elasticModulusBulkLabel.text = element.value(forKeyPath: ELEMENT_ELASTIC_MODULUS_BULK) as? String
@@ -144,19 +154,17 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         hardnessScaleVickersLabel.text = element.value(forKeyPath: ELEMENT_HARDNESS_SCALE_VICKERS) as? String
         heatCapacitySpecificLabel.text = element.value(forKeyPath: ELEMENT_SPECIFIC_HEAT_CAPACITY) as? String
         heatCapacityMolarLabel.text = element.value(forKeyPath: ELEMENT_MOLAR_HEAT_CAPACITY) as? String
-        
+
         electroChemicalEquivalentLabel.text = element.value(forKeyPath: ELEMENT_ELECTRO_CHEMICAL_EQUIVALENT) as? String
         electronWorkFunctionLabel.text = element.value(forKeyPath: ELEMENT_ELECTRON_WORK_FUNCTION) as? String
         electroNegativityLabel.text = element.value(forKeyPath: ELEMENT_ELECTRO_NEGATIVITY) as? String
         heatOfFusionLabel.text = element.value(forKeyPath: ELEMENT_HEAT_OF_FUSION) as? String
         incompatabilitiesLabel.text = element.value(forKeyPath: ELEMENT_INCOMPATIBILITIES) as? String
-        ionizationPotentialFirstLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_FIRST) as? String
-        ionizationPotentialSecondLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_SECOND) as? String
-        ionizationPotentialThirdLabel.text = element.value(forKeyPath: ELEMENT_IONIZATION_POTENTIAL_THIRD) as? String
+        setupIonizationLabels(element)
         qualitativeSolubilityLabel.text = element.value(forKeyPath: ELEMENT_QUALITATIVE_SOLUBILITY) as? String
         valenceElectronPotentialLabel.text = element.value(forKeyPath: ELEMENT_VALENCE_ELECTRON_POTENTIAL) as? String
     }
-    
+
     func setupRx() {
         segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
             switch selectedSegmentIndex {
@@ -171,41 +179,50 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
             }
         }).disposed(by: disposeBag)
     }
-    
+
     // MARK: - Action Methods
-    
+
     // MARK: - View Management Methods
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         setupRx()
         chemicalPropertiesView.frame = swapView.frame
         chemicalPropertiesView.bounds = swapView.bounds
         chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 574)
         chemicalPropertiesView.isHidden = true
         view.addSubview(chemicalPropertiesView)
-        
+
         physicalPropertiesView.frame = swapView.frame
         physicalPropertiesView.bounds = swapView.bounds
         physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1128)
         physicalPropertiesView.isHidden = false
         view.addSubview(physicalPropertiesView)
-        
+
         swapView.removeFromSuperview()
     }
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
-    
+
     // MARK: - Memory Management Methods
-    
-    deinit {
+
+    private func deinitVaporPressureLAbels() {
+        vaporPressure100PaLabel = nil
+        vaporPressure100kPaLabel = nil
+        vaporPressure10PaLabel = nil
+        vaporPressure10kPaLabel = nil
+        vaporPressure1PaLabel = nil
+        vaporPressure1kPaLabel = nil
+    }
+
+    fileprivate func denitGroup1Labels() {
         atomicMassFootnoteLabel = nil
         atomicMassLabel = nil
         boilingPointLabel = nil
@@ -226,6 +243,9 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         enthalpyAtomizationLabel = nil
         enthalpyFusionLabel = nil
         enthalpyVaporizationLabel = nil
+    }
+
+    fileprivate func deinitGroup2Labels() {
         flammabilityClass = nil
         hardnessScaleBrinellLabel = nil
         hardnessScaleMohsLabel = nil
@@ -250,11 +270,11 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         relativeGasDensityLabel = nil
         swapView = nil
         valenceElectronPotentialLabel = nil
-        vaporPressure100PaLabel = nil
-        vaporPressure100kPaLabel = nil
-        vaporPressure10PaLabel = nil
-        vaporPressure10kPaLabel = nil
-        vaporPressure1PaLabel = nil
-        vaporPressure1kPaLabel = nil
+        deinitVaporPressureLAbels()
+    }
+
+    deinit {
+        denitGroup1Labels()
+        deinitGroup2Labels()
     }
 }

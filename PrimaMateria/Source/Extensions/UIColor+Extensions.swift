@@ -44,11 +44,11 @@ let colorNameDB = "," +
 "white#ffffff,whitesmoke#f5f5f5,yellow#ffff00,yellowgreen#9acd32,copper#B87333,brass#B5A642"
 
 extension UIColor { // Expanded
-    
+
     var colorSpaceModel: CGColorSpaceModel {
         return cgColor.colorSpace!.model
     }
-    
+
     func canProvideRGBComponents() -> Bool {
         switch colorSpaceModel {
         case CGColorSpaceModel.rgb, .monochrome:
@@ -57,13 +57,13 @@ extension UIColor { // Expanded
             return false
         }
     }
-    
+
     func red() -> CGFloat {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -red")
         let components = cgColor.components!
         return components[0]
     }
-    
+
     func green() -> CGFloat {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -green")
         let components = cgColor.components!
@@ -72,7 +72,7 @@ extension UIColor { // Expanded
         }
         return components[1]
     }
-    
+
     func blue() -> CGFloat {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -blue")
         let components = cgColor.components!
@@ -81,66 +81,66 @@ extension UIColor { // Expanded
         }
         return components[2]
     }
-    
+
     func white() -> CGFloat {
         assert(colorSpaceModel == .monochrome, "Must be a Monochrome color to use -white")
         let components = cgColor.components!
         return components[0]
     }
-    
+
     func alpha() -> CGFloat {
         return cgColor.alpha
     }
-    
+
     class func color(rgbHex hex: UnsafeMutablePointer<UInt64>) -> UIColor {
         let hexValue = UnsafeMutablePointer<UInt64>(hex).pointee
         let r = (hexValue >> 16) & 0xFF
         let g = (hexValue >> 8) & 0xFF
         let b = (hexValue) & 0xFF
-        
+
         return UIColor(red: CGFloat(r) / 255.0, green: CGFloat(g) / 255.0, blue: CGFloat(b) / 255.0, alpha: CGFloat(1.0))
     }
-    
+
     class func color(hexString: String) -> UIColor {
         let scanner = Scanner(string: hexString)
         let hexNum: UnsafeMutablePointer<UInt64> = UnsafeMutablePointer<UInt64>.allocate(capacity: 1)
-        
+
         if !scanner.scanHexInt64(hexNum) {
             return UIColor.white
         }
-        
+
         return UIColor.color(rgbHex: hexNum)
     }
-    
+
     class func randomColor() -> UIColor {
         return UIColor(red: CGFloat(RAND_MAX) / CGFloat(arc4random()), green: CGFloat(RAND_MAX) / CGFloat(arc4random()), blue: CGFloat(RAND_MAX) / CGFloat(arc4random()), alpha: CGFloat(1.0))
     }
-    
+
     class func searchForColor(byName cssColorName: String) -> UIColor {
         var result = UIColor.white
         let searchString = ",\(cssColorName)#"
-        
+
         guard let range: Range<String.Index> = colorNameDB.range(of: searchString) else {
             return result
         }
-        
+
         if !range.isEmpty {
             let indexFrom = colorNameDB.index((range.lowerBound), offsetBy: cssColorName.count + 2)
             let indexTo = colorNameDB.index((range.lowerBound), offsetBy: cssColorName.count + 8)
             let newRange  = indexFrom..<indexTo
-            
+
             if !newRange.isEmpty {
                 result =  UIColor.color(hexString: String(colorNameDB[indexFrom..<indexTo]))
             }
         }
-        
+
         return result
     }
-    
+
     func stringFromColor() -> String? {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -stringFromColor")
         var result: String?
-        
+
         switch colorSpaceModel {
         case .rgb:
             result = String(format: "{%0.3f, %0.3f, %0.3f, %0.3f}", arguments: [red(), green(), blue(), alpha()])
@@ -149,10 +149,10 @@ extension UIColor { // Expanded
         default:
             result = nil
         }
-        
+
         return result
     }
-    
+
     func colorSpaceString() -> String {
         switch self.colorSpaceModel {
         case .unknown:
@@ -175,20 +175,20 @@ extension UIColor { // Expanded
             return STRING_EMPTY
         }
     }
-    
+
     func arrayFromRGBAComponents() -> [CGFloat] {
         assert(canProvideRGBComponents(), "Must be an RGB color to use -arrayFromRGBAComponents")
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
         var alpha: CGFloat = 0
-        
+
         if !self.red(&r, green: &g, blue: &b, alpha: &alpha) {
             return [CGFloat]()
         }
         return [r, g, b, alpha]
     }
-    
+
     func red( _ red: inout CGFloat, green: inout CGFloat, blue: inout CGFloat, alpha: inout CGFloat) -> Bool {
         let components: [CGFloat] = cgColor.components!
         var r: CGFloat
@@ -210,7 +210,7 @@ extension UIColor { // Expanded
             // We don't know how to handle this model
             return false
         }
-        
+
         if red != 0.0 {
             red = r
         }
@@ -225,33 +225,33 @@ extension UIColor { // Expanded
         }
         return true
     }
-    
+
     func toHexString() -> String {
         var r: CGFloat = 0
         var g: CGFloat = 0
         var b: CGFloat = 0
         var alpha: CGFloat = 0
-        
+
         getRed(&r, green: &g, blue: &b, alpha: &alpha)
         let pt1 = (Int)(r*255)<<16
         let pt2 = (Int)(g*255)<<8
         let pt3 = (Int)(b*255)<<0
-        
+
         let rgb = pt1 | pt2 | pt3
-        
+
         return String(format: "#%06x", rgb)
     }
-    
+
     func inverseColor() -> UIColor {
         var r: CGFloat = 0.0
         var g: CGFloat = 0.0
         var b: CGFloat = 0.0
         var alpha: CGFloat = 0.0
-        
+
         if getRed(&r, green: &g, blue: &b, alpha: &alpha) {
             return UIColor(red: 1.0-r, green: 1.0 - g, blue: 1.0 - b, alpha: alpha)
         }
         return self
     }
-    
+
 }

@@ -9,52 +9,52 @@
 import UIKit
 
 extension UIView { // Layer Flattening
-    
+
     var borderColor: UIColor {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
-        set(aValue) {
-            layer.borderColor = aValue.cgColor
+        set {
+            layer.borderColor = newValue.cgColor
         }
     }
-    
+
     var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
-        set(aValue) {
-            layer.borderWidth = aValue
+        set {
+            layer.borderWidth = newValue
         }
     }
-    
+
     var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
-        set(aValue) {
-            layer.cornerRadius = aValue
+        set {
+            layer.cornerRadius = newValue
         }
     }
-    
+
     var masksToBounds: Bool {
         get {
             return layer.masksToBounds
         }
-        set(aValue) {
-            layer.masksToBounds = aValue
+        set {
+            layer.masksToBounds = newValue
         }
     }
-    
+
     var shadowColor: UIColor {
         get {
             return UIColor(cgColor: layer.shadowColor!)
         }
-        set(aValue) {
-            layer.shadowColor = aValue.cgColor
+        set {
+            layer.shadowColor = newValue.cgColor
         }
     }
-    
+
     var shadowOffset: CGSize {
         get {
             return layer.shadowOffset
@@ -63,7 +63,7 @@ extension UIView { // Layer Flattening
             layer.shadowOffset = aValue
         }
     }
-    
+
     var shadowOpacity: Float {
         get {
             return layer.shadowOpacity
@@ -72,22 +72,22 @@ extension UIView { // Layer Flattening
             layer.shadowOpacity = aValue
         }
     }
-    
+
     var shadowRadius: CGFloat {
         get {
             return layer.shadowRadius
         }
-        set(aValue) {
-            layer.shadowRadius = aValue
+        set {
+            layer.shadowRadius = newValue
         }
     }
-    
+
     var maskedCorners: CACornerMask {
         get {
             return layer.maskedCorners
         }
-        set(aValue) {
-            layer.maskedCorners = aValue
+        set {
+            layer.maskedCorners = newValue
         }
     }
 

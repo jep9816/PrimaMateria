@@ -13,10 +13,10 @@ class XTRSimpleTransitionController: NSObject, UIViewControllerAnimatedTransitio
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.35
     }
-    
+
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         let toViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.to)!
-        
+
         transitionContext.containerView.addSubview(toViewController.view)
         toViewController.view.alpha = 0.0
         UIView.animate(withDuration: 0.35, animations: {

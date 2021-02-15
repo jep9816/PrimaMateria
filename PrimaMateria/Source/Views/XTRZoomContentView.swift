@@ -19,9 +19,9 @@ class XTRZoomContentView: UIView {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         backgroundColor = UIColor.clear.withAlphaComponent(0.0)
-        
+
         shadowOffset = CGSize(width: 8.0, height: 8.0)
         shadowColor = UIColor.black
         shadowRadius = 8.0
@@ -38,7 +38,7 @@ class XTRZoomContentView: UIView {
 
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 20.0)
-        
+
         if XTRAppearanceManager.manager.isClassicAppearance() {
             label.textColor = XTRColorFactoryClassic.white
             label.backgroundColor = XTRColorFactoryClassic.inkwell
@@ -51,23 +51,23 @@ class XTRZoomContentView: UIView {
             label.shadowOpacity = 1.0
             label.masksToBounds = false
         }
-        
+
         label.autoresizingMask = [.flexibleLeftMargin, .flexibleRightMargin, .flexibleBottomMargin]
         label.translatesAutoresizingMaskIntoConstraints = true
         label.borderColor = XTRAppearanceManager.manager.isClassicAppearance() ? XTRColorFactoryClassic.white : XTRColorFactoryStandard.ghost
         label.borderWidth = 2.0
     }
-    
+
     func addContent(_ view: UIView) {
         wrapper.addSubview(view)
-        
+
         view.backgroundColor = #colorLiteral(red: 0.01680417731, green: 0.1983509958, blue: 1, alpha: 0.7)
         view.isUserInteractionEnabled = true
     }
-    
+
     var title: String {
         get { return label.text! }
         set { label.text = newValue }
     }
-    
+
 }

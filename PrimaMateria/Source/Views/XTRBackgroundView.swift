@@ -22,9 +22,9 @@ class XTRBackgroundView: UIView {
 }
 
 extension XTRBackgroundView {
-    
+
     @objc func changeAppearance(notification: NSNotification) {
         backgroundColor = XTRColorFactory.backgroundColor
     }
-    
+
 }

@@ -9,22 +9,22 @@
 import UIKit
 
 class XTRCornerImageView: UIImageView {
-    
+
     private var gradientLayer: CAGradientLayer!
-    
+
     // MARK: - Initialization Methods
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         createLayer()
     }
-    
+
     // MARK: - Internal Methods
-    
+
     func createLayer() {
         gradientLayer = CAGradientLayer()
         gradientLayer.bounds = bounds
@@ -33,5 +33,5 @@ class XTRCornerImageView: UIImageView {
         cornerRadius = VIEW_CORNER_RADIUS
         masksToBounds = true
     }
-    
+
 }

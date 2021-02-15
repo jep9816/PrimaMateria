@@ -9,7 +9,7 @@
 import UIKit
 
 class XTRAppearanceManagerClassic: NSObject {
-    
+
     func appearance() {
         activityIndicatorViewAppearance()
         barButtonItemAppearance()
@@ -30,15 +30,15 @@ class XTRAppearanceManagerClassic: NSObject {
         viewAppearance()
         miscAppearance()
     }
-    
+
     func activityIndicatorViewAppearance() {
         //@property(nullable, readwrite, nonatomic, strong) UIColor *color;
     }
-    
+
     func barButtonItemAppearance() {
         let appearance = UIBarButtonItem.appearance()
         appearance.tintColor = XTRColorFactoryClassic.doveGrayColor
-        
+
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state style:(UIBarButtonItemStyle)style barMetrics:(UIBarMetrics)barMetrics;
@@ -54,7 +54,7 @@ class XTRAppearanceManagerClassic: NSObject {
         //- (void)setBackButtonBackgroundVerticalPositionAdjustment:(CGFloat)adjustment forBarMetrics:(UIBarMetrics)barMetrics;
         //- (CGFloat)backButtonBackgroundVerticalPositionAdjustmentForBarMetrics:(UIBarMetrics)barMetrics;
     }
-    
+
     func barItemAppearance() {
         //- (void)setTitleTextAttributes:(nullable NSDictionary<NSAttributedString.Key,id> *)attributes forState:(UIControl.State)state;
         //- (nullable NSDictionary<NSString *,id> *)titleTextAttributesForState:(UIControl.State)state;
@@ -89,24 +89,24 @@ class XTRAppearanceManagerClassic: NSObject {
         //@property(nullable,nonatomic,strong) UIImage *backIndicatorImage;
         //@property(nullable,nonatomic,strong) UIImage *backIndicatorTransitionMaskImage;
     }
-    
+
     func pageControlAppearance() {
         let appearance = UIPageControl.appearance()
-        
+
         appearance.pageIndicatorTintColor = XTRColorFactoryClassic.dodgerBlueColor
         appearance.currentPageIndicatorTintColor = XTRColorFactoryClassic.alert
-        
+
         //@property(nullable, nonatomic,strong) UIColor *pageIndicatorTintColor;
         //@property(nullable, nonatomic,strong) UIColor *currentPageIndicatorTintColor;
     }
-    
+
     func progressViewAppearance() {
         //@property(nonatomic, strong, nullable) UIColor* progressTintColor;
         //@property(nonatomic, strong, nullable) UIColor* trackTintColor;
         //@property(nonatomic, strong, nullable) UIImage* progressImage;
         //@property(nonatomic, strong, nullable) UIImage* trackImage;
     }
-    
+
     func searchBarAppearance() {
         //@property(nullable, nonatomic,strong) UIColor *barTintColor;
         //@property(nullable, nonatomic,strong) UIImage *backgroundImage;
@@ -128,21 +128,21 @@ class XTRAppearanceManagerClassic: NSObject {
         //- (void)setPositionAdjustment:(UIOffset)adjustment forSearchBarIcon:(UISearchBarIcon)icon;
         //- (UIOffset)positionAdjustmentForSearchBarIcon:(UISearchBarIcon)icon;
     }
-    
+
     func segmentedControlAppearance() {
         let appearance = UISegmentedControl.appearance()
         let selectedSegmentedControlTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.dodgerBlueColor,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
         ]
-        
+
         appearance.setTitleTextAttributes(selectedSegmentedControlTextAttributes, for: .selected)
 
         let normalSegmentedControlTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.grayColor,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
         ]
-        
+
         appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .normal)
         appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .highlighted)
 
@@ -162,10 +162,10 @@ class XTRAppearanceManagerClassic: NSObject {
         //- (void)setContentPositionAdjustment:(UIOffset)adjustment forSegmentType:(UISegmentedControlSegment)leftCenterRightOrAlone barMetrics:(UIBarMetrics)barMetrics;
         //- (UIOffset)contentPositionAdjustmentForSegmentType:(UISegmentedControlSegment)leftCenterRightOrAlone barMetrics:(UIBarMetrics)barMetrics;
     }
-    
+
     func sliderAppearance() {
         let appearance = UISlider.appearance()
-        
+
         appearance.minimumTrackTintColor = XTRColorFactoryClassic.caution
         appearance.maximumTrackTintColor = XTRColorFactoryClassic.interactiveBlue
         appearance.thumbTintColor = XTRColorFactoryClassic.dodgerBlueColor
@@ -186,9 +186,9 @@ class XTRAppearanceManagerClassic: NSObject {
 
     func stepperAppearance() {
         let appearance = UIStepper.appearance()
-        
+
         appearance.tintColor = XTRColorFactoryClassic.interactiveBlue
-        
+
         //open var tintColor: UIColor!
         //- (void)setBackgroundImage:(nullable UIImage*)image forState:(UIControl.State)state;
         //- (nullable UIImage*)backgroundImageForState:(UIControl.State)state;
@@ -199,10 +199,10 @@ class XTRAppearanceManagerClassic: NSObject {
         //- (void)setDecrementImage:(nullable UIImage *)image forState:(UIControl.State)state;
         //- (nullable UIImage *)decrementImageForState:(UIControl.State)state;
     }
-    
+
     func switchAppearance() {
         let appearance = UISwitch.appearance()
-        
+
         appearance.onTintColor = XTRColorFactoryClassic.favorite
         appearance.tintColor = XTRColorFactoryClassic.white
         appearance.thumbTintColor = XTRColorFactoryClassic.cotton
@@ -213,14 +213,14 @@ class XTRAppearanceManagerClassic: NSObject {
         //open var onImage: UIImage?
         //open var offImage: UIImage?
     }
-    
+
     func tabBarAppearance() {
         let appearance = UITabBar.appearance()
 
         appearance.tintColor = XTRColorFactory.tabBarSelectedForgroundColor
         appearance.backgroundColor = XTRColorFactoryClassic.graphite
         appearance.barTintColor = XTRColorFactoryClassic.graphite
-        
+
         //@property(nullable, nonatomic, strong) UIColor *barTintColor;
         //@property(nonatomic, readwrite, copy, nullable) UIColor *unselectedItemTintColor;
         //@property(nullable, nonatomic, strong) UIColor *selectedImageTintColor;
@@ -232,7 +232,7 @@ class XTRAppearanceManagerClassic: NSObject {
         //@property(nonatomic) CGFloat itemSpacing;
         //@property(nonatomic) UIBarStyle barStyle;
     }
-    
+
     func tabBarItemAppearance() {
         let appearance = UITabBarItem.appearance()
         let normalItemTextAttributes = [
@@ -243,7 +243,7 @@ class XTRAppearanceManagerClassic: NSObject {
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.elephant,
             NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)
         ]
-        
+
         appearance.setTitleTextAttributes(normalItemTextAttributes, for: UIControl.State())
         appearance.setTitleTextAttributes(selectedItemTextAttributes, for: .selected)
 
@@ -252,7 +252,7 @@ class XTRAppearanceManagerClassic: NSObject {
         //- (void)setBadgeTextAttributes:(nullable NSDictionary<NSString *,id> *)textAttributes forState:(UIControl.State)state;
         //- (nullable NSDictionary<NSString *,id> *)badgeTextAttributesForState:(UIControl.State)state;
     }
-    
+
     func tableViewAppearance() {
         //@property(nonatomic) UIEdgeInsets separatorInset;
         //@property(nonatomic, strong, nullable) UIColor *sectionIndexColor;
@@ -261,15 +261,15 @@ class XTRAppearanceManagerClassic: NSObject {
         //@property(nonatomic, strong, nullable) UIColor *separatorColor;
         //@property(nonatomic, copy, nullable) UIVisualEffect *separatorEffect;
     }
-    
+
     func tableViewCellAppearance() {
         //@property(nonatomic) UIEdgeInsets separatorInset;
         //@property(nonatomic) UITableViewCellFocusStyle focusStyle;
     }
-    
+
     func toolbarAppearance() {
         let appearance = UIToolbar.appearance()
-        
+
         appearance.tintColor = XTRColorFactoryClassic.galleryColor
         appearance.backgroundColor = XTRColorFactoryClassic.inkwell
         appearance.barTintColor = XTRColorFactoryClassic.inkwell
@@ -282,11 +282,11 @@ class XTRAppearanceManagerClassic: NSObject {
         //- (void)setShadowImage:(nullable UIImage *)shadowImage forToolbarPosition:(UIBarPosition)topOrBottom;
         //- (nullable UIImage *)shadowImageForToolbarPosition:(UIBarPosition)topOrBottom;
     }
-    
+
     func viewAppearance() {
         //@property(nullable, nonatomic,copy) UIColor *backgroundColor;
     }
-    
+
     func miscAppearance() {
         let backgroundViewAppearance = XTRBackgroundView.appearance()
         let tableHeaderButtonAppearance = XTRTableHeaderButton.appearance()
@@ -294,7 +294,7 @@ class XTRAppearanceManagerClassic: NSObject {
 
         backgroundViewAppearance.backgroundColor = XTRColorFactory.backgroundColor
         tableHeaderButtonAppearance.backgroundColor = XTRColorFactoryClassic.armadillo
-        
+
         helpButtonAppearance.setTitleColor(UIColor.black, for: UIControl.State())
         helpButtonAppearance.backgroundColor = XTRColorFactory.helpBackgroundColor
     }

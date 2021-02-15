@@ -9,14 +9,14 @@
 import Foundation
 
 class XTRSpectraModel: NSObject {
-    
+
     var airWavelength: String = STRING_EMPTY
     var intensity: String = STRING_EMPTY
     var spectrum: String = STRING_EMPTY
-    
+
     convenience init(dictionary: [String: Any]) {
         self.init()
-        
+
         if let value1 = dictionary[ELEMENT_AIR_WAVELENGTH] as? String {
             airWavelength = value1
         }

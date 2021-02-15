@@ -14,11 +14,11 @@ protocol XTRSwapable {
 }
 
 class XTRSwapableViewController: UIViewController, XTRSwapable {
-    
+
     var element: XTRElementModel?
 
     // MARK: - Initialization Methods
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
@@ -26,21 +26,21 @@ class XTRSwapableViewController: UIViewController, XTRSwapable {
     func setupUI(element: XTRElementModel) {
         self.element = element
     }
-    
+
     func setupUIForAnimation(element: XTRElementModel) {
         self.element = element
     }
-    
+
     // MARK: - View Management Methods
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
-    
+
     // MARK: - Memory Management Methods
-    
+
 }

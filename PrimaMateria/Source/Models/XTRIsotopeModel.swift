@@ -9,7 +9,7 @@
 import Foundation
 
 class XTRIsotopeModel: NSObject {
-    
+
     var isotopicComposition: String = STRING_EMPTY
     var isotopicMass: String = STRING_EMPTY
     var zpValue: String = STRING_EMPTY

@@ -21,33 +21,33 @@ class XTRLocalizedButton: UIButton {
 }
 
 class XTRGeneralButton: XTRLocalizedButton {
-    
+
     private var highColor: UIColor = UIColor.white
     private var lowColor: UIColor = UIColor.white
-    
+
     // MARK: - Initialization Methods
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
+
         highColor = UIColor.white
         lowColor = UIColor.white
     }
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+
         titleLabel!.textAlignment = NSTextAlignment.center
         backgroundColor = XTRColorFactoryClassic.silverColor
         setTitleColor(UIColor.white, for: UIControl.State())
         createLayer()
     }
-    
+
     // MARK: - Internal Methods
-    
+
     func setupColors() {
     }
-    
+
     func createLayer() {
         cornerRadius = VIEW_CORNER_RADIUS
         masksToBounds = true
@@ -55,5 +55,5 @@ class XTRGeneralButton: XTRLocalizedButton {
         borderColor = UIColor.darkGray
         setupColors()
     }
-    
+
 }

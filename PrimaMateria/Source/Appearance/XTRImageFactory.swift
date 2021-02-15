@@ -9,7 +9,7 @@
 import UIKit
 
 class XTRImageFactory {
-    
+
     class var ascendingArrowImage: UIImage {
         return UIImage(named: "AscendingArrow")!
     }

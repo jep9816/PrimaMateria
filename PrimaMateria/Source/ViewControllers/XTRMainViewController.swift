@@ -10,28 +10,28 @@ import Foundation
 import UIKit
 
 class XTRMainViewController: UITabBarController {
-    
+
     // MARK: - Initialization Methods
-    
+
     private var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-    
+
     // MARK: - Internal Methods
-    
-    func showSplash() {        
+
+    func showSplash() {
         if XTRPropertiesStore.splashScreenState {
             let splashViewController: XTRSplashViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRSplashViewController.nameOfClass) as! XTRSplashViewController
             view.addSubview(splashViewController.view)
         }
     }
-    
+
     // MARK: - Action Methods
-    
+
     // MARK: - View Management Methods
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         showSplash()
@@ -45,15 +45,15 @@ class XTRMainViewController: UITabBarController {
         delegate = controllerDelegate
         UIImageView.gradientView(frame: tabBar.bounds, destinationView: tabBar)
     }
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
-    
+
     // MARK: - Memory Management Methods
-    
+
 }

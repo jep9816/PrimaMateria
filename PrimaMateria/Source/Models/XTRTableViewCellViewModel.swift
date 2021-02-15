@@ -17,7 +17,7 @@ class XTRTableViewCellViewModel: NSObject {
     let columnPosition: Int
     let modulus: Int
     let cell: XTRTableCell
-    
+
     init(xPos: Int, yPos: Int, width: Int, height: Int, property: String, columnPosition: Int, modulus: Int, cell: XTRTableCell) {
         self.xPos = xPos
         self.yPos = yPos
