@@ -8,18 +8,6 @@
 
 import UIKit
 
-class XTRProgressView: UIProgressView {
-
-    var height: CGFloat = 14.0
-
-    override func sizeThatFits(_ size: CGSize) -> CGSize {
-        let size: CGSize = CGSize(width: self.frame.size.width, height: height)
-
-        return size
-    }
-
-}
-
 class XTRPageControl: UIView {
 
     var nextLabel: UILabel!

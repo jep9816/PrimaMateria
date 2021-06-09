@@ -16,9 +16,8 @@ class XTRDataSource: NSObject {
     static var _sharedInstance: XTRDataSource!
 
     var elementList: [XTRElementModel] = []
-    var sortedElementList: [XTRElementModel] = [] //NSMutableArray = NSMutableArray()
+    var sortedElementList: [XTRElementModel] = []
     var graphPropertyList: [XTRGraphDefinitionModel] = []
-    var columnSortSelector: Selector?
 
     struct Static {
         static var dispatchOnceToken = 0

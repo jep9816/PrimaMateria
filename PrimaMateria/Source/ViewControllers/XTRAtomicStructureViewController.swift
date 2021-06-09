@@ -14,9 +14,6 @@ import AVFoundation
 
 struct XTRAtomicStructureViewControllerConfig {
 
-    static let expandButtonSize = CGSize(width: 44, height: 44)
-    static let expandButtonImage = "⏫".image(size: expandButtonSize)
-
     enum StructureViewTypes {
         static let kCrystalStructureView = 0
         static let kShellModelView = 1
