@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="8" />
+    <option name="CUSTOM_SCOPE_NAME" value="Local" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BuildServerSettings">
     <option name="LOGIN" value="" />
     <option name="SERVER_URL" value="http://buildserver" />
@@ -24,101 +31,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="635613ea-2b61-463a-8935-a914b7d94305" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.xcworkspace/xcshareddata/swiftpm/Package.resolved" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.swiftlint.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.swiftlint.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcshareddata/swiftpm/Package.resolved" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcshareddata/swiftpm/Package.resolved" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jep9816.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jep9816.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jep9816.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jep9816.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jep9816.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jep9816.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Resources/PrimaMateria-Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Resources/PrimaMateria-Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/3rdParty/LocaleManager.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/3rdParty/LocaleManager.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRAppearanceManager.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRAppearanceManager.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRAppearanceManagerClassic.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRAppearanceManagerClassic.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRAppearanceManagerStandard.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRAppearanceManagerStandard.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRColorFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRColorFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRImageFactory.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Appearance/XTRImageFactory.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRBarPlot.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRBarPlot.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRDividerLabel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRDividerLabel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRElementButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRElementButton.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRElementTableViewCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRElementTableViewCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRGeneralButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRGeneralButton.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRGraphChoiceCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRGraphChoiceCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRHelpButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRHelpButton.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRLocalizedLabel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRLocalizedLabel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRPageControl.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRPageControl.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRShellModelScene.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRShellModelScene.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRTableCell.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRTableCell.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRTableHeaderButton.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRTableHeaderButton.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRTableLabel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Controls/XTRTableLabel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRElementListViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRElementListViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRGraphChoiceViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRGraphChoiceViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRGraphViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRGraphViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRHelpBalloonViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRHelpBalloonViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRMainViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRMainViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRNuclidesIsotopesViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRNuclidesIsotopesViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRSpectrumViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRSpectrumViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRWikipediaViewControllerDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Delegates/XTRWikipediaViewControllerDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/Bundle+Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/Bundle+Extensions.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/NSObject+General.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/NSObject+General.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/String+Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/String+Extensions.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/UIColor+Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/UIColor+Extensions.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/UIImage+Extensions.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/UIImage+Extensions.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/UIView+LayerFlattening.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/UIView+LayerFlattening.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/XTRElement+Presentation.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Extensions/XTRElement+Presentation.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRAppDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRAppDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRApplication.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRApplication.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRDataSource.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRDataSource.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRMolecularCalculator.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRMolecularCalculator.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRPopoutAnimationController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRPopoutAnimationController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRPropertiesStore.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRPropertiesStore.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRSceneDelegate.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRSceneDelegate.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRSimpleTransitionController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Misc/XTRSimpleTransitionController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRElementModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRElementModel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRGraphDefinitionModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRGraphDefinitionModel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRIsotopeModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRIsotopeModel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRSpectraModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRSpectraModel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRTableViewCellViewModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRTableViewCellViewModel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRVaporPressurenModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTRVaporPressurenModel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTYRElectronConfigurationModel.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Models/XTYRElectronConfigurationModel.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRAtomicStructureViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRAtomicStructureViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRColorPickerViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRColorPickerViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementBalloonViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementBalloonViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementInspectorViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementInspectorViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementListViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementListViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementPropertiesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRElementPropertiesViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRGeneralInfoViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRGeneralInfoViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRGraphChoiceViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRGraphChoiceViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRGraphViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRGraphViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRHelpBalloonViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRHelpBalloonViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRInfoViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRInfoViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRMainViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRMainViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRMolecularCalculatorViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRMolecularCalculatorViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRNuclidesIsotopesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRNuclidesIsotopesViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRPeriodicTableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRPeriodicTableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRPreferencesViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRPreferencesViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSlideDownAnimationController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSlideDownAnimationController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSplashViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSplashViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSwapableViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRSwapableViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRWikipediaViewController.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/ViewControllers/XTRWikipediaViewController.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRBackgroundView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRBackgroundView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRCornerImageView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRCornerImageView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTROverlayView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTROverlayView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRShadowView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRShadowView.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRZoomContentView.swift" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria/Source/Views/XTRZoomContentView.swift" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_24E71BA6-925C-4A0F-9BFC-C5C3C9F782A8" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Local" pattern="file[PrimaMateria]:PrimaMateria/Source/*" />
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="140" />
@@ -164,6 +97,13 @@
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
+  <component name="RunManager" selected="Application.PrimaMateria DEV">
+    <list>
+      <item itemvalue="Application.PrimaMateria DEV" />
+      <item itemvalue="Application.PrimaMateria PRD" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -184,21 +124,25 @@
       <workItem from="1586364329857" duration="325000" />
       <workItem from="1586474260341" duration="1031000" />
       <workItem from="1623267061218" duration="4000" />
+      <workItem from="1623268386492" duration="147000" />
+      <workItem from="1623268578229" duration="355000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="290" y="193" width="1489" height="800" key="DiffContextDialog" timestamp="1586364524966">
-      <screen x="0" y="23" width="2048" height="1129" />
-    </state>
-    <state x="290" y="193" width="1489" height="800" key="DiffContextDialog/0.23.2048.1129@0.23.2048.1129" timestamp="1586364524966" />
-    <state x="693" y="228" width="683" height="729" key="find.popup" timestamp="1586364639974">
-      <screen x="0" y="23" width="2048" height="1129" />
-    </state>
-    <state x="693" y="228" width="683" height="729" key="find.popup/0.23.2048.1129@0.23.2048.1129" timestamp="1586364639974" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="masterDetails">
     <states>
