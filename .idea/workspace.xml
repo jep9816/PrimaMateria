@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="8" />
     <option name="CUSTOM_SCOPE_NAME" value="Local" />
   </component>
   <component name="AutoImportSettings">
@@ -31,9 +30,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="635613ea-2b61-463a-8935-a914b7d94305" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PrimaMateria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PrimaMateria.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,8 +84,10 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cidr.known.project.marker" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/PrimaMateria.xcworkspace" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -125,7 +128,8 @@
       <workItem from="1586474260341" duration="1031000" />
       <workItem from="1623267061218" duration="4000" />
       <workItem from="1623268386492" duration="147000" />
-      <workItem from="1623268578229" duration="355000" />
+      <workItem from="1623268578229" duration="830000" />
+      <workItem from="1623269531028" duration="603000" />
     </task>
     <servers />
   </component>

@@ -87,7 +87,6 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
 
     let contentRect = CGRect(x: 154, y: 10, width: 716, height: 748)
     let localRect = CGRect(x: 0, y: 32, width: 716, height: 716)
-    let startRect = CGRect(x: 1200, y: 290, width: 322, height: 322)
 
     // MARK: - Initialization Methods
 

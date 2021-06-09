@@ -1,0 +1,101 @@
+* Inspecting project...
+* Building PrimaMateria DEV...
+* Indexing...
+* Analyzing...
+
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/3rdParty/LocaleManager.swift:468:16: warning: Function 'swizzleStaticMethod(_:with:)' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRAppearanceManager.swift:76:10: warning: Function 'applyAppearance()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRAppearanceManager.swift:88:10: warning: Function 'isStandardAppearance()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRAppearanceManager.swift:104:10: warning: Function 'preferredStatusBarStyle()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:11:5: warning: Property 'RGB_CONSTANT' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:12:5: warning: Property 'HSB_CONSTANT' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:224:15: warning: Property 'border' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:264:15: warning: Property 'switchOnTintColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:296:15: warning: Property 'navigationBarColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:300:15: warning: Property 'toolBarColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:304:15: warning: Property 'alternateRowColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:312:15: warning: Property 'alternateRowTableCellTextLabelColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:316:15: warning: Property 'rowTableCellTextLabelColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:320:15: warning: Property 'labelColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:324:15: warning: Property 'tableBackgroundColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:328:15: warning: Property 'viewBackgroundColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:332:15: warning: Property 'tableViewCellDetailLabelColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:336:15: warning: Property 'tableViewCellBorderColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:348:15: warning: Property 'pageControlLabelColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:356:15: warning: Property 'pageIndicatorTintColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactory.swift:364:15: warning: Property 'currentPageIndicatorTintColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift:36:15: warning: Property 'peweter' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift:44:15: warning: Property 'empress' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift:62:15: warning: Property 'denim' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift:70:15: warning: Property 'downriver' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift:96:24: warning: Property 'border' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryClassic.swift:104:15: warning: Property 'dustyGrayColor' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:24:15: warning: Property 'suvaGrey' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:32:15: warning: Property 'comet' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:48:15: warning: Property 'separator' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:52:15: warning: Property 'group' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:72:15: warning: Property 'mediumGoldenrod' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:76:15: warning: Property 'redOrange' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:80:15: warning: Property 'redHero' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:88:24: warning: Property 'border' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:98:15: warning: Property 'lightText' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:102:15: warning: Property 'textured' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Appearance/XTRColorFactoryStandard.swift:106:15: warning: Property 'flipSide' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRDividerLabel.swift:14:9: warning: Property 'highColor' is assigned, but never used
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRDividerLabel.swift:15:9: warning: Property 'lowColor' is assigned, but never used
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRGeneralButton.swift:25:17: warning: Property 'highColor' is assigned, but never used
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRGeneralButton.swift:26:17: warning: Property 'lowColor' is assigned, but never used
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRShellModelScene.swift:81:10: warning: Function 'createColorEmboss()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRShellModelScene.swift:93:10: warning: Function 'createWater()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRShellModelScene.swift:103:10: warning: Function 'createLightGrid()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Controls/XTRShellModelScene.swift:114:10: warning: Function 'createGrayEmboss()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Delegates/XTRElementListViewControllerDelegate.swift:17:14: warning: Property 'controller' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Delegates/XTRGraphViewControllerDelegate.swift:13:14: warning: Property 'controller' is assigned, but never used
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Delegates/XTRNuclidesIsotopesViewControllerDelegate.swift:14:14: warning: Property 'controller' is assigned, but never used
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/NSObject+General.swift:51:9: warning: Property 'localizedText' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/NSObject+General.swift:118:17: warning: Initializer 'init(fromFile:uniforms:attributes:)' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/NSObject+General.swift:211:29: warning: Parameter 'frame' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:11:5: warning: Property 'colorNameDB' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:85:10: warning: Function 'white()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:115:16: warning: Function 'randomColor()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:119:16: warning: Function 'searchForColor(byName:)' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:140:10: warning: Function 'stringFromColor()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:156:10: warning: Function 'colorSpaceString()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:179:10: warning: Function 'arrayFromRGBAComponents()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:192:10: warning: Function 'red(_:green:blue:alpha:)' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/UIColor+Extensions.swift:229:10: warning: Function 'toHexString()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/XTRElement+Presentation.swift:217:9: warning: Property 'hardnessScaleBrinellScaled' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Extensions/XTRElement+Presentation.swift:222:9: warning: Property 'hardnessScaleVickersScaled' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRAppDelegate.swift:44:9: warning: Property 'keyWindow' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRApplication.swift:68:10: warning: Function 'prefersStatusBarHidden()' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDataSource.swift:21:9: warning: Property 'columnSortSelector' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDataSource.swift:23:12: warning: Struct 'Static' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDefines.swift:24:5: warning: Property 'ELEMENT_BOILING_POINT_FOOTNOTE' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDefines.swift:41:5: warning: Property 'ELEMENT_ELECTRONS_RER_ENERGY_LEVEL' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDefines.swift:53:5: warning: Property 'ELEMENT_HARDNESS_SCALE_BRINELL_SCALED' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDefines.swift:56:5: warning: Property 'ELEMENT_HARDNESS_SCALE_VICKERS_SCALED' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDefines.swift:177:16: warning: Property 'pdf' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDefines.swift:178:16: warning: Property 'png' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Misc/XTRDefines.swift:180:16: warning: Property 'plist' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Models/XTRElementModel.swift:81:9: warning: Property 'descr' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRAtomicStructureViewController.swift:17:16: warning: Property 'expandButtonSize' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRAtomicStructureViewController.swift:18:16: warning: Property 'expandButtonImage' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRAtomicStructureViewController.swift:90:9: warning: Property 'startRect' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRAtomicStructureViewController.swift:257:25: warning: Parameter 'frame' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRInfoViewController.swift:16:17: warning: Property 'delegate' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRPreferencesViewController.swift:113:39: warning: Parameter 'inView' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift:25:16: warning: Property 'name' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift:26:16: warning: Property 'title' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift:27:16: warning: Property 'majorTickMarks' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift:28:16: warning: Property 'minorTickMarks' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift:29:16: warning: Property 'maximumValue' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/ViewControllers/XTRSpectrumViewController.swift:30:16: warning: Property 'minimumValue' is unused
+/Users/jerryporter/Developer/Source/PrimaMateria/PrimaMateria/Source/Views/XTRShadowView.swift:20:5: warning: Initializer 'init(frame:view:)' is unused
+
+* Seeing false positives?
+ - Periphery only analyzes files that are members of the targets you specify.
+   References to declarations identified as unused may reside in files that are members of other targets, e.g test targets.
+ - By default, Periphery does not assume that all public declarations are in use. 
+   You can instruct it to do so with the --retain-public option.
+ - Periphery is a very precise tool, false positives often turn out to be correct after further investigation.
+ - If it really is a false positive, please report it - https://github.com/peripheryapp/periphery/issues.

@@ -213,17 +213,7 @@ extension XTRElementModel {
     var shellModelScene: XTRShellModelScene {
         return XTRShellModelScene(size: CGSize(width: 322, height: 322), element: self)
     }
-    
-    var hardnessScaleBrinellScaled: Double {
-        let aValue = hardnessScaleBrinell
-        return aValue / 100.0
-    }
-    
-    var hardnessScaleVickersScaled: Double {
-        let aValue = hardnessScaleVickers
-        return aValue / 100.0
-    }
-    
+        
     var coeffOfLinealThermExpansScaled: Double {
         let aValue = coefficientOfLinealThermalExpansion
         return aValue * 100000.0
