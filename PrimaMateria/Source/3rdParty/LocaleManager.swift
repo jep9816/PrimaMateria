@@ -32,26 +32,26 @@ public class LocaleManager: NSObject {
     @objc public static var updateHandler: () -> Void = {
         return
     }
-    
+
     /**
      This handler will be called to get root viewController to initialize.
      
      - Important: Either this property or storyboard identifier's of root view controller must be set.
      */
     @objc public static var rootViewController: ((_ window: UIWindow) -> UIViewController?)?
-    
+
     /**
      This handler will be called to get localized string before checking bundle. Allows custom translation for system strings.
      
      - Important: **DON'T USE** `NSLocalizedString()` inside the closure body. Use a `Dictionary` instead.
     */
     @objc public static var customTranslation: ((_ key: String) -> String?)?
-    
+
     /// Returns Base localization identifier
     @objc public class var base: String {
         return "Base"
     }
-    
+
     /**
      Iterates all localization done by developer in app. It can be used to show available option for user.
      
@@ -68,7 +68,7 @@ public class LocaleManager: NSObject {
         let vals = keys.map({ Locale.userPreferred.localizedString(forIdentifier: $0) ?? $0 })
         return [String: String].init(zip(keys, vals), uniquingKeysWith: { val, _ in val })
     }
-    
+
     /**
      Reloads all windows to apply orientation changes in user interface.
      
@@ -94,7 +94,7 @@ public class LocaleManager: NSObject {
             }
         }
     }
-    
+
     /**
      Overrides system-wide locale in application setting.
      
@@ -104,19 +104,19 @@ public class LocaleManager: NSObject {
         UserDefaults.standard.set(identifiers, forKey: "AppleLanguages")
         UserDefaults.standard.synchronize()
     }
-    
+
     /// Removes user preferred locale and resets locale to system-wide.
     private class func removeLocale() {
         UserDefaults.standard.removeObject(forKey: "AppleLanguages")
-        
+
         // These keys are used in maximbilan/ios_language_manager and may conflict with this implementation.
         // We remove them here.
         UserDefaults.standard.removeObject(forKey: "AppleTextDirection")
         UserDefaults.standard.removeObject(forKey: "NSForceRightToLeftWritingDirection")
-        
+
         UserDefaults.standard.synchronize()
     }
-    
+
     /**
      Overrides system-wide locale in application and reloads interface.
      
@@ -136,11 +136,11 @@ public class LocaleManager: NSObject {
         UIView.appearance().semanticContentAttribute = semantic
         UITableView.appearance().semanticContentAttribute = semantic
         UISwitch.appearance().semanticContentAttribute = semantic
-        
+
         reloadWindows(animated: animated)
         updateHandler()
     }
-    
+
     /**
      Overrides system-wide locale in application and reloads interface.
      
@@ -151,7 +151,7 @@ public class LocaleManager: NSObject {
         let locale = identifier.map(Locale.init(identifier:))
         apply(locale: locale, animated: animated)
     }
-    
+
     /**
      This method MUST be called in `application(_:didFinishLaunchingWithOptions:)` method.
      */
@@ -173,12 +173,12 @@ public extension UITextField {
         static var originalAlignment = "lm_originalAlignment"
         static var forcedAlignment = "lm_forcedAlignment"
     }
-    
+
     var originalAlignment: NSTextAlignment? {
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.originalAlignment) as? Int).flatMap(NSTextAlignment.init(rawValue:))
         }
-        
+
         set {
             if let newValue = newValue {
                 objc_setAssociatedObject(
@@ -190,12 +190,12 @@ public extension UITextField {
             }
         }
     }
-    
+
     var forcedAlignment: NSTextAlignment? {
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.forcedAlignment) as? Int).flatMap(NSTextAlignment.init(rawValue:))
         }
-        
+
         set {
             if let newValue = newValue {
                 objc_setAssociatedObject(
@@ -207,18 +207,18 @@ public extension UITextField {
             }
         }
     }
-    
+
     @objc internal func mn_custom_layoutSubviews() {
         if originalAlignment == nil {
             originalAlignment = self.textAlignment
         }
-        
+
         if let forcedAlignment = forcedAlignment {
             self.textAlignment = forcedAlignment
         } else if originalAlignment == .natural {
             self.textAlignment = Locale._userPreferred.isRTL ? .right : .left
         }
-        
+
         self.mn_custom_layoutSubviews()
     }
 }
@@ -228,12 +228,12 @@ public extension UILabel {
         static var originalAlignment = "lm_originalAlignment"
         static var forcedAlignment = "lm_forcedAlignment"
     }
-    
+
     var originalAlignment: NSTextAlignment? {
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.originalAlignment) as? Int).flatMap(NSTextAlignment.init(rawValue:))
         }
-        
+
         set {
             if let newValue = newValue {
                 objc_setAssociatedObject(
@@ -245,12 +245,12 @@ public extension UILabel {
             }
         }
     }
-    
+
     var forcedAlignment: NSTextAlignment? {
         get {
             return (objc_getAssociatedObject(self, &AssociatedKeys.forcedAlignment) as? Int).flatMap(NSTextAlignment.init(rawValue:))
         }
-        
+
         set {
             if let newValue = newValue {
                 objc_setAssociatedObject(
@@ -262,12 +262,12 @@ public extension UILabel {
             }
         }
     }
-    
+
     @objc internal func mn_custom_layoutSubviews() {
         if originalAlignment == nil {
             originalAlignment = self.textAlignment
         }
-        
+
         // Workaround placeholder
         /*if self.superview is UITextField && self.superview?.superview?.superview is UISearchBar {
             self.textAlignment = Locale._userPreferred.isRTL ? .right : .left
@@ -280,13 +280,13 @@ public extension UILabel {
                 }
             }
         }*/
-        
+
         if let forcedAlignment = forcedAlignment {
             self.textAlignment = forcedAlignment
         } else if originalAlignment == .natural {
             self.textAlignment = Locale._userPreferred.isRTL ? .right : .left
         }
-        
+
         self.mn_custom_layoutSubviews()
     }
 }
@@ -300,7 +300,7 @@ extension UIApplication {
 
 extension Bundle {
     private static var savedLanguageNames: [String: String] = [:]
-    
+
     private func languageName(for lang: String) -> String? {
         if let langName = Bundle.savedLanguageNames[lang] {
             return langName
@@ -309,7 +309,7 @@ extension Bundle {
         Bundle.savedLanguageNames[lang] = langName
         return langName
     }
-    
+
     fileprivate func resourcePath(for locale: Locale) -> String? {
         /*
          After swizzling localizedString() method, this procedure will be used even for system provided frameworks.
@@ -332,12 +332,12 @@ extension Bundle {
             return nil
         }
     }
-    
+
     @objc func mn_custom_localizedString(forKey key: String, value: String?, table tableName: String?) -> String {
         if let customString = LocaleManager.customTranslation?(key) {
             return customString
         }
-        
+
         /*
          Trying to find lproj resource first in user preferred locale, then system-wide current locale, and finally "Base"
          */
@@ -365,21 +365,21 @@ public extension Locale {
      Must be set to nil when `AppleLanguages` has changed.
     */
     fileprivate static var cachePreffered: Locale?
-    
+
     fileprivate static var _userPreferred: Locale {
         if let cachePreffered = cachePreffered {
             return cachePreffered
         }
-        
+
         cachePreffered = userPreferred
         return cachePreffered!
     }
-    
+
     fileprivate static var baseLocale: Locale {
         let base = Locale.preferredLanguages.first(where: { $0 != LocaleManager.base }) ?? "en_US"
         return Locale.init(identifier: base)
     }
-    
+
     /**
      Locale selected by user.
      */
@@ -389,7 +389,7 @@ public extension Locale {
         let preferredId = preffered.identifier.replacingOccurrences(of: "-", with: "_")
         return localizations.contains(preferredId) ? preffered : baseLocale
     }
-    
+
     /**
      Checking the locale writing direction is right to left.
      */
@@ -405,7 +405,7 @@ public extension NSLocale {
     @objc class var userPreferred: Locale {
         return Locale.userPreferred
     }
-    
+
     /**
      Checking the locale writing direction is right to left.
      */
@@ -446,13 +446,13 @@ public extension String {
 internal extension NSObject {
     @discardableResult
     class func swizzleMethod(_ selector: Selector, with withSelector: Selector) -> Bool {
-        
+
         var originalMethod: Method?
         var swizzledMethod: Method?
-        
+
         originalMethod = class_getInstanceMethod(self, selector)
         swizzledMethod = class_getInstanceMethod(self, withSelector)
-        
+
         if originalMethod != nil && swizzledMethod != nil {
             if class_addMethod(self, selector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!)) {
                 class_replaceMethod(self, withSelector, method_getImplementation(originalMethod!), method_getTypeEncoding(originalMethod!))
@@ -463,16 +463,16 @@ internal extension NSObject {
         }
         return false
     }
-    
+
     @discardableResult
     class func swizzleStaticMethod(_ selector: Selector, with withSelector: Selector) -> Bool {
-        
+
         var originalMethod: Method?
         var swizzledMethod: Method?
-        
+
         originalMethod = class_getClassMethod(self, selector)
         swizzledMethod = class_getClassMethod(self, withSelector)
-        
+
         if originalMethod != nil && swizzledMethod != nil {
             if class_addMethod(self, selector, method_getImplementation(swizzledMethod!), method_getTypeEncoding(swizzledMethod!)) {
                 class_replaceMethod(self, withSelector, method_getImplementation(originalMethod!), method_getTypeEncoding(originalMethod!))

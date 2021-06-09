@@ -18,7 +18,7 @@ class XTRHelpBalloonViewControllerDelegate: NSObject, WKUIDelegate, WKNavigation
         controller?.backButton.tintColor = UIColor.black
         controller?.forwardButton.tintColor = UIColor.black
     }
-    
+
     public func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         if webView.canGoBack {
             controller?.backButton.isEnabled = true
@@ -27,7 +27,7 @@ class XTRHelpBalloonViewControllerDelegate: NSObject, WKUIDelegate, WKNavigation
             controller?.backButton.isEnabled = false
             controller?.backButton.tintColor = UIColor.black
         }
-        
+
         if webView.canGoForward {
             controller?.forwardButton.isEnabled = true
             controller?.forwardButton.tintColor = UIColor.white
@@ -36,7 +36,7 @@ class XTRHelpBalloonViewControllerDelegate: NSObject, WKUIDelegate, WKNavigation
             controller?.forwardButton.tintColor = UIColor.black
         }
     }
-    
+
     func webView(_ webView: WKWebView, createWebViewWith configuration: WKWebViewConfiguration, for navigationAction: WKNavigationAction, windowFeatures: WKWindowFeatures) -> WKWebView? {
 
         // Scale the page to fill the web view
@@ -44,7 +44,7 @@ class XTRHelpBalloonViewControllerDelegate: NSObject, WKUIDelegate, WKNavigation
          let viewportScript = WKUserScript(source: viewportScriptString, injectionTime: .atDocumentEnd, forMainFrameOnly: true)
          let controller = WKUserContentController()
          let config = WKWebViewConfiguration()
-         
+
          controller.addUserScript(viewportScript)
          config.userContentController = controller
 

@@ -255,6 +255,7 @@ extension XTRElementModel {
         return " \(value(forKeyPath: ELEMENT_CAS_REGISTRY_NUMBER) as! String)"
     }
     
+    // swiftlint:disable function_body_length
     private func attributedStringForArray(_ anArray: [Any]?) -> String? {
         if anArray == nil {
             return STRING_UNKNOWN

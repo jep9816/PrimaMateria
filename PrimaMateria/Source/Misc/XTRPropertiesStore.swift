@@ -19,7 +19,7 @@ struct XTRPropertiesStoreConfig {
 }
 
 class XTRPropertiesStore: NSObject {
-    
+
     class var currentLanguageCode: String {
         get {
             let userDefaults = UserDefaults.standard
@@ -33,7 +33,7 @@ class XTRPropertiesStore: NSObject {
 
             return defaultValue
         }
-        
+
         set {
             let userDefaults = UserDefaults.standard
             userDefaults.set(newValue, forKey: "AppleLanguage")
@@ -48,18 +48,18 @@ class XTRPropertiesStore: NSObject {
                 XTRPropertiesStore.atomicNumber = 1
                 return 1
             }
-            
+
             return defaultValue
         }
-        
+
         set {
             let userDefaults = UserDefaults.standard
-            
+
             userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.atomicNumber)
             userDefaults.synchronize()
         }
     }
-    
+
     class var viewTitle: String {
         get {
             let userDefaults = UserDefaults.standard
@@ -67,13 +67,13 @@ class XTRPropertiesStore: NSObject {
                 XTRPropertiesStore.viewTitle = XTRPropertiesStoreConfig.noneValue
                 return XTRPropertiesStoreConfig.noneValue
             }
-            
+
             return defaultValue
         }
-        
+
         set {
             let userDefaults = UserDefaults.standard
-            
+
             userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.viewTitle)
             userDefaults.synchronize()
         }
@@ -86,13 +86,13 @@ class XTRPropertiesStore: NSObject {
                 XTRPropertiesStore.splashScreenState = false
                 return false
             }
-            
+
             return defaultValue
         }
-        
+
         set {
             let userDefaults = UserDefaults.standard
-            
+
             userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.splashScreen)
             userDefaults.synchronize()
         }
@@ -105,13 +105,13 @@ class XTRPropertiesStore: NSObject {
                 XTRPropertiesStore.showTransitionsState = false
                 return false
             }
-            
+
             return defaultValue
         }
-        
+
         set {
             let userDefaults = UserDefaults.standard
-            
+
             userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.showTransitions)
             userDefaults.synchronize()
         }
@@ -124,13 +124,13 @@ class XTRPropertiesStore: NSObject {
                 XTRPropertiesStore.elementBubblesState = false
                 return false
             }
-            
+
             return defaultValue
         }
-        
+
         set {
             let userDefaults = UserDefaults.standard
-            
+
             userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.elementBubble)
             userDefaults.synchronize()
         }
@@ -140,28 +140,28 @@ class XTRPropertiesStore: NSObject {
         let userDefaults = UserDefaults.standard
         return userDefaults.object(forKey: key!) as? Data
     }
-    
+
     class func setColorData(_ data: Data!, key: String!) {
         if data != nil && key != nil {
             let userDefaults: UserDefaults = UserDefaults.standard
-            
+
             userDefaults.set(data, forKey: key)
             userDefaults.synchronize()
         }
     }
-    
+
     // MARK: - Appearance Name
-    
+
     class var appearanceName: String {
         get {
             guard let objectValue = UserDefaults.standard.value(forKey: XTRPropertiesStoreConfig.appearanceName) as? String else {
                 XTRPropertiesStore.appearanceName = XTRAppearanceType.classic
                 return XTRAppearanceType.classic
             }
-            
+
             return objectValue
         }
-        
+
         set(aValue) {
             let defaults = UserDefaults.standard
             defaults.set(aValue, forKey: XTRPropertiesStoreConfig.appearanceName)
@@ -171,7 +171,7 @@ class XTRPropertiesStore: NSObject {
 
     class func resetPreferences() {
         let userDefaults = UserDefaults.standard
-        
+
         userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.elementBubble)
         userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.showTransitions)
         userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.splashScreen)
@@ -188,8 +188,8 @@ class XTRPropertiesStore: NSObject {
         userDefaults.removeObject(forKey: ElementSeries.nonMetal)
         userDefaults.removeObject(forKey: ElementSeries.transactinide)
         userDefaults.removeObject(forKey: ElementSeries.transitionMetal)
-        
+
         userDefaults.synchronize()
     }
-    
+
 }

@@ -9,32 +9,33 @@
 import CorePlot
 
 class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDelegate {
-    
+
     weak var controller: XTRGraphViewController?
-    
+
     @objc func dataForResource(_ aResourceName: String, type: String, directory: String) -> Data {
         var data: Data = Data()
-        
+
         do {
             data = try Data(contentsOf: URL(fileURLWithPath: Bundle(for: classForCoder).path(forResource: aResourceName, ofType: type, inDirectory: directory)!))
         } catch {
         }
-        
+
         return data
     }
-    
+
     // MARK: - Plot Data Source Methods
-    
+
     func numberOfRecords(for plot: CPTPlot) -> UInt {
         return UInt(XTRDataSource.sharedInstance.elementCount())
     }
-    
+
+    // swiftlint:disable function_body_length
     func number(for plot: CPTPlot, field fieldEnum: UInt, record idx: UInt) -> Any? {
         var num: NSNumber = 0
-        
+
         if plot.isKind(of: CPTBarPlot.classForCoder()) {
             let element = XTRDataSource.sharedInstance.element(index: Int(idx))
-            
+
             switch fieldEnum {
             case 0:
                 num = NSNumber(value: idx + 1)
@@ -107,14 +108,14 @@ class XTRGraphViewControllerDelegate: NSObject, CPTPlotDataSource, CPTBarPlotDel
                 num = 0
             }
         }
-        
+
         return num
     }
-    
+
 //    func barPlot(_ plot: CPTBarPlot, barWasSelectedAtRecord index: UInt) {
 //        controller?.showElementPanelForElementAtIndex(Int(index))
 //    }
-    
+
     @objc func barFillForBarPlot(_ barPlot: CPTBarPlot, recordIndex: UInt) -> CPTFill {
         let element = XTRDataSource.sharedInstance.element(index: Int(recordIndex))
         return CPTFill(color: CPTColor(cgColor: element.seriesColor.cgColor))

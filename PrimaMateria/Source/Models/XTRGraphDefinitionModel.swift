@@ -17,17 +17,17 @@
 import Foundation
 
 class XTRGraphDefinitionModel: NSObject {
-    
+
     var title: String = STRING_EMPTY
     var attributeName: String = STRING_EMPTY
     var majorTickMarks: Float = 0
     var minorTickMarks: Float = 0
     var maximumValue: Float = 0
     var minimumValue: Float = 0
-    
+
     convenience init(dictionary: [String: Any]) {
         self.init()
-        
+
         if let value1 = dictionary[XTRGraphViewControllerConfig.title] as? String {
             title = value1
         }

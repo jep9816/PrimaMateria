@@ -11,16 +11,16 @@ import RxSwift
 import RxCocoa
 
 class XTRGraphChoiceCell: UICollectionViewCell {
-    
+
     @IBOutlet var button: XTRGeneralButton!
-    
+
     var disposeBag: DisposeBag = DisposeBag()
-    
+
     func setup(index: Int) {
         let model = XTRDataSource.sharedInstance.graphPropertyList[index]
         let titleKey = model.title
         let title = NSLocalizedString(titleKey, comment: "")
-        
+
         button.setTitle(title, for: .normal)
         button.setTitle(title, for: .highlighted)
         button.showsTouchWhenHighlighted = false
@@ -33,5 +33,5 @@ class XTRGraphChoiceCell: UICollectionViewCell {
                 NotificationCenter.default.post(name: .graphSelectedNotification, object: sender.tag)
             }).disposed(by: disposeBag)
     }
-    
+
 }

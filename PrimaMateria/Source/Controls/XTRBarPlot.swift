@@ -9,23 +9,23 @@
 import CorePlot
 
 final class XTRBarPlot: CPTBarPlot {
-    
+
     var element: XTRElementModel!
-    
+
     // MARK: - Initialization Methods
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
-    
+
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
-        
+
         NotificationCenter.default.addObserver(self, selector: #selector(colorChanged(_:)), name: .seriesColorChangedNotification, object: nil)
     }
-    
+
     // MARK: - Notification Methods
 
     @objc func colorChanged(_ aNotification: Notification) {
@@ -58,5 +58,5 @@ final class XTRBarPlot: CPTBarPlot {
     deinit {
         NotificationCenter.default.removeObserver(self, name: .seriesColorChangedNotification, object: nil)
     }
-    
+
 }

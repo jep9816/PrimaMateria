@@ -12,43 +12,44 @@ import RxSwift
 import RxCocoa
 
 class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
-    
+
     @IBOutlet var headerView: UIView!
     @IBOutlet var tableView: UITableView?
 
     var nuclidesAndIsotopesArray: BehaviorRelay<[XTRIsotopeModel]>?
-    
+
     var disposeBag: DisposeBag = DisposeBag()
 
     private var delegate: XTRNuclidesIsotopesViewControllerDelegate? = XTRNuclidesIsotopesViewControllerDelegate()
 
     // MARK: - Initialization Methods
-    
+
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
     }
-        
+
     // MARK: - Misc Methods
-    
+
     override func setupUIForAnimation(element: XTRElementModel) {
         super.setupUIForAnimation(element: element)
-        
+
         setupTableView(element: element)
     }
-    
+
     override func setupUI(element: XTRElementModel) {
         super.setupUI(element: element)
-        
+
         setupTableView(element: element)
     }
-    
+
     func setupTableView(element: XTRElementModel) {
         nuclidesAndIsotopesArray = element.nuclidesAndIsotopesModels
-        
+
         setupRx()
     }
-    
+
     func setupRx() {
+        tableView?.dataSource = nil
         nuclidesAndIsotopesArray?.bind(to: (tableView?.rx.items(cellIdentifier: XTR_TABLE_CELL_IDENTIFIER, cellType: XTRTableCell.self))!) { [weak self] (row, element, cell) in
             let modulus = row % 2
 
@@ -68,10 +69,10 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
     }
 
     // MARK: - View Management Methods
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         tableView!.alwaysBounceVertical = false
         tableView!.alwaysBounceHorizontal = false
         tableView!.separatorStyle = .none
@@ -80,23 +81,23 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
         tableView!.isOpaque = false
         tableView!.rowHeight = 34.0
         tableView?.register(XTRTableCell.self, forCellReuseIdentifier: XTR_TABLE_CELL_IDENTIFIER)
-        
+
         delegate?.controller = self
     }
-    
+
     override var shouldAutorotate: Bool {
         return false
     }
-    
+
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
     }
-    
+
     // MARK: - Memory Management Methods
-    
+
     deinit {
         headerView = nil
         tableView = nil
     }
-    
+
 }

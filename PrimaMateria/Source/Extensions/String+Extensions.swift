@@ -9,7 +9,7 @@
 import UIKit
 
 extension String {
-    
+
     func image() -> UIImage? {
         let size = CGSize(width: 40, height: 40)
         UIGraphicsBeginImageContextWithOptions(size, false, 0)
@@ -21,5 +21,5 @@ extension String {
         UIGraphicsEndImageContext()
         return image
     }
-    
+
 }
