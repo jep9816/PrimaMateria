@@ -186,7 +186,7 @@ extension SKUniform {
     }
 }
 
-protocol XibDesignable: class {}
+protocol XibDesignable: AnyObject {}
 
 extension XibDesignable where Self: UIView {
     

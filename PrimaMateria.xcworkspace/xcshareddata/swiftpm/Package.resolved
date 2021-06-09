@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "CorePlot",
+        "repositoryURL": "https://github.com/core-plot/core-plot",
+        "state": {
+          "branch": "release-2.4",
+          "revision": "fc46c4a59f25152d64d23f26a8185fe531a84acd",
+          "version": null
+        }
+      },
+      {
         "package": "MBProgressHUD",
         "repositoryURL": "https://github.com/jdg/MBProgressHUD.git",
         "state": {
@@ -15,8 +24,8 @@
         "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
         "state": {
           "branch": null,
-          "revision": "002d325b0bdee94e7882e1114af5ff4fe1e96afa",
-          "version": "5.1.1"
+          "revision": "7c17a6ccca06b5c107cfa4284e634562ddaf5951",
+          "version": "6.2.0"
         }
       }
     ]

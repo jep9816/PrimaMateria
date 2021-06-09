@@ -231,12 +231,12 @@ extension XTRElementModel {
     
     var fillingOrbital: String {
         let aValue = value(forKeyPath: ELEMENT_FILLING_ORBITAL) as! [Any]?
-        return _attributedStringForArray(aValue)!
+        return attributedStringForArray(aValue)!
     }
     
     var valence: String {
         let aValue = value(forKeyPath: ELEMENT_VALENCE_ELECTRONS) as! [Any]?
-        return _attributedStringForArray(aValue)!
+        return attributedStringForArray(aValue)!
     }
     
     var vaporPressureModel: XTRVaporPressurenModel? {
@@ -255,7 +255,7 @@ extension XTRElementModel {
         return " \(value(forKeyPath: ELEMENT_CAS_REGISTRY_NUMBER) as! String)"
     }
     
-    private func _attributedStringForArray(_ anArray: [Any]?) -> String? {
+    private func attributedStringForArray(_ anArray: [Any]?) -> String? {
         if anArray == nil {
             return STRING_UNKNOWN
         } else {

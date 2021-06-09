@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		06E83DB026714862005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DAF26714862005F7092 /* CorePlot */; };
+		06E83DB226714A63005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DB126714A63005F7092 /* CorePlot */; };
 		06FFB7A6258C2AAF00AF7B77 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 06FFB7A5258C2AAF00AF7B77 /* RxSwift */; };
 		06FFB7AA258C2AAF00AF7B77 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 06FFB7A9258C2AAF00AF7B77 /* RxRelay */; };
 		06FFB7AC258C2AAF00AF7B77 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 06FFB7AB258C2AAF00AF7B77 /* RxCocoa */; };
@@ -21,9 +23,6 @@
 		0853E20D2114D20100CA092B /* SHKLightGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E2092114D20100CA092B /* SHKLightGrid.fsh */; };
 		0853E20E2114D20100CA092B /* SHKWater.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E20A2114D20100CA092B /* SHKWater.fsh */; };
 		08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB996C20F8D4C800711159 /* XTRPageControl.swift */; };
-		08B6A57D2257E9EC001885BB /* Cartfile.resolved in Resources */ = {isa = PBXBuildFile; fileRef = 08B6A57C2257E9EC001885BB /* Cartfile.resolved */; };
-		08B6A5822257EA50001885BB /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A57F2257EA50001885BB /* CorePlot.framework */; };
-		08B6A5842257EA73001885BB /* CorePlot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08B6A57F2257EA50001885BB /* CorePlot.framework */; };
 		8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */; };
 		8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */; };
 		800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */; };
@@ -433,7 +432,6 @@
 		0853E2092114D20100CA092B /* SHKLightGrid.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKLightGrid.fsh; sourceTree = "<group>"; };
 		0853E20A2114D20100CA092B /* SHKWater.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKWater.fsh; sourceTree = "<group>"; };
 		08AB996C20F8D4C800711159 /* XTRPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPageControl.swift; sourceTree = "<group>"; };
-		08B6A57C2257E9EC001885BB /* Cartfile.resolved */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
 		08B6A57E2257EA50001885BB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = PrimaMateria/Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		08B6A57F2257EA50001885BB /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = PrimaMateria/Carthage/Build/iOS/CorePlot.framework; sourceTree = "<group>"; };
 		08B6A5802257EA50001885BB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = PrimaMateria/Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
@@ -572,7 +570,6 @@
 		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
 		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
 		806A39672117B3850074ED28 /* brushed-dark-steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-dark-steel.png"; sourceTree = "<group>"; };
-		8075E4C921F13CEF00FB9B88 /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8098768C210A874800AB3B00 /* Globe16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe16.png; sourceTree = "<group>"; };
@@ -666,11 +663,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08B6A5842257EA73001885BB /* CorePlot.framework in Frameworks */,
 				8012837120F02B6D00ABC706 /* Foundation.framework in Frameworks */,
 				06FFB7C1258C33F000AF7B77 /* UIKit.framework in Frameworks */,
 				06FFB7AA258C2AAF00AF7B77 /* RxRelay in Frameworks */,
 				06FFB7AE258C2AAF00AF7B77 /* RxBlocking in Frameworks */,
+				06E83DB026714862005F7092 /* CorePlot in Frameworks */,
 				9B244B60243FE04900BD6ACE /* MBProgressHUD in Frameworks */,
 				06FFB7AC258C2AAF00AF7B77 /* RxCocoa in Frameworks */,
 				06FFB7A6258C2AAF00AF7B77 /* RxSwift in Frameworks */,
@@ -681,11 +678,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				08B6A5822257EA50001885BB /* CorePlot.framework in Frameworks */,
 				80AB2A442128CEAD00B58AB3 /* Foundation.framework in Frameworks */,
 				80AB2A452128CEAD00B58AB3 /* UIKit.framework in Frameworks */,
 				06FFB7B6258C2B5500AF7B77 /* RxCocoa in Frameworks */,
 				9B244B5E243FDFF500BD6ACE /* MBProgressHUD in Frameworks */,
+				06E83DB226714A63005F7092 /* CorePlot in Frameworks */,
 				06FFB7B8258C2B5500AF7B77 /* RxRelay in Frameworks */,
 				06FFB7BA258C2B5500AF7B77 /* RxSwift in Frameworks */,
 				06FFB7B4258C2B5500AF7B77 /* RxBlocking in Frameworks */,
@@ -989,8 +986,6 @@
 			isa = PBXGroup;
 			children = (
 				80D53584212A271F00077340 /* .swiftlint.yml */,
-				8075E4C921F13CEF00FB9B88 /* Cartfile */,
-				08B6A57C2257E9EC001885BB /* Cartfile.resolved */,
 			);
 			name = Config;
 			sourceTree = "<group>";
@@ -1114,7 +1109,6 @@
 				80127C0A20F0253000ABC706 /* Sources */,
 				80127C0B20F0253000ABC706 /* Frameworks */,
 				80127C0C20F0253000ABC706 /* Resources */,
-				80D535762129DC5400077340 /* Copy Frameworks (Carthage) */,
 			);
 			buildRules = (
 			);
@@ -1127,6 +1121,7 @@
 				06FFB7A9258C2AAF00AF7B77 /* RxRelay */,
 				06FFB7AB258C2AAF00AF7B77 /* RxCocoa */,
 				06FFB7AD258C2AAF00AF7B77 /* RxBlocking */,
+				06E83DAF26714862005F7092 /* CorePlot */,
 			);
 			productName = PrimaMateria;
 			productReference = 80127C0E20F0253000ABC706 /* PrimaMateria.app */;
@@ -1140,7 +1135,6 @@
 				80AB29F32128CEAD00B58AB3 /* Sources */,
 				80AB2A422128CEAD00B58AB3 /* Frameworks */,
 				80AB2A472128CEAD00B58AB3 /* Resources */,
-				80D535772129DD0F00077340 /* Copy Frameworks (Carthage) */,
 			);
 			buildRules = (
 			);
@@ -1153,6 +1147,7 @@
 				06FFB7B5258C2B5500AF7B77 /* RxCocoa */,
 				06FFB7B7258C2B5500AF7B77 /* RxRelay */,
 				06FFB7B9258C2B5500AF7B77 /* RxSwift */,
+				06E83DB126714A63005F7092 /* CorePlot */,
 			);
 			productName = PrimaMateria;
 			productReference = 80AB2AC52128CEAD00B58AB3 /* PrimaMateria.app */;
@@ -1190,6 +1185,7 @@
 			packageReferences = (
 				9B244B5C243FDFF500BD6ACE /* XCRemoteSwiftPackageReference "MBProgressHUD" */,
 				06FFB7A4258C2AAF00AF7B77 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				06E83DAE26714861005F7092 /* XCRemoteSwiftPackageReference "core-plot" */,
 			);
 			productRefGroup = 80127C0F20F0253000ABC706 /* Products */;
 			projectDirPath = "";
@@ -1404,7 +1400,6 @@
 				80AB2A8B2128CEAD00B58AB3 /* Splash.storyboard in Resources */,
 				80AB2A8C2128CEAD00B58AB3 /* Globe47.png in Resources */,
 				80AB2A8D2128CEAD00B58AB3 /* ColorPicker.storyboard in Resources */,
-				08B6A57D2257E9EC001885BB /* Cartfile.resolved in Resources */,
 				80AB2A8E2128CEAD00B58AB3 /* PrimaMateria.scnassets in Resources */,
 				80AB2A8F2128CEAD00B58AB3 /* SupportingFiles in Resources */,
 				80AB2A902128CEAD00B58AB3 /* AtomicStructure.storyboard in Resources */,
@@ -1473,7 +1468,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    brew install swiftlint\nfi";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    brew install swiftlint\nfi\n";
 		};
 		80AB29F22128CEAD00B58AB3 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1487,37 +1482,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    brew install swiftlint\nfi";
-		};
-		80D535762129DC5400077340 /* Copy Frameworks (Carthage) */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/CorePlot.framework",
-			);
-			name = "Copy Frameworks (Carthage)";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
-		80D535772129DD0F00077340 /* Copy Frameworks (Carthage) */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/PrimaMateria/Carthage/Build/iOS/CorePlot.framework",
-			);
-			name = "Copy Frameworks (Carthage)";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    brew install swiftlint\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1766,7 +1731,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/PrimaMateria/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1791,7 +1756,7 @@
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/OtherSources/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Source/OtherSources/PrimaMateria-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -1837,7 +1802,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/PrimaMateria/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1855,7 +1820,7 @@
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Classes/OtherSources/PrimaMateria-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "$SOURCE_ROOT/PrimaMateria/Source/OtherSources/PrimaMateria-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				VALIDATE_PRODUCT = YES;
@@ -2026,12 +1991,20 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		06E83DAE26714861005F7092 /* XCRemoteSwiftPackageReference "core-plot" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/core-plot/core-plot";
+			requirement = {
+				branch = "release-2.4";
+				kind = branch;
+			};
+		};
 		06FFB7A4258C2AAF00AF7B77 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 5.1.1;
+				minimumVersion = 6.2.0;
 			};
 		};
 		9B244B5C243FDFF500BD6ACE /* XCRemoteSwiftPackageReference "MBProgressHUD" */ = {
@@ -2045,6 +2018,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		06E83DAF26714862005F7092 /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06E83DAE26714861005F7092 /* XCRemoteSwiftPackageReference "core-plot" */;
+			productName = CorePlot;
+		};
+		06E83DB126714A63005F7092 /* CorePlot */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 06E83DAE26714861005F7092 /* XCRemoteSwiftPackageReference "core-plot" */;
+			productName = CorePlot;
+		};
 		06FFB7A5258C2AAF00AF7B77 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 06FFB7A4258C2AAF00AF7B77 /* XCRemoteSwiftPackageReference "RxSwift" */;
