@@ -10,6 +10,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+let ATOMIC_NUMBER_BUTTON_WIDTH: CGFloat = (88 * UIScreen.main.bounds.width) / 1024
+let SYMBOL_BUTTON_WIDTH: CGFloat = (94 * UIScreen.main.bounds.width) / 1024
+let NAME_BUTTON_WIDTH: CGFloat = (121 * UIScreen.main.bounds.width) / 1024
+let ATOMIC_MASS_BUTTON_WIDTH: CGFloat = (107 * UIScreen.main.bounds.width) / 1024
+let BOILING_POINT_BUTTON_WIDTH: CGFloat = (107 * UIScreen.main.bounds.width) / 1024
+let MELTING_POINT_BUTTON_WIDTH: CGFloat = (107 * UIScreen.main.bounds.width) / 1024
+let DENSITY_BUTTON_WIDTH: CGFloat = (107 * UIScreen.main.bounds.width) / 1024
+let SERIES_BUTTON_WIDTH: CGFloat = (144 * UIScreen.main.bounds.width) / 1024
+let PERIOD_BUTTON_WIDTH: CGFloat = (77 * UIScreen.main.bounds.width) / 1024
+let GROUP_BUTTON_WIDTH: CGFloat = (70 * UIScreen.main.bounds.width) / 1024
+
 class XTRElementListViewController: UIViewController {
 
     static let tableViewCellIdentifier = "XTRElementTableViewCell"
@@ -25,6 +36,7 @@ class XTRElementListViewController: UIViewController {
     @IBOutlet var periodButton: XTRTableHeaderButton!
     @IBOutlet var groupButton: XTRTableHeaderButton!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var headerView: UIView!
     @IBOutlet var navigationBar: UINavigationBar!
 
     var disposeBag: DisposeBag = DisposeBag()
@@ -51,6 +63,11 @@ class XTRElementListViewController: UIViewController {
             localTableView.allowsMultipleSelection = false
             localTableView.register(XTRElementTableViewCell.classForCoder(), forCellReuseIdentifier: XTRElementListViewController.tableViewCellIdentifier)
 
+            //headerView.autoresizingMask = [.flexibleWidth]
+            //headerView.translatesAutoresizingMaskIntoConstraints = true
+            //headerView.frame.size.width = UIScreen.main.bounds.size.width
+            localTableView.frame.size.width = UIScreen.main.bounds.size.width
+            
             view.addSubview(tableView!)
         }
     }
@@ -96,6 +113,18 @@ class XTRElementListViewController: UIViewController {
         _ = atomicNumberButton.toggleState()
         setupTableView()
         setupRx()
+        
+        atomicNumberButton.frame = CGRect(x: 0, y: 0, width: ATOMIC_NUMBER_BUTTON_WIDTH, height: 45)
+        symbolButton.frame = CGRect(x: atomicNumberButton.frame.size.width, y: 0, width: SYMBOL_BUTTON_WIDTH, height: 45)
+        nameButton.frame = CGRect(x: symbolButton.frame.origin.x + symbolButton.frame.size.width, y: 0, width: NAME_BUTTON_WIDTH, height: 45)
+        atomicMassButton.frame = CGRect(x: nameButton.frame.origin.x + nameButton.frame.size.width, y: 0, width: ATOMIC_MASS_BUTTON_WIDTH, height: 45)
+        boilingPointButton.frame = CGRect(x: atomicMassButton.frame.origin.x + atomicMassButton.frame.size.width, y: 0, width: BOILING_POINT_BUTTON_WIDTH, height: 45)
+        meltingPointButton.frame = CGRect(x: boilingPointButton.frame.origin.x + boilingPointButton.frame.size.width, y: 0, width: MELTING_POINT_BUTTON_WIDTH, height: 45)
+        densityButton.frame = CGRect(x: meltingPointButton.frame.origin.x + meltingPointButton.frame.size.width, y: 0, width: DENSITY_BUTTON_WIDTH, height: 45)
+        seriesButton.frame = CGRect(x: densityButton.frame.origin.x + densityButton.frame.size.width, y: 0, width: SERIES_BUTTON_WIDTH, height: 45)
+        periodButton.frame = CGRect(x: seriesButton.frame.origin.x + seriesButton.frame.size.width, y: 0, width: PERIOD_BUTTON_WIDTH, height: 45)
+        groupButton.frame = CGRect(x: periodButton.frame.origin.x + periodButton.frame.size.width, y: 0, width: GROUP_BUTTON_WIDTH, height: 45)
+
         navigationController?.navigationBar.prefersLargeTitles = true
 
         delegate?.closure = { [weak self] (index: Int) -> Void in
@@ -134,7 +163,6 @@ class XTRElementListViewController: UIViewController {
         groupButton = nil
         navigationBar =  nil
         tableView = nil
-        //tableView.delegate = nil
     }
 
 }

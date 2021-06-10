@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,14 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="alO-Yo-Lxd">
-                                <rect key="frame" x="0.0" y="89" width="1024" height="630"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="alO-Yo-Lxd">
+                                <rect key="frame" x="0.0" y="89" width="1024" height="679"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLB-eX-lOK">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="lLB-eX-lOK">
                                 <rect key="frame" x="0.0" y="44" width="1024" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="YFv-sO-0oM" userLabel="Atomic Number Button" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
                                         <rect key="frame" x="-2" y="0.0" width="88" height="45"/>
@@ -202,17 +197,34 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="HaT-zS-ypk"/>
+                                </constraints>
                             </view>
-                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="twX-MI-SaC"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="elementList" id="24"/>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.55676333109537768" green="0.55676333109537768" blue="0.55676333109537768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="pJm-CI-BYP"/>
+                        <color key="backgroundColor" red="0.55676333109537768" green="0.55676333109537768" blue="0.55676333109537768" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="pJm-CI-BYP" firstAttribute="trailing" secondItem="lLB-eX-lOK" secondAttribute="trailing" id="8Sd-Ki-3rg"/>
+                            <constraint firstItem="pJm-CI-BYP" firstAttribute="trailing" secondItem="alO-Yo-Lxd" secondAttribute="trailing" id="8UW-VF-5dD"/>
+                            <constraint firstItem="lLB-eX-lOK" firstAttribute="top" secondItem="pJm-CI-BYP" secondAttribute="top" constant="44" id="D88-yf-Fdc"/>
+                            <constraint firstItem="alO-Yo-Lxd" firstAttribute="top" secondItem="pJm-CI-BYP" secondAttribute="top" constant="89" id="MoO-L6-2Z7"/>
+                            <constraint firstItem="23" firstAttribute="top" secondItem="pJm-CI-BYP" secondAttribute="top" id="UsJ-24-KUh"/>
+                            <constraint firstItem="lLB-eX-lOK" firstAttribute="leading" secondItem="pJm-CI-BYP" secondAttribute="leading" id="YU5-4t-boV"/>
+                            <constraint firstItem="pJm-CI-BYP" firstAttribute="bottom" secondItem="alO-Yo-Lxd" secondAttribute="bottom" id="cQC-ig-GNf"/>
+                            <constraint firstItem="alO-Yo-Lxd" firstAttribute="leading" secondItem="pJm-CI-BYP" secondAttribute="leading" id="mBQ-et-b7S"/>
+                            <constraint firstItem="23" firstAttribute="leading" secondItem="pJm-CI-BYP" secondAttribute="leading" id="saX-xz-7F0"/>
+                            <constraint firstItem="pJm-CI-BYP" firstAttribute="trailing" secondItem="23" secondAttribute="trailing" id="vSG-EX-PtU"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Element List" image="Tab02" id="6"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -222,6 +234,7 @@
                         <outlet property="boilingPointButton" destination="lUX-HY-fRg" id="MHp-Y6-Smi"/>
                         <outlet property="densityButton" destination="RUx-Kk-Gz9" id="yce-uJ-pdo"/>
                         <outlet property="groupButton" destination="w9m-Qo-C1d" id="B2c-Tn-ZZc"/>
+                        <outlet property="headerView" destination="lLB-eX-lOK" id="i4f-78-jST"/>
                         <outlet property="meltingPointButton" destination="WNT-7d-dzS" id="G7l-Ef-rc7"/>
                         <outlet property="nameButton" destination="1Hy-CR-Xjl" id="Yhe-ot-1d6"/>
                         <outlet property="navigationBar" destination="23" id="rSG-O1-R83"/>

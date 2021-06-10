@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GM5-aW-c95">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GM5-aW-c95">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,16 +15,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" highlightedImage="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-tb-fRb">
-                                <rect key="frame" x="-4" y="0.0" width="1032" height="768"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchImage" highlightedImage="LaunchImage" translatesAutoresizingMaskIntoConstraints="NO" id="Kj7-tb-fRb">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Kj7-tb-fRb" secondAttribute="height" multiplier="1264:1037" constant="95.439999999999998" id="z5z-Ie-bOA"/>
-                                </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yhD-Pg-K1v" customClass="XTRShadowView" customModule="PrimaMateria">
-                                <rect key="frame" x="230" y="284" width="600" height="200"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yhD-Pg-K1v">
+                                <rect key="frame" x="212" y="284" width="600" height="200"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y7F-qb-mMD">
                                         <rect key="frame" x="10" y="10" width="580" height="180"/>
@@ -96,16 +89,22 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="600" id="9Az-16-g79"/>
+                                    <constraint firstAttribute="height" constant="200" id="Sha-sq-PGC"/>
+                                </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fX5-cL-NpV"/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.97647058819999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="yhD-Pg-K1v" firstAttribute="centerX" secondItem="fX5-cL-NpV" secondAttribute="centerX" id="5YW-h9-ZYq"/>
                             <constraint firstItem="Kj7-tb-fRb" firstAttribute="top" secondItem="h94-4r-5Kn" secondAttribute="top" id="8u9-Ey-QA4"/>
                             <constraint firstItem="Kj7-tb-fRb" firstAttribute="centerX" secondItem="h94-4r-5Kn" secondAttribute="centerX" id="Hu7-sW-6Rj"/>
                             <constraint firstItem="Kj7-tb-fRb" firstAttribute="bottom" secondItem="fX5-cL-NpV" secondAttribute="bottom" id="Vd0-tz-dPZ"/>
+                            <constraint firstItem="yhD-Pg-K1v" firstAttribute="centerY" secondItem="fX5-cL-NpV" secondAttribute="centerY" id="W3a-cB-vyx"/>
                             <constraint firstItem="Kj7-tb-fRb" firstAttribute="centerY" secondItem="h94-4r-5Kn" secondAttribute="centerY" id="dpI-z7-gzy"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fX5-cL-NpV"/>
                     </view>
                     <navigationItem key="navigationItem" id="E0M-qq-9bC"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -113,7 +112,9 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="appNameLabel" destination="LDx-Nq-EQD" id="Boy-fa-1mW"/>
+                        <outlet property="backgroundImageView" destination="Kj7-tb-fRb" id="YgG-Sv-b7a"/>
                         <outlet property="cpyRightLabel" destination="Oh7-hq-c90" id="8Jj-qY-kaU"/>
+                        <outlet property="shadowView" destination="yhD-Pg-K1v" id="F0G-3o-aSs"/>
                         <outlet property="versionLabel" destination="fuy-sC-4Fi" id="qDa-v8-BPQ"/>
                         <outlet property="wrapperView" destination="y7F-qb-mMD" id="UXb-wD-Xit"/>
                     </connections>
@@ -123,8 +124,16 @@
             <point key="canvasLocation" x="2371.2158203125" y="632.62939453125"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="CNp-V7-3bk">
+            <size key="intrinsicContentSize" width="69.5" height="34"/>
+        </designable>
+        <designable name="hTF-Lf-baW">
+            <size key="intrinsicContentSize" width="95" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="LaunchImage" width="1024" height="768"/>
-        <image name="icon" width="54" height="54"/>
+        <image name="icon" width="72" height="72"/>
     </resources>
 </document>

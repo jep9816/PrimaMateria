@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yBj-la-3m7">
-    <device id="ipad9_7" orientation="landscape">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yBj-la-3m7">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,9 +15,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odg-eK-kVT">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="odg-eK-kVT">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="pyd-kd-9HJ"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="elementInspector" id="7ps-7A-YCp">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="eVs-YQ-rFr"/>
@@ -275,8 +274,13 @@
                                 <color key="backgroundColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="xVg-TY-XLM"/>
+                        <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xVg-TY-XLM" firstAttribute="trailing" secondItem="odg-eK-kVT" secondAttribute="trailing" id="94F-v1-154"/>
+                            <constraint firstItem="odg-eK-kVT" firstAttribute="top" secondItem="xVg-TY-XLM" secondAttribute="top" id="Ngj-r1-7ag"/>
+                            <constraint firstItem="odg-eK-kVT" firstAttribute="leading" secondItem="xVg-TY-XLM" secondAttribute="leading" id="Z9T-pM-8Li"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Periodic Table" image="Tab01" id="vwa-tc-8Bh"/>
                     <toolbarItems>
@@ -312,6 +316,26 @@
             <point key="canvasLocation" x="1732.3493957519531" y="-131.56235218048093"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="3xC-pG-Jo7">
+            <size key="intrinsicContentSize" width="80" height="29"/>
+        </designable>
+        <designable name="5Ve-Hf-30y">
+            <size key="intrinsicContentSize" width="66" height="29"/>
+        </designable>
+        <designable name="5vZ-4t-Pne">
+            <size key="intrinsicContentSize" width="105.5" height="29"/>
+        </designable>
+        <designable name="SZz-eH-FsK">
+            <size key="intrinsicContentSize" width="60.5" height="29"/>
+        </designable>
+        <designable name="iab-Gq-JEy">
+            <size key="intrinsicContentSize" width="70" height="29"/>
+        </designable>
+        <designable name="zC5-X1-tor">
+            <size key="intrinsicContentSize" width="61.5" height="29"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Tab01" width="30" height="30"/>
     </resources>

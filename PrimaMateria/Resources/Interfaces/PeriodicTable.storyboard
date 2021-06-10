@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,9 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zIH-hb-g92">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="656"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zIH-hb-g92">
+                                <rect key="frame" x="0.0" y="56" width="1024" height="656"/>
                                 <subviews>
                                     <button opaque="NO" clearsContextBeforeDrawing="NO" tag="64" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FfH-cZ-53C" customClass="XTRElementButton" customModule="PrimaMateria">
                                         <rect key="frame" x="580" y="528" width="52" height="54"/>
@@ -2420,11 +2419,11 @@
                                         <size key="shadowOffset" width="1" height="1"/>
                                     </label>
                                     <button autoresizesSubviews="NO" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="6nV-sq-Ke7" customClass="XTRHelpButton" customModule="PrimaMateria">
-                                        <rect key="frame" x="5" y="-15" width="32" height="33"/>
+                                        <rect key="frame" x="5" y="0.0" width="32" height="33"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="italicSystem" pointSize="29"/>
-                                        <inset key="contentEdgeInsets" minX="-2" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="contentEdgeInsets" minX="-2" minY="2" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="?">
                                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2435,17 +2434,30 @@
                                         </state>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="656" id="8Jf-gK-YqF"/>
+                                    <constraint firstAttribute="width" constant="1024" id="Nth-ra-y9y"/>
+                                </constraints>
                             </view>
-                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-FO-2K4">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mhz-FO-2K4">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="W86-iG-3sR"/>
+                                </constraints>
                                 <items>
                                     <navigationItem title="periodicTableElements" id="ybh-DN-psR"/>
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="jSS-qX-mvK"/>
+                        <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jSS-qX-mvK" firstAttribute="trailing" secondItem="Mhz-FO-2K4" secondAttribute="trailing" id="5Xv-0q-6R7"/>
+                            <constraint firstItem="zIH-hb-g92" firstAttribute="top" secondItem="jSS-qX-mvK" secondAttribute="top" constant="56" id="8mG-4G-J9g"/>
+                            <constraint firstItem="Mhz-FO-2K4" firstAttribute="leading" secondItem="jSS-qX-mvK" secondAttribute="leading" id="LTd-8H-rlg"/>
+                            <constraint firstItem="zIH-hb-g92" firstAttribute="centerX" secondItem="jSS-qX-mvK" secondAttribute="centerX" id="eQc-TG-QKa"/>
+                            <constraint firstItem="Mhz-FO-2K4" firstAttribute="top" secondItem="jSS-qX-mvK" secondAttribute="top" id="jT2-qO-N4I"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Periodic Table" image="Tab01" id="7"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -2460,6 +2472,23 @@
             <point key="canvasLocation" x="1030.9219360351562" y="-485.81510782241821"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="4a7-1k-Zu6">
+            <size key="intrinsicContentSize" width="117" height="20.5"/>
+        </designable>
+        <designable name="I6H-VS-Dxq">
+            <size key="intrinsicContentSize" width="53" height="20.5"/>
+        </designable>
+        <designable name="gDm-Kk-dh5">
+            <size key="intrinsicContentSize" width="48.5" height="20.5"/>
+        </designable>
+        <designable name="k9C-rM-k21">
+            <size key="intrinsicContentSize" width="152" height="20.5"/>
+        </designable>
+        <designable name="xF4-0a-GXJ">
+            <size key="intrinsicContentSize" width="137.5" height="20.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Tab01" width="30" height="30"/>
     </resources>

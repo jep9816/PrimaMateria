@@ -33,34 +33,34 @@ class XTRElementTableViewCell: UITableViewCell {
         backgroundColor = UIColor.black
         contentView.backgroundColor = UIColor.darkGray
 
-        atomicNumberLabel = XTRTableLabel(frame: CGRect(x: 0, y: 1, width: 85, height: 42), backgroundColor: element.seriesColor)
+        atomicNumberLabel = XTRTableLabel(frame: CGRect(x: 0, y: 1, width: ATOMIC_NUMBER_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(atomicNumberLabel)
 
-        symbolLabel = XTRTableLabel(frame: CGRect(x: 86, y: 1, width: 95, height: 42), backgroundColor: element.seriesColor)
+        symbolLabel = XTRTableLabel(frame: CGRect(x: atomicNumberLabel.frame.size.width, y: 1, width: SYMBOL_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(symbolLabel)
 
-        nameLabel = XTRTableLabel(frame: CGRect(x: 182, y: 1, width: 125, height: 42), backgroundColor: element.seriesColor)
+        nameLabel = XTRTableLabel(frame: CGRect(x: symbolLabel.frame.origin.x + symbolLabel.frame.size.width, y: 1, width: NAME_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(nameLabel)
 
-        atomicMassLabel = XTRTableLabel(frame: CGRect(x: 308, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        atomicMassLabel = XTRTableLabel(frame: CGRect(x: nameLabel.frame.origin.x + nameLabel.frame.size.width, y: 1, width: ATOMIC_MASS_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(atomicMassLabel)
 
-        boilingPointLabel = XTRTableLabel(frame: CGRect(x: 414, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        boilingPointLabel = XTRTableLabel(frame: CGRect(x: atomicMassLabel.frame.origin.x + atomicMassLabel.frame.size.width, y: 1, width: BOILING_POINT_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(boilingPointLabel)
 
-        meltingPointLabel = XTRTableLabel(frame: CGRect(x: 520, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        meltingPointLabel = XTRTableLabel(frame: CGRect(x: boilingPointLabel.frame.origin.x + boilingPointLabel.frame.size.width, y: 1, width: MELTING_POINT_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(meltingPointLabel)
 
-        densityLabel = XTRTableLabel(frame: CGRect(x: 626, y: 1, width: 105, height: 42), backgroundColor: element.seriesColor)
+        densityLabel = XTRTableLabel(frame: CGRect(x: meltingPointLabel.frame.origin.x + meltingPointLabel.frame.size.width, y: 1, width: DENSITY_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(densityLabel)
 
-        seriesLabel = XTRTableLabel(frame: CGRect(x: 732, y: 1, width: 150, height: 42), backgroundColor: element.seriesColor)
+        seriesLabel = XTRTableLabel(frame: CGRect(x: densityLabel.frame.origin.x + densityLabel.frame.size.width, y: 1, width: SERIES_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(seriesLabel)
 
-        periodLabel = XTRTableLabel(frame: CGRect(x: 883, y: 1, width: 72, height: 42), backgroundColor: element.seriesColor)
+        periodLabel = XTRTableLabel(frame: CGRect(x: seriesLabel.frame.origin.x + seriesLabel.frame.size.width, y: 1, width: PERIOD_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(periodLabel)
 
-        groupLabel = XTRTableLabel(frame: CGRect(x: 956, y: 1, width: 68, height: 42), backgroundColor: element.seriesColor)
+        groupLabel = XTRTableLabel(frame: CGRect(x: periodLabel.frame.origin.x + periodLabel.frame.size.width, y: 1, width: GROUP_BUTTON_WIDTH, height: 42), backgroundColor: element.seriesColor)
         contentView.addSubview(groupLabel)
 
         modifyCellProperties()

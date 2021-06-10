@@ -14,6 +14,8 @@ class XTRSplashViewController: UIViewController {
     @IBOutlet var versionLabel: UILabel!
     @IBOutlet var cpyRightLabel: UILabel!
     @IBOutlet var wrapperView: UIView!
+    @IBOutlet var shadowView: UIView!
+    @IBOutlet var backgroundImageView: UIImageView!
 
     // MARK: - Initialization Methods
 
@@ -40,7 +42,14 @@ class XTRSplashViewController: UIViewController {
         appNameLabel.text = Bundle.main.appNameString
         versionLabel.text = Bundle.main.appVersionString
         cpyRightLabel.text = Bundle.main.copywriteString
+        
         wrapperView.cornerRadius = VIEW_CORNER_RADIUS
+        
+        //shadowView.center = wrapperView.center
+        shadowView.backgroundColor = UIColor.gray
+        shadowView.cornerRadius = VIEW_CORNER_RADIUS
+
+        backgroundImageView.frame = UIScreen.main.bounds
 
         Thread.detachNewThreadSelector(#selector(XTRSplashViewController.wait), toTarget: self, with: nil)
     }
