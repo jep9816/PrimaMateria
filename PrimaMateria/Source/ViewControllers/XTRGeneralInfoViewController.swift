@@ -29,6 +29,10 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         super.init(coder: aDecoder)!
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     // MARK: - Internal Methods
 
     // MARK: - Miscellaneous Methods
@@ -77,8 +81,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     // MARK: - View Management Methods
 
     func showWikiView() {
-        let storyboard = UIStoryboard(name: StoryBoardName.Wikipedia, bundle: nil)
-        let wikipediaViewController: XTRWikipediaViewController = storyboard.instantiateViewController(withIdentifier: XTRWikipediaViewController.nameOfClass) as! XTRWikipediaViewController
+        let wikipediaViewController: XTRWikipediaViewController = XTRWikipediaViewController.loadFromNib()
 
         wikipediaViewController.modalPresentationStyle = .formSheet
         wikipediaViewController.modalTransitionStyle = .crossDissolve

@@ -15,6 +15,7 @@ class XTRMainViewControllerDelegate: NSObject, UITabBarControllerDelegate {
         let defaultState = XTRPropertiesStore.showTransitionsState
 
         // TODO: add ability to choose transition type
+        // In preferences
         if defaultState {
             // return XTRPopoutAnimationController()
             // return XTRSlideDownAnimationController()

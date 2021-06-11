@@ -106,6 +106,10 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         addChild(viewController)
     }
 
+    func addChildViewController(viewController: UIViewController) {
+        addChild(viewController)
+    }
+
     func animateForDirection(_ direction: String) {
         assignAtomicSymbolTextFieldProperties()
         assignOtherLabels()
@@ -218,8 +222,8 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         addChildViewController(name: StoryBoardName.AtomicStructure, className: XTRAtomicStructureViewController.nameOfClass)
         addChildViewController(name: StoryBoardName.ElementProperties, className: XTRElementPropertiesViewController.nameOfClass)
         addChildViewController(name: StoryBoardName.NuclidesIsotopes, className: XTRNuclidesIsotopesViewController.nameOfClass)
-        addChildViewController(name: StoryBoardName.Spectrum, className: XTRSpectrumViewController.nameOfClass)
-        addChildViewController(name: StoryBoardName.GeneralInfo, className: XTRGeneralInfoViewController.nameOfClass)
+        addChildViewController(viewController: XTRSpectrumViewController.loadFromNib())
+        addChildViewController(viewController: XTRGeneralInfoViewController.loadFromNib())
 
         children[0].view.isHidden = false
 

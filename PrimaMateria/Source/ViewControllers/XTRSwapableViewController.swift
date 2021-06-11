@@ -23,6 +23,10 @@ class XTRSwapableViewController: UIViewController, XTRSwapable {
         super.init(coder: aDecoder)!
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     func setupUI(element: XTRElementModel) {
         self.element = element
     }

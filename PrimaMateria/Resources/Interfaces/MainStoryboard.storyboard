@@ -31,14 +31,6 @@
             </objects>
             <point key="canvasLocation" x="91" y="-283"/>
         </scene>
-        <!--General Info-->
-        <scene sceneID="pka-pd-IiW">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRGeneralInfoViewController" storyboardName="GeneralInfo" referencedIdentifier="XTRGeneralInfoViewController" id="qsj-bt-nQY" userLabel="General Info" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wgf-sW-jtd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2212.371826171875" y="1013.48876953125"/>
-        </scene>
         <!--Periodic Table-->
         <scene sceneID="Ddh-Zs-rfg">
             <objects>
