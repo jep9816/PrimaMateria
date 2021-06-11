@@ -20,6 +20,7 @@ class XTRPeriodicTableViewController: UIViewController {
     @IBOutlet var navigationBar: UINavigationBar!
     @IBOutlet var molecularCalculatorSwitch: UISwitch!
     @IBOutlet var elementButtonView: UIView!
+    @IBOutlet var molecularCalculatorWrapperView: UIView!
 
     var molecularCalculatorState: Bool = false
     var elementBalloonViewController: XTRElementBalloonViewController!
@@ -35,7 +36,8 @@ class XTRPeriodicTableViewController: UIViewController {
     // MARK: - Internal Methods
 
     func setupPopUp() {
-        elementBalloonViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRElementBalloonViewController.nameOfClass) as? XTRElementBalloonViewController
+        elementBalloonViewController = XTRElementBalloonViewController.loadFromNib()
+
         elementBalloonViewController.preferredContentSize = XTRPeriodicTableViewControllerConfig.popupContentSize
         elementBalloonViewController.modalPresentationStyle = .popover
     }
@@ -63,9 +65,12 @@ class XTRPeriodicTableViewController: UIViewController {
         molecularCalculatorState = aFlag
 
         if aFlag {
-            view.addSubview(molecularCalculatorViewController.view)
+            molecularCalculatorWrapperView.addSubview(molecularCalculatorViewController.view)
+            molecularCalculatorViewController.didMove(toParent: self)
         } else {
+            molecularCalculatorViewController.willMove(toParent: nil)
             molecularCalculatorViewController.view.removeFromSuperview()
+            molecularCalculatorViewController.removeFromParent()
             molecularCalculatorViewController.viewWillDisappear(true)
         }
     }
@@ -111,8 +116,7 @@ class XTRPeriodicTableViewController: UIViewController {
         title = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
         navigationBar.topItem?.title = title
 
-        molecularCalculatorViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMolecularCalculatorViewController.nameOfClass) as? XTRMolecularCalculatorViewController
-        molecularCalculatorViewController.view.frame = CGRect(x: 235, y: 160, width: 380, height: 155)
+        molecularCalculatorViewController = XTRMolecularCalculatorViewController.loadFromNib()
 
         setupPopUp()
         setupRx()

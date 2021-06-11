@@ -24,9 +24,7 @@
                                     <navigationItem title="Graphs" id="4WB-Fc-p8W">
                                         <barButtonItem key="leftBarButtonItem" title="Choose Graph" id="PFl-aJ-df6">
                                             <connections>
-                                                <segue destination="ZuJ-BJ-ZQS" kind="popoverPresentation" identifier="showGraphChoice" popoverAnchorBarButtonItem="PFl-aJ-df6" id="D79-Ap-7hA">
-                                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                                </segue>
+                                                <action selector="showGraphChoice:" destination="9lF-bs-rIl" id="S7U-9P-p3d"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -60,16 +58,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8fd-T4-eQV" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1319.53125" y="-194.53125"/>
-        </scene>
-        <!--Graph Choice-->
-        <scene sceneID="v8X-TB-LbM">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRGraphChoiceViewController" storyboardName="GraphChoice" referencedIdentifier="XTRGraphChoiceViewController" id="ZuJ-BJ-ZQS" userLabel="Graph Choice" sceneMemberID="viewController">
-                    <size key="freeformSize" width="430" height="768"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0hJ-K1-n3M" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1320" y="281"/>
         </scene>
     </scenes>
     <resources>

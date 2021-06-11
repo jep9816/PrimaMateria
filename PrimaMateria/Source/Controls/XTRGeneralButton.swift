@@ -9,6 +9,7 @@
 import UIKit
 
 class XTRLocalizedButton: UIButton {
+ 
     override func awakeFromNib() {
         super.awakeFromNib()
 
@@ -18,6 +19,7 @@ class XTRLocalizedButton: UIButton {
             }
         }
     }
+    
 }
 
 class XTRGeneralButton: XTRLocalizedButton {

@@ -20,6 +20,10 @@ class XTRGraphChoiceViewController: UIViewController {
         super.init(coder: aDecoder)!
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     // MARK: - Internal Methods
 
     // MARK: - Action Methods
@@ -32,8 +36,6 @@ class XTRGraphChoiceViewController: UIViewController {
         let collectionViewFlowLayout = UICollectionViewFlowLayout()
         view.backgroundColor = XTRColorFactory.popupArrowColor
 
-        preferredContentSize = CGSize(width: 450, height: 768)
-
         collectionView.delegate = delegate
         collectionView.dataSource = delegate
         collectionView.backgroundColor = UIColor.clear
@@ -41,6 +43,8 @@ class XTRGraphChoiceViewController: UIViewController {
         collectionViewFlowLayout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         collectionViewFlowLayout.minimumInteritemSpacing = 0
         collectionViewFlowLayout.minimumLineSpacing = 0
+        collectionView.register(XTRGraphChoiceCell.self, forCellWithReuseIdentifier: "Cell")
+
         collectionView.setCollectionViewLayout(collectionViewFlowLayout, animated: XTRPropertiesStore.showTransitionsState)
     }
 

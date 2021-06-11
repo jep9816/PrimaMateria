@@ -23,7 +23,7 @@ class XTRMainViewController: UITabBarController {
 
     func showSplash() {
         if XTRPropertiesStore.splashScreenState {
-            let splashViewController: XTRSplashViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRSplashViewController.nameOfClass) as! XTRSplashViewController
+            let splashViewController: XTRSplashViewController = XTRSplashViewController.loadFromNib()
             view.frame = UIScreen.main.bounds
             splashViewController.view.frame = UIScreen.main.bounds
             view.addSubview(splashViewController.view)

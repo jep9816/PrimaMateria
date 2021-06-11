@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XTRElementBalloonViewController" customModule="PrimaMateria" customModuleProvider="target">
+            <connections>
+                <outlet property="atomicMassLabel" destination="6fv-db-Iim" id="e0Q-jT-0HY"/>
+                <outlet property="atomicNumberLabel" destination="CVS-Lj-3OT" id="wNH-Xl-kEb"/>
+                <outlet property="boilingPointLabel" destination="vMq-Sk-2x5" id="ieg-D6-KXb"/>
+                <outlet property="elementDetailsButton" destination="7PG-fk-aqY" id="ajd-Yz-9Xg"/>
+                <outlet property="elementNameLabel" destination="Rr7-ym-2D9" id="HaY-v0-CVW"/>
+                <outlet property="meltingPointLabel" destination="48I-TB-ppA" id="fQc-oL-QsC"/>
+                <outlet property="view" destination="TYn-dM-tLA" id="mRv-pW-Kxl"/>
+                <outlet property="wrapperView" destination="a1G-qP-JQI" id="21O-4x-wpP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="TYn-dM-tLA">
+            <rect key="frame" x="0.0" y="0.0" width="324" height="210"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1G-qP-JQI">
+                    <rect key="frame" x="2" y="2" width="320" height="167"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="Element Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rr7-ym-2D9">
+                            <rect key="frame" x="0.0" y="-5" width="320" height="48"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="48" id="HMe-Bg-125"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="45" id="iEj-2s-yGv"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="highlightedColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="shadowColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="2" height="2"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="atomicNumber" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cdr-Ro-Lwz" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                            <rect key="frame" x="1" y="44" width="168" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="168" id="dGI-uq-TRF"/>
+                                <constraint firstAttribute="height" constant="30" id="uHN-4I-r1j"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVS-Lj-3OT" userLabel="Atomic Number Value">
+                            <rect key="frame" x="171" y="44" width="148" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="148" id="FpW-Dc-PWA"/>
+                                <constraint firstAttribute="height" constant="30" id="j3d-03-l0z"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="atomicMass" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IBb-tf-Ygl" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                            <rect key="frame" x="1" y="75" width="168" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="dZc-Rp-fDa"/>
+                                <constraint firstAttribute="width" constant="168" id="qrF-xn-PLq"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6fv-db-Iim" userLabel="Atomic Mass Value">
+                            <rect key="frame" x="171" y="75" width="148" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="148" id="Brv-6i-ytk"/>
+                                <constraint firstAttribute="height" constant="30" id="ebj-6H-VJx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="boilingPoint" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyX-5L-mx6" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                            <rect key="frame" x="1" y="106" width="168" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="84J-VU-ScQ"/>
+                                <constraint firstAttribute="width" constant="168" id="hpt-pl-c4B"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMq-Sk-2x5" userLabel="Boiling Point Value">
+                            <rect key="frame" x="171" y="106" width="148" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="148" id="0x5-mf-5SE"/>
+                                <constraint firstAttribute="height" constant="30" id="OWY-Kl-3ze"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="48I-TB-ppA" userLabel="Melting Point Value">
+                            <rect key="frame" x="171" y="137" width="148" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="eLW-eK-ctQ"/>
+                                <constraint firstAttribute="width" constant="148" id="iif-wA-9x5"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="meltingPoint" lineBreakMode="tailTruncation" minimumFontSize="10" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSF-dK-sE7" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                            <rect key="frame" x="1" y="137" width="168" height="30"/>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="168" id="SSg-8b-AXJ"/>
+                                <constraint firstAttribute="height" constant="30" id="ma6-cz-AXC"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="CVS-Lj-3OT" secondAttribute="trailing" constant="1" id="6mf-vS-Lw4"/>
+                        <constraint firstItem="cdr-Ro-Lwz" firstAttribute="leading" secondItem="a1G-qP-JQI" secondAttribute="leading" constant="1" id="DCy-g6-Fm1"/>
+                        <constraint firstItem="nSF-dK-sE7" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="137" id="FO8-Q7-DoZ"/>
+                        <constraint firstAttribute="trailing" secondItem="48I-TB-ppA" secondAttribute="trailing" constant="1" id="GH7-2J-7wm"/>
+                        <constraint firstItem="lyX-5L-mx6" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="106" id="MHU-Sn-qFg"/>
+                        <constraint firstItem="CVS-Lj-3OT" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="44" id="N0H-wp-2Vr"/>
+                        <constraint firstItem="lyX-5L-mx6" firstAttribute="leading" secondItem="a1G-qP-JQI" secondAttribute="leading" constant="1" id="QqZ-ms-Rt8"/>
+                        <constraint firstAttribute="trailing" secondItem="6fv-db-Iim" secondAttribute="trailing" constant="1" id="TIu-tO-1Zf"/>
+                        <constraint firstItem="nSF-dK-sE7" firstAttribute="leading" secondItem="a1G-qP-JQI" secondAttribute="leading" constant="1" id="XLS-9s-hVY"/>
+                        <constraint firstItem="IBb-tf-Ygl" firstAttribute="leading" secondItem="a1G-qP-JQI" secondAttribute="leading" constant="1" id="ZDm-RT-RUf"/>
+                        <constraint firstItem="cdr-Ro-Lwz" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="44" id="apo-zh-H6x"/>
+                        <constraint firstAttribute="trailing" secondItem="Rr7-ym-2D9" secondAttribute="trailing" id="drl-dP-cWI"/>
+                        <constraint firstItem="48I-TB-ppA" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="137" id="lSB-6e-CZE"/>
+                        <constraint firstItem="Rr7-ym-2D9" firstAttribute="leading" secondItem="a1G-qP-JQI" secondAttribute="leading" id="pzo-JN-CWK"/>
+                        <constraint firstItem="IBb-tf-Ygl" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="75" id="qFu-3b-Hja"/>
+                        <constraint firstItem="6fv-db-Iim" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="75" id="t4W-BX-vAN"/>
+                        <constraint firstItem="vMq-Sk-2x5" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="106" id="wfM-b8-7F7"/>
+                        <constraint firstItem="Rr7-ym-2D9" firstAttribute="top" secondItem="a1G-qP-JQI" secondAttribute="top" constant="-5" id="xpl-gy-OGs"/>
+                        <constraint firstAttribute="trailing" secondItem="vMq-Sk-2x5" secondAttribute="trailing" constant="1" id="yjr-c1-wVu"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" tag="3" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="7PG-fk-aqY" customClass="XTRGeneralButton" customModule="PrimaMateria">
+                    <rect key="frame" x="2" y="176" width="320" height="32"/>
+                    <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <accessibility key="accessibilityConfiguration" label="atomicWeight"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="yps-Ig-OT6"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <size key="titleShadowOffset" width="2" height="2"/>
+                    <state key="normal" title="elementDetails">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="oL5-Qa-1YW"/>
+            <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="oL5-Qa-1YW" firstAttribute="trailing" secondItem="a1G-qP-JQI" secondAttribute="trailing" constant="2" id="6yU-SQ-ZHr"/>
+                <constraint firstItem="oL5-Qa-1YW" firstAttribute="trailing" secondItem="7PG-fk-aqY" secondAttribute="trailing" constant="2" id="73n-9O-iyE"/>
+                <constraint firstItem="a1G-qP-JQI" firstAttribute="top" secondItem="oL5-Qa-1YW" secondAttribute="top" constant="2" id="8n9-La-0mz"/>
+                <constraint firstItem="oL5-Qa-1YW" firstAttribute="bottom" secondItem="a1G-qP-JQI" secondAttribute="bottom" constant="41" id="ItX-CA-czI"/>
+                <constraint firstItem="7PG-fk-aqY" firstAttribute="leading" secondItem="oL5-Qa-1YW" secondAttribute="leading" constant="2" id="Puw-1p-SM9"/>
+                <constraint firstItem="oL5-Qa-1YW" firstAttribute="bottom" secondItem="7PG-fk-aqY" secondAttribute="bottom" constant="2" id="btX-qc-oMY"/>
+                <constraint firstItem="a1G-qP-JQI" firstAttribute="leading" secondItem="oL5-Qa-1YW" secondAttribute="leading" constant="2" id="uM0-Ac-sWT"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="833" y="79"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="IBb-tf-Ygl">
+            <size key="intrinsicContentSize" width="97" height="21.5"/>
+        </designable>
+        <designable name="cdr-Ro-Lwz">
+            <size key="intrinsicContentSize" width="119.5" height="21.5"/>
+        </designable>
+        <designable name="lyX-5L-mx6">
+            <size key="intrinsicContentSize" width="94.5" height="21.5"/>
+        </designable>
+        <designable name="nSF-dK-sE7">
+            <size key="intrinsicContentSize" width="100.5" height="21.5"/>
+        </designable>
+    </designables>
+</document>

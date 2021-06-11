@@ -16,6 +16,8 @@ struct XTRGraphViewControllerConfig {
     static let maximumValue = "maximumValue"
     static let minimumValue = "minimumValue"
     static let customTickLocations: [Int] = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
+    static let popupContentSize = CGSize(width: 450.0, height: 768.0)
+    static let buttonSize = CGSize(width: 218.0, height: 46.0)
 }
 
 class XTRGraphViewController: UIViewController {
@@ -27,6 +29,7 @@ class XTRGraphViewController: UIViewController {
     var barChart: CPTXYGraph?
 
     var delegate: XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
+    var graphChoiceViewController: XTRGraphChoiceViewController!
 
     // MARK: - Initialization Methods
 
@@ -34,7 +37,30 @@ class XTRGraphViewController: UIViewController {
         super.init(coder: aDecoder)!
     }
 
+    // MARK: - Action Methods
+
+    @IBAction func showGraphChoice(_ sender: Any) {
+        guard let popoverController = graphChoiceViewController.popoverPresentationController else { return }
+
+        //XTRPropertiesStore.viewTitle = title!
+        //XTRPropertiesStore.atomicNumber = sender.tag
+
+        popoverController.barButtonItem = barButtonItem
+        //popoverController.sourceRect = XTRPeriodicTableViewControllerConfig.buttonRect
+        //popoverController.sourceView = sender
+        popoverController.backgroundColor = XTRColorFactory.popupArrowColor
+
+        present(graphChoiceViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+    }
+
     // MARK: - Internal Methods
+
+    func setupPopUp() {
+        graphChoiceViewController = XTRGraphChoiceViewController.loadFromNib()
+
+        graphChoiceViewController.preferredContentSize = XTRGraphViewControllerConfig.popupContentSize
+        graphChoiceViewController.modalPresentationStyle = .popover
+    }
 
     func creatBarChart() {
         barChart = CPTXYGraph(frame: CGRect.zero)
@@ -184,7 +210,7 @@ class XTRGraphViewController: UIViewController {
 
         delegate.controller = self
         NotificationCenter.default.addObserver(self, selector: #selector(graphSelected(_:)), name: .graphSelectedNotification, object: nil)
-
+        setupPopUp()
         showGraphForChoiceAtIndex(0)
         navigationController?.navigationBar.prefersLargeTitles = true
     }

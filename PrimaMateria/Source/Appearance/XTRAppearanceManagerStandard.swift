@@ -76,9 +76,9 @@ class XTRAppearanceManagerStandard: NSObject {
 
         appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
         appearance.titleTextAttributes = navigationBarTextAttributes
-        appearance.barTintColor = UIColor(patternImage: UIImage(named: "dark-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
+        appearance.barTintColor = UIColor(patternImage: UIImage(named: "seamless-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
         appearance.tintColor = XTRColorFactoryStandard.ghost
-        appearance.backgroundColor = UIColor(patternImage: UIImage(named: "dark-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
+        appearance.backgroundColor = UIColor(patternImage: UIImage(named: "seamless-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
 
         //@property(nonatomic,assign) UIBarStyle barStyle;
         //@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;

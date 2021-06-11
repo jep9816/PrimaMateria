@@ -239,9 +239,8 @@ class XTRPreferencesViewController: UIViewController {
     }
 
     func presentColorPicker(_ sender: UIButton) {
-        let storyboard = UIStoryboard(name: StoryBoardName.ColorPicker, bundle: nil)
-        let colorPicker: XTRColorPickerViewController = storyboard.instantiateViewController(withIdentifier: XTRColorPickerViewController.nameOfClass) as! XTRColorPickerViewController
-
+        let colorPicker = XTRColorPickerViewController.loadFromNib()
+        
         colorPicker.seriesIdentifier = sender.accessibilityIdentifier
         colorPicker.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
         colorPicker.modalPresentationStyle = .popover

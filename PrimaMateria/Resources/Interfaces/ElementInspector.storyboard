@@ -307,14 +307,6 @@
             </objects>
             <point key="canvasLocation" x="1731.87255859375" y="-295.71354389190668"/>
         </scene>
-        <!--Element Balloon-->
-        <scene sceneID="Y8h-pU-lke">
-            <objects>
-                <viewControllerPlaceholder storyboardIdentifier="XTRElementBalloonViewController" storyboardName="ElementBalloon" referencedIdentifier="XTRElementBalloonViewController" id="ecU-w0-hya" userLabel="Element Balloon" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3tW-wK-qwK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1732.3493957519531" y="-131.56235218048093"/>
-        </scene>
     </scenes>
     <designables>
         <designable name="3xC-pG-Jo7">

@@ -60,8 +60,8 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         guard let label = title(for: .disabled) else { return }
 
         let controller = viewController()
-        let content = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRHelpBalloonViewController.nameOfClass) as! XTRHelpBalloonViewController
-
+        let content = XTRHelpBalloonViewController.loadFromNib()
+        
         content.preferredContentSize = CGSize(width: 410, height: 338)
         content.modalPresentationStyle = .popover
         controller.present(content, animated: XTRPropertiesStore.showTransitionsState, completion: nil)

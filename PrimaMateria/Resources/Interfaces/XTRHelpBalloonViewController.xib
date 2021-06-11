@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XTRHelpBalloonViewController" customModule="PrimaMateria" customModuleProvider="target">
+            <connections>
+                <outlet property="backButton" destination="rtH-Ua-EFb" id="H0b-Dz-rcZ"/>
+                <outlet property="forwardButton" destination="2Ie-MC-Heh" id="sdI-Ur-V0Y"/>
+                <outlet property="titleLabel" destination="MhJ-oh-OMp" id="zku-zz-dHS"/>
+                <outlet property="view" destination="pAF-65-RG7" id="c1x-8b-n8U"/>
+                <outlet property="webView" destination="4sh-Xx-TXD" id="Dcn-RP-k4g"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="pAF-65-RG7">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="338"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="help" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhJ-oh-OMp" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                    <rect key="frame" x="2" y="2" width="406" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="rtX-Ji-Rn0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rtH-Ua-EFb">
+                    <rect key="frame" x="5" y="2" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="DE7-yk-xwT"/>
+                        <constraint firstAttribute="height" constant="44" id="Wsk-YU-CGt"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <state key="normal" title="◀︎"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-MC-Heh">
+                    <rect key="frame" x="362" y="2" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="44" id="HTR-05-xVm"/>
+                        <constraint firstAttribute="height" constant="44" id="a5T-WJ-0QW"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <state key="normal" title="▶︎"/>
+                </button>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4sh-Xx-TXD">
+                    <rect key="frame" x="2" y="49" width="406" height="283"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="PTQ-7z-4d0"/>
+            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4sh-Xx-TXD" firstAttribute="leading" secondItem="PTQ-7z-4d0" secondAttribute="leading" constant="2" id="L29-g2-5QX"/>
+                <constraint firstItem="4sh-Xx-TXD" firstAttribute="top" secondItem="PTQ-7z-4d0" secondAttribute="top" constant="49" id="Nwd-8G-0SI"/>
+                <constraint firstItem="PTQ-7z-4d0" firstAttribute="trailing" secondItem="2Ie-MC-Heh" secondAttribute="trailing" constant="4" id="Wlx-xd-NAH"/>
+                <constraint firstItem="PTQ-7z-4d0" firstAttribute="trailing" secondItem="4sh-Xx-TXD" secondAttribute="trailing" constant="2" id="Xnb-GK-Z8K"/>
+                <constraint firstItem="rtH-Ua-EFb" firstAttribute="leading" secondItem="PTQ-7z-4d0" secondAttribute="leading" constant="5" id="g4w-NB-ts8"/>
+                <constraint firstItem="MhJ-oh-OMp" firstAttribute="leading" secondItem="PTQ-7z-4d0" secondAttribute="leading" constant="2" id="hVh-mP-yzv"/>
+                <constraint firstItem="2Ie-MC-Heh" firstAttribute="top" secondItem="PTQ-7z-4d0" secondAttribute="top" constant="2" id="luQ-0n-ax2"/>
+                <constraint firstItem="PTQ-7z-4d0" firstAttribute="bottom" secondItem="4sh-Xx-TXD" secondAttribute="bottom" constant="6" id="qCa-YL-TT6"/>
+                <constraint firstItem="PTQ-7z-4d0" firstAttribute="trailing" secondItem="MhJ-oh-OMp" secondAttribute="trailing" constant="2" id="uyl-uj-U4b"/>
+                <constraint firstItem="MhJ-oh-OMp" firstAttribute="top" secondItem="PTQ-7z-4d0" secondAttribute="top" constant="2" id="yub-wt-Ieq"/>
+                <constraint firstItem="rtH-Ua-EFb" firstAttribute="top" secondItem="PTQ-7z-4d0" secondAttribute="top" constant="2" id="yzW-va-j2c"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="833" y="79"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="MhJ-oh-OMp">
+            <size key="intrinsicContentSize" width="41" height="24"/>
+        </designable>
+    </designables>
+</document>
