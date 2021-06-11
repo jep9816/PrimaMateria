@@ -16,8 +16,8 @@ struct XTRGraphViewControllerConfig {
     static let maximumValue = "maximumValue"
     static let minimumValue = "minimumValue"
     static let customTickLocations: [Int] = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
-    static let popupContentSize = CGSize(width: 450.0, height: 768.0)
-    static let buttonSize = CGSize(width: 218.0, height: 46.0)
+    static let buttonSize = CGSize(width: 240.0, height: 60.0)
+    static let popupContentSize = CGSize(width: (buttonSize.width + 6) * 3, height: (buttonSize.height + 4) * 10)
 }
 
 class XTRGraphViewController: UIViewController {
