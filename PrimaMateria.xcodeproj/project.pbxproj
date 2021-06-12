@@ -1040,16 +1040,15 @@
 		8012807520F0271F00ABC706 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0639C43026757AA700B58D15 /* Interfaces */,
-				80AB29EE2128CE0B00B58AB3 /* Images.xcassets */,
-				8012838620F02F9B00ABC706 /* ElementTipHelp */,
-				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
-				8012838520F02F9B00ABC706 /* SupportingFiles */,
-				809875FB210A867400AB3B00 /* globe */,
 				806A3969211902590074ED28 /* Images */,
+				0639C43026757AA700B58D15 /* Interfaces */,
 				8012838A20F032A000ABC706 /* Misc */,
 				8012807820F0271F00ABC706 /* Scenes */,
 				0853E2062114D20100CA092B /* Shaders */,
+				8012838620F02F9B00ABC706 /* ElementTipHelp */,
+				80AB29EE2128CE0B00B58AB3 /* Images.xcassets */,
+				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
+				8012838520F02F9B00ABC706 /* SupportingFiles */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1097,6 +1096,7 @@
 		806A3969211902590074ED28 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				809875FB210A867400AB3B00 /* globe */,
 				806A39672117B3850074ED28 /* brushed-dark-steel.png */,
 				806A39652117B2B10074ED28 /* seamless-metal-texture.png */,
 				806A395F2117AEE60074ED28 /* dark-metal-texture.png */,
