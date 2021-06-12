@@ -96,10 +96,19 @@ extension UIViewController {
         
         let elementInspector: XTRElementInspectorViewController = XTRElementInspectorViewController.loadFromNib()
         
-        elementInspector.modalPresentationStyle = .fullScreen
-        elementInspector.modalTransitionStyle = .crossDissolve
+        if UIScreen.main.bounds.width == 1024 && UIScreen.main.bounds.height == 768 {
+            elementInspector.modalPresentationStyle = .fullScreen
+
+        } else {
+            elementInspector.modalPresentationStyle = .formSheet
+            elementInspector.preferredContentSize = XTRElementInspectorControllerConfig.popupContentSize
+        }
         
-        controller.present(elementInspector, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+        elementInspector.modalTransitionStyle = .crossDissolve
+
+        controller.present(elementInspector, animated: XTRPropertiesStore.showTransitionsState, completion: {
+            elementInspector.presentationController?.presentedView?.gestureRecognizers?[0].isEnabled = false
+        })
     }
     
 }

@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+struct XTRElementInspectorControllerConfig {
+    static let popupContentSize = CGSize(width: 1024, height: 768)
+}
+
 class XTRElementInspectorViewController: XTRSwapableViewController {
 
     @IBOutlet var segmentedControl: UISegmentedControl!
@@ -213,7 +217,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
 
         let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(nextElement(_:)))
         let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
-
+        
         setupRx()
 
         addChildViewController(viewController: XTRAtomicStructureViewController.loadFromNib())
@@ -235,7 +239,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-        barButtonItem.title = "◀︎ \(XTRPropertiesStore.viewTitle)"
+        barButtonItem.title = NSLocalizedString("Close", comment: "")
         element = XTRDataSource.sharedInstance.element(index: XTRPropertiesStore.atomicNumber)
         setupUI(element: element!)
     }

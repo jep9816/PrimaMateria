@@ -62,7 +62,7 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         let controller = viewController()
         let content = XTRHelpBalloonViewController.loadFromNib()
         
-        content.preferredContentSize = CGSize(width: 410, height: 338)
+        content.preferredContentSize = XTRHelpBalloonViewControllerConfig.preferredContentSize
         content.modalPresentationStyle = .popover
         controller.present(content, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
         let presentationController = content.popoverPresentationController

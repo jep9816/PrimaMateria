@@ -1,10 +1,10 @@
 html body {
     color: #000000;
     font-family: Helvetica, Verdana, sans-serif, Arial, Geneva, serif;
-    font-size: 14px; 
+    font-size: 16pt;
     margin: 0px;
     padding: 0px;
-    background-color: #dddd00;
+    background-color: #fcfc95;
     width: 99%;
     margin-left: 3px;
     margin-right: 3px;
@@ -17,6 +17,7 @@ html body {
     height: 26px;
     padding-top: 3px;
     padding-left: 3px;
+    width: 100%;
 }
 
 a:link, a:visited, a:hover, a:active {
@@ -46,7 +47,7 @@ p a, ol a, ul a {
 }
 
 p:first-letter {
-    font-size: 16px; 
+    font-size: 16pt;
     font-weight: bold;
 }
 
@@ -65,7 +66,7 @@ h3 {
     background-color: #cccccc;
     margin: 0;
     padding: 3px 0 0 3px;
-    height: 20px;
+    height: 30px;
 }
 
 
@@ -78,14 +79,14 @@ h3 a {
     background-color: #333333;
     color: #ffffff;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16pt;
     padding: 3px;
 }
 
 .seealso table tr th {
     background-color: #333333;
     color: #eeeeee;
-    font-size: 16px; 
+    font-size: 16pt;
     font-weight: bold;
     border-bottom: solid 2px #ffffff;
 }
@@ -97,7 +98,7 @@ h3 a {
 .seealso a {
     background-color: #cccccc;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 16pt;
 }
 
 table {
@@ -109,15 +110,15 @@ table {
 }
 
 table tr td {
-    font-size: 14px; 
+    font-size: 16pt;
     padding-left: 5px;
     padding-right: 5px;
-    height: 20px;
+    height: 30px;
 }
 
 table tr td a {
     background-color: transparent;
-    font-size: 14px; 
+    font-size: 16pt;
     font-weight: bold;
 }
 

@@ -53,6 +53,7 @@ class XTRElementBalloonViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         wrapperView.cornerRadius = VIEW_CORNER_RADIUS
         wrapperView.clipsToBounds = true
 
@@ -63,6 +64,7 @@ class XTRElementBalloonViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         setupUI()
     }
 

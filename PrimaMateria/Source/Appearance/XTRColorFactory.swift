@@ -281,7 +281,7 @@ class XTRColorFactory: NSObject {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return UIColor.black
         } else {
-            return UIColor.red
+            return UIColor.gray
         }
     }
 

@@ -90,7 +90,7 @@ public class LocaleManager: NSObject {
         }
         if animated {
             windows.first.map {
-                UIView.transition(with: $0, duration: 0.55, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+                UIView.transition(with: $0, duration: 0.55, options: [.curveEaseInOut, .transitionCrossDissolve], animations: nil, completion: nil)
             }
         }
     }

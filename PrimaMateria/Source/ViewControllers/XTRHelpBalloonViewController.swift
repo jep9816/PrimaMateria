@@ -10,6 +10,10 @@ import WebKit
 import RxSwift
 import RxCocoa
 
+struct XTRHelpBalloonViewControllerConfig {
+    static let preferredContentSize = CGSize(width: 500, height: 400)
+}
+
 class XTRHelpBalloonViewController: UIViewController {
 
     @IBOutlet var backButton: UIButton!
