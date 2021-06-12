@@ -293,7 +293,7 @@
                 <constraint firstItem="NTj-1Q-DKI" firstAttribute="trailing" secondItem="0YI-JB-6Ca" secondAttribute="trailing" id="LSi-UQ-k4O"/>
                 <constraint firstItem="0YI-JB-6Ca" firstAttribute="leading" secondItem="NTj-1Q-DKI" secondAttribute="leading" id="aLa-gB-hDX"/>
             </constraints>
-            <point key="canvasLocation" x="11" y="-603"/>
+            <point key="canvasLocation" x="-521" y="-739"/>
         </view>
     </objects>
     <designables>

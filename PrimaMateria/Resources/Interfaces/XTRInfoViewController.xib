@@ -48,7 +48,7 @@
                 <constraint firstItem="lWF-tg-NPn" firstAttribute="bottom" secondItem="4Vd-Da-ohB" secondAttribute="bottom" constant="5" id="knu-SD-vdk"/>
                 <constraint firstItem="4Vd-Da-ohB" firstAttribute="top" secondItem="lWF-tg-NPn" secondAttribute="top" constant="49" id="zA8-IQ-4Ky"/>
             </constraints>
-            <point key="canvasLocation" x="11" y="-603"/>
+            <point key="canvasLocation" x="-16" y="-760"/>
         </view>
     </objects>
 </document>

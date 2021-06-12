@@ -198,7 +198,7 @@
             <viewLayoutGuide key="safeArea" id="Pnc-i8-Cgx"/>
             <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="11" y="-603"/>
+            <point key="canvasLocation" x="-12" y="-748"/>
         </view>
     </objects>
     <designables>

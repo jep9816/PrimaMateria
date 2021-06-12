@@ -180,7 +180,7 @@
             <viewLayoutGuide key="safeArea" id="bLN-Lk-upE"/>
             <color key="backgroundColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-136" y="688"/>
+            <point key="canvasLocation" x="-342" y="653"/>
         </view>
     </objects>
     <designables>

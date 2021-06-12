@@ -2469,7 +2469,7 @@
                 <constraint firstItem="ooW-cf-esc" firstAttribute="top" secondItem="AOf-pV-5Ba" secondAttribute="top" id="hQf-44-EPc"/>
                 <constraint firstItem="mOE-wh-txv" firstAttribute="centerX" secondItem="AOf-pV-5Ba" secondAttribute="centerX" id="nOh-tS-yeH"/>
             </constraints>
-            <point key="canvasLocation" x="11" y="-603"/>
+            <point key="canvasLocation" x="-553" y="-1128"/>
         </view>
     </objects>
     <designables>

@@ -202,7 +202,7 @@
             <viewLayoutGuide key="safeArea" id="t7G-6i-Spq"/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="83" y="-603"/>
+            <point key="canvasLocation" x="-684" y="-1729"/>
         </view>
     </objects>
 </document>

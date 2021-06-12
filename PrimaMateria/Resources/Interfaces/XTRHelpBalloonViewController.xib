@@ -74,7 +74,7 @@
                 <constraint firstItem="rtH-Ua-EFb" firstAttribute="top" secondItem="PTQ-7z-4d0" secondAttribute="top" constant="2" id="yzW-va-j2c"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="833" y="79"/>
+            <point key="canvasLocation" x="-26" y="-19"/>
         </view>
     </objects>
     <designables>
