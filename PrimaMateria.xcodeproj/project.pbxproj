@@ -21,10 +21,6 @@
 		06C1CAD62673B95300D2AE17 /* XTRElementPropertiesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAD42673B95300D2AE17 /* XTRElementPropertiesViewController.xib */; };
 		06C1CADE2673C64800D2AE17 /* XTRElementInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CADB2673C64800D2AE17 /* XTRElementInspectorViewController.xib */; };
 		06C1CADF2673C64800D2AE17 /* XTRElementInspectorViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CADB2673C64800D2AE17 /* XTRElementInspectorViewController.xib */; };
-		06C1CAE226741F6500D2AE17 /* XTRHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CAE026741F6500D2AE17 /* XTRHomeViewController.swift */; };
-		06C1CAE326741F6500D2AE17 /* XTRHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CAE026741F6500D2AE17 /* XTRHomeViewController.swift */; };
-		06C1CAE426741F6500D2AE17 /* XTRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAE126741F6500D2AE17 /* XTRHomeViewController.xib */; };
-		06C1CAE526741F6500D2AE17 /* XTRHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAE126741F6500D2AE17 /* XTRHomeViewController.xib */; };
 		06C1CAE7267431E300D2AE17 /* XTRPeriodicTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */; };
 		06C1CAE8267431E300D2AE17 /* XTRPeriodicTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */; };
 		06C1CAF02674373C00D2AE17 /* XTRMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CAEF2674373C00D2AE17 /* XTRMainViewController.swift */; };
@@ -37,6 +33,18 @@
 		06C1CAFD26743C0900D2AE17 /* XTRPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */; };
 		06C1CAFF26743C3400D2AE17 /* XTRElementListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */; };
 		06C1CB0026743C3400D2AE17 /* XTRElementListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */; };
+		06C1CB412674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB402674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift */; };
+		06C1CB422674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB402674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift */; };
+		06C1CB442674F63600D2AE17 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CB432674F63600D2AE17 /* MainStoryboard.storyboard */; };
+		06C1CB452674F63600D2AE17 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CB432674F63600D2AE17 /* MainStoryboard.storyboard */; };
+		06C1CB4A2674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CB482674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib */; };
+		06C1CB4B2674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CB482674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib */; };
+		06C1CB4C2674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CB492674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib */; };
+		06C1CB4D2674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CB492674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib */; };
+		06C1CB4F2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */; };
+		06C1CB502675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */; };
+		06C1CB522675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */; };
+		06C1CB532675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */; };
 		06E83DB026714862005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DAF26714862005F7092 /* CorePlot */; };
 		06E83DB226714A63005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DB126714A63005F7092 /* CorePlot */; };
 		06F0BC482672CC7C00B06011 /* XTRSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */; };
@@ -120,7 +128,6 @@
 		8012806620F0270500ABC706 /* XTRWikipediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */; };
 		8012806720F0270500ABC706 /* XTRAtomicStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */; };
 		8012806820F0270500ABC706 /* XTRHelpBalloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */; };
-		8012806920F0270500ABC706 /* XTRHomeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801B20F0270400ABC706 /* XTRHomeViewControllerDelegate.swift */; };
 		8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */; };
 		8012806B20F0270500ABC706 /* XTRInfoViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */; };
 		8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */; };
@@ -311,7 +318,6 @@
 		80AB2A382128CEAD00B58AB3 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */; };
 		80AB2A392128CEAD00B58AB3 /* XTRBarPlot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FFA20F0270400ABC706 /* XTRBarPlot.swift */; };
 		80AB2A3A2128CEAD00B58AB3 /* XTRPopoutAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */; };
-		80AB2A3B2128CEAD00B58AB3 /* XTRHomeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801B20F0270400ABC706 /* XTRHomeViewControllerDelegate.swift */; };
 		80AB2A3C2128CEAD00B58AB3 /* XTRGraphChoiceViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */; };
 		80AB2A3D2128CEAD00B58AB3 /* XTRAtomicStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */; };
 		80AB2A3E2128CEAD00B58AB3 /* XTRPropertiesStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */; };
@@ -436,14 +442,18 @@
 		06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRAtomicStructureViewController.xib; sourceTree = "<group>"; };
 		06C1CAD42673B95300D2AE17 /* XTRElementPropertiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRElementPropertiesViewController.xib; sourceTree = "<group>"; };
 		06C1CADB2673C64800D2AE17 /* XTRElementInspectorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRElementInspectorViewController.xib; sourceTree = "<group>"; };
-		06C1CAE026741F6500D2AE17 /* XTRHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRHomeViewController.swift; sourceTree = "<group>"; };
-		06C1CAE126741F6500D2AE17 /* XTRHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRHomeViewController.xib; sourceTree = "<group>"; };
 		06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRPeriodicTableViewController.xib; sourceTree = "<group>"; };
 		06C1CAEF2674373C00D2AE17 /* XTRMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMainViewController.swift; sourceTree = "<group>"; };
 		06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRGraphViewController.xib; sourceTree = "<group>"; };
 		06C1CAF826743A9A00D2AE17 /* XTRInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRInfoViewController.xib; sourceTree = "<group>"; };
 		06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRPreferencesViewController.xib; sourceTree = "<group>"; };
 		06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRElementListViewController.xib; sourceTree = "<group>"; };
+		06C1CB402674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMainViewControllerDelegate.swift; sourceTree = "<group>"; };
+		06C1CB432674F63600D2AE17 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		06C1CB482674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRElementPropertiesChemicalViewController.xib; sourceTree = "<group>"; };
+		06C1CB492674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRElementPropertiesPhysicalViewController.xib; sourceTree = "<group>"; };
+		06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesChemicalViewController.swift; sourceTree = "<group>"; };
+		06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesPhysicalViewController.swift; sourceTree = "<group>"; };
 		06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRSplashViewController.xib; sourceTree = "<group>"; };
 		06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRGraphChoiceViewController.xib; sourceTree = "<group>"; };
 		06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRColorPickerViewController.xib; sourceTree = "<group>"; };
@@ -515,7 +525,6 @@
 		8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewController.swift; sourceTree = "<group>"; };
 		8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAtomicStructureViewController.swift; sourceTree = "<group>"; };
 		8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHelpBalloonViewController.swift; sourceTree = "<group>"; };
-		8012801B20F0270400ABC706 /* XTRHomeViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHomeViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectrumViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRInfoViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -695,6 +704,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06C1CB462674F89B00D2AE17 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				06C1CB432674F63600D2AE17 /* MainStoryboard.storyboard */,
+				801281E420F0272000ABC706 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		06C1CB472674F8B300D2AE17 /* Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */,
+				06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */,
+				06FC7DB4267299BA00DF9801 /* XTRElementBalloonViewController.xib */,
+				06C1CADB2673C64800D2AE17 /* XTRElementInspectorViewController.xib */,
+				06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */,
+				06C1CB482674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib */,
+				06C1CB492674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib */,
+				06C1CAD42673B95300D2AE17 /* XTRElementPropertiesViewController.xib */,
+				06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */,
+				06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */,
+				06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */,
+				06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */,
+				06C1CAF826743A9A00D2AE17 /* XTRInfoViewController.xib */,
+				06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */,
+				06C1CACE2673B2DE00D2AE17 /* XTRNuclidesIsotopesViewController.xib */,
+				06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */,
+				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
+				06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */,
+				06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */,
+				06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */,
+			);
+			name = Xibs;
+			sourceTree = "<group>";
+		};
 		0853E2062114D20100CA092B /* Shaders */ = {
 			isa = PBXGroup;
 			children = (
@@ -848,12 +893,13 @@
 				8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */,
 				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
 				8012801020F0270400ABC706 /* XTRElementListViewController.swift */,
+				06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */,
+				06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */,
 				8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */,
 				8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */,
 				8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */,
 				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
 				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
-				06C1CAE026741F6500D2AE17 /* XTRHomeViewController.swift */,
 				8012801220F0270400ABC706 /* XTRInfoViewController.swift */,
 				06C1CAEF2674373C00D2AE17 /* XTRMainViewController.swift */,
 				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
@@ -873,12 +919,12 @@
 		8012801A20F0270400ABC706 /* Delegates */ = {
 			isa = PBXGroup;
 			children = (
+				06C1CB402674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift */,
 				8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */,
 				80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */,
 				8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */,
 				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
 				8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */,
-				8012801B20F0270400ABC706 /* XTRHomeViewControllerDelegate.swift */,
 				8012802120F0270400ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift */,
 				8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */,
 				8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */,
@@ -946,26 +992,8 @@
 		801281E020F0272000ABC706 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				801281E420F0272000ABC706 /* LaunchScreen.storyboard */,
-				06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */,
-				06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */,
-				06FC7DB4267299BA00DF9801 /* XTRElementBalloonViewController.xib */,
-				06C1CADB2673C64800D2AE17 /* XTRElementInspectorViewController.xib */,
-				06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */,
-				06C1CAD42673B95300D2AE17 /* XTRElementPropertiesViewController.xib */,
-				06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */,
-				06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */,
-				06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */,
-				06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */,
-				06C1CAE126741F6500D2AE17 /* XTRHomeViewController.xib */,
-				06C1CAF826743A9A00D2AE17 /* XTRInfoViewController.xib */,
-				06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */,
-				06C1CACE2673B2DE00D2AE17 /* XTRNuclidesIsotopesViewController.xib */,
-				06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */,
-				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
-				06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */,
-				06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */,
-				06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */,
+				06C1CB462674F89B00D2AE17 /* Storyboards */,
+				06C1CB472674F8B300D2AE17 /* Xibs */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -1224,6 +1252,7 @@
 				80987762210A8B0800AB3B00 /* Globe71.png in Resources */,
 				80987724210A8B0800AB3B00 /* Globe09.png in Resources */,
 				8098772E210A8B0800AB3B00 /* Globe19.png in Resources */,
+				06C1CB4D2674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib in Resources */,
 				80987732210A8B0800AB3B00 /* Globe23.png in Resources */,
 				80987728210A8B0800AB3B00 /* Globe13.png in Resources */,
 				8098773D210A8B0800AB3B00 /* Globe34.png in Resources */,
@@ -1236,10 +1265,12 @@
 				8098774E210A8B0800AB3B00 /* Globe51.png in Resources */,
 				8098773C210A8B0800AB3B00 /* Globe33.png in Resources */,
 				80987729210A8B0800AB3B00 /* Globe14.png in Resources */,
+				06C1CB4B2674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib in Resources */,
 				801281FC20F0272000ABC706 /* Orthorhombic.scn in Resources */,
 				80987739210A8B0800AB3B00 /* Globe30.png in Resources */,
 				06C1CAD02673B2DE00D2AE17 /* XTRNuclidesIsotopesViewController.xib in Resources */,
 				06FC7DB926729F0300DF9801 /* XTRHelpBalloonViewController.xib in Resources */,
+				06C1CB452674F63600D2AE17 /* MainStoryboard.storyboard in Resources */,
 				8098773B210A8B0800AB3B00 /* Globe32.png in Resources */,
 				80987743210A8B0800AB3B00 /* Globe40.png in Resources */,
 				80987757210A8B0800AB3B00 /* Globe60.png in Resources */,
@@ -1283,7 +1314,6 @@
 				06FC7DB6267299BA00DF9801 /* XTRElementBalloonViewController.xib in Resources */,
 				0853E20C2114D20100CA092B /* SHKEmbossGray.fsh in Resources */,
 				80987722210A8B0800AB3B00 /* Globe07.png in Resources */,
-				06C1CAE526741F6500D2AE17 /* XTRHomeViewController.xib in Resources */,
 				8012838720F02F9B00ABC706 /* PrimaMateriaHelp in Resources */,
 				8098772F210A8B0800AB3B00 /* Globe20.png in Resources */,
 				06C1CACB2673ABD300D2AE17 /* XTRSpectrumViewController.xib in Resources */,
@@ -1344,6 +1374,7 @@
 				80AB2A4E2128CEAD00B58AB3 /* Globe65.png in Resources */,
 				80AB2A4F2128CEAD00B58AB3 /* Globe54.png in Resources */,
 				80AB2A512128CEAD00B58AB3 /* Hexagonal.scn in Resources */,
+				06C1CB4A2674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib in Resources */,
 				80AB2A522128CEAD00B58AB3 /* Globe64.png in Resources */,
 				80AB2A532128CEAD00B58AB3 /* Globe22.png in Resources */,
 				80AB2A542128CEAD00B58AB3 /* Globe67.png in Resources */,
@@ -1360,9 +1391,9 @@
 				80AB2A5E2128CEAD00B58AB3 /* Cubic.scn in Resources */,
 				06C1CADE2673C64800D2AE17 /* XTRElementInspectorViewController.xib in Resources */,
 				80AB2A5F2128CEAD00B58AB3 /* Globe49.png in Resources */,
-				06C1CAE426741F6500D2AE17 /* XTRHomeViewController.xib in Resources */,
 				80AB2A602128CEAD00B58AB3 /* Globe43.png in Resources */,
 				80AB2A612128CEAD00B58AB3 /* Globe59.png in Resources */,
+				06C1CB4C2674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib in Resources */,
 				80AB2A632128CEAD00B58AB3 /* Globe52.png in Resources */,
 				80AB2A642128CEAD00B58AB3 /* Globe51.png in Resources */,
 				80AB2A672128CEAD00B58AB3 /* Globe33.png in Resources */,
@@ -1403,6 +1434,7 @@
 				80AB2A872128CEAD00B58AB3 /* Globe38.png in Resources */,
 				06C1CAF926743A9A00D2AE17 /* XTRInfoViewController.xib in Resources */,
 				80AB2A882128CEAD00B58AB3 /* Globe08.png in Resources */,
+				06C1CB442674F63600D2AE17 /* MainStoryboard.storyboard in Resources */,
 				80AB2A892128CEAD00B58AB3 /* LaunchScreen.storyboard in Resources */,
 				80AB2A8A2128CEAD00B58AB3 /* dark-metal-texture.png in Resources */,
 				06FC7DBB2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib in Resources */,
@@ -1516,6 +1548,7 @@
 				8012805820F0270500ABC706 /* XTRSlideDownAnimationController.swift in Sources */,
 				06C1CAF12674373C00D2AE17 /* XTRMainViewController.swift in Sources */,
 				8012805620F0270500ABC706 /* XTRGraphViewController.swift in Sources */,
+				06C1CB422674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift in Sources */,
 				8012837D20F02D6100ABC706 /* XTRImageFactory.swift in Sources */,
 				8012804920F0270500ABC706 /* XTRLocalizedLabel.swift in Sources */,
 				8012804520F0270500ABC706 /* NSObject+General.swift in Sources */,
@@ -1533,7 +1566,6 @@
 				8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */,
 				8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */,
 				8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */,
-				06C1CAE326741F6500D2AE17 /* XTRHomeViewController.swift in Sources */,
 				8012806820F0270500ABC706 /* XTRHelpBalloonViewController.swift in Sources */,
 				8012806E20F0270500ABC706 /* XTRElementListViewControllerDelegate.swift in Sources */,
 				8012837E20F02D6100ABC706 /* XTRAppearanceManagerClassic.swift in Sources */,
@@ -1545,11 +1577,13 @@
 				8012805B20F0270500ABC706 /* XTRPeriodicTableViewController.swift in Sources */,
 				8012806B20F0270500ABC706 /* XTRInfoViewControllerDelegate.swift in Sources */,
 				8012804620F0270500ABC706 /* UIView+LayerFlattening.swift in Sources */,
+				06C1CB502675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift in Sources */,
 				8012806620F0270500ABC706 /* XTRWikipediaViewController.swift in Sources */,
 				8012806220F0270500ABC706 /* XTRElementBalloonViewController.swift in Sources */,
 				8012805F20F0270500ABC706 /* XTRElementListViewController.swift in Sources */,
 				8012805D20F0270500ABC706 /* XTRElementPropertiesViewController.swift in Sources */,
 				8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
+				06C1CB532675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */,
 				8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */,
 				8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */,
@@ -1568,7 +1602,6 @@
 				8012806D20F0270500ABC706 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */,
 				8012804A20F0270500ABC706 /* XTRBarPlot.swift in Sources */,
 				8012803220F0270500ABC706 /* XTRPopoutAnimationController.swift in Sources */,
-				8012806920F0270500ABC706 /* XTRHomeViewControllerDelegate.swift in Sources */,
 				80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */,
 				8012806720F0270500ABC706 /* XTRAtomicStructureViewController.swift in Sources */,
 				06FC7DB32672986700DF9801 /* UIViewController+Extensions.swift in Sources */,
@@ -1604,6 +1637,7 @@
 				80AB2A052128CEAD00B58AB3 /* XTRSlideDownAnimationController.swift in Sources */,
 				06C1CAF02674373C00D2AE17 /* XTRMainViewController.swift in Sources */,
 				80AB2A062128CEAD00B58AB3 /* XTRGraphViewController.swift in Sources */,
+				06C1CB412674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift in Sources */,
 				80AB2A072128CEAD00B58AB3 /* XTRImageFactory.swift in Sources */,
 				80AB2A082128CEAD00B58AB3 /* XTRLocalizedLabel.swift in Sources */,
 				80AB2A092128CEAD00B58AB3 /* NSObject+General.swift in Sources */,
@@ -1621,7 +1655,6 @@
 				80AB2A132128CEAD00B58AB3 /* XTRColorFactory.swift in Sources */,
 				80AB2A142128CEAD00B58AB3 /* XTRColorFactoryClassic.swift in Sources */,
 				80AB2A152128CEAD00B58AB3 /* XTRVaporPressurenModel.swift in Sources */,
-				06C1CAE226741F6500D2AE17 /* XTRHomeViewController.swift in Sources */,
 				80AB2A172128CEAD00B58AB3 /* XTRHelpBalloonViewController.swift in Sources */,
 				80AB2A182128CEAD00B58AB3 /* XTRElementListViewControllerDelegate.swift in Sources */,
 				80AB2A192128CEAD00B58AB3 /* XTRAppearanceManagerClassic.swift in Sources */,
@@ -1633,11 +1666,13 @@
 				80AB2A1F2128CEAD00B58AB3 /* XTRPeriodicTableViewController.swift in Sources */,
 				80AB2A202128CEAD00B58AB3 /* XTRInfoViewControllerDelegate.swift in Sources */,
 				80AB2A212128CEAD00B58AB3 /* UIView+LayerFlattening.swift in Sources */,
+				06C1CB4F2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift in Sources */,
 				80AB2A222128CEAD00B58AB3 /* XTRWikipediaViewController.swift in Sources */,
 				80AB2A232128CEAD00B58AB3 /* XTRElementBalloonViewController.swift in Sources */,
 				80AB2A242128CEAD00B58AB3 /* XTRElementListViewController.swift in Sources */,
 				80AB2A252128CEAD00B58AB3 /* XTRElementPropertiesViewController.swift in Sources */,
 				80AB2A262128CEAD00B58AB3 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
+				06C1CB522675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */,
 				80AB2A272128CEAD00B58AB3 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
 				80AB2A282128CEAD00B58AB3 /* XTRElementButton.swift in Sources */,
 				80AB2A292128CEAD00B58AB3 /* XTRColorFactoryStandard.swift in Sources */,
@@ -1656,7 +1691,6 @@
 				80AB2A382128CEAD00B58AB3 /* XTRHelpBalloonViewControllerDelegate.swift in Sources */,
 				80AB2A392128CEAD00B58AB3 /* XTRBarPlot.swift in Sources */,
 				80AB2A3A2128CEAD00B58AB3 /* XTRPopoutAnimationController.swift in Sources */,
-				80AB2A3B2128CEAD00B58AB3 /* XTRHomeViewControllerDelegate.swift in Sources */,
 				80AB2A3C2128CEAD00B58AB3 /* XTRGraphChoiceViewControllerDelegate.swift in Sources */,
 				80AB2A3D2128CEAD00B58AB3 /* XTRAtomicStructureViewController.swift in Sources */,
 				06FC7DB22672986700DF9801 /* UIViewController+Extensions.swift in Sources */,

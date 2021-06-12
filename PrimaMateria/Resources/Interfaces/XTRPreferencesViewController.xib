@@ -47,7 +47,7 @@
                         <navigationItem title="preferences" id="gi9-So-ZSh"/>
                     </items>
                 </navigationBar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaH-Zh-JGb" customClass="XTRBackgroundView" customModule="PrimaMateria">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaH-Zh-JGb">
                     <rect key="frame" x="0.0" y="44" width="1024" height="768"/>
                     <subviews>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cKN-Al-yp6" customClass="XTRDividerLabel" customModule="PrimaMateria">

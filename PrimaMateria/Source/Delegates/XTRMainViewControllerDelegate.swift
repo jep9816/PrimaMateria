@@ -6,15 +6,15 @@
 //  Copyright ©2021 xTrensa. All rights reserved.
 //
 
+import Foundation
 import UIKit
 
-class XTRHomeViewControllerDelegate: NSObject, UITabBarControllerDelegate {
+class XTRMainViewControllerDelegate: NSObject, UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let defaultState = XTRPropertiesStore.showTransitionsState
 
         // TODO: add ability to choose transition type
-        // In preferences
         if defaultState {
             // return XTRPopoutAnimationController()
             // return XTRSlideDownAnimationController()

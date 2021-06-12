@@ -15,8 +15,8 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
 
-//        LocaleManager.setup()
-//        LocaleManager.apply(locale: Locale(identifier: XTRPropertiesStore.currentLanguageCode))
+        LocaleManager.setup()
+        LocaleManager.apply(locale: Locale(identifier: XTRPropertiesStore.currentLanguageCode))
 
         return true
     }

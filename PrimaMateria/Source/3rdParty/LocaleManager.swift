@@ -78,11 +78,11 @@ public class LocaleManager: NSObject {
     internal class func reloadWindows(animated: Bool = true) {
         let windows = UIApplication.shared.windows
         for window in windows {
-//            if let rootViewController = self.rootViewController?(window) {
-//                window.rootViewController = rootViewController
-//            } else if let storyboard = window.rootViewController?.storyboard, let id = window.rootViewController?.value(forKey: "storyboardIdentifier") as? String {
-//                window.rootViewController = storyboard.instantiateViewController(withIdentifier: id)
-//            }
+            if let rootViewController = self.rootViewController?(window) {
+                window.rootViewController = rootViewController
+            } else if let storyboard = window.rootViewController?.storyboard, let id = window.rootViewController?.value(forKey: "storyboardIdentifier") as? String {
+                window.rootViewController = storyboard.instantiateViewController(withIdentifier: id)
+            }
             for view in (window.subviews) {
                 view.removeFromSuperview()
                 window.addSubview(view)

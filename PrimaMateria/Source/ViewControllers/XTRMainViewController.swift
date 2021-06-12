@@ -13,7 +13,7 @@ class XTRMainViewController: UITabBarController {
 
     // MARK: - Initialization Methods
 
-    /*private var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
+    private var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -36,13 +36,30 @@ class XTRMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let periodicTableViewController = XTRPeriodicTableViewController.loadFromNib()
+        let elementListViewController = XTRElementListViewController.loadFromNib()
+        let graphsViewController = XTRGraphViewController.loadFromNib()
+        let preferencesViewController = XTRPreferencesViewController.loadFromNib()
+        let infoViewController = XTRInfoViewController.loadFromNib()
+
+        createTab(viewController: periodicTableViewController, tabTitle: "periodicTable", imageName: "Tab01")
+        createTab(viewController: elementListViewController, tabTitle: "elementList", imageName: "Tab02")
+        createTab(viewController: graphsViewController, tabTitle: "graphs", imageName: "Tab03")
+        createTab(viewController: preferencesViewController, tabTitle: "preferences", imageName: "Tab04")
+        createTab(viewController: infoViewController, tabTitle: "info", imageName: "Tab05")
+
+        self.viewControllers = [
+            periodicTableViewController,
+            elementListViewController,
+            graphsViewController,
+            preferencesViewController,
+            infoViewController
+        ]
+        
+        self.selectedViewController = periodicTableViewController
+
         showSplash()
         navigationController?.navigationBar.prefersLargeTitles = true
-        viewControllers![0].title = NSLocalizedString("periodicTable", comment: "")
-        viewControllers![1].title = NSLocalizedString("elementList", comment: "")
-        viewControllers![2].title = NSLocalizedString("graphs", comment: "")
-        viewControllers![3].title = NSLocalizedString("preferences", comment: "")
-        viewControllers![4].title = NSLocalizedString("info", comment: "")
 
         delegate = controllerDelegate
         UIImageView.gradientView(frame: tabBar.bounds, destinationView: tabBar)
@@ -54,8 +71,19 @@ class XTRMainViewController: UITabBarController {
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
-    }*/
+    }
 
     // MARK: - Memory Management Methods
 
+    // MARK: - Private Methods
+    
+    private func createTab(viewController: UIViewController, tabTitle: String, imageName: String) {
+        let tabItem = UITabBarItem()
+        
+        tabItem.title = NSLocalizedString(tabTitle, comment: "")
+        tabItem.image = UIImage(named: imageName)
+
+        viewController.tabBarItem = tabItem
+    }
+    
 }

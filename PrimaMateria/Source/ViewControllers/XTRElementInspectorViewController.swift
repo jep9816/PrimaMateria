@@ -103,13 +103,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         view.addSubview(aViewController.view)
     }
 
-    func addChildViewController(name: String, className: String) {
-        let storyboard = UIStoryboard(name: name, bundle: nil)
-        let viewController = storyboard.instantiateViewController(withIdentifier: className)
-
-        addChild(viewController)
-    }
-
     func addChildViewController(viewController: UIViewController) {
         addChild(viewController)
     }

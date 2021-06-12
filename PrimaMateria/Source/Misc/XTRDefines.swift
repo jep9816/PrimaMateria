@@ -118,14 +118,6 @@ struct XTRAppearanceType {
     static let standard = "Standard"
 }
 
-struct StoryBoardName {
-    static let PeriodicTable = "PeriodicTable"
-    static let ElementList = "ElementList"
-    static let Graph = "Graph"
-    static let Preferences = "Preferences"
-    static let Info = "Info"
-}
-
 // MARK: - Notifications
 
 extension Notification.Name {
