@@ -13,7 +13,7 @@ class XTRMainViewController: UITabBarController {
 
     // MARK: - Initialization Methods
 
-    private var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
+    /*private var controllerDelegate: XTRMainViewControllerDelegate? = XTRMainViewControllerDelegate()
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -54,7 +54,7 @@ class XTRMainViewController: UITabBarController {
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         return .landscape
-    }
+    }*/
 
     // MARK: - Memory Management Methods
 

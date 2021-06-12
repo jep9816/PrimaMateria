@@ -43,7 +43,7 @@ class XTRElementListViewControllerDelegate: NSObject, UITableViewDelegate, UITab
     }
 
     func tableView(_ aTableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return XTRGraphViewControllerConfig.buttonSize.height
+        return XTRGraphViewControllerConfig.rowHeight
     }
 
 }

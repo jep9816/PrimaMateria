@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XTRInfoViewController" customModule="PrimaMateria" customModuleProvider="target">
+            <connections>
+                <outlet property="navigationBar" destination="ufo-yU-1Ei" id="Ghj-ra-N6y"/>
+                <outlet property="view" destination="GbV-3V-Rhj" id="hPc-WP-0l9"/>
+                <outlet property="webView" destination="4Vd-Da-ohB" id="wzR-EB-vT5"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="GbV-3V-Rhj" customClass="XTRBackgroundView" customModule="PrimaMateria">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Vd-Da-ohB">
+                    <rect key="frame" x="5" y="49" width="1014" height="714"/>
+                    <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <wkWebViewConfiguration key="configuration">
+                        <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                        <wkPreferences key="preferences"/>
+                    </wkWebViewConfiguration>
+                </wkWebView>
+                <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ufo-yU-1Ei">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="U6Q-At-NLj"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Info" id="cEw-VD-9ZZ"/>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="lWF-tg-NPn"/>
+            <color key="backgroundColor" red="0.21176470589999999" green="0.21176470589999999" blue="0.21176470589999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="ufo-yU-1Ei" firstAttribute="top" secondItem="lWF-tg-NPn" secondAttribute="top" id="DWy-rV-m4H"/>
+                <constraint firstItem="lWF-tg-NPn" firstAttribute="trailing" secondItem="4Vd-Da-ohB" secondAttribute="trailing" constant="5" id="LlO-ZQ-1oU"/>
+                <constraint firstItem="4Vd-Da-ohB" firstAttribute="leading" secondItem="lWF-tg-NPn" secondAttribute="leading" constant="5" id="Qhr-Aq-bXy"/>
+                <constraint firstItem="lWF-tg-NPn" firstAttribute="trailing" secondItem="ufo-yU-1Ei" secondAttribute="trailing" id="fve-87-Xak"/>
+                <constraint firstItem="ufo-yU-1Ei" firstAttribute="leading" secondItem="lWF-tg-NPn" secondAttribute="leading" id="hCJ-jN-tYB"/>
+                <constraint firstItem="lWF-tg-NPn" firstAttribute="bottom" secondItem="4Vd-Da-ohB" secondAttribute="bottom" constant="5" id="knu-SD-vdk"/>
+                <constraint firstItem="4Vd-Da-ohB" firstAttribute="top" secondItem="lWF-tg-NPn" secondAttribute="top" constant="49" id="zA8-IQ-4Ky"/>
+            </constraints>
+            <point key="canvasLocation" x="11" y="-603"/>
+        </view>
+    </objects>
+</document>

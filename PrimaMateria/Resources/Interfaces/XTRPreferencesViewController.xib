@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XTRPreferencesViewController" customModule="PrimaMateria" customModuleProvider="target">
+            <connections>
+                <outlet property="appNameLabel" destination="XfU-tJ-fju" id="nb5-lD-NR1"/>
+                <outlet property="cpyRightLabel" destination="f5W-uc-QaF" id="sBx-Ej-uDw"/>
+                <outlet property="elementBubbleSwitch" destination="xPz-Un-kC1" id="Qgz-ks-mpF"/>
+                <outlet property="globeImageView" destination="fWl-3m-Msk" id="cF8-F4-mNf"/>
+                <outlet property="navigationBar" destination="Nou-m5-9mQ" id="ffU-qu-14W"/>
+                <outlet property="resetPreferencesButton" destination="WOF-48-MQI" id="32F-0h-x1v"/>
+                <outlet property="segmentedControl" destination="HAw-Hc-lCx" id="y0f-YE-QyK"/>
+                <outlet property="seriesActinideButton" destination="7nw-YD-2DA" id="8A7-ph-7WS"/>
+                <outlet property="seriesAlkaliEarthMetalButton" destination="Dur-j3-AOT" id="ADI-QP-KiK"/>
+                <outlet property="seriesAlkaliMetalButton" destination="HF0-4h-91B" id="kDw-3o-1lT"/>
+                <outlet property="seriesHalogenButton" destination="Q8U-jQ-rst" id="glZ-pC-wOK"/>
+                <outlet property="seriesLanthanideButton" destination="9rN-Yz-Gpa" id="fhE-0m-Bfk"/>
+                <outlet property="seriesMetalButton" destination="4CY-HK-Qhk" id="dKM-P0-hw3"/>
+                <outlet property="seriesNobleGasButton" destination="8lq-ro-Ibs" id="j8M-5l-tdb"/>
+                <outlet property="seriesNonMetalButton" destination="K8Y-qZ-vhn" id="0XV-G4-w8Q"/>
+                <outlet property="seriesTransactinidesButton" destination="roE-hV-b4z" id="cWh-kg-5QK"/>
+                <outlet property="seriesTransitionMetalButton" destination="gcx-7M-pdn" id="0f4-A9-CKV"/>
+                <outlet property="showTransitionsBubbleSwitch" destination="qJ0-Ty-wVa" id="hJk-2V-bcY"/>
+                <outlet property="splashScreenSwitch" destination="u3R-vH-dae" id="2hT-wW-QSo"/>
+                <outlet property="versionLabel" destination="bzJ-tH-GCL" id="18O-xo-7mC"/>
+                <outlet property="view" destination="emr-eL-6V8" id="ve4-LD-2Yk"/>
+                <outlet property="webView" destination="t4J-Vb-WZ3" id="cqD-Fs-112"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="emr-eL-6V8" customClass="XTRBackgroundView" customModule="PrimaMateria">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nou-m5-9mQ">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Bt2-9E-Spd"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="preferences" id="gi9-So-ZSh"/>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CaH-Zh-JGb" customClass="XTRBackgroundView" customModule="PrimaMateria">
+                    <rect key="frame" x="0.0" y="44" width="1024" height="768"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="cKN-Al-yp6" customClass="XTRDividerLabel" customModule="PrimaMateria">
+                            <rect key="frame" x="241" y="60" width="778" height="37"/>
+                            <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="37" id="Ejx-eH-3c1"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="shadowColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="2" height="2"/>
+                        </label>
+                        <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="n5h-iN-VGp" userLabel="Title View">
+                            <rect key="frame" x="241" y="5" width="778" height="53"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XXX" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bzJ-tH-GCL">
+                                    <rect key="frame" x="714" y="3" width="60" height="24"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="T8W-JM-cYF"/>
+                                        <constraint firstAttribute="width" constant="60" id="bZi-Mp-rGi"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
+                                    <color key="textColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="version" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6WN-P8-7JV" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="513" y="3" width="195" height="24"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="195" id="GcS-hO-hzN"/>
+                                        <constraint firstAttribute="height" constant="24" id="av6-1G-X4g"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
+                                    <color key="textColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XXX" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="f5W-uc-QaF">
+                                    <rect key="frame" x="714" y="28" width="60" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="24" id="JPF-GF-SbP"/>
+                                        <constraint firstAttribute="width" constant="60" id="l8S-jq-Epp"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
+                                    <color key="textColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="copyright" textAlignment="right" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="bWe-fV-HbJ" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="513" y="28" width="195" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="195" id="dDu-RR-Ha3"/>
+                                        <constraint firstAttribute="height" constant="24" id="q9V-1H-A4k"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="18"/>
+                                    <color key="textColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <size key="shadowOffset" width="1" height="1"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="xTrensa" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tmM-oS-9mE">
+                                    <rect key="frame" x="59" y="11" width="180" height="45"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="180" id="4Qp-L7-42f"/>
+                                        <constraint firstAttribute="height" constant="45" id="ylw-5K-KTB"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="48"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="qDj-eO-eVK" customClass="XTRCornerImageView" customModule="PrimaMateria">
+                                    <rect key="frame" x="1" y="1" width="51" height="51"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="51" id="3YO-FP-FDM"/>
+                                        <constraint firstAttribute="width" constant="51" id="ajx-Jd-LBl"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="AppName" textAlignment="center" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfU-tJ-fju">
+                                    <rect key="frame" x="1" y="0.0" width="776" height="53"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="53" id="9Wn-qs-5LL"/>
+                                        <constraint firstAttribute="width" constant="776" id="u3c-hm-6p8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Papyrus" family="Papyrus" pointSize="36"/>
+                                    <color key="highlightedColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <size key="shadowOffset" width="2" height="1"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="tmM-oS-9mE" firstAttribute="leading" secondItem="n5h-iN-VGp" secondAttribute="leading" constant="59" id="9Zz-Fj-VJe"/>
+                                <constraint firstAttribute="height" constant="53" id="BXC-QQ-lSk"/>
+                                <constraint firstItem="tmM-oS-9mE" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="top" constant="11" id="E1B-gf-kks"/>
+                                <constraint firstItem="bzJ-tH-GCL" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="top" constant="3" id="HAc-lS-0h8"/>
+                                <constraint firstAttribute="trailing" secondItem="XfU-tJ-fju" secondAttribute="trailing" constant="1" id="L5e-Mw-fah"/>
+                                <constraint firstAttribute="trailing" secondItem="tmM-oS-9mE" secondAttribute="trailing" constant="539" id="TUZ-Ff-cs5"/>
+                                <constraint firstItem="bWe-fV-HbJ" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="top" constant="28" id="a8k-dS-Ojb"/>
+                                <constraint firstAttribute="trailing" secondItem="bWe-fV-HbJ" secondAttribute="trailing" constant="70" id="bnU-xR-hcp"/>
+                                <constraint firstAttribute="trailing" secondItem="bzJ-tH-GCL" secondAttribute="trailing" constant="4" id="cKo-Hs-WuO"/>
+                                <constraint firstItem="f5W-uc-QaF" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="top" constant="28" id="kpa-tk-OVc"/>
+                                <constraint firstItem="qDj-eO-eVK" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="top" constant="1" id="pXl-XZ-FGb"/>
+                                <constraint firstItem="XfU-tJ-fju" firstAttribute="leading" secondItem="n5h-iN-VGp" secondAttribute="leading" constant="1" id="q1f-jp-vbG"/>
+                                <constraint firstAttribute="trailing" secondItem="f5W-uc-QaF" secondAttribute="trailing" constant="4" id="qMH-S4-wna"/>
+                                <constraint firstItem="6WN-P8-7JV" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="top" constant="3" id="ref-jo-IDq"/>
+                                <constraint firstItem="qDj-eO-eVK" firstAttribute="leading" secondItem="n5h-iN-VGp" secondAttribute="leading" constant="1" id="wgY-fC-Na4"/>
+                                <constraint firstAttribute="trailing" secondItem="6WN-P8-7JV" secondAttribute="trailing" constant="70" id="xoz-CB-8L7"/>
+                                <constraint firstItem="XfU-tJ-fju" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="top" id="y7v-jK-q17"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YLr-R8-dvw" userLabel="Colors View">
+                            <rect key="frame" x="5" y="230" width="230" height="448"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="seriesColors" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oe6-50-J3H" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="1" width="230" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="25" id="Tw6-iz-yjg"/>
+                                        <constraint firstAttribute="width" constant="230" id="wjR-zM-csx"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7nw-YD-2DA" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="30" width="220" height="32"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="actinide"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="220" id="hen-Zi-G2o"/>
+                                        <constraint firstAttribute="height" constant="32" id="lIS-f2-Dk7"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="actinide">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dur-j3-AOT" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="67" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="alkaliEarthMetal"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="5lu-z3-mqH"/>
+                                        <constraint firstAttribute="width" constant="220" id="pNw-fM-mGY"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="alkaliEarthMetal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-4h-91B" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="104" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="alkaliMetal"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="220" id="VVM-O1-u57"/>
+                                        <constraint firstAttribute="height" constant="32" id="Yxp-bN-JC6"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="alkaliMetal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8U-jQ-rst" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="141" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="halogen"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="220" id="5LP-4Q-jRk"/>
+                                        <constraint firstAttribute="height" constant="32" id="ccA-Ux-CBf"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="halogen">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9rN-Yz-Gpa" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="178" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="lanthanide"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="BGO-TT-uJ5"/>
+                                        <constraint firstAttribute="width" constant="220" id="irH-TU-sHX"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="lanthanide">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4CY-HK-Qhk" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="215" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="metal"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="220" id="7zw-rM-CXp"/>
+                                        <constraint firstAttribute="height" constant="32" id="b8d-Jr-wat"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="metal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8lq-ro-Ibs" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="252" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="nobleGas"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="Rqp-F2-J25"/>
+                                        <constraint firstAttribute="width" constant="220" id="lhq-Is-vDu"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="nobleGas">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K8Y-qZ-vhn" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="289" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="nonMetal"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="E7f-aC-tAA"/>
+                                        <constraint firstAttribute="width" constant="220" id="aUf-mM-PtS"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="nonMetal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="roE-hV-b4z" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="326" width="220" height="32"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="transactinide"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="220" id="JNp-Ca-O3d"/>
+                                        <constraint firstAttribute="height" constant="32" id="ySx-t9-Upy"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="transactinide">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcx-7M-pdn" customClass="XTRGeneralButton" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="5" y="361" width="220" height="32"/>
+                                    <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <accessibility key="accessibilityConfiguration" identifier="transitionMetal"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="32" id="ShM-J8-wX7"/>
+                                        <constraint firstAttribute="width" constant="220" id="mht-30-Z1B"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <state key="normal" title="transitionMetal">
+                                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <state key="highlighted">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="HF0-4h-91B" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="02e-hW-fvA"/>
+                                <constraint firstItem="Dur-j3-AOT" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="0Dg-8b-BmX"/>
+                                <constraint firstItem="4CY-HK-Qhk" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="215" id="3jK-8a-RlZ"/>
+                                <constraint firstItem="7nw-YD-2DA" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="3oW-0z-CJG"/>
+                                <constraint firstItem="8lq-ro-Ibs" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="5VN-g3-8c8"/>
+                                <constraint firstItem="HF0-4h-91B" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="104" id="9CS-Ez-bIi"/>
+                                <constraint firstItem="gcx-7M-pdn" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="361" id="Bno-cr-Ci5"/>
+                                <constraint firstItem="oe6-50-J3H" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" id="CNp-T3-n6S"/>
+                                <constraint firstItem="9rN-Yz-Gpa" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="N2p-3p-lZv"/>
+                                <constraint firstItem="gcx-7M-pdn" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="TrS-5O-idH"/>
+                                <constraint firstItem="K8Y-qZ-vhn" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="U7r-Nt-LKT"/>
+                                <constraint firstItem="4CY-HK-Qhk" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="X7t-L9-B2s"/>
+                                <constraint firstItem="Q8U-jQ-rst" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="aeP-fU-TCg"/>
+                                <constraint firstItem="Q8U-jQ-rst" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="141" id="bPW-L1-Nr3"/>
+                                <constraint firstItem="roE-hV-b4z" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="326" id="cFq-9P-qHE"/>
+                                <constraint firstItem="8lq-ro-Ibs" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="252" id="co9-g0-Yq4"/>
+                                <constraint firstAttribute="width" constant="230" id="cvi-pQ-qCs"/>
+                                <constraint firstItem="Dur-j3-AOT" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="67" id="kfq-Pj-P7o"/>
+                                <constraint firstItem="K8Y-qZ-vhn" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="289" id="la5-43-4xh"/>
+                                <constraint firstItem="oe6-50-J3H" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="1" id="ndQ-Dz-FhY"/>
+                                <constraint firstItem="roE-hV-b4z" firstAttribute="leading" secondItem="YLr-R8-dvw" secondAttribute="leading" constant="5" id="uIg-wI-fH2"/>
+                                <constraint firstItem="9rN-Yz-Gpa" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="178" id="vJt-xR-brv"/>
+                                <constraint firstItem="7nw-YD-2DA" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="top" constant="30" id="wi3-wv-QtB"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSO-su-7ha" userLabel="Settings View">
+                            <rect key="frame" x="5" y="5" width="230" height="220"/>
+                            <subviews>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="settings" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="WN4-ld-eZ0" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="1" width="210" height="25"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="elementHelpBubbles" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4bJ-YC-OrW" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="23" width="155" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xPz-Un-kC1">
+                                    <rect key="frame" x="170" y="26" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </switch>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showSplashScreen" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gx1-Qt-ZgN" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="73" width="155" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u3R-vH-dae">
+                                    <rect key="frame" x="170" y="76" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </switch>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="showViewTransitions" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKE-Sn-jyD" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="123" width="155" height="36"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                                <switch opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qJ0-Ty-wVa">
+                                    <rect key="frame" x="170" y="126" width="51" height="31"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                </switch>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HAw-Hc-lCx">
+                                    <rect key="frame" x="59" y="177" width="160" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <segments>
+                                        <segment title="Classic"/>
+                                        <segment title="Standard"/>
+                                    </segments>
+                                </segmentedControl>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="style" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j92-d5-VsH" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                                    <rect key="frame" x="10" y="177" width="60" height="29"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isTitleLabel" value="YES"/>
+                                    </userDefinedRuntimeAttributes>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="220" id="3ef-H1-6vT"/>
+                                <constraint firstAttribute="width" constant="230" id="Vxh-CG-x59"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOF-48-MQI" customClass="XTRGeneralButton" customModule="PrimaMateria">
+                            <rect key="frame" x="5" y="684" width="230" height="34"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="34" id="3Nk-2H-IyM"/>
+                                <constraint firstAttribute="width" constant="230" id="MHY-wB-Hmy"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <state key="normal" title="resetPreferences">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t4J-Vb-WZ3">
+                            <rect key="frame" x="241" y="98" width="778" height="622"/>
+                            <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <wkWebViewConfiguration key="configuration">
+                                <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                <wkPreferences key="preferences"/>
+                            </wkWebViewConfiguration>
+                        </wkWebView>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" text="credits" textAlignment="center" lineBreakMode="wordWrap" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Izn-sZ-9Eg" customClass="XTRLocalizedLabel" customModule="PrimaMateria" customModuleProvider="target">
+                            <rect key="frame" x="241" y="62" width="732" height="31"/>
+                            <color key="backgroundColor" red="0.5" green="0.5" blue="0.5" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="31" id="8lT-RU-Bqp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                            <color key="textColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <size key="shadowOffset" width="2" height="2"/>
+                        </label>
+                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fWl-3m-Msk">
+                            <rect key="frame" x="981" y="61" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="B4s-sq-kYU"/>
+                                <constraint firstAttribute="width" constant="35" id="m20-lm-o3Y"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="fWl-3m-Msk" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="61" id="1Ej-S3-DgA"/>
+                        <constraint firstItem="OSO-su-7ha" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="5" id="1VS-xS-5Db"/>
+                        <constraint firstItem="n5h-iN-VGp" firstAttribute="leading" secondItem="CaH-Zh-JGb" secondAttribute="leading" constant="241" id="2z2-Kd-WWq"/>
+                        <constraint firstItem="OSO-su-7ha" firstAttribute="leading" secondItem="CaH-Zh-JGb" secondAttribute="leading" constant="5" id="4ED-0w-75g"/>
+                        <constraint firstItem="WOF-48-MQI" firstAttribute="leading" secondItem="CaH-Zh-JGb" secondAttribute="leading" constant="5" id="Bdn-SN-ieb"/>
+                        <constraint firstAttribute="bottom" secondItem="t4J-Vb-WZ3" secondAttribute="bottom" constant="48" id="Cxd-go-2k4"/>
+                        <constraint firstItem="YLr-R8-dvw" firstAttribute="top" secondItem="OSO-su-7ha" secondAttribute="bottom" constant="5" id="Ezh-1P-8aN"/>
+                        <constraint firstItem="YLr-R8-dvw" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="230" id="FGM-1i-oP4"/>
+                        <constraint firstItem="t4J-Vb-WZ3" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="98" id="I2j-AS-vSL"/>
+                        <constraint firstItem="Izn-sZ-9Eg" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="62" id="Oo3-JZ-hyl"/>
+                        <constraint firstItem="Izn-sZ-9Eg" firstAttribute="leading" secondItem="CaH-Zh-JGb" secondAttribute="leading" constant="241" id="Q6n-Pb-23f"/>
+                        <constraint firstItem="n5h-iN-VGp" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="5" id="SIi-4V-VnK"/>
+                        <constraint firstItem="cKN-Al-yp6" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="60" id="TKw-VA-KYf"/>
+                        <constraint firstAttribute="trailing" secondItem="Izn-sZ-9Eg" secondAttribute="trailing" constant="51" id="TVn-Ki-8T2"/>
+                        <constraint firstAttribute="trailing" secondItem="t4J-Vb-WZ3" secondAttribute="trailing" constant="5" id="TaY-O1-weM"/>
+                        <constraint firstItem="OSO-su-7ha" firstAttribute="top" secondItem="Izn-sZ-9Eg" secondAttribute="bottom" constant="-88" id="USy-nL-X52"/>
+                        <constraint firstAttribute="bottom" secondItem="WOF-48-MQI" secondAttribute="bottom" constant="50" id="Xsy-ln-Ct4"/>
+                        <constraint firstItem="OSO-su-7ha" firstAttribute="top" secondItem="cKN-Al-yp6" secondAttribute="bottom" constant="-92" id="YbD-Kj-z5k"/>
+                        <constraint firstItem="YLr-R8-dvw" firstAttribute="leading" secondItem="CaH-Zh-JGb" secondAttribute="leading" constant="5" id="aeZ-Xh-BrC"/>
+                        <constraint firstAttribute="trailing" secondItem="cKN-Al-yp6" secondAttribute="trailing" constant="5" id="eBU-sO-GlX"/>
+                        <constraint firstItem="t4J-Vb-WZ3" firstAttribute="leading" secondItem="CaH-Zh-JGb" secondAttribute="leading" constant="241" id="gku-hy-nS8"/>
+                        <constraint firstItem="cKN-Al-yp6" firstAttribute="leading" secondItem="CaH-Zh-JGb" secondAttribute="leading" constant="241" id="i9i-Db-Jto"/>
+                        <constraint firstItem="WOF-48-MQI" firstAttribute="top" secondItem="YLr-R8-dvw" secondAttribute="bottom" constant="6" id="jGU-w4-0rP"/>
+                        <constraint firstAttribute="trailing" secondItem="n5h-iN-VGp" secondAttribute="trailing" constant="5" id="ocu-Tg-WmS"/>
+                        <constraint firstItem="OSO-su-7ha" firstAttribute="top" secondItem="n5h-iN-VGp" secondAttribute="bottom" constant="-53" id="sCK-Ym-n8d"/>
+                        <constraint firstAttribute="trailing" secondItem="fWl-3m-Msk" secondAttribute="trailing" constant="8" id="tEQ-39-MJX"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="K0r-pv-GMg"/>
+            <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="CaH-Zh-JGb" firstAttribute="bottom" secondItem="K0r-pv-GMg" secondAttribute="bottom" constant="44" id="K9B-K0-O0W"/>
+                <constraint firstItem="Nou-m5-9mQ" firstAttribute="leading" secondItem="K0r-pv-GMg" secondAttribute="leading" id="Laz-nl-YKW"/>
+                <constraint firstItem="CaH-Zh-JGb" firstAttribute="leading" secondItem="K0r-pv-GMg" secondAttribute="leading" id="Mrf-p4-pJz"/>
+                <constraint firstItem="K0r-pv-GMg" firstAttribute="trailing" secondItem="CaH-Zh-JGb" secondAttribute="trailing" id="PvZ-zb-kIN"/>
+                <constraint firstItem="K0r-pv-GMg" firstAttribute="trailing" secondItem="Nou-m5-9mQ" secondAttribute="trailing" id="hLv-Qi-aKb"/>
+                <constraint firstItem="CaH-Zh-JGb" firstAttribute="top" secondItem="K0r-pv-GMg" secondAttribute="top" constant="44" id="tAk-VP-Cya"/>
+                <constraint firstItem="Nou-m5-9mQ" firstAttribute="top" secondItem="K0r-pv-GMg" secondAttribute="top" id="usa-If-zu5"/>
+            </constraints>
+            <point key="canvasLocation" x="-9" y="702"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="4bJ-YC-OrW">
+            <size key="intrinsicContentSize" width="134.5" height="17"/>
+        </designable>
+        <designable name="6WN-P8-7JV">
+            <size key="intrinsicContentSize" width="56.5" height="28"/>
+        </designable>
+        <designable name="Gx1-Qt-ZgN">
+            <size key="intrinsicContentSize" width="122.5" height="17"/>
+        </designable>
+        <designable name="Izn-sZ-9Eg">
+            <size key="intrinsicContentSize" width="70.5" height="29"/>
+        </designable>
+        <designable name="QKE-Sn-jyD">
+            <size key="intrinsicContentSize" width="134.5" height="17"/>
+        </designable>
+        <designable name="WN4-ld-eZ0">
+            <size key="intrinsicContentSize" width="64.5" height="21.5"/>
+        </designable>
+        <designable name="bWe-fV-HbJ">
+            <size key="intrinsicContentSize" width="78" height="28"/>
+        </designable>
+        <designable name="j92-d5-VsH">
+            <size key="intrinsicContentSize" width="31" height="17"/>
+        </designable>
+        <designable name="oe6-50-J3H">
+            <size key="intrinsicContentSize" width="100" height="21.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="icon" width="72" height="72"/>
+    </resources>
+</document>

@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XTRElementListViewController" customModule="PrimaMateria" customModuleProvider="target">
+            <connections>
+                <outlet property="atomicMassButton" destination="Ymy-v8-oww" id="zbJ-Y3-inA"/>
+                <outlet property="atomicNumberButton" destination="hHG-Ar-vE2" id="xZo-pa-844"/>
+                <outlet property="boilingPointButton" destination="oNt-gC-e0c" id="Scp-0N-xrU"/>
+                <outlet property="densityButton" destination="8Fj-PS-LYP" id="HAy-Rx-bsE"/>
+                <outlet property="groupButton" destination="fyx-XJ-QCk" id="Yld-lA-vhL"/>
+                <outlet property="headerView" destination="F2d-RT-4H6" id="Anb-oQ-KFO"/>
+                <outlet property="meltingPointButton" destination="WzX-jm-zQV" id="3ym-ci-7Eh"/>
+                <outlet property="nameButton" destination="xhu-UE-8t3" id="uig-OE-Bjd"/>
+                <outlet property="navigationBar" destination="BQZ-gL-MLC" id="gT9-E7-vea"/>
+                <outlet property="periodButton" destination="Y6a-Yb-dVr" id="afe-Uz-8Jo"/>
+                <outlet property="seriesButton" destination="746-C2-Qgv" id="qQM-mp-OBs"/>
+                <outlet property="symbolButton" destination="qrg-gl-X7M" id="aVG-vW-gNP"/>
+                <outlet property="tableView" destination="tq5-JR-DHs" id="Z9j-MH-ch7"/>
+                <outlet property="view" destination="4M1-Yh-5aZ" id="c7u-tX-YLf"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="4M1-Yh-5aZ" customClass="XTRBackgroundView" customModule="PrimaMateria">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tq5-JR-DHs">
+                    <rect key="frame" x="0.0" y="89" width="1024" height="679"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
+                <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="F2d-RT-4H6">
+                    <rect key="frame" x="0.0" y="44" width="1024" height="45"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="hHG-Ar-vE2" userLabel="Atomic Number Button" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="-2" y="0.0" width="88" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="atomicNumber">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListNumber">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="selected">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="qrg-gl-X7M" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="85" y="0.0" width="97" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="atomicSymbol">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListSymbol">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xhu-UE-8t3" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="181" y="0.0" width="127" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="name">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListName">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Ymy-v8-oww" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="307" y="0.0" width="107" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="atomicWeight">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListAtomicMass">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="oNt-gC-e0c" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="413" y="0.0" width="107" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="boilingPoint">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListBoilingPoint">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="WzX-jm-zQV" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="519" y="0.0" width="107" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="meltingPoint">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListMeltingPoint">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="8Fj-PS-LYP" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="625" y="0.0" width="107" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="density">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListDensity">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="746-C2-Qgv" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="731" y="0.0" width="154" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="series">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListSeries">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Y6a-Yb-dVr" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="882" y="0.0" width="77" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="atomicVolume">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListPeriod">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                        <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="fyx-XJ-QCk" customClass="XTRTableHeaderButton" customModule="PrimaMateria">
+                            <rect key="frame" x="955" y="0.0" width="70" height="45"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <accessibility key="accessibilityConfiguration" label="group">
+                                <integer key="isElement" value="0"/>
+                            </accessibility>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <size key="titleShadowOffset" width="2" height="2"/>
+                            <state key="normal" title="elementListGroup">
+                                <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                            <state key="highlighted">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="bGN-Q0-0wG"/>
+                    </constraints>
+                </view>
+                <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQZ-gL-MLC">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="zuc-Xa-DRf"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="elementList" id="Qdc-5J-cP5"/>
+                    </items>
+                </navigationBar>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="yAL-5u-RQq"/>
+            <color key="backgroundColor" red="0.55676333109999998" green="0.55676333109999998" blue="0.55676333109999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="yAL-5u-RQq" firstAttribute="bottom" secondItem="tq5-JR-DHs" secondAttribute="bottom" id="1Ur-GQ-wA9"/>
+                <constraint firstItem="F2d-RT-4H6" firstAttribute="top" secondItem="yAL-5u-RQq" secondAttribute="top" constant="44" id="8H7-mr-x4F"/>
+                <constraint firstItem="yAL-5u-RQq" firstAttribute="trailing" secondItem="tq5-JR-DHs" secondAttribute="trailing" id="As7-tH-VWp"/>
+                <constraint firstItem="F2d-RT-4H6" firstAttribute="leading" secondItem="yAL-5u-RQq" secondAttribute="leading" id="CZh-ki-pDr"/>
+                <constraint firstItem="yAL-5u-RQq" firstAttribute="trailing" secondItem="BQZ-gL-MLC" secondAttribute="trailing" id="I6U-Qv-Sri"/>
+                <constraint firstItem="tq5-JR-DHs" firstAttribute="top" secondItem="yAL-5u-RQq" secondAttribute="top" constant="89" id="Kyg-Sz-ao3"/>
+                <constraint firstItem="BQZ-gL-MLC" firstAttribute="leading" secondItem="yAL-5u-RQq" secondAttribute="leading" id="Mo4-Tq-odF"/>
+                <constraint firstItem="tq5-JR-DHs" firstAttribute="leading" secondItem="yAL-5u-RQq" secondAttribute="leading" id="Qok-Rx-2md"/>
+                <constraint firstItem="BQZ-gL-MLC" firstAttribute="top" secondItem="yAL-5u-RQq" secondAttribute="top" id="cJ9-Lw-xSB"/>
+                <constraint firstItem="yAL-5u-RQq" firstAttribute="trailing" secondItem="F2d-RT-4H6" secondAttribute="trailing" id="eF1-B0-0GH"/>
+            </constraints>
+            <point key="canvasLocation" x="83" y="-603"/>
+        </view>
+    </objects>
+</document>

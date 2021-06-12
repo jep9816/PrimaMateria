@@ -33,6 +33,10 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         super.init(coder: aDecoder)!
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     // MARK: - Action Methods
 
     // MARK: - Internal Methods
@@ -219,9 +223,9 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
 
         setupRx()
 
-        addChildViewController(name: StoryBoardName.AtomicStructure, className: XTRAtomicStructureViewController.nameOfClass)
-        addChildViewController(name: StoryBoardName.ElementProperties, className: XTRElementPropertiesViewController.nameOfClass)
-        addChildViewController(name: StoryBoardName.NuclidesIsotopes, className: XTRNuclidesIsotopesViewController.nameOfClass)
+        addChildViewController(viewController: XTRAtomicStructureViewController.loadFromNib())
+        addChildViewController(viewController: XTRElementPropertiesViewController.loadFromNib())
+        addChildViewController(viewController: XTRNuclidesIsotopesViewController.loadFromNib())
         addChildViewController(viewController: XTRSpectrumViewController.loadFromNib())
         addChildViewController(viewController: XTRGeneralInfoViewController.loadFromNib())
 

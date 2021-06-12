@@ -119,15 +119,11 @@ struct XTRAppearanceType {
 }
 
 struct StoryBoardName {
-    static let Main = "MainStoryboard"
-    static let ColorPicker = "ColorPicker"
-    static let ElementInspector = "ElementInspector"
-    static let Wikipedia = "Wikipedia"
-    static let AtomicStructure = "AtomicStructure"
-    static let ElementProperties = "ElementProperties"
-    static let NuclidesIsotopes = "NuclidesIsotopes"
-    static let Spectrum = "Spectrum"
-    static let GeneralInfo = "GeneralInfo"
+    static let PeriodicTable = "PeriodicTable"
+    static let ElementList = "ElementList"
+    static let Graph = "Graph"
+    static let Preferences = "Preferences"
+    static let Info = "Info"
 }
 
 // MARK: - Notifications

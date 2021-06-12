@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="landscape" layout="fullscreen" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XTRGraphViewController" customModule="PrimaMateria" customModuleProvider="target">
+            <connections>
+                <outlet property="barButtonItem" destination="TqC-Mf-1ew" id="EXZ-fO-HN4"/>
+                <outlet property="hostingView" destination="7zD-cL-Ymw" id="vpQ-DF-kjT"/>
+                <outlet property="navigationBar" destination="a9u-87-K8X" id="9tb-gL-vQh"/>
+                <outlet property="view" destination="nHr-KC-4IC" id="hoV-EY-fcs"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nHr-KC-4IC" customClass="XTRBackgroundView" customModule="PrimaMateria">
+            <rect key="frame" x="0.0" y="0.0" width="1024" height="768"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <navigationBar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a9u-87-K8X">
+                    <rect key="frame" x="0.0" y="0.0" width="1024" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="1J9-EL-ZfG"/>
+                    </constraints>
+                    <items>
+                        <navigationItem title="Graphs" id="wEI-Bo-u4E">
+                            <barButtonItem key="leftBarButtonItem" title="Choose Graph" id="TqC-Mf-1ew">
+                                <connections>
+                                    <action selector="showGraphChoice:" destination="-1" id="EwK-Mz-6Y5"/>
+                                </connections>
+                            </barButtonItem>
+                        </navigationItem>
+                    </items>
+                </navigationBar>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7zD-cL-Ymw" customClass="CPTGraphHostingView">
+                    <rect key="frame" x="0.0" y="50" width="1024" height="718"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="xl3-YD-9dq"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="7zD-cL-Ymw" firstAttribute="top" secondItem="xl3-YD-9dq" secondAttribute="top" constant="50" id="I4w-IH-w7I"/>
+                <constraint firstItem="a9u-87-K8X" firstAttribute="leading" secondItem="xl3-YD-9dq" secondAttribute="leading" id="Miw-23-hvQ"/>
+                <constraint firstItem="a9u-87-K8X" firstAttribute="top" secondItem="xl3-YD-9dq" secondAttribute="top" id="T16-mK-lJX"/>
+                <constraint firstItem="xl3-YD-9dq" firstAttribute="trailing" secondItem="7zD-cL-Ymw" secondAttribute="trailing" id="WdQ-Yv-hrF"/>
+                <constraint firstItem="xl3-YD-9dq" firstAttribute="trailing" secondItem="a9u-87-K8X" secondAttribute="trailing" id="eKz-lc-zcK"/>
+                <constraint firstItem="7zD-cL-Ymw" firstAttribute="leading" secondItem="xl3-YD-9dq" secondAttribute="leading" id="jRp-iV-3sw"/>
+                <constraint firstItem="xl3-YD-9dq" firstAttribute="bottom" secondItem="7zD-cL-Ymw" secondAttribute="bottom" id="yqB-ke-IS7"/>
+            </constraints>
+            <point key="canvasLocation" x="64" y="-603"/>
+        </view>
+    </objects>
+</document>

@@ -15,8 +15,8 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
 
-        LocaleManager.setup()
-        LocaleManager.apply(locale: Locale(identifier: XTRPropertiesStore.currentLanguageCode))
+//        LocaleManager.setup()
+//        LocaleManager.apply(locale: Locale(identifier: XTRPropertiesStore.currentLanguageCode))
 
         return true
     }
@@ -35,10 +35,6 @@ class XTRAppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
-    class func storyboard() -> UIStoryboard {
-        return UIStoryboard(name: StoryBoardName.Main, bundle: nil)
     }
 
     var keyWindow: UIWindow? {

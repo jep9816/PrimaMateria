@@ -6,10 +6,9 @@
 //  Copyright ©2021 xTrensa. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
-class XTRMainViewControllerDelegate: NSObject, UITabBarControllerDelegate {
+class XTRHomeViewControllerDelegate: NSObject, UITabBarControllerDelegate {
 
     func tabBarController(_ tabBarController: UITabBarController, animationControllerForTransitionFrom fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         let defaultState = XTRPropertiesStore.showTransitionsState

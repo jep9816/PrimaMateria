@@ -78,11 +78,11 @@ public class LocaleManager: NSObject {
     internal class func reloadWindows(animated: Bool = true) {
         let windows = UIApplication.shared.windows
         for window in windows {
-            if let rootViewController = self.rootViewController?(window) {
-                window.rootViewController = rootViewController
-            } else if let storyboard = window.rootViewController?.storyboard, let id = window.rootViewController?.value(forKey: "storyboardIdentifier") as? String {
-                window.rootViewController = storyboard.instantiateViewController(withIdentifier: id)
-            }
+//            if let rootViewController = self.rootViewController?(window) {
+//                window.rootViewController = rootViewController
+//            } else if let storyboard = window.rootViewController?.storyboard, let id = window.rootViewController?.value(forKey: "storyboardIdentifier") as? String {
+//                window.rootViewController = storyboard.instantiateViewController(withIdentifier: id)
+//            }
             for view in (window.subviews) {
                 view.removeFromSuperview()
                 window.addSubview(view)
@@ -122,7 +122,6 @@ public class LocaleManager: NSObject {
      
      - Parameter identifier: Locale identifier to be applied, e.g. `en` or `fa_IR`. `nil` value will change locale to system-wide.
      */
-    @available(iOS 9.0, *)
     @objc public class func apply(locale: Locale?, animated: Bool = true) {
         let semantic: UISemanticContentAttribute
         if let locale = locale {
@@ -146,7 +145,6 @@ public class LocaleManager: NSObject {
      
      - Parameter identifier: Locale identifier to be applied, e.g. `en` or `fa_IR`. `nil` value will change locale to system-wide.
      */
-    @available(iOS 9.0, *)
     @objc public class func apply(identifier: String?, animated: Bool = true) {
         let locale = identifier.map(Locale.init(identifier:))
         apply(locale: locale, animated: animated)

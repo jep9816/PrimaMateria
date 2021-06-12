@@ -16,11 +16,17 @@ class XTRSceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-
+        
         let notification = Notification(name: .notificationAppearanceChanged, object: XTRPropertiesStore.appearanceName, userInfo: nil)
 
         window?.windowScene = windowScene
-        window?.rootViewController = XTRAppDelegate.storyboard().instantiateViewController(withIdentifier: XTRMainViewController.nameOfClass)
+        
+        window!.rootViewController = XTRHomeViewController.loadFromNib()
+
+        LocaleManager.setup()
+
+        LocaleManager.apply(locale: Locale(identifier: XTRPropertiesStore.currentLanguageCode))
+
         window?.makeKeyAndVisible()
 
         appearanceManager = XTRAppearanceManager.init(window: window!)

@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/22/16.
-//  Copyright ©2017 xTrensa. All rights reserved.
+//  Copyright ©2021 xTrensa. All rights reserved.
 //
 
 import CorePlot
@@ -17,6 +17,7 @@ struct XTRGraphViewControllerConfig {
     static let minimumValue = "minimumValue"
     static let customTickLocations: [Int] = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
     static let buttonSize = CGSize(width: 240.0, height: 60.0)
+    static let rowHeight: CGFloat = 44.0
     static let popupContentSize = CGSize(width: (buttonSize.width + 6) * 3, height: (buttonSize.height + 4) * 10)
 }
 
@@ -37,17 +38,16 @@ class XTRGraphViewController: UIViewController {
         super.init(coder: aDecoder)!
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     // MARK: - Action Methods
 
     @IBAction func showGraphChoice(_ sender: Any) {
         guard let popoverController = graphChoiceViewController.popoverPresentationController else { return }
 
-        //XTRPropertiesStore.viewTitle = title!
-        //XTRPropertiesStore.atomicNumber = sender.tag
-
         popoverController.barButtonItem = barButtonItem
-        //popoverController.sourceRect = XTRPeriodicTableViewControllerConfig.buttonRect
-        //popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
 
         present(graphChoiceViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)

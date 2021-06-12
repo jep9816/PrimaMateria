@@ -76,6 +76,10 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         super.init(coder: aDecoder)!
     }
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
     // MARK: - Internal Methods
 
     // MARK: - Miscellaneous Methods
@@ -190,19 +194,22 @@ class XTRElementPropertiesViewController: XTRSwapableViewController {
         setupRx()
         chemicalPropertiesView.frame = swapView.frame
         chemicalPropertiesView.bounds = swapView.bounds
-        chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 574)
         chemicalPropertiesView.isHidden = true
-        view.addSubview(chemicalPropertiesView)
-
+ 
         physicalPropertiesView.frame = swapView.frame
         physicalPropertiesView.bounds = swapView.bounds
-        physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1128)
         physicalPropertiesView.isHidden = false
-        view.addSubview(physicalPropertiesView)
-
         swapView.removeFromSuperview()
     }
 
+    override func viewDidLayoutSubviews() {
+        physicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 1100)
+        view.addSubview(physicalPropertiesView)
+
+        chemicalPropertiesScrollView.contentSize = CGSize(width: 1024, height: 574)
+        view.addSubview(chemicalPropertiesView)
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }
