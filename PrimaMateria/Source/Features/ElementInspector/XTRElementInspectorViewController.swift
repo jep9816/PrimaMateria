@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 
 struct XTRElementInspectorControllerConfig {
-    static let popupContentSize = CGSize(width: 1024, height: 768)
+    static let popupContentSize = CGSize(width: 1024.0, height: 768.0)
 }
 
 class XTRElementInspectorViewController: XTRSwapableViewController {

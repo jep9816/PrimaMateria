@@ -704,40 +704,161 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06C1CB462674F89B00D2AE17 /* Storyboards */ = {
+		0639C4242675781B00B58D15 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0639C42F26757A8B00B58D15 /* ElementBalloon */,
+				0639C427267578BA00B58D15 /* ElementInspector */,
+				0639C42B2675798C00B58D15 /* ElementList */,
+				0639C42C267579A800B58D15 /* Graph */,
+				0639C4262675787E00B58D15 /* Help */,
+				0639C42D267579F900B58D15 /* Info */,
+				0639C4252675782C00B58D15 /* Main */,
+				0639C4282675792200B58D15 /* PeriodicTable */,
+				0639C4292675794500B58D15 /* Preferences */,
+				0639C42A2675796300B58D15 /* Splash */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		0639C4252675782C00B58D15 /* Main */ = {
 			isa = PBXGroup;
 			children = (
 				06C1CB432674F63600D2AE17 /* MainStoryboard.storyboard */,
-				801281E420F0272000ABC706 /* LaunchScreen.storyboard */,
+				06C1CAEF2674373C00D2AE17 /* XTRMainViewController.swift */,
+				06C1CB402674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift */,
 			);
-			name = Storyboards;
+			path = Main;
 			sourceTree = "<group>";
 		};
-		06C1CB472674F8B300D2AE17 /* Xibs */ = {
+		0639C4262675787E00B58D15 /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */,
-				06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */,
-				06FC7DB4267299BA00DF9801 /* XTRElementBalloonViewController.xib */,
-				06C1CADB2673C64800D2AE17 /* XTRElementInspectorViewController.xib */,
-				06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */,
-				06C1CB482674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib */,
-				06C1CB492674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib */,
-				06C1CAD42673B95300D2AE17 /* XTRElementPropertiesViewController.xib */,
-				06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */,
-				06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */,
-				06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */,
+				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
 				06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */,
-				06C1CAF826743A9A00D2AE17 /* XTRInfoViewController.xib */,
-				06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */,
-				06C1CACE2673B2DE00D2AE17 /* XTRNuclidesIsotopesViewController.xib */,
-				06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */,
-				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
-				06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */,
-				06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */,
-				06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */,
+				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
 			);
-			name = Xibs;
+			path = Help;
+			sourceTree = "<group>";
+		};
+		0639C427267578BA00B58D15 /* ElementInspector */ = {
+			isa = PBXGroup;
+			children = (
+				8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */,
+				06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */,
+				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
+				06C1CADB2673C64800D2AE17 /* XTRElementInspectorViewController.xib */,
+				06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */,
+				06C1CB482674FFD300D2AE17 /* XTRElementPropertiesChemicalViewController.xib */,
+				06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */,
+				06C1CB492674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib */,
+				8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */,
+				06C1CAD42673B95300D2AE17 /* XTRElementPropertiesViewController.xib */,
+				8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */,
+				06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */,
+				8012800520F0270400ABC706 /* XTRNuclidesIsotopesViewController.swift */,
+				06C1CACE2673B2DE00D2AE17 /* XTRNuclidesIsotopesViewController.xib */,
+				8012802120F0270400ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift */,
+				8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */,
+				06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */,
+				8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */,
+				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
+				06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */,
+				8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */,
+			);
+			path = ElementInspector;
+			sourceTree = "<group>";
+		};
+		0639C4282675792200B58D15 /* PeriodicTable */ = {
+			isa = PBXGroup;
+			children = (
+				80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */,
+				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
+				06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */,
+				8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */,
+				06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */,
+			);
+			path = PeriodicTable;
+			sourceTree = "<group>";
+		};
+		0639C4292675794500B58D15 /* Preferences */ = {
+			isa = PBXGroup;
+			children = (
+				8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */,
+				06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */,
+				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
+				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
+			);
+			path = Preferences;
+			sourceTree = "<group>";
+		};
+		0639C42A2675796300B58D15 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				8012801120F0270400ABC706 /* XTRSplashViewController.swift */,
+				06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		0639C42B2675798C00B58D15 /* ElementList */ = {
+			isa = PBXGroup;
+			children = (
+				8012801020F0270400ABC706 /* XTRElementListViewController.swift */,
+				06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */,
+				8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */,
+			);
+			path = ElementList;
+			sourceTree = "<group>";
+		};
+		0639C42C267579A800B58D15 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */,
+				06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */,
+				80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */,
+				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
+				06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */,
+				8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */,
+			);
+			path = Graph;
+			sourceTree = "<group>";
+		};
+		0639C42D267579F900B58D15 /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				8012801220F0270400ABC706 /* XTRInfoViewController.swift */,
+				06C1CAF826743A9A00D2AE17 /* XTRInfoViewController.xib */,
+				8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		0639C42F26757A8B00B58D15 /* ElementBalloon */ = {
+			isa = PBXGroup;
+			children = (
+				8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */,
+				06FC7DB4267299BA00DF9801 /* XTRElementBalloonViewController.xib */,
+			);
+			path = ElementBalloon;
+			sourceTree = "<group>";
+		};
+		0639C43026757AA700B58D15 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				801281E420F0272000ABC706 /* LaunchScreen.storyboard */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		0639C43226757B8A00B58D15 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				80127FDC20F0270400ABC706 /* XTRAppDelegate.swift */,
+				80127FDD20F0270400ABC706 /* XTRApplication.swift */,
+				801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */,
+			);
+			path = Application;
 			sourceTree = "<group>";
 		};
 		0853E2062114D20100CA092B /* Shaders */ = {
@@ -785,9 +906,10 @@
 			children = (
 				80127FD520F0270400ABC706 /* 3rd Party */,
 				80127FE220F0270400ABC706 /* Appearance */,
+				0639C43226757B8A00B58D15 /* Application */,
 				80127FF720F0270400ABC706 /* Controls */,
-				8012801A20F0270400ABC706 /* Delegates */,
 				80127FF120F0270400ABC706 /* Extensions */,
+				0639C4242675781B00B58D15 /* Features */,
 				80127FD820F0270400ABC706 /* Misc */,
 				80127FEC20F0270400ABC706 /* Models */,
 				8012802720F0270400ABC706 /* Other Sources */,
@@ -809,15 +931,9 @@
 		80127FD820F0270400ABC706 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				80127FDC20F0270400ABC706 /* XTRAppDelegate.swift */,
-				80127FDD20F0270400ABC706 /* XTRApplication.swift */,
 				80127FE020F0270400ABC706 /* XTRDataSource.swift */,
 				80127FDF20F0270400ABC706 /* XTRDefines.swift */,
-				80127FDB20F0270400ABC706 /* XTRMolecularCalculator.swift */,
-				80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */,
 				80127FDA20F0270400ABC706 /* XTRPropertiesStore.swift */,
-				801EB6522363721500FE10C6 /* XTRSceneDelegate.swift */,
-				80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */,
 			);
 			path = Misc;
 			sourceTree = "<group>";
@@ -888,48 +1004,13 @@
 		8012800420F0270400ABC706 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */,
-				8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */,
-				8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */,
-				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
-				8012801020F0270400ABC706 /* XTRElementListViewController.swift */,
-				06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */,
-				06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */,
-				8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */,
-				8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */,
-				8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */,
-				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
-				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
-				8012801220F0270400ABC706 /* XTRInfoViewController.swift */,
-				06C1CAEF2674373C00D2AE17 /* XTRMainViewController.swift */,
-				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
-				8012800520F0270400ABC706 /* XTRNuclidesIsotopesViewController.swift */,
-				8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */,
-				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
+				80127FDE20F0270400ABC706 /* XTRPopoutAnimationController.swift */,
+				80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */,
 				8012800920F0270400ABC706 /* XTRSlideDownAnimationController.swift */,
-				8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */,
-				8012801120F0270400ABC706 /* XTRSplashViewController.swift */,
 				8012801420F0270400ABC706 /* XTRSwapableViewController.swift */,
-				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
 			);
 			name = "View Controllers";
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		8012801A20F0270400ABC706 /* Delegates */ = {
-			isa = PBXGroup;
-			children = (
-				06C1CB402674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift */,
-				8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */,
-				80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */,
-				8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */,
-				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
-				8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */,
-				8012802120F0270400ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift */,
-				8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */,
-				8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */,
-			);
-			path = Delegates;
 			sourceTree = "<group>";
 		};
 		8012802320F0270400ABC706 /* Views */ = {
@@ -959,13 +1040,13 @@
 		8012807520F0271F00ABC706 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0639C43026757AA700B58D15 /* Interfaces */,
 				80AB29EE2128CE0B00B58AB3 /* Images.xcassets */,
 				8012838620F02F9B00ABC706 /* ElementTipHelp */,
 				8012838420F02F9B00ABC706 /* PrimaMateriaHelp */,
 				8012838520F02F9B00ABC706 /* SupportingFiles */,
 				809875FB210A867400AB3B00 /* globe */,
 				806A3969211902590074ED28 /* Images */,
-				801281E020F0272000ABC706 /* Interfaces */,
 				8012838A20F032A000ABC706 /* Misc */,
 				8012807820F0271F00ABC706 /* Scenes */,
 				0853E2062114D20100CA092B /* Shaders */,
@@ -987,15 +1068,6 @@
 				8012807D20F0271F00ABC706 /* Unknown.scn */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		801281E020F0272000ABC706 /* Interfaces */ = {
-			isa = PBXGroup;
-			children = (
-				06C1CB462674F89B00D2AE17 /* Storyboards */,
-				06C1CB472674F8B300D2AE17 /* Xibs */,
-			);
-			path = Interfaces;
 			sourceTree = "<group>";
 		};
 		8012838A20F032A000ABC706 /* Misc */ = {
