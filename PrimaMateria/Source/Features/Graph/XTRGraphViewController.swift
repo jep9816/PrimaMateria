@@ -7,6 +7,8 @@
 //
 
 import CorePlot
+import RxSwift
+import RxCocoa
 
 struct XTRGraphViewControllerConfig {
     static let name = "attributeName"
@@ -31,6 +33,7 @@ class XTRGraphViewController: UIViewController {
 
     var delegate: XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
     var graphChoiceViewController: XTRGraphChoiceViewController!
+    var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
 
@@ -44,7 +47,7 @@ class XTRGraphViewController: UIViewController {
 
     // MARK: - Action Methods
 
-    @IBAction func showGraphChoice(_ sender: Any) {
+    func showGraphChoice() {
         guard let popoverController = graphChoiceViewController.popoverPresentationController else { return }
 
         popoverController.barButtonItem = barButtonItem
@@ -62,9 +65,15 @@ class XTRGraphViewController: UIViewController {
         graphChoiceViewController.modalPresentationStyle = .popover
     }
 
+    func setupRx() {
+        barButtonItem.rx.tap.subscribe(onNext: { [unowned self] in
+                self.showGraphChoice()
+            }).disposed(by: disposeBag)
+    }
+    
     func creatBarChart() {
         barChart = CPTXYGraph(frame: CGRect.zero)
-        //barChart!.apply(CPTTheme(named: CPTThemeName.slateTheme))
+        barChart!.apply(CPTTheme(named: CPTThemeName.slateTheme))
         barChart?.backgroundColor = XTRAppearanceManager.manager.isClassicAppearance() ? XTRColorFactoryClassic.cotton.cgColor : XTRColorFactoryStandard.seamlessMetalTextureColor.cgColor
 
         hostingView.hostedGraph = barChart
@@ -143,11 +152,6 @@ class XTRGraphViewController: UIViewController {
         y.titleTextStyle = textStyle
     }
 
-//    func element(_ anElement: XTRElementModel, anIdentifier: String) -> NSNumber {
-//        let aValue: NSNumber? = anElement.value(forKeyPath: anIdentifier) as? NSNumber
-//        return (aValue != nil) ? aValue!: 0
-//    }
-
     func showGraphForChoiceAtIndex(_ index: Int) {
         let model = XTRDataSource.sharedInstance.graphPropertyList[index]
         let minValue = model.minimumValue
@@ -211,6 +215,7 @@ class XTRGraphViewController: UIViewController {
         delegate.controller = self
         NotificationCenter.default.addObserver(self, selector: #selector(graphSelected(_:)), name: .graphSelectedNotification, object: nil)
         setupPopUp()
+        setupRx()
         showGraphForChoiceAtIndex(0)
         navigationController?.navigationBar.prefersLargeTitles = true
     }

@@ -27,11 +27,7 @@
                     </constraints>
                     <items>
                         <navigationItem title="Graphs" id="wEI-Bo-u4E">
-                            <barButtonItem key="leftBarButtonItem" title="Choose Graph" id="TqC-Mf-1ew">
-                                <connections>
-                                    <action selector="showGraphChoice:" destination="-1" id="EwK-Mz-6Y5"/>
-                                </connections>
-                            </barButtonItem>
+                            <barButtonItem key="leftBarButtonItem" title="Choose Graph" id="TqC-Mf-1ew"/>
                         </navigationItem>
                     </items>
                 </navigationBar>
