@@ -435,6 +435,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		062E80F52676ABB20009DDA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/LoadFailure.html; sourceTree = "<group>"; };
+		0660FB942676A5A70054E259 /* tidylist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tidylist.sh; sourceTree = "<group>"; };
 		06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRGeneralInfoViewController.xib; sourceTree = "<group>"; };
 		06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRSpectrumViewController.xib; sourceTree = "<group>"; };
 		06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRWikipediaViewController.xib; sourceTree = "<group>"; };
@@ -573,7 +575,6 @@
 		803518C023302BF50070B1DE /* SVProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SVProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/SVProgressHUD.framework; sourceTree = "<group>"; };
 		804F2B9A2360BF23009C8F3C /* LocaleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocaleManager.swift; sourceTree = "<group>"; };
 		804F2B9D2360CE6C009C8F3C /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
-		804F2BA423622059009C8F3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/LoadFailure.html; sourceTree = "<group>"; };
 		804F2BA623622064009C8F3C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = en; path = en.lproj/LoadFailure.html; sourceTree = "<group>"; };
 		804F2BA723622066009C8F3C /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = fr; path = fr.lproj/LoadFailure.html; sourceTree = "<group>"; };
 		804F2BA823622067009C8F3C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/LoadFailure.html; sourceTree = "<group>"; };
@@ -1040,6 +1041,7 @@
 		8012807520F0271F00ABC706 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0660FB942676A5A70054E259 /* tidylist.sh */,
 				806A3969211902590074ED28 /* Images */,
 				0639C43026757AA700B58D15 /* Interfaces */,
 				8012838A20F032A000ABC706 /* Misc */,
@@ -1791,11 +1793,11 @@
 		804F2BA523622059009C8F3C /* LoadFailure.html */ = {
 			isa = PBXVariantGroup;
 			children = (
-				804F2BA423622059009C8F3C /* Base */,
 				804F2BA623622064009C8F3C /* en */,
 				804F2BA723622066009C8F3C /* fr */,
 				804F2BA823622067009C8F3C /* ru */,
 				804F2BA923622067009C8F3C /* es */,
+				062E80F52676ABB20009DDA5 /* Base */,
 			);
 			name = LoadFailure.html;
 			sourceTree = "<group>";
