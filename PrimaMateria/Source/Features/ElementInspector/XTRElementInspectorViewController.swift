@@ -12,6 +12,16 @@ import RxCocoa
 
 struct XTRElementInspectorControllerConfig {
     static let popupContentSize = CGSize(width: 1024.0, height: 768.0)
+    static let controllerFrameRect = CGRect(x: 0, y: 149, width: 1024, height: 574)
+    static let controllerBoundsRect = CGRect(x: 0, y: 0, width: 1024, height: 574)
+
+    enum ElementViewTypes {
+        static let kAtomicStructure = 0
+        static let kElementProperties = 1
+        static let kNuclidesIsotopes = 1
+        static let kSpectrum = 1
+        static let kGeneralInfo = 1
+    }
 }
 
 class XTRElementInspectorViewController: XTRSwapableViewController {
@@ -28,8 +38,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     @IBOutlet var pageControl: XTRPageControl!
 
     var flag: Bool = true
-
-    var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
 
@@ -61,6 +69,19 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     }
 
     func assignNavigationHints() {
+        let nextGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(nextElement(_:)))
+        let previousGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(previousElement(_:)))
+        let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(nextElement(_:)))
+        let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
+        swipeNextElement.direction = UISwipeGestureRecognizer.Direction.right
+
+        swipePreviousElement.direction = UISwipeGestureRecognizer.Direction.left
+
+        pageControl.addGestureRecognizer(swipeNextElement)
+        pageControl.addGestureRecognizer(swipePreviousElement)
+        pageControl.nextLabel.addGestureRecognizer(nextGestureRecognizer)
+        pageControl.previousLabel.addGestureRecognizer(previousGestureRecognizer)
+
         var nextAtomicNumber = element!.atomicNumber + 1
 
         pageControl.updateCurrentLabel(atomicNumber: element!.atomicNumber)
@@ -76,11 +97,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         let nextElement = XTRDataSource.sharedInstance.element(index: nextAtomicNumber - 1)
 
         pageControl.populateRightLabel(name: nextElement.name!)
-
-        let nextGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(nextElement(_:)))
-        let previousGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(previousElement(_:)))
-        pageControl.nextLabel.addGestureRecognizer(nextGestureRecognizer)
-        pageControl.previousLabel.addGestureRecognizer(previousGestureRecognizer)
 
         var previousAtomicNumber = element!.atomicNumber - 1
 
@@ -100,8 +116,8 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
     override func addChild(_ aViewController: UIViewController) {
         super.addChild(aViewController)
 
-        aViewController.view.frame = CGRect(x: 0, y: 149, width: 1024, height: 574)
-        aViewController.view.bounds = CGRect(x: 0, y: 0, width: 1024, height: 574)
+        aViewController.view.frame = XTRElementInspectorControllerConfig.controllerFrameRect
+        aViewController.view.bounds = XTRElementInspectorControllerConfig.controllerBoundsRect
         aViewController.view.isHidden = true
 
         view.addSubview(aViewController.view)
@@ -163,11 +179,11 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         segmentedControl.cornerRadius = VIEW_CORNER_RADIUS
         segmentedControl.masksToBounds = true
         segmentedControl.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
-        segmentedControl.setTitle(NSLocalizedString("atomicStructure", comment: ""), forSegmentAt: 0)
-        segmentedControl.setTitle(NSLocalizedString("elementProperties", comment: ""), forSegmentAt: 1)
-        segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: 2)
-        segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: 3)
-        segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: 4)
+        segmentedControl.setTitle(NSLocalizedString("atomicStructure", comment: ""), forSegmentAt: XTRElementInspectorControllerConfig.ElementViewTypes.kAtomicStructure)
+        segmentedControl.setTitle(NSLocalizedString("elementProperties", comment: ""), forSegmentAt: XTRElementInspectorControllerConfig.ElementViewTypes.kElementProperties)
+        segmentedControl.setTitle(NSLocalizedString("nuclidesIsotopes", comment: ""), forSegmentAt: XTRElementInspectorControllerConfig.ElementViewTypes.kNuclidesIsotopes)
+        segmentedControl.setTitle(NSLocalizedString("spectrum", comment: ""), forSegmentAt: XTRElementInspectorControllerConfig.ElementViewTypes.kSpectrum)
+        segmentedControl.setTitle(NSLocalizedString("generalInfo", comment: ""), forSegmentAt: XTRElementInspectorControllerConfig.ElementViewTypes.kGeneralInfo)
         segmentedControl.rx.selectedSegmentIndex.subscribe(onNext: { [weak self] selectedSegmentIndex in
             let viewController = self?.children[selectedSegmentIndex]
 
@@ -188,7 +204,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
 
     // MARK: - Action Methods
 
-    @objc func nextElement(_ sender: UIButton) {
+    @objc func nextElement(_ sender: Any) {
         var atomicNumber = element!.atomicNumber + 1
 
         if atomicNumber > XTRDataSource.sharedInstance.elementCount() {
@@ -199,7 +215,7 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         animateForDirection("Next")
     }
 
-    @objc func previousElement(_ sender: UIButton) {
+    @objc func previousElement(_ sender: Any) {
         var atomicNumber = element!.atomicNumber - 1
 
         if atomicNumber < 1 {
@@ -214,9 +230,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let swipeNextElement = UISwipeGestureRecognizer(target: self, action: #selector(nextElement(_:)))
-        let swipePreviousElement = UISwipeGestureRecognizer(target: self, action: #selector(previousElement(_:)))
         
         setupRx()
 
@@ -228,11 +241,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
 
         children[0].view.isHidden = false
 
-        swipeNextElement.direction = UISwipeGestureRecognizer.Direction.right
-        view.addGestureRecognizer(swipeNextElement)
-
-        swipePreviousElement.direction = UISwipeGestureRecognizer.Direction.left
-        view.addGestureRecognizer(swipePreviousElement)
         NotificationCenter.default.addObserver(self, selector: #selector(atomicStructureZoomed(_:)), name: .notificationAtomicStructureZoomed, object: nil)
     }
 

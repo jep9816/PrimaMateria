@@ -79,7 +79,6 @@ class XTRAtomicStructureViewController: XTRSwapableViewController {
     var overlayView: XTROverlayView!
     var crystalStructureContent: XTRZoomContentView!
     var shellModelContent: XTRZoomContentView!
-    var disposeBag: DisposeBag = DisposeBag()
     var crystalStructureString: String!
 
     let contentRect = CGRect(x: 154, y: 10, width: 716, height: 748)

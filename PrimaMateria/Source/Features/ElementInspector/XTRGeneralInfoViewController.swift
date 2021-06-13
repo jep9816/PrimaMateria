@@ -21,8 +21,6 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     @IBOutlet var webView: WKWebView!
     @IBOutlet var showWikiButton: UIButton!
 
-    var disposeBag: DisposeBag = DisposeBag()
-
     // MARK: - Initialization Methods
 
     required init?(coder aDecoder: NSCoder) {

@@ -7,96 +7,64 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3BEFB721-FDB4-4EB2-BB93-25EB1B530737"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PrimaMateria/Classes/Misc/XTRAppDelegate.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "keyWindow"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8F834982-55CE-4172-B008-C72D02AE725E"
+            uuid = "5CDB066B-9E89-495F-90C7-F09B3A3AB05B"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PrimaMateria/Source/ViewControllers/XTRPeriodicTableViewController.swift"
+            filePath = "PrimaMateria/Source/Features/ElementInspector/XTRElementPropertiesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "setupPopUp()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "setupRx()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "93EF5A4C-0F1C-4437-BC47-B11299D56F38"
+            uuid = "03DA4081-63DB-4776-A740-B582F4975585"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PrimaMateria/Source/Delegates/XTRGraphChoiceViewControllerDelegate.swift"
+            filePath = "PrimaMateria/Source/Features/ElementInspector/XTRElementPropertiesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "CB4EDDA3-2DEC-4468-85BE-FD7AC4DCB7D8"
+            uuid = "B9E62BE8-258F-44DC-8EA7-CA49BB552024"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PrimaMateria/Source/Controls/XTRGraphChoiceCell.swift"
+            filePath = "PrimaMateria/Source/Features/ElementInspector/XTRElementInspectorViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "20"
-            endingLineNumber = "20"
-            landmarkName = "setup(index:)"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
+            landmarkName = "animateForDirection(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "4A7B27AA-969B-4280-88E9-6FCC68E8C4F7"
+            uuid = "7CA3F978-253A-4681-8E7E-247DB0749E0A"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PrimaMateria/Source/ViewControllers/XTRHomeViewController.swift"
+            filePath = "PrimaMateria/Source/Features/PeriodicTable/XTRPeriodicTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "createTab(viewController:tabTitle:imageName:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9E9F2C82-C82C-45AE-98DA-7233778D5A6F"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PrimaMateria/Source/ViewControllers/XTRGraphViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "196"
-            endingLineNumber = "196"
-            landmarkName = "graphSelected(_:)"
+            startingLineNumber = "120"
+            endingLineNumber = "120"
+            landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -69,6 +69,12 @@ class XTRElementPropertiesChemicalViewController: XTRSwapableViewController {
 
     // MARK: - View Management Methods
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        scrollView.delaysContentTouches = false
+    }
+    
     override var shouldAutorotate: Bool {
         return false
     }

@@ -123,6 +123,16 @@ class XTRElementPropertiesPhysicalViewController: XTRSwapableViewController {
 
     // MARK: - View Management Methods
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        scrollView.delaysContentTouches = false
+    }
+
+    override func viewDidLayoutSubviews() {
+        scrollView.contentSize = CGSize(width: 1024, height: 1100)
+    }
+
     override var shouldAutorotate: Bool {
         return false
     }

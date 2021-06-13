@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 protocol XTRSwapable {
     func setupUI(element: XTRElementModel)
@@ -15,6 +17,8 @@ protocol XTRSwapable {
 
 class XTRSwapableViewController: UIViewController, XTRSwapable {
 
+    var disposeBag: DisposeBag = DisposeBag()
+    
     var element: XTRElementModel?
 
     // MARK: - Initialization Methods

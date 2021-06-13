@@ -38,7 +38,6 @@ class XTRSpectrumViewController: XTRSwapableViewController {
 
     var barChart: CPTXYGraph?
     var lineSpectraArray: BehaviorRelay<[XTRSpectraModel]>?
-    var disposeBag: DisposeBag = DisposeBag()
 
     private var delegate: XTRSpectrumViewControllerDelegate? = XTRSpectrumViewControllerDelegate()
 

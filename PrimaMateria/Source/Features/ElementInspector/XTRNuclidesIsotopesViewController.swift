@@ -18,8 +18,6 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
 
     var nuclidesAndIsotopesArray: BehaviorRelay<[XTRIsotopeModel]>?
 
-    var disposeBag: DisposeBag = DisposeBag()
-
     private var delegate: XTRNuclidesIsotopesViewControllerDelegate? = XTRNuclidesIsotopesViewControllerDelegate()
 
     // MARK: - Initialization Methods

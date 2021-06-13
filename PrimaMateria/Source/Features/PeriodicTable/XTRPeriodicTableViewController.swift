@@ -116,8 +116,8 @@ class XTRPeriodicTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        title = NSLocalizedString(PERIODIC_VIEW_TITLE, comment: "")
+            
+        let title = NSLocalizedString("periodicTableElements", comment: "")
         navigationBar.topItem?.title = title
 
         molecularCalculatorViewController = XTRMolecularCalculatorViewController.loadFromNib()
