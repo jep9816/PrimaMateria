@@ -84,7 +84,6 @@ class XTRPeriodicTableViewController: UIViewController {
     func showPopupForButton(_ sender: UIButton) {
         guard let popoverController = elementBalloonViewController.popoverPresentationController else { return }
 
-        XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = sender.tag
 
         popoverController.sourceRect = XTRPeriodicTableViewControllerConfig.buttonRect

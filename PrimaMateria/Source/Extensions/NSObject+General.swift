@@ -91,7 +91,6 @@ extension String {
 extension UIViewController {
     
     func showElementPanelForElement(index: Int, controller: UIViewController) {
-        XTRPropertiesStore.viewTitle = title!
         XTRPropertiesStore.atomicNumber = index
         
         let elementInspector: XTRElementInspectorViewController = XTRElementInspectorViewController.loadFromNib()

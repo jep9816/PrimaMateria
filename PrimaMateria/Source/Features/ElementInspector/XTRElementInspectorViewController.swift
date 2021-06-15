@@ -18,9 +18,9 @@ struct XTRElementInspectorControllerConfig {
     enum ElementViewTypes {
         static let kAtomicStructure = 0
         static let kElementProperties = 1
-        static let kNuclidesIsotopes = 1
-        static let kSpectrum = 1
-        static let kGeneralInfo = 1
+        static let kNuclidesIsotopes = 2
+        static let kSpectrum = 3
+        static let kGeneralInfo = 4
     }
 }
 

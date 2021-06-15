@@ -59,12 +59,10 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
 
     func setupGeneralInfo(element: XTRElementModel) {
         let path = element.pathForGeneralInfoDoc()
-
-        if !path.isEmpty {
-            let url = URL(fileURLWithPath: path)
-            let request = URLRequest(url: url)
-
-            webView.load(request)
+        let theURL = URL(fileURLWithPath: path)
+        
+        if let data = try? Data(contentsOf: theURL) {
+            webView.load(data, mimeType: "application/pdf", characterEncodingName: "", baseURL: theURL)
         }
     }
 

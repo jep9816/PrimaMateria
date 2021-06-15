@@ -28,11 +28,8 @@ enum SuperScriptType {
 extension XTRElementModel {
     
     func pathForGeneralInfoDoc() -> String {
-        if let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: symbol, ofType: FileType.rtf, inDirectory: SUPPORTING_FILES) {
-            return aPath
-        }
-        
-        return STRING_EMPTY
+        guard let aPath = Bundle(for: XTRElementModel.classForCoder()).path(forResource: symbol, ofType: FileType.pdf, inDirectory: SUPPORTING_FILES) else { return STRING_EMPTY }
+        return aPath
     }
     
     var atomicMassAggregate: String {

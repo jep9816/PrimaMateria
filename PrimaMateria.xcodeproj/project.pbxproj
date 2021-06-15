@@ -45,6 +45,8 @@
 		06C1CB502675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */; };
 		06C1CB522675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */; };
 		06C1CB532675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */; };
+		06CE0DA326791C4D0042BDE2 /* Credits.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 06CE0DA226791C4D0042BDE2 /* Credits.pdf */; };
+		06CE0DA426791C4D0042BDE2 /* Credits.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 06CE0DA226791C4D0042BDE2 /* Credits.pdf */; };
 		06E83DB026714862005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DAF26714862005F7092 /* CorePlot */; };
 		06E83DB226714A63005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DB126714A63005F7092 /* CorePlot */; };
 		06F0BC482672CC7C00B06011 /* XTRSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */; };
@@ -150,7 +152,6 @@
 		801281FF20F0272000ABC706 /* Tetragonal.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012808120F0271F00ABC706 /* Tetragonal.scn */; };
 		8012820720F0272000ABC706 /* PrimaMateria.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */; };
 		8012820820F0272000ABC706 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8012808C20F0271F00ABC706 /* Settings.bundle */; };
-		8012820920F0272000ABC706 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8012808D20F0271F00ABC706 /* Credits.rtf */; };
 		8012835720F0272000ABC706 /* PrimaMateria.plist in Resources */ = {isa = PBXBuildFile; fileRef = 801281DE20F0272000ABC706 /* PrimaMateria.plist */; };
 		8012835820F0272000ABC706 /* MainStyle.css in Resources */ = {isa = PBXBuildFile; fileRef = 801281DF20F0272000ABC706 /* MainStyle.css */; };
 		8012835C20F0272000ABC706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E420F0272000ABC706 /* LaunchScreen.storyboard */; };
@@ -424,7 +425,6 @@
 		80AB2ABB2128CEAD00B58AB3 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
 		80AB2ABC2128CEAD00B58AB3 /* Globe56.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C0210A875300AB3B00 /* Globe56.png */; };
 		80AB2ABE2128CEAD00B58AB3 /* Globe70.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876B9210A874E00AB3B00 /* Globe70.png */; };
-		80AB2ABF2128CEAD00B58AB3 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8012808D20F0271F00ABC706 /* Credits.rtf */; };
 		80AB2AC02128CEAD00B58AB3 /* CubicBody.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807C20F0271F00ABC706 /* CubicBody.scn */; };
 		80DC21C121111DA400518784 /* XTRZoomContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DC21C021111DA400518784 /* XTRZoomContentView.swift */; };
 		80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */; };
@@ -456,6 +456,8 @@
 		06C1CB492674FFD300D2AE17 /* XTRElementPropertiesPhysicalViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRElementPropertiesPhysicalViewController.xib; sourceTree = "<group>"; };
 		06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesChemicalViewController.swift; sourceTree = "<group>"; };
 		06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesPhysicalViewController.swift; sourceTree = "<group>"; };
+		06CE0DA1267917F20042BDE2 /* PrimaMateria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrimaMateria.entitlements; sourceTree = "<group>"; };
+		06CE0DA226791C4D0042BDE2 /* Credits.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Credits.pdf; sourceTree = "<group>"; };
 		06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRSplashViewController.xib; sourceTree = "<group>"; };
 		06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRGraphChoiceViewController.xib; sourceTree = "<group>"; };
 		06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRColorPickerViewController.xib; sourceTree = "<group>"; };
@@ -553,7 +555,6 @@
 		8012808A20F0271F00ABC706 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = PrimaMateria.scnassets; sourceTree = "<group>"; };
 		8012808C20F0271F00ABC706 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
-		8012808D20F0271F00ABC706 /* Credits.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 		801280ED20F0272000ABC706 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		801281DE20F0272000ABC706 /* PrimaMateria.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PrimaMateria.plist; sourceTree = "<group>"; };
 		801281DF20F0272000ABC706 /* MainStyle.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = MainStyle.css; sourceTree = "<group>"; };
@@ -876,6 +877,7 @@
 		80127C0520F0253000ABC706 = {
 			isa = PBXGroup;
 			children = (
+				06CE0DA1267917F20042BDE2 /* PrimaMateria.entitlements */,
 				80127C1020F0253000ABC706 /* PrimaMateria */,
 				80127C0F20F0253000ABC706 /* Products */,
 				F7E587BE9504334DFC476A2E /* Frameworks */,
@@ -1074,7 +1076,7 @@
 		8012838A20F032A000ABC706 /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				8012808D20F0271F00ABC706 /* Credits.rtf */,
+				06CE0DA226791C4D0042BDE2 /* Credits.pdf */,
 				804F2BA523622059009C8F3C /* LoadFailure.html */,
 				8012807620F0271F00ABC706 /* Localizable.strings */,
 				801281DF20F0272000ABC706 /* MainStyle.css */,
@@ -1420,6 +1422,7 @@
 				80987738210A8B0800AB3B00 /* Globe29.png in Resources */,
 				8098771C210A8B0800AB3B00 /* Globe01.png in Resources */,
 				06C1CAFD26743C0900D2AE17 /* XTRPreferencesViewController.xib in Resources */,
+				06CE0DA426791C4D0042BDE2 /* Credits.pdf in Resources */,
 				80987720210A8B0800AB3B00 /* Globe05.png in Resources */,
 				800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */,
 				806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */,
@@ -1427,7 +1430,6 @@
 				806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */,
 				80987753210A8B0800AB3B00 /* Globe56.png in Resources */,
 				80987761210A8B0800AB3B00 /* Globe70.png in Resources */,
-				8012820920F0272000ABC706 /* Credits.rtf in Resources */,
 				801281FA20F0272000ABC706 /* CubicBody.scn in Resources */,
 				06C1CAD62673B95300D2AE17 /* XTRElementPropertiesViewController.xib in Resources */,
 			);
@@ -1454,6 +1456,7 @@
 				80AB2A542128CEAD00B58AB3 /* Globe67.png in Resources */,
 				80AB2A552128CEAD00B58AB3 /* Globe72.png in Resources */,
 				06C1CAC82673ABD300D2AE17 /* XTRGeneralInfoViewController.xib in Resources */,
+				06CE0DA326791C4D0042BDE2 /* Credits.pdf in Resources */,
 				80AB2A562128CEAD00B58AB3 /* Globe16.png in Resources */,
 				80AB2A572128CEAD00B58AB3 /* Globe71.png in Resources */,
 				80AB2A582128CEAD00B58AB3 /* Globe09.png in Resources */,
@@ -1558,7 +1561,6 @@
 				80AB2ABB2128CEAD00B58AB3 /* brushed-dark-steel.png in Resources */,
 				80AB2ABC2128CEAD00B58AB3 /* Globe56.png in Resources */,
 				80AB2ABE2128CEAD00B58AB3 /* Globe70.png in Resources */,
-				80AB2ABF2128CEAD00B58AB3 /* Credits.rtf in Resources */,
 				80AB2AC02128CEAD00B58AB3 /* CubicBody.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1950,8 +1952,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -1970,6 +1974,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -1983,8 +1988,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -2003,6 +2010,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
@@ -2015,6 +2023,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -2035,6 +2044,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
@@ -2049,6 +2059,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = NO;
+				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -2069,6 +2080,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "$(inherited)";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;

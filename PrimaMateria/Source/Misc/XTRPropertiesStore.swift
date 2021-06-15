@@ -60,25 +60,6 @@ class XTRPropertiesStore: NSObject {
         }
     }
 
-    class var viewTitle: String {
-        get {
-            let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.viewTitle) as? String else {
-                XTRPropertiesStore.viewTitle = XTRPropertiesStoreConfig.noneValue
-                return XTRPropertiesStoreConfig.noneValue
-            }
-
-            return defaultValue
-        }
-
-        set {
-            let userDefaults = UserDefaults.standard
-
-            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.viewTitle)
-            userDefaults.synchronize()
-        }
-    }
-
     class var splashScreenState: Bool {
         get {
             let userDefaults = UserDefaults.standard
