@@ -90,16 +90,15 @@ extension String {
 
 extension UIViewController {
     
-    func showElementPanelForElement(index: Int, controller: UIViewController) {
-        XTRPropertiesStore.atomicNumber = index
-        
+    func showElementPanel(element: XTRElementModel, controller: UIViewController) {
         let elementInspector: XTRElementInspectorViewController = XTRElementInspectorViewController.loadFromNib()
         
+        elementInspector.element = element
         if UIScreen.main.bounds.width == 1024 && UIScreen.main.bounds.height == 768 {
             elementInspector.modalPresentationStyle = .fullScreen
-
         } else {
             elementInspector.modalPresentationStyle = .formSheet
+            elementInspector.isModalInPresentation = true
             elementInspector.preferredContentSize = XTRElementInspectorControllerConfig.popupContentSize
         }
         

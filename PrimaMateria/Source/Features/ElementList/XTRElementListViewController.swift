@@ -132,7 +132,8 @@ class XTRElementListViewController: UIViewController {
         navigationController?.navigationBar.prefersLargeTitles = true
 
         delegate?.closure = { [weak self] (index: Int) -> Void in
-            self?.showElementPanelForElement(index: index, controller: self!)
+            let element = XTRDataSource.sharedInstance.element(index: index)
+            self?.showElementPanel(element: element, controller: self!)
         }
     }
 

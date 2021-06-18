@@ -271,7 +271,7 @@ class XTRColorFactory: NSObject {
 
     class var helpBackgroundColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
-            return UIColor.color(hexString: "dddd00")
+            return UIColor.color(hexString: "fcfc95")
         } else {
             return UIColor.color(hexString: "add8e6")
         }

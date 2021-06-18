@@ -24,7 +24,7 @@ class XTRPropertiesStore: NSObject {
         get {
             let userDefaults = UserDefaults.standard
             guard let defaultValue = userDefaults.value(forKeyPath: "AppleLanguage") as? String else {
-                XTRPropertiesStore.atomicNumber = 1
+                //XTRPropertiesStore.atomicNumber = 1
                 userDefaults.set("en", forKey: "AppleLanguage")
                 userDefaults.synchronize()
 
@@ -37,25 +37,6 @@ class XTRPropertiesStore: NSObject {
         set {
             let userDefaults = UserDefaults.standard
             userDefaults.set(newValue, forKey: "AppleLanguage")
-            userDefaults.synchronize()
-        }
-    }
-
-    class var atomicNumber: Int {
-        get {
-            let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.atomicNumber) as? Int else {
-                XTRPropertiesStore.atomicNumber = 1
-                return 1
-            }
-
-            return defaultValue
-        }
-
-        set {
-            let userDefaults = UserDefaults.standard
-
-            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.atomicNumber)
             userDefaults.synchronize()
         }
     }

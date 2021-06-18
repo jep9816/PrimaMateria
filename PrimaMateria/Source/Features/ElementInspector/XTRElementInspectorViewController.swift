@@ -248,7 +248,6 @@ class XTRElementInspectorViewController: XTRSwapableViewController {
         super.viewWillAppear(animated)
 
         barButtonItem.title = NSLocalizedString("Close", comment: "")
-        element = XTRDataSource.sharedInstance.element(index: XTRPropertiesStore.atomicNumber)
         setupUI(element: element!)
     }
 

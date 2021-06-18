@@ -84,11 +84,12 @@ class XTRPeriodicTableViewController: UIViewController {
     func showPopupForButton(_ sender: UIButton) {
         guard let popoverController = elementBalloonViewController.popoverPresentationController else { return }
 
-        XTRPropertiesStore.atomicNumber = sender.tag
+        let element = XTRDataSource.sharedInstance.element(index: sender.tag)
 
         popoverController.sourceRect = XTRPeriodicTableViewControllerConfig.buttonRect
         popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
+        elementBalloonViewController.element = element
 
         present(elementBalloonViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
@@ -100,7 +101,8 @@ class XTRPeriodicTableViewController: UIViewController {
             if XTRPropertiesStore.elementBubblesState {
                 showPopupForButton(sender)
             } else {
-                showElementPanelForElement(index: sender.tag, controller: self)
+                let element = XTRDataSource.sharedInstance.element(index: sender.tag)
+                showElementPanel(element: element, controller: self)
             }
         }
     }

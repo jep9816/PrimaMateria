@@ -20,6 +20,8 @@ class XTRElementBalloonViewController: UIViewController {
     @IBOutlet var wrapperView: UIView!
     @IBOutlet var elementDetailsButton: XTRGeneralButton!
 
+    var element: XTRElementModel!
+
     var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
@@ -35,8 +37,6 @@ class XTRElementBalloonViewController: UIViewController {
     // MARK: - Internal Methods
 
     func setupUI() {
-        let element = XTRDataSource.sharedInstance.element(index: XTRPropertiesStore.atomicNumber)
-
         title = NSLocalizedString("elementBalloon", comment: "")
 
         elementNameLabel.textColor = element.standardConditionColor
@@ -58,7 +58,7 @@ class XTRElementBalloonViewController: UIViewController {
         wrapperView.clipsToBounds = true
 
         elementDetailsButton.rx.tap.subscribe(onNext: { [weak self] _ in
-            self?.showElementPanelForElement(index: XTRPropertiesStore.atomicNumber, controller: self!)
+            self?.showElementPanel(element: (self?.element)!, controller: self!)
         }).disposed(by: disposeBag)
     }
 

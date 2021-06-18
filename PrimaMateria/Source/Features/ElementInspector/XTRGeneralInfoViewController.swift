@@ -80,6 +80,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         let wikipediaViewController: XTRWikipediaViewController = XTRWikipediaViewController.loadFromNib()
 
         wikipediaViewController.modalPresentationStyle = .formSheet
+        wikipediaViewController.isModalInPresentation = true
         wikipediaViewController.modalTransitionStyle = .crossDissolve
         wikipediaViewController.elementName = element?.name
 

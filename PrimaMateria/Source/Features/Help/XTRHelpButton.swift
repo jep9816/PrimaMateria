@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
 
@@ -60,10 +61,22 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         guard let label = title(for: .disabled) else { return }
 
         let controller = viewController()
-        let content = XTRHelpBalloonViewController.loadFromNib()
         
-        content.preferredContentSize = XTRHelpBalloonViewControllerConfig.preferredContentSize
+        // SwiftUI implementation
+        let helpBalloon = XTRHelpBalloonView()
+        helpBalloon.webViewStateModel.pageTitle = NSLocalizedString("help", comment: "Help")
+        let environment: HelpBallonEnvironment = HelpBallonEnvironment()
+        environment.elementTipPath = elementTipPath(documentName: label)
+        let content = UIHostingController(rootView: helpBalloon.environmentObject(environment))
+        content.preferredContentSize = content.sizeThatFits(in: XTRHelpBalloonViewConfig.preferredContentSize)
         content.modalPresentationStyle = .popover
+
+        // Legacy implementation
+        //let content = XTRHelpBalloonViewController.loadFromNib()
+        
+        //content.modalPresentationStyle = .popover
+        //content.preferredContentSize = XTRHelpBalloonViewControllerConfig.preferredContentSize
+        
         controller.present(content, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
         let presentationController = content.popoverPresentationController
         presentationController?.sourceRect = bounds
@@ -75,6 +88,11 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
     deinit {
         NotificationCenter.default.removeObserver(self, name: .notificationAppearanceChanged, object: nil)
         NotificationCenter.default.removeObserver(self, name: .notificationAtomicStructureZoomed, object: nil)
+    }
+
+    func elementTipPath(documentName: String) -> String {
+        guard let path = Bundle.main.path(forResource: documentName, ofType: FileType.html, inDirectory: "ElementTipHelp/\(XTRPropertiesStore.currentLanguageCode)") else { return "" }
+        return path
     }
 
 }
