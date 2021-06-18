@@ -749,6 +749,16 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
+		061AE48E267CF1FC00BD18CC /* Legacy */ = {
+			isa = PBXGroup;
+			children = (
+				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
+				06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */,
+				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
+			);
+			name = Legacy;
+			sourceTree = "<group>";
+		};
 		0639C4242675781B00B58D15 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -781,10 +791,8 @@
 		0639C4262675787E00B58D15 /* Help */ = {
 			isa = PBXGroup;
 			children = (
+				061AE48E267CF1FC00BD18CC /* Legacy */,
 				061AE477267BC2E600BD18CC /* XTRHelpBalloonView.swift */,
-				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
-				06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */,
-				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
 				8012800220F0270400ABC706 /* XTRHelpButton.swift */,
 			);
 			path = Help;
