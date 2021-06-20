@@ -15,7 +15,6 @@ class HelpBallonEnvironment: ObservableObject {
 
 struct XTRHelpBalloonViewConfig {
     static let preferredContentSize = CGSize(width: 500, height: 400)
-    static let barButtonSize = CGSize(width: 44, height: 44)
 }
 
 struct XTRHelpBalloonView: View {
@@ -25,7 +24,8 @@ struct XTRHelpBalloonView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                XTRLoadingView(isShowing: .constant(webViewStateModel.loading)) { //loading logic taken from https://stackoverflow.com/a/56496896/9838937
+                XTRLoadingView(isShowing: .constant(webViewStateModel.loading)) {
+                    //loading logic taken from https://stackoverflow.com/a/56496896/9838937
                     //Add onNavigationAction if callback needed
                     XTRWebView(url: URL(fileURLWithPath: environment.elementTipPath), webViewStateModel: self.webViewStateModel)
                         .frame(width: XTRHelpBalloonViewConfig.preferredContentSize.width - 2, height: XTRHelpBalloonViewConfig.preferredContentSize.height - 38).offset(x: 0, y: 0)
@@ -40,7 +40,7 @@ struct XTRHelpBalloonView: View {
                             self.webViewStateModel.goBack.toggle()
                         }) {
                             Text("◀︎").lineLimit(1).font(.system(size: 26, weight: .bold))
-                                .frame(width: XTRHelpBalloonViewConfig.barButtonSize.width, height: XTRHelpBalloonViewConfig.barButtonSize.height, alignment: .leading)
+                                .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .leading)
                         }
                         .opacity(!webViewStateModel.canGoBack ? 0: 1)
                         .disabled(!webViewStateModel.canGoBack)
@@ -52,7 +52,7 @@ struct XTRHelpBalloonView: View {
                             self.webViewStateModel.goForward.toggle()
                         }) {
                             Text("▶︎").lineLimit(1).font(.system(size: 26, weight: .bold))
-                                .frame(width: XTRHelpBalloonViewConfig.barButtonSize.width, height: XTRHelpBalloonViewConfig.barButtonSize.height, alignment: .trailing)
+                                .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .trailing)
                         }
                         .opacity(!webViewStateModel.canGoForward ? 0: 1)
                         .disabled(!webViewStateModel.canGoForward)

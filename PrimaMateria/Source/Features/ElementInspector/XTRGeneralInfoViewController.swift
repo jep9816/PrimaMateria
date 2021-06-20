@@ -10,6 +10,7 @@ import PDFKit
 import WebKit
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 class XTRGeneralInfoViewController: XTRSwapableViewController {
 
@@ -77,14 +78,34 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
     // MARK: - View Management Methods
 
     func showWikiView() {
-        let wikipediaViewController: XTRWikipediaViewController = XTRWikipediaViewController.loadFromNib()
+        // SwiftUI implementation
+        let wikiPediaView = XTRWikiPediaView(dismissAction: { self.dismiss( animated: true, completion: nil) })
+        let elementName = (element?.name)!
+        let environment: WikipediaEnvironment = WikipediaEnvironment()
+        let wikipediaViewController = UIHostingController(rootView: wikiPediaView.environmentObject(environment))
+
+        wikiPediaView.webViewStateModel.pageTitle = "\(NSLocalizedString("wikipediaEntry", comment: "")) \(elementName)"
+
+        environment.wikipediaPath = wikipediaPath(elementName: elementName)
 
         wikipediaViewController.modalPresentationStyle = .formSheet
-        wikipediaViewController.isModalInPresentation = true
+        //wikipediaViewController.isModalInPresentation = true
         wikipediaViewController.modalTransitionStyle = .crossDissolve
-        wikipediaViewController.elementName = element?.name
+        wikipediaViewController.preferredContentSize = wikipediaViewController.sizeThatFits(in: XTRWikipediaViewConfig.preferredContentSize)
+
+        // Legacy implementation
+        //let wikipediaViewController: XTRWikipediaViewController = XTRWikipediaViewController.loadFromNib()
+
+        //wikipediaViewController.modalPresentationStyle = .formSheet
+        //wikipediaViewController.isModalInPresentation = true
+        //wikipediaViewController.modalTransitionStyle = .crossDissolve
+        //wikipediaViewController.elementName = element?.name
 
         present(wikipediaViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+    }
+
+    func wikipediaPath(elementName: String) -> String {
+         return "https://\(XTRPropertiesStore.currentLanguageCode).wikipedia.org/wiki/\(elementName)"
     }
 
     override func viewDidLoad() {

@@ -9,6 +9,10 @@
 import SwiftUI
 import WebKit
 
+struct XTRWebViewConfig {
+    static let barButtonSize = CGSize(width: 44, height: 44)
+}
+
 struct XTRWebView: View {
     
     enum NavigationAction {

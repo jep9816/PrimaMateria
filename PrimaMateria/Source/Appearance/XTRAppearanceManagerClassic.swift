@@ -37,7 +37,7 @@ class XTRAppearanceManagerClassic: NSObject {
 
     func barButtonItemAppearance() {
         let appearance = UIBarButtonItem.appearance()
-        appearance.tintColor = XTRColorFactoryClassic.graphite
+        appearance.tintColor = XTRColorFactoryClassic.white
 
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;

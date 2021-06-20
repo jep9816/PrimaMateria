@@ -8,8 +8,10 @@
 
 import Foundation
 import UIKit
+import SwiftUI
 
 class XTRMainViewController: UITabBarController {
+    var splashViewController: UIViewController!
 
     // MARK: - Initialization Methods
 
@@ -23,11 +25,27 @@ class XTRMainViewController: UITabBarController {
 
     func showSplash() {
         if XTRPropertiesStore.splashScreenState {
+            print("showSplash")
+            //let splashView = XTRSplashView(dismissAction: { self.wait() })
+            //splashViewController = UIHostingController(rootView: splashView)
             let splashViewController: XTRSplashViewController = XTRSplashViewController.loadFromNib()
+            
             view.frame = UIScreen.main.bounds
             splashViewController.view.frame = UIScreen.main.bounds
             view.addSubview(splashViewController.view)
+            //splashViewController.view.removeFromSuperview()
         }
+    }
+
+    @objc func wait() {
+        print("Hello before")
+        Thread.sleep(forTimeInterval: 5.0)
+        print("Hello after")
+
+        view.willRemoveSubview(splashViewController.view)
+        //splashViewController.view.removeFromSuperview()
+
+        //performSelector(onMainThread: #selector(XTRSplashViewController.done), with: nil, waitUntilDone: true)
     }
 
     // MARK: - Action Methods

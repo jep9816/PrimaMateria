@@ -67,18 +67,18 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         helpBalloon.webViewStateModel.pageTitle = NSLocalizedString("help", comment: "Help")
         let environment: HelpBallonEnvironment = HelpBallonEnvironment()
         environment.elementTipPath = elementTipPath(documentName: label)
-        let content = UIHostingController(rootView: helpBalloon.environmentObject(environment))
-        content.preferredContentSize = content.sizeThatFits(in: XTRHelpBalloonViewConfig.preferredContentSize)
-        content.modalPresentationStyle = .popover
+        let helpBalloonViewController = UIHostingController(rootView: helpBalloon.environmentObject(environment))
+        helpBalloonViewController.preferredContentSize = helpBalloonViewController.sizeThatFits(in: XTRHelpBalloonViewConfig.preferredContentSize)
+        helpBalloonViewController.modalPresentationStyle = .popover
 
         // Legacy implementation
-        //let content = XTRHelpBalloonViewController.loadFromNib()
+        //let helpBalloonViewController = XTRHelpBalloonViewController.loadFromNib()
         
-        //content.modalPresentationStyle = .popover
-        //content.preferredContentSize = XTRHelpBalloonViewControllerConfig.preferredContentSize
+        //helpBalloonViewController.modalPresentationStyle = .popover
+        //helpBalloonViewController.preferredContentSize = XTRHelpBalloonViewControllerConfig.preferredContentSize
         
-        controller.present(content, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
-        let presentationController = content.popoverPresentationController
+        controller.present(helpBalloonViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+        let presentationController = helpBalloonViewController.popoverPresentationController
         presentationController?.sourceRect = bounds
         presentationController?.sourceView = self
         presentationController?.backgroundColor = XTRColorFactory.popupArrowColor
