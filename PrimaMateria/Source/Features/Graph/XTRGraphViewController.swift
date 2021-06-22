@@ -9,6 +9,7 @@
 import CorePlot
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 struct XTRGraphViewControllerConfig {
     static let name = "attributeName"
@@ -20,7 +21,6 @@ struct XTRGraphViewControllerConfig {
     static let customTickLocations: [Int] = [1, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
     static let buttonSize = CGSize(width: 240.0, height: 60.0)
     static let rowHeight: CGFloat = 44.0
-    static let popupContentSize = CGSize(width: (buttonSize.width + 6) * 3, height: (buttonSize.height + 4) * 10)
 }
 
 class XTRGraphViewController: UIViewController {
@@ -32,7 +32,6 @@ class XTRGraphViewController: UIViewController {
     var barChart: CPTXYGraph?
 
     var delegate: XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
-    var graphChoiceViewController: XTRGraphChoiceViewController!
     var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
@@ -48,6 +47,11 @@ class XTRGraphViewController: UIViewController {
     // MARK: - Action Methods
 
     func showGraphChoice() {
+        let graphChoice = XTRGraphChoiceView()
+        let graphChoiceViewController = UIHostingController(rootView: graphChoice)
+        
+        graphChoiceViewController.preferredContentSize = graphChoiceViewController.sizeThatFits(in: XTRGraphChoiceViewConfig.preferredContentSize)
+        graphChoiceViewController.modalPresentationStyle = .popover
         guard let popoverController = graphChoiceViewController.popoverPresentationController else { return }
 
         popoverController.barButtonItem = barButtonItem
@@ -57,13 +61,6 @@ class XTRGraphViewController: UIViewController {
     }
 
     // MARK: - Internal Methods
-
-    func setupPopUp() {
-        graphChoiceViewController = XTRGraphChoiceViewController.loadFromNib()
-
-        graphChoiceViewController.preferredContentSize = XTRGraphViewControllerConfig.popupContentSize
-        graphChoiceViewController.modalPresentationStyle = .popover
-    }
 
     func setupRx() {
         barButtonItem.rx.tap.subscribe(onNext: { [unowned self] in
@@ -214,7 +211,6 @@ class XTRGraphViewController: UIViewController {
 
         delegate.controller = self
         NotificationCenter.default.addObserver(self, selector: #selector(graphSelected(_:)), name: .graphSelectedNotification, object: nil)
-        setupPopUp()
         setupRx()
         showGraphForChoiceAtIndex(0)
         navigationController?.navigationBar.prefersLargeTitles = true

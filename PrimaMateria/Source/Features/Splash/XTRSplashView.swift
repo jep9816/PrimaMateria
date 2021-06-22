@@ -10,7 +10,8 @@ import SwiftUI
 
 struct XTRSplashView: View {
 
-    @State var isActive:Bool = false
+    @State var isActive: Bool = false
+    
     var dismissAction: (() -> Void)
 
     var body: some View {
