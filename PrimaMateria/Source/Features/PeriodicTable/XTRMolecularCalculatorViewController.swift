@@ -124,7 +124,7 @@ class XTRMolecularCalculatorViewController: UIViewController {
     }
 
     func calculate() {
-        let result = XTRMolecularCalculator.calculateWithFormula(formulaTextField.text)
+        let result = XTRMolecularCalculatorEngine.calculateWithFormula(formulaTextField.text)
 
         if result == 0 {
             errorLabel.text = NSLocalizedString("errorMessage", comment: "")

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 struct XTRPeriodicTableViewControllerConfig {
     static let buttonRect = CGRect(x: 0, y: 0, width: 52, height: 54)
@@ -24,7 +25,8 @@ class XTRPeriodicTableViewController: UIViewController {
 
     var molecularCalculatorState: Bool = false
     var elementBalloonViewController: XTRElementBalloonViewController!
-    var molecularCalculatorViewController: XTRMolecularCalculatorViewController!
+    var molecularCalculatorView: XTRMolecularCalculatorView!
+    var molecularCalculatorViewController: UIViewController!
     var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods
@@ -70,12 +72,10 @@ class XTRPeriodicTableViewController: UIViewController {
 
         if aFlag {
             molecularCalculatorWrapperView.addSubview(molecularCalculatorViewController.view)
-            molecularCalculatorViewController.didMove(toParent: self)
+            addChild(molecularCalculatorViewController)
         } else {
-            molecularCalculatorViewController.willMove(toParent: nil)
             molecularCalculatorViewController.view.removeFromSuperview()
             molecularCalculatorViewController.removeFromParent()
-            molecularCalculatorViewController.viewWillDisappear(true)
         }
     }
 
@@ -96,7 +96,9 @@ class XTRPeriodicTableViewController: UIViewController {
 
     func displayElementInspector(_ sender: UIButton) {
         if molecularCalculatorState {
-            molecularCalculatorViewController.setElement(XTRDataSource.sharedInstance.element(index: sender.tag))
+            let molecularCalculatorModel = MolecularCalculatorModel()
+            molecularCalculatorModel.element = XTRDataSource.sharedInstance.element(index: sender.tag)
+            molecularCalculatorView.updateElement(molecularCalculatorModel)
         } else {
             if XTRPropertiesStore.elementBubblesState {
                 showPopupForButton(sender)
@@ -121,7 +123,10 @@ class XTRPeriodicTableViewController: UIViewController {
         let title = NSLocalizedString("periodicTableElements", comment: "")
         navigationBar.topItem?.title = title
 
-        molecularCalculatorViewController = XTRMolecularCalculatorViewController.loadFromNib()
+        molecularCalculatorView = XTRMolecularCalculatorView()
+        molecularCalculatorViewController = UIHostingController(rootView: molecularCalculatorView.environmentObject(MolecularCalculatorEnvironment()))
+        molecularCalculatorViewController.view.translatesAutoresizingMaskIntoConstraints = false
+        molecularCalculatorViewController.view.frame = molecularCalculatorWrapperView.bounds
 
         setupPopUp()
         setupRx()
@@ -145,8 +150,11 @@ class XTRPeriodicTableViewController: UIViewController {
 
     deinit {
         NotificationCenter.default.removeObserver(self, name: .inspectorDismissedNotification, object: nil)
-        molecularCalculatorSwitch = nil
+        
         navigationBar = nil
+        molecularCalculatorSwitch = nil
+        elementButtonView = nil
+        molecularCalculatorWrapperView = nil
     }
 
 }

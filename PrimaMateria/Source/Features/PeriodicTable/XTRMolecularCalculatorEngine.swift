@@ -1,5 +1,5 @@
 //
-//  XTRMolecularCalculator
+//  XTRMolecularCalculatorEngine
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/23/16.
@@ -8,9 +8,9 @@
 
 import Foundation
 
-class XTRMolecularCalculator: NSObject {
+struct XTRMolecularCalculatorEngine {
 
-    class func calculateWithFormula(_ formula: String?) -> Double {
+    static func calculateWithFormula(_ formula: String?) -> Double {
         var total = 0.0
 
         if let localFormula = formula.map({ $0 as NSString }) {
