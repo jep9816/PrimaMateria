@@ -472,7 +472,7 @@
 		0682AED52682620700E69096 /* XTRWikiPediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikiPediaView.swift; sourceTree = "<group>"; };
 		06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRGeneralInfoViewController.xib; sourceTree = "<group>"; };
 		06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRSpectrumViewController.xib; sourceTree = "<group>"; };
-		06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRWikipediaViewController.xib; sourceTree = "<group>"; };
+		06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = XTRWikipediaViewController.xib; path = ElementInspector/XTRWikipediaViewController.xib; sourceTree = "<group>"; };
 		06C1CACE2673B2DE00D2AE17 /* XTRNuclidesIsotopesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRNuclidesIsotopesViewController.xib; sourceTree = "<group>"; };
 		06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRAtomicStructureViewController.xib; sourceTree = "<group>"; };
 		06C1CAD42673B95300D2AE17 /* XTRElementPropertiesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRElementPropertiesViewController.xib; sourceTree = "<group>"; };
@@ -492,12 +492,12 @@
 		06CE0DA1267917F20042BDE2 /* PrimaMateria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrimaMateria.entitlements; sourceTree = "<group>"; };
 		06CE0DA226791C4D0042BDE2 /* Credits.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Credits.pdf; sourceTree = "<group>"; };
 		06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRSplashViewController.xib; sourceTree = "<group>"; };
-		06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRGraphChoiceViewController.xib; sourceTree = "<group>"; };
+		06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XTRGraphChoiceViewController.xib; path = Graph/XTRGraphChoiceViewController.xib; sourceTree = "<group>"; };
 		06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRColorPickerViewController.xib; sourceTree = "<group>"; };
 		06FC7DB12672986700DF9801 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		06FC7DB4267299BA00DF9801 /* XTRElementBalloonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRElementBalloonViewController.xib; sourceTree = "<group>"; };
-		06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRHelpBalloonViewController.xib; sourceTree = "<group>"; };
-		06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRMolecularCalculatorViewController.xib; sourceTree = "<group>"; };
+		06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XTRHelpBalloonViewController.xib; path = Help/XTRHelpBalloonViewController.xib; sourceTree = "<group>"; };
+		06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = XTRMolecularCalculatorViewController.xib; path = PeriodicTable/XTRMolecularCalculatorViewController.xib; sourceTree = "<group>"; };
 		0853E2072114D20100CA092B /* SHKEmbossColor.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKEmbossColor.fsh; sourceTree = "<group>"; };
 		0853E2082114D20100CA092B /* SHKEmbossGray.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKEmbossGray.fsh; sourceTree = "<group>"; };
 		0853E2092114D20100CA092B /* SHKLightGrid.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = SHKLightGrid.fsh; sourceTree = "<group>"; };
@@ -537,7 +537,7 @@
 		80127FFC20F0270400ABC706 /* XTRDividerLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRDividerLabel.swift; sourceTree = "<group>"; };
 		80127FFD20F0270400ABC706 /* XTRElementTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementTableViewCell.swift; sourceTree = "<group>"; };
 		80127FFE20F0270400ABC706 /* XTRTableHeaderButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRTableHeaderButton.swift; sourceTree = "<group>"; };
-		80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceCell.swift; sourceTree = "<group>"; };
+		80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTRGraphChoiceCell.swift; path = Graph/XTRGraphChoiceCell.swift; sourceTree = "<group>"; };
 		8012800020F0270400ABC706 /* XTRTableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRTableLabel.swift; sourceTree = "<group>"; };
 		8012800120F0270400ABC706 /* XTRShellModelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRShellModelScene.swift; sourceTree = "<group>"; };
 		8012800220F0270400ABC706 /* XTRHelpButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHelpButton.swift; sourceTree = "<group>"; };
@@ -547,11 +547,11 @@
 		8012800720F0270400ABC706 /* XTRGraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphViewController.swift; sourceTree = "<group>"; };
 		8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGeneralInfoViewController.swift; sourceTree = "<group>"; };
 		8012800920F0270400ABC706 /* XTRSlideDownAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSlideDownAnimationController.swift; sourceTree = "<group>"; };
-		8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRMolecularCalculatorViewController.swift; sourceTree = "<group>"; };
+		8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTRMolecularCalculatorViewController.swift; path = PeriodicTable/XTRMolecularCalculatorViewController.swift; sourceTree = "<group>"; };
 		8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementInspectorViewController.swift; sourceTree = "<group>"; };
 		8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPeriodicTableViewController.swift; sourceTree = "<group>"; };
 		8012800E20F0270400ABC706 /* XTRElementPropertiesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesViewController.swift; sourceTree = "<group>"; };
-		8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewController.swift; sourceTree = "<group>"; };
+		8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTRGraphChoiceViewController.swift; path = Graph/XTRGraphChoiceViewController.swift; sourceTree = "<group>"; };
 		8012801020F0270400ABC706 /* XTRElementListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListViewController.swift; sourceTree = "<group>"; };
 		8012801120F0270400ABC706 /* XTRSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSplashViewController.swift; sourceTree = "<group>"; };
 		8012801220F0270400ABC706 /* XTRInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRInfoViewController.swift; sourceTree = "<group>"; };
@@ -559,13 +559,13 @@
 		8012801420F0270400ABC706 /* XTRSwapableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSwapableViewController.swift; sourceTree = "<group>"; };
 		8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectrumViewController.swift; sourceTree = "<group>"; };
 		8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPreferencesViewController.swift; sourceTree = "<group>"; };
-		8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewController.swift; sourceTree = "<group>"; };
+		8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTRWikipediaViewController.swift; path = ElementInspector/XTRWikipediaViewController.swift; sourceTree = "<group>"; };
 		8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRAtomicStructureViewController.swift; sourceTree = "<group>"; };
-		8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHelpBalloonViewController.swift; sourceTree = "<group>"; };
+		8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTRHelpBalloonViewController.swift; path = Help/XTRHelpBalloonViewController.swift; sourceTree = "<group>"; };
 		8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRSpectrumViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRInfoViewControllerDelegate.swift; sourceTree = "<group>"; };
-		8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikipediaViewControllerDelegate.swift; sourceTree = "<group>"; };
-		8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRHelpBalloonViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTRWikipediaViewControllerDelegate.swift; path = ElementInspector/XTRWikipediaViewControllerDelegate.swift; sourceTree = "<group>"; };
+		8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = XTRHelpBalloonViewControllerDelegate.swift; path = Help/XTRHelpBalloonViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8012802120F0270400ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRNuclidesIsotopesViewControllerDelegate.swift; sourceTree = "<group>"; };
 		8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRGraphViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -699,7 +699,7 @@
 		80D53584212A271F00077340 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = SOURCE_ROOT; };
 		80DC21C021111DA400518784 /* XTRZoomContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRZoomContentView.swift; sourceTree = "<group>"; };
 		80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRTableViewCellViewModel.swift; sourceTree = "<group>"; };
-		80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceViewControllerDelegate.swift; sourceTree = "<group>"; };
+		80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = XTRGraphChoiceViewControllerDelegate.swift; path = Graph/XTRGraphChoiceViewControllerDelegate.swift; sourceTree = "<group>"; };
 		80E20C91228A89A200CCEB17 /* RxRelay.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxRelay.framework; path = PrimaMateria/Carthage/Build/iOS/RxRelay.framework; sourceTree = "<group>"; };
 		9B244B59243FDBBC00BD6ACE /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = PrimaMateria/Carthage/Build/iOS/MBProgressHUD.framework; sourceTree = "<group>"; };
 		9B5338EE2469F33A00CDE87B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
@@ -758,16 +758,6 @@
 			path = Shared;
 			sourceTree = "<group>";
 		};
-		061AE48E267CF1FC00BD18CC /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
-				06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */,
-				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
-			);
-			name = Legacy;
-			sourceTree = "<group>";
-		};
 		0639C4242675781B00B58D15 /* Features */ = {
 			isa = PBXGroup;
 			children = (
@@ -783,6 +773,7 @@
 				061AE48D267CEB5800BD18CC /* Shared */,
 				0639C42A2675796300B58D15 /* Splash */,
 				061AE47A267CD56900BD18CC /* WebView */,
+				066C87C7268BCD6E00505A19 /* XTRLegacy */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -800,7 +791,6 @@
 		0639C4262675787E00B58D15 /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				061AE48E267CF1FC00BD18CC /* Legacy */,
 				061AE477267BC2E600BD18CC /* XTRHelpBalloonView.swift */,
 				8012800220F0270400ABC706 /* XTRHelpButton.swift */,
 			);
@@ -810,7 +800,6 @@
 		0639C427267578BA00B58D15 /* ElementInspector */ = {
 			isa = PBXGroup;
 			children = (
-				0682AED82682621600E69096 /* Legacy */,
 				8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */,
 				06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */,
 				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
@@ -839,7 +828,6 @@
 		0639C4282675792200B58D15 /* PeriodicTable */ = {
 			isa = PBXGroup;
 			children = (
-				066C87C6268BCD1300505A19 /* Legacy */,
 				80127FF820F0270400ABC706 /* XTRElementButton.swift */,
 				80127FDB20F0270400ABC706 /* XTRMolecularCalculatorEngine.swift */,
 				066C87C0268B699900505A19 /* XTRMolecularCalculatorView.swift */,
@@ -883,7 +871,6 @@
 		0639C42C267579A800B58D15 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
-				0682AED92682857300E69096 /* Legacy */,
 				80127FFA20F0270400ABC706 /* XTRBarPlot.swift */,
 				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
 				06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */,
@@ -931,34 +918,23 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		066C87C6268BCD1300505A19 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
-				06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */,
-			);
-			name = Legacy;
-			sourceTree = "<group>";
-		};
-		0682AED82682621600E69096 /* Legacy */ = {
-			isa = PBXGroup;
-			children = (
-				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
-				06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */,
-				8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */,
-			);
-			name = Legacy;
-			sourceTree = "<group>";
-		};
-		0682AED92682857300E69096 /* Legacy */ = {
+		066C87C7268BCD6E00505A19 /* XTRLegacy */ = {
 			isa = PBXGroup;
 			children = (
 				80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */,
 				8012800F20F0270400ABC706 /* XTRGraphChoiceViewController.swift */,
 				06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */,
 				80DDF83E21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift */,
+				8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */,
+				06FC7DB726729F0300DF9801 /* XTRHelpBalloonViewController.xib */,
+				8012801F20F0270400ABC706 /* XTRHelpBalloonViewControllerDelegate.swift */,
+				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
+				06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */,
+				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
+				06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */,
+				8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */,
 			);
-			name = Legacy;
+			name = XTRLegacy;
 			sourceTree = "<group>";
 		};
 		0853E2062114D20100CA092B /* Shaders */ = {
