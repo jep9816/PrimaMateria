@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class XTRAppearanceManagerClassic: NSObject {
 
@@ -69,9 +70,9 @@ class XTRAppearanceManagerClassic: NSObject {
 
         appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
         appearance.titleTextAttributes = navigationBarTextAttributes
-        appearance.barTintColor = XTRColorFactoryClassic.inkwell
+        appearance.barTintColor = XTRColorFactoryClassic.denim
         appearance.tintColor = XTRColorFactoryClassic.galleryColor
-        appearance.backgroundColor = XTRColorFactoryClassic.inkwell
+        appearance.backgroundColor = XTRColorFactoryClassic.denim
 
         //@property(nonatomic,assign) UIBarStyle barStyle;
         //@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;

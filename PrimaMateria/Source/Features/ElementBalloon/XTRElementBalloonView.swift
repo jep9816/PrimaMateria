@@ -13,7 +13,7 @@ class ElementBallonEnvironment: ObservableObject {
     @Published var elementTipPath = ""
 }
 
-struct XTRElementBalloon: View {
+struct XTRElementBalloonView: View {
 
     var body: some View {
         ZStack(alignment: .topLeading) {
@@ -119,6 +119,6 @@ struct XTRElementBalloon: View {
 
 struct NEWElementBalloonViewController_Previews: PreviewProvider {
     static var previews: some View {
-        XTRElementBalloon()
+        XTRElementBalloonView()
     }
 }
