@@ -8,11 +8,6 @@
 
 import SwiftUI
 
-class HelpBallonEnvironment: ObservableObject {
-    @Published var pageTitle = ""
-    @Published var elementTipPath = ""
-}
-
 struct XTRHelpBalloonViewConfig {
     static let preferredContentSize = CGSize(width: 500, height: 400)
 }

@@ -32,6 +32,8 @@ class FormSheetWrapper<Content: View>: UIViewController, UIPopoverPresentationCo
 
         viewController.modalPresentationStyle = .formSheet
         viewController.presentationController?.delegate = self
+        viewController.modalTransitionStyle = .crossDissolve
+
         hostVC = viewController
         self.present(viewController, animated: true, completion: nil)
     }

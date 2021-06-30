@@ -12,18 +12,6 @@ struct XTRMolecularCalculatorViewConfig {
     static let preferredContentSize = CGSize(width: 380, height: 155)
 }
 
-class MolecularCalculatorEnvironment: ObservableObject {
-    @Published var element: XTRElementModel!
-}
-
-class MolecularCalculatorModel: ObservableObject {
-    @Published var element: XTRElementModel!
-}
-
-class MolecularCalculatorProperty: ObservableObject {
-    @Published var propertyValue: String = ""
-}
-
 struct XTRMolecularCalculatorView: View {
     
     @EnvironmentObject var environment: MolecularCalculatorEnvironment

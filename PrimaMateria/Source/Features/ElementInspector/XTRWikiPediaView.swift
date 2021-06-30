@@ -8,10 +8,6 @@
 
 import SwiftUI
 
-class WikipediaEnvironment: ObservableObject {
-    @Published var wikipediaPath = ""
-}
-
 struct XTRWikipediaViewConfig {
     static let preferredContentSize = CGSize(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height - 50)
 }

@@ -17,8 +17,6 @@
 		061AE480267CD5FD00BD18CC /* XTRWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE47E267CD5FD00BD18CC /* XTRWebViewWrapper.swift */; };
 		061AE482267CD64300BD18CC /* XTRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE481267CD64300BD18CC /* XTRWebView.swift */; };
 		061AE483267CD64300BD18CC /* XTRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE481267CD64300BD18CC /* XTRWebView.swift */; };
-		061AE485267CD68900BD18CC /* XTRWebViewStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE484267CD68900BD18CC /* XTRWebViewStateModel.swift */; };
-		061AE486267CD68900BD18CC /* XTRWebViewStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE484267CD68900BD18CC /* XTRWebViewStateModel.swift */; };
 		061AE488267CD6E300BD18CC /* XTRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE487267CD6E300BD18CC /* XTRLoadingView.swift */; };
 		061AE489267CD6E300BD18CC /* XTRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE487267CD6E300BD18CC /* XTRLoadingView.swift */; };
 		061AE48B267CD70C00BD18CC /* XTRActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE48A267CD70C00BD18CC /* XTRActivityIndicator.swift */; };
@@ -39,6 +37,8 @@
 		06842DA1268D2CBD008D6C53 /* XTRLabelViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9C268D2C48008D6C53 /* XTRLabelViews.swift */; };
 		06842DA3268D2D1A008D6C53 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA2268D2D1A008D6C53 /* View+Extensions.swift */; };
 		06842DA4268D2D1A008D6C53 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA2268D2D1A008D6C53 /* View+Extensions.swift */; };
+		06842DA6268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */; };
+		06842DA7268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */; };
 		06C1CAC82673ABD300D2AE17 /* XTRGeneralInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */; };
 		06C1CAC92673ABD300D2AE17 /* XTRGeneralInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */; };
 		06C1CACA2673ABD300D2AE17 /* XTRSpectrumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */; };
@@ -472,7 +472,6 @@
 		061AE47B267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegate+Extension.swift"; sourceTree = "<group>"; };
 		061AE47E267CD5FD00BD18CC /* XTRWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRWebViewWrapper.swift; sourceTree = "<group>"; };
 		061AE481267CD64300BD18CC /* XTRWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRWebView.swift; sourceTree = "<group>"; };
-		061AE484267CD68900BD18CC /* XTRWebViewStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRWebViewStateModel.swift; sourceTree = "<group>"; };
 		061AE487267CD6E300BD18CC /* XTRLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRLoadingView.swift; sourceTree = "<group>"; };
 		061AE48A267CD70C00BD18CC /* XTRActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRActivityIndicator.swift; sourceTree = "<group>"; };
 		062E80F52676ABB20009DDA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/LoadFailure.html; sourceTree = "<group>"; };
@@ -485,6 +484,7 @@
 		06842D9C268D2C48008D6C53 /* XTRLabelViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRLabelViews.swift; sourceTree = "<group>"; };
 		06842D9E268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XTRFormSheet+Wrapper.swift"; sourceTree = "<group>"; };
 		06842DA2268D2D1A008D6C53 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
+		06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTREnvironmentModels.swift; sourceTree = "<group>"; };
 		06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRGeneralInfoViewController.xib; sourceTree = "<group>"; };
 		06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRSpectrumViewController.xib; sourceTree = "<group>"; };
 		06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRWikipediaViewController.xib; sourceTree = "<group>"; };
@@ -760,7 +760,6 @@
 				061AE48A267CD70C00BD18CC /* XTRActivityIndicator.swift */,
 				061AE487267CD6E300BD18CC /* XTRLoadingView.swift */,
 				061AE481267CD64300BD18CC /* XTRWebView.swift */,
-				061AE484267CD68900BD18CC /* XTRWebViewStateModel.swift */,
 				061AE47E267CD5FD00BD18CC /* XTRWebViewWrapper.swift */,
 			);
 			path = WebView;
@@ -1053,6 +1052,7 @@
 			isa = PBXGroup;
 			children = (
 				80127FED20F0270400ABC706 /* XTRElementModel.swift */,
+				06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */,
 				80127FF020F0270400ABC706 /* XTRGraphDefinitionModel.swift */,
 				80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */,
 				80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */,
@@ -1733,7 +1733,6 @@
 				804F2BA123614DA0009C8F3C /* LocaleManager.swift in Sources */,
 				8012804F20F0270500ABC706 /* XTRGraphChoiceCell.swift in Sources */,
 				8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */,
-				061AE486267CD68900BD18CC /* XTRWebViewStateModel.swift in Sources */,
 				061AE47D267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift in Sources */,
 				8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */,
 				061AE480267CD5FD00BD18CC /* XTRWebViewWrapper.swift in Sources */,
@@ -1757,6 +1756,7 @@
 				8012805F20F0270500ABC706 /* XTRElementListViewController.swift in Sources */,
 				8012805D20F0270500ABC706 /* XTRElementPropertiesViewController.swift in Sources */,
 				8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
+				06842DA7268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */,
 				06C1CB532675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */,
 				06842DA4268D2D1A008D6C53 /* View+Extensions.swift in Sources */,
 				061AE489267CD6E300BD18CC /* XTRLoadingView.swift in Sources */,
@@ -1836,7 +1836,6 @@
 				804F2BA023614D9E009C8F3C /* LocaleManager.swift in Sources */,
 				80AB2A122128CEAD00B58AB3 /* XTRGraphChoiceCell.swift in Sources */,
 				80AB2A132128CEAD00B58AB3 /* XTRColorFactory.swift in Sources */,
-				061AE485267CD68900BD18CC /* XTRWebViewStateModel.swift in Sources */,
 				061AE47C267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift in Sources */,
 				80AB2A142128CEAD00B58AB3 /* XTRColorFactoryClassic.swift in Sources */,
 				061AE47F267CD5FD00BD18CC /* XTRWebViewWrapper.swift in Sources */,
@@ -1862,6 +1861,7 @@
 				80AB2A262128CEAD00B58AB3 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
 				06C1CB522675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */,
 				061AE488267CD6E300BD18CC /* XTRLoadingView.swift in Sources */,
+				06842DA6268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */,
 				0682AED62682620700E69096 /* XTRWikiPediaView.swift in Sources */,
 				06842DA3268D2D1A008D6C53 /* View+Extensions.swift in Sources */,
 				80AB2A272128CEAD00B58AB3 /* XTRWikipediaViewControllerDelegate.swift in Sources */,

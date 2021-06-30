@@ -8,10 +8,6 @@
 
 import SwiftUI
 
-class InfoEnvironment: ObservableObject {
-    @Published var pageTitle = ""
-}
-
 struct XTRInfoView: View {
     
     @EnvironmentObject var environment: InfoEnvironment
