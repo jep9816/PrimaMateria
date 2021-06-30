@@ -1,124 +1,103 @@
 //
-//  NEWElementBalloonViewController.swift
+//  XTRElementBalloonView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/17/21.
 //  Copyright ©2021 Jerry Porter. All rights reserved.
 //
 
+import UIKit
 import SwiftUI
 
 class ElementBallonEnvironment: ObservableObject {
-    @Published var titleLabel = NSLocalizedString("help", comment: "Help")
-    @Published var elementTipPath = ""
+    @Published var element: XTRElementModel!
+}
+
+struct ElementInspectorViewController: UIViewControllerRepresentable {
+
+    typealias UIViewControllerType = XTRElementInspectorViewController
+
+    //Company property passed from parent view. Represents the company the user selected from main view.
+     private var element: XTRElementModel
+
+     init(element: XTRElementModel?) {
+         self.element = element!
+     }
+
+    func makeUIViewController(context: Context) -> XTRElementInspectorViewController {
+        let elementInspector = XTRElementInspectorViewController.loadFromNib()
+        elementInspector.view.backgroundColor = .black
+        
+        elementInspector.element = self.element
+        
+        return elementInspector
+    }
+    
+    func updateUIViewController(_ uiViewController: XTRElementInspectorViewController, context: Context) {
+    }
+    
+    var controllers: [UIViewController] = []
+    
 }
 
 struct XTRElementBalloonView: View {
-
+    @EnvironmentObject var environment: ElementBallonEnvironment
+    @State private var isPresented = false
+        
     var body: some View {
-        ZStack(alignment: .topLeading) {
-            GeometryReader { geometry in
-                ZStack(alignment: .topLeading) {
-                    // swiftlint:disable unused_closure_parameter
-                    GeometryReader { geometry in
-                        Text("Element Name").frame(width: 320, height: 48, alignment: .center)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 36, weight: .bold))
-                            .multilineTextAlignment(.center)
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 0.75, green: 0.75, blue: 0.75))
-                            .offset(x: 0, y: -5)
-                        
-                        Text("atomicNumber").frame(width: 168, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 1, y: 44)
-                        
-                        Text("").frame(width: 148, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 171, y: 44)
-                        
-                        Text("atomicMass").frame(width: 168, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 1, y: 75)
-                        
-                        Text("").frame(width: 148, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 171, y: 75)
-                        
-                        Text("boilingPoint").frame(width: 168, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 1, y: 106)
-                        
-                        Text("").frame(width: 148, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 171, y: 106)
-                        
-                        Text("").frame(width: 148, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 171, y: 137)
-                        
-                        Text("meltingPoint").frame(width: 168, height: 30)
-                            .aspectRatio(contentMode: .fit)
-                            .clipped()
-                            .font(.system(size: 18, weight: .bold))
-                            .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0))
-                            .background(Color(red: 1.0, green: 1.0, blue: 1.0))
-                            .offset(x: 1, y: 137)
-                    }
+        VStack(spacing: 0) {
+            Text(environment.element.name!)
+                .frame(width: 324, height: 48, alignment: .center)
+                .font(.system(size: 36, weight: .bold))
+                .background(Color.init(XTRColorFactory.tableViewCellBorderColor))
+            
+            VStack(spacing: 0) {
+                HStack(spacing: 0) {
+                    XTRLabelTitleView(labelText: NSLocalizedString("atomicNumber", comment: "Atomic Number"), width: 168.0, height: 30)
+                    XTRLabelValueView(labelText: "\(environment.element.atomicNumber)", width: 168.0, height: 30)
                 }
-                .frame(width: 320, height: 167)
-                .background(Color(red: 0.25, green: 0.25, blue: 0.25))
-                .offset(x: 2, y: 2)
-                
-                // swiftlint:disable multiple_closures_with_trailing_closure
-                Button(action: {}) {
-                    Text("elementDetails").lineLimit(1).font(.system(size: 16, weight: .bold))
-                        .frame(width: 320, height: 32, alignment: .center)
+                HStack(spacing: 0) {
+                    XTRLabelTitleView(labelText: NSLocalizedString("atomicMass", comment: "Element Details"), width: 168.0, height: 30)
+                    XTRLabelValueView(labelText: "\(environment.element.atomicMass)", width: 168.0, height: 30)
                 }
-                .aspectRatio(contentMode: .fit)
-                .font(.system(size: 16, weight: .bold))
-                .foregroundColor(Color.white)
-                .background(Color(red: 0.75, green: 0.75, blue: 0.75))
-                .offset(x: 2, y: 176)
+                HStack(spacing: 0) {
+                    XTRLabelTitleView(labelText: NSLocalizedString("boilingPoint", comment: "Boiling Point"), width: 168.0, height: 30)
+                    XTRLabelValueView(labelText: "\(environment.element.boilingPoint)", width: 168.0, height: 30)
+                }
+                HStack(spacing: 0) {
+                    XTRLabelTitleView(labelText: NSLocalizedString("meltingPoint", comment: "Meltinging Point"), width: 168.0, height: 30)
+                    XTRLabelValueView(labelText: "\(environment.element.meltingPoint)", width: 168.0, height: 30)
+                }
+            }
+            .frame(width: 324, height: 120, alignment: .center)
+            
+            // swiftlint:disable multiple_closures_with_trailing_closure
+            Button(action: {
+                self.isPresented.toggle()
+            }) {
+                Text(NSLocalizedString("elementDetails", comment: "Element Details"))
+                    .lineLimit(nil)
+                    .frame(width: 314, height: 32)
+                    .multilineTextAlignment(.center)
+                    .foregroundColor(.white)
+                    .background(Color(XTRColorFactory.labelColor))
+                    .shadow(color: .black, radius: 1, x: 1, y: 1)
+            }
+            .cornerRadius(VIEW_CORNER_RADIUS)
+            .padding(5)
+            .compatibleFullScreen(isPresented: $isPresented) {
+                ElementInspectorViewController(element: environment.element)
+                    .frame(width: 1024, height: 768)
             }
         }
-        .frame(width: 324, height: 210)
-        .background(Color(red: 0.25, green: 0.25, blue: 0.25))
-        .edgesIgnoringSafeArea(.all)
     }
+    
 }
 
-struct NEWElementBalloonViewController_Previews: PreviewProvider {
+struct XTRElementBalloonView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        XTRElementBalloonView()
+        XTRElementBalloonView().previewLayout(.fixed(width: 324, height: 210))
     }
+    
 }

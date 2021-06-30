@@ -31,7 +31,7 @@ class XTRGraphViewController: UIViewController {
 
     var barChart: CPTXYGraph?
 
-    var delegate: XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
+    private var delegate: XTRGraphViewControllerDelegate = XTRGraphViewControllerDelegate()
     var disposeBag: DisposeBag = DisposeBag()
 
     // MARK: - Initialization Methods

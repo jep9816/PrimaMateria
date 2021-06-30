@@ -13,7 +13,7 @@ import SwiftUI
 
 struct XTRPeriodicTableViewControllerConfig {
     static let buttonRect = CGRect(x: 0, y: 0, width: 52, height: 54)
-    static let popupContentSize = CGSize(width: 324.0, height: 210.0)
+    static let preferredContentSize = CGSize(width: 324.0, height: 210.0)
 }
 
 class XTRPeriodicTableViewController: UIViewController {
@@ -24,7 +24,6 @@ class XTRPeriodicTableViewController: UIViewController {
     @IBOutlet var molecularCalculatorWrapperView: UIView!
 
     var molecularCalculatorState: Bool = false
-    var elementBalloonViewController: XTRElementBalloonViewController!
     var molecularCalculatorView: XTRMolecularCalculatorView!
     var molecularCalculatorViewController: UIViewController!
     var disposeBag: DisposeBag = DisposeBag()
@@ -40,13 +39,6 @@ class XTRPeriodicTableViewController: UIViewController {
     }
 
     // MARK: - Internal Methods
-
-    func setupPopUp() {
-        elementBalloonViewController = XTRElementBalloonViewController.loadFromNib()
-
-        elementBalloonViewController.preferredContentSize = XTRPeriodicTableViewControllerConfig.popupContentSize
-        elementBalloonViewController.modalPresentationStyle = .popover
-    }
 
     func setupRx() {
         molecularCalculatorSwitch.rx.isOn
@@ -82,14 +74,21 @@ class XTRPeriodicTableViewController: UIViewController {
     // MARK: - Action Methods
 
     func showPopupForButton(_ sender: UIButton) {
-        guard let popoverController = elementBalloonViewController.popoverPresentationController else { return }
-
         let element = XTRDataSource.sharedInstance.element(index: sender.tag)
+        let elementBalloon = XTRElementBalloonView()
+        let environment: ElementBallonEnvironment = ElementBallonEnvironment()
+        environment.element = element
+        
+        let elementBalloonViewController = UIHostingController(rootView: elementBalloon.environmentObject(environment))
+        elementBalloonViewController.preferredContentSize = elementBalloonViewController.sizeThatFits(in: XTRPeriodicTableViewControllerConfig.preferredContentSize)
+
+        elementBalloonViewController.modalPresentationStyle = .popover
+
+        guard let popoverController = elementBalloonViewController.popoverPresentationController else { return }
 
         popoverController.sourceRect = XTRPeriodicTableViewControllerConfig.buttonRect
         popoverController.sourceView = sender
         popoverController.backgroundColor = XTRColorFactory.popupArrowColor
-        elementBalloonViewController.element = element
 
         present(elementBalloonViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
@@ -128,7 +127,6 @@ class XTRPeriodicTableViewController: UIViewController {
         molecularCalculatorViewController.view.translatesAutoresizingMaskIntoConstraints = false
         molecularCalculatorViewController.view.frame = molecularCalculatorWrapperView.bounds
 
-        setupPopUp()
         setupRx()
         toggleMolecularCalculatorState(false)
 

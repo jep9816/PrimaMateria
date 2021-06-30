@@ -14,7 +14,7 @@ import RxCocoa
 class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
 
     @IBOutlet var headerView: UIView!
-    @IBOutlet var tableView: UITableView?
+    @IBOutlet var tableView: UITableView!
 
     var nuclidesAndIsotopesArray: BehaviorRelay<[XTRIsotopeModel]>?
 
@@ -53,19 +53,20 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
     func setupRx() {
         tableView?.dataSource = nil
         nuclidesAndIsotopesArray?.bind(to: (tableView?.rx.items(cellIdentifier: XTR_TABLE_CELL_IDENTIFIER, cellType: XTRTableCell.self))!) { [weak self] (row, element, cell) in
+            guard let weakSelf = self else { return }
             let modulus = row % 2
 
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 0, yPos: 0, width: 63, height: 32, property: element.nuclideSymbol, columnPosition: 1, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 64, yPos: 0, width: 41, height: 32, property: element.zpValue, columnPosition: 2, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 106, yPos: 0, width: 41, height: 32, property: element.nnValue, columnPosition: 3, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 148, yPos: 0, width: 124, height: 32, property: element.isotopicMass, columnPosition: 4, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 273, yPos: 0, width: 131, height: 32, property: element.halfLife, columnPosition: 5, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 405, yPos: 0, width: 118, height: 32, property: element.decayModes, columnPosition: 6, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 524, yPos: 0, width: 122, height: 32, property: element.decayEnergy, columnPosition: 7, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 647, yPos: 0, width: 78, height: 32, property: element.daughterIsotopes, columnPosition: 8, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 726, yPos: 0, width: 60, height: 32, property: element.nuclearSpin, columnPosition: 9, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 787, yPos: 0, width: 118, height: 32, property: element.isotopicComposition, columnPosition: 10, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 906, yPos: 0, width: 118, height: 32, property: element.naturalRangeVariation, columnPosition: 11, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 0, yPos: 0, width: 63, height: 32, property: element.nuclideSymbol, columnPosition: 1, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 64, yPos: 0, width: 41, height: 32, property: element.zpValue, columnPosition: 2, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 106, yPos: 0, width: 41, height: 32, property: element.nnValue, columnPosition: 3, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 148, yPos: 0, width: 124, height: 32, property: element.isotopicMass, columnPosition: 4, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 273, yPos: 0, width: 131, height: 32, property: element.halfLife, columnPosition: 5, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 405, yPos: 0, width: 118, height: 32, property: element.decayModes, columnPosition: 6, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 524, yPos: 0, width: 122, height: 32, property: element.decayEnergy, columnPosition: 7, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 647, yPos: 0, width: 78, height: 32, property: element.daughterIsotopes, columnPosition: 8, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 726, yPos: 0, width: 60, height: 32, property: element.nuclearSpin, columnPosition: 9, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 787, yPos: 0, width: 118, height: 32, property: element.isotopicComposition, columnPosition: 10, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 906, yPos: 0, width: 118, height: 32, property: element.naturalRangeVariation, columnPosition: 11, modulus: modulus, cell: cell))
             }
             .disposed(by: disposeBag)
     }
@@ -99,7 +100,10 @@ class XTRNuclidesIsotopesViewController: XTRSwapableViewController {
 
     deinit {
         headerView = nil
+        tableView.dataSource = nil
+        tableView.delegate = nil
         tableView = nil
+        delegate = nil
     }
 
 }

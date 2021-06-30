@@ -189,11 +189,12 @@ class XTRSpectrumViewController: XTRSwapableViewController {
     func setupRx() {
         tableView?.dataSource = nil
         lineSpectraArray?.bind(to: (tableView?.rx.items(cellIdentifier: XTR_TABLE_CELL_IDENTIFIER, cellType: XTRTableCell.self))!) { [weak self] (row, element, cell) in
+            guard let weakSelf = self else { return }
             let modulus = row % 2
 
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 0, yPos: 0, width: 124, height: 32, property: element.airWavelength, columnPosition: 1, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 125, yPos: 0, width: 115, height: 32, property: element.intensity, columnPosition: 2, modulus: modulus, cell: cell))
-            self?.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 241, yPos: 0, width: 117, height: 32, property: element.spectrum, columnPosition: 3, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 0, yPos: 0, width: 124, height: 32, property: element.airWavelength, columnPosition: 1, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 125, yPos: 0, width: 115, height: 32, property: element.intensity, columnPosition: 2, modulus: modulus, cell: cell))
+            weakSelf.delegate?.createTableCellLabel(model: XTRTableViewCellViewModel(xPos: 241, yPos: 0, width: 117, height: 32, property: element.spectrum, columnPosition: 3, modulus: modulus, cell: cell))
             }
             .disposed(by: disposeBag)
     }
@@ -227,7 +228,10 @@ class XTRSpectrumViewController: XTRSwapableViewController {
 
     deinit {
         hostingView = nil
+        tableView.dataSource = nil
+        tableView.delegate = nil
         tableView = nil
-    }
+        delegate = nil
+   }
 
 }

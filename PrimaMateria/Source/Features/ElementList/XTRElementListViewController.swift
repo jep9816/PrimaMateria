@@ -168,6 +168,7 @@ class XTRElementListViewController: UIViewController {
         groupButton = nil
         navigationBar =  nil
         tableView = nil
-    }
+        delegate = nil
+   }
 
 }
