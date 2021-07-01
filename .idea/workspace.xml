@@ -30,9 +30,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="635613ea-2b61-463a-8935-a914b7d94305" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PrimaMateria.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/PrimaMateria.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
@@ -130,6 +127,7 @@
       <workItem from="1623268386492" duration="147000" />
       <workItem from="1623268578229" duration="830000" />
       <workItem from="1623269531028" duration="603000" />
+      <workItem from="1625142968083" duration="6000" />
     </task>
     <servers />
   </component>
