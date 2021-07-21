@@ -246,11 +246,11 @@ class XTRAppearanceManagerStandard: NSObject {
         let appearance = UITabBarItem.appearance()
         let normalItemTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.lightGray,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
         ]
         let selectedItemTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.whiteSmoke,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)
+            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
         ]
 
         appearance.setTitleTextAttributes(normalItemTextAttributes, for: UIControl.State())

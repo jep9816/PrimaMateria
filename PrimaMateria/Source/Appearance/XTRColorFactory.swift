@@ -361,6 +361,22 @@ class XTRColorFactory: NSObject {
         }
     }
 
+    class var titleBarBackgroundColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.denim
+        } else {
+            return XTRColorFactoryStandard.navyBlue
+        }
+    }
+
+    class var titleBarTextColor: UIColor {
+        if XTRAppearanceManager.manager.isClassicAppearance() {
+            return XTRColorFactoryClassic.galleryColor
+        } else {
+            return XTRColorFactoryStandard.ghost
+        }
+    }
+
     class var currentPageIndicatorTintColor: UIColor {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.cotton

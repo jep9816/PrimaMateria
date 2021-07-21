@@ -100,7 +100,8 @@ class XTRMainViewController: UITabBarController {
         
         tabItem.title = NSLocalizedString(tabTitle, comment: "")
         //tabItem.image = UIImage(named: imageName)
-        tabItem.image = UIImage(systemName: imageName)
+        tabItem.image = UIImage(systemName: imageName, withConfiguration:
+                                    UIImage.SymbolConfiguration(weight: .black))!.imageWithoutBaseline()
 
         viewController.tabBarItem = tabItem
     }

@@ -21,8 +21,8 @@ struct XTRColorPickerView: View {
             Text(NSLocalizedString(environment.seriesIdentifier!, comment: "Series Identifier"))
                 .frame(width: XTRPreferencesViewControllerConfig.preferredContentSize.width, height: 48, alignment: .center)
                 .font(.system(size: 32, weight: .bold))
-                .background(Color.black)
-                .foregroundColor(Color.white)
+                .background(Color(XTRColorFactory.titleBarBackgroundColor))
+                .foregroundColor(Color(XTRColorFactory.titleBarTextColor))
             
             Spacer()
                 .frame(width: XTRPreferencesViewControllerConfig.preferredContentSize.width, height: 35, alignment: .center)
