@@ -859,8 +859,6 @@
 		0639C4292675794500B58D15 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */,
-				06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */,
 				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
 				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
 				06D30A3926A855D8003F0614 /* XTRColorPickerView.swift */,
@@ -938,6 +936,8 @@
 		066C87C7268BCD6E00505A19 /* XTRLegacy */ = {
 			isa = PBXGroup;
 			children = (
+				8012800620F0270400ABC706 /* XTRColorPickerViewController.swift */,
+				06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */,
 				8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */,
 				06FC7DB4267299BA00DF9801 /* XTRElementBalloonViewController.xib */,
 				80127FFF20F0270400ABC706 /* XTRGraphChoiceCell.swift */,

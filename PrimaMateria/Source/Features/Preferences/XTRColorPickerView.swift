@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/21/21.
-//  Copyright © 2021 Jerry Porter. All rights reserved.
+//  Copyright ©2021 Jerry Porter. All rights reserved.
 //
 
 import SwiftUI
@@ -26,7 +26,7 @@ struct XTRColorPickerView: View {
             
             Spacer()
                 .frame(width: XTRPreferencesViewControllerConfig.preferredContentSize.width, height: 35, alignment: .center)
-                .background(Color(environment.color!))
+                .background(Color(environment.seriesColor!))
             
             HStack(spacing: 0) {
                 XTRFormTitleView(labelText: NSLocalizedString("red", comment: "Red"), width: 100, height: 21)
@@ -79,20 +79,20 @@ struct XTRColorPickerView: View {
         }
         .background(Color(XTRColorFactory.rowColor))
         .onAppear(perform: {
-            presetSlidersWithColor(environment.color!)
+            presetSlidersWithColor(environment.seriesColor!)
         })
     }
     
     func presetSlidersWithColor(_ aColor: UIColor) {
-        red = Double(environment.color!.red())
-        green = Double(environment.color!.green())
-        blue = Double(environment.color!.blue())
-        alpha = Double(environment.color!.alpha())
+        red = Double(environment.seriesColor!.red())
+        green = Double(environment.seriesColor!.green())
+        blue = Double(environment.seriesColor!.blue())
+        alpha = Double(environment.seriesColor!.alpha())
     }
     
     func updateColorFromSlider() {
         let color = UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: CGFloat(alpha))
-        environment.color = color
+        environment.seriesColor = color
     }
     
     func selectColor() {
@@ -121,8 +121,10 @@ struct XTRColorPickerView: View {
 }
 
 struct XTRColorPickerView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        XTRColorPickerView().environmentObject(ColorPickerEnvironment(seriesIdentifier: NSLocalizedString("actinide", comment: "Series Identifier"), color: XTRColorFactory.defaultActinideColor))
+        XTRColorPickerView().environmentObject(ColorPickerEnvironment(seriesIdentifier: NSLocalizedString("actinide", comment: "Series Identifier"), seriesColor: XTRColorFactory.defaultActinideColor))
             .previewLayout(.fixed(width: XTRPreferencesViewControllerConfig.preferredContentSize.width, height: XTRPreferencesViewControllerConfig.preferredContentSize.height))
     }
+    
 }

@@ -81,7 +81,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         // SwiftUI implementation
         let wikiPediaView = XTRWikiPediaView(dismissAction: { self.dismiss( animated: true, completion: nil) })
         let elementName = (element?.name)!
-        let environment: WikipediaEnvironment = WikipediaEnvironment(wikipediaPath: wikipediaPath(elementName: elementName))
+        let environment: WikipediaEnvironment = WikipediaEnvironment(articlePath: createArticlePath(elementName: elementName))
         let wikipediaViewController = UIHostingController(rootView: wikiPediaView.environmentObject(environment))
 
         wikiPediaView.webViewStateModel.pageTitle = "\(NSLocalizedString("wikipediaEntry", comment: "")) \(elementName)"
@@ -93,7 +93,7 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         present(wikipediaViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
 
-    func wikipediaPath(elementName: String) -> String {
+    func createArticlePath(elementName: String) -> String {
          return "https://\(XTRPropertiesStore.currentLanguageCode).wikipedia.org/wiki/\(elementName)"
     }
 
@@ -120,9 +120,11 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         discoveryLocationLabel = nil
         discoveryYearLabel = nil
         showWikiButton = nil
+        
         if let webView = webView {
             webView.navigationDelegate = nil
         }
+        
         webView = nil
     }
 

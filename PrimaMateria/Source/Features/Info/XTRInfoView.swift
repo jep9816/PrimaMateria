@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/29/21.
-//  Copyright © 2021 Jerry Porter. All rights reserved.
+//  Copyright ©2021 Jerry Porter. All rights reserved.
 //
 
 import SwiftUI

@@ -25,7 +25,7 @@ class XTRMainViewController: UITabBarController {
 
     func showSplash() {
         if XTRPropertiesStore.splashScreenState {
-            print("showSplash")
+            //print("showSplash")
             //let splashView = XTRSplashView(dismissAction: { self.wait() })
             //splashViewController = UIHostingController(rootView: splashView)
             let splashViewController: XTRSplashViewController = XTRSplashViewController.loadFromNib()

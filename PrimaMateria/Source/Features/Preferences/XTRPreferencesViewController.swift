@@ -10,6 +10,7 @@ import WebKit
 import RxSwift
 import RxCocoa
 import SwiftUI
+import Combine
 
 struct XTRPreferencesViewControllerConfig {
     static let preferredContentSize = CGSize(width: 270, height: 270)
@@ -42,7 +43,8 @@ class XTRPreferencesViewController: UIViewController {
     
     var disposeBag: DisposeBag = DisposeBag()
     var animationImages: [UIImage] = []
-    
+    private var cancellableBag = Set<AnyCancellable>()
+
     // MARK: - Initialization Methods
     
     required init?(coder aDecoder: NSCoder) {
@@ -252,11 +254,8 @@ class XTRPreferencesViewController: UIViewController {
         let colorPicker = XTRColorPickerView()
         let seriesIdentifier = sender.accessibilityIdentifier
         let aColor = XTRColorFactory.colorForString(seriesIdentifier!)
-        let environment = ColorPickerEnvironment(seriesIdentifier: seriesIdentifier!, color: aColor)
+        let environment = ColorPickerEnvironment(seriesIdentifier: seriesIdentifier!, seriesColor: aColor)
         let colorPickerViewController = UIHostingController(rootView: colorPicker.environmentObject(environment))
-
-        environment.seriesIdentifier = seriesIdentifier
-        environment.color = aColor
 
         colorPickerViewController.preferredContentSize = colorPickerViewController.sizeThatFits(in: XTRPreferencesViewControllerConfig.preferredContentSize)
         colorPickerViewController.modalPresentationStyle = .popover
@@ -315,9 +314,18 @@ class XTRPreferencesViewController: UIViewController {
         
         title = NSLocalizedString("preferences", comment: "")
         navigationBar.topItem?.title = title
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(colorSelected(notification:)), name: .colorSelectedNotification, object: nil)
-        
+                
+        NotificationCenter.default
+            .publisher(for: .colorSelectedNotification)
+            .sink(receiveCompletion: { _ in
+                print("SOLUTION 1: COMPLETION")
+            }, receiveValue: { notification in
+                self.colorSelected(notification: notification)
+                //print("SOLUTION 1: VALUE")
+                //print("" + anyObject.debugDescription)
+            })
+            .store(in: &cancellableBag)
+
         loadDocument(XTRPreferencesViewControllerConfig.creditsDocument, inView: webView)
         loadUserDefaults()
         populateSeriesColors()
@@ -348,9 +356,7 @@ class XTRPreferencesViewController: UIViewController {
     
     // MARK: - Memory Management Methods
     
-    deinit {
-        NotificationCenter.default.removeObserver(self, name: .colorSelectedNotification, object: nil)
-        
+    deinit {        
         appNameLabel = nil
         cpyRightLabel = nil
         seriesActinideButton = nil

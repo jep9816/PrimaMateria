@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/30/21.
-//  Copyright © 2021 Jerry Porter. All rights reserved.
+//  Copyright ©2021 Jerry Porter. All rights reserved.
 //
 
 import SwiftUI
@@ -20,10 +20,10 @@ class ElementBallonEnvironment: ObservableObject {
 
 class WikipediaEnvironment: ObservableObject {
     
-    @Published var wikipediaPath = ""
+    @Published var articlePath = ""
     
-    init(wikipediaPath: String) {
-        self.wikipediaPath = wikipediaPath
+    init(articlePath: String) {
+        self.articlePath = articlePath
     }
 }
 
@@ -44,6 +44,18 @@ class MolecularCalculatorEnvironment: ObservableObject {
     
     @Published var element: XTRElementModel!
     
+}
+
+class ColorPickerEnvironment: ObservableObject {
+    
+    @Published var seriesIdentifier: String?
+    @Published var seriesColor: UIColor?
+    
+    init(seriesIdentifier: String, seriesColor: UIColor) {
+        self.seriesIdentifier = seriesIdentifier
+        self.seriesColor = seriesColor
+    }
+
 }
 
 class MolecularCalculatorModel: ObservableObject {
@@ -67,15 +79,4 @@ class XTRWebViewStateModel: ObservableObject {
     @Published var canGoForward: Bool = false
     @Published var goForward: Bool = false
     
-}
-
-class ColorPickerEnvironment: ObservableObject {
-    @Published var seriesIdentifier: String?
-    @Published var color: UIColor?
-    
-    init(seriesIdentifier: String, color: UIColor) {
-        self.seriesIdentifier = seriesIdentifier
-        self.color = color
-    }
-
 }

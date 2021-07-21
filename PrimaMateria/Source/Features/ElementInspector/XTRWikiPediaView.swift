@@ -23,7 +23,7 @@ struct XTRWikiPediaView: View {
                 XTRLoadingView(isShowing: .constant(webViewStateModel.loading)) {
                     //loading logic taken from https://stackoverflow.com/a/56496896/9838937
                     //Add onNavigationAction if callback needed
-                    XTRWebView(url: URL(string: environment.wikipediaPath)!, webViewStateModel: self.webViewStateModel)
+                    XTRWebView(url: URL(string: environment.articlePath)!, webViewStateModel: self.webViewStateModel)
                         .frame(width: XTRWikipediaViewConfig.preferredContentSize.width - 2, height: XTRWikipediaViewConfig.preferredContentSize.height - 38).offset(x: 0, y: 0)
                 }
                 .navigationBarTitle(Text(webViewStateModel.pageTitle), displayMode: .inline)
@@ -87,7 +87,7 @@ struct XTRWikiPediaView_Previews: PreviewProvider {
     
     static var previews: some View {
         XTRWikiPediaView(dismissAction: { })
-            .environmentObject(WikipediaEnvironment(wikipediaPath: "http://www.wikipedia.org"))
+            .environmentObject(WikipediaEnvironment(articlePath: "http://www.wikipedia.org"))
             .previewLayout(.fixed(width: 1024, height: 768))
     }
     
