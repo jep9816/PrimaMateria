@@ -58,14 +58,13 @@ class XTRMainViewController: UITabBarController {
         let elementListViewController = XTRElementListViewController.loadFromNib()
         let graphsViewController = XTRGraphViewController.loadFromNib()
         let preferencesViewController = XTRPreferencesViewController.loadFromNib()
-        //let infoViewController = XTRInfoViewController.loadFromNib()
         let infoViewController = XTRInfoHostingController(rootView: XTRInfoView())
 
-        createTab(viewController: periodicTableViewController, tabTitle: "periodicTable", imageName: "Tab01")
-        createTab(viewController: elementListViewController, tabTitle: "elementList", imageName: "Tab02")
-        createTab(viewController: graphsViewController, tabTitle: "graphs", imageName: "Tab03")
-        createTab(viewController: preferencesViewController, tabTitle: "preferences", imageName: "Tab04")
-        createTab(viewController: infoViewController, tabTitle: "info", imageName: "Tab05")
+        createTab(viewController: periodicTableViewController, tabTitle: "periodicTable", imageName: "atom")
+        createTab(viewController: elementListViewController, tabTitle: "elementList", imageName: "tablecells")
+        createTab(viewController: graphsViewController, tabTitle: "graphs", imageName: "chart.bar.xaxis")
+        createTab(viewController: preferencesViewController, tabTitle: "preferences", imageName: "gearshape.2.fill")
+        createTab(viewController: infoViewController, tabTitle: "info", imageName: "info.circle.fill")
 
         self.viewControllers = [
             periodicTableViewController,
@@ -100,7 +99,8 @@ class XTRMainViewController: UITabBarController {
         let tabItem = UITabBarItem()
         
         tabItem.title = NSLocalizedString(tabTitle, comment: "")
-        tabItem.image = UIImage(named: imageName)
+        //tabItem.image = UIImage(named: imageName)
+        tabItem.image = UIImage(systemName: imageName)
 
         viewController.tabBarItem = tabItem
     }
