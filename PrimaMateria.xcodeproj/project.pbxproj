@@ -79,6 +79,8 @@
 		06C1CB532675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */; };
 		06CE0DA326791C4D0042BDE2 /* Credits.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 06CE0DA226791C4D0042BDE2 /* Credits.pdf */; };
 		06CE0DA426791C4D0042BDE2 /* Credits.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 06CE0DA226791C4D0042BDE2 /* Credits.pdf */; };
+		06D30A3A26A855D8003F0614 /* XTRColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D30A3926A855D8003F0614 /* XTRColorPickerView.swift */; };
+		06D30A3B26A855D8003F0614 /* XTRColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D30A3926A855D8003F0614 /* XTRColorPickerView.swift */; };
 		06E83DB026714862005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DAF26714862005F7092 /* CorePlot */; };
 		06E83DB226714A63005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DB126714A63005F7092 /* CorePlot */; };
 		06F0BC482672CC7C00B06011 /* XTRSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */; };
@@ -506,6 +508,7 @@
 		06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesPhysicalViewController.swift; sourceTree = "<group>"; };
 		06CE0DA1267917F20042BDE2 /* PrimaMateria.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PrimaMateria.entitlements; sourceTree = "<group>"; };
 		06CE0DA226791C4D0042BDE2 /* Credits.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Credits.pdf; sourceTree = "<group>"; };
+		06D30A3926A855D8003F0614 /* XTRColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRColorPickerView.swift; sourceTree = "<group>"; };
 		06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRSplashViewController.xib; sourceTree = "<group>"; };
 		06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRGraphChoiceViewController.xib; sourceTree = "<group>"; };
 		06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRColorPickerViewController.xib; sourceTree = "<group>"; };
@@ -860,6 +863,7 @@
 				06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */,
 				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
 				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
+				06D30A3926A855D8003F0614 /* XTRColorPickerView.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -1695,6 +1699,7 @@
 				0682AED42682617C00E69096 /* XTRGraphChoiceView.swift in Sources */,
 				80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */,
 				8012805A20F0270500ABC706 /* XTRElementInspectorViewController.swift in Sources */,
+				06D30A3B26A855D8003F0614 /* XTRColorPickerView.swift in Sources */,
 				8012804B20F0270500ABC706 /* XTRTableCell.swift in Sources */,
 				8012806F20F0270500ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */,
 				8012805420F0270500ABC706 /* XTRNuclidesIsotopesViewController.swift in Sources */,
@@ -1800,6 +1805,7 @@
 				0682AED32682617C00E69096 /* XTRGraphChoiceView.swift in Sources */,
 				80AB29F42128CEAD00B58AB3 /* XTRTableViewCellViewModel.swift in Sources */,
 				80AB29F52128CEAD00B58AB3 /* XTRElementInspectorViewController.swift in Sources */,
+				06D30A3A26A855D8003F0614 /* XTRColorPickerView.swift in Sources */,
 				80AB29F62128CEAD00B58AB3 /* XTRTableCell.swift in Sources */,
 				80AB29F72128CEAD00B58AB3 /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */,
 				80AB29F82128CEAD00B58AB3 /* XTRNuclidesIsotopesViewController.swift in Sources */,

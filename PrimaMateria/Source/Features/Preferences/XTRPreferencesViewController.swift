@@ -9,9 +9,10 @@
 import WebKit
 import RxSwift
 import RxCocoa
+import SwiftUI
 
 struct XTRPreferencesViewControllerConfig {
-    static let colorPickerContentSize = CGSize(width: 270, height: 270)
+    static let preferredContentSize = CGSize(width: 270, height: 270)
     static let creditsDocument = "Credits.pdf"
 }
 
@@ -248,18 +249,36 @@ class XTRPreferencesViewController: UIViewController {
     }
     
     func presentColorPicker(_ sender: UIButton) {
-        let colorPicker = XTRColorPickerViewController.loadFromNib()
-        
-        colorPicker.seriesIdentifier = sender.accessibilityIdentifier
-        colorPicker.preferredContentSize = XTRPreferencesViewControllerConfig.colorPickerContentSize
-        colorPicker.modalPresentationStyle = .popover
-        
-        self.present(colorPicker, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
-        
-        let presentationController = colorPicker.popoverPresentationController
+        let colorPicker = XTRColorPickerView()
+        let seriesIdentifier = sender.accessibilityIdentifier
+        let aColor = XTRColorFactory.colorForString(seriesIdentifier!)
+        let environment = ColorPickerEnvironment(seriesIdentifier: seriesIdentifier!, color: aColor)
+        let colorPickerViewController = UIHostingController(rootView: colorPicker.environmentObject(environment))
+
+        environment.seriesIdentifier = seriesIdentifier
+        environment.color = aColor
+
+        colorPickerViewController.preferredContentSize = colorPickerViewController.sizeThatFits(in: XTRPreferencesViewControllerConfig.preferredContentSize)
+        colorPickerViewController.modalPresentationStyle = .popover
+
+        present(colorPickerViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+        let presentationController = colorPickerViewController.popoverPresentationController
         presentationController?.permittedArrowDirections = .left
         presentationController?.sourceView = sender.superview
         presentationController?.sourceRect = sender.frame
+
+//        let colorPicker = XTRColorPickerViewController.loadFromNib()
+//
+//        colorPicker.seriesIdentifier = sender.accessibilityIdentifier
+//        colorPicker.preferredContentSize = XTRPreferencesViewControllerConfig.preferredContentSize
+//        colorPicker.modalPresentationStyle = .popover
+//
+//        self.present(colorPicker, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
+//
+//        let presentationController = colorPicker.popoverPresentationController
+//        presentationController?.permittedArrowDirections = .left
+//        presentationController?.sourceView = sender.superview
+//        presentationController?.sourceRect = sender.frame
     }
     
     private func applyLanguage(code: String) {

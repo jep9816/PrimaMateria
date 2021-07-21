@@ -24,6 +24,21 @@ struct XTRLabelTitleView: View {
     
 }
 
+struct XTRFormTitleView: View {
+    
+    var labelText: String!
+    var width: CGFloat = 10
+    var height: CGFloat = 10
+
+    var body: some View {
+        Text("  " + labelText + ": ")
+            .frame(width: self.width, height: self.height, alignment: .trailing)
+            .font(.system(size: 18, weight: .bold))
+            .background(Color.clear)
+    }
+    
+}
+
 struct XTRLabelValueView: View {
     
     var labelText: String!

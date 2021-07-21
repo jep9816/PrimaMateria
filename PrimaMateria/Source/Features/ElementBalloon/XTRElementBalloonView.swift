@@ -42,27 +42,27 @@ struct XTRElementBalloonView: View {
         VStack(spacing: 0) {
             Text(environment.element.name!)
                 .frame(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width, height: 48, alignment: .center)
-                .font(.system(size: 36, weight: .bold))
-                .background(Color.init(XTRColorFactory.tableViewCellBorderColor))
+                .font(.system(size: 32, weight: .bold))
+                .background(Color.init(environment.element.seriesColor))
             
             VStack(spacing: 0) {
                 HStack(spacing: 0) {
-                    XTRLabelTitleView(labelText: NSLocalizedString("atomicNumber", comment: "Atomic Number"), width: 168.0, height: 30)
+                    XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_ATOMIC_NUMBER, comment: "Atomic Number"), width: 168.0, height: 30)
                     XTRLabelValueView(labelText: "\(environment.element.atomicNumber)", width: 168.0, height: 30)
                 }
                 
                 HStack(spacing: 0) {
-                    XTRLabelTitleView(labelText: NSLocalizedString("atomicMass", comment: "Element Details"), width: 168.0, height: 30)
+                    XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_ATOMIC_MASS, comment: "Atomic Mass"), width: 168.0, height: 30)
                     XTRLabelValueView(labelText: "\(environment.element.atomicMass)", width: 168.0, height: 30)
                 }
                 
                 HStack(spacing: 0) {
-                    XTRLabelTitleView(labelText: NSLocalizedString("boilingPoint", comment: "Boiling Point"), width: 168.0, height: 30)
+                    XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_BOILING_POINT, comment: "Boiling Point"), width: 168.0, height: 30)
                     XTRLabelValueView(labelText: "\(environment.element.boilingPoint)", width: 168.0, height: 30)
                 }
                 
                 HStack(spacing: 0) {
-                    XTRLabelTitleView(labelText: NSLocalizedString("meltingPoint", comment: "Meltinging Point"), width: 168.0, height: 30)
+                    XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_MELTING_POINT, comment: "Melting Point"), width: 168.0, height: 30)
                     XTRLabelValueView(labelText: "\(environment.element.meltingPoint)", width: 168.0, height: 30)
                 }
             }
@@ -73,7 +73,7 @@ struct XTRElementBalloonView: View {
                 self.isPresented.toggle()
             }) {
                 Text(NSLocalizedString("elementDetails", comment: "Element Details"))
-                    .frame(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width, height: 32, alignment: .center)
+                    .frame(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width - 10, height: 32, alignment: .center)
                     .foregroundColor(.white)
                     .background(Color(XTRColorFactory.labelColor))
                     .shadow(color: .black, radius: 1, x: 1, y: 1)
@@ -92,7 +92,9 @@ struct XTRElementBalloonView: View {
 struct XTRElementBalloonView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRElementBalloonView().previewLayout(.fixed(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width, height: XTRPeriodicTableViewControllerConfig.preferredContentSize.height))
+        
+        XTRElementBalloonView().environmentObject(ElementBallonEnvironment(element: XTRElementModel.testElement()))
+            .previewLayout(.fixed(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width, height: XTRPeriodicTableViewControllerConfig.preferredContentSize.height))
     }
     
 }

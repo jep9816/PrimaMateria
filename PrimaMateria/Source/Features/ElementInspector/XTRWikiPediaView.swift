@@ -29,49 +29,56 @@ struct XTRWikiPediaView: View {
                 .navigationBarTitle(Text(webViewStateModel.pageTitle), displayMode: .inline)
                 .navigationBarItems(
                     leading:
-                        HStack {
+                        Button(action: dismissAction) {
+                            Text(NSLocalizedString("close", comment: ""))
+                        },
+                    trailing:
+                        HStack(spacing: 0) {
                             // swiftlint:disable multiple_closures_with_trailing_closure
                             Button(action: {
                                 self.webViewStateModel.goBack.toggle()
                             }) {
-                                Text("◀︎").lineLimit(1).font(.system(size: 26, weight: .bold))
+                                Label("Left Arrow", systemImage: "arrowtriangle.left.fill")
+                                    .labelStyle(IconOnlyLabelStyle())
                                     .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .leading)
                             }
                             .opacity(!webViewStateModel.canGoBack ? 0: 1)
                             .disabled(!webViewStateModel.canGoBack)
                             .aspectRatio(contentMode: .fill)
                             .font(.system(size: 26, weight: .bold))
-                        },
-                    trailing:
-                        // swiftlint:disable multiple_closures_with_trailing_closure
-                        Button(action: {
-                            self.webViewStateModel.goForward.toggle()
-                        }) {
-                            Text("▶︎").lineLimit(1).font(.system(size: 26, weight: .bold))
-                                .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .trailing)
+                            
+                            // swiftlint:disable multiple_closures_with_trailing_closure
+                            Button(action: {
+                                self.webViewStateModel.goForward.toggle()
+                            }) {
+                                Label("Right Arrow", systemImage: "arrowtriangle.right.fill")
+                                    .labelStyle(IconOnlyLabelStyle())
+                                    .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .trailing)
+                            }
+                            .opacity(!webViewStateModel.canGoForward ? 0: 1)
+                            .disabled(!webViewStateModel.canGoForward)
+                            .aspectRatio(contentMode: .fill)
+                            .font(.system(size: 26, weight: .bold))
                         }
-                        .opacity(!webViewStateModel.canGoForward ? 0: 1)
-                        .disabled(!webViewStateModel.canGoForward)
-                        .aspectRatio(contentMode: .fill)
-                        .font(.system(size: 26, weight: .bold))
                 )
                 .frame(width: XTRWikipediaViewConfig.preferredContentSize.width - 2, height: XTRWikipediaViewConfig.preferredContentSize.height - 2).offset(x: 0, y: 0)
             }
             .background(Color(XTRColorFactory.helpBackgroundColor))
-            .toolbar {
-                ToolbarItem(placement: .bottomBar) {
-                    Spacer()
-                }
-                ToolbarItem(placement: .bottomBar) {
-                    Button(action: dismissAction) {
-                        Text(NSLocalizedString("close", comment: ""))
-                    }
-                }
-                ToolbarItem(placement: .bottomBar) {
-                    Spacer()
-                }
-            }
+            //.toolbar {
+            //    ToolbarItem(placement: .bottomBar) {
+            //        Spacer()
+            //    }
+            //    ToolbarItem(placement: .bottomBar) {
+            //        Button(action: dismissAction) {
+            //            Text(NSLocalizedString("close", comment: ""))
+            //        }
+            //    }
+            //    ToolbarItem(placement: .bottomBar) {
+            //        Spacer()
+            //    }
+            //}
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
     
 }
@@ -80,6 +87,8 @@ struct XTRWikiPediaView_Previews: PreviewProvider {
     
     static var previews: some View {
         XTRWikiPediaView(dismissAction: { })
+            .environmentObject(WikipediaEnvironment(wikipediaPath: "http://www.wikipedia.org"))
+            .previewLayout(.fixed(width: 1024, height: 768))
     }
     
 }

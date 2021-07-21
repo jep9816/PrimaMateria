@@ -76,9 +76,8 @@ class XTRPeriodicTableViewController: UIViewController {
     func showPopupForButton(_ sender: UIButton) {
         let element = XTRDataSource.sharedInstance.element(index: sender.tag)
         let elementBalloon = XTRElementBalloonView()
-        let environment: ElementBallonEnvironment = ElementBallonEnvironment()
-        environment.element = element
-        
+        let environment: ElementBallonEnvironment = ElementBallonEnvironment(element: element)
+
         let elementBalloonViewController = UIHostingController(rootView: elementBalloon.environmentObject(environment))
         elementBalloonViewController.preferredContentSize = elementBalloonViewController.sizeThatFits(in: XTRPeriodicTableViewControllerConfig.preferredContentSize)
 

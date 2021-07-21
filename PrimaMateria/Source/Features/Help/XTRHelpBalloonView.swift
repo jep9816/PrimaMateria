@@ -62,10 +62,11 @@ struct XTRHelpBalloonView: View {
     
 }
 
-struct XTRHelpBalloonSUI_Previews: PreviewProvider {
+struct XTRHelpBalloon_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRHelpBalloonView()
+        XTRHelpBalloonView().environmentObject(HelpBallonEnvironment())
+            .previewLayout(.fixed(width: XTRHelpBalloonViewConfig.preferredContentSize.width, height: XTRHelpBalloonViewConfig.preferredContentSize.height))
     }
     
 }

@@ -11,6 +11,10 @@ import SwiftUI
 class ElementBallonEnvironment: ObservableObject {
     
     @Published var element: XTRElementModel!
+
+    init(element: XTRElementModel) {
+        self.element = element
+    }
     
 }
 
@@ -18,6 +22,9 @@ class WikipediaEnvironment: ObservableObject {
     
     @Published var wikipediaPath = ""
     
+    init(wikipediaPath: String) {
+        self.wikipediaPath = wikipediaPath
+    }
 }
 
 class HelpBallonEnvironment: ObservableObject {
@@ -60,4 +67,15 @@ class XTRWebViewStateModel: ObservableObject {
     @Published var canGoForward: Bool = false
     @Published var goForward: Bool = false
     
+}
+
+class ColorPickerEnvironment: ObservableObject {
+    @Published var seriesIdentifier: String?
+    @Published var color: UIColor?
+    
+    init(seriesIdentifier: String, color: UIColor) {
+        self.seriesIdentifier = seriesIdentifier
+        self.color = color
+    }
+
 }

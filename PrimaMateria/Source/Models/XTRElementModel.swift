@@ -18,6 +18,14 @@ class XTRElementModel: NSObject {
         elementDictionary = dict
     }
 
+    class func testElement() -> XTRElementModel {
+        var dict: [String: Any] = [:]
+        dict[ELEMENT_NAME] = "Test"
+        dict[ELEMENT_ATOMIC_NUMBER] = 1
+        dict[ELEMENT_SERIES] = "Actinide"
+        return XTRElementModel(dict: dict)
+    }
+    
     override func value(forKeyPath keyPath: String) -> Any? {
         switch keyPath {
         case ELEMENT_KSHELL_ELECTRONS:

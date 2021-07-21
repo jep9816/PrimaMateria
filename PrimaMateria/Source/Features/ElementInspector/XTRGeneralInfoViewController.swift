@@ -81,25 +81,14 @@ class XTRGeneralInfoViewController: XTRSwapableViewController {
         // SwiftUI implementation
         let wikiPediaView = XTRWikiPediaView(dismissAction: { self.dismiss( animated: true, completion: nil) })
         let elementName = (element?.name)!
-        let environment: WikipediaEnvironment = WikipediaEnvironment()
+        let environment: WikipediaEnvironment = WikipediaEnvironment(wikipediaPath: wikipediaPath(elementName: elementName))
         let wikipediaViewController = UIHostingController(rootView: wikiPediaView.environmentObject(environment))
 
         wikiPediaView.webViewStateModel.pageTitle = "\(NSLocalizedString("wikipediaEntry", comment: "")) \(elementName)"
 
-        environment.wikipediaPath = wikipediaPath(elementName: elementName)
-
         wikipediaViewController.modalPresentationStyle = .formSheet
-        //wikipediaViewController.isModalInPresentation = true
         wikipediaViewController.modalTransitionStyle = .crossDissolve
         wikipediaViewController.preferredContentSize = wikipediaViewController.sizeThatFits(in: XTRWikipediaViewConfig.preferredContentSize)
-
-        // Legacy implementation
-        //let wikipediaViewController: XTRWikipediaViewController = XTRWikipediaViewController.loadFromNib()
-
-        //wikipediaViewController.modalPresentationStyle = .formSheet
-        //wikipediaViewController.isModalInPresentation = true
-        //wikipediaViewController.modalTransitionStyle = .crossDissolve
-        //wikipediaViewController.elementName = element?.name
 
         present(wikipediaViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)
     }
