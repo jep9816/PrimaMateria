@@ -1,5 +1,5 @@
 //
-//  XTRInfoHosting.swift
+//  XTRInfoHostingController.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/29/21.

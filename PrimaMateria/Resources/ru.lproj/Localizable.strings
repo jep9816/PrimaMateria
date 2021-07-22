@@ -204,3 +204,6 @@
 "resetPreferencesDefault"="Хотите сбросить настройки по умолчанию?";
 "yes"="Да";
 "no"="Нет";
+"languageChanged"="Язык изменен";
+"restartApp"="Перезапустить приложение";
+"ok"="OK";

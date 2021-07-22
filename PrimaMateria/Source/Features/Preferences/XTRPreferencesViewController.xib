@@ -140,7 +140,7 @@
                                     <size key="shadowOffset" width="2" height="1"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.74901960784313726" green="0.74901960784313726" blue="0.74901960784313726" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="tmM-oS-9mE" firstAttribute="leading" secondItem="n5h-iN-VGp" secondAttribute="leading" constant="59" id="9Zz-Fj-VJe"/>
                                 <constraint firstAttribute="height" constant="53" id="BXC-QQ-lSk"/>
@@ -498,7 +498,7 @@
                             </constraints>
                         </imageView>
                     </subviews>
-                    <color key="backgroundColor" red="0.25" green="0.25" blue="0.25" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstItem="fWl-3m-Msk" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="61" id="1Ej-S3-DgA"/>
                         <constraint firstItem="OSO-su-7ha" firstAttribute="top" secondItem="CaH-Zh-JGb" secondAttribute="top" constant="5" id="1VS-xS-5Db"/>

@@ -204,3 +204,6 @@
 "resetPreferencesDefault"="Do you want to reset preferences to default?";
 "yes"="Yes";
 "no"="No";
+"languageChanged"="Language Changed";
+"restartApp"="Restart app";
+"ok"="OK";

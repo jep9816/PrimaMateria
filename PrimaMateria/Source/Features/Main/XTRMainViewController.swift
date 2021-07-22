@@ -58,6 +58,7 @@ class XTRMainViewController: UITabBarController {
         let elementListViewController = XTRElementListViewController.loadFromNib()
         let graphsViewController = XTRGraphViewController.loadFromNib()
         let preferencesViewController = XTRPreferencesViewController.loadFromNib()
+        //let preferencesViewController = XTRPreferencesHostingController(rootView: XTRPreferencesView())
         let infoViewController = XTRInfoHostingController(rootView: XTRInfoView())
 
         createTab(viewController: periodicTableViewController, tabTitle: "periodicTable", imageName: "atom")
@@ -99,7 +100,6 @@ class XTRMainViewController: UITabBarController {
         let tabItem = UITabBarItem()
         
         tabItem.title = NSLocalizedString(tabTitle, comment: "")
-        //tabItem.image = UIImage(named: imageName)
         tabItem.image = UIImage(systemName: imageName, withConfiguration:
                                     UIImage.SymbolConfiguration(weight: .black))!.imageWithoutBaseline()
 
