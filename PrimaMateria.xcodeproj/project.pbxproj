@@ -208,9 +208,6 @@
 		804F2BA123614DA0009C8F3C /* LocaleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 804F2B9A2360BF23009C8F3C /* LocaleManager.swift */; };
 		804F2BA223622059009C8F3C /* LoadFailure.html in Resources */ = {isa = PBXBuildFile; fileRef = 804F2BA523622059009C8F3C /* LoadFailure.html */; };
 		804F2BA323622059009C8F3C /* LoadFailure.html in Resources */ = {isa = PBXBuildFile; fileRef = 804F2BA523622059009C8F3C /* LoadFailure.html */; };
-		806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
-		806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
-		806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
 		807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807E3EA62112959400534B10 /* XTROverlayView.swift */; };
 		8098771C210A8B0800AB3B00 /* Globe01.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C8210A875400AB3B00 /* Globe01.png */; };
 		8098771D210A8B0800AB3B00 /* Globe02.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876BD210A875200AB3B00 /* Globe02.png */; };
@@ -418,7 +415,6 @@
 		80AB2A872128CEAD00B58AB3 /* Globe38.png in Resources */ = {isa = PBXBuildFile; fileRef = 80987695210A874900AB3B00 /* Globe38.png */; };
 		80AB2A882128CEAD00B58AB3 /* Globe08.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876B2210A874D00AB3B00 /* Globe08.png */; };
 		80AB2A892128CEAD00B58AB3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801281E420F0272000ABC706 /* LaunchScreen.storyboard */; };
-		80AB2A8A2128CEAD00B58AB3 /* dark-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A395F2117AEE60074ED28 /* dark-metal-texture.png */; };
 		80AB2A8C2128CEAD00B58AB3 /* Globe47.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876AF210A874C00AB3B00 /* Globe47.png */; };
 		80AB2A8E2128CEAD00B58AB3 /* PrimaMateria.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 8012808B20F0271F00ABC706 /* PrimaMateria.scnassets */; };
 		80AB2A8F2128CEAD00B58AB3 /* SupportingFiles in Resources */ = {isa = PBXBuildFile; fileRef = 8012838520F02F9B00ABC706 /* SupportingFiles */; };
@@ -454,9 +450,7 @@
 		80AB2AB42128CEAD00B58AB3 /* Globe01.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C8210A875400AB3B00 /* Globe01.png */; };
 		80AB2AB52128CEAD00B58AB3 /* Globe05.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876D2210A875500AB3B00 /* Globe05.png */; };
 		80AB2AB62128CEAD00B58AB3 /* XTRZoomContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */; };
-		80AB2AB72128CEAD00B58AB3 /* seamless-metal-texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39652117B2B10074ED28 /* seamless-metal-texture.png */; };
 		80AB2ABA2128CEAD00B58AB3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80AB29EE2128CE0B00B58AB3 /* Images.xcassets */; };
-		80AB2ABB2128CEAD00B58AB3 /* brushed-dark-steel.png in Resources */ = {isa = PBXBuildFile; fileRef = 806A39672117B3850074ED28 /* brushed-dark-steel.png */; };
 		80AB2ABC2128CEAD00B58AB3 /* Globe56.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876C0210A875300AB3B00 /* Globe56.png */; };
 		80AB2ABE2128CEAD00B58AB3 /* Globe70.png in Resources */ = {isa = PBXBuildFile; fileRef = 809876B9210A874E00AB3B00 /* Globe70.png */; };
 		80AB2AC02128CEAD00B58AB3 /* CubicBody.scn in Resources */ = {isa = PBXBuildFile; fileRef = 8012807C20F0271F00ABC706 /* CubicBody.scn */; };
@@ -632,9 +626,6 @@
 		804F2BA823622067009C8F3C /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = ru; path = ru.lproj/LoadFailure.html; sourceTree = "<group>"; };
 		804F2BA923622067009C8F3C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = es; path = es.lproj/LoadFailure.html; sourceTree = "<group>"; };
 		8054205B20F83824002E7C27 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		806A395F2117AEE60074ED28 /* dark-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-metal-texture.png"; sourceTree = "<group>"; };
-		806A39652117B2B10074ED28 /* seamless-metal-texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seamless-metal-texture.png"; sourceTree = "<group>"; };
-		806A39672117B3850074ED28 /* brushed-dark-steel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "brushed-dark-steel.png"; sourceTree = "<group>"; };
 		807E3EA62112959400534B10 /* XTROverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTROverlayView.swift; sourceTree = "<group>"; };
 		808FA35520FAA2EA00A8161C /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		8098768C210A874800AB3B00 /* Globe16.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Globe16.png; sourceTree = "<group>"; };
@@ -1194,9 +1185,6 @@
 			isa = PBXGroup;
 			children = (
 				809875FB210A867400AB3B00 /* globe */,
-				806A39672117B3850074ED28 /* brushed-dark-steel.png */,
-				806A39652117B2B10074ED28 /* seamless-metal-texture.png */,
-				806A395F2117AEE60074ED28 /* dark-metal-texture.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1470,7 +1458,6 @@
 				80987741210A8B0800AB3B00 /* Globe38.png in Resources */,
 				80987723210A8B0800AB3B00 /* Globe08.png in Resources */,
 				8012835C20F0272000ABC706 /* LaunchScreen.storyboard in Resources */,
-				806A39602117AEE70074ED28 /* dark-metal-texture.png in Resources */,
 				8098774A210A8B0800AB3B00 /* Globe47.png in Resources */,
 				8012820720F0272000ABC706 /* PrimaMateria.scnassets in Resources */,
 				8012838820F02F9B00ABC706 /* SupportingFiles in Resources */,
@@ -1518,9 +1505,7 @@
 				06CE0DA426791C4D0042BDE2 /* Credits.pdf in Resources */,
 				80987720210A8B0800AB3B00 /* Globe05.png in Resources */,
 				800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */,
-				806A39662117B2B20074ED28 /* seamless-metal-texture.png in Resources */,
 				80AB29EF2128CE0B00B58AB3 /* Images.xcassets in Resources */,
-				806A39682117B3860074ED28 /* brushed-dark-steel.png in Resources */,
 				80987753210A8B0800AB3B00 /* Globe56.png in Resources */,
 				80987761210A8B0800AB3B00 /* Globe70.png in Resources */,
 				801281FA20F0272000ABC706 /* CubicBody.scn in Resources */,
@@ -1606,7 +1591,6 @@
 				80AB2A882128CEAD00B58AB3 /* Globe08.png in Resources */,
 				06C1CB442674F63600D2AE17 /* MainStoryboard.storyboard in Resources */,
 				80AB2A892128CEAD00B58AB3 /* LaunchScreen.storyboard in Resources */,
-				80AB2A8A2128CEAD00B58AB3 /* dark-metal-texture.png in Resources */,
 				06FC7DBB2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib in Resources */,
 				80AB2A8C2128CEAD00B58AB3 /* Globe47.png in Resources */,
 				80AB2A8E2128CEAD00B58AB3 /* PrimaMateria.scnassets in Resources */,
@@ -1649,9 +1633,7 @@
 				80AB2AB42128CEAD00B58AB3 /* Globe01.png in Resources */,
 				80AB2AB52128CEAD00B58AB3 /* Globe05.png in Resources */,
 				80AB2AB62128CEAD00B58AB3 /* XTRZoomContentView.xib in Resources */,
-				80AB2AB72128CEAD00B58AB3 /* seamless-metal-texture.png in Resources */,
 				80AB2ABA2128CEAD00B58AB3 /* Images.xcassets in Resources */,
-				80AB2ABB2128CEAD00B58AB3 /* brushed-dark-steel.png in Resources */,
 				80AB2ABC2128CEAD00B58AB3 /* Globe56.png in Resources */,
 				80AB2ABE2128CEAD00B58AB3 /* Globe70.png in Resources */,
 				80AB2AC02128CEAD00B58AB3 /* CubicBody.scn in Resources */,

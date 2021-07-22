@@ -289,7 +289,7 @@ class XTRColorFactory: NSObject {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return UIColor.color(hexString: "404040")
         } else {
-            return XTRColorFactoryStandard.seamlessMetalTextureColor
+            return UIColor.color(hexString: "505050")
         }
     }
 
@@ -365,7 +365,7 @@ class XTRColorFactory: NSObject {
         if XTRAppearanceManager.manager.isClassicAppearance() {
             return XTRColorFactoryClassic.denim
         } else {
-            return XTRColorFactoryStandard.navyBlue
+            return XTRColorFactoryStandard.standardRedColor
         }
     }
 

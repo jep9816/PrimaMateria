@@ -76,9 +76,9 @@ class XTRAppearanceManagerStandard: NSObject {
 
         appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
         appearance.titleTextAttributes = navigationBarTextAttributes
-        appearance.barTintColor = UIColor(patternImage: UIImage(named: "seamless-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
+        appearance.barTintColor = XTRColorFactoryStandard.standardRedColor
         appearance.tintColor = XTRColorFactoryStandard.ghost
-        appearance.backgroundColor = UIColor(patternImage: UIImage(named: "seamless-metal-texture")!) //XTRColorFactoryStandard.standardRedColor
+        appearance.backgroundColor = XTRColorFactoryStandard.standardRedColor
 
         //@property(nonatomic,assign) UIBarStyle barStyle;
         //@property(nonatomic,assign,getter=isTranslucent) BOOL translucent;
@@ -225,8 +225,8 @@ class XTRAppearanceManagerStandard: NSObject {
         let appearance = UITabBar.appearance()
 
         appearance.tintColor = XTRColorFactory.tabBarSelectedForgroundColor
-        appearance.backgroundColor = UIColor(patternImage: UIImage(named: "brushed-dark-steel")!) //XTRColorFactoryStandard.navyBlue
-        appearance.barTintColor = UIColor(patternImage: UIImage(named: "brushed-dark-steel")!) // XTRColorFactoryStandard.darkText
+        appearance.backgroundColor = XTRColorFactoryStandard.navyBlue
+        appearance.barTintColor = XTRColorFactoryStandard.darkText
         appearance.tintColor = XTRColorFactoryStandard.ghost
         appearance.unselectedItemTintColor = XTRColorFactoryStandard.greySuit
 
