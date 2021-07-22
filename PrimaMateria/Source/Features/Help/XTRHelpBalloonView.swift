@@ -34,7 +34,8 @@ struct XTRHelpBalloonView: View {
                         Button(action: {
                             self.webViewStateModel.goBack.toggle()
                         }) {
-                            Text("◀︎").lineLimit(1).font(.system(size: 26, weight: .bold))
+                            Label("Left Arrow", systemImage: "arrowtriangle.left.fill")
+                                .labelStyle(IconOnlyLabelStyle())
                                 .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .leading)
                         }
                         .opacity(!webViewStateModel.canGoBack ? 0: 1)
@@ -46,7 +47,8 @@ struct XTRHelpBalloonView: View {
                         Button(action: {
                             self.webViewStateModel.goForward.toggle()
                         }) {
-                            Text("▶︎").lineLimit(1).font(.system(size: 26, weight: .bold))
+                            Label("Right Arrow", systemImage: "arrowtriangle.right.fill")
+                                .labelStyle(IconOnlyLabelStyle())
                                 .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .trailing)
                         }
                         .opacity(!webViewStateModel.canGoForward ? 0: 1)
