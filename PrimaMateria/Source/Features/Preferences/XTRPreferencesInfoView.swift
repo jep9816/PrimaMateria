@@ -120,7 +120,7 @@ struct XTRPreferencesInfoView: View {
                     })
                     .disabled(XTRPropertiesStore.currentLanguageCode == "fr")
                     // swiftlint:disable multiple_closures_with_trailing_closure
-               } label: {
+                } label: {
                     XTRPreferencesGlobeView()
                         .frame(width: 44, height: 44, alignment: .center)
                 }

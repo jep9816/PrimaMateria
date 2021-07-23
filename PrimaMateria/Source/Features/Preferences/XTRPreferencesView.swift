@@ -16,6 +16,7 @@ struct XTRPreferencesViewConfig {
 struct XTRPreferencesView: View {
     
     @ObservedObject var webViewStateModel: XTRWebViewStateModel = XTRWebViewStateModel()
+    @State private var showingAlert = false
     
     var body: some View {
         NavigationView {
@@ -36,7 +37,21 @@ struct XTRPreferencesView: View {
                         Spacer()
                         
                         VStack(spacing: 0) {
-                            XTRBaseButton(action: {}, labelText: NSLocalizedString("resetPreferences", comment: "Reset Preferences"), width: 230, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
+                            XTRBaseButton(action: {
+                                self.showingAlert = true
+                            }, labelText: NSLocalizedString("resetPreferences", comment: "Reset Preferences"), width: 230, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
+                            .alert(isPresented: $showingAlert) {
+                                Alert(
+                                    title: Text(NSLocalizedString("resetPreferences", comment: "Reset Preferences")),
+                                    message: Text(NSLocalizedString("resetPreferencesDefault", comment: "Reset Preferences Default")),
+                                    primaryButton: .default(
+                                        Text(NSLocalizedString("yes", comment: "Yes")), action: {
+                                            self.resetPreferences()
+                                        }
+                                    ), secondaryButton: .default(Text(NSLocalizedString("no", comment: "NO")), action: {
+                                    })
+                                )
+                            }
                         }
                     }
                     
@@ -47,6 +62,36 @@ struct XTRPreferencesView: View {
             .navigationBarTitle(NSLocalizedString("preferences", comment: "Preferences"), displayMode: .inline)
         }
         .navigationViewStyle(StackNavigationViewStyle())
+    }
+    
+    func resetPreferences() {
+        XTRPropertiesStore.resetPreferences()
+        LocaleManager.apply(locale: Locale(identifier: LanguageCodes.English.code()))
+        NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
+
+        //        let alertController = UIAlertController(title: NSLocalizedString("resetPreferences", comment: ""), message: NSLocalizedString("resetPreferencesDefault", comment: ""), preferredStyle: .alert)
+        //        let yesAction = UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: .cancel) {[weak self] _ in
+        //            XTRPropertiesStore.resetPreferences()
+        //
+        //            self?.populateSeriesColors()
+        //            self?.populateElementBubbleState(true)
+        //            self?.populateShowTransitionsState(true)
+        //            self?.populateSplashScreenState(true)
+        //
+        //            self?.elementBubbleSwitch.isOn = true
+        //            self?.showTransitionsBubbleSwitch.isOn = true
+        //            self?.splashScreenSwitch.isOn = true
+        //            self?.segmentedControl.selectedSegmentIndex = 0
+        //
+        //            self?.applyLanguage(code: "en")
+        
+        //            NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
+        //        }
+        //
+        //        let noAction = UIAlertAction(title: NSLocalizedString("no", comment: ""), style: .destructive)
+        //        alertController.addAction(noAction)
+        //        alertController.addAction(yesAction)
+        //        self.present(alertController, animated: true, completion: nil)
     }
     
 }
