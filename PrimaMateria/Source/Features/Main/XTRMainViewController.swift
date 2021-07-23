@@ -57,8 +57,8 @@ class XTRMainViewController: UITabBarController {
         let periodicTableViewController = XTRPeriodicTableViewController.loadFromNib()
         let elementListViewController = XTRElementListViewController.loadFromNib()
         let graphsViewController = XTRGraphViewController.loadFromNib()
-        let preferencesViewController = XTRPreferencesViewController.loadFromNib()
-        //let preferencesViewController = XTRPreferencesHostingController(rootView: XTRPreferencesView())
+        //let preferencesViewController = XTRPreferencesViewController.loadFromNib()
+        let preferencesViewController = XTRPreferencesHostingController(rootView: XTRPreferencesView())
         let infoViewController = XTRInfoHostingController(rootView: XTRInfoView())
 
         createTab(viewController: periodicTableViewController, tabTitle: "periodicTable", imageName: "atom")

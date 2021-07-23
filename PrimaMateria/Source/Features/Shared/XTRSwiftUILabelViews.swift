@@ -1,5 +1,5 @@
 //
-//  XTRLabelViews.swift
+//  XTRSwiftUILabelViews.swift
 //  PrimaMateria PRD
 //
 //  Created by Jerry Porter on 6/30/21.
@@ -18,6 +18,7 @@ struct XTRLabelTitleView: View {
         Text("  " + labelText + ": ")
             .frame(width: self.width, height: self.height, alignment: .leading)
             .font(.system(size: 18, weight: .bold))
+            .foregroundColor(.black)
             .background(Color.white)
             .border(Color.black, width: 1)
     }
@@ -33,6 +34,7 @@ struct XTRFormTitleView: View {
     var body: some View {
         Text("  " + labelText + ": ")
             .frame(width: self.width, height: self.height, alignment: .trailing)
+            .foregroundColor(.black)
             .font(.system(size: 18, weight: .bold))
             .background(Color.clear)
     }
@@ -49,6 +51,7 @@ struct XTRLabelValueView: View {
         Text(" " + labelText)
             .frame(width: width, height: self.height, alignment: .leading)
             .font(.system(size: 18, weight: .regular))
+            .foregroundColor(.black)
             .background(Color.white)
             .border(Color.black, width: 1)
     }
