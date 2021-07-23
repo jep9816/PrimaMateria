@@ -205,5 +205,5 @@
 "yes"="Yes";
 "no"="No";
 "languageChanged"="Language Changed";
-"restartApp"="Restart app";
+"%@ restartApp"="%@ will now restart";
 "ok"="OK";
