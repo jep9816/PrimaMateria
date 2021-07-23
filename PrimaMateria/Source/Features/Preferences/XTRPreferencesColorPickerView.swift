@@ -64,7 +64,12 @@ struct XTRColorPickerView: View {
             .frame(width: XTRPreferencesViewControllerConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
             
             // swiftlint:disable multiple_closures_with_trailing_closure
-            Button(action: {
+            XTRBaseButton(action: {
+                self.selectColor()
+                self.isPresented.toggle()
+            }, labelText: NSLocalizedString("chooseColor", comment: "Choose Color"), width: XTRPreferencesViewControllerConfig.preferredContentSize.width - 10, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
+
+            /*Button(action: {
                 self.selectColor()
                 self.isPresented.toggle()
             }) {
@@ -75,7 +80,7 @@ struct XTRColorPickerView: View {
                     .shadow(color: .black, radius: 1, x: 1, y: 1)
             }
             .cornerRadius(VIEW_CORNER_RADIUS)
-            .padding(5)
+            .padding(5)*/
         }
         .background(Color(XTRColorFactory.rowColor))
         .onAppear(perform: {
