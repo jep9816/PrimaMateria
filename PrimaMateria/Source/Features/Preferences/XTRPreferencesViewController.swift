@@ -337,8 +337,8 @@ class XTRPreferencesViewController: UIViewController {
         segmentedControl.cornerRadius = VIEW_CORNER_RADIUS - 4.0
         segmentedControl.masksToBounds = true
         segmentedControl.selectedSegmentIndex = XTRAppearanceManager.manager.isClassicAppearance() ? 0: 1
-        segmentedControl.setTitle(NSLocalizedString(XTRAppearanceType.classic, comment: ""), forSegmentAt: 0)
-        segmentedControl.setTitle(NSLocalizedString(XTRAppearanceType.standard, comment: ""), forSegmentAt: 1)
+        segmentedControl.setTitle(NSLocalizedString(XTRAppearanceType.classic.name, comment: ""), forSegmentAt: 0)
+        segmentedControl.setTitle(NSLocalizedString(XTRAppearanceType.standard.name, comment: ""), forSegmentAt: 1)
         
         navigationController?.navigationBar.prefersLargeTitles = true
         setupRx()

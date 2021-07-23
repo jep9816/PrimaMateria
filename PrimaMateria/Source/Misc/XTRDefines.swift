@@ -112,9 +112,29 @@ let SWITCH_CORNER_RADIUS: CGFloat = 16.0
 let VIEW_CORNER_RADIUS: CGFloat = 8.0
 let XTR_TABLE_CELL_IDENTIFIER = "XTRTableCell"
 
-struct XTRAppearanceType {
-    static let classic = "Classic"
-    static let standard = "Standard"
+//struct XTRAppearanceType {
+//    static let classic = "Classic"
+//    static let standard = "Standard"
+//}
+
+enum XTRAppearanceType: String {
+    
+    case classic = "Classic"
+    case standard = "Standard"
+    
+    func offset() -> Int {
+        switch self.rawValue {
+        case "Classic":
+            return 0
+        default:
+            return 1
+        }
+    }
+    
+    var name: String {
+        return self.rawValue
+    }
+
 }
 
 // MARK: - Notifications

@@ -90,7 +90,7 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" image="icon" translatesAutoresizingMaskIntoConstraints="NO" id="LbQ-Of-XXU" customClass="XTRCornerImageView" customModule="PrimaMateria">
                                     <rect key="frame" x="5" y="111" width="64" height="64"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </imageView>
                             </subviews>
                             <color key="backgroundColor" red="0.75" green="0.75" blue="0.75" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>

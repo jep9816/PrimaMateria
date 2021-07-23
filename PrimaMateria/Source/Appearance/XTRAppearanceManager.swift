@@ -46,9 +46,9 @@ class XTRAppearanceManager: NSObject {
     }
 
     @objc func changeAppearance(notification: NSNotification) {
-        if notification.object as! String == XTRAppearanceType.classic {
+        if notification.object as! String == XTRAppearanceType.classic.name {
             classicAppearance()
-        } else if notification.object as! String == XTRAppearanceType.standard {
+        } else if notification.object as! String == XTRAppearanceType.standard.name {
             standardAppearance()
         }
         commonAppearance()
@@ -65,12 +65,12 @@ class XTRAppearanceManager: NSObject {
 
     func classicAppearance() {
         _classicManager.appearance()
-        reset(appearanceName: XTRAppearanceType.classic)
+        reset(appearanceName: XTRAppearanceType.classic.name)
     }
 
     func standardAppearance() {
         _standardManager.appearance()
-        reset(appearanceName: XTRAppearanceType.standard)
+        reset(appearanceName: XTRAppearanceType.standard.name)
     }
 
     func applyAppearance() {
@@ -82,11 +82,11 @@ class XTRAppearanceManager: NSObject {
     }
 
     func isClassicAppearance() -> Bool {
-        return XTRPropertiesStore.appearanceName == XTRAppearanceType.classic
+        return XTRPropertiesStore.appearanceName == XTRAppearanceType.classic.name
     }
 
     func isStandardAppearance() -> Bool {
-        return XTRPropertiesStore.appearanceName == XTRAppearanceType.standard
+        return XTRPropertiesStore.appearanceName == XTRAppearanceType.standard.name
     }
 
     func viewControllerBackgroundAppearance() {

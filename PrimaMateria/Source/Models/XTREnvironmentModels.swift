@@ -58,6 +58,15 @@ class ColorPickerEnvironment: ObservableObject {
 
 }
 
+class PreferencesEnvironment: ObservableObject {
+    
+    @Published var elementHelpBubbles = false
+    @Published var showSplashScreen = false
+    @Published var showViewTransitions = false
+    @Published var selectedStyle = 0
+    
+}
+
 class MolecularCalculatorModel: ObservableObject {
     
     @Published var element: XTRElementModel!

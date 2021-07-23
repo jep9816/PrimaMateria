@@ -117,8 +117,8 @@ class XTRPropertiesStore: NSObject {
     class var appearanceName: String {
         get {
             guard let objectValue = UserDefaults.standard.value(forKey: XTRPropertiesStoreConfig.appearanceName) as? String else {
-                XTRPropertiesStore.appearanceName = XTRAppearanceType.classic
-                return XTRAppearanceType.classic
+                XTRPropertiesStore.appearanceName = XTRAppearanceType.classic.name
+                return XTRAppearanceType.classic.name
             }
 
             return objectValue

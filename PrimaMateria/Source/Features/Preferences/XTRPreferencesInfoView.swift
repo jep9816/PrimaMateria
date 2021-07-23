@@ -43,18 +43,19 @@ struct XTRPreferencesInfoView: View {
                     .font(Font.custom("Papyrus", size: 48.0))
                     .fontWeight(.regular)
                     .foregroundColor(.black)
-                
+                    .frame(width: 320, height: 54, alignment: .center)
+
                 Spacer()
                 
-                VStack(spacing: 0) {
+                VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 5) {
                         Text(NSLocalizedString("version", comment: "Version") + ":")
                             .font(Font.custom("Papyrus", size: 18.0))
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
-                            .frame(width: 100, height: 24, alignment: .trailing)
+                            .frame(width: 140, height: 24, alignment: .trailing)
                         
-                        Text(Bundle.main.appVersionString!)
+                        Text(" " + Bundle.main.appVersionString!)
                             .font(Font.custom("Papyrus", size: 18.0))
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
@@ -66,8 +67,8 @@ struct XTRPreferencesInfoView: View {
                             .font(Font.custom("Papyrus", size: 18.0))
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
-                            .frame(width: 100, height: 24, alignment: .trailing)
-                        
+                            .frame(width: 140, height: 24, alignment: .trailing)
+
                         Text(Bundle.main.copywriteString!)
                             .font(Font.custom("Papyrus", size: 18.0))
                             .fontWeight(.regular)
@@ -88,6 +89,7 @@ struct XTRPreferencesInfoView: View {
                 
                 Spacer()
                 
+                //swiftlint:disable no_space_in_method_call
                 Menu {
                     Text(NSLocalizedString("chooseLanguage", comment: ""))
                     

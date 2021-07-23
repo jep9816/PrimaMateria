@@ -11,10 +11,19 @@ import UIKit
 class XTRImageFactory {
 
     class var ascendingArrowImage: UIImage {
-        return UIImage(named: "AscendingArrow")!
+        return UIImage(systemName: "arrowtriangle.up.fill")!
     }
 
     class var descendingArrowImage: UIImage {
-        return UIImage(named: "DescendingArrow")!
+        return UIImage(systemName: "arrowtriangle.down.fill")!
     }
+    
+    class var circleImage: UIImage {
+        return UIImage(systemName: "circle")!
+    }
+
+    class var circleFillImage: UIImage {
+        return UIImage(systemName: "circle.fill")!
+    }
+
 }

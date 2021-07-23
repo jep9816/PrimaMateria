@@ -37,7 +37,7 @@ class XTRAppearanceManagerStandard: NSObject {
 
     func barButtonItemAppearance() {
         let appearance = UIBarButtonItem.appearance()
-        appearance.tintColor = XTRColorFactoryStandard.lightGray
+        appearance.tintColor = XTRColorFactoryStandard.navyBlue
 
         //- (void)setBackgroundImage:(nullable UIImage *)backgroundImage forState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
         //- (nullable UIImage *)backgroundImageForState:(UIControl.State)state barMetrics:(UIBarMetrics)barMetrics;
@@ -65,8 +65,8 @@ class XTRAppearanceManagerStandard: NSObject {
         let shadow = NSShadow()
 
         shadow.shadowColor = UIColor.black
-        shadow.shadowOffset = CGSize(width: 5, height: 5)
-        shadow.shadowBlurRadius = 5.0
+        shadow.shadowOffset = CGSize(width: 3, height: 3)
+        shadow.shadowBlurRadius = 3.0
 
         let navigationBarTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.ghost,

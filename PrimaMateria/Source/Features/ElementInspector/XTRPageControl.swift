@@ -32,20 +32,20 @@ class XTRPageControl: UIView {
         let index = atomicNumber - 1
         if index >= 0 {
             let imageView = wrapperView.subviews[atomicNumber - 1] as! UIImageView
-            imageView.image = UIImage(named: "dotOpen")
+            imageView.image = XTRImageFactory.circleImage
         }
     }
 
     func updateNextLabel(atomicNumber: Int) {
         if atomicNumber <= XTRDataSource.sharedInstance.elementCount() {
             let imageView = wrapperView.subviews[atomicNumber - 1] as! UIImageView
-            imageView.image = UIImage(named: "dotOpen")
+            imageView.image = XTRImageFactory.circleImage
         }
     }
 
     func updateCurrentLabel(atomicNumber: Int) {
         let imageView = wrapperView.subviews[atomicNumber - 1] as! UIImageView
-        imageView.image = UIImage(named: "dotClosed")
+        imageView.image = XTRImageFactory.circleFillImage
     }
 
     private func createLabel(frame: CGRect) -> UILabel {
@@ -71,7 +71,7 @@ class XTRPageControl: UIView {
 
         for _ in 0...count {
             let imageView = UIImageView(frame: rect)
-            imageView.image = UIImage(named: "dotOpen")
+            imageView.image = XTRImageFactory.circleImage
             wrapperView.addSubview(imageView)
             rect = CGRect(x: imageView.frame.origin.x + 8.5, y: 30, width: 8, height: 8)
         }
