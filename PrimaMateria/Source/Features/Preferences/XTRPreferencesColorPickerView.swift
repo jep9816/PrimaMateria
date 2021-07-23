@@ -1,5 +1,5 @@
 //
-//  XTRColorPickerView.swift
+//  XTRPreferencesColorPickerView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/21/21.
@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct XTRColorPickerView: View {
+struct XTRPreferencesColorPickerView: View {
+    
     @EnvironmentObject var environment: ColorPickerEnvironment
     @State private var red: Double = 0
     @State private var green: Double = 0
@@ -63,7 +64,6 @@ struct XTRColorPickerView: View {
             }
             .frame(width: XTRPreferencesViewControllerConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
             
-            // swiftlint:disable multiple_closures_with_trailing_closure
             XTRBaseButton(action: {
                 self.selectColor()
                 self.isPresented.toggle()
@@ -128,7 +128,7 @@ struct XTRColorPickerView: View {
 struct XTRColorPickerView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRColorPickerView().environmentObject(ColorPickerEnvironment(seriesIdentifier: NSLocalizedString("actinide", comment: "Series Identifier"), seriesColor: XTRColorFactory.defaultActinideColor))
+        XTRPreferencesColorPickerView().environmentObject(ColorPickerEnvironment(seriesIdentifier: NSLocalizedString("actinide", comment: "Series Identifier"), seriesColor: XTRColorFactory.defaultActinideColor))
             .previewLayout(.fixed(width: XTRPreferencesViewControllerConfig.preferredContentSize.width, height: XTRPreferencesViewControllerConfig.preferredContentSize.height))
     }
     

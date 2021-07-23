@@ -25,7 +25,6 @@ enum LanguageCodes: String {
 struct XTRPreferencesInfoView: View {
     
     @ObservedObject var webViewStateModel: XTRWebViewStateModel = XTRWebViewStateModel()
-    private let imageNames = (1...72).map { String(format: "Globe%02d", $0) }
     @State private var showingAlert = false
     
     var body: some View {
@@ -89,46 +88,48 @@ struct XTRPreferencesInfoView: View {
                 
                 Spacer()
                 
-                // swiftlint:disable multiple_closures_with_trailing_closure
-                LoadingView()
-
-                //Label("Globe", systemImage: "globe")
-                //    .labelStyle(IconOnlyLabelStyle())
-                //        .frame(width: 44, height: 44, alignment: .center)
-                //}
-                //.aspectRatio(contentMode: .fill)
-                //.font(.system(size: 36, weight: .bold))
-                
-                .contextMenu(ContextMenu(menuItems: {
+                Menu {
                     Text(NSLocalizedString("chooseLanguage", comment: ""))
                     
                     Button("🇺🇸 " + NSLocalizedString("english", comment: "English"), action: {
-                        self.applyLanguage(code: .English)
+                        XTRPropertiesStore.currentLanguageCode = LanguageCodes.English.code()
                         showingAlert.toggle()
                     })
                     .disabled(XTRPropertiesStore.currentLanguageCode == "en")
-
+                    
                     Button("🇪🇸 " + NSLocalizedString("spanish", comment: "Spanish"), action: {
-                        self.applyLanguage(code: .Spanish)
+                        XTRPropertiesStore.currentLanguageCode = LanguageCodes.Spanish.code()
                         showingAlert.toggle()
                     })
                     .disabled(XTRPropertiesStore.currentLanguageCode == "es")
-
+                    
                     Button("🇷🇺 " + NSLocalizedString("russian", comment: "Russian"), action: {
-                        self.applyLanguage(code: .Russian)
+                        XTRPropertiesStore.currentLanguageCode = LanguageCodes.Russian.code()
                         showingAlert.toggle()
                     })
                     .disabled(XTRPropertiesStore.currentLanguageCode == "ru")
-
+                    
                     Button("🇫🇷 " + NSLocalizedString("french", comment: "French"), action: {
-                        self.applyLanguage(code: .French)
+                        XTRPropertiesStore.currentLanguageCode = LanguageCodes.French.code()
                         showingAlert.toggle()
                     })
                     .disabled(XTRPropertiesStore.currentLanguageCode == "fr")
-                 }))
+                    // swiftlint:disable multiple_closures_with_trailing_closure
+               } label: {
+                    XTRPreferencesGlobeView()
+                        .frame(width: 44, height: 44, alignment: .center)
+                }
             }
             .alert(isPresented: $showingAlert) {
-                Alert(title: Text(NSLocalizedString("languageChanged", comment: "Language Changed")), message: Text(NSLocalizedString("restartApp", comment: "Restart App")), dismissButton: .default(Text("OK")))
+                Alert(
+                    title: Text(NSLocalizedString("languageChanged", comment: "Language Changed")),
+                    message: Text(String.localizedStringWithFormat(NSLocalizedString("%@ restartApp", comment: ""), Bundle.main.appNameString!)),
+                    dismissButton: .default(
+                        Text(NSLocalizedString("ok", comment: "OK")), action: {
+                            LocaleManager.apply(locale: Locale(identifier: XTRPropertiesStore.currentLanguageCode))
+                        }
+                    )
+                )
             }
             .padding(5)
             .border(Color.black, width: 1)
@@ -148,12 +149,7 @@ struct XTRPreferencesInfoView: View {
         guard let path = Bundle.main.path(forResource: documentName, ofType: nil) else { return "" }
         return path
     }
-    
-    private func applyLanguage(code: LanguageCodes) {
-        XTRPropertiesStore.currentLanguageCode = code.code()
-        //LocaleManager.apply(locale: Locale(identifier: code.code()))
-    }
-    
+        
 }
 
 struct XTRPreferencesInfoView_Previews: PreviewProvider {
@@ -163,123 +159,3 @@ struct XTRPreferencesInfoView_Previews: PreviewProvider {
     }
     
 }
-
-class LoadingTimer {
-
-    let publisher = Timer.publish(every: 0.1, on: .main, in: .default)
-    private var timerCancellable: Cancellable?
-
-    func start() {
-        self.timerCancellable = publisher.connect()
-    }
-
-    func cancel() {
-        self.timerCancellable?.cancel()
-    }
-}
-
-struct LoadingView: View {
-
-    @State private var index = 0
-
-    private let images = (1...7).map { UIImage(named: String(format: "Globe%02d", $0))! }
-    private var timer = LoadingTimer()
-
-    var body: some View {
-
-        return Image(uiImage: images[index])
-            .resizable()
-            .frame(width: 44, height: 44, alignment: .center)
-            .onReceive(
-                timer.publisher,
-                perform: { _ in
-                    self.index += 1
-                    if self.index >= 7 { self.index = 0 }
-                }
-            )
-            .onAppear { self.timer.start() }
-            .onDisappear { self.timer.cancel() }
-    }
-}
-
-public struct AnimatedImage: View {
-    
-    // MARK: - Properties
-    @State private var image: Image?
-    
-    private let imagesNames: [String]
-    private let templateImageName: String?
-    private let interval: Double
-    private let loop: Bool
-    private let loopIndex: Int
-    private let iterations: Int
-    
-    /// Create a AnimatedImage
-    /// - Parameters:
-    ///     - imagesNames: An Array of images names that will be shown.
-    ///     - templateImageName: Name of the first image. If not provided, the default value will be used.
-    ///     - interval: Time that each image will still shown.
-    ///     - loop: Boolean that determines if the video will play on loop. If not provided, the default value false will be used.
-    ///     - loopIndex: Where the video restarts when on loop. If not provided, the default value 0 will be used.
-    ///     - iterations: If the video loops, how many times it will loop. For infinite loop just not use this parameter. If not provided, the default value infinite will be used.
-    public init(_ images: [String],
-                templateImageName: String? = nil,
-                interval: Double,
-                loop: Bool = false,
-                loopIndex: Int = 0,
-                iterations: Int = Int.max) {
-        self.imagesNames = images
-        self.templateImageName = templateImageName
-        self.interval = interval
-        self.loop = loop
-        self.loopIndex = loopIndex
-        self.iterations = iterations
-    }
-    
-    public var body: some View {
-        Group {
-            image?
-                .resizable()
-                .scaledToFit()
-        }.onAppear(perform: {
-            self.animate()
-        })
-    }
-    
-    /// Create a video sensation
-    ///
-    /// Use this method to iterate through the images to look like a video
-    private func animate() {
-        var imageIndex: Int = 0
-        var iterations: Int = 1
-        var idle: Bool = false
-        
-        Timer.scheduledTimer(withTimeInterval: self.interval, repeats: true) { timer in
-            if imageIndex < self.imagesNames.count {
-                self.image = Image(self.imagesNames[imageIndex])
-                imageIndex += 1
-                
-                if imageIndex == self.imagesNames.count && self.loop && iterations != self.iterations {
-                    imageIndex = self.loopIndex
-                    
-                    if self.iterations != Int.max {
-                        iterations += 1
-                    }
-                    
-                    if !idle {
-                        idle = true
-                    }
-                }
-            }
-            if !self.loop && idle && iterations == self.iterations {
-                timer.invalidate()
-            }
-        }
-    }
-}
-
-//for index in 1...72 {
-//    let numValue =  String(format: "%02d", index)
-//    let imageName = "Globe\(numValue).png"
-//    animationImages.append(UIImage(named: imageName)!)
-//}

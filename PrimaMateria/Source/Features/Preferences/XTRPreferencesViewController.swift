@@ -251,7 +251,7 @@ class XTRPreferencesViewController: UIViewController {
     }
     
     func presentColorPicker(_ sender: UIButton) {
-        let colorPicker = XTRColorPickerView()
+        let colorPicker = XTRPreferencesColorPickerView()
         let seriesIdentifier = sender.accessibilityIdentifier
         let aColor = XTRColorFactory.colorForString(seriesIdentifier!)
         let environment = ColorPickerEnvironment(seriesIdentifier: seriesIdentifier!, seriesColor: aColor)

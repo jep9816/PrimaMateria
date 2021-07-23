@@ -22,19 +22,19 @@ struct XTRPreferencesSettingsView: View {
                     .font(.system(size: 18, weight: .regular))
                     //swiftlint:disable colon
                     .frame(width: 230, height: 21, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                Toggle(NSLocalizedString("elementHelpBubbles", comment: "Element Help Bubbles") + " : ", isOn: $elementHelpBubbles)
+                Toggle(NSLocalizedString("elementHelpBubbles", comment: "Element Help Bubbles") + ": ", isOn: $elementHelpBubbles)
                     .font(.system(size: 14, weight: .regular))
                 Spacer(minLength: 5)
-                Toggle(NSLocalizedString("showSplashScreen", comment: "Show Splash Screen") + " : ", isOn: $showSplashScreen)
+                Toggle(NSLocalizedString("showSplashScreen", comment: "Show Splash Screen") + ": ", isOn: $showSplashScreen)
                     .font(.system(size: 14, weight: .regular))
                 Spacer(minLength: 5)
 
-                Toggle(NSLocalizedString("showViewTransitions", comment: "Show View Transitions") + " : ", isOn: $showViewTransitions)
+                Toggle(NSLocalizedString("showViewTransitions", comment: "Show View Transitions") + ": ", isOn: $showViewTransitions)
                     .font(.system(size: 14, weight: .regular))
                 Spacer(minLength: 5)
 
                 HStack(spacing: 0) {
-                    Text(NSLocalizedString("style", comment: "style") + " : ")
+                    Text(NSLocalizedString("style", comment: "style") + ": ")
                         .font(.system(size: 14, weight: .regular))
                     Picker(NSLocalizedString("style", comment: "style"), selection: $selectedStyle, content: {
                         Text(NSLocalizedString("classic", comment: "Classic")).tag(0)

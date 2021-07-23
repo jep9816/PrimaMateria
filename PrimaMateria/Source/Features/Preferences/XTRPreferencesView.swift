@@ -15,7 +15,6 @@ struct XTRPreferencesViewConfig {
 
 struct XTRPreferencesView: View {
     
-    //@EnvironmentObject var environment: InfoEnvironment
     @ObservedObject var webViewStateModel: XTRWebViewStateModel = XTRWebViewStateModel()
     
     var body: some View {
@@ -25,11 +24,16 @@ struct XTRPreferencesView: View {
                     .ignoresSafeArea()
                 
                 HStack(alignment: .top, spacing: 5) {
-                    VStack(spacing: 5) {
+                    VStack(spacing: 0) {
                         XTRPreferencesSettingsView()
+                        
+                        Spacer(minLength: 5)
+                        
                         XTRPreferencesSeriesColorsView()
                         
-                        VStack(spacing: 5) {
+                        Spacer(minLength: 5)
+                        
+                        VStack(spacing: 0) {
                             XTRBaseButton(action: {}, labelText: NSLocalizedString("resetPreferences", comment: "Reset Preferences"), width: 230, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
                         }
                     }
