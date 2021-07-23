@@ -27,11 +27,13 @@ struct XTRPreferencesView: View {
                     VStack(spacing: 0) {
                         XTRPreferencesSettingsView()
                         
-                        Spacer(minLength: 5)
+                        Spacer()
+                            //swiftlint:disable colon
+                            .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: .center)
                         
                         XTRPreferencesSeriesColorsView()
                         
-                        Spacer(minLength: 5)
+                        Spacer()
                         
                         VStack(spacing: 0) {
                             XTRBaseButton(action: {}, labelText: NSLocalizedString("resetPreferences", comment: "Reset Preferences"), width: 230, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
@@ -52,7 +54,8 @@ struct XTRPreferencesView: View {
 struct XTRPreferencesView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRPreferencesView().previewLayout(.fixed(width: 1024, height: 768))
+        //XTRPreferencesView().previewLayout(.fixed(width: 1024, height: 768)) // 9.7
+        XTRPreferencesView().previewLayout(.fixed(width: 2732 / 2, height: 2048 / 2)) // iPad pro
     }
     
 }

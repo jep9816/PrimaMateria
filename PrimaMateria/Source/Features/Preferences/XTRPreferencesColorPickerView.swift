@@ -11,6 +11,7 @@ import SwiftUI
 struct XTRPreferencesColorPickerView: View {
     
     @EnvironmentObject var environment: ColorPickerEnvironment
+    
     @State private var red: Double = 0
     @State private var green: Double = 0
     @State private var blue: Double = 0

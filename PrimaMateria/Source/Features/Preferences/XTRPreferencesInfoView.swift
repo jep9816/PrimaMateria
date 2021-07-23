@@ -31,19 +31,23 @@ struct XTRPreferencesInfoView: View {
         VStack(spacing: 0) {
             HStack(alignment: .bottom, spacing: 5) {
                 Image("icon")
-                
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 54, height: 54, alignment: .center)
+
                 Text("Xtrensa")
                     .font(Font.custom("Papyrus", size: 36.0))
                     .fontWeight(.regular)
                     .foregroundColor(.black)
-                
+                    .frame(width: 130, height: 44, alignment: .center)
+
                 Spacer()
                 
                 Text(Bundle.main.appNameString!)
                     .font(Font.custom("Papyrus", size: 48.0))
                     .fontWeight(.regular)
                     .foregroundColor(.black)
-                    .frame(width: 320, height: 54, alignment: .center)
+                    .frame(width: 320, height: 40, alignment: .center)
 
                 Spacer()
                 
@@ -55,7 +59,7 @@ struct XTRPreferencesInfoView: View {
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
                             .frame(width: 140, height: 24, alignment: .trailing)
                         
-                        Text(" " + Bundle.main.appVersionString!)
+                        Text(Bundle.main.appVersionString!)
                             .font(Font.custom("Papyrus", size: 18.0))
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
@@ -67,14 +71,13 @@ struct XTRPreferencesInfoView: View {
                             .font(Font.custom("Papyrus", size: 18.0))
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
-                            .frame(width: 140, height: 24, alignment: .trailing)
+                            .frame(width: 140, height: 30, alignment: .trailing)
 
                         Text(Bundle.main.copywriteString!)
                             .font(Font.custom("Papyrus", size: 18.0))
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
-                            .frame(width: 60, height: 24, alignment: .leading)
-                            .padding(5)
+                            .frame(width: 60, height: 30, alignment: .leading)
                     }
                 }
             }
