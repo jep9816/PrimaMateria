@@ -19,34 +19,34 @@ struct XTRPreferencesSettingsView: View {
         HStack(spacing: 5) {
             VStack(alignment: .leading, spacing: 0) {
                 Text(NSLocalizedString("settings", comment: "Settings"))
-                    .font(.system(size: 18, weight: .regular))
-                    //swiftlint:disable colon
+                    .font(XTRFontFactory.regularSystem18)
+                    // swiftlint:disable colon
                     .frame(width: 230, height: 21, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 
                 Toggle(NSLocalizedString("elementHelpBubbles", comment: "Element Help Bubbles") + ": ", isOn: $elementBubblesState).onChange(of: elementBubblesState, perform: { _ in
                     XTRPropertiesStore.elementBubblesState = elementBubblesState
                 })
-                .font(.system(size: 14, weight: .regular))
+                .font(XTRFontFactory.regularSystem14)
                 
                 Spacer(minLength: 5)
                 
                 Toggle(NSLocalizedString("showSplashScreen", comment: "Show Splash Screen") + ": ", isOn: $splashScreenState).onChange(of: splashScreenState, perform: { _ in
                     XTRPropertiesStore.splashScreenState = splashScreenState
                 })
-                .font(.system(size: 14, weight: .regular))
+                .font(XTRFontFactory.regularSystem14)
                 
                 Spacer(minLength: 5)
                 
                 Toggle(NSLocalizedString("showViewTransitions", comment: "Show View Transitions") + ": ", isOn: $showTransitionsState).onChange(of: showTransitionsState, perform: { _ in
                     XTRPropertiesStore.showTransitionsState = showTransitionsState
                 })
-                .font(.system(size: 14, weight: .regular))
+                .font(XTRFontFactory.regularSystem14)
                 
                 Spacer(minLength: 5)
                 
                 HStack(spacing: 0) {
                     Text(NSLocalizedString("style", comment: "style") + ": ")
-                        .font(.system(size: 14, weight: .regular))
+                        .font(XTRFontFactory.regularSystem14)
                     Picker(NSLocalizedString("style", comment: "style"), selection: $selectedStyle, content: {
                         Text(NSLocalizedString("classic", comment: "Classic")).tag(XTRAppearanceType.classic.offset())
                         Text(NSLocalizedString("standard", comment: "Standard")).tag(XTRAppearanceType.standard.offset())
@@ -57,8 +57,8 @@ struct XTRPreferencesSettingsView: View {
                         NotificationCenter.default.post(name: .notificationAppearanceChanged, object: appearance.name)
                     })
                     .pickerStyle(SegmentedPickerStyle())
-                    .font(.system(size: 14, weight: .regular))
-                    //swiftlint:disable colon
+                    .font(XTRFontFactory.regularSystem14)
+                    // swiftlint:disable colon
                     .frame(width: 160, height: 29, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }
                 

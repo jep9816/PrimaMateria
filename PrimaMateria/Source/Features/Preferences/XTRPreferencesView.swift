@@ -29,7 +29,7 @@ struct XTRPreferencesView: View {
                         XTRPreferencesSettingsView()
                         
                         Spacer()
-                            //swiftlint:disable colon
+                            // swiftlint:disable colon
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: .center)
                         
                         XTRPreferencesSeriesColorsView()
@@ -66,32 +66,9 @@ struct XTRPreferencesView: View {
     
     func resetPreferences() {
         XTRPropertiesStore.resetPreferences()
-        LocaleManager.apply(locale: Locale(identifier: LanguageCodes.English.code()))
-        NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
+        NotificationCenter.default.post(name: .notificationAppearanceChanged, object: XTRAppearanceType.classic.name)
 
-        //        let alertController = UIAlertController(title: NSLocalizedString("resetPreferences", comment: ""), message: NSLocalizedString("resetPreferencesDefault", comment: ""), preferredStyle: .alert)
-        //        let yesAction = UIAlertAction(title: NSLocalizedString("yes", comment: ""), style: .cancel) {[weak self] _ in
-        //            XTRPropertiesStore.resetPreferences()
-        //
-        //            self?.populateSeriesColors()
-        //            self?.populateElementBubbleState(true)
-        //            self?.populateShowTransitionsState(true)
-        //            self?.populateSplashScreenState(true)
-        //
-        //            self?.elementBubbleSwitch.isOn = true
-        //            self?.showTransitionsBubbleSwitch.isOn = true
-        //            self?.splashScreenSwitch.isOn = true
-        //            self?.segmentedControl.selectedSegmentIndex = 0
-        //
-        //            self?.applyLanguage(code: "en")
-        
-        //            NotificationCenter.default.post(name: .seriesColorChangedNotification, object: nil)
-        //        }
-        //
-        //        let noAction = UIAlertAction(title: NSLocalizedString("no", comment: ""), style: .destructive)
-        //        alertController.addAction(noAction)
-        //        alertController.addAction(yesAction)
-        //        self.present(alertController, animated: true, completion: nil)
+        LocaleManager.apply(locale: Locale(identifier: LanguageCodes.English.code()))
     }
     
 }
@@ -99,8 +76,8 @@ struct XTRPreferencesView: View {
 struct XTRPreferencesView_Previews: PreviewProvider {
     
     static var previews: some View {
-        //XTRPreferencesView().previewLayout(.fixed(width: 1024, height: 768)) // 9.7
-        XTRPreferencesView().previewLayout(.fixed(width: 2732 / 2, height: 2048 / 2)) // iPad pro
+        XTRPreferencesView().previewLayout(.fixed(width: 1024, height: 768)) // 9.7
+        //XTRPreferencesView().previewLayout(.fixed(width: 2732 / 2, height: 2048 / 2)) // iPad pro
     }
     
 }

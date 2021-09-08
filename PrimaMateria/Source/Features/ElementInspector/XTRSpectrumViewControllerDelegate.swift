@@ -56,7 +56,7 @@ class XTRSpectrumViewControllerDelegate: NSObject, CPTPlotDataSource {
         model.cell.backgroundView?.backgroundColor = UIColor.black
         model.cell.contentView.backgroundColor = UIColor.black
         model.cell.addColumn(model.columnPosition)
-        label.font = UIFont.systemFont(ofSize: 20.0)
+        label.font = XTRFontFactory.systemFont20
         label.textAlignment = .center
         label.textColor = UIColor.black
         label.text = " \(model.property)"

@@ -10,21 +10,21 @@ import UIKit
 
 @IBDesignable
 class XTRLocalizedLabel: UILabel {
-
+    
     private var _isTitleLabel: Bool = false
-
+    
     @IBInspectable var isTitleLabel: Bool {
-        set {
-            _isTitleLabel = newValue
-        }
         get {
             return _isTitleLabel
         }
+        set {
+            _isTitleLabel = newValue
+        }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        
         if let text = text {
             if isTitleLabel {
                 self.text = " \(NSLocalizedString(text, comment: "")):"

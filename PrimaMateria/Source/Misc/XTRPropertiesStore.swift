@@ -14,8 +14,11 @@ struct XTRPropertiesStoreConfig {
     static let showTransitions = "showViewTransitionsState"
     static let splashScreen = "splashScreenState"
     static let atomicNumber = "atomicNumber"
+    static let languageCode = "AppleLanguage"
     static let viewTitle = "viewTitle"
     static let noneValue = "None"
+    static let defaultLanguageCode = "en"
+
 }
 
 class XTRPropertiesStore: NSObject {
@@ -23,12 +26,11 @@ class XTRPropertiesStore: NSObject {
     class var currentLanguageCode: String {
         get {
             let userDefaults = UserDefaults.standard
-            guard let defaultValue = userDefaults.value(forKeyPath: "AppleLanguage") as? String else {
-                //XTRPropertiesStore.atomicNumber = 1
-                userDefaults.set("en", forKey: "AppleLanguage")
+            guard let defaultValue = userDefaults.value(forKeyPath: XTRPropertiesStoreConfig.languageCode) as? String else {
+                userDefaults.set(XTRPropertiesStoreConfig.defaultLanguageCode, forKey: XTRPropertiesStoreConfig.languageCode)
                 userDefaults.synchronize()
 
-                return "en"
+                return XTRPropertiesStoreConfig.defaultLanguageCode
             }
 
             return defaultValue
@@ -36,7 +38,7 @@ class XTRPropertiesStore: NSObject {
 
         set {
             let userDefaults = UserDefaults.standard
-            userDefaults.set(newValue, forKey: "AppleLanguage")
+            userDefaults.set(newValue, forKey: XTRPropertiesStoreConfig.languageCode)
             userDefaults.synchronize()
         }
     }
@@ -134,11 +136,10 @@ class XTRPropertiesStore: NSObject {
     class func resetPreferences() {
         let userDefaults = UserDefaults.standard
 
-        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.elementBubble)
-        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.showTransitions)
-        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.splashScreen)
-        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.splashScreen)
-        userDefaults.removeObject(forKey: XTRPropertiesStoreConfig.appearanceName)
+        userDefaults.setValue(false, forKey: XTRPropertiesStoreConfig.elementBubble)
+        userDefaults.setValue(false, forKey: XTRPropertiesStoreConfig.showTransitions)
+        userDefaults.setValue(false, forKey: XTRPropertiesStoreConfig.splashScreen)
+        userDefaults.setValue(XTRAppearanceType.classic.name, forKey: XTRPropertiesStoreConfig.appearanceName)
 
         userDefaults.removeObject(forKey: ElementSeries.actinide)
         userDefaults.removeObject(forKey: ElementSeries.alkaliEarthMetal)

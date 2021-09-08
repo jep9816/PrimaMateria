@@ -36,7 +36,7 @@ struct XTRPreferencesInfoView: View {
                     .frame(width: 54, height: 54, alignment: .center)
 
                 Text("Xtrensa")
-                    .font(Font.custom("Papyrus", size: 36.0))
+                    .font(XTRFontFactory.papyrusSystem36)
                     .fontWeight(.regular)
                     .foregroundColor(.black)
                     .frame(width: 130, height: 44, alignment: .center)
@@ -44,7 +44,7 @@ struct XTRPreferencesInfoView: View {
                 Spacer()
                 
                 Text(Bundle.main.appNameString!)
-                    .font(Font.custom("Papyrus", size: 48.0))
+                    .font(XTRFontFactory.papyrusSystem48)
                     .fontWeight(.regular)
                     .foregroundColor(.black)
                     .frame(width: 320, height: 40, alignment: .center)
@@ -54,13 +54,13 @@ struct XTRPreferencesInfoView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack(spacing: 5) {
                         Text(NSLocalizedString("version", comment: "Version") + ":")
-                            .font(Font.custom("Papyrus", size: 18.0))
+                            .font(XTRFontFactory.papyrusSystem18)
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
                             .frame(width: 140, height: 24, alignment: .trailing)
                         
                         Text(Bundle.main.appVersionString!)
-                            .font(Font.custom("Papyrus", size: 18.0))
+                            .font(XTRFontFactory.papyrusSystem18)
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
                             .frame(width: 60, height: 24, alignment: .leading)
@@ -68,13 +68,13 @@ struct XTRPreferencesInfoView: View {
                     
                     HStack(spacing: 5) {
                         Text(NSLocalizedString("copyright", comment: "Copyright") + ":")
-                            .font(Font.custom("Papyrus", size: 18.0))
+                            .font(XTRFontFactory.papyrusSystem18)
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
                             .frame(width: 140, height: 30, alignment: .trailing)
 
                         Text(Bundle.main.copywriteString!)
-                            .font(Font.custom("Papyrus", size: 18.0))
+                            .font(XTRFontFactory.papyrusSystem18)
                             .fontWeight(.regular)
                             .foregroundColor(Color(XTRColorFactory.backgroundColor))
                             .frame(width: 60, height: 30, alignment: .leading)
@@ -92,9 +92,8 @@ struct XTRPreferencesInfoView: View {
                 
                 Spacer()
                 
-                //swiftlint:disable no_space_in_method_call
                 Menu {
-                    Text(NSLocalizedString("chooseLanguage", comment: ""))
+                    Label(NSLocalizedString("chooseLanguage", comment: "Choose Language"), systemImage: "globe")
                     
                     Button("🇺🇸 " + NSLocalizedString("english", comment: "English"), action: {
                         XTRPropertiesStore.currentLanguageCode = LanguageCodes.English.code()
@@ -119,7 +118,6 @@ struct XTRPreferencesInfoView: View {
                         showingAlert.toggle()
                     })
                     .disabled(XTRPropertiesStore.currentLanguageCode == "fr")
-                    // swiftlint:disable multiple_closures_with_trailing_closure
                 } label: {
                     XTRPreferencesGlobeView()
                         .frame(width: 44, height: 44, alignment: .center)

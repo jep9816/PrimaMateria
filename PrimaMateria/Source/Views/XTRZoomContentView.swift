@@ -37,7 +37,7 @@ class XTRZoomContentView: UIView {
         wrapper.translatesAutoresizingMaskIntoConstraints = true
 
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 20.0)
+        label.font = XTRFontFactory.systemFont20
 
         if XTRAppearanceManager.manager.isClassicAppearance() {
             label.textColor = XTRColorFactoryClassic.white

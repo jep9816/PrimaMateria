@@ -56,7 +56,7 @@ class XTRWikipediaViewController: UIViewController {
 
         let textAttributes: [NSAttributedString.Key: AnyObject]? = [
             NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 20)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont20
         ]
 
         titleButtonItem.setTitleTextAttributes(textAttributes, for: UIControl.State())
@@ -64,8 +64,8 @@ class XTRWikipediaViewController: UIViewController {
         preferredContentSize = CGSize(width: 768, height: 620)
 
         progressHUD = MBProgressHUD(view: view)
-        progressHUD.label.font = UIFont.boldSystemFont(ofSize: 26)
-        progressHUD.detailsLabel.font = UIFont.boldSystemFont(ofSize: 15)
+        progressHUD.label.font = XTRFontFactory.boldSystemFont26
+        progressHUD.detailsLabel.font = XTRFontFactory.boldSystemFont15
         progressHUD.label.text = NSLocalizedString("pleaseWait", comment: "")
         progressHUD.detailsLabel.text = "\(NSLocalizedString("loadingWikipedia", comment: "")) //\(elementName!)."
         progressHUD.backgroundView.backgroundColor = UIColor.clear

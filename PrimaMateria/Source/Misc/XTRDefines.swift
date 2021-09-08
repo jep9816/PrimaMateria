@@ -112,10 +112,10 @@ let SWITCH_CORNER_RADIUS: CGFloat = 16.0
 let VIEW_CORNER_RADIUS: CGFloat = 8.0
 let XTR_TABLE_CELL_IDENTIFIER = "XTRTableCell"
 
-//struct XTRAppearanceType {
+// struct XTRAppearanceType {
 //    static let classic = "Classic"
 //    static let standard = "Standard"
-//}
+// }
 
 enum XTRAppearanceType: String {
     

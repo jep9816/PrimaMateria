@@ -17,7 +17,7 @@ struct XTRLabelTitleView: View {
     var body: some View {
         Text("  " + labelText + ": ")
             .frame(width: self.width, height: self.height, alignment: .leading)
-            .font(.system(size: 18, weight: .bold))
+            .font(XTRFontFactory.boldSystem18)
             .foregroundColor(.black)
             .background(Color.white)
             .border(Color.black, width: 1)
@@ -35,7 +35,7 @@ struct XTRFormTitleView: View {
         Text("  " + labelText + ": ")
             .frame(width: self.width, height: self.height, alignment: .trailing)
             .foregroundColor(.black)
-            .font(.system(size: 18, weight: .bold))
+            .font(XTRFontFactory.boldSystem18)
             .background(Color.clear)
     }
     
@@ -50,7 +50,7 @@ struct XTRLabelValueView: View {
     var body: some View {
         Text(" " + labelText)
             .frame(width: width, height: self.height, alignment: .leading)
-            .font(.system(size: 18, weight: .regular))
+            .font(XTRFontFactory.regularSystem18)
             .foregroundColor(.black)
             .background(Color.white)
             .border(Color.black, width: 1)

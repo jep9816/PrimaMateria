@@ -54,7 +54,7 @@ class XTRGraphChoiceCell: UICollectionViewCell {
         button.titleLabel!.textAlignment = NSTextAlignment.center
         button.backgroundColor = XTRColorFactoryClassic.silverColor
         button.setTitleColor(UIColor.white, for: UIControl.State())
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 16.0)
+        button.titleLabel?.font = XTRFontFactory.systemFont16
     }
 
 }

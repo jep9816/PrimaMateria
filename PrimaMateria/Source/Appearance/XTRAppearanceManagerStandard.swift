@@ -70,7 +70,7 @@ class XTRAppearanceManagerStandard: NSObject {
 
         let navigationBarTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.ghost,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30),
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont30,
             NSAttributedString.Key.shadow: shadow
         ]
 
@@ -140,14 +140,14 @@ class XTRAppearanceManagerStandard: NSObject {
         let appearance = UISegmentedControl.appearance()
         let selectedSegmentedControlTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactory.segmentedControlForgroundColor,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont12
         ]
 
         appearance.setTitleTextAttributes(selectedSegmentedControlTextAttributes, for: .selected)
 
         let normalSegmentedControlTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.greySuit,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont12
         ]
 
         appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .normal)
@@ -246,11 +246,11 @@ class XTRAppearanceManagerStandard: NSObject {
         let appearance = UITabBarItem.appearance()
         let normalItemTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.lightGray,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont18
         ]
         let selectedItemTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryStandard.whiteSmoke,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont18
         ]
 
         appearance.setTitleTextAttributes(normalItemTextAttributes, for: UIControl.State())

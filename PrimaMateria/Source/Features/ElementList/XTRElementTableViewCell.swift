@@ -81,7 +81,7 @@ class XTRElementTableViewCell: UITableViewCell {
     // MARK: - Internal Methods
 
     func modify(_ label: XTRTableLabel, withStandardConditionColor: UIColor, seriesColor: UIColor) {
-        label.font = UIFont.systemFont(ofSize: 16.0)
+        label.font = XTRFontFactory.systemFont16
         label.textColor = withStandardConditionColor
         label.backgroundColor = seriesColor
         label.autoresizingMask = [UIView.AutoresizingMask.flexibleRightMargin, UIView.AutoresizingMask.flexibleHeight]
@@ -98,7 +98,7 @@ class XTRElementTableViewCell: UITableViewCell {
         atomicNumberLabel.textAlignment = .right
 
         modify(symbolLabel, withStandardConditionColor: element.standardConditionColor, seriesColor: element.seriesColor)
-        symbolLabel.font = UIFont.systemFont(ofSize: 26.0)
+        symbolLabel.font = XTRFontFactory.systemFont26
         symbolLabel.text = "\(element.symbol!)"
         symbolLabel.textAlignment = .center
 

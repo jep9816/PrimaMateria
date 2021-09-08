@@ -53,6 +53,8 @@
 		06842DA4268D2D1A008D6C53 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA2268D2D1A008D6C53 /* View+Extensions.swift */; };
 		06842DA6268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */; };
 		06842DA7268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */; };
+		069EC7F026E9294B0044F328 /* XTRFontFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069EC7EF26E9294B0044F328 /* XTRFontFactory.swift */; };
+		069EC7F126E9294B0044F328 /* XTRFontFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069EC7EF26E9294B0044F328 /* XTRFontFactory.swift */; };
 		06C1CAC82673ABD300D2AE17 /* XTRGeneralInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */; };
 		06C1CAC92673ABD300D2AE17 /* XTRGeneralInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */; };
 		06C1CACA2673ABD300D2AE17 /* XTRSpectrumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */; };
@@ -75,8 +77,6 @@
 		06C1CAF42674397A00D2AE17 /* XTRGraphViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */; };
 		06C1CAF926743A9A00D2AE17 /* XTRInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAF826743A9A00D2AE17 /* XTRInfoViewController.xib */; };
 		06C1CAFA26743A9A00D2AE17 /* XTRInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAF826743A9A00D2AE17 /* XTRInfoViewController.xib */; };
-		06C1CAFC26743C0900D2AE17 /* XTRPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */; };
-		06C1CAFD26743C0900D2AE17 /* XTRPreferencesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */; };
 		06C1CAFF26743C3400D2AE17 /* XTRElementListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */; };
 		06C1CB0026743C3400D2AE17 /* XTRElementListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */; };
 		06C1CB412674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB402674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift */; };
@@ -174,7 +174,6 @@
 		8012806220F0270500ABC706 /* XTRElementBalloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801320F0270400ABC706 /* XTRElementBalloonViewController.swift */; };
 		8012806320F0270500ABC706 /* XTRSwapableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801420F0270400ABC706 /* XTRSwapableViewController.swift */; };
 		8012806420F0270500ABC706 /* XTRSpectrumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */; };
-		8012806520F0270500ABC706 /* XTRPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */; };
 		8012806620F0270500ABC706 /* XTRWikipediaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */; };
 		8012806720F0270500ABC706 /* XTRAtomicStructureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */; };
 		8012806820F0270500ABC706 /* XTRHelpBalloonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801920F0270400ABC706 /* XTRHelpBalloonViewController.swift */; };
@@ -322,7 +321,6 @@
 		80AB2A0B2128CEAD00B58AB3 /* XTRBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802420F0270400ABC706 /* XTRBackgroundView.swift */; };
 		80AB2A0C2128CEAD00B58AB3 /* XTYRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */; };
 		80AB2A0D2128CEAD00B58AB3 /* XTRSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801120F0270400ABC706 /* XTRSplashViewController.swift */; };
-		80AB2A0E2128CEAD00B58AB3 /* XTRPreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */; };
 		80AB2A0F2128CEAD00B58AB3 /* XTRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FE020F0270400ABC706 /* XTRDataSource.swift */; };
 		80AB2A102128CEAD00B58AB3 /* XTRTableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800020F0270400ABC706 /* XTRTableLabel.swift */; };
 		80AB2A112128CEAD00B58AB3 /* XTRHelpButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800220F0270400ABC706 /* XTRHelpButton.swift */; };
@@ -502,6 +500,7 @@
 		06842D9E268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XTRFormSheet+Wrapper.swift"; sourceTree = "<group>"; };
 		06842DA2268D2D1A008D6C53 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
 		06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTREnvironmentModels.swift; sourceTree = "<group>"; };
+		069EC7EF26E9294B0044F328 /* XTRFontFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRFontFactory.swift; sourceTree = "<group>"; };
 		06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRGeneralInfoViewController.xib; sourceTree = "<group>"; };
 		06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRSpectrumViewController.xib; sourceTree = "<group>"; };
 		06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRWikipediaViewController.xib; sourceTree = "<group>"; };
@@ -879,8 +878,6 @@
 				0612AFCA26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift */,
 				0612AFC726A9D626005F4E24 /* XTRPreferencesSettingsView.swift */,
 				0612AFBE26A9A44E005F4E24 /* XTRPreferencesView.swift */,
-				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
-				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -971,6 +968,8 @@
 				8012801D20F0270400ABC706 /* XTRInfoViewControllerDelegate.swift */,
 				8012800A20F0270400ABC706 /* XTRMolecularCalculatorViewController.swift */,
 				06FC7DBA2672A20700DF9801 /* XTRMolecularCalculatorViewController.xib */,
+				8012801620F0270400ABC706 /* XTRPreferencesViewController.swift */,
+				06C1CAFB26743C0900D2AE17 /* XTRPreferencesViewController.xib */,
 				8012801720F0270400ABC706 /* XTRWikipediaViewController.swift */,
 				06C1CAC72673ABD300D2AE17 /* XTRWikipediaViewController.xib */,
 				8012801E20F0270400ABC706 /* XTRWikipediaViewControllerDelegate.swift */,
@@ -1067,6 +1066,7 @@
 				8012837820F02D6100ABC706 /* XTRColorFactoryClassic.swift */,
 				8012837220F02D6000ABC706 /* XTRColorFactoryStandard.swift */,
 				8012837520F02D6100ABC706 /* XTRImageFactory.swift */,
+				069EC7EF26E9294B0044F328 /* XTRFontFactory.swift */,
 			);
 			path = Appearance;
 			sourceTree = "<group>";
@@ -1529,7 +1529,6 @@
 				0853E20E2114D20100CA092B /* SHKWater.fsh in Resources */,
 				80987738210A8B0800AB3B00 /* Globe29.png in Resources */,
 				8098771C210A8B0800AB3B00 /* Globe01.png in Resources */,
-				06C1CAFD26743C0900D2AE17 /* XTRPreferencesViewController.xib in Resources */,
 				06CE0DA426791C4D0042BDE2 /* Credits.pdf in Resources */,
 				80987720210A8B0800AB3B00 /* Globe05.png in Resources */,
 				800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */,
@@ -1608,7 +1607,6 @@
 				80AB2A7D2128CEAD00B58AB3 /* Globe66.png in Resources */,
 				80AB2A7F2128CEAD00B58AB3 /* Globe57.png in Resources */,
 				80AB2A802128CEAD00B58AB3 /* Globe48.png in Resources */,
-				06C1CAFC26743C0900D2AE17 /* XTRPreferencesViewController.xib in Resources */,
 				80AB2A812128CEAD00B58AB3 /* Globe02.png in Resources */,
 				80AB2A822128CEAD00B58AB3 /* Globe41.png in Resources */,
 				80AB2A842128CEAD00B58AB3 /* CubicFace.scn in Resources */,
@@ -1722,6 +1720,7 @@
 				06842DA0268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift in Sources */,
 				8012802F20F0270500ABC706 /* XTRMolecularCalculatorEngine.swift in Sources */,
 				0612AFCC26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift in Sources */,
+				069EC7F126E9294B0044F328 /* XTRFontFactory.swift in Sources */,
 				8012804C20F0270500ABC706 /* XTRDividerLabel.swift in Sources */,
 				8012804720F0270500ABC706 /* Bundle+Extensions.swift in Sources */,
 				8012805E20F0270500ABC706 /* XTRGraphChoiceViewController.swift in Sources */,
@@ -1743,7 +1742,6 @@
 				8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */,
 				8012806020F0270500ABC706 /* XTRSplashViewController.swift in Sources */,
 				804F2B9F2360CE6C009C8F3C /* String+Extensions.swift in Sources */,
-				8012806520F0270500ABC706 /* XTRPreferencesViewController.swift in Sources */,
 				8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */,
 				8012805020F0270500ABC706 /* XTRTableLabel.swift in Sources */,
 				8012805220F0270500ABC706 /* XTRHelpButton.swift in Sources */,
@@ -1835,6 +1833,7 @@
 				80AB29FE2128CEAD00B58AB3 /* XTRMolecularCalculatorEngine.swift in Sources */,
 				80AB29FF2128CEAD00B58AB3 /* XTRDividerLabel.swift in Sources */,
 				0612AFCB26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift in Sources */,
+				069EC7F026E9294B0044F328 /* XTRFontFactory.swift in Sources */,
 				80AB2A002128CEAD00B58AB3 /* Bundle+Extensions.swift in Sources */,
 				80AB2A012128CEAD00B58AB3 /* XTRGraphChoiceViewController.swift in Sources */,
 				80AB2A022128CEAD00B58AB3 /* XTRAppDelegate.swift in Sources */,
@@ -1854,7 +1853,6 @@
 				80AB2A0D2128CEAD00B58AB3 /* XTRSplashViewController.swift in Sources */,
 				0612AFC226A9A44E005F4E24 /* XTRPreferencesHostingController.swift in Sources */,
 				804F2B9E2360CE6C009C8F3C /* String+Extensions.swift in Sources */,
-				80AB2A0E2128CEAD00B58AB3 /* XTRPreferencesViewController.swift in Sources */,
 				80AB2A0F2128CEAD00B58AB3 /* XTRDataSource.swift in Sources */,
 				80AB2A102128CEAD00B58AB3 /* XTRTableLabel.swift in Sources */,
 				80AB2A112128CEAD00B58AB3 /* XTRHelpButton.swift in Sources */,
@@ -2104,10 +2102,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = M574L9BX8L;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -2123,7 +2122,7 @@
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.steinway.spirio-dev";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
 				SUPPORTS_MACCATALYST = YES;
@@ -2142,9 +2141,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
-				DEVELOPMENT_TEAM = M574L9BX8L;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				GCC_PREFIX_HEADER = "";
@@ -2160,7 +2160,7 @@
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.steinway.spirio-dev";
+				PRODUCT_BUNDLE_IDENTIFIER = com.xtrensa.PrimaMateria;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
 				SUPPORTS_MACCATALYST = YES;
@@ -2178,6 +2178,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_COMPLETION_HANDLER_MISUSE = YES;
 				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -2215,6 +2216,7 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = NO;
 				CLANG_WARN_COMPLETION_HANDLER_MISUSE = YES;
 				CODE_SIGN_ENTITLEMENTS = PrimaMateria.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";

@@ -33,7 +33,7 @@ class XTRAppearanceManagerClassic: NSObject {
     }
 
     func activityIndicatorViewAppearance() {
-        //@property(nullable, readwrite, nonatomic, strong) UIColor *color;
+        // @property(nullable, readwrite, nonatomic, strong) UIColor *color;
     }
 
     func barButtonItemAppearance() {
@@ -65,7 +65,7 @@ class XTRAppearanceManagerClassic: NSObject {
         let appearance = UINavigationBar.appearance()
         let navigationBarTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.white,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 30)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont30
         ]
 
         appearance.setTitleVerticalPositionAdjustment(5.0, for: .default)
@@ -134,14 +134,14 @@ class XTRAppearanceManagerClassic: NSObject {
         let appearance = UISegmentedControl.appearance()
         let selectedSegmentedControlTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.dodgerBlueColor,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont12
         ]
 
         appearance.setTitleTextAttributes(selectedSegmentedControlTextAttributes, for: .selected)
 
         let normalSegmentedControlTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.grayColor,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 12)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont12
         ]
 
         appearance.setTitleTextAttributes(normalSegmentedControlTextAttributes, for: .normal)
@@ -238,11 +238,11 @@ class XTRAppearanceManagerClassic: NSObject {
         let appearance = UITabBarItem.appearance()
         let normalItemTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.white,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont18
         ]
         let selectedItemTextAttributes = [
             NSAttributedString.Key.foregroundColor: XTRColorFactoryClassic.elephant,
-            NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 18)
+            NSAttributedString.Key.font: XTRFontFactory.boldSystemFont18
         ]
 
         appearance.setTitleTextAttributes(normalItemTextAttributes, for: UIControl.State())

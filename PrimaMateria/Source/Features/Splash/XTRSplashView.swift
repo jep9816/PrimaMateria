@@ -67,7 +67,6 @@ struct XTRSplashView: View {
             .background(Color(.sRGB, red: 1.0, green: 1.0, blue: 1.0, opacity: 0.75)) // any non-transparent background
             .padding()
             .shadow(color: .black, radius: 4, x: 4, y: 4)
-                //.border(Color.black, width: 10)
         }.scaledToFill()
         .onAppear(perform: {
             dismissAction()

@@ -45,7 +45,7 @@ struct XTRElementBalloonView: View {
             VStack(spacing: 0) {
                 Text(environment.element.name!)
                     .frame(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width, height: 48, alignment: .center)
-                    .font(.system(size: 32, weight: .bold))
+                    .font(XTRFontFactory.boldSystem32)
                     .foregroundColor(.black)
                     .background(Color.init(environment.element.seriesColor))
                 

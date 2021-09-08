@@ -12,6 +12,7 @@ import UIKit
 class XTRElementListViewControllerDelegate: NSObject, UITableViewDelegate, UITableViewDataSource {
 
     var indexPath: IndexPath?
+    //swiftlint:disable unused_closure_parameter
     var closure: (Int) -> Void? = { index in return }
 
     weak var controller: XTRElementListViewController?

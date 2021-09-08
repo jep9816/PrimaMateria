@@ -10,10 +10,11 @@ import SwiftUI
 
 struct ColorMapper {
     
-    @State var foreGroundColor = Color.white
-    @State var backGroundColor = Color.black
+    @State var foreGroundColor = UIColor.white
+    @State var backGroundColor = UIColor.black
     
 }
+
 struct XTRPreferencesSeriesColorsView: View {
     
     @State var seriesActinideMapper = ColorMapper()
@@ -26,77 +27,148 @@ struct XTRPreferencesSeriesColorsView: View {
     @State var seriesNonMetalMapper = ColorMapper()
     @State var seriesTransactinidesMapper = ColorMapper()
     @State var seriesTransitionMetalMapper = ColorMapper()
-    
+    let pub = NotificationCenter.default.publisher(for: .colorSelectedNotification)
+
+    @State var showingPopover: [Bool] = [false, false, false, false, false, false, false, false, false, false]
+
     var body: some View {
         HStack(spacing: 5) {
             VStack(spacing: 5) {
                 Text(NSLocalizedString("seriesColors", comment: "Series Colors"))
-                    .font(.system(size: 18, weight: .regular))
+                    .font(XTRFontFactory.regularSystem18)
                 Group {
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("actinide", comment: "Actinide"), width: 230, height: 32, backgroundColor: seriesActinideMapper.backGroundColor)
-                        .foregroundColor(seriesActinideMapper.foreGroundColor)
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(0)
+                    }, labelText: NSLocalizedString(ElementSeries.actinide, comment: "Actinide"), width: 230, height: 32, backgroundColor: Color(seriesActinideMapper.backGroundColor))
+                    .foregroundColor(Color(seriesActinideMapper.foreGroundColor))
+                    .popover(isPresented: $showingPopover[0]) {
+                        self.presentColorPicker(ElementSeries.actinide)
+                    }
                     
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("alkaliEarthMetal", comment: "Alkali Earth Metal"), width: 230, height: 32, backgroundColor: seriesAlkaliEarthMetalMapper.backGroundColor)
-                        .foregroundColor(seriesAlkaliEarthMetalMapper.foreGroundColor)
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(1)
+                    }, labelText: NSLocalizedString(ElementSeries.alkaliEarthMetal, comment: "Alkali Earth Metal"), width: 230, height: 32, backgroundColor: Color(seriesAlkaliEarthMetalMapper.backGroundColor))
+                        .foregroundColor(Color(seriesAlkaliEarthMetalMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[1]) {
+                            self.presentColorPicker(ElementSeries.alkaliEarthMetal)
+                        }
+
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(2)
+                    }, labelText: NSLocalizedString(ElementSeries.alkaliMetal, comment: "Alkali Metal"), width: 230, height: 32, backgroundColor: Color(seriesAlkaliMetalMapper.backGroundColor))
+                        .foregroundColor(Color(seriesAlkaliMetalMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[2]) {
+                            self.presentColorPicker(ElementSeries.alkaliMetal)
+                        }
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(3)
+                    }, labelText: NSLocalizedString(ElementSeries.halogen, comment: "Halogen"), width: 230, height: 32, backgroundColor: Color(seriesHalogenMapper.backGroundColor))
+                        .foregroundColor(Color(seriesHalogenMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[3]) {
+                            self.presentColorPicker(ElementSeries.halogen)
+                        }
                     
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("alkaliMetal", comment: "Alkali Metal"), width: 230, height: 32, backgroundColor: seriesAlkaliMetalMapper.backGroundColor)
-                        .foregroundColor(seriesAlkaliMetalMapper.foreGroundColor)
-                    
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("halogen", comment: "Halogen"), width: 230, height: 32, backgroundColor: seriesHalogenMapper.backGroundColor)
-                        .foregroundColor(seriesHalogenMapper.foreGroundColor)
-                    
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("lanthanide", comment: "Lanthanide"), width: 230, height: 32, backgroundColor: seriesLanthanideMapper.backGroundColor)
-                        .foregroundColor(seriesLanthanideMapper.foreGroundColor)
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(4)
+                    }, labelText: NSLocalizedString(ElementSeries.lanthanide, comment: "Lanthanide"), width: 230, height: 32, backgroundColor: Color(seriesLanthanideMapper.backGroundColor))
+                        .foregroundColor(Color(seriesLanthanideMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[4]) {
+                            self.presentColorPicker(ElementSeries.lanthanide)
+                        }
                 }
                 .background(Color(XTRColorFactory.tableViewCellBorderColor))
+                
                 Group {
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("metal", comment: "Metal"), width: 230, height: 32, backgroundColor: seriesMetalMapper.backGroundColor)
-                        .foregroundColor(seriesMetalMapper.foreGroundColor)
-                    
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("nobleGas", comment: "NobleGas"), width: 230, height: 32, backgroundColor: seriesNobleGasMapper.backGroundColor)
-                        .foregroundColor(seriesNobleGasMapper.foreGroundColor)
-                    
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("nonMetal", comment: "Non Metal"), width: 230, height: 32, backgroundColor: seriesNonMetalMapper.backGroundColor)
-                        .foregroundColor(seriesNonMetalMapper.foreGroundColor)
-                    
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("transactinide", comment: "Transactinide"), width: 230, height: 32, backgroundColor: seriesTransactinidesMapper.backGroundColor)
-                        .foregroundColor(seriesTransactinidesMapper.foreGroundColor)
-                    
-                    XTRBaseButton(action: {}, labelText: NSLocalizedString("transitionMetal", comment: "Transition Metal"), width: 230, height: 32, backgroundColor: seriesTransitionMetalMapper.backGroundColor)
-                        .foregroundColor(seriesTransitionMetalMapper.foreGroundColor)
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(5)
+                    }, labelText: NSLocalizedString(ElementSeries.metal, comment: "Metal"), width: 230, height: 32, backgroundColor: Color(seriesMetalMapper.backGroundColor))
+                        .foregroundColor(Color(seriesMetalMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[5]) {
+                            self.presentColorPicker(ElementSeries.metal)
+                        }
+
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(6)
+                    }, labelText: NSLocalizedString(ElementSeries.nobleGas, comment: "NobleGas"), width: 230, height: 32, backgroundColor: Color(seriesNobleGasMapper.backGroundColor))
+                        .foregroundColor(Color(seriesNobleGasMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[6]) {
+                            self.presentColorPicker(ElementSeries.nobleGas)
+                        }
+
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(7)
+                    }, labelText: NSLocalizedString(ElementSeries.nonMetal, comment: "Non Metal"), width: 230, height: 32, backgroundColor: Color(seriesNonMetalMapper.backGroundColor))
+                        .foregroundColor(Color(seriesNonMetalMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[7]) {
+                            self.presentColorPicker(ElementSeries.nonMetal)
+                        }
+
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(8)
+                    }, labelText: NSLocalizedString(ElementSeries.transactinide, comment: "Transactinide"), width: 230, height: 32, backgroundColor: Color(seriesTransactinidesMapper.backGroundColor))
+                        .foregroundColor(Color(seriesTransactinidesMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[8]) {
+                            self.presentColorPicker(ElementSeries.transactinide)
+                        }
+
+                    XTRBaseButton(action: {
+                        resetPopoverForPosition(9)
+                    }, labelText: NSLocalizedString(ElementSeries.transitionMetal, comment: "Transition Metal"), width: 230, height: 32, backgroundColor: Color(seriesTransitionMetalMapper.backGroundColor))
+                        .foregroundColor(Color(seriesTransitionMetalMapper.foreGroundColor))
+                        .popover(isPresented: $showingPopover[9]) {
+                            self.presentColorPicker(ElementSeries.transitionMetal)
+                        }
                 }
                 .background(Color(XTRColorFactory.tableViewCellBorderColor))
             }
-            
             .background(Color(XTRColorFactory.tableViewCellBorderColor))
         }
         .onAppear(perform: {
             populateSeriesColors()
         })
+        .onReceive(pub) { _ in
+            populateSeriesColors()
+        }
     }
     
-    func populateSeriesColors() {
-        seriesActinideMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.actinideColor), backGroundColor: Color(XTRColorFactory.actinideColor.inverseColor()))
-
-        seriesAlkaliEarthMetalMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.alkaliEarthMetalColor), backGroundColor: Color(XTRColorFactory.alkaliEarthMetalColor.inverseColor()))
-        
-        seriesAlkaliMetalMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.alkaliMetalColor), backGroundColor: Color(XTRColorFactory.alkaliMetalColor.inverseColor()))
-        
-        seriesHalogenMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.halogenColor), backGroundColor: Color(XTRColorFactory.halogenColor.inverseColor()))
-        
-        seriesLanthanideMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.lanthanideColor), backGroundColor: Color(XTRColorFactory.lanthanideColor.inverseColor()))
-        
-        seriesMetalMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.metalColor), backGroundColor: Color(XTRColorFactory.metalColor.inverseColor()))
-        
-        seriesNobleGasMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.nobleGasColor), backGroundColor: Color(XTRColorFactory.nobleGasColor.inverseColor()))
-        
-        seriesNonMetalMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.nonMetalColor), backGroundColor: Color(XTRColorFactory.nonMetalColor.inverseColor()))
-        
-        seriesTransactinidesMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.transactinideColor), backGroundColor: Color(XTRColorFactory.transactinideColor.inverseColor()))
-        
-        seriesTransitionMetalMapper = ColorMapper(foreGroundColor: Color(XTRColorFactory.transitionMetalColor), backGroundColor: Color(XTRColorFactory.transitionMetalColor.inverseColor()))
+    func resetPopoverForPosition(_ position: Int) {
+        for index in 0 ..< showingPopover.count {
+            showingPopover[index] = false
+        }
+        showingPopover[position] = true
+    }
+    
+    func presentColorPicker(_ seriesIdentifier: String) -> some View {
+        return XTRPreferencesColorPickerView().environmentObject(ColorPickerEnvironment(seriesIdentifier: seriesIdentifier, seriesColor: XTRColorFactory.colorForString(seriesIdentifier)))
     }
 
+    func updateSeriesProperties(_ button: UIButton, color: UIColor) {
+        button.backgroundColor = color
+        button.setTitleColor(color.inverseColor(), for: UIControl.State())
+    }
+
+    func populateSeriesColors() {
+        seriesActinideMapper = ColorMapper(foreGroundColor: XTRColorFactory.actinideColor.inverseColor(), backGroundColor: XTRColorFactory.actinideColor)
+        
+        seriesAlkaliEarthMetalMapper = ColorMapper(foreGroundColor: XTRColorFactory.alkaliEarthMetalColor.inverseColor(), backGroundColor: XTRColorFactory.alkaliEarthMetalColor)
+        
+        seriesAlkaliMetalMapper = ColorMapper(foreGroundColor: XTRColorFactory.alkaliMetalColor.inverseColor(), backGroundColor: XTRColorFactory.alkaliMetalColor)
+        
+        seriesHalogenMapper = ColorMapper(foreGroundColor: XTRColorFactory.halogenColor.inverseColor(), backGroundColor: XTRColorFactory.halogenColor)
+        
+        seriesLanthanideMapper = ColorMapper(foreGroundColor: XTRColorFactory.lanthanideColor.inverseColor(), backGroundColor: XTRColorFactory.lanthanideColor)
+        
+        seriesMetalMapper = ColorMapper(foreGroundColor: XTRColorFactory.metalColor.inverseColor(), backGroundColor: XTRColorFactory.metalColor)
+        
+        seriesNobleGasMapper = ColorMapper(foreGroundColor: XTRColorFactory.nobleGasColor.inverseColor(), backGroundColor: XTRColorFactory.nobleGasColor)
+        
+        seriesNonMetalMapper = ColorMapper(foreGroundColor: XTRColorFactory.nonMetalColor.inverseColor(), backGroundColor: XTRColorFactory.nonMetalColor)
+        
+        seriesTransactinidesMapper = ColorMapper(foreGroundColor: XTRColorFactory.transactinideColor.inverseColor(), backGroundColor: XTRColorFactory.transactinideColor)
+        
+        seriesTransitionMetalMapper = ColorMapper(foreGroundColor: XTRColorFactory.transitionMetalColor.inverseColor(), backGroundColor: XTRColorFactory.transitionMetalColor)
+    }
+    
 }
 
 struct XTRPreferencesSeriesColorsView_Previews: PreviewProvider {

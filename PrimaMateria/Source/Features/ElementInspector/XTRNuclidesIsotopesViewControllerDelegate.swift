@@ -19,7 +19,7 @@ class XTRNuclidesIsotopesViewControllerDelegate: NSObject {
         let label = UILabel(frame: CGRect(x: model.xPos, y: model.yPos, width: model.width, height: model.height))
 
         label.backgroundColor = (model.modulus == 0) ? UIColor.white: XTRColorFactory.rowColor
-        label.font = UIFont.systemFont(ofSize: 14.0)
+        label.font = XTRFontFactory.systemFont14
         label.textAlignment = .center
         label.textColor = UIColor.black
         label.text = model.property

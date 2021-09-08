@@ -41,7 +41,7 @@ struct XTRHelpBalloonView: View {
                         .opacity(!webViewStateModel.canGoBack ? 0: 1)
                         .disabled(!webViewStateModel.canGoBack)
                         .aspectRatio(contentMode: .fill)
-                        .font(.system(size: 26, weight: .bold)),
+                        .font(XTRFontFactory.boldSystem26),
                     trailing:
                         // swiftlint:disable multiple_closures_with_trailing_closure
                         Button(action: {
@@ -54,7 +54,7 @@ struct XTRHelpBalloonView: View {
                         .opacity(!webViewStateModel.canGoForward ? 0: 1)
                         .disabled(!webViewStateModel.canGoForward)
                         .aspectRatio(contentMode: .fill)
-                        .font(.system(size: 26, weight: .bold))
+                        .font(XTRFontFactory.boldSystem26)
                 )
                 .frame(width: XTRHelpBalloonViewConfig.preferredContentSize.width - 2, height: XTRHelpBalloonViewConfig.preferredContentSize.height - 2).offset(x: 0, y: 0)
             }

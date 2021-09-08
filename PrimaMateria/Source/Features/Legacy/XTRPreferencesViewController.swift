@@ -151,7 +151,7 @@ class XTRPreferencesViewController: UIViewController {
         updateSeriesProperties(seriesTransactinidesButton, color: XTRColorFactory.transactinideColor)
         updateSeriesProperties(seriesTransitionMetalButton, color: XTRColorFactory.transitionMetalColor)
     }
-    
+
     func populateElementBubbleState(_ flag: Bool) {
         XTRPropertiesStore.elementBubblesState = flag
     }
@@ -318,7 +318,7 @@ class XTRPreferencesViewController: UIViewController {
         NotificationCenter.default
             .publisher(for: .colorSelectedNotification)
             .sink(receiveCompletion: { _ in
-                print("SOLUTION 1: COMPLETION")
+                //print("SOLUTION 1: COMPLETION")
             }, receiveValue: { notification in
                 self.colorSelected(notification: notification)
                 //print("SOLUTION 1: VALUE")

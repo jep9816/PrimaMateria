@@ -26,14 +26,14 @@ struct XTRMolecularCalculatorView: View {
             VStack(alignment: .leading, spacing: nil) {
                 VStack {
                     Text(NSLocalizedString("molecularCalculator", comment: "Molecular Calculator"))
-                        .font(.system(size: 17.0))
+                        .font(XTRFontFactory.system17)
                         .fontWeight(.bold)
                         .frame(width: 213, height: 24, alignment: .center)
                     
                     Text(formulaLabelText.propertyValue)
                         .frame(width: 213, height: 27, alignment: .leading)
                         .background(Color.white)
-                        .font(.system(size: 18.0))
+                        .font(XTRFontFactory.system18)
                         .border(Color.black, width: 1)
                 }
                 .padding(.top)
@@ -43,7 +43,7 @@ struct XTRMolecularCalculatorView: View {
                 Text(errorMessage.propertyValue)
                     .frame(width: 213, height: 42, alignment: .center)
                     .background(Color.clear)
-                    .font(.system(size: 17.0))
+                    .font(XTRFontFactory.system17)
                     .foregroundColor(.red)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
@@ -52,14 +52,14 @@ struct XTRMolecularCalculatorView: View {
                 
                 VStack {
                     Text(NSLocalizedString("atomicWeight", comment: "Atomic Weight"))
-                        .font(.system(size: 17.0))
+                        .font(XTRFontFactory.system17)
                         .fontWeight(.bold)
                         .frame(width: 213, height: 26, alignment: .center)
                     
                     Text(resultsLabelText.propertyValue)
                         .frame(width: 213, height: 27, alignment: .leading)
                         .background(Color.white)
-                        .font(.system(size: 18.0))
+                        .font(XTRFontFactory.system18)
                         .border(Color.black, width: 1)
                 }
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
@@ -194,7 +194,7 @@ struct XTRMolecularCalculatorView: View {
         }
         
         formulaText.propertyValue = origString
-        print("Symbol: \(String(describing: formulaText.propertyValue))")
+        //print("Symbol: \(String(describing: formulaText.propertyValue))")
         errorMessage.propertyValue = STRING_EMPTY
     }
     
@@ -202,7 +202,7 @@ struct XTRMolecularCalculatorView: View {
         var origString = formulaLabelText.propertyValue
         origString += symbol
         formulaLabelText.propertyValue = origString
-        print("Symbol: \(String(describing: formulaLabelText.propertyValue))")
+        //print("Symbol: \(String(describing: formulaLabelText.propertyValue))")
         errorMessage.propertyValue = STRING_EMPTY
     }
     
@@ -246,7 +246,7 @@ struct XTRCalculatorButtonView: View {
     var body: some View {
         Button(action: function) {
             Text(buttonText)
-                .font(.system(size: 32.0))
+                .font(XTRFontFactory.system32)
         }
     }
     

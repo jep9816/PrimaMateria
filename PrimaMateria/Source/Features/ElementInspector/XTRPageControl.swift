@@ -50,7 +50,7 @@ class XTRPageControl: UIView {
 
     private func createLabel(frame: CGRect) -> UILabel {
         let label = UILabel(frame: frame)
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = XTRFontFactory.systemFont16
         label.backgroundColor = XTRColorFactory.transparentColor
         label.textColor = UIColor.yellow // XTRColorFactory.pageControlLabelColor
         label.textAlignment = .center
