@@ -10,7 +10,7 @@ import Foundation
 import RxSwift
 import RxCocoa
 
-class XTRElementModel: NSObject {
+class XTRElementModel: NSObject, Identifiable {
 
     var elementDictionary: [String: Any]!
 

@@ -73,6 +73,11 @@ class MolecularCalculatorModel: ObservableObject {
     
 }
 
+class ElementButtonEnvironment: ObservableObject {
+    
+    @Published var symbol: String!
+    
+}
 class MolecularCalculatorProperty: ObservableObject {
     
     @Published var propertyValue: String = ""

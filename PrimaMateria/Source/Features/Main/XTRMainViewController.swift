@@ -54,10 +54,13 @@ class XTRMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let periodicTableViewController = XTRPeriodicTableViewController.loadFromNib()
-        let elementListViewController = XTRElementListViewController.loadFromNib()
+        //let periodicTableViewController = XTRPeriodicTableViewController.loadFromNib()
+        let periodicTableViewController = XTRPeriodicTableHostingController(rootView: XTRPeriodicTableView())
+
+        //let elementListViewController = XTRElementListViewController.loadFromNib()
+        let elementListViewController = XTRElementListHostingController(rootView: XTRElementListView())
+
         let graphsViewController = XTRGraphViewController.loadFromNib()
-        //let preferencesViewController = XTRPreferencesViewController.loadFromNib()
         let preferencesViewController = XTRPreferencesHostingController(rootView: XTRPreferencesView())
         let infoViewController = XTRInfoHostingController(rootView: XTRInfoView())
 

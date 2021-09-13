@@ -10,6 +10,10 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+struct XTRElementListViewControllerConfig {
+     static let rowHeight: CGFloat = 44.0
+}
+
 let ATOMIC_NUMBER_BUTTON_WIDTH: CGFloat = (88 * UIScreen.main.bounds.width) / 1024
 let SYMBOL_BUTTON_WIDTH: CGFloat = (94 * UIScreen.main.bounds.width) / 1024
 let NAME_BUTTON_WIDTH: CGFloat = (121 * UIScreen.main.bounds.width) / 1024

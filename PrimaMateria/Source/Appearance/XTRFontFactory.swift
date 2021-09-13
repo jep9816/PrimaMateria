@@ -17,8 +17,16 @@ class XTRFontFactory: NSObject {
         return .system(size: 32.0)
     }
 
+    class var system24: Font {
+        return .system(size: 24.0)
+    }
+
     class var system18: Font {
         return .system(size: 18.0)
+    }
+
+    class var system14: Font {
+        return .system(size: 14.0)
     }
 
     class var system17: Font {
