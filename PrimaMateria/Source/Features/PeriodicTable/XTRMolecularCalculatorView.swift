@@ -9,7 +9,9 @@
 import SwiftUI
 
 struct XTRMolecularCalculatorViewConfig {
-    static let preferredContentSize = CGSize(width: 380, height: 155)
+    static let preferredContentSize = CGSize(width: 420, height: 155)
+    static let textFieldWidth: CGFloat = 270
+    static let textFieldHeight: CGFloat = 24
 }
 
 struct XTRMolecularCalculatorView: View {
@@ -28,41 +30,38 @@ struct XTRMolecularCalculatorView: View {
                     Text(NSLocalizedString("molecularCalculator", comment: "Molecular Calculator"))
                         .font(XTRFontFactory.system17)
                         .fontWeight(.bold)
-                        .frame(width: 213, height: 24, alignment: .center)
+                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
                     
                     Text(formulaLabelText.propertyValue)
-                        .frame(width: 213, height: 27, alignment: .leading)
+                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .leading)
                         .background(Color.white)
                         .font(XTRFontFactory.system18)
                         .border(Color.black, width: 1)
                 }
-                .padding(.top)
-                
-                //Spacer()
-                
+                .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
+                                
                 Text(errorMessage.propertyValue)
-                    .frame(width: 213, height: 42, alignment: .center)
+                    .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
                     .background(Color.clear)
                     .font(XTRFontFactory.system17)
                     .foregroundColor(.red)
                     .multilineTextAlignment(.center)
                     .fixedSize(horizontal: false, vertical: true)
+                    .padding(EdgeInsets(top: -5, leading: 0, bottom: 0, trailing: 0))
 
-                //Spacer()
-                
                 VStack {
                     Text(NSLocalizedString("atomicWeight", comment: "Atomic Weight"))
                         .font(XTRFontFactory.system17)
                         .fontWeight(.bold)
-                        .frame(width: 213, height: 26, alignment: .center)
+                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
                     
                     Text(resultsLabelText.propertyValue)
-                        .frame(width: 213, height: 27, alignment: .leading)
+                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .leading)
                         .background(Color.white)
                         .font(XTRFontFactory.system18)
                         .border(Color.black, width: 1)
                 }
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+                .padding(EdgeInsets(top: -10, leading: 0, bottom: 10, trailing: 0))
             }
             .padding(/*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
             

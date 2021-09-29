@@ -30,16 +30,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="635613ea-2b61-463a-8935-a914b7d94305" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcodeproj/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/PrimaMateria.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulator_24E71BA6-925C-4A0F-9BFC-C5C3C9F782A8" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="macos_iosmac_x86_64" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -128,6 +128,7 @@
       <workItem from="1623268578229" duration="830000" />
       <workItem from="1623269531028" duration="603000" />
       <workItem from="1625142968083" duration="6000" />
+      <workItem from="1632938327639" duration="208000" />
     </task>
     <servers />
   </component>
