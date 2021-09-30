@@ -101,6 +101,13 @@ struct ElementPropertiesRow: View {
             }
         }
         .background(Color(element.seriesColor))
+        .onTapGesture {
+            displayInspector()
+        }
+    }
+    
+    private func displayInspector() {
+        
     }
     
 }

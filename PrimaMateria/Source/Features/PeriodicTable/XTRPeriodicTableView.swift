@@ -10,8 +10,8 @@ import SwiftUI
 
 struct XTRPeriodicTableViewConfig {
     
-    static let buttonWidth = (52 * UIScreen.main.bounds.width) / 1024
-    static let buttonHeight = (52 * UIScreen.main.bounds.width) / 1024
+    static let buttonWidth = (50 * UIScreen.main.bounds.width) / 1024
+    static let buttonHeight = (50 * UIScreen.main.bounds.width) / 1024
     static let preferredContentHeight: CGFloat = buttonHeight * 12
     static let preferredContentWidth: CGFloat = buttonWidth * 20
     
@@ -24,42 +24,75 @@ struct XTRPeriodicTableView: View {
             ZStack {
                 Color(XTRColorFactory.backgroundColor)
                     .ignoresSafeArea()
-                VStack(alignment: .center, spacing: 5) {
-                    Text(NSLocalizedString("group", comment: "Group"))
-                        .foregroundColor(.white)
-                        .font(XTRFontFactory.boldSystem17)
-                        .padding()
-                    ScrollView {
-                        LazyVGrid(columns: gridItemLayout, spacing: 2) {
-                            ForEach(0...PeriodicTableLayout.layoutItemModels.count - 1, id: \.self) {
-                                let increment = $0
-                                let model = PeriodicTableLayout.layoutItemModels[increment]
-                                // swiftlint:disable colon
-                                VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 1) {
-                                    switch model.elementType {
-                                    case "group":
-                                        GroupLayoutView(model: model)
-                                    case "groupLeft":
-                                        GroupLeftLayoutView(model: model)
-                                    case "groupRight":
-                                        GroupRightLayoutView(model: model)
-                                    case "period":
-                                        PeriodLayoutView(model: model)
-                                    case "placeholder":
-                                        PlaceholderLayoutView(model: model)
-                                    case "seriesLabel":
-                                        SeriesLabelLayoutView(model: model)
-                                    default:
-                                        ButtonLayoutView(model: model)
-                                    }
-                                }
-                            }
+                VStack(alignment: .leading, spacing: 0, content: {
+                    HStack(alignment: .top, spacing: 0, content: {
+                        // swiftlint:disable multiple_closures_with_trailing_closure
+                        XTRHelpButtonView(helpKey: "periodicTable")
+                        .padding(.top)
+                        Spacer()
+                    })
+                    HStack(alignment: .top, spacing: 0, content: {
+                        VStack {
+                            Spacer()
+                                .frame(width: 20, height: 200, alignment: .center)
+                            Text("P")
+                                .foregroundColor(.white)
+                                .font(XTRFontFactory.system17)
+                            Text("e")
+                                .foregroundColor(.white)
+                                .font(XTRFontFactory.system17)
+                            Text("r")
+                                .foregroundColor(.white)
+                                .font(XTRFontFactory.system17)
+                            Text("i")
+                                .foregroundColor(.white)
+                                .font(XTRFontFactory.system17)
+                            Text("o")
+                                .foregroundColor(.white)
+                                .font(XTRFontFactory.system17)
+                            Text("d")
+                                .foregroundColor(.white)
+                                .font(XTRFontFactory.system17)
                         }
-                    }
-                    .frame(width: XTRPeriodicTableViewConfig.preferredContentWidth, height: XTRPeriodicTableViewConfig.preferredContentHeight).offset(x: 0, y: 0)
+                        .frame(width: 20, height: XTRPeriodicTableViewConfig.buttonHeight * 8, alignment: .center)
+                        VStack(alignment: .center, spacing: 5) {
+                         Text(NSLocalizedString("group", comment: "Group"))
+                         .foregroundColor(.white)
+                         .font(XTRFontFactory.boldSystem17)
+                         .padding()
+                         ScrollView {
+                         LazyVGrid(columns: gridItemLayout, spacing: 2) {
+                         ForEach(0...PeriodicTableLayout.layoutItemModels.count - 1, id: \.self) {
+                         let increment = $0
+                         let model = PeriodicTableLayout.layoutItemModels[increment]
+                         // swiftlint:disable colon
+                         VStack(alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/, spacing: 1) {
+                         switch model.elementType {
+                         case "group":
+                         GroupLayoutView(model: model)
+                         case "groupLeft":
+                         GroupLeftLayoutView(model: model)
+                         case "groupRight":
+                         GroupRightLayoutView(model: model)
+                         case "period":
+                         PeriodLayoutView(model: model)
+                         case "placeholder":
+                         PlaceholderLayoutView(model: model)
+                         case "seriesLabel":
+                         SeriesLabelLayoutView(model: model)
+                         default:
+                         ButtonLayoutView(model: model)
+                         }
+                         }
+                         }
+                         }
+                         }
+                         .frame(width: XTRPeriodicTableViewConfig.preferredContentWidth, height: XTRPeriodicTableViewConfig.preferredContentHeight).offset(x: 0, y: 0)
+                         Spacer()
+                         }
+                    })
                     Spacer()
-                }
-                
+                })                
             }
             .navigationBarTitle(NSLocalizedString("periodicTableElements", comment: "Periodic Table"), displayMode: .inline)
         }
@@ -113,12 +146,12 @@ struct GroupLayoutView: View {
     
     var body: some View {
         Text(model.symbol)
-         .frame(width: XTRPeriodicTableViewConfig.buttonWidth, height: 20, alignment: .center)
-         .foregroundColor(.white)
-         .font(XTRFontFactory.system17)
-         Text(model.elementNumber)
-         .frame(width: XTRPeriodicTableViewConfig.buttonWidth, height: 32, alignment: .center)
-         .foregroundColor(.white)
+            .frame(width: XTRPeriodicTableViewConfig.buttonWidth, height: 20, alignment: .center)
+            .foregroundColor(.white)
+            .font(XTRFontFactory.system17)
+        Text(model.elementNumber)
+            .frame(width: XTRPeriodicTableViewConfig.buttonWidth, height: 32, alignment: .center)
+            .foregroundColor(.white)
     }
     
 }

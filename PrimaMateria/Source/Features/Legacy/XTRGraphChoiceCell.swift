@@ -45,7 +45,6 @@ class XTRGraphChoiceCell: UICollectionViewCell {
 
     func setProperties() {
         button.titleLabel?.contentMode = .center
-        button.showsTouchWhenHighlighted = false
         button.titleLabel?.lineBreakMode = .byWordWrapping
         button.cornerRadius = VIEW_CORNER_RADIUS
         button.masksToBounds = true
