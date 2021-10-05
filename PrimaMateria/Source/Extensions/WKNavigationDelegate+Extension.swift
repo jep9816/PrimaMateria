@@ -8,7 +8,7 @@
 
 import WebKit
 
-extension XTRWebViewWrapper.Coordinator: WKNavigationDelegate {
+extension SUIWebViewWrapper.Coordinator: WKNavigationDelegate {
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         

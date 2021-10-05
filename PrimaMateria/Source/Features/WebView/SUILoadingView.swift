@@ -1,5 +1,5 @@
 //
-//  LoadingView.swift
+//  SUILoadingView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/18/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct XTRLoadingView<Content>: View where Content: View {
+struct SUILoadingView<Content>: View where Content: View {
 
     @Binding var isShowing: Bool
     var content: () -> Content
@@ -23,7 +23,7 @@ struct XTRLoadingView<Content>: View where Content: View {
 
                 VStack {
                     Text("Loading...")
-                    XTRActivityIndicator(isAnimating: .constant(true), style: .large)
+                    SUIActivityIndicator(isAnimating: .constant(true), style: .large)
                 }
                 .frame(width: geometry.size.width / 2,
                        height: geometry.size.height / 5)

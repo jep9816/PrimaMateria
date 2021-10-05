@@ -1,5 +1,5 @@
 //
-//  WebViewWrapper.swift
+//  SUIWebViewWrapper.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/18/21.
@@ -9,15 +9,15 @@
 import SwiftUI
 import WebKit
 
-final class XTRWebViewWrapper: UIViewRepresentable {
+final class SUIWebViewWrapper: UIViewRepresentable {
     
-    @ObservedObject var webViewStateModel: XTRWebViewStateModel
-    let action: ((_ navigationAction: XTRWebView.NavigationAction) -> Void)?
+    @ObservedObject var webViewStateModel: SUIWebViewStateModel
+    let action: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?
     
     let request: URLRequest
     
-    init(webViewStateModel: XTRWebViewStateModel,
-         action: ((_ navigationAction: XTRWebView.NavigationAction) -> Void)?,
+    init(webViewStateModel: SUIWebViewStateModel,
+         action: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?,
          request: URLRequest) {
         self.action = action
         self.request = request
@@ -49,11 +49,11 @@ final class XTRWebViewWrapper: UIViewRepresentable {
     }
     
     final class Coordinator: NSObject {
-        @ObservedObject var webViewStateModel: XTRWebViewStateModel
-        let action: ((_ navigationAction: XTRWebView.NavigationAction) -> Void)?
+        @ObservedObject var webViewStateModel: SUIWebViewStateModel
+        let action: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?
         
-        init(action: ((_ navigationAction: XTRWebView.NavigationAction) -> Void)?,
-             webViewStateModel: XTRWebViewStateModel) {
+        init(action: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?,
+             webViewStateModel: SUIWebViewStateModel) {
             self.action = action
             self.webViewStateModel = webViewStateModel
         }

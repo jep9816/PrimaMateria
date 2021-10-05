@@ -1,5 +1,5 @@
 //
-//  XTRElementBalloonView.swift
+//  SUIElementBalloonView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/17/21.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-struct XTRElementInspectorRepresentable: UIViewControllerRepresentable {
+struct SUIElementInspectorRepresentable: UIViewControllerRepresentable {
     
     typealias UIViewControllerType = XTRElementInspectorViewController
     
@@ -34,8 +34,8 @@ struct XTRElementInspectorRepresentable: UIViewControllerRepresentable {
     
 }
 
-struct XTRElementBalloonView: View {
-    @EnvironmentObject var environment: ElementBallonEnvironment
+struct SUIElementBalloonView: View {
+    @EnvironmentObject var environment: SUIElementBallonEnvironment
     @State private var isPresented = false
     
     var body: some View {
@@ -51,32 +51,32 @@ struct XTRElementBalloonView: View {
                 
                 VStack(spacing: 0) {
                     HStack(spacing: 0) {
-                        XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_ATOMIC_NUMBER, comment: "Atomic Number"), width: 168.0, height: 30)
-                        XTRLabelValueView(labelText: "\(environment.element.atomicNumber)", width: 168.0, height: 30)
+                        SUILabelTitleView(labelText: NSLocalizedString(ELEMENT_ATOMIC_NUMBER, comment: "Atomic Number"), width: 168.0, height: 30)
+                        SUILabelValueView(labelText: "\(environment.element.atomicNumber)", width: 168.0, height: 30)
                     }
                     
                     HStack(spacing: 0) {
-                        XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_ATOMIC_MASS, comment: "Atomic Mass"), width: 168.0, height: 30)
-                        XTRLabelValueView(labelText: "\(environment.element.atomicMass)", width: 168.0, height: 30)
+                        SUILabelTitleView(labelText: NSLocalizedString(ELEMENT_ATOMIC_MASS, comment: "Atomic Mass"), width: 168.0, height: 30)
+                        SUILabelValueView(labelText: "\(environment.element.atomicMass)", width: 168.0, height: 30)
                     }
                     
                     HStack(spacing: 0) {
-                        XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_BOILING_POINT, comment: "Boiling Point"), width: 168.0, height: 30)
-                        XTRLabelValueView(labelText: "\(environment.element.boilingPoint)", width: 168.0, height: 30)
+                        SUILabelTitleView(labelText: NSLocalizedString(ELEMENT_BOILING_POINT, comment: "Boiling Point"), width: 168.0, height: 30)
+                        SUILabelValueView(labelText: "\(environment.element.boilingPoint)", width: 168.0, height: 30)
                     }
                     
                     HStack(spacing: 0) {
-                        XTRLabelTitleView(labelText: NSLocalizedString(ELEMENT_MELTING_POINT, comment: "Melting Point"), width: 168.0, height: 30)
-                        XTRLabelValueView(labelText: "\(environment.element.meltingPoint)", width: 168.0, height: 30)
+                        SUILabelTitleView(labelText: NSLocalizedString(ELEMENT_MELTING_POINT, comment: "Melting Point"), width: 168.0, height: 30)
+                        SUILabelValueView(labelText: "\(environment.element.meltingPoint)", width: 168.0, height: 30)
                     }
                 }
                 .frame(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width, height: 120, alignment: .center)
                 
-                XTRBaseButton(action: {
+                SUIBaseButton(action: {
                     self.isPresented.toggle()
                 }, labelText: NSLocalizedString("elementDetails", comment: "Element Details"), width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width - 10, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
                 .compatibleFullScreen(isPresented: $isPresented) {
-                    XTRElementInspectorRepresentable(element: environment.element)
+                    SUIElementInspectorRepresentable(element: environment.element)
                         .frame(width: 1024, height: 768)
                 }
             }
@@ -89,7 +89,7 @@ struct XTRElementBalloonView_Previews: PreviewProvider {
     
     static var previews: some View {
         
-        XTRElementBalloonView().environmentObject(ElementBallonEnvironment(element: XTRElementModel.testElement()))
+        SUIElementBalloonView().environmentObject(SUIElementBallonEnvironment(element: XTRElementModel.testElement()))
             .previewLayout(.fixed(width: XTRPeriodicTableViewControllerConfig.preferredContentSize.width, height: XTRPeriodicTableViewControllerConfig.preferredContentSize.height))
     }
     

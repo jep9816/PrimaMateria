@@ -1,5 +1,5 @@
 //
-//  XTRPreferencesHostingController.swift
+//  SUIPreferencesHostingController.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/22/21.
@@ -9,6 +9,6 @@
 import UIKit
 import SwiftUI
 
-class XTRPreferencesHostingController: UIHostingController<XTRPreferencesView> {
+class SUIPreferencesHostingController: UIHostingController<SUIPreferencesView> {
     
 }

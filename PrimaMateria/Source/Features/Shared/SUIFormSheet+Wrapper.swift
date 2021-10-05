@@ -1,5 +1,5 @@
 //
-//  XTRFormSheet+Wrapper.swift
+//  SUIFormSheet+Wrapper.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/30/21.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 
-class FormSheetWrapper<Content: View>: UIViewController, UIPopoverPresentationControllerDelegate {
+class SUIFormSheetWrapper<Content: View>: UIViewController, UIPopoverPresentationControllerDelegate {
 
     var content: () -> Content
     var onDismiss: (() -> Void)?
@@ -51,20 +51,20 @@ class FormSheetWrapper<Content: View>: UIViewController, UIPopoverPresentationCo
     
 }
 
-struct FormSheet<Content: View>: UIViewControllerRepresentable {
+struct SUIFormSheet<Content: View>: UIViewControllerRepresentable {
 
     @Binding var show: Bool
 
     let content: () -> Content
 
-    func makeUIViewController(context: UIViewControllerRepresentableContext<FormSheet<Content>>) -> FormSheetWrapper<Content> {
+    func makeUIViewController(context: UIViewControllerRepresentableContext<SUIFormSheet<Content>>) -> SUIFormSheetWrapper<Content> {
 
-        let viewController = FormSheetWrapper(content: content)
+        let viewController = SUIFormSheetWrapper(content: content)
         viewController.onDismiss = { self.show = false }
         return viewController
     }
 
-    func updateUIViewController(_ uiViewController: FormSheetWrapper<Content>, context: UIViewControllerRepresentableContext<FormSheet<Content>>) {
+    func updateUIViewController(_ uiViewController: SUIFormSheetWrapper<Content>, context: UIViewControllerRepresentableContext<SUIFormSheet<Content>>) {
         if show {
             uiViewController.show()
         } else {
@@ -74,7 +74,7 @@ struct FormSheet<Content: View>: UIViewControllerRepresentable {
     
 }
 
-struct FullScreenModifier<V: View>: ViewModifier {
+struct SUIFullScreenModifier<V: View>: ViewModifier {
     
     let isPresented: Binding<Bool>
     let builder: () -> V

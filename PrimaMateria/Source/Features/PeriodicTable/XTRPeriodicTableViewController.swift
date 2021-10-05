@@ -24,7 +24,7 @@ class XTRPeriodicTableViewController: UIViewController {
     @IBOutlet var molecularCalculatorWrapperView: UIView!
 
     var molecularCalculatorState: Bool = false
-    var molecularCalculatorView: XTRMolecularCalculatorView!
+    var molecularCalculatorView: SUIMolecularCalculatorView!
     var molecularCalculatorViewController: UIViewController!
     var disposeBag: DisposeBag = DisposeBag()
 
@@ -75,8 +75,8 @@ class XTRPeriodicTableViewController: UIViewController {
 
     func showPopupForButton(_ sender: UIButton) {
         let element = XTRDataSource.sharedInstance.element(index: sender.tag)
-        let elementBalloon = XTRElementBalloonView()
-        let environment: ElementBallonEnvironment = ElementBallonEnvironment(element: element)
+        let elementBalloon = SUIElementBalloonView()
+        let environment: SUIElementBallonEnvironment = SUIElementBallonEnvironment(element: element)
 
         let elementBalloonViewController = UIHostingController(rootView: elementBalloon.environmentObject(environment))
         elementBalloonViewController.preferredContentSize = elementBalloonViewController.sizeThatFits(in: XTRPeriodicTableViewControllerConfig.preferredContentSize)
@@ -94,7 +94,7 @@ class XTRPeriodicTableViewController: UIViewController {
 
     func displayElementInspector(_ sender: UIButton) {
         if molecularCalculatorState {
-            let molecularCalculatorModel = MolecularCalculatorModel()
+            let molecularCalculatorModel = SUIMolecularCalculatorModel()
             molecularCalculatorModel.element = XTRDataSource.sharedInstance.element(index: sender.tag)
             molecularCalculatorView.updateElement(molecularCalculatorModel)
         } else {
@@ -121,8 +121,8 @@ class XTRPeriodicTableViewController: UIViewController {
         let title = NSLocalizedString("periodicTableElements", comment: "")
         navigationBar.topItem?.title = title
 
-        molecularCalculatorView = XTRMolecularCalculatorView()
-        molecularCalculatorViewController = UIHostingController(rootView: molecularCalculatorView.environmentObject(MolecularCalculatorEnvironment()))
+        molecularCalculatorView = SUIMolecularCalculatorView()
+        molecularCalculatorViewController = UIHostingController(rootView: molecularCalculatorView.environmentObject(SUIMolecularCalculatorEnvironment()))
         molecularCalculatorViewController.view.translatesAutoresizingMaskIntoConstraints = false
         molecularCalculatorViewController.view.frame = molecularCalculatorWrapperView.bounds
 

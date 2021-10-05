@@ -1,5 +1,5 @@
 //
-//  XTRGraphChoiceView.swift
+//  SUIGraphChoiceView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/22/21.
@@ -8,12 +8,12 @@
 
 import SwiftUI
 
-struct XTRGraphChoiceViewConfig {
+struct SUIGraphChoiceViewConfig {
     static let buttonSize = CGSize(width: 240.0, height: 60.0)
     static let preferredContentSize = CGSize(width: (buttonSize.width + 3) * 3, height: (buttonSize.height + 3) * 10)
 }
 
-struct XTRGraphChoiceView: View {
+struct SUIGraphChoiceView: View {
     
     private var gridItemLayout = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     private var graphChoiceTitles = XTRDataSource.sharedInstance.graphPropertyList
@@ -33,7 +33,7 @@ struct XTRGraphChoiceView: View {
                         }) {
                             Text(title)
                                 .lineLimit(nil)
-                                .frame(width: XTRGraphChoiceViewConfig.buttonSize.width, height: XTRGraphChoiceViewConfig.buttonSize.height)
+                                .frame(width: SUIGraphChoiceViewConfig.buttonSize.width, height: SUIGraphChoiceViewConfig.buttonSize.height)
                                 .multilineTextAlignment(.center)
                                 .foregroundColor(.white)
                                 .background(Color(XTRColorFactory.labelColor))
@@ -43,10 +43,10 @@ struct XTRGraphChoiceView: View {
                     }
                 }
             }
-            .frame(width: XTRGraphChoiceViewConfig.preferredContentSize.width + 8, height: XTRGraphChoiceViewConfig.preferredContentSize.height).offset(x: 0, y: 2)
+            .frame(width: SUIGraphChoiceViewConfig.preferredContentSize.width + 8, height: SUIGraphChoiceViewConfig.preferredContentSize.height).offset(x: 0, y: 2)
             .cornerRadius(VIEW_CORNER_RADIUS)
         }
-        .frame(width: XTRGraphChoiceViewConfig.preferredContentSize.width + 30, height: XTRGraphChoiceViewConfig.preferredContentSize.height - 4).offset(x: 0, y: 8)
+        .frame(width: SUIGraphChoiceViewConfig.preferredContentSize.width + 30, height: SUIGraphChoiceViewConfig.preferredContentSize.height - 4).offset(x: 0, y: 8)
         .background(Color(XTRColorFactory.backgroundColor))
     }
     
@@ -59,6 +59,6 @@ struct XTRGraphChoiceView: View {
 
 struct XTRGraphChoiceView_Previews: PreviewProvider {
     static var previews: some View {
-        XTRGraphChoiceView().previewLayout(.fixed(width: 1024, height: 768))
+        SUIGraphChoiceView().previewLayout(.fixed(width: 1024, height: 768))
     }
 }

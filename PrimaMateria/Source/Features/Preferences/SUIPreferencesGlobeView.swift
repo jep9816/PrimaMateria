@@ -1,5 +1,5 @@
 //
-//  XTRPreferencesGlobeView.swift
+//  SUIPreferencesGlobeView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/22/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct XTRPreferencesGlobeView: UIViewRepresentable {
+struct SUIPreferencesGlobeView: UIViewRepresentable {
 
     let animatedImage = UIImage.animatedImage(with: (1...72).map { String(format: "Globe%02d", $0) }.map { UIImage(imageLiteralResourceName: $0) }, duration: 2.5)
 
@@ -23,5 +23,5 @@ struct XTRPreferencesGlobeView: UIViewRepresentable {
         return someView
     }
 
-    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<XTRPreferencesGlobeView>) { }
+    func updateUIView(_ uiView: UIView, context: UIViewRepresentableContext<SUIPreferencesGlobeView>) { }
 }

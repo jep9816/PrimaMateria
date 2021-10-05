@@ -63,12 +63,12 @@ class XTRHelpButton: UIButton, UIPopoverPresentationControllerDelegate {
         let controller = viewController()
         
         // SwiftUI implementation
-        let helpBalloon = XTRHelpBalloonView()
+        let helpBalloon = SUIHelpBalloonView()
         helpBalloon.webViewStateModel.pageTitle = NSLocalizedString("help", comment: "Help")
-        let environment: HelpBallonEnvironment = HelpBallonEnvironment()
+        let environment: SUIHelpBallonEnvironment = SUIHelpBallonEnvironment()
         environment.elementTipPath = elementTipPath(documentName: label)
         let helpBalloonViewController = UIHostingController(rootView: helpBalloon.environmentObject(environment))
-        helpBalloonViewController.preferredContentSize = helpBalloonViewController.sizeThatFits(in: XTRHelpBalloonViewConfig.preferredContentSize)
+        helpBalloonViewController.preferredContentSize = helpBalloonViewController.sizeThatFits(in: SUIHelpBalloonViewConfig.preferredContentSize)
         helpBalloonViewController.modalPresentationStyle = .popover
         
         controller.present(helpBalloonViewController, animated: XTRPropertiesStore.showTransitionsState, completion: nil)

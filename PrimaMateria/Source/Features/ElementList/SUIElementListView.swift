@@ -1,5 +1,5 @@
 //
-//  XTRElementListView.swift
+//  SUIElementListView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 9/10/21.
@@ -8,7 +8,8 @@
 
 import SwiftUI
 
-struct XTRElementListViewConfig {
+struct SUEElementListViewConfig {
+    
     static let ATOMIC_NUMBER_BUTTON_WIDTH: CGFloat = (88 * UIScreen.main.bounds.width) / 1024
     static let SYMBOL_BUTTON_WIDTH: CGFloat = (94 * UIScreen.main.bounds.width) / 1024
     static let NAME_BUTTON_WIDTH: CGFloat = (121 * UIScreen.main.bounds.width) / 1024
@@ -22,9 +23,10 @@ struct XTRElementListViewConfig {
     
     static let HEADER_ROW_HEIGHT: CGFloat = 45.0
     static let ELEMENT_ROW_HEIGHT: CGFloat = 44.0
+    
 }
 
-struct XTRElementListView: View {
+struct SUIElementListView: View {
     
     private var elementList = XTRDataSource.sharedInstance.elementList
     
@@ -35,11 +37,11 @@ struct XTRElementListView: View {
                     .ignoresSafeArea()
                 HStack(alignment: .top, spacing: 0) {
                     VStack(alignment: .center, spacing: 0) {
-                        ElementHeaderRow()
+                        SUIElementHeaderRow()
                         ScrollView {
                             LazyVStack(spacing: 0) {
                                 ForEach(elementList) { element in
-                                    ElementPropertiesRow(element: element)
+                                    SUIElementPropertiesRow(element: element)
                                 }
                             }
                         }
@@ -52,9 +54,11 @@ struct XTRElementListView: View {
     }
 }
 
-struct XTRElementListView_Previews: PreviewProvider {
+struct SUIElementListView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        XTRElementListView().previewLayout(.fixed(width: 1024, height: 768)) // 9.7
-        XTRElementListView().previewLayout(.fixed(width: 2732 / 2, height: 2048 / 2)) // iPad pro
+        SUIElementListView().previewLayout(.fixed(width: 1024, height: 768)) // 9.7
+        SUIElementListView().previewLayout(.fixed(width: 2732 / 2, height: 2048 / 2)) // iPad pro
     }
+    
 }

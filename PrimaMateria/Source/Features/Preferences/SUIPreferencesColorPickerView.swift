@@ -1,5 +1,5 @@
 //
-//  XTRPreferencesColorPickerView.swift
+//  SUIPreferencesColorPickerView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/21/21.
@@ -8,9 +8,9 @@
 
 import SwiftUI
 
-struct XTRPreferencesColorPickerView: View {
+struct SUIPreferencesColorPickerView: View {
     
-    @EnvironmentObject var environment: ColorPickerEnvironment
+    @EnvironmentObject var environment: SUIColorPickerEnvironment
     @Environment(\.presentationMode) var presentationMode
 
     @State private var red: Double = 0
@@ -21,54 +21,54 @@ struct XTRPreferencesColorPickerView: View {
     var body: some View {
         VStack(spacing: 0) {
             Text(NSLocalizedString(environment.seriesIdentifier!, comment: "Series Identifier"))
-                .frame(width: XTRPreferencesViewConfig.preferredContentSize.width, height: 48, alignment: .center)
+                .frame(width: SUIPreferencesViewConfig.preferredContentSize.width, height: 48, alignment: .center)
                 .font(XTRFontFactory.boldSystem32)
                 .background(Color(XTRColorFactory.titleBarBackgroundColor))
                 .foregroundColor(Color(XTRColorFactory.titleBarTextColor))
             
             Spacer()
-                .frame(width: XTRPreferencesViewConfig.preferredContentSize.width, height: 35, alignment: .center)
+                .frame(width: SUIPreferencesViewConfig.preferredContentSize.width, height: 35, alignment: .center)
                 .background(Color(environment.seriesColor!))
             
             HStack(spacing: 0) {
-                XTRFormTitleView(labelText: NSLocalizedString("red", comment: "Red"), width: 100, height: 21)
+                SUIFormTitleView(labelText: NSLocalizedString("red", comment: "Red"), width: 100, height: 21)
                 Slider(value: $red, in: 0.0...1.0, onEditingChanged: { _ in
                     updateColorFromSlider()
                 })
             }
-            .frame(width: XTRPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
+            .frame(width: SUIPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
             
             HStack(spacing: 0) {
-                XTRFormTitleView(labelText: NSLocalizedString("green", comment: "Green"), width: 100, height: 21)
+                SUIFormTitleView(labelText: NSLocalizedString("green", comment: "Green"), width: 100, height: 21)
                     .font(XTRFontFactory.boldSystem17)
                 Slider(value: $green, in: 0.0...1.0, onEditingChanged: { _ in
                     updateColorFromSlider()
                 })
             }
-            .frame(width: XTRPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
+            .frame(width: SUIPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
             
             HStack(spacing: 0) {
-                XTRFormTitleView(labelText: NSLocalizedString("blue", comment: "Blue"), width: 100, height: 21)
+                SUIFormTitleView(labelText: NSLocalizedString("blue", comment: "Blue"), width: 100, height: 21)
                     .font(XTRFontFactory.boldSystem17)
                 Slider(value: $blue, in: 0.0...1.0, onEditingChanged: { _ in
                     updateColorFromSlider()
                 })
             }
-            .frame(width: XTRPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
+            .frame(width: SUIPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
             
             HStack(spacing: 0) {
-                XTRFormTitleView(labelText: NSLocalizedString("alpha", comment: "Alpha"), width: 100, height: 21)
+                SUIFormTitleView(labelText: NSLocalizedString("alpha", comment: "Alpha"), width: 100, height: 21)
                     .font(XTRFontFactory.boldSystem17)
                 Slider(value: $alpha, in: 0.0...1.0, onEditingChanged: { _ in
                     updateColorFromSlider()
                 })
             }
-            .frame(width: XTRPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
+            .frame(width: SUIPreferencesViewConfig.preferredContentSize.width - 5, height: 36, alignment: .center)
             
-            XTRBaseButton(action: {
+            SUIBaseButton(action: {
                 self.selectColor()
                 presentationMode.wrappedValue.dismiss()
-            }, labelText: NSLocalizedString("chooseColor", comment: "Choose Color"), width: XTRPreferencesViewConfig.preferredContentSize.width - 10, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
+            }, labelText: NSLocalizedString("chooseColor", comment: "Choose Color"), width: SUIPreferencesViewConfig.preferredContentSize.width - 10, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
         }
         .background(Color(XTRColorFactory.rowColor))
         .onAppear(perform: {
@@ -118,11 +118,11 @@ struct XTRPreferencesColorPickerView: View {
     
 }
 
-struct XTRColorPickerView_Previews: PreviewProvider {
+struct SUIColorPickerView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRPreferencesColorPickerView().environmentObject(ColorPickerEnvironment(seriesIdentifier: NSLocalizedString("actinide", comment: "Series Identifier"), seriesColor: XTRColorFactory.defaultActinideColor))
-            .previewLayout(.fixed(width: XTRPreferencesViewConfig.preferredContentSize.width, height: XTRPreferencesViewConfig.preferredContentSize.height))
+        SUIPreferencesColorPickerView().environmentObject(SUIColorPickerEnvironment(seriesIdentifier: NSLocalizedString("actinide", comment: "Series Identifier"), seriesColor: XTRColorFactory.defaultActinideColor))
+            .previewLayout(.fixed(width: SUIPreferencesViewConfig.preferredContentSize.width, height: SUIPreferencesViewConfig.preferredContentSize.height))
     }
     
 }

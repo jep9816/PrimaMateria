@@ -1,5 +1,5 @@
 //
-//  XTRPreferencesInfoView.swift
+//  SUIPreferencesInfoView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/22/21.
@@ -9,22 +9,9 @@
 import SwiftUI
 import Combine
 
-enum LanguageCodes: String {
+struct SUIPreferencesInfoView: View {
     
-    case English = "en"
-    case Spanish = "es"
-    case Russian = "ru"
-    case French = "fr"
-    
-    func code() -> String {
-        return self.rawValue
-    }
-    
-}
-
-struct XTRPreferencesInfoView: View {
-    
-    @ObservedObject var webViewStateModel: XTRWebViewStateModel = XTRWebViewStateModel()
+    @ObservedObject var webViewStateModel: SUIWebViewStateModel = SUIWebViewStateModel()
     @State private var showingAlert = false
     
     var body: some View {
@@ -119,7 +106,7 @@ struct XTRPreferencesInfoView: View {
                     })
                     .disabled(XTRPropertiesStore.currentLanguageCode == "fr")
                 } label: {
-                    XTRPreferencesGlobeView()
+                    SUIPreferencesGlobeView()
                         .frame(width: 44, height: 44, alignment: .center)
                 }
             }
@@ -139,8 +126,8 @@ struct XTRPreferencesInfoView: View {
             .background(Color.gray)
             
             VStack(spacing: 0) {
-                XTRLoadingView(isShowing: .constant(webViewStateModel.loading)) {
-                    XTRWebView(url: URL(fileURLWithPath: creditsPath(documentName: XTRPreferencesViewConfig.creditsDocument)), webViewStateModel: self.webViewStateModel)
+                SUILoadingView(isShowing: .constant(webViewStateModel.loading)) {
+                    SUIWebView(url: URL(fileURLWithPath: creditsPath(documentName: SUIPreferencesViewConfig.creditsDocument)), webViewStateModel: self.webViewStateModel)
                 }
             }
             .background(Color(XTRColorFactory.tableViewCellBorderColor))
@@ -155,10 +142,10 @@ struct XTRPreferencesInfoView: View {
         
 }
 
-struct XTRPreferencesInfoView_Previews: PreviewProvider {
+struct SUIPreferencesInfoView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRPreferencesInfoView().previewLayout(.fixed(width: 1024, height: 768))
+        SUIPreferencesInfoView().previewLayout(.fixed(width: 1024, height: 768))
     }
     
 }

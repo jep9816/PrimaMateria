@@ -7,64 +7,68 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0612AFC026A9A44E005F4E24 /* XTRPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBE26A9A44E005F4E24 /* XTRPreferencesView.swift */; };
-		0612AFC126A9A44E005F4E24 /* XTRPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBE26A9A44E005F4E24 /* XTRPreferencesView.swift */; };
-		0612AFC226A9A44E005F4E24 /* XTRPreferencesHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBF26A9A44E005F4E24 /* XTRPreferencesHostingController.swift */; };
-		0612AFC326A9A44E005F4E24 /* XTRPreferencesHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBF26A9A44E005F4E24 /* XTRPreferencesHostingController.swift */; };
-		0612AFC526A9D575005F4E24 /* XTRPreferencesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC426A9D575005F4E24 /* XTRPreferencesInfoView.swift */; };
-		0612AFC626A9D575005F4E24 /* XTRPreferencesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC426A9D575005F4E24 /* XTRPreferencesInfoView.swift */; };
-		0612AFC826A9D626005F4E24 /* XTRPreferencesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC726A9D626005F4E24 /* XTRPreferencesSettingsView.swift */; };
-		0612AFC926A9D626005F4E24 /* XTRPreferencesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC726A9D626005F4E24 /* XTRPreferencesSettingsView.swift */; };
-		0612AFCB26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFCA26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift */; };
-		0612AFCC26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFCA26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift */; };
-		0612AFD126AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD026AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift */; };
-		0612AFD226AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD026AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift */; };
-		0612AFD426AA6001005F4E24 /* XTRSwiftUIButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD326AA6001005F4E24 /* XTRSwiftUIButtonViews.swift */; };
-		0612AFD526AA6001005F4E24 /* XTRSwiftUIButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD326AA6001005F4E24 /* XTRSwiftUIButtonViews.swift */; };
-		061AE475267BBB6500BD18CC /* XTRElementBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE474267BBB6500BD18CC /* XTRElementBalloonView.swift */; };
-		061AE476267BBB6500BD18CC /* XTRElementBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE474267BBB6500BD18CC /* XTRElementBalloonView.swift */; };
-		061AE478267BC2E600BD18CC /* XTRHelpBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE477267BC2E600BD18CC /* XTRHelpBalloonView.swift */; };
-		061AE479267BC2E600BD18CC /* XTRHelpBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE477267BC2E600BD18CC /* XTRHelpBalloonView.swift */; };
+		0612AFC026A9A44E005F4E24 /* SUIPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBE26A9A44E005F4E24 /* SUIPreferencesView.swift */; };
+		0612AFC126A9A44E005F4E24 /* SUIPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBE26A9A44E005F4E24 /* SUIPreferencesView.swift */; };
+		0612AFC226A9A44E005F4E24 /* SUIPreferencesHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBF26A9A44E005F4E24 /* SUIPreferencesHostingController.swift */; };
+		0612AFC326A9A44E005F4E24 /* SUIPreferencesHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBF26A9A44E005F4E24 /* SUIPreferencesHostingController.swift */; };
+		0612AFC526A9D575005F4E24 /* SUIPreferencesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC426A9D575005F4E24 /* SUIPreferencesInfoView.swift */; };
+		0612AFC626A9D575005F4E24 /* SUIPreferencesInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC426A9D575005F4E24 /* SUIPreferencesInfoView.swift */; };
+		0612AFC826A9D626005F4E24 /* SUIPreferencesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC726A9D626005F4E24 /* SUIPreferencesSettingsView.swift */; };
+		0612AFC926A9D626005F4E24 /* SUIPreferencesSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFC726A9D626005F4E24 /* SUIPreferencesSettingsView.swift */; };
+		0612AFCB26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFCA26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift */; };
+		0612AFCC26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFCA26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift */; };
+		0612AFD126AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD026AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift */; };
+		0612AFD226AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD026AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift */; };
+		0612AFD426AA6001005F4E24 /* SUISwiftUIButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD326AA6001005F4E24 /* SUISwiftUIButtonViews.swift */; };
+		0612AFD526AA6001005F4E24 /* SUISwiftUIButtonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFD326AA6001005F4E24 /* SUISwiftUIButtonViews.swift */; };
+		061AE475267BBB6500BD18CC /* SUIElementBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE474267BBB6500BD18CC /* SUIElementBalloonView.swift */; };
+		061AE476267BBB6500BD18CC /* SUIElementBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE474267BBB6500BD18CC /* SUIElementBalloonView.swift */; };
+		061AE478267BC2E600BD18CC /* SUIHelpBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE477267BC2E600BD18CC /* SUIHelpBalloonView.swift */; };
+		061AE479267BC2E600BD18CC /* SUIHelpBalloonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE477267BC2E600BD18CC /* SUIHelpBalloonView.swift */; };
 		061AE47C267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE47B267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift */; };
 		061AE47D267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE47B267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift */; };
-		061AE47F267CD5FD00BD18CC /* XTRWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE47E267CD5FD00BD18CC /* XTRWebViewWrapper.swift */; };
-		061AE480267CD5FD00BD18CC /* XTRWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE47E267CD5FD00BD18CC /* XTRWebViewWrapper.swift */; };
-		061AE482267CD64300BD18CC /* XTRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE481267CD64300BD18CC /* XTRWebView.swift */; };
-		061AE483267CD64300BD18CC /* XTRWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE481267CD64300BD18CC /* XTRWebView.swift */; };
-		061AE488267CD6E300BD18CC /* XTRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE487267CD6E300BD18CC /* XTRLoadingView.swift */; };
-		061AE489267CD6E300BD18CC /* XTRLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE487267CD6E300BD18CC /* XTRLoadingView.swift */; };
-		061AE48B267CD70C00BD18CC /* XTRActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE48A267CD70C00BD18CC /* XTRActivityIndicator.swift */; };
-		061AE48C267CD70C00BD18CC /* XTRActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE48A267CD70C00BD18CC /* XTRActivityIndicator.swift */; };
-		06485A5D2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5A2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift */; };
-		06485A5E2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5A2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift */; };
-		06485A5F2704E1C90094A7A4 /* XTRElementButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5B2704E1C90094A7A4 /* XTRElementButtonView.swift */; };
-		06485A602704E1C90094A7A4 /* XTRElementButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5B2704E1C90094A7A4 /* XTRElementButtonView.swift */; };
-		06485A612704E1C90094A7A4 /* XTRPeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5C2704E1C90094A7A4 /* XTRPeriodicTableView.swift */; };
-		06485A622704E1C90094A7A4 /* XTRPeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5C2704E1C90094A7A4 /* XTRPeriodicTableView.swift */; };
-		06485A662704E1EC0094A7A4 /* XTRElementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A632704E1EC0094A7A4 /* XTRElementListView.swift */; };
-		06485A672704E1EC0094A7A4 /* XTRElementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A632704E1EC0094A7A4 /* XTRElementListView.swift */; };
-		06485A682704E1EC0094A7A4 /* XTRElementListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A642704E1EC0094A7A4 /* XTRElementListHostingController.swift */; };
-		06485A692704E1EC0094A7A4 /* XTRElementListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A642704E1EC0094A7A4 /* XTRElementListHostingController.swift */; };
-		06485A6A2704E1EC0094A7A4 /* XTRElementListSupportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A652704E1EC0094A7A4 /* XTRElementListSupportViews.swift */; };
-		06485A6B2704E1EC0094A7A4 /* XTRElementListSupportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A652704E1EC0094A7A4 /* XTRElementListSupportViews.swift */; };
-		066C87C1268B699900505A19 /* XTRMolecularCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C0268B699900505A19 /* XTRMolecularCalculatorView.swift */; };
-		066C87C2268B699900505A19 /* XTRMolecularCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C0268B699900505A19 /* XTRMolecularCalculatorView.swift */; };
-		066C87C9268BCEF700505A19 /* XTRInfoHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C8268BCEF700505A19 /* XTRInfoHostingController.swift */; };
-		066C87CA268BCEF700505A19 /* XTRInfoHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C8268BCEF700505A19 /* XTRInfoHostingController.swift */; };
-		066C87CC268BCF4900505A19 /* XTRInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87CB268BCF4900505A19 /* XTRInfoView.swift */; };
-		066C87CD268BCF4900505A19 /* XTRInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87CB268BCF4900505A19 /* XTRInfoView.swift */; };
-		0682AED32682617C00E69096 /* XTRGraphChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED22682617C00E69096 /* XTRGraphChoiceView.swift */; };
-		0682AED42682617C00E69096 /* XTRGraphChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED22682617C00E69096 /* XTRGraphChoiceView.swift */; };
-		0682AED62682620700E69096 /* XTRWikiPediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED52682620700E69096 /* XTRWikiPediaView.swift */; };
-		0682AED72682620700E69096 /* XTRWikiPediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED52682620700E69096 /* XTRWikiPediaView.swift */; };
-		06842D9D268D2C48008D6C53 /* XTRSwiftUILabelViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9C268D2C48008D6C53 /* XTRSwiftUILabelViews.swift */; };
-		06842D9F268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9E268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift */; };
-		06842DA0268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9E268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift */; };
-		06842DA1268D2CBD008D6C53 /* XTRSwiftUILabelViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9C268D2C48008D6C53 /* XTRSwiftUILabelViews.swift */; };
+		061AE47F267CD5FD00BD18CC /* SUIWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE47E267CD5FD00BD18CC /* SUIWebViewWrapper.swift */; };
+		061AE480267CD5FD00BD18CC /* SUIWebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE47E267CD5FD00BD18CC /* SUIWebViewWrapper.swift */; };
+		061AE482267CD64300BD18CC /* SUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE481267CD64300BD18CC /* SUIWebView.swift */; };
+		061AE483267CD64300BD18CC /* SUIWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE481267CD64300BD18CC /* SUIWebView.swift */; };
+		061AE488267CD6E300BD18CC /* SUILoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE487267CD6E300BD18CC /* SUILoadingView.swift */; };
+		061AE489267CD6E300BD18CC /* SUILoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE487267CD6E300BD18CC /* SUILoadingView.swift */; };
+		061AE48B267CD70C00BD18CC /* SUIActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE48A267CD70C00BD18CC /* SUIActivityIndicator.swift */; };
+		061AE48C267CD70C00BD18CC /* SUIActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 061AE48A267CD70C00BD18CC /* SUIActivityIndicator.swift */; };
+		06485A5D2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5A2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift */; };
+		06485A5E2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5A2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift */; };
+		06485A612704E1C90094A7A4 /* SUIPeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5C2704E1C90094A7A4 /* SUIPeriodicTableView.swift */; };
+		06485A622704E1C90094A7A4 /* SUIPeriodicTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A5C2704E1C90094A7A4 /* SUIPeriodicTableView.swift */; };
+		06485A662704E1EC0094A7A4 /* SUIElementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A632704E1EC0094A7A4 /* SUIElementListView.swift */; };
+		06485A672704E1EC0094A7A4 /* SUIElementListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A632704E1EC0094A7A4 /* SUIElementListView.swift */; };
+		06485A682704E1EC0094A7A4 /* SUIElementListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A642704E1EC0094A7A4 /* SUIElementListHostingController.swift */; };
+		06485A692704E1EC0094A7A4 /* SUIElementListHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A642704E1EC0094A7A4 /* SUIElementListHostingController.swift */; };
+		06485A6A2704E1EC0094A7A4 /* SUIElementListSupportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A652704E1EC0094A7A4 /* SUIElementListSupportViews.swift */; };
+		06485A6B2704E1EC0094A7A4 /* SUIElementListSupportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06485A652704E1EC0094A7A4 /* SUIElementListSupportViews.swift */; };
+		066C87C1268B699900505A19 /* SUIMolecularCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C0268B699900505A19 /* SUIMolecularCalculatorView.swift */; };
+		066C87C2268B699900505A19 /* SUIMolecularCalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C0268B699900505A19 /* SUIMolecularCalculatorView.swift */; };
+		066C87C9268BCEF700505A19 /* SUIInfoHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C8268BCEF700505A19 /* SUIInfoHostingController.swift */; };
+		066C87CA268BCEF700505A19 /* SUIInfoHostingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87C8268BCEF700505A19 /* SUIInfoHostingController.swift */; };
+		066C87CC268BCF4900505A19 /* SUIInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87CB268BCF4900505A19 /* SUIInfoView.swift */; };
+		066C87CD268BCF4900505A19 /* SUIInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066C87CB268BCF4900505A19 /* SUIInfoView.swift */; };
+		066ECFDB270B512000A29BEC /* SUIElementInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066ECFDA270B512000A29BEC /* SUIElementInspectorView.swift */; };
+		066ECFDC270B512000A29BEC /* SUIElementInspectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066ECFDA270B512000A29BEC /* SUIElementInspectorView.swift */; };
+		066ECFDE270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066ECFDD270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift */; };
+		066ECFDF270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066ECFDD270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift */; };
+		066ECFE1270B638D00A29BEC /* SUIPreferencesSupportClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066ECFE0270B638D00A29BEC /* SUIPreferencesSupportClasses.swift */; };
+		066ECFE2270B638D00A29BEC /* SUIPreferencesSupportClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066ECFE0270B638D00A29BEC /* SUIPreferencesSupportClasses.swift */; };
+		0682AED32682617C00E69096 /* SUIGraphChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED22682617C00E69096 /* SUIGraphChoiceView.swift */; };
+		0682AED42682617C00E69096 /* SUIGraphChoiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED22682617C00E69096 /* SUIGraphChoiceView.swift */; };
+		0682AED62682620700E69096 /* SUIWikiPediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED52682620700E69096 /* SUIWikiPediaView.swift */; };
+		0682AED72682620700E69096 /* SUIWikiPediaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0682AED52682620700E69096 /* SUIWikiPediaView.swift */; };
+		06842D9D268D2C48008D6C53 /* SUISwiftUILabelViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9C268D2C48008D6C53 /* SUISwiftUILabelViews.swift */; };
+		06842D9F268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9E268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift */; };
+		06842DA0268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9E268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift */; };
+		06842DA1268D2CBD008D6C53 /* SUISwiftUILabelViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842D9C268D2C48008D6C53 /* SUISwiftUILabelViews.swift */; };
 		06842DA3268D2D1A008D6C53 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA2268D2D1A008D6C53 /* View+Extensions.swift */; };
 		06842DA4268D2D1A008D6C53 /* View+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA2268D2D1A008D6C53 /* View+Extensions.swift */; };
-		06842DA6268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */; };
-		06842DA7268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */; };
+		06842DA6268D33AC008D6C53 /* SUIEnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* SUIEnvironmentModels.swift */; };
+		06842DA7268D33AC008D6C53 /* SUIEnvironmentModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06842DA5268D33AC008D6C53 /* SUIEnvironmentModels.swift */; };
 		069EC7F026E9294B0044F328 /* XTRFontFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069EC7EF26E9294B0044F328 /* XTRFontFactory.swift */; };
 		069EC7F126E9294B0044F328 /* XTRFontFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 069EC7EF26E9294B0044F328 /* XTRFontFactory.swift */; };
 		06C1CAC82673ABD300D2AE17 /* XTRGeneralInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */; };
@@ -105,10 +109,10 @@
 		06C1CB532675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */; };
 		06CE0DA326791C4D0042BDE2 /* Credits.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 06CE0DA226791C4D0042BDE2 /* Credits.pdf */; };
 		06CE0DA426791C4D0042BDE2 /* Credits.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 06CE0DA226791C4D0042BDE2 /* Credits.pdf */; };
-		06D30A3A26A855D8003F0614 /* XTRPreferencesColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D30A3926A855D8003F0614 /* XTRPreferencesColorPickerView.swift */; };
-		06D30A3B26A855D8003F0614 /* XTRPreferencesColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D30A3926A855D8003F0614 /* XTRPreferencesColorPickerView.swift */; };
-		06D607BF2706160900F9EE8F /* XTRHelpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D607BE2706160900F9EE8F /* XTRHelpButtonView.swift */; };
-		06D607C02706160900F9EE8F /* XTRHelpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D607BE2706160900F9EE8F /* XTRHelpButtonView.swift */; };
+		06D30A3A26A855D8003F0614 /* SUIPreferencesColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D30A3926A855D8003F0614 /* SUIPreferencesColorPickerView.swift */; };
+		06D30A3B26A855D8003F0614 /* SUIPreferencesColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D30A3926A855D8003F0614 /* SUIPreferencesColorPickerView.swift */; };
+		06D607BF2706160900F9EE8F /* SUIHelpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D607BE2706160900F9EE8F /* SUIHelpButtonView.swift */; };
+		06D607C02706160900F9EE8F /* SUIHelpButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D607BE2706160900F9EE8F /* SUIHelpButtonView.swift */; };
 		06E83DB026714862005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DAF26714862005F7092 /* CorePlot */; };
 		06E83DB226714A63005F7092 /* CorePlot in Frameworks */ = {isa = PBXBuildFile; productRef = 06E83DB126714A63005F7092 /* CorePlot */; };
 		06F0BC482672CC7C00B06011 /* XTRSplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */; };
@@ -139,7 +143,7 @@
 		0853E20D2114D20100CA092B /* SHKLightGrid.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E2092114D20100CA092B /* SHKLightGrid.fsh */; };
 		0853E20E2114D20100CA092B /* SHKWater.fsh in Resources */ = {isa = PBXBuildFile; fileRef = 0853E20A2114D20100CA092B /* SHKWater.fsh */; };
 		08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08AB996C20F8D4C800711159 /* XTRPageControl.swift */; };
-		8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */; };
+		8004675B211A585B0020BFD4 /* XTRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTRElectronConfigurationModel.swift */; };
 		8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */; };
 		800B92A9211602C300C2DC61 /* XTRZoomContentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */; };
 		8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FD920F0270400ABC706 /* XTRSimpleTransitionController.swift */; };
@@ -333,7 +337,7 @@
 		80AB2A092128CEAD00B58AB3 /* NSObject+General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FF420F0270400ABC706 /* NSObject+General.swift */; };
 		80AB2A0A2128CEAD00B58AB3 /* XTRGeneralInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800820F0270400ABC706 /* XTRGeneralInfoViewController.swift */; };
 		80AB2A0B2128CEAD00B58AB3 /* XTRBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012802420F0270400ABC706 /* XTRBackgroundView.swift */; };
-		80AB2A0C2128CEAD00B58AB3 /* XTYRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */; };
+		80AB2A0C2128CEAD00B58AB3 /* XTRElectronConfigurationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8004675A211A585B0020BFD4 /* XTRElectronConfigurationModel.swift */; };
 		80AB2A0D2128CEAD00B58AB3 /* XTRSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012801120F0270400ABC706 /* XTRSplashViewController.swift */; };
 		80AB2A0F2128CEAD00B58AB3 /* XTRDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80127FE020F0270400ABC706 /* XTRDataSource.swift */; };
 		80AB2A102128CEAD00B58AB3 /* XTRTableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8012800020F0270400ABC706 /* XTRTableLabel.swift */; };
@@ -489,37 +493,39 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0612AFBE26A9A44E005F4E24 /* XTRPreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPreferencesView.swift; sourceTree = "<group>"; };
-		0612AFBF26A9A44E005F4E24 /* XTRPreferencesHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPreferencesHostingController.swift; sourceTree = "<group>"; };
-		0612AFC426A9D575005F4E24 /* XTRPreferencesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPreferencesInfoView.swift; sourceTree = "<group>"; };
-		0612AFC726A9D626005F4E24 /* XTRPreferencesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPreferencesSettingsView.swift; sourceTree = "<group>"; };
-		0612AFCA26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPreferencesSeriesColorsView.swift; sourceTree = "<group>"; };
-		0612AFD026AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPreferencesGlobeView.swift; sourceTree = "<group>"; };
-		0612AFD326AA6001005F4E24 /* XTRSwiftUIButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRSwiftUIButtonViews.swift; sourceTree = "<group>"; };
-		061AE474267BBB6500BD18CC /* XTRElementBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementBalloonView.swift; sourceTree = "<group>"; };
-		061AE477267BC2E600BD18CC /* XTRHelpBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRHelpBalloonView.swift; sourceTree = "<group>"; };
+		0612AFBE26A9A44E005F4E24 /* SUIPreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIPreferencesView.swift; sourceTree = "<group>"; };
+		0612AFBF26A9A44E005F4E24 /* SUIPreferencesHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIPreferencesHostingController.swift; sourceTree = "<group>"; };
+		0612AFC426A9D575005F4E24 /* SUIPreferencesInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPreferencesInfoView.swift; sourceTree = "<group>"; };
+		0612AFC726A9D626005F4E24 /* SUIPreferencesSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPreferencesSettingsView.swift; sourceTree = "<group>"; };
+		0612AFCA26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPreferencesSeriesColorsView.swift; sourceTree = "<group>"; };
+		0612AFD026AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPreferencesGlobeView.swift; sourceTree = "<group>"; };
+		0612AFD326AA6001005F4E24 /* SUISwiftUIButtonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUISwiftUIButtonViews.swift; sourceTree = "<group>"; };
+		061AE474267BBB6500BD18CC /* SUIElementBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIElementBalloonView.swift; sourceTree = "<group>"; };
+		061AE477267BC2E600BD18CC /* SUIHelpBalloonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIHelpBalloonView.swift; sourceTree = "<group>"; };
 		061AE47B267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKNavigationDelegate+Extension.swift"; sourceTree = "<group>"; };
-		061AE47E267CD5FD00BD18CC /* XTRWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRWebViewWrapper.swift; sourceTree = "<group>"; };
-		061AE481267CD64300BD18CC /* XTRWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRWebView.swift; sourceTree = "<group>"; };
-		061AE487267CD6E300BD18CC /* XTRLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRLoadingView.swift; sourceTree = "<group>"; };
-		061AE48A267CD70C00BD18CC /* XTRActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRActivityIndicator.swift; sourceTree = "<group>"; };
+		061AE47E267CD5FD00BD18CC /* SUIWebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIWebViewWrapper.swift; sourceTree = "<group>"; };
+		061AE481267CD64300BD18CC /* SUIWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIWebView.swift; sourceTree = "<group>"; };
+		061AE487267CD6E300BD18CC /* SUILoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUILoadingView.swift; sourceTree = "<group>"; };
+		061AE48A267CD70C00BD18CC /* SUIActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIActivityIndicator.swift; sourceTree = "<group>"; };
 		062E80F52676ABB20009DDA5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = Base; path = Base.lproj/LoadFailure.html; sourceTree = "<group>"; };
-		06485A5A2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPeriodicTableHostingController.swift; sourceTree = "<group>"; };
-		06485A5B2704E1C90094A7A4 /* XTRElementButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementButtonView.swift; sourceTree = "<group>"; };
-		06485A5C2704E1C90094A7A4 /* XTRPeriodicTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRPeriodicTableView.swift; sourceTree = "<group>"; };
-		06485A632704E1EC0094A7A4 /* XTRElementListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListView.swift; sourceTree = "<group>"; };
-		06485A642704E1EC0094A7A4 /* XTRElementListHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListHostingController.swift; sourceTree = "<group>"; };
-		06485A652704E1EC0094A7A4 /* XTRElementListSupportViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRElementListSupportViews.swift; sourceTree = "<group>"; };
+		06485A5A2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIPeriodicTableHostingController.swift; sourceTree = "<group>"; };
+		06485A5C2704E1C90094A7A4 /* SUIPeriodicTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIPeriodicTableView.swift; sourceTree = "<group>"; };
+		06485A632704E1EC0094A7A4 /* SUIElementListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIElementListView.swift; sourceTree = "<group>"; };
+		06485A642704E1EC0094A7A4 /* SUIElementListHostingController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIElementListHostingController.swift; sourceTree = "<group>"; };
+		06485A652704E1EC0094A7A4 /* SUIElementListSupportViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIElementListSupportViews.swift; sourceTree = "<group>"; };
 		0660FB942676A5A70054E259 /* tidylist.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = tidylist.sh; sourceTree = "<group>"; };
-		066C87C0268B699900505A19 /* XTRMolecularCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRMolecularCalculatorView.swift; sourceTree = "<group>"; };
-		066C87C8268BCEF700505A19 /* XTRInfoHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRInfoHostingController.swift; sourceTree = "<group>"; };
-		066C87CB268BCF4900505A19 /* XTRInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRInfoView.swift; sourceTree = "<group>"; };
-		0682AED22682617C00E69096 /* XTRGraphChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRGraphChoiceView.swift; sourceTree = "<group>"; };
-		0682AED52682620700E69096 /* XTRWikiPediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XTRWikiPediaView.swift; sourceTree = "<group>"; };
-		06842D9C268D2C48008D6C53 /* XTRSwiftUILabelViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRSwiftUILabelViews.swift; sourceTree = "<group>"; };
-		06842D9E268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XTRFormSheet+Wrapper.swift"; sourceTree = "<group>"; };
+		066C87C0268B699900505A19 /* SUIMolecularCalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIMolecularCalculatorView.swift; sourceTree = "<group>"; };
+		066C87C8268BCEF700505A19 /* SUIInfoHostingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIInfoHostingController.swift; sourceTree = "<group>"; };
+		066C87CB268BCF4900505A19 /* SUIInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIInfoView.swift; sourceTree = "<group>"; };
+		066ECFDA270B512000A29BEC /* SUIElementInspectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIElementInspectorView.swift; sourceTree = "<group>"; };
+		066ECFDD270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPeriodicTableSupportViews.swift; sourceTree = "<group>"; };
+		066ECFE0270B638D00A29BEC /* SUIPreferencesSupportClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPreferencesSupportClasses.swift; sourceTree = "<group>"; };
+		0682AED22682617C00E69096 /* SUIGraphChoiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIGraphChoiceView.swift; sourceTree = "<group>"; };
+		0682AED52682620700E69096 /* SUIWikiPediaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIWikiPediaView.swift; sourceTree = "<group>"; };
+		06842D9C268D2C48008D6C53 /* SUISwiftUILabelViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUISwiftUILabelViews.swift; sourceTree = "<group>"; };
+		06842D9E268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SUIFormSheet+Wrapper.swift"; sourceTree = "<group>"; };
 		06842DA2268D2D1A008D6C53 /* View+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extensions.swift"; sourceTree = "<group>"; };
-		06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTREnvironmentModels.swift; sourceTree = "<group>"; };
+		06842DA5268D33AC008D6C53 /* SUIEnvironmentModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIEnvironmentModels.swift; sourceTree = "<group>"; };
 		069EC7EF26E9294B0044F328 /* XTRFontFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRFontFactory.swift; sourceTree = "<group>"; };
 		06C1CAC52673ABD300D2AE17 /* XTRGeneralInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRGeneralInfoViewController.xib; sourceTree = "<group>"; };
 		06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XTRSpectrumViewController.xib; sourceTree = "<group>"; };
@@ -541,8 +547,8 @@
 		06C1CB4E2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesChemicalViewController.swift; sourceTree = "<group>"; };
 		06C1CB512675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElementPropertiesPhysicalViewController.swift; sourceTree = "<group>"; };
 		06CE0DA226791C4D0042BDE2 /* Credits.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Credits.pdf; sourceTree = "<group>"; };
-		06D30A3926A855D8003F0614 /* XTRPreferencesColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRPreferencesColorPickerView.swift; sourceTree = "<group>"; };
-		06D607BE2706160900F9EE8F /* XTRHelpButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRHelpButtonView.swift; sourceTree = "<group>"; };
+		06D30A3926A855D8003F0614 /* SUIPreferencesColorPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIPreferencesColorPickerView.swift; sourceTree = "<group>"; };
+		06D607BE2706160900F9EE8F /* SUIHelpButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUIHelpButtonView.swift; sourceTree = "<group>"; };
 		06F0BC472672CC7C00B06011 /* XTRSplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRSplashViewController.xib; sourceTree = "<group>"; };
 		06F0BC4A2672D22400B06011 /* XTRGraphChoiceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRGraphChoiceViewController.xib; sourceTree = "<group>"; };
 		06FC7DAE267290AA00DF9801 /* XTRColorPickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRColorPickerViewController.xib; sourceTree = "<group>"; };
@@ -558,7 +564,7 @@
 		08B6A57E2257EA50001885BB /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = PrimaMateria/Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		08B6A57F2257EA50001885BB /* CorePlot.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CorePlot.framework; path = PrimaMateria/Carthage/Build/iOS/CorePlot.framework; sourceTree = "<group>"; };
 		08B6A5802257EA50001885BB /* RxCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxCocoa.framework; path = PrimaMateria/Carthage/Build/iOS/RxCocoa.framework; sourceTree = "<group>"; };
-		8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTYRElectronConfigurationModel.swift; sourceTree = "<group>"; };
+		8004675A211A585B0020BFD4 /* XTRElectronConfigurationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRElectronConfigurationModel.swift; sourceTree = "<group>"; };
 		8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTRVaporPressurenModel.swift; sourceTree = "<group>"; };
 		800B92A8211602C300C2DC61 /* XTRZoomContentView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XTRZoomContentView.xib; sourceTree = "<group>"; };
 		80127C0E20F0253000ABC706 /* PrimaMateria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrimaMateria.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -791,10 +797,10 @@
 		061AE47A267CD56900BD18CC /* WebView */ = {
 			isa = PBXGroup;
 			children = (
-				061AE48A267CD70C00BD18CC /* XTRActivityIndicator.swift */,
-				061AE487267CD6E300BD18CC /* XTRLoadingView.swift */,
-				061AE481267CD64300BD18CC /* XTRWebView.swift */,
-				061AE47E267CD5FD00BD18CC /* XTRWebViewWrapper.swift */,
+				061AE48A267CD70C00BD18CC /* SUIActivityIndicator.swift */,
+				061AE487267CD6E300BD18CC /* SUILoadingView.swift */,
+				061AE481267CD64300BD18CC /* SUIWebView.swift */,
+				061AE47E267CD5FD00BD18CC /* SUIWebViewWrapper.swift */,
 			);
 			path = WebView;
 			sourceTree = "<group>";
@@ -802,9 +808,9 @@
 		061AE48D267CEB5800BD18CC /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				06842D9E268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift */,
-				0612AFD326AA6001005F4E24 /* XTRSwiftUIButtonViews.swift */,
-				06842D9C268D2C48008D6C53 /* XTRSwiftUILabelViews.swift */,
+				06842D9E268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift */,
+				0612AFD326AA6001005F4E24 /* SUISwiftUIButtonViews.swift */,
+				06842D9C268D2C48008D6C53 /* SUISwiftUILabelViews.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -842,9 +848,9 @@
 		0639C4262675787E00B58D15 /* Help */ = {
 			isa = PBXGroup;
 			children = (
-				061AE477267BC2E600BD18CC /* XTRHelpBalloonView.swift */,
+				061AE477267BC2E600BD18CC /* SUIHelpBalloonView.swift */,
+				06D607BE2706160900F9EE8F /* SUIHelpButtonView.swift */,
 				8012800220F0270400ABC706 /* XTRHelpButton.swift */,
-				06D607BE2706160900F9EE8F /* XTRHelpButtonView.swift */,
 			);
 			path = Help;
 			sourceTree = "<group>";
@@ -852,6 +858,8 @@
 		0639C427267578BA00B58D15 /* ElementInspector */ = {
 			isa = PBXGroup;
 			children = (
+				066ECFDA270B512000A29BEC /* SUIElementInspectorView.swift */,
+				0682AED52682620700E69096 /* SUIWikiPediaView.swift */,
 				8012801820F0270400ABC706 /* XTRAtomicStructureViewController.swift */,
 				06C1CAD12673B4D500D2AE17 /* XTRAtomicStructureViewController.xib */,
 				8012800B20F0270400ABC706 /* XTRElementInspectorViewController.swift */,
@@ -872,7 +880,6 @@
 				8012801520F0270400ABC706 /* XTRSpectrumViewController.swift */,
 				06C1CAC62673ABD300D2AE17 /* XTRSpectrumViewController.xib */,
 				8012801C20F0270400ABC706 /* XTRSpectrumViewControllerDelegate.swift */,
-				0682AED52682620700E69096 /* XTRWikiPediaView.swift */,
 			);
 			path = ElementInspector;
 			sourceTree = "<group>";
@@ -880,12 +887,12 @@
 		0639C4282675792200B58D15 /* PeriodicTable */ = {
 			isa = PBXGroup;
 			children = (
+				066C87C0268B699900505A19 /* SUIMolecularCalculatorView.swift */,
+				06485A5A2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift */,
+				066ECFDD270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift */,
+				06485A5C2704E1C90094A7A4 /* SUIPeriodicTableView.swift */,
 				80127FF820F0270400ABC706 /* XTRElementButton.swift */,
-				06485A5B2704E1C90094A7A4 /* XTRElementButtonView.swift */,
 				80127FDB20F0270400ABC706 /* XTRMolecularCalculatorEngine.swift */,
-				066C87C0268B699900505A19 /* XTRMolecularCalculatorView.swift */,
-				06485A5A2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift */,
-				06485A5C2704E1C90094A7A4 /* XTRPeriodicTableView.swift */,
 				8012800C20F0270400ABC706 /* XTRPeriodicTableViewController.swift */,
 				06C1CAE6267431E300D2AE17 /* XTRPeriodicTableViewController.xib */,
 			);
@@ -895,13 +902,14 @@
 		0639C4292675794500B58D15 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				06D30A3926A855D8003F0614 /* XTRPreferencesColorPickerView.swift */,
-				0612AFD026AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift */,
-				0612AFBF26A9A44E005F4E24 /* XTRPreferencesHostingController.swift */,
-				0612AFC426A9D575005F4E24 /* XTRPreferencesInfoView.swift */,
-				0612AFCA26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift */,
-				0612AFC726A9D626005F4E24 /* XTRPreferencesSettingsView.swift */,
-				0612AFBE26A9A44E005F4E24 /* XTRPreferencesView.swift */,
+				06D30A3926A855D8003F0614 /* SUIPreferencesColorPickerView.swift */,
+				0612AFD026AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift */,
+				0612AFBF26A9A44E005F4E24 /* SUIPreferencesHostingController.swift */,
+				0612AFC426A9D575005F4E24 /* SUIPreferencesInfoView.swift */,
+				0612AFCA26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift */,
+				0612AFC726A9D626005F4E24 /* SUIPreferencesSettingsView.swift */,
+				0612AFBE26A9A44E005F4E24 /* SUIPreferencesView.swift */,
+				066ECFE0270B638D00A29BEC /* SUIPreferencesSupportClasses.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -918,9 +926,9 @@
 		0639C42B2675798C00B58D15 /* ElementList */ = {
 			isa = PBXGroup;
 			children = (
-				06485A642704E1EC0094A7A4 /* XTRElementListHostingController.swift */,
-				06485A652704E1EC0094A7A4 /* XTRElementListSupportViews.swift */,
-				06485A632704E1EC0094A7A4 /* XTRElementListView.swift */,
+				06485A642704E1EC0094A7A4 /* SUIElementListHostingController.swift */,
+				06485A652704E1EC0094A7A4 /* SUIElementListSupportViews.swift */,
+				06485A632704E1EC0094A7A4 /* SUIElementListView.swift */,
 				8012801020F0270400ABC706 /* XTRElementListViewController.swift */,
 				06C1CAFE26743C3400D2AE17 /* XTRElementListViewController.xib */,
 				8012802020F0270400ABC706 /* XTRElementListViewControllerDelegate.swift */,
@@ -932,11 +940,11 @@
 		0639C42C267579A800B58D15 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				0682AED22682617C00E69096 /* SUIGraphChoiceView.swift */,
 				80127FFA20F0270400ABC706 /* XTRBarPlot.swift */,
 				8012800720F0270400ABC706 /* XTRGraphViewController.swift */,
 				06C1CAF22674397A00D2AE17 /* XTRGraphViewController.xib */,
 				8012802220F0270400ABC706 /* XTRGraphViewControllerDelegate.swift */,
-				0682AED22682617C00E69096 /* XTRGraphChoiceView.swift */,
 			);
 			path = Graph;
 			sourceTree = "<group>";
@@ -944,8 +952,8 @@
 		0639C42D267579F900B58D15 /* Info */ = {
 			isa = PBXGroup;
 			children = (
-				066C87C8268BCEF700505A19 /* XTRInfoHostingController.swift */,
-				066C87CB268BCF4900505A19 /* XTRInfoView.swift */,
+				066C87C8268BCEF700505A19 /* SUIInfoHostingController.swift */,
+				066C87CB268BCF4900505A19 /* SUIInfoView.swift */,
 			);
 			path = Info;
 			sourceTree = "<group>";
@@ -953,7 +961,7 @@
 		0639C42F26757A8B00B58D15 /* ElementBalloon */ = {
 			isa = PBXGroup;
 			children = (
-				061AE474267BBB6500BD18CC /* XTRElementBalloonView.swift */,
+				061AE474267BBB6500BD18CC /* SUIElementBalloonView.swift */,
 			);
 			path = ElementBalloon;
 			sourceTree = "<group>";
@@ -1100,14 +1108,14 @@
 		80127FEC20F0270400ABC706 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				06842DA5268D33AC008D6C53 /* SUIEnvironmentModels.swift */,
 				80127FED20F0270400ABC706 /* XTRElementModel.swift */,
-				06842DA5268D33AC008D6C53 /* XTREnvironmentModels.swift */,
 				80127FF020F0270400ABC706 /* XTRGraphDefinitionModel.swift */,
 				80127FEE20F0270400ABC706 /* XTRIsotopeModel.swift */,
 				80127FEF20F0270400ABC706 /* XTRSpectraModel.swift */,
 				80DDF83C20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift */,
 				8004675C211A59F90020BFD4 /* XTRVaporPressurenModel.swift */,
-				8004675A211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift */,
+				8004675A211A585B0020BFD4 /* XTRElectronConfigurationModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1730,11 +1738,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06485A602704E1C90094A7A4 /* XTRElementButtonView.swift in Sources */,
-				0682AED42682617C00E69096 /* XTRGraphChoiceView.swift in Sources */,
+				0682AED42682617C00E69096 /* SUIGraphChoiceView.swift in Sources */,
 				80DDF83D20FFCA9700EFF06D /* XTRTableViewCellViewModel.swift in Sources */,
 				8012805A20F0270500ABC706 /* XTRElementInspectorViewController.swift in Sources */,
-				06D30A3B26A855D8003F0614 /* XTRPreferencesColorPickerView.swift in Sources */,
+				06D30A3B26A855D8003F0614 /* SUIPreferencesColorPickerView.swift in Sources */,
 				8012804B20F0270500ABC706 /* XTRTableCell.swift in Sources */,
 				8012806F20F0270500ABC706 /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */,
 				8012805420F0270500ABC706 /* XTRNuclidesIsotopesViewController.swift in Sources */,
@@ -1742,31 +1749,33 @@
 				807E3EA72112959400534B10 /* XTROverlayView.swift in Sources */,
 				8012807420F0270500ABC706 /* main.swift in Sources */,
 				801EB654236373E900FE10C6 /* XTRSceneDelegate.swift in Sources */,
+				066ECFE2270B638D00A29BEC /* SUIPreferencesSupportClasses.swift in Sources */,
 				8012804220F0270500ABC706 /* XTRGraphDefinitionModel.swift in Sources */,
 				8012805320F0270500ABC706 /* XTRGeneralButton.swift in Sources */,
-				06842DA0268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift in Sources */,
+				06842DA0268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift in Sources */,
 				8012802F20F0270500ABC706 /* XTRMolecularCalculatorEngine.swift in Sources */,
-				0612AFCC26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift in Sources */,
+				0612AFCC26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift in Sources */,
 				069EC7F126E9294B0044F328 /* XTRFontFactory.swift in Sources */,
 				8012804C20F0270500ABC706 /* XTRDividerLabel.swift in Sources */,
 				8012804720F0270500ABC706 /* Bundle+Extensions.swift in Sources */,
 				8012805E20F0270500ABC706 /* XTRGraphChoiceViewController.swift in Sources */,
 				8012803020F0270500ABC706 /* XTRAppDelegate.swift in Sources */,
-				061AE48C267CD70C00BD18CC /* XTRActivityIndicator.swift in Sources */,
+				061AE48C267CD70C00BD18CC /* SUIActivityIndicator.swift in Sources */,
 				8012807020F0270500ABC706 /* XTRGraphViewControllerDelegate.swift in Sources */,
 				8012804D20F0270500ABC706 /* XTRElementTableViewCell.swift in Sources */,
+				066ECFDC270B512000A29BEC /* SUIElementInspectorView.swift in Sources */,
 				8012805820F0270500ABC706 /* XTRSlideDownAnimationController.swift in Sources */,
 				06C1CAF12674373C00D2AE17 /* XTRMainViewController.swift in Sources */,
 				8012805620F0270500ABC706 /* XTRGraphViewController.swift in Sources */,
 				06C1CB422674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift in Sources */,
-				06842DA1268D2CBD008D6C53 /* XTRSwiftUILabelViews.swift in Sources */,
+				06842DA1268D2CBD008D6C53 /* SUISwiftUILabelViews.swift in Sources */,
 				8012837D20F02D6100ABC706 /* XTRImageFactory.swift in Sources */,
 				8012804920F0270500ABC706 /* XTRLocalizedLabel.swift in Sources */,
 				8012804520F0270500ABC706 /* NSObject+General.swift in Sources */,
 				8012805720F0270500ABC706 /* XTRGeneralInfoViewController.swift in Sources */,
 				8012807120F0270500ABC706 /* XTRBackgroundView.swift in Sources */,
-				0612AFC326A9A44E005F4E24 /* XTRPreferencesHostingController.swift in Sources */,
-				8004675B211A585B0020BFD4 /* XTYRElectronConfigurationModel.swift in Sources */,
+				0612AFC326A9A44E005F4E24 /* SUIPreferencesHostingController.swift in Sources */,
+				8004675B211A585B0020BFD4 /* XTRElectronConfigurationModel.swift in Sources */,
 				8012806020F0270500ABC706 /* XTRSplashViewController.swift in Sources */,
 				804F2B9F2360CE6C009C8F3C /* String+Extensions.swift in Sources */,
 				8012803420F0270500ABC706 /* XTRDataSource.swift in Sources */,
@@ -1774,11 +1783,11 @@
 				8012805220F0270500ABC706 /* XTRHelpButton.swift in Sources */,
 				804F2BA123614DA0009C8F3C /* LocaleManager.swift in Sources */,
 				8012804F20F0270500ABC706 /* XTRGraphChoiceCell.swift in Sources */,
-				06485A5E2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift in Sources */,
+				06485A5E2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift in Sources */,
 				8012838120F02D6100ABC706 /* XTRColorFactory.swift in Sources */,
 				061AE47D267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift in Sources */,
 				8012838020F02D6100ABC706 /* XTRColorFactoryClassic.swift in Sources */,
-				061AE480267CD5FD00BD18CC /* XTRWebViewWrapper.swift in Sources */,
+				061AE480267CD5FD00BD18CC /* SUIWebViewWrapper.swift in Sources */,
 				8004675D211A59F90020BFD4 /* XTRVaporPressurenModel.swift in Sources */,
 				8012806820F0270500ABC706 /* XTRHelpBalloonViewController.swift in Sources */,
 				8012806E20F0270500ABC706 /* XTRElementListViewControllerDelegate.swift in Sources */,
@@ -1786,46 +1795,47 @@
 				8012803320F0270500ABC706 /* XTRDefines.swift in Sources */,
 				8012804120F0270500ABC706 /* XTRSpectraModel.swift in Sources */,
 				8012805520F0270500ABC706 /* XTRColorPickerViewController.swift in Sources */,
-				061AE476267BBB6500BD18CC /* XTRElementBalloonView.swift in Sources */,
-				061AE483267CD64300BD18CC /* XTRWebView.swift in Sources */,
-				06485A622704E1C90094A7A4 /* XTRPeriodicTableView.swift in Sources */,
+				061AE476267BBB6500BD18CC /* SUIElementBalloonView.swift in Sources */,
+				061AE483267CD64300BD18CC /* SUIWebView.swift in Sources */,
+				06485A622704E1C90094A7A4 /* SUIPeriodicTableView.swift in Sources */,
+				066ECFDF270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift in Sources */,
 				8012804320F0270500ABC706 /* UIColor+Extensions.swift in Sources */,
 				8012806120F0270500ABC706 /* XTRInfoViewController.swift in Sources */,
 				8012805B20F0270500ABC706 /* XTRPeriodicTableViewController.swift in Sources */,
 				8012806B20F0270500ABC706 /* XTRInfoViewControllerDelegate.swift in Sources */,
 				8012804620F0270500ABC706 /* UIView+LayerFlattening.swift in Sources */,
 				06C1CB502675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift in Sources */,
-				0612AFD226AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift in Sources */,
+				0612AFD226AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift in Sources */,
 				8012806620F0270500ABC706 /* XTRWikipediaViewController.swift in Sources */,
 				8012806220F0270500ABC706 /* XTRElementBalloonViewController.swift in Sources */,
-				06485A6B2704E1EC0094A7A4 /* XTRElementListSupportViews.swift in Sources */,
+				06485A6B2704E1EC0094A7A4 /* SUIElementListSupportViews.swift in Sources */,
 				8012805F20F0270500ABC706 /* XTRElementListViewController.swift in Sources */,
 				8012805D20F0270500ABC706 /* XTRElementPropertiesViewController.swift in Sources */,
 				8012806A20F0270500ABC706 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
-				06842DA7268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */,
-				06485A672704E1EC0094A7A4 /* XTRElementListView.swift in Sources */,
+				06842DA7268D33AC008D6C53 /* SUIEnvironmentModels.swift in Sources */,
+				06485A672704E1EC0094A7A4 /* SUIElementListView.swift in Sources */,
 				06C1CB532675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */,
 				06842DA4268D2D1A008D6C53 /* View+Extensions.swift in Sources */,
-				061AE489267CD6E300BD18CC /* XTRLoadingView.swift in Sources */,
-				06D607C02706160900F9EE8F /* XTRHelpButtonView.swift in Sources */,
-				0682AED72682620700E69096 /* XTRWikiPediaView.swift in Sources */,
+				061AE489267CD6E300BD18CC /* SUILoadingView.swift in Sources */,
+				06D607C02706160900F9EE8F /* SUIHelpButtonView.swift in Sources */,
+				0682AED72682620700E69096 /* SUIWikiPediaView.swift in Sources */,
 				8012806C20F0270500ABC706 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
-				06485A692704E1EC0094A7A4 /* XTRElementListHostingController.swift in Sources */,
+				06485A692704E1EC0094A7A4 /* SUIElementListHostingController.swift in Sources */,
 				8012804820F0270500ABC706 /* XTRElementButton.swift in Sources */,
 				8012837A20F02D6100ABC706 /* XTRColorFactoryStandard.swift in Sources */,
-				0612AFD526AA6001005F4E24 /* XTRSwiftUIButtonViews.swift in Sources */,
-				066C87CA268BCEF700505A19 /* XTRInfoHostingController.swift in Sources */,
+				0612AFD526AA6001005F4E24 /* SUISwiftUIButtonViews.swift in Sources */,
+				066C87CA268BCEF700505A19 /* SUIInfoHostingController.swift in Sources */,
 				08AB996D20F8D4C800711159 /* XTRPageControl.swift in Sources */,
 				8012805120F0270500ABC706 /* XTRShellModelScene.swift in Sources */,
-				066C87CD268BCF4900505A19 /* XTRInfoView.swift in Sources */,
+				066C87CD268BCF4900505A19 /* SUIInfoView.swift in Sources */,
 				8012803520F0270500ABC706 /* XTRElement+Presentation.swift in Sources */,
 				8012807220F0270500ABC706 /* XTRCornerImageView.swift in Sources */,
 				8012803F20F0270500ABC706 /* XTRElementModel.swift in Sources */,
 				8012804E20F0270500ABC706 /* XTRTableHeaderButton.swift in Sources */,
 				8012837B20F02D6100ABC706 /* XTRAppearanceManager.swift in Sources */,
 				8012802D20F0270500ABC706 /* XTRSimpleTransitionController.swift in Sources */,
-				066C87C2268B699900505A19 /* XTRMolecularCalculatorView.swift in Sources */,
-				061AE479267BC2E600BD18CC /* XTRHelpBalloonView.swift in Sources */,
+				066C87C2268B699900505A19 /* SUIMolecularCalculatorView.swift in Sources */,
+				061AE479267BC2E600BD18CC /* SUIHelpBalloonView.swift in Sources */,
 				80DC21C121111DA400518784 /* XTRZoomContentView.swift in Sources */,
 				8012804020F0270500ABC706 /* XTRIsotopeModel.swift in Sources */,
 				8012837F20F02D6100ABC706 /* XTRAppearanceManagerStandard.swift in Sources */,
@@ -1835,13 +1845,13 @@
 				8012803220F0270500ABC706 /* XTRPopoutAnimationController.swift in Sources */,
 				80DDF83F21001DAB00EFF06D /* XTRGraphChoiceViewControllerDelegate.swift in Sources */,
 				8012806720F0270500ABC706 /* XTRAtomicStructureViewController.swift in Sources */,
-				0612AFC126A9A44E005F4E24 /* XTRPreferencesView.swift in Sources */,
+				0612AFC126A9A44E005F4E24 /* SUIPreferencesView.swift in Sources */,
 				06FC7DB32672986700DF9801 /* UIViewController+Extensions.swift in Sources */,
 				8012802E20F0270500ABC706 /* XTRPropertiesStore.swift in Sources */,
 				8012805920F0270500ABC706 /* XTRMolecularCalculatorViewController.swift in Sources */,
 				8012806420F0270500ABC706 /* XTRSpectrumViewController.swift in Sources */,
-				0612AFC626A9D575005F4E24 /* XTRPreferencesInfoView.swift in Sources */,
-				0612AFC926A9D626005F4E24 /* XTRPreferencesSettingsView.swift in Sources */,
+				0612AFC626A9D575005F4E24 /* SUIPreferencesInfoView.swift in Sources */,
+				0612AFC926A9D626005F4E24 /* SUIPreferencesSettingsView.swift in Sources */,
 				8012806320F0270500ABC706 /* XTRSwapableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1850,11 +1860,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06485A5F2704E1C90094A7A4 /* XTRElementButtonView.swift in Sources */,
-				0682AED32682617C00E69096 /* XTRGraphChoiceView.swift in Sources */,
+				0682AED32682617C00E69096 /* SUIGraphChoiceView.swift in Sources */,
 				80AB29F42128CEAD00B58AB3 /* XTRTableViewCellViewModel.swift in Sources */,
 				80AB29F52128CEAD00B58AB3 /* XTRElementInspectorViewController.swift in Sources */,
-				06D30A3A26A855D8003F0614 /* XTRPreferencesColorPickerView.swift in Sources */,
+				06D30A3A26A855D8003F0614 /* SUIPreferencesColorPickerView.swift in Sources */,
 				80AB29F62128CEAD00B58AB3 /* XTRTableCell.swift in Sources */,
 				80AB29F72128CEAD00B58AB3 /* XTRNuclidesIsotopesViewControllerDelegate.swift in Sources */,
 				80AB29F82128CEAD00B58AB3 /* XTRNuclidesIsotopesViewController.swift in Sources */,
@@ -1862,19 +1871,21 @@
 				80AB29FA2128CEAD00B58AB3 /* XTROverlayView.swift in Sources */,
 				80AB29FB2128CEAD00B58AB3 /* main.swift in Sources */,
 				801EB6532363721500FE10C6 /* XTRSceneDelegate.swift in Sources */,
+				066ECFE1270B638D00A29BEC /* SUIPreferencesSupportClasses.swift in Sources */,
 				80AB29FC2128CEAD00B58AB3 /* XTRGraphDefinitionModel.swift in Sources */,
 				80AB29FD2128CEAD00B58AB3 /* XTRGeneralButton.swift in Sources */,
 				80AB29FE2128CEAD00B58AB3 /* XTRMolecularCalculatorEngine.swift in Sources */,
 				80AB29FF2128CEAD00B58AB3 /* XTRDividerLabel.swift in Sources */,
-				0612AFCB26A9D65C005F4E24 /* XTRPreferencesSeriesColorsView.swift in Sources */,
+				0612AFCB26A9D65C005F4E24 /* SUIPreferencesSeriesColorsView.swift in Sources */,
 				069EC7F026E9294B0044F328 /* XTRFontFactory.swift in Sources */,
 				80AB2A002128CEAD00B58AB3 /* Bundle+Extensions.swift in Sources */,
 				80AB2A012128CEAD00B58AB3 /* XTRGraphChoiceViewController.swift in Sources */,
 				80AB2A022128CEAD00B58AB3 /* XTRAppDelegate.swift in Sources */,
-				061AE48B267CD70C00BD18CC /* XTRActivityIndicator.swift in Sources */,
+				061AE48B267CD70C00BD18CC /* SUIActivityIndicator.swift in Sources */,
 				80AB2A032128CEAD00B58AB3 /* XTRGraphViewControllerDelegate.swift in Sources */,
 				80AB2A042128CEAD00B58AB3 /* XTRElementTableViewCell.swift in Sources */,
 				80AB2A052128CEAD00B58AB3 /* XTRSlideDownAnimationController.swift in Sources */,
+				066ECFDB270B512000A29BEC /* SUIElementInspectorView.swift in Sources */,
 				06C1CAF02674373C00D2AE17 /* XTRMainViewController.swift in Sources */,
 				80AB2A062128CEAD00B58AB3 /* XTRGraphViewController.swift in Sources */,
 				06C1CB412674F60A00D2AE17 /* XTRMainViewControllerDelegate.swift in Sources */,
@@ -1883,9 +1894,9 @@
 				80AB2A092128CEAD00B58AB3 /* NSObject+General.swift in Sources */,
 				80AB2A0A2128CEAD00B58AB3 /* XTRGeneralInfoViewController.swift in Sources */,
 				80AB2A0B2128CEAD00B58AB3 /* XTRBackgroundView.swift in Sources */,
-				80AB2A0C2128CEAD00B58AB3 /* XTYRElectronConfigurationModel.swift in Sources */,
+				80AB2A0C2128CEAD00B58AB3 /* XTRElectronConfigurationModel.swift in Sources */,
 				80AB2A0D2128CEAD00B58AB3 /* XTRSplashViewController.swift in Sources */,
-				0612AFC226A9A44E005F4E24 /* XTRPreferencesHostingController.swift in Sources */,
+				0612AFC226A9A44E005F4E24 /* SUIPreferencesHostingController.swift in Sources */,
 				804F2B9E2360CE6C009C8F3C /* String+Extensions.swift in Sources */,
 				80AB2A0F2128CEAD00B58AB3 /* XTRDataSource.swift in Sources */,
 				80AB2A102128CEAD00B58AB3 /* XTRTableLabel.swift in Sources */,
@@ -1894,9 +1905,9 @@
 				80AB2A122128CEAD00B58AB3 /* XTRGraphChoiceCell.swift in Sources */,
 				80AB2A132128CEAD00B58AB3 /* XTRColorFactory.swift in Sources */,
 				061AE47C267CD5C300BD18CC /* WKNavigationDelegate+Extension.swift in Sources */,
-				06485A5D2704E1C90094A7A4 /* XTRPeriodicTableHostingController.swift in Sources */,
+				06485A5D2704E1C90094A7A4 /* SUIPeriodicTableHostingController.swift in Sources */,
 				80AB2A142128CEAD00B58AB3 /* XTRColorFactoryClassic.swift in Sources */,
-				061AE47F267CD5FD00BD18CC /* XTRWebViewWrapper.swift in Sources */,
+				061AE47F267CD5FD00BD18CC /* SUIWebViewWrapper.swift in Sources */,
 				80AB2A152128CEAD00B58AB3 /* XTRVaporPressurenModel.swift in Sources */,
 				80AB2A172128CEAD00B58AB3 /* XTRHelpBalloonViewController.swift in Sources */,
 				80AB2A182128CEAD00B58AB3 /* XTRElementListViewControllerDelegate.swift in Sources */,
@@ -1904,46 +1915,47 @@
 				80AB2A1A2128CEAD00B58AB3 /* XTRDefines.swift in Sources */,
 				80AB2A1B2128CEAD00B58AB3 /* XTRSpectraModel.swift in Sources */,
 				80AB2A1C2128CEAD00B58AB3 /* XTRColorPickerViewController.swift in Sources */,
-				061AE475267BBB6500BD18CC /* XTRElementBalloonView.swift in Sources */,
-				061AE482267CD64300BD18CC /* XTRWebView.swift in Sources */,
+				061AE475267BBB6500BD18CC /* SUIElementBalloonView.swift in Sources */,
+				061AE482267CD64300BD18CC /* SUIWebView.swift in Sources */,
 				80AB2A1D2128CEAD00B58AB3 /* UIColor+Extensions.swift in Sources */,
 				80AB2A1E2128CEAD00B58AB3 /* XTRInfoViewController.swift in Sources */,
-				06485A612704E1C90094A7A4 /* XTRPeriodicTableView.swift in Sources */,
+				06485A612704E1C90094A7A4 /* SUIPeriodicTableView.swift in Sources */,
+				066ECFDE270B61A100A29BEC /* SUIPeriodicTableSupportViews.swift in Sources */,
 				80AB2A1F2128CEAD00B58AB3 /* XTRPeriodicTableViewController.swift in Sources */,
 				80AB2A202128CEAD00B58AB3 /* XTRInfoViewControllerDelegate.swift in Sources */,
 				80AB2A212128CEAD00B58AB3 /* UIView+LayerFlattening.swift in Sources */,
 				06C1CB4F2675000200D2AE17 /* XTRElementPropertiesChemicalViewController.swift in Sources */,
 				80AB2A222128CEAD00B58AB3 /* XTRWikipediaViewController.swift in Sources */,
 				80AB2A232128CEAD00B58AB3 /* XTRElementBalloonViewController.swift in Sources */,
-				0612AFD126AA5EFF005F4E24 /* XTRPreferencesGlobeView.swift in Sources */,
+				0612AFD126AA5EFF005F4E24 /* SUIPreferencesGlobeView.swift in Sources */,
 				80AB2A242128CEAD00B58AB3 /* XTRElementListViewController.swift in Sources */,
 				80AB2A252128CEAD00B58AB3 /* XTRElementPropertiesViewController.swift in Sources */,
-				06485A6A2704E1EC0094A7A4 /* XTRElementListSupportViews.swift in Sources */,
+				06485A6A2704E1EC0094A7A4 /* SUIElementListSupportViews.swift in Sources */,
 				80AB2A262128CEAD00B58AB3 /* XTRSpectrumViewControllerDelegate.swift in Sources */,
 				06C1CB522675001B00D2AE17 /* XTRElementPropertiesPhysicalViewController.swift in Sources */,
-				061AE488267CD6E300BD18CC /* XTRLoadingView.swift in Sources */,
-				06842DA6268D33AC008D6C53 /* XTREnvironmentModels.swift in Sources */,
-				06485A662704E1EC0094A7A4 /* XTRElementListView.swift in Sources */,
-				0682AED62682620700E69096 /* XTRWikiPediaView.swift in Sources */,
+				061AE488267CD6E300BD18CC /* SUILoadingView.swift in Sources */,
+				06842DA6268D33AC008D6C53 /* SUIEnvironmentModels.swift in Sources */,
+				06485A662704E1EC0094A7A4 /* SUIElementListView.swift in Sources */,
+				0682AED62682620700E69096 /* SUIWikiPediaView.swift in Sources */,
 				06842DA3268D2D1A008D6C53 /* View+Extensions.swift in Sources */,
 				80AB2A272128CEAD00B58AB3 /* XTRWikipediaViewControllerDelegate.swift in Sources */,
-				06D607BF2706160900F9EE8F /* XTRHelpButtonView.swift in Sources */,
+				06D607BF2706160900F9EE8F /* SUIHelpButtonView.swift in Sources */,
 				80AB2A282128CEAD00B58AB3 /* XTRElementButton.swift in Sources */,
 				80AB2A292128CEAD00B58AB3 /* XTRColorFactoryStandard.swift in Sources */,
-				06485A682704E1EC0094A7A4 /* XTRElementListHostingController.swift in Sources */,
-				066C87C9268BCEF700505A19 /* XTRInfoHostingController.swift in Sources */,
+				06485A682704E1EC0094A7A4 /* SUIElementListHostingController.swift in Sources */,
+				066C87C9268BCEF700505A19 /* SUIInfoHostingController.swift in Sources */,
 				80AB2A2B2128CEAD00B58AB3 /* XTRPageControl.swift in Sources */,
-				0612AFD426AA6001005F4E24 /* XTRSwiftUIButtonViews.swift in Sources */,
+				0612AFD426AA6001005F4E24 /* SUISwiftUIButtonViews.swift in Sources */,
 				80AB2A2C2128CEAD00B58AB3 /* XTRShellModelScene.swift in Sources */,
-				066C87CC268BCF4900505A19 /* XTRInfoView.swift in Sources */,
+				066C87CC268BCF4900505A19 /* SUIInfoView.swift in Sources */,
 				80AB2A2D2128CEAD00B58AB3 /* XTRElement+Presentation.swift in Sources */,
 				80AB2A2E2128CEAD00B58AB3 /* XTRCornerImageView.swift in Sources */,
 				80AB2A2F2128CEAD00B58AB3 /* XTRElementModel.swift in Sources */,
 				80AB2A302128CEAD00B58AB3 /* XTRTableHeaderButton.swift in Sources */,
 				80AB2A312128CEAD00B58AB3 /* XTRAppearanceManager.swift in Sources */,
 				80AB2A322128CEAD00B58AB3 /* XTRSimpleTransitionController.swift in Sources */,
-				066C87C1268B699900505A19 /* XTRMolecularCalculatorView.swift in Sources */,
-				061AE478267BC2E600BD18CC /* XTRHelpBalloonView.swift in Sources */,
+				066C87C1268B699900505A19 /* SUIMolecularCalculatorView.swift in Sources */,
+				061AE478267BC2E600BD18CC /* SUIHelpBalloonView.swift in Sources */,
 				80AB2A332128CEAD00B58AB3 /* XTRZoomContentView.swift in Sources */,
 				80AB2A342128CEAD00B58AB3 /* XTRIsotopeModel.swift in Sources */,
 				80AB2A362128CEAD00B58AB3 /* XTRAppearanceManagerStandard.swift in Sources */,
@@ -1952,16 +1964,16 @@
 				80AB2A392128CEAD00B58AB3 /* XTRBarPlot.swift in Sources */,
 				80AB2A3A2128CEAD00B58AB3 /* XTRPopoutAnimationController.swift in Sources */,
 				80AB2A3C2128CEAD00B58AB3 /* XTRGraphChoiceViewControllerDelegate.swift in Sources */,
-				06842D9F268D2CA7008D6C53 /* XTRFormSheet+Wrapper.swift in Sources */,
+				06842D9F268D2CA7008D6C53 /* SUIFormSheet+Wrapper.swift in Sources */,
 				80AB2A3D2128CEAD00B58AB3 /* XTRAtomicStructureViewController.swift in Sources */,
-				06842D9D268D2C48008D6C53 /* XTRSwiftUILabelViews.swift in Sources */,
-				0612AFC026A9A44E005F4E24 /* XTRPreferencesView.swift in Sources */,
+				06842D9D268D2C48008D6C53 /* SUISwiftUILabelViews.swift in Sources */,
+				0612AFC026A9A44E005F4E24 /* SUIPreferencesView.swift in Sources */,
 				06FC7DB22672986700DF9801 /* UIViewController+Extensions.swift in Sources */,
 				80AB2A3E2128CEAD00B58AB3 /* XTRPropertiesStore.swift in Sources */,
 				80AB2A3F2128CEAD00B58AB3 /* XTRMolecularCalculatorViewController.swift in Sources */,
 				80AB2A402128CEAD00B58AB3 /* XTRSpectrumViewController.swift in Sources */,
-				0612AFC526A9D575005F4E24 /* XTRPreferencesInfoView.swift in Sources */,
-				0612AFC826A9D626005F4E24 /* XTRPreferencesSettingsView.swift in Sources */,
+				0612AFC526A9D575005F4E24 /* SUIPreferencesInfoView.swift in Sources */,
+				0612AFC826A9D626005F4E24 /* SUIPreferencesSettingsView.swift in Sources */,
 				80AB2A412128CEAD00B58AB3 /* XTRSwapableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

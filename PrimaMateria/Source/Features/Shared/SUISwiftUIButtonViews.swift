@@ -1,5 +1,5 @@
 //
-//  XTRSwiftUIButtonViewss.swift
+//  SUISwiftUIButtonViewss.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/22/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct XTRBaseButton: View {
+struct SUIBaseButton: View {
     
     var action: () -> Void
     var labelText: String!

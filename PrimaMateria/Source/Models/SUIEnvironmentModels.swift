@@ -1,5 +1,5 @@
 //
-//  XTREnvironmentModels.swift
+//  SUIEnvironmentModels.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/30/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class ElementBallonEnvironment: ObservableObject {
+class SUIElementBallonEnvironment: ObservableObject {
     
     @Published var element: XTRElementModel!
 
@@ -18,7 +18,7 @@ class ElementBallonEnvironment: ObservableObject {
     
 }
 
-class WikipediaEnvironment: ObservableObject {
+class SUIWikipediaEnvironment: ObservableObject {
     
     @Published var articlePath = ""
     
@@ -27,26 +27,26 @@ class WikipediaEnvironment: ObservableObject {
     }
 }
 
-class HelpBallonEnvironment: ObservableObject {
+class SUIHelpBallonEnvironment: ObservableObject {
     
     @Published var pageTitle = ""
     @Published var elementTipPath = ""
     
 }
 
-class InfoEnvironment: ObservableObject {
+class SUIInfoEnvironment: ObservableObject {
     
     @Published var pageTitle = ""
     
 }
 
-class MolecularCalculatorEnvironment: ObservableObject {
+class SUIMolecularCalculatorEnvironment: ObservableObject {
     
     @Published var element: XTRElementModel!
     
 }
 
-class ColorPickerEnvironment: ObservableObject {
+class SUIColorPickerEnvironment: ObservableObject {
     
     @Published var seriesIdentifier: String?
     @Published var seriesColor: UIColor?
@@ -58,7 +58,7 @@ class ColorPickerEnvironment: ObservableObject {
 
 }
 
-class PreferencesEnvironment: ObservableObject {
+class SUIPreferencesEnvironment: ObservableObject {
     
     @Published var elementHelpBubbles = false
     @Published var showSplashScreen = false
@@ -67,24 +67,24 @@ class PreferencesEnvironment: ObservableObject {
     
 }
 
-class MolecularCalculatorModel: ObservableObject {
+class SUIMolecularCalculatorModel: ObservableObject {
     
     @Published var element: XTRElementModel!
     
 }
 
-class ElementButtonEnvironment: ObservableObject {
+class SUIElementButtonEnvironment: ObservableObject {
     
     @Published var symbol: String!
     
 }
-class MolecularCalculatorProperty: ObservableObject {
+class SUIMolecularCalculatorProperty: ObservableObject {
     
     @Published var propertyValue: String = ""
     
 }
 
-class XTRWebViewStateModel: ObservableObject {
+class SUIWebViewStateModel: ObservableObject {
     
     @Published var pageTitle: String = "Web View"
     @Published var loading: Bool = false

@@ -1,5 +1,5 @@
 //
-//  WebView.swift
+//  SUIWebView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/18/21.
@@ -9,11 +9,11 @@
 import SwiftUI
 import WebKit
 
-struct XTRWebViewConfig {
+struct SUIWebViewConfig {
     static let barButtonSize = CGSize(width: 44, height: 44)
 }
 
-struct XTRWebView: View {
+struct SUIWebView: View {
     
     enum NavigationAction {
         case decidePolicy(WKNavigationAction, (WKNavigationActionPolicy) -> Void) //mendetory
@@ -26,24 +26,24 @@ struct XTRWebView: View {
         case didFail(WKNavigation, Error)
     }
     
-    @ObservedObject var webViewStateModel: XTRWebViewStateModel
+    @ObservedObject var webViewStateModel: SUIWebViewStateModel
     
-    private var actionDelegate: ((_ navigationAction: XTRWebView.NavigationAction) -> Void)?
+    private var actionDelegate: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?
     let uRLRequest: URLRequest
     
     var body: some View {
-        XTRWebViewWrapper(webViewStateModel: webViewStateModel, action: actionDelegate, request: uRLRequest)
+        SUIWebViewWrapper(webViewStateModel: webViewStateModel, action: actionDelegate, request: uRLRequest)
     }
     /*
      if passed onNavigationAction it is mandatory to complete URLAuthenticationChallenge and decidePolicyFor callbacks
      */
-    init(uRLRequest: URLRequest, webViewStateModel: XTRWebViewStateModel, onNavigationAction: ((_ navigationAction: XTRWebView.NavigationAction) -> Void)?) {
+    init(uRLRequest: URLRequest, webViewStateModel: SUIWebViewStateModel, onNavigationAction: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?) {
         self.uRLRequest = uRLRequest
         self.webViewStateModel = webViewStateModel
         self.actionDelegate = onNavigationAction
     }
     
-    init(url: URL, webViewStateModel: XTRWebViewStateModel, onNavigationAction: ((_ navigationAction: XTRWebView.NavigationAction) -> Void)? = nil) {
+    init(url: URL, webViewStateModel: SUIWebViewStateModel, onNavigationAction: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)? = nil) {
         self.init(uRLRequest: URLRequest(url: url), webViewStateModel: webViewStateModel, onNavigationAction: onNavigationAction)
     }
     

@@ -1,5 +1,5 @@
 //
-//  XTRPreferencesSeriesColorsView.swift
+//  SUIPreferencesSeriesColorsView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/22/21.
@@ -8,14 +8,7 @@
 
 import SwiftUI
 
-struct ColorMapper {
-    
-    @State var foreGroundColor = UIColor.white
-    @State var backGroundColor = UIColor.black
-    
-}
-
-struct XTRPreferencesSeriesColorsView: View {
+struct SUIPreferencesSeriesColorsView: View {
     
     @State var seriesActinideMapper = ColorMapper()
     @State var seriesAlkaliEarthMetalMapper = ColorMapper()
@@ -37,7 +30,7 @@ struct XTRPreferencesSeriesColorsView: View {
                 Text(NSLocalizedString("seriesColors", comment: "Series Colors"))
                     .font(XTRFontFactory.regularSystem18)
                 Group {
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(0)
                     }, labelText: NSLocalizedString(ElementSeries.actinide, comment: "Actinide"), width: 230, height: 32, backgroundColor: Color(seriesActinideMapper.backGroundColor))
                     .foregroundColor(Color(seriesActinideMapper.foreGroundColor))
@@ -45,7 +38,7 @@ struct XTRPreferencesSeriesColorsView: View {
                         self.presentColorPicker(ElementSeries.actinide)
                     }
                     
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(1)
                     }, labelText: NSLocalizedString(ElementSeries.alkaliEarthMetal, comment: "Alkali Earth Metal"), width: 230, height: 32, backgroundColor: Color(seriesAlkaliEarthMetalMapper.backGroundColor))
                         .foregroundColor(Color(seriesAlkaliEarthMetalMapper.foreGroundColor))
@@ -53,14 +46,14 @@ struct XTRPreferencesSeriesColorsView: View {
                             self.presentColorPicker(ElementSeries.alkaliEarthMetal)
                         }
 
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(2)
                     }, labelText: NSLocalizedString(ElementSeries.alkaliMetal, comment: "Alkali Metal"), width: 230, height: 32, backgroundColor: Color(seriesAlkaliMetalMapper.backGroundColor))
                         .foregroundColor(Color(seriesAlkaliMetalMapper.foreGroundColor))
                         .popover(isPresented: $showingPopover[2]) {
                             self.presentColorPicker(ElementSeries.alkaliMetal)
                         }
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(3)
                     }, labelText: NSLocalizedString(ElementSeries.halogen, comment: "Halogen"), width: 230, height: 32, backgroundColor: Color(seriesHalogenMapper.backGroundColor))
                         .foregroundColor(Color(seriesHalogenMapper.foreGroundColor))
@@ -68,7 +61,7 @@ struct XTRPreferencesSeriesColorsView: View {
                             self.presentColorPicker(ElementSeries.halogen)
                         }
                     
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(4)
                     }, labelText: NSLocalizedString(ElementSeries.lanthanide, comment: "Lanthanide"), width: 230, height: 32, backgroundColor: Color(seriesLanthanideMapper.backGroundColor))
                         .foregroundColor(Color(seriesLanthanideMapper.foreGroundColor))
@@ -79,7 +72,7 @@ struct XTRPreferencesSeriesColorsView: View {
                 .background(Color(XTRColorFactory.tableViewCellBorderColor))
                 
                 Group {
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(5)
                     }, labelText: NSLocalizedString(ElementSeries.metal, comment: "Metal"), width: 230, height: 32, backgroundColor: Color(seriesMetalMapper.backGroundColor))
                         .foregroundColor(Color(seriesMetalMapper.foreGroundColor))
@@ -87,7 +80,7 @@ struct XTRPreferencesSeriesColorsView: View {
                             self.presentColorPicker(ElementSeries.metal)
                         }
 
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(6)
                     }, labelText: NSLocalizedString(ElementSeries.nobleGas, comment: "NobleGas"), width: 230, height: 32, backgroundColor: Color(seriesNobleGasMapper.backGroundColor))
                         .foregroundColor(Color(seriesNobleGasMapper.foreGroundColor))
@@ -95,7 +88,7 @@ struct XTRPreferencesSeriesColorsView: View {
                             self.presentColorPicker(ElementSeries.nobleGas)
                         }
 
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(7)
                     }, labelText: NSLocalizedString(ElementSeries.nonMetal, comment: "Non Metal"), width: 230, height: 32, backgroundColor: Color(seriesNonMetalMapper.backGroundColor))
                         .foregroundColor(Color(seriesNonMetalMapper.foreGroundColor))
@@ -103,7 +96,7 @@ struct XTRPreferencesSeriesColorsView: View {
                             self.presentColorPicker(ElementSeries.nonMetal)
                         }
 
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(8)
                     }, labelText: NSLocalizedString(ElementSeries.transactinide, comment: "Transactinide"), width: 230, height: 32, backgroundColor: Color(seriesTransactinidesMapper.backGroundColor))
                         .foregroundColor(Color(seriesTransactinidesMapper.foreGroundColor))
@@ -111,7 +104,7 @@ struct XTRPreferencesSeriesColorsView: View {
                             self.presentColorPicker(ElementSeries.transactinide)
                         }
 
-                    XTRBaseButton(action: {
+                    SUIBaseButton(action: {
                         resetPopoverForPosition(9)
                     }, labelText: NSLocalizedString(ElementSeries.transitionMetal, comment: "Transition Metal"), width: 230, height: 32, backgroundColor: Color(seriesTransitionMetalMapper.backGroundColor))
                         .foregroundColor(Color(seriesTransitionMetalMapper.foreGroundColor))
@@ -139,7 +132,7 @@ struct XTRPreferencesSeriesColorsView: View {
     }
     
     func presentColorPicker(_ seriesIdentifier: String) -> some View {
-        return XTRPreferencesColorPickerView().environmentObject(ColorPickerEnvironment(seriesIdentifier: seriesIdentifier, seriesColor: XTRColorFactory.colorForString(seriesIdentifier)))
+        return SUIPreferencesColorPickerView().environmentObject(SUIColorPickerEnvironment(seriesIdentifier: seriesIdentifier, seriesColor: XTRColorFactory.colorForString(seriesIdentifier)))
     }
 
     func updateSeriesProperties(_ button: UIButton, color: UIColor) {
@@ -171,10 +164,10 @@ struct XTRPreferencesSeriesColorsView: View {
     
 }
 
-struct XTRPreferencesSeriesColorsView_Previews: PreviewProvider {
+struct SUIPreferencesSeriesColorsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRPreferencesSeriesColorsView().previewLayout(.fixed(width: 1024, height: 768))
+        SUIPreferencesSeriesColorsView().previewLayout(.fixed(width: 1024, height: 768))
     }
     
 }

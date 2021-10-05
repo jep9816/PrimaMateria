@@ -1,5 +1,5 @@
 //
-//  XTRWikiPediaView.swift
+//  SUIWikiPediaView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/18/21.
@@ -8,23 +8,23 @@
 
 import SwiftUI
 
-struct XTRWikipediaViewConfig {
+struct SUIWikipediaViewConfig {
     static let preferredContentSize = CGSize(width: UIScreen.main.bounds.width - 50, height: UIScreen.main.bounds.height - 50)
 }
 
-struct XTRWikiPediaView: View {
-    @EnvironmentObject var environment: WikipediaEnvironment
-    @ObservedObject var webViewStateModel: XTRWebViewStateModel = XTRWebViewStateModel()
+struct SUIWikiPediaView: View {
+    @EnvironmentObject var environment: SUIWikipediaEnvironment
+    @ObservedObject var webViewStateModel: SUIWebViewStateModel = SUIWebViewStateModel()
     var dismissAction: (() -> Void)
     
     var body: some View {
         NavigationView {
             ZStack {
-                XTRLoadingView(isShowing: .constant(webViewStateModel.loading)) {
+                SUILoadingView(isShowing: .constant(webViewStateModel.loading)) {
                     //loading logic taken from https://stackoverflow.com/a/56496896/9838937
                     //Add onNavigationAction if callback needed
-                    XTRWebView(url: URL(string: environment.articlePath)!, webViewStateModel: self.webViewStateModel)
-                        .frame(width: XTRWikipediaViewConfig.preferredContentSize.width - 2, height: XTRWikipediaViewConfig.preferredContentSize.height - 38).offset(x: 0, y: 0)
+                    SUIWebView(url: URL(string: environment.articlePath)!, webViewStateModel: self.webViewStateModel)
+                        .frame(width: SUIWikipediaViewConfig.preferredContentSize.width - 2, height: SUIWikipediaViewConfig.preferredContentSize.height - 38).offset(x: 0, y: 0)
                 }
                 .navigationBarTitle(Text(webViewStateModel.pageTitle), displayMode: .inline)
                 .navigationBarItems(
@@ -40,7 +40,7 @@ struct XTRWikiPediaView: View {
                             }) {
                                 Label("Left Arrow", systemImage: "arrowtriangle.left.fill")
                                     .labelStyle(IconOnlyLabelStyle())
-                                    .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .leading)
+                                    .frame(width: SUIWebViewConfig.barButtonSize.width, height: SUIWebViewConfig.barButtonSize.height, alignment: .leading)
                             }
                             .opacity(!webViewStateModel.canGoBack ? 0: 1)
                             .disabled(!webViewStateModel.canGoBack)
@@ -53,7 +53,7 @@ struct XTRWikiPediaView: View {
                             }) {
                                 Label("Right Arrow", systemImage: "arrowtriangle.right.fill")
                                     .labelStyle(IconOnlyLabelStyle())
-                                    .frame(width: XTRWebViewConfig.barButtonSize.width, height: XTRWebViewConfig.barButtonSize.height, alignment: .trailing)
+                                    .frame(width: SUIWebViewConfig.barButtonSize.width, height: SUIWebViewConfig.barButtonSize.height, alignment: .trailing)
                             }
                             .opacity(!webViewStateModel.canGoForward ? 0: 1)
                             .disabled(!webViewStateModel.canGoForward)
@@ -61,7 +61,7 @@ struct XTRWikiPediaView: View {
                             .font(XTRFontFactory.boldSystem26)
                         }
                 )
-                .frame(width: XTRWikipediaViewConfig.preferredContentSize.width - 2, height: XTRWikipediaViewConfig.preferredContentSize.height - 2).offset(x: 0, y: 0)
+                .frame(width: SUIWikipediaViewConfig.preferredContentSize.width - 2, height: SUIWikipediaViewConfig.preferredContentSize.height - 2).offset(x: 0, y: 0)
             }
             .background(Color(XTRColorFactory.helpBackgroundColor))
             //.toolbar {
@@ -86,8 +86,8 @@ struct XTRWikiPediaView: View {
 struct XTRWikiPediaView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRWikiPediaView(dismissAction: { })
-            .environmentObject(WikipediaEnvironment(articlePath: "http://www.wikipedia.org"))
+        SUIWikiPediaView(dismissAction: { })
+            .environmentObject(SUIWikipediaEnvironment(articlePath: "http://www.wikipedia.org"))
             .previewLayout(.fixed(width: 1024, height: 768))
     }
     

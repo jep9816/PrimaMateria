@@ -1,5 +1,5 @@
 //
-//  XTYRElectronConfigurationModel.swift
+//  XTRElectronConfigurationModel.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 8/7/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class XTYRElectronConfigurationModel: NSObject {
+class XTRElectronConfigurationModel: NSObject {
     var dictionary: [String: Any]!
 
     convenience init(dictionary: [String: Any]) {

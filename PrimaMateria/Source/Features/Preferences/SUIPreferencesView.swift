@@ -1,5 +1,5 @@
 //
-//  XTRPreferencesView.swift
+//  SUIPreferencesView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/22/21.
@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct XTRPreferencesViewConfig {
+struct SUIPreferencesViewConfig {
     static let preferredContentSize = CGSize(width: 270, height: 270)
     static let creditsDocument = "Credits.pdf"
 }
 
-struct XTRPreferencesView: View {
+struct SUIPreferencesView: View {
     
-    @ObservedObject var webViewStateModel: XTRWebViewStateModel = XTRWebViewStateModel()
+    @ObservedObject var webViewStateModel: SUIWebViewStateModel = SUIWebViewStateModel()
     @State private var showingAlert = false
     
     var body: some View {
@@ -26,18 +26,18 @@ struct XTRPreferencesView: View {
                 
                 HStack(alignment: .top, spacing: 5) {
                     VStack(spacing: 0) {
-                        XTRPreferencesSettingsView()
+                        SUIPreferencesSettingsView()
                         
                         Spacer()
                             // swiftlint:disable colon
                             .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: 5, alignment: .center)
                         
-                        XTRPreferencesSeriesColorsView()
+                        SUIPreferencesSeriesColorsView()
                         
                         Spacer()
                         
                         VStack(spacing: 0) {
-                            XTRBaseButton(action: {
+                            SUIBaseButton(action: {
                                 self.showingAlert = true
                             }, labelText: NSLocalizedString("resetPreferences", comment: "Reset Preferences"), width: 230, height: 32, backgroundColor: Color(XTRColorFactory.labelColor))
                             .alert(isPresented: $showingAlert) {
@@ -55,7 +55,7 @@ struct XTRPreferencesView: View {
                         }
                     }
                     
-                    XTRPreferencesInfoView()
+                    SUIPreferencesInfoView()
                 }
                 .padding(5)
             }
@@ -73,11 +73,11 @@ struct XTRPreferencesView: View {
     
 }
 
-struct XTRPreferencesView_Previews: PreviewProvider {
+struct SUIPreferencesView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRPreferencesView().previewLayout(.fixed(width: 1024, height: 768)) // 9.7
-        //XTRPreferencesView().previewLayout(.fixed(width: 2732 / 2, height: 2048 / 2)) // iPad pro
+        SUIPreferencesView().previewLayout(.fixed(width: 1024, height: 768)) // 9.7
+        //SUIPreferencesView().previewLayout(.fixed(width: 2732 / 2, height: 2048 / 2)) // iPad pro
     }
     
 }

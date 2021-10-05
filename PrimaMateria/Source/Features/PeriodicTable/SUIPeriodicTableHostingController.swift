@@ -1,5 +1,5 @@
 //
-//  XTRPeriodicTableHostingController.swift
+//  SUIPeriodicTableHostingController.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 9/8/21.
@@ -9,6 +9,6 @@
 import UIKit
 import SwiftUI
 
-class XTRPeriodicTableHostingController: UIHostingController<XTRPeriodicTableView> {
+class SUIPeriodicTableHostingController: UIHostingController<SUIPeriodicTableView> {
     
 }

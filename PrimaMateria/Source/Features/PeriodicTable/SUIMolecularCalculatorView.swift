@@ -1,5 +1,5 @@
 //
-//  XTRMolecularCalculatorView.swift
+//  SUIMolecularCalculatorView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/29/21.
@@ -8,20 +8,20 @@
 
 import SwiftUI
 
-struct XTRMolecularCalculatorViewConfig {
+struct SUIMolecularCalculatorViewConfig {
     static let preferredContentSize = CGSize(width: 420, height: 155)
     static let textFieldWidth: CGFloat = 270
     static let textFieldHeight: CGFloat = 24
 }
 
-struct XTRMolecularCalculatorView: View {
+struct SUIMolecularCalculatorView: View {
     
-    @EnvironmentObject var environment: MolecularCalculatorEnvironment
+    @EnvironmentObject var environment: SUIMolecularCalculatorEnvironment
     
-    @ObservedObject private var errorMessage: MolecularCalculatorProperty = MolecularCalculatorProperty()
-    @ObservedObject private var formulaLabelText: MolecularCalculatorProperty = MolecularCalculatorProperty()
-    @ObservedObject private var resultsLabelText: MolecularCalculatorProperty = MolecularCalculatorProperty()
-    @ObservedObject private var formulaText: MolecularCalculatorProperty = MolecularCalculatorProperty()
+    @ObservedObject private var errorMessage: SUIMolecularCalculatorProperty = SUIMolecularCalculatorProperty()
+    @ObservedObject private var formulaLabelText: SUIMolecularCalculatorProperty = SUIMolecularCalculatorProperty()
+    @ObservedObject private var resultsLabelText: SUIMolecularCalculatorProperty = SUIMolecularCalculatorProperty()
+    @ObservedObject private var formulaText: SUIMolecularCalculatorProperty = SUIMolecularCalculatorProperty()
     
     var body: some View {
         HStack {
@@ -30,10 +30,10 @@ struct XTRMolecularCalculatorView: View {
                     Text(NSLocalizedString("molecularCalculator", comment: "Molecular Calculator"))
                         .font(XTRFontFactory.system17)
                         .fontWeight(.bold)
-                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
+                        .frame(width: SUIMolecularCalculatorViewConfig.textFieldWidth, height: SUIMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
                     
                     Text(formulaLabelText.propertyValue)
-                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .leading)
+                        .frame(width: SUIMolecularCalculatorViewConfig.textFieldWidth, height: SUIMolecularCalculatorViewConfig.textFieldHeight, alignment: .leading)
                         .background(Color.white)
                         .font(XTRFontFactory.system18)
                         .border(Color.black, width: 1)
@@ -41,7 +41,7 @@ struct XTRMolecularCalculatorView: View {
                 .padding(EdgeInsets(top: 10, leading: 0, bottom: 0, trailing: 0))
                                 
                 Text(errorMessage.propertyValue)
-                    .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
+                    .frame(width: SUIMolecularCalculatorViewConfig.textFieldWidth, height: SUIMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
                     .background(Color.clear)
                     .font(XTRFontFactory.system17)
                     .foregroundColor(.red)
@@ -53,10 +53,10 @@ struct XTRMolecularCalculatorView: View {
                     Text(NSLocalizedString("atomicWeight", comment: "Atomic Weight"))
                         .font(XTRFontFactory.system17)
                         .fontWeight(.bold)
-                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
+                        .frame(width: SUIMolecularCalculatorViewConfig.textFieldWidth, height: SUIMolecularCalculatorViewConfig.textFieldHeight, alignment: .center)
                     
                     Text(resultsLabelText.propertyValue)
-                        .frame(width: XTRMolecularCalculatorViewConfig.textFieldWidth, height: XTRMolecularCalculatorViewConfig.textFieldHeight, alignment: .leading)
+                        .frame(width: SUIMolecularCalculatorViewConfig.textFieldWidth, height: SUIMolecularCalculatorViewConfig.textFieldHeight, alignment: .leading)
                         .background(Color.white)
                         .font(XTRFontFactory.system18)
                         .border(Color.black, width: 1)
@@ -69,35 +69,35 @@ struct XTRMolecularCalculatorView: View {
             
             VStack(alignment: .trailing, spacing: nil) {
                 HStack {
-                    XTRCalculatorButtonView(buttonText: "7️⃣", function: self.numberTapped(tag: 0))
-                    XTRCalculatorButtonView(buttonText: "8️⃣", function: self.numberTapped(tag: 8))
-                    XTRCalculatorButtonView(buttonText: "9️⃣", function: self.numberTapped(tag: 9))
+                    SUICalculatorButtonView(buttonText: "7️⃣", function: self.numberTapped(tag: 0))
+                    SUICalculatorButtonView(buttonText: "8️⃣", function: self.numberTapped(tag: 8))
+                    SUICalculatorButtonView(buttonText: "9️⃣", function: self.numberTapped(tag: 9))
                 }
                 
                 HStack {
-                    XTRCalculatorButtonView(buttonText: "4️⃣", function: self.numberTapped(tag: 4))
-                    XTRCalculatorButtonView(buttonText: "5️⃣", function: self.numberTapped(tag: 5))
-                    XTRCalculatorButtonView(buttonText: "6️⃣", function: self.numberTapped(tag: 6))
+                    SUICalculatorButtonView(buttonText: "4️⃣", function: self.numberTapped(tag: 4))
+                    SUICalculatorButtonView(buttonText: "5️⃣", function: self.numberTapped(tag: 5))
+                    SUICalculatorButtonView(buttonText: "6️⃣", function: self.numberTapped(tag: 6))
                 }
                 
                 HStack {
-                    XTRCalculatorButtonView(buttonText: "1️⃣", function: self.numberTapped(tag: 1))
-                    XTRCalculatorButtonView(buttonText: "2️⃣", function: self.numberTapped(tag: 2))
-                    XTRCalculatorButtonView(buttonText: "3️⃣", function: self.numberTapped(tag: 3))
+                    SUICalculatorButtonView(buttonText: "1️⃣", function: self.numberTapped(tag: 1))
+                    SUICalculatorButtonView(buttonText: "2️⃣", function: self.numberTapped(tag: 2))
+                    SUICalculatorButtonView(buttonText: "3️⃣", function: self.numberTapped(tag: 3))
                 }
                 
                 HStack {
-                    XTRCalculatorButtonView(buttonText: "❎", function: self.clear)
-                    XTRCalculatorButtonView(buttonText: "0️⃣", function: self.numberTapped(tag: 0))
-                    XTRCalculatorButtonView(buttonText: "✅", function: self.calculate)
+                    SUICalculatorButtonView(buttonText: "❎", function: self.clear)
+                    SUICalculatorButtonView(buttonText: "0️⃣", function: self.numberTapped(tag: 0))
+                    SUICalculatorButtonView(buttonText: "✅", function: self.calculate)
                 }
             }
             .padding(EdgeInsets(top: 8, leading: 0, bottom: 10, trailing: 5)
             )
         }
         .frame(
-            width: XTRMolecularCalculatorViewConfig.preferredContentSize.width,
-            height: XTRMolecularCalculatorViewConfig.preferredContentSize.height,
+            width: SUIMolecularCalculatorViewConfig.preferredContentSize.width,
+            height: SUIMolecularCalculatorViewConfig.preferredContentSize.height,
             //swiftlint:disable colon
             alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(Color(XTRColorFactory.tableViewCellBorderColor))
@@ -205,7 +205,7 @@ struct XTRMolecularCalculatorView: View {
         errorMessage.propertyValue = STRING_EMPTY
     }
     
-    mutating func updateElement(_ model: MolecularCalculatorModel) {
+    mutating func updateElement(_ model: SUIMolecularCalculatorModel) {
         updateTextField(model.element.symbol!)
         updateLabel(model.element.symbol!)
     }
@@ -230,23 +230,9 @@ struct XTRMolecularCalculatorView: View {
     
 }
 
-struct XTRMolecularCalculatorView_Previews: PreviewProvider {
+struct SUIMolecularCalculatorView_Previews: PreviewProvider {
     static var previews: some View {
-        XTRMolecularCalculatorView().previewLayout(.fixed(width: XTRMolecularCalculatorViewConfig.preferredContentSize.width, height: XTRMolecularCalculatorViewConfig.preferredContentSize.height))
-    }
-    
-}
-
-struct XTRCalculatorButtonView: View {
-    
-    var buttonText: String!
-    var function: () -> Void
-    
-    var body: some View {
-        Button(action: function) {
-            Text(buttonText)
-                .font(XTRFontFactory.system32)
-        }
+        SUIMolecularCalculatorView().previewLayout(.fixed(width: SUIMolecularCalculatorViewConfig.preferredContentSize.width, height: SUIMolecularCalculatorViewConfig.preferredContentSize.height))
     }
     
 }

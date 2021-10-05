@@ -13,6 +13,10 @@ class XTRFontFactory: NSObject {
     
     // MARK: - SwiftUI Fonts
     
+    class var system45: Font {
+        return .system(size: 45.0)
+    }
+
     class var system32: Font {
         return .system(size: 32.0)
     }
@@ -31,6 +35,10 @@ class XTRFontFactory: NSObject {
 
     class var system17: Font {
         return .system(size: 17.0)
+    }
+
+    class var boldSystem57: Font {
+        return .system(size: 57, weight: .bold)
     }
 
     class var boldSystem32: Font {

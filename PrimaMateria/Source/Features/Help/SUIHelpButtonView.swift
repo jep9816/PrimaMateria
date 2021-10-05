@@ -1,5 +1,5 @@
 //
-//  XTRHelpButtonView.swift
+//  SUIHelpButtonView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 9/30/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct XTRHelpButtonView: View {
+struct SUIHelpButtonView: View {
     
     var helpKey: String
 
@@ -27,8 +27,10 @@ struct XTRHelpButtonView: View {
     }
 }
 
-struct XTRHelpButtonView_Previews: PreviewProvider {
+struct SUIHelpButtonView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        XTRHelpButtonView(helpKey: "periodicTable")
+        SUIHelpButtonView(helpKey: "periodicTable")
     }
+    
 }

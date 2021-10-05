@@ -55,9 +55,9 @@ extension XTRElementModel {
         return footnote
     }
     
-    var electronConfigurationModel: XTYRElectronConfigurationModel? {
+    var electronConfigurationModel: XTRElectronConfigurationModel? {
         let dict = self.electronConfiguration
-        return XTYRElectronConfigurationModel(dictionary: dict)
+        return XTRElectronConfigurationModel(dictionary: dict)
     }
 
     var nuclidesAndIsotopesModels: BehaviorRelay<[XTRIsotopeModel]>? {

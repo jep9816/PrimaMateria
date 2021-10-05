@@ -1,5 +1,5 @@
 //
-//  XTRInfoHostingController.swift
+//  SUIInfoHostingController.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/29/21.
@@ -9,6 +9,6 @@
 import UIKit
 import SwiftUI
 
-class XTRInfoHostingController: UIHostingController<XTRInfoView> {
+class SUIInfoHostingController: UIHostingController<SUIInfoView> {
     
 }

@@ -1,5 +1,5 @@
 //
-//  ActivityIndicator.swift
+//  SUIActivityIndicator.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/18/21.
@@ -8,16 +8,16 @@
 
 import SwiftUI
 
-struct XTRActivityIndicator: UIViewRepresentable {
+struct SUIActivityIndicator: UIViewRepresentable {
 
     @Binding var isAnimating: Bool
     let style: UIActivityIndicatorView.Style
 
-    func makeUIView(context: UIViewRepresentableContext<XTRActivityIndicator>) -> UIActivityIndicatorView {
+    func makeUIView(context: UIViewRepresentableContext<SUIActivityIndicator>) -> UIActivityIndicatorView {
         return UIActivityIndicatorView(style: style)
     }
 
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<XTRActivityIndicator>) {
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<SUIActivityIndicator>) {
         isAnimating ? uiView.startAnimating() : uiView.stopAnimating()
     }
 }

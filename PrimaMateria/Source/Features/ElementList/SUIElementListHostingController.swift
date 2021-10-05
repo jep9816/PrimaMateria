@@ -1,5 +1,5 @@
 //
-//  XTRElementListHostingController.swift
+//  SUIElementListHostingController.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 9/10/21.
@@ -9,6 +9,6 @@
 import UIKit
 import SwiftUI
 
-class XTRElementListHostingController: UIHostingController<XTRElementListView> {
+class SUIElementListHostingController: UIHostingController<SUIElementListView> {
     
 }

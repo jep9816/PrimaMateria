@@ -47,10 +47,10 @@ class XTRGraphViewController: UIViewController {
     // MARK: - Action Methods
 
     func showGraphChoice() {
-        let graphChoice = XTRGraphChoiceView()
+        let graphChoice = SUIGraphChoiceView()
         let graphChoiceViewController = UIHostingController(rootView: graphChoice)
         
-        graphChoiceViewController.preferredContentSize = graphChoiceViewController.sizeThatFits(in: XTRGraphChoiceViewConfig.preferredContentSize)
+        graphChoiceViewController.preferredContentSize = graphChoiceViewController.sizeThatFits(in: SUIGraphChoiceViewConfig.preferredContentSize)
         graphChoiceViewController.modalPresentationStyle = .popover
         guard let popoverController = graphChoiceViewController.popoverPresentationController else { return }
 

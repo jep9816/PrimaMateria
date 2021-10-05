@@ -1,5 +1,5 @@
 //
-//  XTRSwiftUILabelViews.swift
+//  SUISwiftUILabelViews.swift
 //  PrimaMateria PRD
 //
 //  Created by Jerry Porter on 6/30/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct XTRLabelTitleView: View {
+struct SUILabelTitleView: View {
     
     var labelText: String!
     var width: CGFloat = 10
@@ -25,7 +25,7 @@ struct XTRLabelTitleView: View {
     
 }
 
-struct XTRFormTitleView: View {
+struct SUIFormTitleView: View {
     
     var labelText: String!
     var width: CGFloat = 10
@@ -41,7 +41,7 @@ struct XTRFormTitleView: View {
     
 }
 
-struct XTRLabelValueView: View {
+struct SUILabelValueView: View {
     
     var labelText: String!
     var width: CGFloat = 10

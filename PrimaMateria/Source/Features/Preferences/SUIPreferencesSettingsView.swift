@@ -1,5 +1,5 @@
 //
-//  XTRPreferencesSettingsView.swift
+//  SUIPreferencesSettingsView.swift
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 7/22/21.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct XTRPreferencesSettingsView: View {
+struct SUIPreferencesSettingsView: View {
     
     @State private var elementBubblesState = false
     @State private var splashScreenState = false
@@ -77,10 +77,10 @@ struct XTRPreferencesSettingsView: View {
     
 }
 
-struct XTRPreferencesSettingsView_Previews: PreviewProvider {
+struct SUIPreferencesSettingsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        XTRPreferencesSettingsView().previewLayout(.fixed(width: 1024, height: 768))
+        SUIPreferencesSettingsView().previewLayout(.fixed(width: 1024, height: 768))
     }
     
 }
