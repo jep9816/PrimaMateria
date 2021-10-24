@@ -30,9 +30,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="635613ea-2b61-463a-8935-a914b7d94305" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/PrimaMateria.iml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Source.PrimaMateria.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/PrimaMateria.xcworkspace/xcuserdata/jerryporter.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,6 +85,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="full.screen.before.presentation.mode" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/PrimaMateria.xcworkspace" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -129,6 +130,7 @@
       <workItem from="1623269531028" duration="603000" />
       <workItem from="1625142968083" duration="6000" />
       <workItem from="1632938327639" duration="208000" />
+      <workItem from="1635084687154" duration="395000" />
     </task>
     <servers />
   </component>
