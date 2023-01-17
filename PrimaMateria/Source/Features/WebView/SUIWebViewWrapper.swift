@@ -3,13 +3,13 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 6/18/21.
-//  Copyright ©2021 Jerry Porter. All rights reserved.
+//  Copyright ©2023 Jerry Porter. All rights reserved.
 //
 
 import SwiftUI
 import WebKit
 
-final class SUIWebViewWrapper: UIViewRepresentable {
+struct SUIWebViewWrapper: UIViewRepresentable {
     
     @ObservedObject var webViewStateModel: SUIWebViewStateModel
     let action: ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?

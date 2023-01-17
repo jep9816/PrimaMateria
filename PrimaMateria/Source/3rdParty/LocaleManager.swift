@@ -76,8 +76,12 @@ public class LocaleManager: NSObject {
          in Main.storyboard must set to a string.
     */
     internal class func reloadWindows(animated: Bool = true) {
-        let windows = UIApplication.shared.windows
-        for window in windows {
+        let scenes = UIApplication.shared.connectedScenes
+        let windowScene = scenes.first as? UIWindowScene
+        let first = windowScene?.windows.first
+        
+        //for window in windows {
+        if let window = first {
             if let rootViewController = self.rootViewController?(window) {
                 window.rootViewController = rootViewController
             } else if let storyboard = window.rootViewController?.storyboard, let id = window.rootViewController?.value(forKey: "storyboardIdentifier") as? String {
@@ -88,8 +92,10 @@ public class LocaleManager: NSObject {
                 window.addSubview(view)
             }
         }
+        //}
+        
         if animated {
-            windows.first.map {
+            first.map {
                 UIView.transition(with: $0, duration: 0.55, options: [.curveEaseInOut, .transitionCrossDissolve], animations: nil, completion: nil)
             }
         }
@@ -392,7 +398,10 @@ public extension Locale {
      Checking the locale writing direction is right to left.
      */
     var isRTL: Bool {
-        return Locale.characterDirection(forLanguage: self.languageCode!) == .rightToLeft
+        if let identifier = self.language.languageCode?.identifier {
+            return Locale.Language(identifier: identifier).characterDirection == .rightToLeft
+        }
+        return false
     }
 }
 

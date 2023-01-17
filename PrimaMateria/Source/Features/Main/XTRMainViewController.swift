@@ -3,7 +3,7 @@
 //  PrimaMateria
 //
 //  Created by Jerry Porter on 4/15/16.
-//  Copyright ©2021 xTrensa. All rights reserved.
+//  Copyright ©2023 xTrensa. All rights reserved.
 //
 
 import Foundation
@@ -54,14 +54,15 @@ class XTRMainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //let periodicTableViewController = XTRPeriodicTableViewController.loadFromNib()
-        let periodicTableViewController = SUIPeriodicTableHostingController(rootView: SUIPeriodicTableView())
+        let periodicTableViewController = XTRPeriodicTableViewController.loadFromNib()
+        //let periodicTableViewController = SUIPeriodicTableHostingController(rootView: SUIPeriodicTableView())
 
         let elementListViewController = XTRElementListViewController.loadFromNib()
         //let elementListViewController = SUIElementListHostingController(rootView: SUIElementListView())
 
         let graphsViewController = XTRGraphViewController.loadFromNib()
         let preferencesViewController = SUIPreferencesHostingController(rootView: SUIPreferencesView())
+        //let infoViewController = XTRInfoViewController.loadFromNib()
         let infoViewController = SUIInfoHostingController(rootView: SUIInfoView())
 
         createTab(viewController: periodicTableViewController, tabTitle: "periodicTable", imageName: "atom")

@@ -1,0 +1,1935 @@
+@startuml
+' STYLE START
+hide empty members
+skinparam shadowing false
+' STYLE END
+
+
+class "XTRPropertiesStoreConfig" as XTRPropertiesStoreConfig << (S, SkyBlue) struct >> { 
+  ~{static} appearanceName
+  ~{static} elementBubble
+  ~{static} showTransitions
+  ~{static} splashScreen
+  ~{static} atomicNumber
+  ~{static} languageCode
+  ~{static} viewTitle
+  ~{static} noneValue
+  ~{static} defaultLanguageCode 
+}
+class "XTRPropertiesStore" as XTRPropertiesStore << (C, DarkSeaGreen) >> {  
+}
+class "XTRAppearanceType" as XTRAppearanceType << (E, LightSteelBlue) enum >> { 
+  ~classic
+  ~standard
+  ~offset()
+  ~name : String 
+}
+class "Notification.Name" as Notification.Name << (X, Orchid) extension >> { 
+  {static} elementHelpSelectedNotification
+  {static} graphSelectedNotification
+  {static} tableHeaderCellSelectedNotification
+  {static} colorSelectedNotification
+  {static} inspectorDismissedNotification
+  {static} seriesColorChangedNotification
+  {static} notificationAppearanceChanged
+  {static} notificationAtomicStructureZoomed 
+}
+class "ElementSeries" as ElementSeries << (S, SkyBlue) struct >> { 
+  ~{static} actinide
+  ~{static} alkaliEarthMetal
+  ~{static} alkaliMetal
+  ~{static} halogen
+  ~{static} lanthanide
+  ~{static} metal
+  ~{static} nobleGas
+  ~{static} nonMetal
+  ~{static} transactinide
+  ~{static} transitionMetal 
+}
+class "ElementStandardCondition" as ElementStandardCondition << (S, SkyBlue) struct >> { 
+  ~{static} gas
+  ~{static} liquid
+  ~{static} solid
+  ~{static} synthetic 
+}
+class "FileType" as FileType << (S, SkyBlue) struct >> { 
+  ~{static} html
+  ~{static} pdf
+  ~{static} png
+  ~{static} rtf
+  ~{static} plist
+  ~{static} json 
+}
+class "ColorComponent" as ColorComponent << (S, SkyBlue) struct >> { 
+  ~{static} red
+  ~{static} green
+  ~{static} blue
+  ~{static} alpha 
+}
+class "XTRDataSource" as XTRDataSource << (C, DarkSeaGreen) >> { 
+  -{static} __once : ()
+  ~{static} _sharedInstance : XTRDataSource!
+  ~elementList : [XTRElementModel]
+  ~sortedElementList : [XTRElementModel]
+  ~graphPropertyList : [XTRGraphDefinitionModel]
+  ~data(resourceName:type:directory:)
+  ~loadElement(symbol:)
+  ~loadGraphPropertyList()
+  ~loadElementList()
+  ~init()
+  ~sortByColumn(position:ascending:)
+  ~element(symbol:)
+  ~sortedElement(index:)
+  ~element(index:)
+  ~elementCount() 
+}
+class "XTRColorFactoryStandard" as XTRColorFactoryStandard << (C, DarkSeaGreen) >> {  
+}
+class "XTRColorFactory" as XTRColorFactory << (C, DarkSeaGreen) >> {  
+}
+class "XTRAppearanceManager" as XTRAppearanceManager << (C, DarkSeaGreen) >> { 
+  -_window : UIWindow?
+  -_classicManager : XTRAppearanceManagerClassic!
+  -_standardManager : XTRAppearanceManagerStandard!
+  ~init()
+  ~init(window:)
+  ~commonAppearance()
+  ~changeAppearance(notification:)
+  -reset(appearanceName:)
+  ~classicAppearance()
+  ~standardAppearance()
+  ~applyAppearance()
+  ~isClassicAppearance()
+  ~isStandardAppearance()
+  ~viewControllerBackgroundAppearance()
+  ~deinit 
+}
+class "UIViewController" as UIViewController << (X, Orchid) extension >> { 
+  preferredStatusBarStyle() 
+}
+class "XTRAppearanceManagerStandard" as XTRAppearanceManagerStandard << (C, DarkSeaGreen) >> { 
+  ~appearance()
+  ~activityIndicatorViewAppearance()
+  ~barButtonItemAppearance()
+  ~barItemAppearance()
+  ~navigationBarAppearance()
+  ~pageControlAppearance()
+  ~progressViewAppearance()
+  ~searchBarAppearance()
+  ~segmentedControlAppearance()
+  ~sliderAppearance()
+  ~stepperAppearance()
+  ~switchAppearance()
+  ~tabBarAppearance()
+  ~tabBarItemAppearance()
+  ~tableViewAppearance()
+  ~tableViewCellAppearance()
+  ~toolbarAppearance()
+  ~viewAppearance()
+  ~miscAppearance() 
+}
+class "XTRFontFactory" as XTRFontFactory << (C, DarkSeaGreen) >> {  
+}
+class "XTRColorFactoryClassic" as XTRColorFactoryClassic << (C, DarkSeaGreen) >> {  
+}
+class "XTRAppearanceManagerClassic" as XTRAppearanceManagerClassic << (C, DarkSeaGreen) >> { 
+  ~appearance()
+  ~activityIndicatorViewAppearance()
+  ~barButtonItemAppearance()
+  ~barItemAppearance()
+  ~navigationBarAppearance()
+  ~pageControlAppearance()
+  ~progressViewAppearance()
+  ~searchBarAppearance()
+  ~segmentedControlAppearance()
+  ~sliderAppearance()
+  ~stepperAppearance()
+  ~switchAppearance()
+  ~tabBarAppearance()
+  ~tabBarItemAppearance()
+  ~tableViewAppearance()
+  ~tableViewCellAppearance()
+  ~toolbarAppearance()
+  ~viewAppearance()
+  ~miscAppearance() 
+}
+class "XTRImageFactory" as XTRImageFactory << (C, DarkSeaGreen) >> {  
+}
+class "SUIPreferencesHostingController" as SUIPreferencesHostingController << (C, DarkSeaGreen) >> {  
+}
+class "SUIPreferencesGlobeView" as SUIPreferencesGlobeView << (S, SkyBlue) struct >> { 
+  ~animatedImage
+  ~makeUIView(context:)
+  ~updateUIView(_:context:) 
+}
+class "SUIPreferencesColorPickerView" as SUIPreferencesColorPickerView << (S, SkyBlue) struct >> { 
+  ~environment : SUIColorPickerEnvironment
+  ~presentationMode
+  -red : Double
+  -green : Double
+  -blue : Double
+  -alpha : Double
+  ~body : some View
+  ~presetSlidersWithColor(_:)
+  ~updateColorFromSlider()
+  ~selectColor() 
+}
+class "SUIColorPickerView_Previews" as SUIColorPickerView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "ColorMapper" as ColorMapper << (S, SkyBlue) struct >> { 
+  ~foreGroundColor
+  ~backGroundColor 
+}
+class "LanguageCodes" as LanguageCodes << (E, LightSteelBlue) enum >> { 
+  ~English
+  ~Spanish
+  ~Russian
+  ~French
+  ~code() 
+}
+class "SUIPreferencesInfoView" as SUIPreferencesInfoView << (S, SkyBlue) struct >> { 
+  ~webViewStateModel : SUIWebViewStateModel
+  -showingAlert
+  ~body : some View
+  ~creditsPath(documentName:) 
+}
+class "SUIPreferencesInfoView_Previews" as SUIPreferencesInfoView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIPreferencesSettingsView" as SUIPreferencesSettingsView << (S, SkyBlue) struct >> { 
+  -elementBubblesState
+  -splashScreenState
+  -showTransitionsState
+  -selectedStyle
+  ~body : some View 
+}
+class "SUIPreferencesSettingsView_Previews" as SUIPreferencesSettingsView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIPreferencesViewConfig" as SUIPreferencesViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} preferredContentSize
+  ~{static} creditsDocument 
+}
+class "SUIPreferencesView" as SUIPreferencesView << (S, SkyBlue) struct >> { 
+  ~webViewStateModel : SUIWebViewStateModel
+  -showingAlert
+  ~body : some View
+  ~resetPreferences() 
+}
+class "SUIPreferencesView_Previews" as SUIPreferencesView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIPreferencesSeriesColorsView" as SUIPreferencesSeriesColorsView << (S, SkyBlue) struct >> { 
+  ~seriesActinideMapper
+  ~seriesAlkaliEarthMetalMapper
+  ~seriesAlkaliMetalMapper
+  ~seriesHalogenMapper
+  ~seriesLanthanideMapper
+  ~seriesMetalMapper
+  ~seriesNobleGasMapper
+  ~seriesNonMetalMapper
+  ~seriesTransactinidesMapper
+  ~seriesTransitionMetalMapper
+  ~pub
+  ~showingPopover : [Bool]
+  ~body : some View
+  ~resetPopoverForPosition(_:)
+  ~presentColorPicker(_:)
+  ~updateSeriesProperties(_:color:)
+  ~populateSeriesColors() 
+}
+class "SUIPreferencesSeriesColorsView_Previews" as SUIPreferencesSeriesColorsView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRSplashViewController" as XTRSplashViewController << (C, DarkSeaGreen) >> { 
+  ~appNameLabel : UILabel!
+  ~versionLabel : UILabel!
+  ~cpyRightLabel : UILabel!
+  ~wrapperView : UIView!
+  ~shadowView : UIView!
+  ~backgroundImageView : UIImageView!
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~done()
+  ~wait()
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRSplashView" as XTRSplashView << (S, SkyBlue) struct >> { 
+  ~isActive : Bool
+  ~dismissAction : (() -> Void)
+  ~body : some View 
+}
+class "XTRSplashView_Previews" as XTRSplashView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIElementButtonView" as SUIElementButtonView << (S, SkyBlue) struct >> { 
+  ~element : XTRElementModel
+  ~width : CGFloat!
+  ~height : CGFloat!
+  -isPresented
+  ~body : some View 
+}
+class "SUICalculatorButtonView" as SUICalculatorButtonView << (S, SkyBlue) struct >> { 
+  ~buttonText : String!
+  ~function : () -> Void
+  ~body : some View 
+}
+class "GroupLayoutView" as GroupLayoutView << (S, SkyBlue) struct >> { 
+  ~model : PeriodicTableLayoutItemModel!
+  ~body : some View 
+}
+class "GroupLeftLayoutView" as GroupLeftLayoutView << (S, SkyBlue) struct >> { 
+  ~model : PeriodicTableLayoutItemModel!
+  ~body : some View 
+}
+class "GroupRightLayoutView" as GroupRightLayoutView << (S, SkyBlue) struct >> { 
+  ~model : PeriodicTableLayoutItemModel!
+  ~body : some View 
+}
+class "PeriodLayoutView" as PeriodLayoutView << (S, SkyBlue) struct >> { 
+  ~model : PeriodicTableLayoutItemModel!
+  ~body : some View 
+}
+class "PlaceholderLayoutView" as PlaceholderLayoutView << (S, SkyBlue) struct >> { 
+  ~model : PeriodicTableLayoutItemModel!
+  ~body : some View 
+}
+class "SeriesLabelLayoutView" as SeriesLabelLayoutView << (S, SkyBlue) struct >> { 
+  ~model : PeriodicTableLayoutItemModel!
+  ~body : some View 
+}
+class "ButtonLayoutView" as ButtonLayoutView << (S, SkyBlue) struct >> { 
+  ~model : PeriodicTableLayoutItemModel!
+  ~body : some View 
+}
+class "SUIElementButtonView_Previews" as SUIElementButtonView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUICalculatorButtonView_Previews" as SUICalculatorButtonView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRElementButton" as XTRElementButton << (C, DarkSeaGreen) >> { 
+  ~pub
+  ~subscription : AnyCancellable!
+  ~init(coder:)
+  ~awakeFromNib()
+  ~setupColors()
+  ~deinit 
+}
+class "SUIPeriodicTableHostingController" as SUIPeriodicTableHostingController << (C, DarkSeaGreen) >> {  
+}
+class "XTRPeriodicTableViewControllerConfig" as XTRPeriodicTableViewControllerConfig << (S, SkyBlue) struct >> { 
+  ~{static} buttonRect
+  ~{static} preferredContentSize 
+}
+class "XTRPeriodicTableViewController" as XTRPeriodicTableViewController << (C, DarkSeaGreen) >> { 
+  ~navigationBar : UINavigationBar!
+  ~molecularCalculatorSwitch : UISwitch!
+  ~elementButtonView : UIView!
+  ~molecularCalculatorWrapperView : UIView!
+  ~molecularCalculatorState : Bool
+  ~molecularCalculatorView : SUIMolecularCalculatorView!
+  ~molecularCalculatorViewController : UIViewController!
+  ~disposeBag : DisposeBag
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupRx()
+  ~toggleMolecularCalculatorState(_:)
+  ~showPopupForButton(_:)
+  ~displayElementInspector(_:)
+  ~closeBubble(_:)
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "SUIPeriodicTableViewConfig" as SUIPeriodicTableViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} buttonWidth
+  ~{static} buttonHeight
+  ~{static} preferredContentHeight : CGFloat
+  ~{static} preferredContentWidth : CGFloat 
+}
+class "SUIPeriodicTableView" as SUIPeriodicTableView << (S, SkyBlue) struct >> { 
+  ~body : some View
+  -gridItemLayout 
+}
+class "SUIPeriodicTableView_Previews" as SUIPeriodicTableView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "PeriodicTableLayoutItemModel" as PeriodicTableLayoutItemModel << (S, SkyBlue) struct >> { 
+  ~symbol : String
+  ~elementNumber : String
+  ~elementType : String 
+}
+class "PeriodicTableLayout" as PeriodicTableLayout << (S, SkyBlue) struct >> { 
+  ~{static} layoutItemModels 
+}
+class "XTRMolecularCalculatorEngine" as XTRMolecularCalculatorEngine << (S, SkyBlue) struct >> { 
+  ~{static} calculateWithFormula(_:) 
+}
+class "SUIMolecularCalculatorViewConfig" as SUIMolecularCalculatorViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} preferredContentSize
+  ~{static} textFieldWidth : CGFloat
+  ~{static} textFieldHeight : CGFloat 
+}
+class "SUIMolecularCalculatorView" as SUIMolecularCalculatorView << (S, SkyBlue) struct >> { 
+  ~environment : SUIMolecularCalculatorEnvironment
+  -errorMessage : SUIMolecularCalculatorProperty
+  -formulaLabelText : SUIMolecularCalculatorProperty
+  -resultsLabelText : SUIMolecularCalculatorProperty
+  -formulaText : SUIMolecularCalculatorProperty
+  ~body : some View
+  ~numberTapped(tag:)
+  ~updateTextField(_:)
+  ~updateLabel(_:)
+  ~updateTextField(_:)
+  ~updateLabel(_:)
+  ~updateElement(_:)
+  ~calculate()
+  ~clear() 
+}
+class "SUIMolecularCalculatorView_Previews" as SUIMolecularCalculatorView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRSpectrumViewControllerDelegate" as XTRSpectrumViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~controller : XTRSpectrumViewController?
+  ~numberOfRecords(for:)
+  ~number(for:field:record:)
+  ~createTableCellLabel(model:) 
+}
+class "XTRNuclidesIsotopesViewController" as XTRNuclidesIsotopesViewController << (C, DarkSeaGreen) >> { 
+  ~headerView : UIView!
+  ~tableView : UITableView!
+  ~nuclidesAndIsotopesArray : BehaviorRelay<[XTRIsotopeModel]>?
+  -delegate : XTRNuclidesIsotopesViewControllerDelegate?
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUIForAnimation(element:)
+  ~setupUI(element:)
+  ~setupTableView(element:)
+  ~setupRx()
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRGeneralInfoViewController" as XTRGeneralInfoViewController << (C, DarkSeaGreen) >> { 
+  ~discovererLabel : UILabel!
+  ~discoveryLocationLabel : UILabel!
+  ~discoveryYearLabel : UILabel!
+  ~abundanceCrustLabel : UILabel!
+  ~abundanceSeaLabel : UILabel!
+  ~webView : WKWebView!
+  ~showWikiButton : UIButton!
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUIForAnimation(element:)
+  ~setupUI(element:)
+  ~setupLabels(element:)
+  ~setupGeneralInfo(element:)
+  ~setupRx()
+  ~showWikiView()
+  ~createArticlePath(elementName:)
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRPageControl" as XTRPageControl << (C, DarkSeaGreen) >> { 
+  ~nextLabel : UILabel!
+  ~previousLabel : UILabel!
+  ~wrapperView : UIView!
+  ~init(coder:)
+  ~populateRightLabel(name:)
+  ~populateLeftLabel(name:)
+  ~updatePreviousLabel(atomicNumber:)
+  ~updateNextLabel(atomicNumber:)
+  ~updateCurrentLabel(atomicNumber:)
+  -createLabel(frame:)
+  ~awakeFromNib() 
+}
+class "SUIWikipediaViewConfig" as SUIWikipediaViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} preferredContentSize 
+}
+class "SUIWikiPediaView" as SUIWikiPediaView << (S, SkyBlue) struct >> { 
+  ~environment : SUIWikipediaEnvironment
+  ~webViewStateModel : SUIWebViewStateModel
+  ~dismissAction : (() -> Void)
+  ~body : some View 
+}
+class "XTRWikiPediaView_Previews" as XTRWikiPediaView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRElementInspectorControllerConfig" as XTRElementInspectorControllerConfig << (S, SkyBlue) struct >> { 
+  ~{static} popupContentSize
+  ~{static} controllerFrameRect
+  ~{static} controllerBoundsRect 
+}
+class "XTRElementInspectorViewController" as XTRElementInspectorViewController << (C, DarkSeaGreen) >> { 
+  ~segmentedControl : UISegmentedControl!
+  ~barButtonItem : UIBarButtonItem!
+  ~atomicNumberLabel : UILabel!
+  ~atomicSymbolLabel : UILabel!
+  ~casRegNoLabel : UILabel!
+  ~groupLabel : UILabel!
+  ~periodLabel : UILabel!
+  ~seriesLabel : UILabel!
+  ~titleItem : UINavigationItem!
+  ~pageControl : XTRPageControl!
+  ~flag : Bool
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~assignAtomicSymbolTextFieldProperties()
+  ~assignOtherLabels()
+  ~assignNavigationHints()
+  ~addChild(_:)
+  ~addChildViewController(viewController:)
+  ~animateForDirection(_:)
+  ~setupUI(element:)
+  ~setupSegmentedControlUI()
+  ~setupRx()
+  ~nextElement(_:)
+  ~previousElement(_:)
+  ~viewDidLoad()
+  ~viewWillAppear(_:)
+  ~viewWillDisappear(_:)
+  ~atomicStructureZoomed(_:)
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRElementPropertiesViewControllerConfig" as XTRElementPropertiesViewControllerConfig << (S, SkyBlue) struct >> { 
+  ~{static} popupContentSize 
+}
+class "XTRElementPropertiesViewController" as XTRElementPropertiesViewController << (C, DarkSeaGreen) >> { 
+  ~segmentedControl : UISegmentedControl!
+  ~swapView : UIView!
+  ~physicalView : UIView!
+  ~chemicalView : UIView!
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUIForAnimation(element:)
+  ~setupUI(element:)
+  ~setupSegmentedControlUI()
+  ~setupRx()
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRElementPropertiesPhysicalViewController" as XTRElementPropertiesPhysicalViewController << (C, DarkSeaGreen) >> { 
+  ~atomicMassFootnoteLabel : UILabel!
+  ~atomicMassLabel : UILabel!
+  ~boilingPointLabel : UILabel!
+  ~coefficientOfLinealThermalExpansionLabel : UILabel!
+  ~conductivityElectricalLabel : UILabel!
+  ~conductivityThermalLabel : UILabel!
+  ~criticalTemperatureLabel : UILabel!
+  ~densityLabel : UILabel!
+  ~descriptionLabel : UILabel!
+  ~elasticModulusBulkLabel : UILabel!
+  ~elasticModulusRigidityLabel : UILabel!
+  ~elasticModulusYoungsLabel : UILabel!
+  ~enthalpyAtomizationLabel : UILabel!
+  ~enthalpyFusionLabel : UILabel!
+  ~enthalpyVaporizationLabel : UILabel!
+  ~flammabilityClass : UILabel!
+  ~hardnessScaleBrinellLabel : UILabel!
+  ~hardnessScaleMohsLabel : UILabel!
+  ~hardnessScaleVickersLabel : UILabel!
+  ~heatCapacityMolarLabel : UILabel!
+  ~heatCapacitySpecificLabel : UILabel!
+  ~heatOfVaporizationLabel : UILabel!
+  ~magneticSusceptibilityLabel : UILabel!
+  ~meltingPointFootnoteLabel : UILabel!
+  ~meltingPointLabel : UILabel!
+  ~molarVolumeLabel : UILabel!
+  ~opticalReflectivityLabel : UILabel!
+  ~opticalRefractiveIndexLabel : UILabel!
+  ~relativeGasDensityLabel : UILabel!
+  ~vaporPressure100PaLabel : UILabel!
+  ~vaporPressure100kPaLabel : UILabel!
+  ~vaporPressure10PaLabel : UILabel!
+  ~vaporPressure10kPaLabel : UILabel!
+  ~vaporPressure1PaLabel : UILabel!
+  ~vaporPressure1kPaLabel : UILabel!
+  ~scrollView : UIScrollView!
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUIForAnimation(element:)
+  ~setupUI(element:)
+  ~setupVaporPressureLabels(_:)
+  ~setupLabels(element:)
+  ~viewDidLoad()
+  ~viewDidLayoutSubviews()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  -deinitVaporPressureLabels()
+  ~deinit 
+}
+class "XTRNuclidesIsotopesViewControllerDelegate" as XTRNuclidesIsotopesViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~controller : XTRNuclidesIsotopesViewController?
+  ~createTableCellLabel(model:) 
+}
+class "SUIElementInspectorViewConfig" as SUIElementInspectorViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} preferredContentSize 
+}
+class "SUIElementInspectorView" as SUIElementInspectorView << (S, SkyBlue) struct >> { 
+  ~environment : SUIElementBallonEnvironment
+  ~body : some View 
+}
+class "SUIElementInspectorView_Previews" as SUIElementInspectorView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRSpectrumViewProperty" as XTRSpectrumViewProperty << (E, LightSteelBlue) enum >> { 
+  ~{static} kISpectrum
+  ~{static} kIISpectrum
+  ~{static} kIIISpectrum
+  ~{static} kIVSpectrum
+  ~{static} kVSpectrum 
+}
+class "XTRSpectrumViewControllerConfig" as XTRSpectrumViewControllerConfig << (S, SkyBlue) struct >> { 
+  ~{static} name
+  ~{static} title
+  ~{static} majorTickMarks
+  ~{static} minorTickMarks
+  ~{static} maximumValue
+  ~{static} minimumValue
+  ~{static} customTickLocations : [Int] 
+}
+class "XTRSpectrumViewController" as XTRSpectrumViewController << (C, DarkSeaGreen) >> { 
+  ~hostingView : CPTGraphHostingView!
+  ~tableView : UITableView!
+  ~barChart : CPTXYGraph?
+  ~lineSpectraArray : BehaviorRelay<[XTRSpectraModel]>?
+  -delegate : XTRSpectrumViewControllerDelegate?
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~airWavelengthValue(_:anIdentifier:aSpectrum:)
+  ~addSpectrumPlotWithIdentifier(_:aColor:)
+  ~intensityValue(_:anIdentifier:aSpectrum:)
+  ~setupBarChart()
+  ~setupUIForAnimation(element:)
+  ~setupUI(element:)
+  ~setupTableView(element:)
+  ~setupRx()
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRElementPropertiesChemicalViewController" as XTRElementPropertiesChemicalViewController << (C, DarkSeaGreen) >> { 
+  ~electroChemicalEquivalentLabel : UILabel!
+  ~electronWorkFunctionLabel : UILabel!
+  ~electroNegativityLabel : UILabel!
+  ~heatOfFusionLabel : UILabel!
+  ~incompatabilitiesLabel : UILabel!
+  ~valenceElectronPotentialLabel : UILabel!
+  ~ionizationPotentialFirstLabel : UILabel!
+  ~ionizationPotentialSecondLabel : UILabel!
+  ~ionizationPotentialThirdLabel : UILabel!
+  ~qualitativeSolubilityLabel : UILabel!
+  ~scrollView : UIScrollView!
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUIForAnimation(element:)
+  ~setupUI(element:)
+  ~setupIonizationLabels(_:)
+  ~setupLabels(element:)
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRShellModelScene" as XTRShellModelScene << (C, DarkSeaGreen) >> { 
+  ~element : XTRElementModel?
+  ~electronRadius : CGFloat!
+  ~maxRadius : CGFloat!
+  ~origX : CGFloat!
+  ~shellRadiusOffset : CGFloat!
+  ~shellTextXOffset : CGFloat!
+  ~piConst
+  ~init(size:element:)
+  ~init(coder:)
+  ~didMove(to:)
+  ~createColorEmboss()
+  ~createWater()
+  ~createLightGrid()
+  ~createGrayEmboss()
+  ~circleOfElectrons(number:radius:color:)
+  ~addShellLabels()
+  ~addShellLabel(atLocation:text:) 
+}
+class "XTRAtomicStructureViewControllerConfig" as XTRAtomicStructureViewControllerConfig << (S, SkyBlue) struct >> {  
+}
+class "XTRAtomicStructureViewController" as XTRAtomicStructureViewController << (C, DarkSeaGreen) >> { 
+  ~segmentedControl : UISegmentedControl!
+  ~crystalStructureView : SCNView!
+  ~shellModelView : SKView!
+  ~atomicRadiusLabel : UILabel!
+  ~atomicVolumeLabel : UILabel!
+  ~covalentRadiusLabel : UILabel!
+  ~crossSectionLabel : UILabel!
+  ~ionicRadiusLabel : UILabel!
+  ~oxidationStatesLabel : UILabel!
+  ~numberOfNeutronsLabel : UILabel!
+  ~numberOfProtonsLabel : UILabel!
+  ~numberOfElectronsLabel : UILabel!
+  ~valenceLabel : UILabel!
+  ~fillingOrbitalLabel : UILabel!
+  ~crystalStructureLabel : UILabel!
+  ~kShellElectronsLabel : UILabel!
+  ~lShellElectronsLabel : UILabel!
+  ~mShellElectronsLabel : UILabel!
+  ~nShellElectronsLabel : UILabel!
+  ~oShellElectronsLabel : UILabel!
+  ~pShellElectronsLabel : UILabel!
+  ~qShellElectronsLabel : UILabel!
+  ~shell1sLabel : UILabel!
+  ~shell2sLabel : UILabel!
+  ~shell2pLabel : UILabel!
+  ~shell3sLabel : UILabel!
+  ~shell3pLabel : UILabel!
+  ~shell3dLabel : UILabel!
+  ~shell4sLabel : UILabel!
+  ~shell4pLabel : UILabel!
+  ~shell4dLabel : UILabel!
+  ~shell4fLabel : UILabel!
+  ~shell5sLabel : UILabel!
+  ~shell5pLabel : UILabel!
+  ~shell5dLabel : UILabel!
+  ~shell5fLabel : UILabel!
+  ~shell6sLabel : UILabel!
+  ~shell6pLabel : UILabel!
+  ~shell6dLabel : UILabel!
+  ~shell7sLabel : UILabel!
+  ~shell7pLabel : UILabel!
+  ~crystalStructureExpandButton : UIButton!
+  ~shellModelExpandButton : UIButton!
+  ~overlayView : XTROverlayView!
+  ~crystalStructureContent : XTRZoomContentView!
+  ~shellModelContent : XTRZoomContentView!
+  ~crystalStructureString : String!
+  ~contentRect
+  ~localRect
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUIForAnimation(element:)
+  ~setupUI(element:)
+  ~setupAtomicStructureUI(element:)
+  ~setupSegmentedControlUI()
+  ~setupLabels(element:)
+  ~setupRx()
+  ~viewDidLoad()
+  ~createZoomView(frame:type:)
+  ~toggleUserInteractions(flag:)
+  ~present(content:)
+  ~dismiss(content:localView:)
+  ~presentCrystalStructureContent(sender:)
+  ~dismissCrystalStructureContent(sender:)
+  ~presentShellModelContent(sender:)
+  ~dismissShellModelContent(sender:)
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  -deinitShellLabels()
+  ~deinit 
+}
+class "SUIWebViewWrapper" as SUIWebViewWrapper << (C, DarkSeaGreen) >> { 
+  ~webViewStateModel : SUIWebViewStateModel
+  ~action : ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?
+  ~request : URLRequest
+  ~init(webViewStateModel:action:request:)
+  ~makeUIView(context:)
+  ~updateUIView(_:context:)
+  ~makeCoordinator() 
+}
+class "SUIActivityIndicator" as SUIActivityIndicator << (S, SkyBlue) struct >> { 
+  ~isAnimating : Bool
+  ~style : UIActivityIndicatorView.Style
+  ~makeUIView(context:)
+  ~updateUIView(_:context:) 
+}
+class "SUIWebViewConfig" as SUIWebViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} barButtonSize 
+}
+class "SUIWebView" as SUIWebView << (S, SkyBlue) struct >> { 
+  ~webViewStateModel : SUIWebViewStateModel
+  -actionDelegate : ((_ navigationAction: SUIWebView.NavigationAction) -> Void)?
+  ~uRLRequest : URLRequest
+  ~body : some View
+  ~init(uRLRequest:webViewStateModel:onNavigationAction:)
+  ~init(url:webViewStateModel:onNavigationAction:) 
+}
+class "SUILoadingView" as SUILoadingView<Content> << (S, SkyBlue) struct >> { 
+  ~isShowing : Bool
+  ~content : () -> Content
+  ~body : some View 
+}
+class "XTRGraphViewControllerConfig" as XTRGraphViewControllerConfig << (S, SkyBlue) struct >> { 
+  ~{static} name
+  ~{static} title
+  ~{static} majorTickMarks
+  ~{static} minorTickMarks
+  ~{static} maximumValue
+  ~{static} minimumValue
+  ~{static} customTickLocations : [Int]
+  ~{static} buttonSize
+  ~{static} rowHeight : CGFloat 
+}
+class "XTRGraphViewController" as XTRGraphViewController << (C, DarkSeaGreen) >> { 
+  ~barButtonItem : UIBarButtonItem!
+  ~hostingView : CPTGraphHostingView!
+  ~navigationBar : UINavigationBar!
+  ~barChart : CPTXYGraph?
+  -delegate : XTRGraphViewControllerDelegate
+  ~disposeBag : DisposeBag
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~showGraphChoice()
+  ~setupRx()
+  ~creatBarChart()
+  ~createXAxis(_:majorTickStyle:minorTickStyle:)
+  ~createYAxis(_:minorTicks:majorTickStyle:minorTickStyle:majorTicks:title:maxValue:minValue:)
+  ~showGraphForChoiceAtIndex(_:)
+  ~graphSelected(_:)
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "SUIGraphChoiceViewConfig" as SUIGraphChoiceViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} buttonSize
+  ~{static} preferredContentSize 
+}
+class "SUIGraphChoiceView" as SUIGraphChoiceView << (S, SkyBlue) struct >> { 
+  -gridItemLayout
+  -graphChoiceTitles
+  ~body : some View
+  ~postGraphSelectedNotification(_:) 
+}
+class "XTRGraphChoiceView_Previews" as XTRGraphChoiceView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRBarPlot" as XTRBarPlot << (C, DarkSeaGreen) >> { 
+  ~element : XTRElementModel!
+  ~init(frame:)
+  ~init(coder:)
+  ~colorChanged(_:)
+  ~deinit 
+}
+class "XTRGraphViewControllerDelegate" as XTRGraphViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~controller : XTRGraphViewController?
+  ~dataForResource(_:type:directory:)
+  ~numberOfRecords(for:)
+  ~number(for:field:record:)
+  ~barFillForBarPlot(_:recordIndex:) 
+}
+class "XTRColorPickerViewController" as XTRColorPickerViewController << (C, DarkSeaGreen) >> { 
+  ~redSlider : UISlider!
+  ~greenSlider : UISlider!
+  ~blueSlider : UISlider!
+  ~alphaSlider : UISlider!
+  ~colorTitle : UILabel!
+  ~previewView : UIView!
+  ~selectColorButton : XTRLocalizedButton!
+  ~seriesIdentifier : String?
+  ~disposeBag : DisposeBag
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~presetSlidersWithColor(_:)
+  ~viewDidLoad()
+  -setupSliders()
+  ~setupRx()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRInfoViewControllerDelegate" as XTRInfoViewControllerDelegate << (C, DarkSeaGreen) >> {  
+}
+class "XTRMolecularCalculatorViewController" as XTRMolecularCalculatorViewController << (C, DarkSeaGreen) >> { 
+  ~errorLabel : UILabel!
+  ~formulaLabel : UILabel!
+  ~resultsLabel : UILabel!
+  ~formulaTextField : UITextField!
+  ~backgroundView : UIView!
+  ~calculateButton : UIButton!
+  ~clearButton : UIButton!
+  ~oneButton : UIButton!
+  ~twoButton : UIButton!
+  ~threeButton : UIButton!
+  ~fourButton : UIButton!
+  ~fiveButton : UIButton!
+  ~sixButton : UIButton!
+  ~sevenButton : UIButton!
+  ~eightButton : UIButton!
+  ~nineButton : UIButton!
+  ~zeroButton : UIButton!
+  ~disposeBag : DisposeBag
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~clear()
+  ~updateTextField(_:)
+  ~updateLabel(_:)
+  ~updateTextField(_:)
+  ~updateLabel(_:)
+  ~setElement(_:)
+  ~calculate()
+  ~numberTapped(_:)
+  ~setupRx()
+  ~viewDidLoad()
+  ~viewWillDisappear(_:)
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRWikipediaViewControllerDelegate" as XTRWikipediaViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~controller : XTRWikipediaViewController?
+  ~webView(_:didCommit:)
+  +webView(_:didFinish:)
+  +webView(_:didFailProvisionalNavigation:withError:) 
+}
+class "XTRHelpBalloonViewControllerDelegate" as XTRHelpBalloonViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~controller : XTRHelpBalloonViewController?
+  ~webView(_:didCommit:)
+  +webView(_:didFinish:)
+  ~webView(_:createWebViewWith:for:windowFeatures:) 
+}
+class "XTRGraphChoiceViewController" as XTRGraphChoiceViewController << (C, DarkSeaGreen) >> { 
+  ~collectionView : UICollectionView!
+  -delegate : XTRGraphChoiceViewControllerDelegate
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask 
+}
+class "XTRInfoViewController" as XTRInfoViewController << (C, DarkSeaGreen) >> { 
+  ~webView : WKWebView!
+  ~navigationBar : UINavigationBar!
+  -delegate : XTRInfoViewControllerDelegate?
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~loadDocument(_:)
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRElementBalloonViewController" as XTRElementBalloonViewController << (C, DarkSeaGreen) >> { 
+  ~elementNameLabel : UILabel!
+  ~atomicNumberLabel : UILabel!
+  ~atomicMassLabel : UILabel!
+  ~boilingPointLabel : UILabel!
+  ~meltingPointLabel : UILabel!
+  ~wrapperView : UIView!
+  ~elementDetailsButton : XTRGeneralButton!
+  ~element : XTRElementModel!
+  ~disposeBag : DisposeBag
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUI()
+  ~viewDidLoad()
+  ~viewWillAppear(_:)
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRGraphChoiceViewControllerDelegate" as XTRGraphChoiceViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~reuseIdentifier
+  ~numberOfSections(in:)
+  ~collectionView(_:numberOfItemsInSection:)
+  ~collectionView(_:cellForItemAt:)
+  ~collectionView(_:layout:sizeForItemAt:)
+  ~collectionView(_:layout:insetForSectionAt:)
+  ~collectionView(_:layout:minimumLineSpacingForSectionAt:) 
+}
+class "XTRGraphChoiceCell" as XTRGraphChoiceCell << (C, DarkSeaGreen) >> { 
+  ~button : UIButton!
+  ~disposeBag : DisposeBag
+  ~setup(index:)
+  ~setProperties() 
+}
+class "XTRPreferencesViewControllerConfig" as XTRPreferencesViewControllerConfig << (S, SkyBlue) struct >> { 
+  ~{static} preferredContentSize
+  ~{static} creditsDocument 
+}
+class "XTRPreferencesViewController" as XTRPreferencesViewController << (C, DarkSeaGreen) >> { 
+  ~appNameLabel : UILabel!
+  ~cpyRightLabel : UILabel!
+  ~seriesActinideButton : UIButton!
+  ~seriesAlkaliEarthMetalButton : UIButton!
+  ~seriesAlkaliMetalButton : UIButton!
+  ~seriesHalogenButton : UIButton!
+  ~seriesLanthanideButton : UIButton!
+  ~seriesMetalButton : UIButton!
+  ~seriesNobleGasButton : UIButton!
+  ~seriesNonMetalButton : UIButton!
+  ~seriesTransactinidesButton : UIButton!
+  ~seriesTransitionMetalButton : UIButton!
+  ~resetPreferencesButton : UIButton!
+  ~versionLabel : UILabel!
+  ~elementBubbleSwitch : UISwitch!
+  ~showTransitionsBubbleSwitch : UISwitch!
+  ~splashScreenSwitch : UISwitch!
+  ~webView : WKWebView!
+  ~segmentedControl : UISegmentedControl!
+  ~navigationBar : UINavigationBar!
+  ~globeImageView : UIImageView!
+  ~disposeBag : DisposeBag
+  ~animationImages : [UIImage]
+  -cancellableBag
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~colorSelected(notification:)
+  ~setupGlobalImageView()
+  ~startAnimating()
+  ~loadDocument(_:inView:)
+  ~loadUserDefaults()
+  ~updateSeriesProperties(_:color:)
+  ~populateSeriesColors()
+  ~populateElementBubbleState(_:)
+  ~populateShowTransitionsState(_:)
+  ~populateSplashScreenState(_:)
+  ~resetPreferences()
+  ~setupRx()
+  ~presentColorPicker(_:)
+  -applyLanguage(code:)
+  -createAction(code:titleKey:flagImage:)
+  ~makeContextMenu()
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRPreferencesViewController" as XTRPreferencesViewController0 << (X, Orchid) extension >> { 
+  contextMenuInteraction(_:configurationForMenuAtLocation:) 
+}
+class "XTRWikipediaViewController" as XTRWikipediaViewController << (C, DarkSeaGreen) >> { 
+  ~backButton : UIBarButtonItem!
+  ~forwardButton : UIBarButtonItem!
+  ~titleButtonItem : UIBarButtonItem!
+  ~dismissButton : UIButton!
+  ~webView : WKWebView!
+  +progressHUD : MBProgressHUD!
+  -delegate : XTRWikipediaViewControllerDelegate?
+  ~elementName : String?
+  ~disposeBag : DisposeBag
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~prepareRequest()
+  ~viewDidLoad()
+  ~setupRx()
+  ~viewWillAppear(_:)
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "XTRHelpBalloonViewController" as XTRHelpBalloonViewController << (C, DarkSeaGreen) >> { 
+  ~backButton : UIButton!
+  ~forwardButton : UIButton!
+  ~titleLabel : UILabel!
+  ~webView : WKWebView!
+  ~disposeBag : DisposeBag
+  -delegate : XTRHelpBalloonViewControllerDelegate?
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~loadDocument(_:)
+  ~showElementHelp(_:)
+  ~setupWebView()
+  ~setupRx()
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "SUIBaseButton" as SUIBaseButton << (S, SkyBlue) struct >> { 
+  ~action : () -> Void
+  ~labelText : String!
+  ~width : CGFloat
+  ~height : CGFloat
+  ~backgroundColor : Color
+  ~body : some View 
+}
+class "SUILabelTitleView" as SUILabelTitleView << (S, SkyBlue) struct >> { 
+  ~labelText : String!
+  ~width : CGFloat
+  ~height : CGFloat
+  ~body : some View 
+}
+class "SUIFormTitleView" as SUIFormTitleView << (S, SkyBlue) struct >> { 
+  ~labelText : String!
+  ~width : CGFloat
+  ~height : CGFloat
+  ~body : some View 
+}
+class "SUILabelValueView" as SUILabelValueView << (S, SkyBlue) struct >> { 
+  ~labelText : String!
+  ~width : CGFloat
+  ~height : CGFloat
+  ~body : some View 
+}
+class "SUIFormSheetWrapper" as SUIFormSheetWrapper<Content: View> << (C, DarkSeaGreen) >> { 
+  ~content : () -> Content
+  ~onDismiss : (() -> Void)?
+  -hostVC : UIHostingController<Content>?
+  ~init(coder:)
+  ~init(content:)
+  ~show()
+  ~hide()
+  ~presentationControllerWillDismiss(_:) 
+}
+class "SUIFormSheet" as SUIFormSheet<Content: View> << (S, SkyBlue) struct >> { 
+  ~show : Bool
+  ~content : () -> Content
+  ~makeUIViewController(context:)
+  ~updateUIViewController(_:context:) 
+}
+class "SUIFullScreenModifier" as SUIFullScreenModifier<V: View> << (S, SkyBlue) struct >> { 
+  ~isPresented : Binding<Bool>
+  ~builder : () -> V
+  ~body(content:) 
+}
+class "SUIInfoView" as SUIInfoView << (S, SkyBlue) struct >> { 
+  ~environment : SUIInfoEnvironment
+  ~webViewStateModel : SUIWebViewStateModel
+  ~body : some View
+  ~helpPath(documentName:) 
+}
+class "XTRInfoView_Previews" as XTRInfoView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIInfoHostingController" as SUIInfoHostingController << (C, DarkSeaGreen) >> {  
+}
+class "XTRMainViewControllerDelegate" as XTRMainViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~tabBarController(_:animationControllerForTransitionFrom:to:) 
+}
+class "XTRMainViewController" as XTRMainViewController << (C, DarkSeaGreen) >> { 
+  ~splashViewController : UIViewController!
+  -controllerDelegate : XTRMainViewControllerDelegate?
+  ~init(coder:)
+  ~showSplash()
+  ~wait()
+  ~viewDidLoad()
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  -createTab(viewController:tabTitle:imageName:) 
+}
+class "SUIElementHeaderButton" as SUIElementHeaderButton << (S, SkyBlue) struct >> { 
+  -showingAlert
+  ~title : String
+  ~width : CGFloat
+  ~body : some View 
+}
+class "SUIElementHeaderRow" as SUIElementHeaderRow << (S, SkyBlue) struct >> { 
+  ~body : some View 
+}
+class "SUIElementHeaderRow_Previews" as SUIElementHeaderRow_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIElementProperyColumn" as SUIElementProperyColumn << (S, SkyBlue) struct >> { 
+  ~property : String
+  ~width : CGFloat
+  ~alignment : Alignment
+  ~body : some View 
+}
+class "SUIElementPropertiesRow" as SUIElementPropertiesRow << (S, SkyBlue) struct >> { 
+  ~element : XTRElementModel
+  -isPresented
+  ~body : some View 
+}
+class "SUEElementListViewConfig" as SUEElementListViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} ATOMIC_NUMBER_BUTTON_WIDTH : CGFloat
+  ~{static} SYMBOL_BUTTON_WIDTH : CGFloat
+  ~{static} NAME_BUTTON_WIDTH : CGFloat
+  ~{static} ATOMIC_MASS_BUTTON_WIDTH : CGFloat
+  ~{static} BOILING_POINT_BUTTON_WIDTH : CGFloat
+  ~{static} MELTING_POINT_BUTTON_WIDTH : CGFloat
+  ~{static} DENSITY_BUTTON_WIDTH : CGFloat
+  ~{static} SERIES_BUTTON_WIDTH : CGFloat
+  ~{static} PERIOD_BUTTON_WIDTH : CGFloat
+  ~{static} GROUP_BUTTON_WIDTH : CGFloat
+  ~{static} HEADER_ROW_HEIGHT : CGFloat
+  ~{static} ELEMENT_ROW_HEIGHT : CGFloat 
+}
+class "SUIElementListView" as SUIElementListView << (S, SkyBlue) struct >> { 
+  -elementList
+  ~body : some View 
+}
+class "SUIElementListView_Previews" as SUIElementListView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRElementListViewControllerDelegate" as XTRElementListViewControllerDelegate << (C, DarkSeaGreen) >> { 
+  ~indexPath : IndexPath?
+  ~closure : (Int) -> Void?
+  ~controller : XTRElementListViewController?
+  ~tableView(_:cellForRowAt:)
+  ~numberOfSections(in:)
+  ~tableView(_:numberOfRowsInSection:)
+  ~tableView(_:didSelectRowAt:)
+  ~tableView(_:heightForRowAt:) 
+}
+class "XTRElementTableViewCell" as XTRElementTableViewCell << (C, DarkSeaGreen) >> { 
+  ~atomicNumberLabel : XTRTableLabel!
+  ~symbolLabel : XTRTableLabel!
+  ~nameLabel : XTRTableLabel!
+  ~atomicMassLabel : XTRTableLabel!
+  ~boilingPointLabel : XTRTableLabel!
+  ~meltingPointLabel : XTRTableLabel!
+  ~densityLabel : XTRTableLabel!
+  ~seriesLabel : XTRTableLabel!
+  ~periodLabel : XTRTableLabel!
+  ~groupLabel : XTRTableLabel!
+  ~element : XTRElementModel!
+  ~init(style:reuseIdentifier:)
+  ~setup(_:)
+  ~init(coder:)
+  ~colorChanged(_:)
+  ~modify(_:withStandardConditionColor:seriesColor:)
+  ~modifyCellProperties()
+  ~setupColors()
+  ~deinit 
+}
+class "XTRElementListViewControllerConfig" as XTRElementListViewControllerConfig << (S, SkyBlue) struct >> { 
+  ~{static} rowHeight : CGFloat 
+}
+class "XTRElementListViewController" as XTRElementListViewController << (C, DarkSeaGreen) >> { 
+  ~{static} tableViewCellIdentifier
+  ~atomicNumberButton : XTRTableHeaderButton!
+  ~symbolButton : XTRTableHeaderButton!
+  ~nameButton : XTRTableHeaderButton!
+  ~atomicMassButton : XTRTableHeaderButton!
+  ~boilingPointButton : XTRTableHeaderButton!
+  ~meltingPointButton : XTRTableHeaderButton!
+  ~densityButton : XTRTableHeaderButton!
+  ~seriesButton : XTRTableHeaderButton!
+  ~periodButton : XTRTableHeaderButton!
+  ~groupButton : XTRTableHeaderButton!
+  ~tableView : UITableView!
+  ~headerView : UIView!
+  ~navigationBar : UINavigationBar!
+  ~disposeBag : DisposeBag
+  -delegate : XTRElementListViewControllerDelegate?
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  -setupTableView()
+  -mapToObserverHeaderButton(button:)
+  ~setupRx()
+  ~sortTableView(_:)
+  ~viewDidLoad()
+  ~viewDidDisappear(_:)
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask
+  ~deinit 
+}
+class "SUIElementListHostingController" as SUIElementListHostingController << (C, DarkSeaGreen) >> {  
+}
+class "SUIHelpBalloonViewConfig" as SUIHelpBalloonViewConfig << (S, SkyBlue) struct >> { 
+  ~{static} preferredContentSize 
+}
+class "SUIHelpBalloonView" as SUIHelpBalloonView << (S, SkyBlue) struct >> { 
+  ~environment : SUIHelpBallonEnvironment
+  ~webViewStateModel : SUIWebViewStateModel
+  ~body : some View 
+}
+class "SUIHelpBalloon_Previews" as SUIHelpBalloon_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIHelpButtonView" as SUIHelpButtonView << (S, SkyBlue) struct >> { 
+  ~helpKey : String
+  ~body : some View 
+}
+class "SUIHelpButtonView_Previews" as SUIHelpButtonView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "XTRHelpButton" as XTRHelpButton << (C, DarkSeaGreen) >> { 
+  ~init(coder:)
+  ~awakeFromNib()
+  ~viewController()
+  ~setupColors()
+  ~touchesBegan(_:with:)
+  ~deinit
+  ~elementTipPath(documentName:) 
+}
+class "XTRHelpButton" as XTRHelpButton1 << (X, Orchid) extension >> { 
+  atomicStructureZoomed(_:)
+  changeAppearance(notification:) 
+}
+class "SUIElementInspectorRepresentable" as SUIElementInspectorRepresentable << (S, SkyBlue) struct >> { 
+  ~controllers : [UIViewController]
+  -element : XTRElementModel
+  ~init(element:)
+  ~makeUIViewController(context:)
+  ~updateUIViewController(_:context:) 
+}
+class "SUIElementBalloonView" as SUIElementBalloonView << (S, SkyBlue) struct >> { 
+  ~environment : SUIElementBallonEnvironment
+  -isPresented
+  ~body : some View 
+}
+class "XTRElementBalloonView_Previews" as XTRElementBalloonView_Previews << (S, SkyBlue) struct >> { 
+  ~{static} previews : some View 
+}
+class "SUIElementBallonEnvironment" as SUIElementBallonEnvironment << (C, DarkSeaGreen) >> { 
+  ~element : XTRElementModel!
+  ~init(element:) 
+}
+class "SUIWikipediaEnvironment" as SUIWikipediaEnvironment << (C, DarkSeaGreen) >> { 
+  ~articlePath
+  ~init(articlePath:) 
+}
+class "SUIHelpBallonEnvironment" as SUIHelpBallonEnvironment << (C, DarkSeaGreen) >> { 
+  ~pageTitle
+  ~elementTipPath 
+}
+class "SUIInfoEnvironment" as SUIInfoEnvironment << (C, DarkSeaGreen) >> { 
+  ~pageTitle 
+}
+class "SUIMolecularCalculatorEnvironment" as SUIMolecularCalculatorEnvironment << (C, DarkSeaGreen) >> { 
+  ~element : XTRElementModel! 
+}
+class "SUIColorPickerEnvironment" as SUIColorPickerEnvironment << (C, DarkSeaGreen) >> { 
+  ~seriesIdentifier : String?
+  ~seriesColor : UIColor?
+  ~init(seriesIdentifier:seriesColor:) 
+}
+class "SUIPreferencesEnvironment" as SUIPreferencesEnvironment << (C, DarkSeaGreen) >> { 
+  ~elementHelpBubbles
+  ~showSplashScreen
+  ~showViewTransitions
+  ~selectedStyle 
+}
+class "SUIMolecularCalculatorModel" as SUIMolecularCalculatorModel << (C, DarkSeaGreen) >> { 
+  ~element : XTRElementModel! 
+}
+class "SUIElementButtonEnvironment" as SUIElementButtonEnvironment << (C, DarkSeaGreen) >> { 
+  ~symbol : String! 
+}
+class "SUIMolecularCalculatorProperty" as SUIMolecularCalculatorProperty << (C, DarkSeaGreen) >> { 
+  ~propertyValue : String 
+}
+class "SUIWebViewStateModel" as SUIWebViewStateModel << (C, DarkSeaGreen) >> { 
+  ~pageTitle : String
+  ~loading : Bool
+  ~canGoBack : Bool
+  ~goBack : Bool
+  ~canGoForward : Bool
+  ~goForward : Bool 
+}
+class "XTRElementModel" as XTRElementModel << (C, DarkSeaGreen) >> { 
+  ~elementDictionary : [String: Any]!
+  ~init(dict:)
+  ~value(forKeyPath:)
+  ~setValue(_:forKeyPath:)
+  ~atomicNumber : Int
+  ~atomicRadius : Double
+  ~atomicMass : Double
+  ~atomicVolume : Double
+  ~boilingPoint : Double
+  ~covalentRadius : Double
+  ~coefficientOfLinealThermalExpansion : Double
+  ~density : Double
+  ~descr : String?
+  ~electronConfiguration : [String: AnyObject]
+  ~group : Int?
+  ~meltingPoint : Double
+  ~name : String?
+  ~nuclidesAndIsotopes : [[String: AnyObject]]?
+  ~period : String?
+  ~series : String?
+  ~symbol : String?
+  ~lineSpectra : [[String: AnyObject]]?
+  ~vaporPressure : [String: AnyObject]?
+  ~elasticModulusBulk : Double
+  ~elasticModulusRigidity : Double
+  ~elasticModulusYoungs : Double
+  ~electroChemicalEquivalent : Double
+  ~crossSection : Double
+  ~electroNegativity : Double
+  ~electronWorkFunction : Double
+  ~enthalpyOfAutomization : Double
+  ~enthalpyOfFusion : Double
+  ~enthalpyOfVaporization : Double
+  ~ionicRadius : Double
+  ~hardnessScaleBrinell : Double
+  ~hardnessScaleMohs : Double
+  ~hardnessScaleVickers : Double
+  ~heatOfFusion : Double
+  ~heatOfVaporization : Double
+  ~ionizationPotentialFirst : Double
+  ~ionizationPotentialSecond : Double
+  ~ionizationPotentialThird : Double
+  ~molarHeatCapacity : Double
+  ~molarVolume : Double
+  ~specificHeatCapacity : Double
+  ~valenceElectronPotential : Double 
+}
+class "XTRElectronConfigurationModel" as XTRElectronConfigurationModel << (C, DarkSeaGreen) >> { 
+  ~dictionary : [String: Any]!
+  ~init(dictionary:)
+  ~shell1s : String
+  ~shell2s : String
+  ~shell2p : String
+  ~shell3s : String
+  ~shell3p : String
+  ~shell3d : String
+  ~shell4s : String
+  ~shell4p : String
+  ~shell4d : String
+  ~shell4f : String
+  ~shell5s : String
+  ~shell5p : String
+  ~shell5d : String
+  ~shell5f : String
+  ~shell6s : String
+  ~shell6p : String
+  ~shell6d : String
+  ~shell7s : String
+  ~shell7p : String 
+}
+class "XTRVaporPressurenModel" as XTRVaporPressurenModel << (C, DarkSeaGreen) >> { 
+  ~dictionary : [String: Any]!
+  ~init(dictionary:)
+  ~pa1 : String
+  ~pa10 : String
+  ~pa100 : String
+  ~pa1k : String
+  ~pa10k : String
+  ~pa100k : String 
+}
+class "XTRTableViewCellViewModel" as XTRTableViewCellViewModel << (C, DarkSeaGreen) >> { 
+  ~xPos : Int
+  ~yPos : Int
+  ~width : Int
+  ~height : Int
+  ~property : String
+  ~columnPosition : Int
+  ~modulus : Int
+  ~cell : XTRTableCell
+  ~init(xPos:yPos:width:height:property:columnPosition:modulus:cell:) 
+}
+class "XTRIsotopeModel" as XTRIsotopeModel << (C, DarkSeaGreen) >> { 
+  ~isotopicComposition : String
+  ~isotopicMass : String
+  ~zpValue : String
+  ~decayEnergy : String
+  ~decayModes : String
+  ~daughterIsotopes : String
+  ~halfLife : String
+  ~nnValue : String
+  ~nuclideSymbol : String
+  ~nuclearSpin : String
+  ~naturalRangeVariation : String
+  ~init(dictionary:) 
+}
+class "XTRSpectraModel" as XTRSpectraModel << (C, DarkSeaGreen) >> { 
+  ~airWavelength : String
+  ~intensity : String
+  ~spectrum : String
+  ~init(dictionary:) 
+}
+class "XTRGraphDefinitionModel" as XTRGraphDefinitionModel << (C, DarkSeaGreen) >> { 
+  ~title : String
+  ~attributeName : String
+  ~majorTickMarks : Float
+  ~minorTickMarks : Float
+  ~maximumValue : Float
+  ~minimumValue : Float
+  ~init(dictionary:) 
+}
+class "UIViewController" as UIViewController2 << (X, Orchid) extension >> { 
+  {static} loadFromNib() 
+}
+class "NSObject" as NSObject << (X, Orchid) extension >> { 
+  +double(_:)
+  +mapToObserver(button:) 
+}
+class "UILabel" as UILabel << (X, Orchid) extension >> { 
+  localizedText : String 
+}
+class "String" as String << (X, Orchid) extension >> { 
+  image(size:)
+  capitalizingFirstLetter()
+  lowercasingFirstLetter()
+  camelCasedString : String 
+}
+class "UIViewController" as UIViewController3 << (X, Orchid) extension >> { 
+  showElementPanel(element:controller:) 
+}
+class "SKShader" as SKShader << (X, Orchid) extension >> { 
+  init(fromFile:uniforms:attributes:) 
+}
+class "SKUniform" as SKUniform << (X, Orchid) extension >> { 
+  +init(name:color:)
+  +init(name:size:)
+  +init(name:point:) 
+}
+class "XibDesignable" as XibDesignable << (P, GoldenRod) protocol >> {  
+}
+class "XibDesignable" as XibDesignable4 << (X, Orchid) extension >> { 
+  {static} instantiateFromXib() 
+}
+class "UIView" as UIView << (X, Orchid) extension >> {  
+}
+class "UIImageView" as UIImageView << (X, Orchid) extension >> {  
+}
+class "UIImage" as UIImage << (X, Orchid) extension >> {  
+}
+class "SUIWebViewWrapper.Coordinator" as SUIWebViewWrapper.Coordinator << (X, Orchid) extension >> { 
+  webView(_:decidePolicyFor:decisionHandler:)
+  webView(_:didStartProvisionalNavigation:)
+  webView(_:didReceiveServerRedirectForProvisionalNavigation:)
+  webView(_:didFailProvisionalNavigation:withError:)
+  webView(_:didCommit:)
+  webView(_:didFinish:)
+  webView(_:didFail:withError:)
+  webView(_:didReceive:completionHandler:)
+  webView(_:createWebViewWith:for:windowFeatures:) 
+}
+class "String" as String5 << (X, Orchid) extension >> { 
+  image() 
+}
+class "UIView" as UIView6 << (X, Orchid) extension >> { 
+  borderColor : UIColor
+  borderWidth : CGFloat
+  cornerRadius : CGFloat
+  masksToBounds : Bool
+  shadowColor : UIColor
+  shadowOffset : CGSize
+  shadowOpacity : Float
+  shadowRadius : CGFloat
+  maskedCorners : CACornerMask 
+}
+class "UIColor" as UIColor << (X, Orchid) extension >> { 
+  colorSpaceModel : CGColorSpaceModel
+  canProvideRGBComponents()
+  red()
+  green()
+  blue()
+  white()
+  alpha()
+  stringFromColor()
+  colorSpaceString()
+  arrayFromRGBAComponents()
+  red(_:green:blue:alpha:)
+  toHexString()
+  inverseColor() 
+}
+class "UIImage" as UIImage7 << (X, Orchid) extension >> {  
+}
+class "View" as View << (X, Orchid) extension >> { 
+  +formSheet(isPresented:content:)
+  compatibleFullScreen(isPresented:content:) 
+}
+class "SuperScriptType" as SuperScriptType << (E, LightSteelBlue) enum >> { 
+  ~{static} k0Superscript
+  ~{static} k1Superscript
+  ~{static} k2Superscript
+  ~{static} k3Superscript
+  ~{static} k4Superscript
+  ~{static} k5Superscript
+  ~{static} k6Superscript
+  ~{static} k7Superscript
+  ~{static} k8Superscript
+  ~{static} k9Superscript 
+}
+class "XTRElementModel" as XTRElementModel8 << (X, Orchid) extension >> { 
+  pathForGeneralInfoDoc()
+  atomicMassAggregate : String
+  atomicMassFootnote : String
+  electronConfigurationModel : XTRElectronConfigurationModel?
+  nuclidesAndIsotopesModels : BehaviorRelay<[XTRIsotopeModel]>?
+  lineSpectraModels : BehaviorRelay<[XTRSpectraModel]>?
+  kShellElectrons : String
+  lShellElectrons : String
+  mShellElectrons : String
+  nShellElectrons : String
+  oShellElectrons : String
+  pShellElectrons : String
+  qShellElectrons : String
+  seriesColor : UIColor
+  standardConditionColor : UIColor
+  crystalStructureScene : SCNScene
+  shellModelScene : XTRShellModelScene
+  coeffOfLinealThermExpansScaled : Double
+  fillingOrbital : String
+  valence : String
+  vaporPressureModel : XTRVaporPressurenModel?
+  nameString()
+  groupString : String
+  casRegNoString : String
+  -attributedStringForArray(_:) 
+}
+class "Bundle" as Bundle << (X, Orchid) extension >> { 
+  +appNameString : String?
+  +appVersionString : String?
+  +copywriteString : String? 
+}
+class "XTRLocalizedLabel" as XTRLocalizedLabel << (C, DarkSeaGreen) >> { 
+  -_isTitleLabel : Bool
+  ~isTitleLabel : Bool
+  ~awakeFromNib() 
+}
+class "XTRTableCell" as XTRTableCell << (C, DarkSeaGreen) >> { 
+  -columns : [Int]
+  ~init(coder:)
+  ~awakeFromNib()
+  ~init(style:reuseIdentifier:)
+  ~addColumn(_:)
+  ~setup() 
+}
+class "XTRDividerLabel" as XTRDividerLabel << (C, DarkSeaGreen) >> { 
+  ~highColor : UIColor?
+  ~lowColor : UIColor?
+  ~init(coder:)
+  ~awakeFromNib()
+  ~createLayer()
+  ~setupColors()
+  ~setHigh_Color(_:)
+  ~setLow_Color(_:) 
+}
+class "XTRTableHeaderButton" as XTRTableHeaderButton << (C, DarkSeaGreen) >> { 
+  ~imageLayer : CALayer
+  ~descendingImage : UIImage
+  ~ascendingImage : UIImage
+  ~toggle : Bool
+  ~init(coder:)
+  ~awakeFromNib()
+  ~tableHeaderCellSelected(_:)
+  ~toggleButtonState(_:)
+  ~toggleState()
+  ~createLayer()
+  ~deinit 
+}
+class "XTRTableLabel" as XTRTableLabel << (C, DarkSeaGreen) >> { 
+  -edgeInsets : UIEdgeInsets
+  ~init(frame:backgroundColor:)
+  ~init(coder:)
+  ~draw(_:)
+  -addLeftBorder()
+  -addRightBorder() 
+}
+class "XTRLocalizedButton" as XTRLocalizedButton << (C, DarkSeaGreen) >> { 
+  ~awakeFromNib() 
+}
+class "XTRGeneralButton" as XTRGeneralButton << (C, DarkSeaGreen) >> { 
+  -highColor : UIColor
+  -lowColor : UIColor
+  ~init(coder:)
+  ~awakeFromNib()
+  ~setupColors()
+  ~createLayer() 
+}
+class "XTRSlideDownAnimationController" as XTRSlideDownAnimationController << (C, DarkSeaGreen) >> { 
+  ~duration : TimeInterval
+  ~transitionDuration(using:)
+  ~animateTransition(using:)
+  ~animatePresentationWithTransitionContext(_:) 
+}
+class "XTRSimpleTransitionController" as XTRSimpleTransitionController << (C, DarkSeaGreen) >> { 
+  ~transitionDuration(using:)
+  ~animateTransition(using:) 
+}
+class "XTRPopoutAnimationController" as XTRPopoutAnimationController << (C, DarkSeaGreen) >> { 
+  ~transitionDuration(using:)
+  ~animateTransition(using:) 
+}
+class "XTRSwapable" as XTRSwapable << (P, GoldenRod) protocol >> { 
+  ~setupUI(element:)
+  ~setupUIForAnimation(element:) 
+}
+class "XTRSwapableViewController" as XTRSwapableViewController << (C, DarkSeaGreen) >> { 
+  ~disposeBag : DisposeBag
+  ~element : XTRElementModel?
+  ~init(coder:)
+  ~init(nibName:bundle:)
+  ~setupUI(element:)
+  ~setupUIForAnimation(element:)
+  ~shouldAutorotate : Bool
+  ~supportedInterfaceOrientations : UIInterfaceOrientationMask 
+}
+class "LocaleManager" as LocaleManager << (C, DarkSeaGreen) >> { 
+  +{static} updateHandler : () -> Void
+  +{static} rootViewController : ((_ window: UIWindow) -> UIViewController?)?
+  +{static} customTranslation : ((_ key: String) -> String?)? 
+}
+class "UITextField" as UITextField << (X, Orchid) extension >> { 
+  +originalAlignment : NSTextAlignment?
+  +forcedAlignment : NSTextAlignment?
+  ~mn_custom_layoutSubviews() 
+}
+class "UILabel" as UILabel9 << (X, Orchid) extension >> { 
+  +originalAlignment : NSTextAlignment?
+  +forcedAlignment : NSTextAlignment?
+  ~mn_custom_layoutSubviews() 
+}
+class "UIApplication" as UIApplication << (X, Orchid) extension >> { 
+  mn_custom_userInterfaceLayoutDirection : UIUserInterfaceLayoutDirection 
+}
+class "Bundle" as Bundle10 << (X, Orchid) extension >> { 
+  -{static} savedLanguageNames : [String: String]
+  -languageName(for:)
+  resourcePath(for:)
+  mn_custom_localizedString(forKey:value:table:) 
+}
+class "Locale" as Locale << (X, Orchid) extension >> { 
+  {static} cachePreffered : Locale?
+  {static} _userPreferred : Locale
+  {static} baseLocale : Locale
+  +{static} userPreferred : Locale
+  +isRTL : Bool 
+}
+class "NSLocale" as NSLocale << (X, Orchid) extension >> { 
+  +isRTL : Bool 
+}
+class "NSNumber" as NSNumber << (X, Orchid) extension >> { 
+  +localized(precision:style:) 
+}
+class "String" as String11 << (X, Orchid) extension >> { 
+  +localizedFormat(_:) 
+}
+class "NSObject" as NSObject12 << (X, Orchid) extension >> {  
+}
+class "XTRSceneDelegate" as XTRSceneDelegate << (C, DarkSeaGreen) >> { 
+  ~window : UIWindow?
+  -appearanceManager : XTRAppearanceManager!
+  ~scene(_:willConnectTo:options:)
+  ~sceneDidDisconnect(_:)
+  ~sceneDidBecomeActive(_:)
+  ~sceneWillResignActive(_:)
+  ~sceneWillEnterForeground(_:)
+  ~sceneDidEnterBackground(_:) 
+}
+class "XTRAppDelegate" as XTRAppDelegate << (C, DarkSeaGreen) >> { 
+  ~window : UIWindow?
+  ~application(_:didFinishLaunchingWithOptions:)
+  ~application(_:configurationForConnecting:options:)
+  ~application(_:didDiscardSceneSessions:)
+  ~keyWindow : UIWindow? 
+}
+class "XTRApplication" as XTRApplication << (C, DarkSeaGreen) >> { 
+  ~init()
+  ~registerDefaultsFromSettingsBundle()
+  ~prefersStatusBarHidden() 
+}
+class "XTRBackgroundView" as XTRBackgroundView << (C, DarkSeaGreen) >> { 
+  ~awakeFromNib()
+  ~deinit 
+}
+class "XTRBackgroundView" as XTRBackgroundView13 << (X, Orchid) extension >> { 
+  changeAppearance(notification:) 
+}
+class "XTROverlayView" as XTROverlayView << (C, DarkSeaGreen) >> { 
+  ~init(coder:)
+  ~init(frame:) 
+}
+class "XTRZoomContentView" as XTRZoomContentView << (C, DarkSeaGreen) >> { 
+  ~label : UILabel!
+  ~wrapper : UIView!
+  ~content : UIView!
+  ~init(coder:)
+  ~awakeFromNib()
+  ~addContent(_:)
+  ~title : String 
+}
+class "XTRCornerImageView" as XTRCornerImageView << (C, DarkSeaGreen) >> { 
+  -gradientLayer : CAGradientLayer!
+  ~init(coder:)
+  ~awakeFromNib()
+  ~createLayer() 
+}
+NSObject <|-- XTRPropertiesStore : inherits
+String -- XTRAppearanceType : inherits
+NSObject <|-- XTRDataSource : inherits
+XTRColorFactory <|-- XTRColorFactoryStandard : inherits
+NSObject <|-- XTRColorFactory : inherits
+NSObject <|-- XTRAppearanceManager : inherits
+NSObject <|-- XTRAppearanceManagerStandard : inherits
+NSObject <|-- XTRFontFactory : inherits
+XTRColorFactory <|-- XTRColorFactoryClassic : inherits
+NSObject <|-- XTRAppearanceManagerClassic : inherits
+UIHostingController <|-- SUIPreferencesHostingController : inherits
+UIViewRepresentable <|-- SUIPreferencesGlobeView : inherits
+View <|-- SUIPreferencesColorPickerView : inherits
+PreviewProvider <|-- SUIColorPickerView_Previews : inherits
+String -- LanguageCodes : inherits
+View <|-- SUIPreferencesInfoView : inherits
+PreviewProvider <|-- SUIPreferencesInfoView_Previews : inherits
+View <|-- SUIPreferencesSettingsView : inherits
+PreviewProvider <|-- SUIPreferencesSettingsView_Previews : inherits
+View <|-- SUIPreferencesView : inherits
+PreviewProvider <|-- SUIPreferencesView_Previews : inherits
+View <|-- SUIPreferencesSeriesColorsView : inherits
+PreviewProvider <|-- SUIPreferencesSeriesColorsView_Previews : inherits
+UIViewController <|-- XTRSplashViewController : ext
+View <|-- XTRSplashView : inherits
+PreviewProvider <|-- XTRSplashView_Previews : inherits
+View <|-- SUIElementButtonView : inherits
+View <|-- SUICalculatorButtonView : inherits
+View <|-- GroupLayoutView : inherits
+View <|-- GroupLeftLayoutView : inherits
+View <|-- GroupRightLayoutView : inherits
+View <|-- PeriodLayoutView : inherits
+View <|-- PlaceholderLayoutView : inherits
+View <|-- SeriesLabelLayoutView : inherits
+View <|-- ButtonLayoutView : inherits
+PreviewProvider <|-- SUIElementButtonView_Previews : inherits
+PreviewProvider <|-- SUICalculatorButtonView_Previews : inherits
+XTRGeneralButton <|-- XTRElementButton : inherits
+UIHostingController <|-- SUIPeriodicTableHostingController : inherits
+UIViewController <|-- XTRPeriodicTableViewController : ext
+View <|-- SUIPeriodicTableView : inherits
+PreviewProvider <|-- SUIPeriodicTableView_Previews : inherits
+View <|-- SUIMolecularCalculatorView : inherits
+PreviewProvider <|-- SUIMolecularCalculatorView_Previews : inherits
+NSObject <|-- XTRSpectrumViewControllerDelegate : inherits
+CPTPlotDataSource <|-- XTRSpectrumViewControllerDelegate : inherits
+XTRSwapableViewController <|-- XTRNuclidesIsotopesViewController : inherits
+XTRSwapableViewController <|-- XTRGeneralInfoViewController : inherits
+UIView <|-- XTRPageControl : inherits
+View <|-- SUIWikiPediaView : inherits
+PreviewProvider <|-- XTRWikiPediaView_Previews : inherits
+XTRSwapableViewController <|-- XTRElementInspectorViewController : inherits
+XTRSwapableViewController <|-- XTRElementPropertiesViewController : inherits
+XTRSwapableViewController <|-- XTRElementPropertiesPhysicalViewController : inherits
+NSObject <|-- XTRNuclidesIsotopesViewControllerDelegate : inherits
+View <|-- SUIElementInspectorView : inherits
+PreviewProvider <|-- SUIElementInspectorView_Previews : inherits
+XTRSwapableViewController <|-- XTRSpectrumViewController : inherits
+XTRSwapableViewController <|-- XTRElementPropertiesChemicalViewController : inherits
+SKScene <|-- XTRShellModelScene : inherits
+SKPhysicsContactDelegate <|-- XTRShellModelScene : inherits
+XTRSwapableViewController <|-- XTRAtomicStructureViewController : inherits
+UIViewRepresentable <|-- SUIWebViewWrapper : inherits
+UIViewRepresentable <|-- SUIActivityIndicator : inherits
+View <|-- SUIWebView : inherits
+View <|-- SUILoadingView : inherits
+UIViewController <|-- XTRGraphViewController : ext
+View <|-- SUIGraphChoiceView : inherits
+PreviewProvider <|-- XTRGraphChoiceView_Previews : inherits
+CPTBarPlot <|-- XTRBarPlot : inherits
+NSObject <|-- XTRGraphViewControllerDelegate : inherits
+CPTPlotDataSource <|-- XTRGraphViewControllerDelegate : inherits
+CPTBarPlotDelegate <|-- XTRGraphViewControllerDelegate : inherits
+UIViewController <|-- XTRColorPickerViewController : ext
+NSObject <|-- XTRInfoViewControllerDelegate : inherits
+WKNavigationDelegate <|-- XTRInfoViewControllerDelegate : inherits
+UIViewController <|-- XTRMolecularCalculatorViewController : ext
+NSObject <|-- XTRWikipediaViewControllerDelegate : inherits
+WKNavigationDelegate <|-- XTRWikipediaViewControllerDelegate : inherits
+NSObject <|-- XTRHelpBalloonViewControllerDelegate : inherits
+WKUIDelegate <|-- XTRHelpBalloonViewControllerDelegate : inherits
+WKNavigationDelegate <|-- XTRHelpBalloonViewControllerDelegate : inherits
+UIViewController <|-- XTRGraphChoiceViewController : ext
+UIViewController <|-- XTRInfoViewController : ext
+UIViewController <|-- XTRElementBalloonViewController : ext
+NSObject <|-- XTRGraphChoiceViewControllerDelegate : inherits
+UICollectionViewDataSource <|-- XTRGraphChoiceViewControllerDelegate : inherits
+UICollectionViewDelegate <|-- XTRGraphChoiceViewControllerDelegate : inherits
+UICollectionViewDelegateFlowLayout <|-- XTRGraphChoiceViewControllerDelegate : inherits
+UICollectionViewCell <|-- XTRGraphChoiceCell : inherits
+UIViewController <|-- XTRPreferencesViewController : ext
+UIContextMenuInteractionDelegate <|-- XTRPreferencesViewController : inherits
+UIViewController <|-- XTRWikipediaViewController : ext
+UIViewController <|-- XTRHelpBalloonViewController : ext
+View <|-- SUIBaseButton : inherits
+View <|-- SUILabelTitleView : inherits
+View <|-- SUIFormTitleView : inherits
+View <|-- SUILabelValueView : inherits
+UIViewController <|-- SUIFormSheetWrapper : ext
+UIPopoverPresentationControllerDelegate <|-- SUIFormSheetWrapper : inherits
+UIViewControllerRepresentable <|-- SUIFormSheet : inherits
+ViewModifier <|-- SUIFullScreenModifier : inherits
+View <|-- SUIInfoView : inherits
+PreviewProvider <|-- XTRInfoView_Previews : inherits
+UIHostingController <|-- SUIInfoHostingController : inherits
+NSObject <|-- XTRMainViewControllerDelegate : inherits
+UITabBarControllerDelegate <|-- XTRMainViewControllerDelegate : inherits
+UITabBarController <|-- XTRMainViewController : inherits
+View <|-- SUIElementHeaderButton : inherits
+View <|-- SUIElementHeaderRow : inherits
+PreviewProvider <|-- SUIElementHeaderRow_Previews : inherits
+View <|-- SUIElementProperyColumn : inherits
+View <|-- SUIElementPropertiesRow : inherits
+View <|-- SUIElementListView : inherits
+PreviewProvider <|-- SUIElementListView_Previews : inherits
+NSObject <|-- XTRElementListViewControllerDelegate : inherits
+UITableViewDelegate <|-- XTRElementListViewControllerDelegate : inherits
+UITableViewDataSource <|-- XTRElementListViewControllerDelegate : inherits
+UITableViewCell <|-- XTRElementTableViewCell : inherits
+UIViewController <|-- XTRElementListViewController : ext
+UIHostingController <|-- SUIElementListHostingController : inherits
+View <|-- SUIHelpBalloonView : inherits
+PreviewProvider <|-- SUIHelpBalloon_Previews : inherits
+View <|-- SUIHelpButtonView : inherits
+PreviewProvider <|-- SUIHelpButtonView_Previews : inherits
+UIButton <|-- XTRHelpButton : inherits
+UIPopoverPresentationControllerDelegate <|-- XTRHelpButton : inherits
+UIViewControllerRepresentable <|-- SUIElementInspectorRepresentable : inherits
+View <|-- SUIElementBalloonView : inherits
+PreviewProvider <|-- XTRElementBalloonView_Previews : inherits
+ObservableObject <|-- SUIElementBallonEnvironment : inherits
+ObservableObject <|-- SUIWikipediaEnvironment : inherits
+ObservableObject <|-- SUIHelpBallonEnvironment : inherits
+ObservableObject <|-- SUIInfoEnvironment : inherits
+ObservableObject <|-- SUIMolecularCalculatorEnvironment : inherits
+ObservableObject <|-- SUIColorPickerEnvironment : inherits
+ObservableObject <|-- SUIPreferencesEnvironment : inherits
+ObservableObject <|-- SUIMolecularCalculatorModel : inherits
+ObservableObject <|-- SUIElementButtonEnvironment : inherits
+ObservableObject <|-- SUIMolecularCalculatorProperty : inherits
+ObservableObject <|-- SUIWebViewStateModel : inherits
+NSObject <|-- XTRElementModel : inherits
+Identifiable <|-- XTRElementModel : inherits
+NSObject <|-- XTRElectronConfigurationModel : inherits
+NSObject <|-- XTRVaporPressurenModel : inherits
+NSObject <|-- XTRTableViewCellViewModel : inherits
+NSObject <|-- XTRIsotopeModel : inherits
+NSObject <|-- XTRSpectraModel : inherits
+NSObject <|-- XTRGraphDefinitionModel : inherits
+AnyObject <|.. XibDesignable : inherits
+XibDesignable <|.. UIView : confirms to
+WKNavigationDelegate <.. SUIWebViewWrapper.Coordinator : inherits
+UILabel <|-- XTRLocalizedLabel : ext
+UITableViewCell <|-- XTRTableCell : inherits
+UILabel <|-- XTRDividerLabel : ext
+XTRGeneralButton <|-- XTRTableHeaderButton : inherits
+UILabel <|-- XTRTableLabel : ext
+UIButton <|-- XTRLocalizedButton : inherits
+XTRLocalizedButton <|-- XTRGeneralButton : inherits
+NSObject <|-- XTRSlideDownAnimationController : ext
+UIViewControllerAnimatedTransitioning <|-- XTRSlideDownAnimationController : inherits
+NSObject <|-- XTRSimpleTransitionController : ext
+UIViewControllerAnimatedTransitioning <|-- XTRSimpleTransitionController : inherits
+NSObject <|-- XTRPopoutAnimationController : ext
+UIViewControllerAnimatedTransitioning <|-- XTRPopoutAnimationController : inherits
+UIViewController <|-- XTRSwapableViewController : ext
+XTRSwapable <|.. XTRSwapableViewController : confirms to
+NSObject <|-- LocaleManager : ext
+UIResponder <|-- XTRSceneDelegate : inherits
+UIWindowSceneDelegate <|-- XTRSceneDelegate : inherits
+UIResponder <|-- XTRAppDelegate : inherits
+UIApplicationDelegate <|-- XTRAppDelegate : inherits
+UIApplication <|-- XTRApplication : ext
+UIView <|-- XTRBackgroundView : ext
+UIView <|-- XTROverlayView : ext
+UIView <|-- XTRZoomContentView : ext
+UIImageView <|-- XTRCornerImageView : ext
+XTRPreferencesViewController <.. XTRPreferencesViewController0 : ext
+XTRHelpButton <.. XTRHelpButton1 : ext
+UIViewController <.. UIViewController2 : ext
+UIViewController <.. UIViewController3 : ext
+XibDesignable <.. XibDesignable4 : ext
+String <.. String5 : ext
+UIView <.. UIView6 : ext
+UIImage <.. UIImage7 : ext
+XTRElementModel <.. XTRElementModel8 : ext
+UILabel <.. UILabel9 : ext
+Bundle <.. Bundle10 : ext
+String <.. String11 : ext
+NSObject <.. NSObject12 : ext
+XTRBackgroundView <.. XTRBackgroundView13 : ext
+@enduml
