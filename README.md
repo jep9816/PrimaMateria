@@ -2,7 +2,7 @@
 
 This is my take on a Periodic Table of the element application.
 
-Should build and run on xcode 11.3
+Should build and run on xcode 14.3
 
 Tab based allows for the ability to choose elements and see details
 
