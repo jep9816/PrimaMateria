@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -1422,7 +1422,7 @@
 				};
 			};
 			buildConfigurationList = 80127C0920F0253000ABC706 /* Build configuration list for PBXProject "PrimaMateria" */;
-			compatibilityVersion = "Xcode 12.0";
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -1705,7 +1705,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		80773C7F20FE9859008B7B43 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
@@ -1719,7 +1719,6 @@
 		};
 		80AB29F22128CEAD00B58AB3 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
-			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -2175,7 +2174,7 @@
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ips.spirio-dev";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ips.zack-dev";
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
 				SUPPORTS_MACCATALYST = YES;
@@ -2214,7 +2213,7 @@
 				MODULE_NAME = PrimaMateria;
 				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ips.spirio-dev";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ips.zack-dev";
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				PRODUCT_NAME = PrimaMateria;
 				SUPPORTS_MACCATALYST = YES;
