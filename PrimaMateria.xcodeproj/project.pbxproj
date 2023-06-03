@@ -6,6 +6,20 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		062B1A3E2A2BA2DE005B2863 /* Swift Lint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 062B1A3F2A2BA2DE005B2863 /* Build configuration list for PBXAggregateTarget "Swift Lint" */;
+			buildPhases = (
+				062B1A422A2BA2F7005B2863 /* Swift Lint */,
+			);
+			dependencies = (
+			);
+			name = "Swift Lint";
+			productName = "Swwift Lint";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		0612AFC026A9A44E005F4E24 /* SUIPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBE26A9A44E005F4E24 /* SUIPreferencesView.swift */; };
 		0612AFC126A9A44E005F4E24 /* SUIPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0612AFBE26A9A44E005F4E24 /* SUIPreferencesView.swift */; };
@@ -491,6 +505,16 @@
 		9B244B60243FE04900BD6ACE /* MBProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 9B244B5F243FE04900BD6ACE /* MBProgressHUD */; };
 		9B5338EF2469F33A00CDE87B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 9B5338EE2469F33A00CDE87B /* README.md */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0625BCC12A2BA3CE0050CA0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80127C0620F0253000ABC706 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 062B1A3E2A2BA2DE005B2863;
+			remoteInfo = "Swift Lint";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0612AFBE26A9A44E005F4E24 /* SUIPreferencesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SUIPreferencesView.swift; sourceTree = "<group>"; };
@@ -1356,7 +1380,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80127C2020F0253200ABC706 /* Build configuration list for PBXNativeTarget "PrimaMateria DEV" */;
 			buildPhases = (
-				80773C7F20FE9859008B7B43 /* Swift Lint */,
 				80127C0A20F0253000ABC706 /* Sources */,
 				80127C0B20F0253000ABC706 /* Frameworks */,
 				80127C0C20F0253000ABC706 /* Resources */,
@@ -1364,6 +1387,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0625BCC22A2BA3CE0050CA0F /* PBXTargetDependency */,
 			);
 			name = "PrimaMateria DEV";
 			packageProductDependencies = (
@@ -1382,7 +1406,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 80AB2AC22128CEAD00B58AB3 /* Build configuration list for PBXNativeTarget "PrimaMateria PRD" */;
 			buildPhases = (
-				80AB29F22128CEAD00B58AB3 /* Swift Lint */,
 				80AB29F32128CEAD00B58AB3 /* Sources */,
 				80AB2A422128CEAD00B58AB3 /* Frameworks */,
 				80AB2A472128CEAD00B58AB3 /* Resources */,
@@ -1410,11 +1433,15 @@
 		80127C0620F0253000ABC706 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				CLASSPREFIX = XTR;
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 1220;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Jerry Porter";
 				TargetAttributes = {
+					062B1A3E2A2BA2DE005B2863 = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					80127C0D20F0253000ABC706 = {
 						CreatedOnToolsVersion = 9.3.1;
 						LastSwiftMigration = 0930;
@@ -1444,6 +1471,7 @@
 			targets = (
 				80AB29F02128CEAD00B58AB3 /* PrimaMateria PRD */,
 				80127C0D20F0253000ABC706 /* PrimaMateria DEV */,
+				062B1A3E2A2BA2DE005B2863 /* Swift Lint */,
 			);
 		};
 /* End PBXProject section */
@@ -1703,29 +1731,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		80773C7F20FE9859008B7B43 /* Swift Lint */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Swift Lint";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    brew install swiftlint\nfi\n";
-		};
-		80AB29F22128CEAD00B58AB3 /* Swift Lint */ = {
+		062B1A422A2BA2F7005B2863 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
+			inputFileListPaths = (
+			);
 			inputPaths = (
 			);
 			name = "Swift Lint";
+			outputFileListPaths = (
+			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/swiftlint.out",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1980,6 +1999,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		0625BCC22A2BA3CE0050CA0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 062B1A3E2A2BA2DE005B2863 /* Swift Lint */;
+			targetProxy = 0625BCC12A2BA3CE0050CA0F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		8012807620F0271F00ABC706 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -2008,6 +2035,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		062B1A402A2BA2DE005B2863 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C2VRHCB9Y;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		062B1A412A2BA2DE005B2863 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4C2VRHCB9Y;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		80127C1E20F0253200ABC706 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -2047,6 +2092,7 @@
 				CURRENT_PROJECT_VERSION = 2.5.1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -2067,6 +2113,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 2.5.1;
 				MODULE_NAME = PrimaMateria;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_MODULE_NAME = PrimaMateria;
@@ -2117,6 +2165,7 @@
 				CURRENT_PROJECT_VERSION = 2.5.1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
+				ENABLE_MODULE_VERIFIER = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				FRAMEWORK_SEARCH_PATHS = "";
@@ -2134,6 +2183,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 2.5.1;
 				MODULE_NAME = PrimaMateria;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu11 gnu++14";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_MODULE_NAME = PrimaMateria;
 				SDKROOT = iphoneos;
@@ -2307,6 +2358,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		062B1A3F2A2BA2DE005B2863 /* Build configuration list for PBXAggregateTarget "Swift Lint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				062B1A402A2BA2DE005B2863 /* Debug */,
+				062B1A412A2BA2DE005B2863 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		80127C0920F0253000ABC706 /* Build configuration list for PBXProject "PrimaMateria" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
